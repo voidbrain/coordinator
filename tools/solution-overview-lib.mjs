@@ -414,7 +414,7 @@ export function runway(sources) {
             key: `${s.id}:${st.id}`,
             repo: s.id,
             id: st.id,
-            kind: nodeKind(st.status, st.who),
+            kind: r.status === 'Blocked' ? 'external (record Blocked)' : nodeKind(st.status, st.who),
             agent: h ? h.agent : null,
             owner: h ? h.owner : 0,
             deps: [...parseDeps(st.depends, s.id), ...proseDeps(st.title)],
