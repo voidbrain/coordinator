@@ -4,7 +4,7 @@
   "parent": "F-008",
   "title": "Apply the decision to the refresh workflow and land one refresh PR on a counting check",
   "goal": "Apply the decision to the refresh workflow and land one refresh PR on a counting check",
-  "status": "implemented",
+  "status": "closed",
   "acceptance": [
     "A refresh PR shows a passing check and is merged with merge-when-green"
   ],
@@ -30,16 +30,22 @@
   "effort": {
     "size": "small",
     "estimate": "1 h",
-    "basis": "Workflow changed in PR #6: checkout, push, PR lookup and PR creation use REFRESH_TOKEN; the workflow token is contents: read; the dispatch step is gone; a missing secret fails the first step (checked offline both ways). Remaining: one dispatched run after the merge whose refresh PR shows the CI check by itself.",
+    "basis": "Verified 2026-11-24: after PR #6 merged, a dispatched refresh run (45507081422) passed the secret check, started from main and opened PR #7 with REFRESH_TOKEN; PR #7's pull_request CI run (45507149360) started by itself and showed as its check (statusCheckRollup: check SUCCESS); PR #7 landed with merge-when-green.",
     "reviewed": "2026-11-24",
-    "agentHours": 0.25,
+    "agentHours": 0,
     "ownerHours": 0,
-    "estimateAgentHours": 1
+    "estimateAgentHours": 1,
+    "actualAgentHours": 0.75,
+    "actualSource": "stated"
   },
   "prs": [
     {
       "pr": 6,
       "note": "REFRESH_TOKEN"
+    },
+    {
+      "pr": 7,
+      "note": "first refresh PR with its own CI check"
     }
   ]
 }
