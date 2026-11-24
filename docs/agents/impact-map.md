@@ -8,7 +8,8 @@ What must follow a change, and what must run again after it (docs/agents/change-
 
 | Id | When these change | Made of (content) | This must follow | Command | Runs again after | Checked by |
 |---|---|---|---|---|---|---|
-| solution-views | `.solution.json`, `docs/solution-order.md`, `docs/BACKLOG.md`, `tools/solution-overview.mjs`, `tools/solution.mjs` |  | The generated overview and dashboard read these: regenerate both and commit them with their snapshot; reconcile docs/STYLE-GUIDE.md and docs/agents/gap-review.md when the overview layout or a gap rule changes. | `npm run solution:refresh` |  | check:order in CI; the problems section of each view |
+| backlog-ledger | `docs/work/**` |  | docs/BACKLOG.md is generated from the record and task sources: rebuild it, then the views that read it. | `npm run work:build && npm run check:work` |  | check:work and check:backlog in CI |
+| solution-views | `.solution.json`, `docs/solution-order.md`, `docs/BACKLOG.md`, `tools/solution-overview.mjs`, `tools/solution.mjs` |  | The generated overview and dashboard read these: regenerate both and commit them with their snapshot; reconcile docs/STYLE-GUIDE.md and docs/agents/gap-review.md when the overview layout or a gap rule changes. | `npm run solution:refresh` | backlog-ledger | check:order in CI; the problems section of each view |
 
 ## Content dependencies
 

@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "id": "F-004-T01",
+  "parent": "F-004",
+  "title": "Owner takes the template proposal to a project-harness session",
+  "goal": "Owner takes the template proposal to a project-harness session",
+  "status": "ready",
+  "acceptance": [
+    "The template session has recorded the proposal"
+  ],
+  "dependsOn": [],
+  "resources": [
+    "docs/proposals/solution-order-in-template.md",
+    "docs/work/records/F-004.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "1 h owner",
+    "basis": "Estimated 2026-11-24: starting a template session with the proposal and answering its questions, about an hour of owner time. Not a measurement.",
+    "reviewed": "2026-11-24",
+    "agentHours": 0,
+    "ownerHours": 1,
+    "ownerKind": "procedure"
+  },
+  "prs": [],
+  "ownerLink": "docs/proposals/solution-order-in-template.md"
+}

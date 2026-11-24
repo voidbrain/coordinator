@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "id": "F-002-T02",
+  "parent": "F-002",
+  "title": "Land the owner's order in a PR that changes only the list",
+  "goal": "Land the owner's order in a PR that changes only the list",
+  "status": "planned",
+  "acceptance": [
+    "Land the owner's order in a PR that changes only the list"
+  ],
+  "dependsOn": [
+    "F-002-T01"
+  ],
+  "resources": [
+    "docs/solution-order.md",
+    "docs/work/records/F-002.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "0.25 h",
+    "basis": "Estimated 2026-11-24: one edit, check:order, refresh and a small PR. Not a measurement.",
+    "reviewed": "2026-11-24",
+    "agentHours": 0.25,
+    "ownerHours": 0,
+    "estimateAgentHours": 0.25
+  },
+  "prs": []
+}

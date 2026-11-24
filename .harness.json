@@ -79,6 +79,16 @@
   },
   "impact": [
     {
+      "id": "backlog-ledger",
+      "when": [
+        "docs/work/**"
+      ],
+      "then": "docs/BACKLOG.md is generated from the record and task sources: rebuild it, then the views that read it.",
+      "run": "npm run work:build && npm run check:work",
+      "checked": "check:work and check:backlog in CI",
+      "after": []
+    },
+    {
       "id": "solution-views",
       "when": [
         ".solution.json",
@@ -90,7 +100,9 @@
       "then": "The generated overview and dashboard read these: regenerate both and commit them with their snapshot; reconcile docs/STYLE-GUIDE.md and docs/agents/gap-review.md when the overview layout or a gap rule changes.",
       "run": "npm run solution:refresh",
       "checked": "check:order in CI; the problems section of each view",
-      "after": []
+      "after": [
+        "backlog-ledger"
+      ]
     }
   ],
   "couplings": [],
@@ -225,8 +237,16 @@
     "enabled": false
   },
   "workItems": {
-    "enabled": false,
-    "featurePlans": false
+    "enabled": true,
+    "layout": "docs/work/layout.json",
+    "records": "docs/work/records",
+    "tasks": "docs/work/tasks",
+    "profiles": "docs/agents/model-profiles.json",
+    "featurePlans": true,
+    "repository": "voidbrain/coordinator",
+    "estimation": {
+      "since": "2026-11-24"
+    }
   },
   "workUsage": {
     "enabled": false,

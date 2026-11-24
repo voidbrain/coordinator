@@ -29,6 +29,8 @@ jobs:
         run: npm run format:check && npm run lint
       - name: Overview readers and gap review on the fixtures
         run: npm test
+      - name: Record and task sources, and the generated ledger matches them
+        run: node tools/work-items.mjs check && node tools/work-items.mjs build && git diff --exit-code -- docs/BACKLOG.md
       - name: Coordinator backlog and archive integrity
         run: node tools/check-backlog.mjs
       - name: Optional MCP recommendation metadata
