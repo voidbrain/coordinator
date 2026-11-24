@@ -26,7 +26,7 @@ const parse = (name) => {
 };
 const gaps = (records, order = { items: [] }) => {
   const sources = [
-    { id: 'solution', repository: 'acme/coordinator', available: true, records: [] },
+    { id: 'coordinator', repository: 'acme/coordinator', available: true, records: [] },
     { id: 'example', repository: 'acme/example', available: true, records },
     { id: 'widget-lab', repository: 'acme/widget-lab', available: true, records: [] },
   ];
@@ -108,7 +108,7 @@ test('a summary table without Status and Priority columns is a problem, not an e
 });
 
 test('solution order: syntax, known repositories, duplicates and numbering', () => {
-  const ids = new Set(['solution', 'example']);
+  const ids = new Set(['coordinator', 'example']);
   const ok = readOrder(
     '<!-- order:start -->\n1. `example:F-001` — first\n2. `example:F-001-T02`\n<!-- order:end -->',
     ids,
@@ -122,7 +122,10 @@ test('solution order: syntax, known repositories, duplicates and numbering', () 
     '<!-- order:start -->\n1. `other:F-001`\n3. `example:X-1`\n4. `other:F-001`\n<!-- order:end -->',
     ids,
   );
-  assert.equal(bad.problems.length, 6); // unknown repo twice, bad ID, duplicate, two numbering slips
+  assert.equal(bad.problems.length, 6);
+  // This repository's own records are `coordinator:ID`; `solution` is the template dashboard's internal name only.
+  assert.equal(readOrder('<!-- order:start -->\n1. `coordinator:F-002`\n<!-- order:end -->', ids).problems.length, 0);
+  assert.equal(readOrder('<!-- order:start -->\n1. `solution:F-002`\n<!-- order:end -->', ids).problems.length, 1); // unknown repo twice, bad ID, duplicate, two numbering slips
 });
 
 test('remaining hours per backlog and the solution total; an unreadable total makes the sum partial', () => {
@@ -189,7 +192,7 @@ test('gap review resolves repo:ID prerequisites against the other repository', (
     records: parseBacklog(fixture(name), id),
   });
   const sources = [
-    { id: 'solution', repository: 'acme/coordinator', available: true, records: [] },
+    { id: 'coordinator', repository: 'acme/coordinator', available: true, records: [] },
     load('alpha', 'runway-alpha.md'),
     load('beta', 'runway-beta.md'),
   ];
@@ -305,7 +308,7 @@ test('Harness table and gap review: a project behind the latest release gets a r
   assert.equal(harnessStatus('10.10.0', latest).behind, false);
   const sources = [
     {
-      id: 'solution',
+      id: 'coordinator',
       repository: 'acme/coordinator',
       available: true,
       records: [],

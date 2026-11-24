@@ -10,6 +10,7 @@ import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import {
+  COORDINATOR,
   readOrder as parseOrder,
   parseBacklog,
   contentsText,
@@ -48,7 +49,7 @@ const MARK =
 const stamp = JSON.parse(readFileSync(resolve(root, '.harness.json'), 'utf8'));
 const manifestPath = resolve(root, stamp.solution?.manifest ?? '.solution.json');
 const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
-const ids = new Set(['solution', ...manifest.repositories.map((r) => r.id)]);
+const ids = new Set([COORDINATOR, ...manifest.repositories.map((r) => r.id)]);
 
 const readOrder = () => parseOrder(readFileSync(resolve(root, ORDER), 'utf8'), ids, ORDER);
 
@@ -69,7 +70,7 @@ const git = (cwd, ...a) =>
 
 async function readSource(repo) {
   const backlog = repo.backlog ?? 'docs/BACKLOG.md';
-  if (repo.id === 'solution') {
+  if (repo.id === COORDINATOR) {
     const revision = git(root, 'rev-parse', 'HEAD').trim();
     const dirty = git(root, 'status', '--porcelain').trim() !== '';
     const via = dirty
@@ -108,7 +109,7 @@ async function readSource(repo) {
 // Reads files of one source at the revision its backlog was read from: GitHub with --remote, git for a local
 // checkout, the file system for this repository. A missing file or folder is empty, never an error.
 function fileReader(repo, revision) {
-  if (repo.id === 'solution')
+  if (repo.id === COORDINATOR)
     return {
       read: async (path) => (existsSync(resolve(root, path)) ? readFileSync(resolve(root, path), 'utf8') : null),
       list: async (dir) => {
@@ -204,7 +205,7 @@ async function build() {
   const sources = [];
   const all = [
     {
-      id: 'solution',
+      id: COORDINATOR,
       repository: manifest.repository,
       backlog: manifest.backlog,
       ref: 'working checkout',
@@ -239,7 +240,7 @@ async function build() {
   const named = (s) => `${s.emoji ?? ''} ${s.id}`.trim();
   const link = (source, id) => {
     const anchor = id.toLowerCase();
-    if (source.id === 'solution') return `[solution:${id}](BACKLOG.md#${anchor})`;
+    if (source.id === COORDINATOR) return `[${COORDINATOR}:${id}](BACKLOG.md#${anchor})`;
     return `[${source.id}:${id}](https://github.com/${source.repository}/blob/${source.revision}/${source.backlog ?? 'docs/BACKLOG.md'}#${anchor})`;
   };
   const keyLink = (key) => {
@@ -292,7 +293,7 @@ async function build() {
     '',
     '## Solution order',
     '',
-    'Top = next. Agents take the first item whose state is Ready (▶), after reading its record.',
+    '▶ = the next item to do: the first Ready item in the solution order; Ready = can start now (prerequisites done, no owner step pending). Top = next; read the record before starting.',
     '',
   );
   out.push(
@@ -427,16 +428,17 @@ async function build() {
     'Remaining agent and owner (human) hours as each backlog states them, summed across all backlogs. Each project estimates on its own; the estimates are not cross-calibrated, so the total is a sum of estimates, not a forecast. A backlog whose hours cannot be read shows Unknown and makes the total partial (at least).',
     '',
   );
-  out.push('| Backlog | Agent h | Owner h | Read from |', '|---|---:|---:|---|');
-  for (const r of hourRows)
+  out.push('| Backlog | Agent h | Owner h |', '|---|---:|---:|');
+  for (const r of hourRows) {
+    const label = named(sources.find((x) => x.id === r.id));
+    out.push(r.hours ? `| ${label} | ${r.hours.agent} | ${r.hours.owner} |` : `| ${label} | Unknown | Unknown |`);
+  }
+  out.push(`| **Solution total** | **${atLeast}${total.agent}** | **${atLeast}${total.owner}** |`);
+  if (total.partial)
     out.push(
-      r.hours
-        ? `| ${named(sources.find((x) => x.id === r.id))} | ${r.hours.agent} | ${r.hours.owner} | ${r.hours.from} |`
-        : `| ${named(sources.find((x) => x.id === r.id))} | Unknown | Unknown | no hours in its total line or records |`,
+      '',
+      `Partial: no readable hours in ${total.unknown.map((id) => named(sources.find((x) => x.id === id))).join(', ')}.`,
     );
-  out.push(
-    `| **Solution total** | **${atLeast}${total.agent}** | **${atLeast}${total.owner}** | ${total.partial ? `partial: ${total.unknown.join(', ')} unknown` : 'every backlog'} |`,
-  );
   // Agent runway (owner request 2026-11-24): agent hours doable before work reaches a block.
   const runwayRepos = sources.filter((x) => x.available);
   const authoredCount = [...rw.perRepo.values()].reduce((a, r) => a + r.authored, 0);

@@ -62,7 +62,7 @@ jobs:
       - name: Did anything change besides the snapshot time and this repository's own revision?
         id: diff
         run: |
-          if git diff --quiet -I '^Snapshot' -I '^\| solution \|' -I '^\| \[solution:' -I '^\| 🧭' -- docs/SOLUTION-OVERVIEW.md docs/SOLUTION-DASHBOARD.md; then
+          if git diff --quiet -I '^Snapshot' -I '^\| solution \|' -I '^\| \[solution:' -I '^\| 🧭' -I '^\| \[coordinator:' -- docs/SOLUTION-OVERVIEW.md docs/SOLUTION-DASHBOARD.md; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "Views unchanged apart from the snapshot; no PR."
           else

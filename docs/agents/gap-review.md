@@ -26,7 +26,7 @@ What it cannot see: a request the owner made in a conversation that nobody recor
 ## Turn findings into proposals
 
 1. For each finding, name the owning repository and the exact record or step you would create there (title, one-line Issue, Check), or say that the finding is a false positive and why.
-2. Report them to the owner, numbered as in the overview, and update `solution:F-003` (or the current gap-review record) with the date and the list. Nothing promised lives only in the conversation.
+2. Report them to the owner, numbered as in the overview, and update `coordinator:F-003` (or the current gap-review record) with the date and the list. Nothing promised lives only in the conversation.
 3. The owner accepts or rejects each. An accepted proposal is created by a session working in its owning repository, under that repository's own rules; a rejected one is recorded on the gap-review record with the reason.
 4. The next refresh shows whether the gap is gone. A gap that needs coordination between repositories also gets a record in this backlog with `Components` links.
 

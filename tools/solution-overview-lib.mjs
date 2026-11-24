@@ -1,6 +1,9 @@
 // Project library for tools/solution-overview.mjs (not from the harness template): pure functions that read
 // backlog Markdown and the solution order. No file, network or git access here, so tests can run them on fixtures.
 
+// This repository's own backlog, as references and labels call it (the template's solution.mjs calls it `solution`).
+export const COORDINATOR = 'coordinator';
+
 export const REF = /^([a-z][a-z0-9-]*):([BF]-\d+(?:-T\d+)?)$/;
 
 // ---------- solution order ----------
@@ -201,9 +204,9 @@ export function gapReview(sources, order, index, link) {
   // together with a dependency word, and no open record in that component that names this one back.
   const NEED =
     /\b(wait|waits|waiting|request|requested|need|needs|depend|depends|requires|blocked|backlog|tracked|recorded in|create|move|from that repository)/i;
-  for (const a of live.filter((s) => s.id !== 'solution'))
+  for (const a of live.filter((s) => s.id !== COORDINATOR))
     for (const r of a.records.filter((x) => OPEN(x.status)))
-      for (const b of live.filter((s) => s.id !== a.id && s.id !== 'solution')) {
+      for (const b of live.filter((s) => s.id !== a.id && s.id !== COORDINATOR)) {
         const sentence = r.prose.split(/(?<=[.;:])\s/).find((t) => alias(b).test(t) && NEED.test(t));
         if (!sentence) continue;
         const counterpart = b.records.find(
@@ -214,7 +217,7 @@ export function gapReview(sources, order, index, link) {
         gaps.push({
           kind: '1 Cross-repository, no counterpart',
           where: link(a, r.id),
-          evidence: `"${short(sentence, 150)}" — ${b.id} has no open record that names ${a.id}${coordinated ? ` (coordinated by solution:${coordinated.id})` : ''}`,
+          evidence: `"${short(sentence, 150)}" — ${b.id} has no open record that names ${a.id}${coordinated ? ` (coordinated by coordinator:${coordinated.id})` : ''}`,
           proposal: `${b.id}: a record for what ${a.id}:${r.id} needs from it, or ${a.id}: drop the dependency`,
         });
       }
@@ -320,7 +323,7 @@ export function gapReview(sources, order, index, link) {
         kind: '5 Order item missing',
         where: `[solution order](solution-order.md)`,
         evidence: `${o.ref} is not in ${o.repo}'s active backlog`,
-        proposal: `solution: remove ${o.ref} from the order, or ${o.repo}: create the record the owner meant`,
+        proposal: `coordinator: remove ${o.ref} from the order, or ${o.repo}: create the record the owner meant`,
       });
   }
   return gaps;
@@ -615,7 +618,7 @@ export function checkFixtures(read, expected) {
     const markdown = read(name);
     const records = parseBacklog(markdown, 'example', problems);
     const sources = [
-      { id: 'solution', repository: 'acme/coordinator', available: true, records: [] },
+      { id: COORDINATOR, repository: 'acme/coordinator', available: true, records: [] },
       { id: 'example', repository: 'acme/example', available: true, records },
       { id: 'widget-lab', repository: 'acme/widget-lab', available: true, records: [] },
     ];
@@ -650,7 +653,7 @@ export function checkFixtures(read, expected) {
     const status = harnessStatus(version, latestRelease(tags));
     const gap = gapReview(
       [
-        { id: 'solution', repository: 'acme/coordinator', available: true, records: [] },
+        { id: COORDINATOR, repository: 'acme/coordinator', available: true, records: [] },
         { id: 'example', repository: 'acme/example', available: true, records: [], harness: status },
       ],
       { items: [] },

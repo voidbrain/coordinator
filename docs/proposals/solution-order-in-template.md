@@ -1,6 +1,6 @@
 # Proposals for the harness template
 
-Written 2026-11-24 in voidbrain/coordinator for the owner to take to a project-harness session. Nothing here changes the template; the template's own session decides, records and releases. This repository tracks only its side (`solution:F-004`): delivering the proposals and reconciling to a release that adopts them.
+Written 2026-11-24 in voidbrain/coordinator for the owner to take to a project-harness session. Nothing here changes the template; the template's own session decides, records and releases. This repository tracks only its side (`coordinator:F-004`): delivering the proposals and reconciling to a release that adopts them.
 
 ## Proposal 1: solution order, owner view, hours, runway, gap review and cross-repository dependencies in the solution profile
 
