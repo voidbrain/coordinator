@@ -37,6 +37,8 @@ test('generated ledger: records, steps and states', () => {
     ],
   );
   assert.deepEqual(records[0].hours, { agent: 3, owner: 0.5 });
+  // A bug's Steps table has no Who column: its open prerequisite still makes it wait.
+  assert.equal(stepState(records[1].steps[0]), 'Waiting on B-009-T01');
 });
 
 test('generated ledger: gap review finds each kind once', () => {

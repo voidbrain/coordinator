@@ -1,7 +1,7 @@
 {
   "generated.md": {
     "records": { "F-001": "Ready", "B-002": "Waiting on B-009-T01", "F-003": "No agent work" },
-    "steps": { "F-001-T02": "Ready", "F-001-T03": "Waiting on F-001-T02", "F-001-T04": "Owner: procedure" },
+    "steps": { "F-001-T02": "Ready", "F-001-T03": "Waiting on F-001-T02", "F-001-T04": "Owner: procedure", "B-002-T01": "Waiting on B-009-T01" },
     "gaps": 5,
     "problems": 0
   },
