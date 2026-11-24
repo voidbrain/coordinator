@@ -69,5 +69,16 @@
     "agent": 4,
     "owner": 0.5,
     "partial": true
+  },
+  "__runway__": {
+    "sources": {
+      "alpha": "runway-alpha.md",
+      "beta": "runway-beta.md"
+    },
+    "total": 3,
+    "blocks": {
+      "alpha": 0,
+      "beta": 4
+    }
   }
 }

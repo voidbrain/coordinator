@@ -349,12 +349,166 @@ export function solutionTotal(rows) {
   };
 }
 
+// ---------- agent runway ----------
+// Owner request 2026-11-24. A step is doable when it is an agent step, not done, and every prerequisite is done or
+// itself doable, transitively and across repositories (`repo:ID` in a Depends on cell names another backlog). A block
+// is an owner step, a step waiting on one, an unknown prerequisite, a cycle, or an external wait (status Blocked).
+// Depends on cells of the generated ledger list only open prerequisites; done steps are known from their anchors.
+
+const DEP = /(?:\b([a-z][a-z0-9-]*):)?\b([BF]-\d+(?:-T\d+)?)\b/g;
+export function parseDeps(text, repo) {
+  return [...String(text ?? '').matchAll(DEP)].map((m) => `${m[1] ?? repo}:${m[2]}`);
+}
+// Fallback until the template has a cross-repository dependsOn: prose that says "depends on repo:ID" or
+// "waits on repo:ID" (explicit repository prefix only).
+const PROSE_DEP = /\b(?:depends|waits) on ((?:[a-z][a-z0-9-]*:[BF]-\d+(?:-T\d+)?(?:,? (?:and )?)?)+)/gi;
+export function proseDeps(text) {
+  return [...String(text ?? '').matchAll(PROSE_DEP)].flatMap((m) =>
+    [...m[1].matchAll(/([a-z][a-z0-9-]*):([BF]-\d+(?:-T\d+)?)/g)].map((x) => `${x[1]}:${x[2]}`),
+  );
+}
+
+function nodeKind(status, who) {
+  if (/Blocked/i.test(status)) return 'external';
+  if (/🧑‍🔧|🤔|🧑/.test(who) && !who.includes('🤖')) return who.includes('🤔') ? 'owner decision' : 'owner procedure';
+  return 'agent';
+}
+
+export function runway(sources) {
+  const nodes = new Map();
+  const done = new Set();
+  const recordSteps = new Map();
+  for (const s of sources.filter((x) => x.available)) {
+    for (const r of s.records) {
+      const rk = `${s.id}:${r.id}`;
+      if (!OPEN(r.status) || r.status === 'Verified') {
+        done.add(rk);
+        r.anchors.forEach((a) => done.add(`${s.id}:${a}`));
+        continue;
+      }
+      const open = r.steps.filter(OPEN_STEP);
+      r.steps.filter((st) => !OPEN_STEP(st)).forEach((st) => done.add(`${s.id}:${st.id}`));
+      r.anchors.filter((a) => !open.some((st) => st.id === a)).forEach((a) => done.add(`${s.id}:${a}`));
+      if (r.steps.length || r.anchors.length) {
+        recordSteps.set(
+          rk,
+          open.map((st) => `${s.id}:${st.id}`),
+        );
+        for (const st of open) {
+          const h = hours(st.remaining);
+          nodes.set(`${s.id}:${st.id}`, {
+            key: `${s.id}:${st.id}`,
+            repo: s.id,
+            id: st.id,
+            kind: nodeKind(st.status, st.who),
+            agent: h ? h.agent : null,
+            owner: h ? h.owner : 0,
+            deps: [...parseDeps(st.depends, s.id), ...proseDeps(st.title)],
+          });
+        }
+      } else {
+        // An authored record without steps: one item. Its layout has no Depends on, so it is treated as doable
+        // unless its status or human action says otherwise; the figure is less certain for these.
+        const who = r.decision ? '🤔' : r.procedure ? '🧑‍🔧' : '🤖';
+        nodes.set(rk, {
+          key: rk,
+          repo: s.id,
+          id: r.id,
+          kind: r.status === 'Blocked' ? 'external' : nodeKind('', r.agent ?? who),
+          agent: r.hours ? r.hours.agent : null,
+          owner: r.hours ? r.hours.owner : null,
+          deps: [...parseDeps(r.depends, s.id), ...proseDeps(r.prose)],
+          authored: r.agent === null,
+        });
+      }
+    }
+  }
+  const memo = new Map();
+  const resolve = (key, stack) => {
+    if (done.has(key)) return { ok: true };
+    if (memo.has(key)) return memo.get(key);
+    if (stack.includes(key)) {
+      const ring = [...stack.slice(stack.indexOf(key)), key].map((k) => k.split(':')[1]);
+      return { ok: false, root: key, why: 'a dependency cycle', via: key, cycle: ring.join(' → ') };
+    }
+    const node = nodes.get(key);
+    let result;
+    if (!node && recordSteps.has(key)) {
+      result = { ok: true };
+      for (const k of recordSteps.get(key)) {
+        const r = resolve(k, [...stack, key]);
+        if (!r.ok) {
+          result = r;
+          break;
+        }
+      }
+    } else if (!node) result = { ok: false, root: key, why: 'an unknown prerequisite', via: key };
+    else if (node.kind !== 'agent') result = { ok: false, root: key, why: node.kind, via: key };
+    else {
+      result = { ok: true };
+      for (const dep of node.deps) {
+        const r = resolve(dep, [...stack, key]);
+        if (!r.ok) {
+          result = { ...r, via: dep };
+          break;
+        }
+      }
+    }
+    if (!stack.length || result.ok || result.why !== 'a dependency cycle') memo.set(key, result);
+    return result;
+  };
+  const perRepo = new Map(
+    sources.map((s) => [s.id, { runway: 0, unknownHours: [], authored: 0, blocks: [], ownerNext: 0 }]),
+  );
+  const ownerRoots = new Set();
+  for (const node of nodes.values()) {
+    const row = perRepo.get(node.repo);
+    const r = resolve(node.key, []);
+    if (node.kind === 'agent' && r.ok) {
+      if (node.agent === null) row.unknownHours.push(node.id);
+      else row.runway += node.agent;
+      if (node.authored) row.authored++;
+    } else if (node.kind === 'agent' && r.why === 'a dependency cycle') {
+      row.blocks.push(`dependency cycle: ${r.cycle}`);
+    } else if (node.kind === 'agent' && r.via === r.root) {
+      // The first block this agent work reaches: its own prerequisite is the root cause.
+      row.blocks.push(`${node.id} waits on ${r.why.startsWith('owner') ? `owner ${r.root}` : `${r.root} (${r.why})`}`);
+      if (r.why.startsWith('owner')) ownerRoots.add(r.root);
+    } else if (node.kind !== 'agent' && node.deps.every((d) => resolve(d, [node.key]).ok)) {
+      // A block whose own prerequisites are met: the next layer. Owner steps here are the owner's turn now.
+      row.blocks.push(
+        `${node.id}: ${node.kind}${node.kind.startsWith('owner') ? ` (${node.owner === null ? 'owner time not estimated' : `${node.owner} h owner`})` : ''}`,
+      );
+      if (node.kind.startsWith('owner')) ownerRoots.add(node.key);
+    }
+  }
+  for (const key of ownerRoots) {
+    const node = nodes.get(key);
+    if (!node) continue;
+    if (node.owner === null) perRepo.get(node.repo).ownerUnknown = true;
+    else perRepo.get(node.repo).ownerNext += node.owner;
+  }
+  for (const row of perRepo.values()) {
+    row.runway = round(row.runway);
+    row.ownerNext = round(row.ownerNext);
+    row.blocks = [...new Set(row.blocks)];
+  }
+  const total = round([...perRepo.values()].reduce((a, r) => a + r.runway, 0));
+  const state = (key) => {
+    const node = nodes.get(key);
+    if (!node) return null;
+    const r = resolve(key, []);
+    return { kind: node.kind, doable: node.kind === 'agent' && r.ok, root: r.root, why: r.why };
+  };
+  return { perRepo, total, state };
+}
+
 // Self-check for --check: parse each fixture and compare with test/fixtures/expected.json (offline).
 export function checkFixtures(read, expected) {
   const failures = [];
   const totals = [];
   for (const [name, want] of Object.entries(expected)) {
-    if (name === '__total__') continue;
+    if (name.startsWith('__')) continue;
     const problems = [];
     const markdown = read(name);
     const records = parseBacklog(markdown, 'example', problems);
@@ -374,6 +528,20 @@ export function checkFixtures(read, expected) {
     if (got.hours) got.hours = { agent: got.hours.agent, owner: got.hours.owner };
     if (JSON.stringify(got) !== JSON.stringify(want))
       failures.push(`${name}: expected ${JSON.stringify(want)}, got ${JSON.stringify(got)}`);
+  }
+  if (expected.__runway__) {
+    const want = expected.__runway__;
+    const sources = Object.entries(want.sources).map(([id, name]) => ({
+      id,
+      repository: `acme/${id}`,
+      available: true,
+      records: parseBacklog(read(name), id),
+    }));
+    const { perRepo, total } = runway(sources);
+    const got = { total, blocks: Object.fromEntries([...perRepo].map(([id, r]) => [id, r.blocks.length])) };
+    const wanted = { total: want.total, blocks: want.blocks };
+    if (JSON.stringify(got) !== JSON.stringify(wanted))
+      failures.push(`runway: expected ${JSON.stringify(wanted)}, got ${JSON.stringify(got)}`);
   }
   if (expected.__total__) {
     const { agent, owner, partial } = solutionTotal(totals);

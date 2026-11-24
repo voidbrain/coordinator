@@ -10,6 +10,8 @@ import {
   totalsLine,
   backlogHours,
   solutionTotal,
+  runway,
+  proseDeps,
 } from '../tools/solution-overview-lib.mjs';
 
 const fixture = (name) => readFileSync(new URL(`./fixtures/${name}`, import.meta.url), 'utf8');
@@ -143,4 +145,33 @@ test('remaining hours per backlog and the solution total; an unreadable total ma
     ]),
     { agent: 4, owner: 0.5, partial: true, unknown: ['c'] },
   );
+});
+
+test('runway: a cross-repository chain counts its agent steps and stops at the owner step; cycles and missing prerequisites are blocks', () => {
+  const load = (id, name) => ({
+    id,
+    repository: `acme/${id}`,
+    available: true,
+    records: parseBacklog(fixture(name), id),
+  });
+  const { perRepo, total, state } = runway([load('alpha', 'runway-alpha.md'), load('beta', 'runway-beta.md')]);
+  assert.equal(perRepo.get('alpha').runway, 2); // A
+  assert.equal(perRepo.get('beta').runway, 1); // B, after A in the other repository
+  assert.equal(total, 3);
+  assert.equal(state('beta:F-002-T01').doable, true);
+  assert.deepEqual(perRepo.get('beta').blocks, [
+    'F-002-T02: owner procedure (0.5 h owner)',
+    'F-002-T03 waits on owner beta:F-002-T02',
+    'dependency cycle: B-003-T01 → B-003-T02 → B-003-T01',
+    'B-003-T03 waits on beta:B-003-T09 (an unknown prerequisite)',
+  ]);
+  assert.equal(perRepo.get('beta').ownerNext, 0.5);
+});
+
+test('cross-repository prerequisites in prose ("depends on repo:ID") are read until the template has a field for them', () => {
+  assert.deepEqual(proseDeps('This depends on nerv:F-101-T04 and grover:F-008. It waits on beta:B-1.'), [
+    'nerv:F-101-T04',
+    'grover:F-008',
+    'beta:B-1',
+  ]);
 });

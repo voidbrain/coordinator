@@ -1,16 +1,16 @@
 <!-- generated: tools/solution-overview.mjs; edit docs/solution-order.md or the owning backlogs, not this file -->
 # voidbrain solution: overview
 
-Snapshot 2026-11-24T21:23:12.976Z, read from the sources below. Status comes from each owning backlog; this page is regenerated, never edited. The [solution order](solution-order.md) is the owner's; everything else follows each repository's own priority. No combined completion percentage.
+Snapshot 2026-11-24T21:37:44.256Z, read from the sources below. Status comes from each owning backlog; this page is regenerated, never edited. The [solution order](solution-order.md) is the owner's; everything else follows each repository's own priority. No combined completion percentage.
 
 | Source | Revision | Read from | Open records | Open steps |
 |---|---|---|---:|---:|
-| solution | [8bf8099cce8f](https://github.com/voidbrain/coordinator/commit/8bf8099cce8f2db5e7b46e90d40da7a676c05f7a) | working checkout | 7 | 0 |
+| solution | [9da4f9f048e6](https://github.com/voidbrain/coordinator/commit/9da4f9f048e68049b02d580643de8326dc6ba933) | working checkout | 7 | 0 |
 | nerv | [ccf8adf586e1](https://github.com/voidbrain/nerv/commit/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316) | GitHub | 65 | 120 |
 | gauntlet-protocol | [aadb60e840b6](https://github.com/voidbrain/gauntlet-protocol/commit/aadb60e840b6e4d34f5a5d2f02ba067d5aaf7ea2) | GitHub | 0 | 0 |
 | project-harness | [7ae24ea9ee87](https://github.com/voidbrain/project-harness/commit/7ae24ea9ee875ac1076f908ceedf786b862f8ad2) | GitHub | 0 | 0 |
 | fpvbuddy | [e8bbff61283f](https://github.com/voidbrain/FPVBuddy/commit/e8bbff61283fe523e4a5be2f269c34b0f5c21e29) | GitHub | 0 | 0 |
-| grover | [77851b12718e](https://github.com/voidbrain/Grover/commit/77851b12718ee6e90263758cfc218dea6f87e218) | GitHub | 20 | 0 |
+| grover | [af7026c84a8b](https://github.com/voidbrain/Grover/commit/af7026c84a8bf7111411c9142711615fb9ae90c2) | GitHub | 20 | 0 |
 
 ## Solution order
 
@@ -22,9 +22,9 @@ Top = next. Agents take the first item whose state is Ready (▶).
 | 2 | [nerv:B-121](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#b-121) | A re-targeted move can take over from a standby older than an epoch that ran | Implemented | P1 | 0 h | Ready | implemented P1; its verification unlocks B-124 |
 | 3 | [nerv:B-124](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#b-124) | A re-target `kaji relocate` signs fences the running main before the target's checks run | Open | P1 | 2 h | Waiting on B-121-T02, F-016-T20 | re-target fences the running main too early (P1, relocation safety) |
 | 4 | [nerv:B-125](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#b-125) | A signed Kaji reply is not bound to its request, so an old epoch-push reply can be replay… | Open | P2 | 2 h | Ready | replayable signed Kaji reply (P2, security) |
-| 5 | [grover:B-005](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#b-005) | Run on a pump queued another run on each click while it ran | Implemented | P1 | — | Ready | implemented P1; closes on CI |
-| 6 | [grover:F-011](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-011) | Feed cycle per pot: supply tanks, mixing tank, pot pumps | Implemented | P1 | — | Owner: procedure | implemented P1 feed cycle; owner try-out pending |
-| 7 | [grover:F-004](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-004) | Calibrate analog probes (volts to pH and EC) | Implemented | P1 | — | Owner: procedure | implemented P1 probe calibration |
+| 5 | [grover:B-005](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#b-005) | Run on a pump queued another run on each click while it ran | Implemented | P1 | — | Ready | implemented P1; closes on CI |
+| 6 | [grover:F-011](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-011) | Feed cycle per pot: supply tanks, mixing tank, pot pumps | Implemented | P1 | — | Owner: procedure | implemented P1 feed cycle; owner try-out pending |
+| 7 | [grover:F-004](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-004) | Calibrate analog probes (volts to pH and EC) | Implemented | P1 | — | Owner: procedure | implemented P1 probe calibration |
 | 8 | [nerv:F-016](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-016) | Relocate the logical coordinator without split brain | Open | P1 | 3.25 h agent + 1 h owner | Ready | relocate the coordinator without split brain (after B-124) |
 | 9 | [nerv:B-091](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#b-091) | Windows: a fenced stop ends uncertain after a SQLite "disk I/O error" while recording it | Open | P2 | 2 h | Ready | prerequisite of nerv:F-005-T29 |
 | 10 | [nerv:F-005](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-005) | Discover, install and operate enrolled remote workers | Open | P1 | 3.5 h | Ready | remote workers (after B-091) |
@@ -32,10 +32,10 @@ Top = next. Agents take the first item whose state is Ready (▶).
 | 12 | [nerv:F-006](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-006) | Orchestrate agents and models across nodes | Open | P1 | 1 h agent + 0.25 h owner | Waiting on B-119-T01 | orchestration across nodes (after B-119) |
 | 13 | [nerv:F-021](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-021) | MCP and standardized tool/expert protocol | Open | P1 | 0.25 h | Ready | MCP protocol, 0.25 h left |
 | 14 | [nerv:B-082](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#b-082) | Windows: a service installed from an SSH session cannot register its logon task | Open | P1 | 0.25 h | Ready | Windows logon task from SSH, 0.25 h left |
-| 15 | [grover:F-003](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-003) | Hardware bring-up on the Raspberry Pi | Open | P1 | — | Owner: procedure | hardware bring-up on the Pi (P1, needs the device) |
-| 16 | [grover:F-008](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-008) | Alerts for NERV: out-of-range values, offline agent, faults | Open | P2 | — | Ready | alerts NERV can deliver (cross-repository) |
+| 15 | [grover:F-003](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-003) | Hardware bring-up on the Raspberry Pi | Open | P1 | — | Owner: procedure | hardware bring-up on the Pi (P1, needs the device) |
+| 16 | [grover:F-008](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-008) | Alerts for NERV: out-of-range values, offline agent, faults | Open | P2 | — | Ready | alerts NERV can deliver (cross-repository) |
 | 17 | [nerv:F-120](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-120) | Gauntlet coverage of NERV capabilities | Open | P2 | 5 h | Ready | Gauntlet coverage of NERV capabilities (cross-repository) |
-| 18 | [grover:F-005](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-005) | Deploy hub and agent on the Pi behind Tailscale | Open | P2 | — | Owner: procedure | deploy hub and agent on the Pi |
+| 18 | [grover:F-005](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-005) | Deploy hub and agent on the Pi behind Tailscale | Open | P2 | — | Owner: procedure | deploy hub and agent on the Pi |
 
 ## Waiting for the owner
 
@@ -46,7 +46,6 @@ Records and steps whose next move is an owner procedure (🧑‍🔧) or decisio
 | [solution:F-002](BACKLOG.md#f-002) | Owner sets the first solution order | Decision | P1 | — | Read the proposed order in docs/solution-order.md and its live states in the overview; reply with the order you want (for example "move gro… |
 | [solution:F-003](BACKLOG.md#f-003) | Owner accepts or rejects the first gap-review proposals | Decision | P1 | — | Read the gap review and reply with the row numbers to create; each becomes a record or step in its own repository, created in a session of … |
 | [solution:F-004](BACKLOG.md#f-004) | Propose the solution order, the gap review and on-demand backlog views to the t… | Procedure | P2 | — | Take docs/proposals/solution-order-in-template.md to a project-harness session; when a release ships it, this repository reconciles and dro… |
-| [solution:F-005](BACKLOG.md#f-005) | Decide how often the views are refreshed | Decision | P2 | — | Choose one: (a) on demand only, `npm run solution:refresh` in a session; (b) a daily scheduled workflow that regenerates the views and open… |
 | [nerv:F-062](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-062) | Backup and restore: agreed loss bounds, off-host snapshots and a restore drill | Procedure | P1 | 0.25 h | F-062-T07: Owner runs the restore drill on NERV-01 from a real off-host copy |
 | [nerv:F-011](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-011) | Native macOS menu-bar companion without Electron | Procedure | P1 | 0.75 h | F-011-T02: Live menu, service-button and login acceptance on the Mac |
 | [nerv:F-004](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-004) | Angular PWA and validated GenUI | Procedure | P1 | 0.5 h | F-004-T06: Phone install and push acceptance |
@@ -68,16 +67,17 @@ Records and steps whose next move is an owner procedure (🧑‍🔧) or decisio
 | [nerv:B-096](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#b-096) | Sephirot flow: a sortie that stops at Misato's apartment has no route to Debrief | Procedure | P3 | 0 h | Look at the live dashboard: NERV-01 runs `477d6afc` since 2026-11-19, which has this fix. |
 | [nerv:B-110](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#b-110) | Dashboard offers Update now when already up to date, away from the update status | Procedure | P3 | 0 h | When the next update is available, open the dashboard: Health shows Update now beside "Update availability"; Settings has no update button;… |
 | [nerv:B-112](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#b-112) | Sephirot flow lights routes the sortie did not take and hides the map when no s… | Procedure | P3 | 0 h | After the update, open a few sorties (S-6AD9, one answered without an action, one that asked you something) and deselect: check the routes … |
-| [grover:F-013](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-013) | Plant cycle: nursery, cuttings, harvest, a plant per pot, phase per plant | Procedure | P2 | — | Try the cycle on the dev stack: run it, then on pot 3 Take cuttings, Harvest, and Place in pot. |
-| [grover:F-011](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-011) | Feed cycle per pot: supply tanks, mixing tank, pot pumps | Procedure | P1 | — | Try a feed on the simulated rig and say whether it behaves as your rig should: run it, then use Preview feed and Feed now on a pot. |
-| [grover:F-012](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-012) | Plants and strains: origin, generation, breeder, ancestry | Procedure | P2 | — | Import your old records and check your plants: import step (step 5), then Setup → Plants and strains. |
-| [grover:F-018](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-018) | Pumps through an L298N driver (two pins on the MCP23017) | Procedure | P2 | — | Confirm the pump wiring (L298N inputs on which MCP23017 pins) and run the device check with the owner's go-ahead. |
-| [grover:F-003](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-003) | Hardware bring-up on the Raspberry Pi | Procedure | P1 | — | Run the hardware bring-up on the Pi and report the results. |
-| [grover:F-014](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-014) | Plant page with statistics, as in the old app | Procedure | P2 | — | Try it on the dev stack: run it, then open NL5xHaze gen 2 from pot 3 (start from a fresh `data/dev` so the demo plant has its placing date). |
-| [grover:F-004](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-004) | Calibrate analog probes (volts to pH and EC) | Procedure | P1 | — | Calibrate the real pH and EC probes on the Pi: hardware bring-up, step 3b. |
-| [grover:F-005](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-005) | Deploy hub and agent on the Pi behind Tailscale | Procedure | P2 | — | Follow Deploying on a Raspberry Pi and report what differed. |
-| [grover:F-006](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-006) | Set-up screens in the client | Procedure | P2 | — | Try the Setup pages on the dev stack and report what feels wrong: run it, then open http://127.0.0.1:8080/setup. |
-| [grover:F-007](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-007) | Lights follow the grow calendar; Switch to bloom | Procedure | P2 | — | Try it on the dev stack: run it, then Switch to bloom on pot 3 and watch the light line change to 12 h. |
+| [grover:F-013](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-013) | Plant cycle: nursery, cuttings, harvest, a plant per pot, phase per plant | Procedure | P2 | — | Try the cycle on the dev stack: run it, then on pot 3 Take cuttings, Harvest, and Place in pot. |
+| [grover:F-011](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-011) | Feed cycle per pot: supply tanks, mixing tank, pot pumps | Procedure | P1 | — | Try a feed on the simulated rig and say whether it behaves as your rig should: run it, then use Preview feed and Feed now on a pot. |
+| [grover:F-012](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-012) | Plants and strains: origin, generation, breeder, ancestry | Procedure | P2 | — | Import your old records and check your plants: import step (step 5), then Setup → Plants and strains. |
+| [grover:F-015](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-015) | Rig map: the tent as a live diagram, with its controls | Procedure | P2 | — | Look at the map on the dev stack (run it, then Map next to the tent's name), on a phone and a laptop, light and dark. |
+| [grover:F-018](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-018) | Pumps through an L298N driver (two pins on the MCP23017) | Procedure | P2 | — | Confirm the pump wiring (L298N inputs on which MCP23017 pins) and run the device check with the owner's go-ahead. |
+| [grover:F-003](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-003) | Hardware bring-up on the Raspberry Pi | Procedure | P1 | — | Run the hardware bring-up on the Pi and report the results. |
+| [grover:F-014](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-014) | Plant page with statistics, as in the old app | Procedure | P2 | — | Try it on the dev stack: run it, then open NL5xHaze gen 2 from pot 3 (start from a fresh `data/dev` so the demo plant has its placing date). |
+| [grover:F-004](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-004) | Calibrate analog probes (volts to pH and EC) | Procedure | P1 | — | Calibrate the real pH and EC probes on the Pi: hardware bring-up, step 3b. |
+| [grover:F-005](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-005) | Deploy hub and agent on the Pi behind Tailscale | Procedure | P2 | — | Follow Deploying on a Raspberry Pi and report what differed. |
+| [grover:F-006](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-006) | Set-up screens in the client | Procedure | P2 | — | Try the Setup pages on the dev stack and report what feels wrong: run it, then open http://127.0.0.1:8080/setup. |
+| [grover:F-007](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-007) | Lights follow the grow calendar; Switch to bloom | Procedure | P2 | — | Try it on the dev stack: run it, then Switch to bloom on pot 3 and watch the light line change to 12 h. |
 
 ## Blocked or waiting on a prerequisite
 
@@ -92,9 +92,37 @@ Records and steps whose next move is an owner procedure (🧑‍🔧) or decisio
 | [nerv:F-060](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-060) | Spike: herdr-core as a coding-agent terminal runtime | Investigate | P3 | — |
 | [nerv:F-007](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-007) | Voice and evaluated skill improvement | Open | P3 | — |
 
+## Remaining hours
+
+Remaining agent and owner (human) hours as each backlog states them, summed across all backlogs. Each project estimates on its own; the estimates are not cross-calibrated, so the total is a sum of estimates, not a forecast. A backlog whose hours cannot be read shows Unknown and makes the total partial (at least).
+
+| Backlog | Agent h | Owner h | Read from |
+|---|---:|---:|---|
+| solution | Unknown | Unknown | no hours in its total line or records |
+| nerv | 87 | 11.25 | the backlog's total line |
+| gauntlet-protocol | 0 | 0 | the backlog's total line |
+| project-harness | 0 | 0 | the backlog's total line |
+| fpvbuddy | 0 | 0 | no open records |
+| grover | Unknown | Unknown | no hours in its total line or records |
+| **Solution total** | **at least 87** | **at least 11.25** | partial: solution, grover unknown |
+
+## Agent runway
+
+Agent runway before the next owner block: **82.5 h** plus doable items without hours; then blocked on the items below. A step counts when it is agent work, not done, and every prerequisite is done or itself doable, across repositories (`repo:ID` in Depends on, or "depends on repo:ID" in the text). A block is an owner step, a step waiting on one, an unknown prerequisite, a cycle or a Blocked status. 13 item(s) come from authored backlogs without Depends on and count as doable unless their status or human action says otherwise: less certain.
+
+| Backlog | Runway (agent h) | Doable, no hours | First blocks reached | Owner h to unblock the next layer |
+|---|---:|---|---|---:|
+| solution | 0 | F-001, F-008, F-006, F-007 | F-002: owner decision (0 h owner); F-003: owner decision (0 h owner); F-004: owner procedure (0 h owner) | 0 |
+| nerv | 82.5 | — | F-006-T28: owner procedure (0.25 h owner); F-006-T29 waits on owner nerv:F-006-T28; F-016-T09: owner procedure (1 h owner); F-016-T11 waits on owner nerv:F-016-T09; F-062-T07: owner procedure (0.25 h owner); F-011-T02: owner procedure (0.5 h owner); and 28 more | 10.75 |
+| gauntlet-protocol | 0 | — | — | 0 |
+| project-harness | 0 | — | — | 0 |
+| fpvbuddy | 0 | — | — | 0 |
+| grover | 0 | B-004, B-005, F-016, F-017, F-019, F-008, F-009, B-002, F-010 | F-013: owner procedure (0 h owner); F-011: owner procedure (0 h owner); F-012: owner procedure (0 h owner); F-015: owner procedure (0 h owner); F-018: owner procedure (0 h owner); F-003: owner procedure (0 h owner); and 5 more | 0 |
+| **Solution** | **82.5** | | | **10.75** |
+
 ## Effort
 
-Remaining hours as each backlog states them; a backlog that estimates in sizes only shows its sizes. Hours are not summed across repositories that estimate differently.
+Open records by priority, the hours as each backlog states them, sizes, and the backlog's own total line.
 
 | Source | P1 | P2 | P3 | Other | Remaining (agent / owner) | Sizes | The backlog's own total |
 |---|---:|---:|---:|---:|---|---|---|
@@ -103,7 +131,7 @@ Remaining hours as each backlog states them; a backlog that estimates in sizes o
 | gauntlet-protocol | 0 | 0 | 0 | 0 | — | — | Remaining effort: no open steps. Generated from the task files. |
 | project-harness | 0 | 0 | 0 | 0 | — | — | Remaining effort: no open steps. Generated from the task files. |
 | fpvbuddy | 0 | 0 | 0 | 0 | — | — | — |
-| grover | 4 | 11 | 5 | 0 | — | 15 🟢 Small, 5 🟡 Medium | — |
+| grover | 4 | 11 | 5 | 0 | — | 16 🟢 Small, 4 🟡 Medium | — |
 
 ## Open work by repository
 
@@ -113,11 +141,11 @@ In each backlog's own order (most urgent first). State: Ready = an agent can sta
 
 | Item | Title | Status | Priority | Effort | Remaining | State | Next |
 |---|---|---|---|---|---|---|---|
-| [solution:F-001](BACKLOG.md#f-001) | Coordinator repository with harness v10.9.0, the solution profile, the solution order and… | Implemented | P1 | 🟢 Small | — | Ready | Let the first PR's CI run; it closes on green. |
+| [solution:F-001](BACKLOG.md#f-001) | Coordinator repository with harness v10.9.0, the solution profile, the solution order and… | Implemented | P1 | 🟢 Small | — | Ready | Let PR #1's CI run; it closes on green. |
 | [solution:F-002](BACKLOG.md#f-002) | Owner sets the first solution order | Open | P1 | 🟢 Small | — | Owner: decision | Read the proposed order in docs/solution-order.md and its live states in the overview; reply with the order you want (f… |
 | [solution:F-003](BACKLOG.md#f-003) | Owner accepts or rejects the first gap-review proposals | Open | P1 | 🟢 Small | — | Owner: decision | Read the gap review and reply with the row numbers to create; each becomes a record or step in its own repository, crea… |
 | [solution:F-004](BACKLOG.md#f-004) | Propose the solution order, the gap review and on-demand backlog views to the template | Open | P2 | 🟢 Small | — | Owner: procedure | Take docs/proposals/solution-order-in-template.md to a project-harness session; when a release ships it, this repositor… |
-| [solution:F-005](BACKLOG.md#f-005) | Decide how often the views are refreshed | Open | P2 | 🟢 Small | — | Owner: decision | Choose one: (a) on demand only, `npm run solution:refresh` in a session; (b) a daily scheduled workflow that regenerate… |
+| [solution:F-008](BACKLOG.md#f-008) | Daily refresh of the solution views as a PR | Implemented | P2 | 🟢 Small | — | Ready | After PR #1 merges, start the Refresh solution views workflow once by hand (`gh workflow run refresh-views.yml --repo v… |
 | [solution:F-006](BACKLOG.md#f-006) | NERV delivers Grover alerts end to end | Open | P2 | 🟡 Medium | — | Ready | Once grover:F-008 lands its alerts tool, record the contract (`grover_alerts`) in docs/SOLUTION.md and the end-to-end c… |
 | [solution:F-007](BACKLOG.md#f-007) | NERV capability coverage in the Gauntlet across both repositories | Open | P2 | 🟢 Small | — | Ready | Record in docs/SOLUTION.md which Gauntlet release NERV needs for nerv:F-120 and the check that shows its cases run. |
 
@@ -205,8 +233,8 @@ In each backlog's own order (most urgent first). State: Ready = an agent can sta
 | [nerv:F-006-T29](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-006-t29) | Rerun the P3 role cases with role-sized probes and update the report | Planned | 1 h | Waiting on F-006-T28 |
 | [nerv:F-021-T05](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-021-t05) | Dashboard tool listing | Implemented; verification pending | 0.25 h | Ready |
 | [nerv:B-121-T01](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#b-121-t01) | Refuse a move from a standby that acked a later epoch than its state | Implemented; verification pending | 0 h | Ready |
-| [nerv:B-121-T02](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#b-121-t02) | Epoch-push replies report the newest epoch a base ran or acked | Implemented; verification pending | 0 h | Ready |
-| [nerv:B-124-T01](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#b-124-t01) | kaji relocate pushes a re-target only after the target's prechecks pass | Planned | 2 h | Ready |
+| [nerv:B-121-T02](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#b-121-t02) | Epoch-push replies report the newest epoch a base ran or acked | Implemented; verification pending | 0 h | Waiting on B-121-T01 |
+| [nerv:B-124-T01](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#b-124-t01) | kaji relocate pushes a re-target only after the target's prechecks pass | Planned | 2 h | Waiting on B-121-T02, F-016-T20 |
 | [nerv:F-016-T07](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-016-t07) | Step 4a — Relocation building blocks: readiness, drain receipt, promotion with quarantine; never a … | Implemented; verification pending | 0 h | Ready |
 | [nerv:F-016-T16](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-016-t16) | Coordinator lease renewal and self-fencing on the active main | Implemented; verification pending | 0 h | Ready |
 | [nerv:F-016-T17](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-016-t17) | &#96;nerv kaji promote&#96;: stop the service, verify and swap | Implemented; verification pending | 0 h | Ready |
@@ -219,7 +247,7 @@ In each backlog's own order (most urgent first). State: Ready = an agent can sta
 | [nerv:B-082-T01](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#b-082-t01) | Windows: a service installed from an SSH session cannot register its logon task | Implemented; verification pending | 0.25 h | Ready |
 | [nerv:B-118-T01](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#b-118-t01) | Make the Windows test step fit its limit with margin | Implemented; verification pending | 0.5 h | Ready |
 | [nerv:B-118-T02](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#b-118-t02) | Worker-link test files always exit; find why they time out on Windows | Implemented; verification pending | 0.5 h | Ready |
-| [nerv:B-118-T03](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#b-118-t03) | Other Runtime test files always exit; failing tests named in a stopped run | Implemented; verification pending | 2 h | Ready |
+| [nerv:B-118-T03](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#b-118-t03) | Other Runtime test files always exit; failing tests named in a stopped run | Implemented; verification pending | 2 h | Waiting on B-118-T02 |
 | [nerv:F-062-T07](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-062-t07) | Owner runs the restore drill on NERV-01 from a real off-host copy | Ready | 0 h agent + 0.25 h owner | Owner: procedure |
 | [nerv:F-011-T02](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-011-t02) | Live menu, service-button and login acceptance on the Mac | Planned | 0 h agent + 0.5 h owner | Owner: procedure |
 | [nerv:F-011-T05](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-011-t05) | Record the evidence of F-011-T02 and close it | Planned | 0.25 h | Waiting on F-011-T02 |
@@ -237,16 +265,16 @@ In each backlog's own order (most urgent first). State: Ready = an agent can sta
 | [nerv:F-083-T09](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-083-t09) | Owner check: a recipe cooked hands-free | Planned | 0 h agent + 0.25 h owner | Waiting on F-083-T07 |
 | [nerv:F-120-T01](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-120-t01) | Catch-up Gauntlet coverage review of closed features | Planned | 1.5 h | Ready |
 | [nerv:F-120-T03](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-120-t03) | Adopt the Gauntlet domain packs when released | Planned | 0.5 h | Ready |
-| [nerv:F-120-T02](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-120-t02) | First system-pack cases for recent features | Planned | 3 h | Ready |
+| [nerv:F-120-T02](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-120-t02) | First system-pack cases for recent features | Planned | 3 h | Waiting on F-120-T01 |
 | [nerv:F-088-T03](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-088-t03) | Report and conflicts | Implemented; verification pending | 0.5 h | Ready |
 | [nerv:F-088-T04](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-088-t04) | Owner check on the storage base | Planned | 0 h agent + 0.5 h owner | Waiting on F-088-T03 |
 | [nerv:B-108-T01](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#b-108-t01) | Update now runs from a detached helper outside the service | Implemented; verification pending | 0.25 h | Ready |
-| [nerv:B-108-T02](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#b-108-t02) | The restarted service reports the updater result in the inbox and on the dashboard | Implemented; verification pending | 0.25 h | Ready |
+| [nerv:B-108-T02](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#b-108-t02) | The restarted service reports the updater result in the inbox and on the dashboard | Implemented; verification pending | 0.25 h | Waiting on B-108-T01 |
 | [nerv:F-102-T03](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-102-t03) | Apply at the announced time and report | Implemented; verification pending | 0.75 h | Ready |
 | [nerv:F-102-T04](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-102-t04) | Live check: one automatic update | Planned | 0.25 h | Waiting on F-102-T03, B-108-T01, B-108-T02 |
 | [nerv:B-111-T01](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#b-111-t01) | Record health samples in serve, where the server is given a Runtime | Implemented; verification pending | 0.25 h | Ready |
 | [nerv:F-103-T02](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-103-t02) | Per-link load between bases | Implemented; verification pending | 1.5 h | Ready |
-| [nerv:F-103-T04](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-103-t04) | 24-hour baseline with both bases | Planned | 0.25 h | Ready |
+| [nerv:F-103-T04](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-103-t04) | 24-hour baseline with both bases | Planned | 0.25 h | Waiting on B-111-T01 |
 | [nerv:F-117-T03](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-117-t03) | nerv update repairs a stale build or an unloaded service | Planned | 1 h | Ready |
 | [nerv:F-117-T04](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-117-t04) | Docs and help for nerv update | Planned | 0.5 h | Ready |
 | [nerv:F-117-T05](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-117-t05) | Owner runs nerv update on NERV-01 | Planned | 0.25 h owner | Waiting on F-117-T03 |
@@ -295,9 +323,9 @@ In each backlog's own order (most urgent first). State: Ready = an agent can sta
 | [nerv:F-098-T04](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-098-t04) | Live check with a real crash | Planned | 0.25 h | Ready |
 | [nerv:F-099-T04](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-099-t04) | Read a diyfpv.com build through the browser adapter | Implemented; verification pending | 0 h | Ready |
 | [nerv:F-121-T01](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-121-t01) | Printed parts on drone models | Implemented; verification pending | 0 h | Ready |
-| [nerv:F-121-T02](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-121-t02) | Print a part by chat | Implemented; verification pending | 0 h | Ready |
-| [nerv:F-121-T04](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-121-t04) | Send the part file with the print job | Implemented; verification pending | 0 h | Ready |
-| [nerv:F-121-T03](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-121-t03) | Owner: enter the parts and print one | Planned | 0 h agent + 0.5 h owner | Ready |
+| [nerv:F-121-T02](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-121-t02) | Print a part by chat | Implemented; verification pending | 0 h | Waiting on F-121-T01 |
+| [nerv:F-121-T04](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-121-t04) | Send the part file with the print job | Implemented; verification pending | 0 h | Waiting on F-121-T02 |
+| [nerv:F-121-T03](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-121-t03) | Owner: enter the parts and print one | Planned | 0 h agent + 0.5 h owner | Waiting on F-121-T02, F-121-T04 |
 | [nerv:F-101-T04](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-101-t04) | Create/wire the FPVBuddy core repository and move the core into it | Planned | 2 h | Waiting on F-098-T04 |
 | [nerv:F-101-T05](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-101-t05) | NERV FPV pack uses the FPV core package | Planned | 1.5 h | Waiting on F-101-T04 |
 | [nerv:F-101-T06](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-101-t06) | Dashboard uses the FPV core's web components | Planned | 1.5 h | Waiting on F-101-T05 |
@@ -334,26 +362,26 @@ No open records.
 
 | Item | Title | Status | Priority | Effort | Remaining | State | Next |
 |---|---|---|---|---|---|---|---|
-| [grover:F-013](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-013) | Plant cycle: nursery, cuttings, harvest, a plant per pot, phase per plant | Implemented | P2 | 🟢 Small | — | Owner: procedure | Try the cycle on the dev stack: run it, then on pot 3 Take cuttings, Harvest, and Place in pot. |
-| [grover:B-004](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#b-004) | A probe read was stored only when the agent's reading event arrived | Implemented | P2 | 🟢 Small | — | Ready | Let #18's CI run; it closes on green. |
-| [grover:B-005](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#b-005) | Run on a pump queued another run on each click while it ran | Implemented | P1 | 🟢 Small | — | Ready | Let the PR's CI run; it closes on green. |
-| [grover:F-011](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-011) | Feed cycle per pot: supply tanks, mixing tank, pot pumps | Implemented | P1 | 🟢 Small | — | Owner: procedure | Try a feed on the simulated rig and say whether it behaves as your rig should: run it, then use Preview feed and Feed n… |
-| [grover:F-012](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-012) | Plants and strains: origin, generation, breeder, ancestry | Implemented | P2 | 🟢 Small | — | Owner: procedure | Import your old records and check your plants: import step (step 5), then Setup → Plants and strains. |
-| [grover:F-015](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-015) | Rig map: the tent as a live diagram, with its controls | Open | P2 | 🟡 Medium | — | Ready | Build the map page after F-004 and F-014. |
-| [grover:F-016](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-016) | Schedules by day of week, weekends apart | Open | P2 | 🟡 Medium | — | Ready | Build after F-014. |
-| [grover:F-017](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-017) | Nutrient colours: each supply tank in its nutrient's real colour | Open | P3 | 🟢 Small | — | Ready | Build after F-014; the colours feed F-014's doses and F-015's map. |
-| [grover:F-018](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-018) | Pumps through an L298N driver (two pins on the MCP23017) | Open | P2 | 🟢 Small | — | Owner: procedure | Confirm the pump wiring (L298N inputs on which MCP23017 pins) and run the device check with the owner's go-ahead. |
-| [grover:F-019](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-019) | Install Grover as a web app on the phone | Open | P3 | 🟢 Small | — | Ready | Add the manifest, icons and a service worker; notifications stay with NERV (F-008). |
-| [grover:F-003](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-003) | Hardware bring-up on the Raspberry Pi | Open | P1 | 🟡 Medium | — | Owner: procedure | Run the hardware bring-up on the Pi and report the results. |
-| [grover:F-014](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-014) | Plant page with statistics, as in the old app | Implemented | P2 | 🟢 Small | — | Owner: procedure | Try it on the dev stack: run it, then open NL5xHaze gen 2 from pot 3 (start from a fresh `data/dev` so the demo plant h… |
-| [grover:F-004](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-004) | Calibrate analog probes (volts to pH and EC) | Implemented | P1 | 🟢 Small | — | Owner: procedure | Calibrate the real pH and EC probes on the Pi: hardware bring-up, step 3b. |
-| [grover:F-005](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-005) | Deploy hub and agent on the Pi behind Tailscale | Open | P2 | 🟢 Small | — | Owner: procedure | Follow Deploying on a Raspberry Pi and report what differed. |
-| [grover:F-006](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-006) | Set-up screens in the client | Implemented | P2 | 🟢 Small | — | Owner: procedure | Try the Setup pages on the dev stack and report what feels wrong: run it, then open http://127.0.0.1:8080/setup. |
-| [grover:F-007](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-007) | Lights follow the grow calendar; Switch to bloom | Implemented | P2 | 🟢 Small | — | Owner: procedure | Try it on the dev stack: run it, then Switch to bloom on pot 3 and watch the light line change to 12 h. |
-| [grover:F-008](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-008) | Alerts for NERV: out-of-range values, offline agent, faults | Open | P2 | 🟡 Medium | — | Ready | Deliver Grover alerts through NERV (NERV's pack, its own backlog); add hysteresis if readings flap at a threshold. |
-| [grover:F-009](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-009) | Browser tests and accessibility checks for the client | Open | P3 | 🟡 Medium | — | Ready | Add Playwright with an axe check against the dev stack, and client coverage. |
-| [grover:B-002](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#b-002) | `check:conventions` does not see the client in this monorepo | Open | P3 | 🟢 Small | — | Ready | Report to the harness template and adopt the fix once released. |
-| [grover:F-010](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-010) | Hub data retention and backups | Open | P3 | 🟢 Small | — | Ready | Add retention for raw readings and a backup command for the hub database. |
+| [grover:F-013](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-013) | Plant cycle: nursery, cuttings, harvest, a plant per pot, phase per plant | Implemented | P2 | 🟢 Small | — | Owner: procedure | Try the cycle on the dev stack: run it, then on pot 3 Take cuttings, Harvest, and Place in pot. |
+| [grover:B-004](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#b-004) | A probe read was stored only when the agent's reading event arrived | Implemented | P2 | 🟢 Small | — | Ready | Let #18's CI run; it closes on green. |
+| [grover:B-005](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#b-005) | Run on a pump queued another run on each click while it ran | Implemented | P1 | 🟢 Small | — | Ready | Let the PR's CI run; it closes on green. |
+| [grover:F-011](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-011) | Feed cycle per pot: supply tanks, mixing tank, pot pumps | Implemented | P1 | 🟢 Small | — | Owner: procedure | Try a feed on the simulated rig and say whether it behaves as your rig should: run it, then use Preview feed and Feed n… |
+| [grover:F-012](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-012) | Plants and strains: origin, generation, breeder, ancestry | Implemented | P2 | 🟢 Small | — | Owner: procedure | Import your old records and check your plants: import step (step 5), then Setup → Plants and strains. |
+| [grover:F-015](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-015) | Rig map: the tent as a live diagram, with its controls | Implemented | P2 | 🟢 Small | — | Owner: procedure | Look at the map on the dev stack (run it, then Map next to the tent's name), on a phone and a laptop, light and dark. |
+| [grover:F-016](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-016) | Schedules by day of week, weekends apart | Open | P2 | 🟡 Medium | — | Ready | Build after F-014. |
+| [grover:F-017](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-017) | Nutrient colours: each supply tank in its nutrient's real colour | Open | P3 | 🟢 Small | — | Ready | Build after F-014; the colours feed F-014's doses and F-015's map. |
+| [grover:F-018](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-018) | Pumps through an L298N driver (two pins on the MCP23017) | Open | P2 | 🟢 Small | — | Owner: procedure | Confirm the pump wiring (L298N inputs on which MCP23017 pins) and run the device check with the owner's go-ahead. |
+| [grover:F-019](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-019) | Install Grover as a web app on the phone | Open | P3 | 🟢 Small | — | Ready | Add the manifest, icons and a service worker; notifications stay with NERV (F-008). |
+| [grover:F-003](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-003) | Hardware bring-up on the Raspberry Pi | Open | P1 | 🟡 Medium | — | Owner: procedure | Run the hardware bring-up on the Pi and report the results. |
+| [grover:F-014](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-014) | Plant page with statistics, as in the old app | Implemented | P2 | 🟢 Small | — | Owner: procedure | Try it on the dev stack: run it, then open NL5xHaze gen 2 from pot 3 (start from a fresh `data/dev` so the demo plant h… |
+| [grover:F-004](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-004) | Calibrate analog probes (volts to pH and EC) | Implemented | P1 | 🟢 Small | — | Owner: procedure | Calibrate the real pH and EC probes on the Pi: hardware bring-up, step 3b. |
+| [grover:F-005](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-005) | Deploy hub and agent on the Pi behind Tailscale | Open | P2 | 🟢 Small | — | Owner: procedure | Follow Deploying on a Raspberry Pi and report what differed. |
+| [grover:F-006](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-006) | Set-up screens in the client | Implemented | P2 | 🟢 Small | — | Owner: procedure | Try the Setup pages on the dev stack and report what feels wrong: run it, then open http://127.0.0.1:8080/setup. |
+| [grover:F-007](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-007) | Lights follow the grow calendar; Switch to bloom | Implemented | P2 | 🟢 Small | — | Owner: procedure | Try it on the dev stack: run it, then Switch to bloom on pot 3 and watch the light line change to 12 h. |
+| [grover:F-008](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-008) | Alerts for NERV: out-of-range values, offline agent, faults | Open | P2 | 🟡 Medium | — | Ready | Deliver Grover alerts through NERV (NERV's pack, its own backlog); add hysteresis if readings flap at a threshold. |
+| [grover:F-009](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-009) | Browser tests and accessibility checks for the client | Open | P3 | 🟡 Medium | — | Ready | Add Playwright with an axe check against the dev stack, and client coverage. |
+| [grover:B-002](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#b-002) | `check:conventions` does not see the client in this monorepo | Open | P3 | 🟢 Small | — | Ready | Report to the harness template and adopt the fix once released. |
+| [grover:F-010](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-010) | Hub data retention and backups | Open | P3 | 🟢 Small | — | Ready | Add retention for raw readings and a backup command for the hub database. |
 
 ## Gap review (proposals)
 
@@ -363,8 +391,8 @@ Possible missing steps, found by reading every backlog. Each row proposes a reco
 |---:|---|---|---|---|
 | 1 | 1 Cross-repository, no counterpart | [nerv:F-120](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-120) | "General domain packs (coding, embedded, logic, Italian quality, 3D printing, image generation) were requested from gauntlet-protocol the same day and…" — gauntlet-protocol has no open record that names nerv (coordinated by solution:F-007) | gauntlet-protocol: a record for what nerv:F-120 needs from it, or nerv: drop the dependency |
 | 2 | 1 Cross-repository, no counterpart | [nerv:F-101](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-101) | "F-101-T04 — Create/wire the FPVBuddy core repository and move the core into it (Planned)." — fpvbuddy has no open record that names nerv | fpvbuddy: a record for what nerv:F-101 needs from it, or nerv: drop the dependency |
-| 3 | 1 Cross-repository, no counterpart | [grover:F-008](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-008) | "The hub raises and clears alerts with hysteresis, lists them in the client and through an MCP tool, and NERV can deliver them (its own pack, recorded…" — nerv has no open record that names grover (coordinated by solution:F-006) | nerv: a record for what grover:F-008 needs from it, or grover: drop the dependency |
-| 4 | 3 Owner check without a page | [grover:F-018](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-018) | F-018 waits on the owner, but its next action links no page and gives no command: "Confirm the pump wiring (L298N inputs on which MCP23017 pins) and run the device check with the own…" | grover: add the exact commands or text to paste, and the expected result, to F-018 |
+| 3 | 1 Cross-repository, no counterpart | [grover:F-008](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-008) | "The hub raises and clears alerts with hysteresis, lists them in the client and through an MCP tool, and NERV can deliver them (its own pack, recorded…" — nerv has no open record that names grover (coordinated by solution:F-006) | nerv: a record for what grover:F-008 needs from it, or grover: drop the dependency |
+| 4 | 3 Owner check without a page | [grover:F-018](https://github.com/voidbrain/Grover/blob/af7026c84a8bf7111411c9142711615fb9ae90c2/docs/BACKLOG.md#f-018) | F-018 waits on the owner, but its next action links no page and gives no command: "Confirm the pump wiring (L298N inputs on which MCP23017 pins) and run the device check with the own…" | grover: add the exact commands or text to paste, and the expected result, to F-018 |
 | 5 | 4 No next step | [nerv:F-115](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-115) | F-115 is Open with no open step: "Next: all steps closed; verify and close the record." | nerv: add the next step to F-115, or verify and close it |
 
 ## Source and order problems

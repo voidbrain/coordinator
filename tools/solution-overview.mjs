@@ -17,6 +17,7 @@ import {
   totalsLine,
   backlogHours,
   solutionTotal,
+  runway,
   cell,
   short,
   OPEN,
@@ -113,6 +114,7 @@ async function build() {
       sources.push({ ...repo, records: [], available: false });
     }
   }
+  const rw = runway(sources);
   const index = new Map();
   for (const s of sources)
     for (const r of s.records) {
@@ -159,7 +161,12 @@ async function build() {
       return;
     }
     const it = hit.item;
-    const state = hit.kind === 'step' ? stepState(it) : recordState(it);
+    let state = hit.kind === 'step' ? stepState(it) : recordState(it);
+    // Cross-repository prerequisites (repo:ID) are resolved by the runway; a step that looks Ready inside its own
+    // backlog can still wait on another repository.
+    const node = rw.state(o.ref);
+    if (state === 'Ready' && node && !node.doable)
+      state = node.why.startsWith('owner') ? `Waiting on owner ${node.root}` : `Waiting on ${node.root} (${node.why})`;
     const mark = !nextMarked && state === 'Ready' ? '▶ ' : '';
     if (mark) nextMarked = true;
     const prio = hit.kind === 'step' ? hit.parent.priority : it.priority;
@@ -237,6 +244,30 @@ async function build() {
   const atLeast = total.partial ? 'at least ' : '';
   out.push(
     `| **Solution total** | **${atLeast}${total.agent}** | **${atLeast}${total.owner}** | ${total.partial ? `partial: ${total.unknown.join(', ')} unknown` : 'every backlog'} |`,
+  );
+  // Agent runway (owner request 2026-11-24): agent hours doable before work reaches a block.
+  const runwayRepos = sources.filter((x) => x.available);
+  const authoredCount = [...rw.perRepo.values()].reduce((a, r) => a + r.authored, 0);
+  out.push(
+    '',
+    '## Agent runway',
+    '',
+    `Agent runway before the next owner block: **${rw.total} h**${runwayRepos.some((x) => rw.perRepo.get(x.id).unknownHours.length) ? ' plus doable items without hours' : ''}; then blocked on the items below. A step counts when it is agent work, not done, and every prerequisite is done or itself doable, across repositories (\`repo:ID\` in Depends on, or "depends on repo:ID" in the text). A block is an owner step, a step waiting on one, an unknown prerequisite, a cycle or a Blocked status.${authoredCount ? ` ${authoredCount} item(s) come from authored backlogs without Depends on and count as doable unless their status or human action says otherwise: less certain.` : ''}`,
+    '',
+    '| Backlog | Runway (agent h) | Doable, no hours | First blocks reached | Owner h to unblock the next layer |',
+    '|---|---:|---|---|---:|',
+  );
+  for (const x of runwayRepos) {
+    const r = rw.perRepo.get(x.id);
+    const blocks = r.blocks.length
+      ? r.blocks.slice(0, 6).join('; ') + (r.blocks.length > 6 ? `; and ${r.blocks.length - 6} more` : '')
+      : '—';
+    out.push(
+      `| ${x.id} | ${r.runway} | ${r.unknownHours.length ? r.unknownHours.join(', ') : '—'} | ${cell(blocks)} | ${r.ownerUnknown ? `at least ${r.ownerNext}` : r.ownerNext} |`,
+    );
+  }
+  out.push(
+    `| **Solution** | **${rw.total}** | | | **${[...rw.perRepo.values()].some((r) => r.ownerUnknown) ? 'at least ' : ''}${Math.round([...rw.perRepo.values()].reduce((a, r) => a + r.ownerNext, 0) * 100) / 100}** |`,
   );
   out.push(
     '',
