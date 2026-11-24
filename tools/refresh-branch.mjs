@@ -1,6 +1,9 @@
 // Project tool (not from the harness template): prepares the branch the Refresh solution views workflow commits to.
 //
-//   node tools/refresh-branch.mjs <branch> <open|none>
+//   node tools/refresh-branch.mjs <branch>
+//
+// It asks GitHub (gh pr list) whether a refresh PR from <branch> is open, and stops on any error: a failed lookup must
+// never read as "no PR open", which would delete the open PR's branch.
 //
 // open: a refresh PR from <branch> is open. Continue it and bring it up to date with origin/main by a merge (never a
 //       force-push). When only the generated views conflict, take main's copy of them (they are regenerated next);
@@ -46,14 +49,35 @@ export function prepare(cwd, branch, pr) {
   }
 }
 
+// Number of open PRs from <branch>, from `gh pr list`; any failure or unexpected output throws.
+const ghOpenPrs = (branch) =>
+  execFileSync('gh', ['pr', 'list', '--head', branch, '--state', 'open', '--json', 'number', '--jq', 'length'], {
+    encoding: 'utf8',
+    stdio: ['ignore', 'pipe', 'pipe'],
+  });
+
+export function refresh(cwd, branch, openPrs = ghOpenPrs) {
+  let count;
+  try {
+    count = String(openPrs(branch)).trim();
+  } catch (error) {
+    throw new Error(
+      `Could not tell whether a refresh PR is open (${String(error.stderr ?? error.message).trim()}); nothing changed`,
+    );
+  }
+  if (!/^\d+$/.test(count))
+    throw new Error(`Could not tell whether a refresh PR is open (gh printed "${count}"); nothing changed`);
+  return prepare(cwd, branch, Number(count) > 0 ? 'open' : 'none');
+}
+
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const [branch, pr] = process.argv.slice(2);
-  if (!branch || !['open', 'none'].includes(pr)) {
-    console.error('Usage: node tools/refresh-branch.mjs <branch> <open|none>');
+  const [branch] = process.argv.slice(2);
+  if (!branch) {
+    console.error('Usage: node tools/refresh-branch.mjs <branch>');
     process.exit(1);
   }
   try {
-    console.log(prepare(process.cwd(), branch, pr));
+    console.log(refresh(process.cwd(), branch));
   } catch (e) {
     console.error(e.message);
     process.exitCode = 1;

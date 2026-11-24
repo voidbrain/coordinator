@@ -43,8 +43,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           cp tools/refresh-branch.mjs "$RUNNER_TEMP/refresh-branch.mjs" # main's reviewed copy, whatever the branch holds
-          if [ -n "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[].number')" ]; then pr=open; else pr=none; fi
-          node "$RUNNER_TEMP/refresh-branch.mjs" "$BRANCH" "$pr"
+          node "$RUNNER_TEMP/refresh-branch.mjs" "$BRANCH" # asks gh itself and stops on any lookup error
 
       - name: Run only main's reviewed tools
         run: git checkout origin/main -- tools package.json package-lock.json && git reset -q
@@ -62,7 +61,7 @@ jobs:
       - name: Did anything change besides the snapshot time and this repository's own revision?
         id: diff
         run: |
-          if git diff --quiet -I '^Snapshot' -I '^\| solution \|' -I '^\| \[solution:' -I '^\| 🧭' -I '^\| \[coordinator:' -- docs/SOLUTION-OVERVIEW.md docs/SOLUTION-DASHBOARD.md; then
+          if git diff --quiet -I '^Snapshot' -I '^\| solution \|' -I '^\| \[solution:' -I '^\| 🧭' -I '^\| [0-9]+ \| 🧭' -I '^\| \[coordinator:' -- docs/SOLUTION-OVERVIEW.md docs/SOLUTION-DASHBOARD.md; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "Views unchanged apart from the snapshot; no PR."
           else
@@ -77,7 +76,8 @@ jobs:
           git add docs/SOLUTION-OVERVIEW.md docs/SOLUTION-DASHBOARD.md
           git commit -m "$TITLE" -m "Scheduled refresh (F-008): generated views from each component's main on GitHub."
           git push origin "HEAD:$BRANCH"
-          if [ -z "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[].number')" ]; then
+          open=$(gh pr list --head "$BRANCH" --state open --json number --jq length) || exit 1
+          if [ "$open" = 0 ]; then
             gh pr create --base main --head "$BRANCH" --title "$TITLE" \
               --body "Daily refresh of the generated views (F-008). CI is started on this branch by the refresh workflow. The lander merges it on green CI like any PR; review the source revisions and each view's problems section."
           fi
