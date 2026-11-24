@@ -1,0 +1,73 @@
+name: CI
+
+# Coordinator-owned checks only: this repository's backlog, rules, harness evidence and the solution order.
+# Component availability is not a gate here; refreshing the views is deliberate (npm run solution:refresh).
+# tools/ci-status.mjs reads this workflow by its name (CI); keep it.
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0 # check:freshness compares the backlog's commit with the default branch and lists merged branches
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Format (Prettier) and lint (ESLint) the project's own tools and tests
+        run: npm run format:check && npm run lint
+      - name: Overview readers and gap review on the fixtures
+        run: npm test
+      - name: Coordinator backlog and archive integrity
+        run: node tools/check-backlog.mjs
+      - name: Optional MCP recommendation metadata
+        run: node tools/mcp.mjs check
+      - name: Required maintenance evidence
+        run: node tools/maintenance.mjs check
+      - name: Scope-aware audit evidence
+        run: node tools/check-audits.mjs --github
+      - name: Safety rules in AGENTS, procedures on demand
+        run: node tools/check-rules.mjs
+      - name: Rule load budgets (warnings only)
+        run: node tools/rule-load.mjs --check
+      - name: A formatter check and a linter exist and run in CI
+        run: node tools/check-tooling.mjs
+      - name: Solution order references and the fixture self-check (offline)
+        run: node tools/solution-overview.mjs --check
+
+      - name: Optional backlog dependency validation
+        run: |
+          if test -f tools/backlog-dependencies.mjs; then
+            node tools/backlog-dependencies.mjs --check
+          fi
+
+      - name: Optional backlog work-queue validation
+        run: |
+          if test -f tools/backlog-queue.mjs; then
+            node tools/backlog-queue.mjs --check
+          fi
+
+      - name: Harness template, for the release check below
+        run: |
+          repo=$(node -p "require('./.harness.json').template?.repo ?? ''")
+          if [ -n "$repo" ]; then
+            git clone --quiet "$repo" "$RUNNER_TEMP/project-harness" ||
+              echo "::warning title=Harness template::Could not clone $repo: template release check skipped."
+          fi
+      - name: Impact map page matches the rows
+        run: node tools/impact-map.mjs && git diff --exit-code -- docs/agents/impact-map.md
+      - name: Freshness, template release and required review evidence
+        env:
+          HARNESS_HOME: ${{ runner.temp }}/project-harness
+        run: node tools/check-freshness.mjs --github

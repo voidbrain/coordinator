@@ -1,0 +1,48 @@
+{
+  "name": "coordinator",
+  "private": true,
+  "description": "Solution coordinator: one view and order of all voidbrain project work",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check:backlog": "node tools/check-backlog.mjs",
+    "check:freshness": "node tools/check-freshness.mjs",
+    "ci:status": "node tools/ci-status.mjs",
+    "code:map": "node tools/code-map.mjs",
+    "reconcile:draft": "node tools/reconcile-draft.mjs",
+    "reconcile:preview": "node tools/reconcile-preview.mjs",
+    "impact-map": "node tools/impact-map.mjs",
+    "check:integrations": "node tools/mcp.mjs check",
+    "mcp:recommend": "node tools/mcp.mjs recommend",
+    "friction": "node tools/friction.mjs",
+    "check:maintenance": "node tools/maintenance.mjs check",
+    "check:audits": "node tools/check-audits.mjs",
+    "archive:recap": "node tools/archive-recap.mjs",
+    "check:archive-recap": "node tools/archive-recap.mjs --check",
+    "guard:install": "node tools/guard.mjs install",
+    "check:rules": "node tools/check-rules.mjs",
+    "check:tooling": "node tools/check-tooling.mjs",
+    "behaviour": "node tools/behaviour.mjs",
+    "check:dependencies": "node tools/backlog-dependencies.mjs --check",
+    "check:queue": "node tools/backlog-queue.mjs --check",
+    "rule-load": "node tools/rule-load.mjs",
+    "check:rule-load": "node tools/rule-load.mjs --check",
+    "check:solution": "node tools/solution.mjs check --remote",
+    "solution:dashboard": "node tools/solution.mjs dashboard --remote --write",
+    "check:order": "node tools/solution-overview.mjs --check",
+    "solution:overview": "node tools/solution-overview.mjs --remote --write",
+    "solution:refresh": "npm run solution:overview; o=$?; npm run solution:dashboard; d=$?; exit $((o || d))",
+    "check:fast": "npm run format:check && npm run lint && npm test && npm run check:backlog && npm run check:rules && npm run check:tooling && npm run check:maintenance && npm run check:integrations && npm run check:order && npm run check:solution",
+    "test": "node --test --test-reporter=./tools/quiet-reporter.mjs --test-reporter-destination=stdout --test-reporter=spec --test-reporter-destination=.test-report.txt 'test/*.test.mjs'",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "eslint": "10.15.0",
+    "prettier": "3.10.1"
+  }
+}

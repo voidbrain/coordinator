@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "kind": "scoped",
+  "reviewed": "2026-11-24T21:22:40.000Z",
+  "baseline": "e03eb0cd21c19321833f0da31cdcbea7addcec66",
+  "report": "docs/audits/2026-11-24-coordinator-baseline.md",
+  "areas": {
+    "code": { "result": "checked", "evidence": "docs/audits/2026-11-24-coordinator-baseline.md: generator run against all five live backlogs", "limits": "Heuristic gap detection (kind 1)." },
+    "logic": { "result": "checked", "evidence": "docs/audits/2026-11-24-coordinator-baseline.md: readiness and gap rules read against live rows", "limits": "Two ledger layouts only." },
+    "tests": { "result": "checked", "evidence": "docs/audits/2026-11-24-coordinator-baseline.md: node --test on fixtures, also run by --check in CI", "limits": "Invented fixtures; live layouts checked by each refresh." },
+    "documentation": { "result": "checked", "evidence": "docs/audits/2026-11-24-coordinator-baseline.md: links and placeholders", "limits": "First version." },
+    "harness": { "result": "checked", "evidence": "docs/audits/2026-11-24-coordinator-baseline.md: adoption at v10.9.0", "limits": "CI not yet run." },
+    "security": { "result": "checked", "evidence": "docs/audits/2026-11-24-coordinator-baseline.md: no secrets, read-only on components", "limits": "Design review only." },
+    "backlog": { "result": "checked", "evidence": "docs/audits/2026-11-24-coordinator-baseline.md: seeded records", "limits": "First ledger." },
+    "delivery": { "result": "blocked", "evidence": "Local checks pass; nothing to deploy.", "limits": "No CI run yet.", "blocker": "First PR CI not run in this session (F-001)." }
+  }
+}

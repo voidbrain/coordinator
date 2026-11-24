@@ -1,0 +1,13 @@
+# Formatting covers source code. Keep byte-identical: copied harness tools, generated files, fixtures.
+node_modules/
+# CI checks the harness template out here.
+.harness/
+# Copied harness tools live in tools/. The project's own tools are un-ignored one by one.
+tools/*
+!tools/solution-overview.mjs
+!tools/solution-overview-lib.mjs
+test/fixtures/
+*.md
+*.json
+*.yml
+*.yaml
