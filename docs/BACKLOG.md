@@ -1,6 +1,6 @@
 # Coordinator backlog
 
-Current work ledger, reviewed 24 November 2026 against main `e03eb0c`. Cross-repository work only; each component's work lives in its own backlog ([overview](SOLUTION-OVERVIEW.md)). [Rules](BACKLOG-RULES.md) · [Archive](archive/README.md) · [Reading the records](#how-to-use-this-file).
+Current work ledger, reviewed 24 November 2026 against main `e03eb0c`. Cross-repository work only; each component's work lives in its own backlog ([overview](SOLUTION-OVERVIEW.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 ## Work items
 
@@ -25,7 +25,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 <details>
 <summary>Next action, estimates and PR history</summary>
 
-**Next action / closure evidence:** Applied core and the solution profile from template v10.9.0 on `harness/agent-harness`; manifest with five components; project tool `tools/solution-overview.mjs` for the order, owner, blocked, effort and gap sections the template dashboard does not have (proposed for the template, F-004). Closes on the first PR's green CI.
+**Next action / closure evidence:** Applied core and the solution profile from template v10.9.0 on `harness/agent-harness`; manifest with five components; project tool `tools/solution-overview.mjs` for the order, owner, blocked, effort and gap sections the template dashboard does not have (proposed for the template, F-004). Review fixes on the same PR: unknown headings, summary tables and statuses are reported as problems (failing tests first), Prettier and ESLint on the project's own tools and tests, fixture tests for the generated, authored and empty layouts run in CI and in `--check`. Closes on PR #1's green CI.
 
 **Estimates:** Small remaining effort. Estimated 2026-11-24; not acceptance evidence.
 
@@ -142,34 +142,34 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 ---
 
-### F-005
+### F-008
 
-**Decide how often the views are refreshed**
+**Daily refresh of the solution views as a PR**
 
 | Signal | Priority | Status | Effort |
 |:---:|---|---|---|
-| 🔴 | 🔶 P2 | Open | 🟢 Small |
+| 🟡 | 🔶 P2 | Implemented | 🟢 Small |
 
-🧑 **→ Human action required: Decision**<br />Choose one: (a) on demand only, `npm run solution:refresh` in a session; (b) a daily scheduled workflow that regenerates the views and opens a PR; (c) both.
+💻 **→ Human action required: No**<br />After PR #1 merges, start the Refresh solution views workflow once by hand (`gh workflow run refresh-views.yml --repo voidbrain/coordinator`) and link the run here.
 
 | | |
 |---|---|
-| **Issue** | The views are snapshots; nothing refreshes them between sessions. A scheduled refresh needs a workflow with `contents: write` and `pull-requests: write` on this repository (a repository setting the owner approves). |
-| **Reproduce** | Compare the snapshot time at the top of `docs/SOLUTION-OVERVIEW.md` with the latest merge in any component. |
-| **Check** | The owner's choice is recorded here; for (b) or (c) a workflow refreshes and opens a PR, and its first run is linked. |
+| **Issue** | The owner decided a daily refresh proposed as a PR (F-005). |
+| **Reproduce** | `.github/workflows/refresh-views.yml`: daily at 05:30 UTC and on demand. |
+| **Check** | A run regenerates both views from GitHub, runs the offline checks, and when anything besides the snapshot time and this repository's own revision changed, pushes `chore/refresh-solution-views` (no force-push) and opens or updates the PR "chore: refresh solution views"; an unchanged day opens nothing. |
 
 <details>
 <summary>Next action, estimates and PR history</summary>
 
-**Next action / closure evidence:** Waits on the owner's decision.
+**Next action / closure evidence:** Workflow added in PR #1 with `contents: write` and `pull-requests: write` only; CI stays `contents: read`. A scheduled or dispatched workflow runs only from the default branch, so the first run follows the merge. A PR opened with the workflow token does not start the CI workflow, so the refresh workflow runs the offline checks itself before pushing. A refresh with source problems fails the run and opens no PR; GitHub's failed-run notification reports it. Closes on the first successful run, linked here.
 
 **Estimates:** Small remaining effort. Estimated 2026-11-24; not acceptance evidence.
 
 | Field | Value |
 |---|---|
-| PR / evidence | — |
+| PR / evidence | [#1](https://github.com/voidbrain/coordinator/pull/1) |
 | Opened | 2026-11-24 |
-| Verification | Pending |
+| Verification | Pending: first run after merge |
 | Reviewed | 2026-11-24 |
 
 </details>

@@ -13,7 +13,7 @@ The project is **Coordinator**, the solution coordinator for the voidbrain proje
 ### Solution order
 
 - [docs/solution-order.md](docs/solution-order.md) is the owner's order across all repositories: references `repo:ID`, top = next. <!-- project -->
-- Agents take the first item that is ready and unblocked (State Ready in the overview). Work not listed follows each repository's own priority. <!-- project -->
+- Agents take the first item that is ready and unblocked (State Ready in the overview), after reading its record: Ready relies on each component's ⏳/🧑 markup and record states, and an authored backlog without Depends on can show Ready too early. Work not listed follows each repository's own priority. <!-- project -->
 - Reordering is an owner instruction, landed as a small PR that changes only the order. The order never skips prerequisites or owner decisions, and holds references only, no status. <!-- project -->
 
 ### Adding things
@@ -37,15 +37,19 @@ Before you open, update or merge a PR, read [pull requests](docs/agents/pull-req
 
 ```bash
 npm run check:freshness   # first, at session start: backlog behind main, merged branches, audit age
-npm run check:fast        # backlog, rules, tooling, maintenance, solution order, solution manifest and links <!-- project -->
+npm run check:fast        # format, lint, tests, backlog, rules, tooling, maintenance, order, manifest and links <!-- project -->
+npm test                  # the overview readers, states and gap review on test/fixtures <!-- project -->
 npm run check:backlog     # active record layout and lifecycle cues
-npm run check:order       # docs/solution-order.md references, offline <!-- project -->
-npm run check:solution    # manifest, component sources on GitHub and Components links
+npm run check:order       # docs/solution-order.md references and the fixture self-check, offline <!-- project -->
+npm run check:solution    # manifest, component sources on GitHub and Components links <!-- project -->
 npm run solution:refresh  # regenerate both views from GitHub; commit them with their snapshot <!-- project -->
-npm run check:tooling     # no source code: tooling.exempt in .harness.json records why
+npm run format:check      # Prettier on the project's own tools and tests; `npm run format` fixes it <!-- project -->
+npm run lint              # ESLint on the same files (copied harness tools excluded) <!-- project -->
+npm run check:tooling     # a formatter check and a linter exist and run in CI (required for every stack)
 ```
 
-- No formatter or linter: the repository has no product source code, and `tooling.exempt` records the reason (`check:tooling`).
+- Format and lint in CI too (`check:tooling`); the project's own tools and tests are formatted and linted, copied harness tools are not. <!-- project -->
+- A change to a backlog reader adds a fixture to `test/fixtures/` and its expected result to `expected.json`; an unknown layout must show as a problem, never as no work. <!-- project -->
 - A failing test is evidence until shown otherwise: change its expectation only when the requirement deliberately changed, and say which; otherwise fix the code.
 - A bug fix starts with a committed test that fails without the fix; the fix never edits that test to pass (BACKLOG-RULES, "A bug fix starts with a failing test").
 - Replacing a feature removes its state, helpers and tests too: no dead code.
@@ -81,12 +85,12 @@ Each procedure is binding when its trigger applies: read it before the task; a s
 
 ### Testing the joins
 
-- A change that touches how two parts meet gets a test across both, not one per side. Here that is integration acceptance between components, recorded in `docs/SOLUTION.md` and checked in the environment that can run it.
+- A change that touches how two parts meet gets a test across both, not one per side. Here that is integration acceptance between components, recorded in `docs/SOLUTION.md` and checked in the environment that can run it. <!-- project -->
 
 ### Known pitfalls
 
-- The views are snapshots. A merge in a component does not change them until someone runs `npm run solution:refresh`; read the snapshot time before acting on a state.
-- A component's local checkout can be behind GitHub, and the manifest's checkout paths are relative to the primary checkout `~/Projects/coordinator` (a worktree has no siblings there). The npm scripts read GitHub (`--remote`); a plain `node tools/solution.mjs check` reads local checkouts and says "local checkout, not fetched".
+- The views are snapshots, refreshed daily by the Refresh solution views workflow as a PR (or by `npm run solution:refresh`); read the snapshot time before acting on a state. <!-- project -->
+- A component's local checkout can be behind GitHub, and the manifest's checkout paths are relative to the primary checkout `~/Projects/coordinator` (a worktree has no siblings there). The npm scripts read GitHub (`--remote`); a plain `node tools/solution.mjs check` reads local checkouts and says "local checkout, not fetched". <!-- project -->
 
 ## Area notes
 
@@ -99,7 +103,7 @@ Before changing an area, read its section in [docs/agents/areas.md](docs/agents/
 
 ## Privacy
 
-- Never commit secrets, tokens or personal data. `GH_TOKEN` is passed in the environment for a refresh, never written to a file. Generated views carry only what the components' public backlogs already say.
+- Never commit secrets, tokens or personal data. `GH_TOKEN` is passed in the environment for a refresh, never written to a file. Generated views carry only what the components' public backlogs already say. <!-- project -->
 
 ## Work tracking
 

@@ -13,7 +13,17 @@ import {
   readOrder as parseOrder,
   parseBacklog,
   contentsText,
-  checkFixtures, plain, cell, short, OPEN, stepState, recordState, gapReview } from './solution-overview-lib.mjs';
+  checkFixtures,
+  totalsLine,
+  backlogHours,
+  solutionTotal,
+  cell,
+  short,
+  OPEN,
+  stepState,
+  recordState,
+  gapReview,
+} from './solution-overview-lib.mjs';
 
 const root = process.cwd();
 const args = process.argv.slice(2);
@@ -25,7 +35,8 @@ for (const a of args)
 const has = (flag) => args.includes(flag);
 const ORDER = 'docs/solution-order.md';
 const OUT = 'docs/SOLUTION-OVERVIEW.md';
-const MARK = '<!-- generated: tools/solution-overview.mjs; edit docs/solution-order.md or the owning backlogs, not this file -->';
+const MARK =
+  '<!-- generated: tools/solution-overview.mjs; edit docs/solution-order.md or the owning backlogs, not this file -->';
 
 const stamp = JSON.parse(readFileSync(resolve(root, '.harness.json'), 'utf8'));
 const manifestPath = resolve(root, stamp.solution?.manifest ?? '.solution.json');
@@ -46,7 +57,8 @@ async function github(path) {
   if (!response.ok) throw new Error(`GitHub returned HTTP ${response.status} for ${path.split('?')[0]}`);
   return response.json();
 }
-const git = (cwd, ...a) => execFileSync('git', ['-C', cwd, ...a], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
+const git = (cwd, ...a) =>
+  execFileSync('git', ['-C', cwd, ...a], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
 
 async function readSource(repo) {
   const backlog = repo.backlog ?? 'docs/BACKLOG.md';
@@ -67,8 +79,13 @@ async function readSource(repo) {
   }
   const base = resolve(dirname(manifestPath), repo.path);
   if (!existsSync(base)) throw new Error(`checkout unavailable at ${repo.path}`);
-  const origin = git(base, 'remote', 'get-url', 'origin').trim().replace(/\.git$/, '');
-  if (!origin.toLowerCase().endsWith(`/${repo.repository.toLowerCase()}`) && !origin.toLowerCase().endsWith(`:${repo.repository.toLowerCase()}`))
+  const origin = git(base, 'remote', 'get-url', 'origin')
+    .trim()
+    .replace(/\.git$/, '');
+  if (
+    !origin.toLowerCase().endsWith(`/${repo.repository.toLowerCase()}`) &&
+    !origin.toLowerCase().endsWith(`:${repo.repository.toLowerCase()}`)
+  )
     throw new Error('checkout origin does not match the declared repository');
   const revision = git(base, 'rev-parse', repo.ref).trim();
   const dirty = git(base, 'status', '--porcelain').trim() !== '';
@@ -76,19 +93,21 @@ async function readSource(repo) {
   return { revision, via, text: git(base, 'show', `${revision}:${backlog}`) };
 }
 
-
 // ---------- build ----------
 async function build() {
   const order = readOrder();
   const problems = [...order.problems];
   const sources = [];
-  const all = [{ id: 'solution', repository: manifest.repository, backlog: manifest.backlog, ref: 'working checkout' }, ...manifest.repositories];
+  const all = [
+    { id: 'solution', repository: manifest.repository, backlog: manifest.backlog, ref: 'working checkout' },
+    ...manifest.repositories,
+  ];
   for (const repo of all) {
     try {
       const src = await readSource(repo);
       const records = parseBacklog(src.text, repo.id, problems);
-      const totals = /<!-- totals:start -->\s*\n([\s\S]*?)\n<!-- totals:end -->/.exec(src.text)?.[1] ?? '';
-      sources.push({ ...repo, ...src, records, totals: plain(totals), available: true });
+      const totals = totalsLine(src.text);
+      sources.push({ ...repo, ...src, records, totals, available: true });
     } catch (e) {
       problems.push(`${repo.id}: ${e.message}`);
       sources.push({ ...repo, records: [], available: false });
@@ -134,7 +153,8 @@ async function build() {
     const src = sources.find((s) => s.id === o.repo);
     if (!hit) {
       const why = src && !src.available ? 'Source unavailable' : 'Not in the active backlog (closed or archived?)';
-      if (src?.available) problems.push(`${ORDER}: ${o.ref} is not in ${o.repo}'s active backlog; remove it or fix the ID`);
+      if (src?.available)
+        problems.push(`${ORDER}: ${o.ref} is not in ${o.repo}'s active backlog; remove it or fix the ID`);
       out.push(`| ${n + 1} | ${o.ref} | — | — | — | — | ${why} | ${cell(o.note)} |`);
       return;
     }
@@ -150,7 +170,13 @@ async function build() {
   if (!order.items.length) out.push('| — | No items | | | | | | |');
 
   // Owner
-  out.push('', '## Waiting for the owner', '', 'Records and steps whose next move is an owner procedure (🧑‍🔧) or decision (🤔). Open the link for the exact instructions.', '');
+  out.push(
+    '',
+    '## Waiting for the owner',
+    '',
+    'Records and steps whose next move is an owner procedure (🧑‍🔧) or decision (🤔). Open the link for the exact instructions.',
+    '',
+  );
   out.push('| Item | Title | Kind | Priority | Owner time | Next |', '|---|---|---|---|---|---|');
   let owners = 0;
   for (const s of sources)
@@ -158,10 +184,17 @@ async function build() {
       const ownerSteps = r.steps.filter((st) => stepState(st).startsWith('Owner'));
       if (!r.procedure && !r.decision && !ownerSteps.length) continue;
       owners++;
-      const kind = [r.procedure || ownerSteps.some((st) => stepState(st) === 'Owner: procedure') ? 'Procedure' : '', r.decision || ownerSteps.some((st) => stepState(st) === 'Owner: decision') ? 'Decision' : ''].filter(Boolean).join(' + ');
+      const kind = [
+        r.procedure || ownerSteps.some((st) => stepState(st) === 'Owner: procedure') ? 'Procedure' : '',
+        r.decision || ownerSteps.some((st) => stepState(st) === 'Owner: decision') ? 'Decision' : '',
+      ]
+        .filter(Boolean)
+        .join(' + ');
       const ownerHours = r.hours ? `${r.hours.owner} h` : '—';
       const what = ownerSteps.length ? ownerSteps.map((st) => `${st.id}: ${st.title}`).join('; ') : r.next;
-      out.push(`| ${link(s, r.id)} | ${cell(short(r.title, 80))} | ${kind} | ${r.priority} | ${ownerHours} | ${cell(short(what))} |`);
+      out.push(
+        `| ${link(s, r.id)} | ${cell(short(r.title, 80))} | ${kind} | ${r.priority} | ${ownerHours} | ${cell(short(what))} |`,
+      );
     }
   if (!owners) out.push('| — | Nothing waits for the owner | | | | |');
 
@@ -179,8 +212,43 @@ async function build() {
   if (!waits) out.push('| — | Nothing blocked | | | |');
 
   // Effort
-  out.push('', '## Effort', '', 'Remaining hours as each backlog states them; a backlog that estimates in sizes only shows its sizes. Hours are not summed across repositories that estimate differently.', '');
-  out.push('| Source | P1 | P2 | P3 | Other | Remaining (agent / owner) | Sizes | The backlog\'s own total |', '|---|---:|---:|---:|---:|---|---|---|');
+  // Remaining hours per backlog and the solution total (owner request 2026-11-24): hours only, never a percentage.
+  out.push(
+    '',
+    '## Remaining hours',
+    '',
+    'Remaining agent and owner (human) hours as each backlog states them, summed across all backlogs. Each project estimates on its own; the estimates are not cross-calibrated, so the total is a sum of estimates, not a forecast. A backlog whose hours cannot be read shows Unknown and makes the total partial (at least).',
+    '',
+  );
+  out.push('| Backlog | Agent h | Owner h | Read from |', '|---|---:|---:|---|');
+  const hourRows = sources.map((s) => ({
+    id: s.id,
+    hours: s.available
+      ? backlogHours(s.totals, s.records, problems.filter((p) => p.startsWith(`${s.id}:`)).length)
+      : null,
+  }));
+  for (const r of hourRows)
+    out.push(
+      r.hours
+        ? `| ${r.id} | ${r.hours.agent} | ${r.hours.owner} | ${r.hours.from} |`
+        : `| ${r.id} | Unknown | Unknown | no hours in its total line or records |`,
+    );
+  const total = solutionTotal(hourRows);
+  const atLeast = total.partial ? 'at least ' : '';
+  out.push(
+    `| **Solution total** | **${atLeast}${total.agent}** | **${atLeast}${total.owner}** | ${total.partial ? `partial: ${total.unknown.join(', ')} unknown` : 'every backlog'} |`,
+  );
+  out.push(
+    '',
+    '## Effort',
+    '',
+    "Open records by priority, the hours as each backlog states them, sizes, and the backlog's own total line.",
+    '',
+  );
+  out.push(
+    "| Source | P1 | P2 | P3 | Other | Remaining (agent / owner) | Sizes | The backlog's own total |",
+    '|---|---:|---:|---:|---:|---|---|---|',
+  );
   for (const s of sources.filter((x) => x.available)) {
     const open = s.records.filter((r) => OPEN(r.status));
     const count = (p) => open.filter((r) => r.priority === p).length;
@@ -197,7 +265,12 @@ async function build() {
   }
 
   // Open work per component
-  out.push('', '## Open work by repository', '', 'In each backlog\'s own order (most urgent first). State: Ready = an agent can start now.');
+  out.push(
+    '',
+    '## Open work by repository',
+    '',
+    "In each backlog's own order (most urgent first). State: Ready = an agent can start now.",
+  );
   for (const s of sources) {
     out.push('', `### ${s.id}`, '');
     if (!s.available) {
@@ -209,28 +282,55 @@ async function build() {
       out.push('No open records.');
       continue;
     }
-    out.push('| Item | Title | Status | Priority | Effort | Remaining | State | Next |', '|---|---|---|---|---|---|---|---|');
+    out.push(
+      '| Item | Title | Status | Priority | Effort | Remaining | State | Next |',
+      '|---|---|---|---|---|---|---|---|',
+    );
     for (const r of open)
       out.push(
         `| ${link(s, r.id)} | ${cell(short(r.title, 90))} | ${r.status} | ${r.priority} | ${cell(r.effort)} | ${cell(r.remaining)} | ${cell(recordState(r))} | ${cell(short(r.next, 120))} |`,
       );
     const steps = open.flatMap((r) => r.steps).filter((st) => stepState(st) !== 'Done');
     if (steps.length) {
-      out.push('', `<details><summary>${steps.length} open steps</summary>`, '', '| Step | Title | Status | Remaining | State |', '|---|---|---|---|---|');
+      out.push(
+        '',
+        `<details><summary>${steps.length} open steps</summary>`,
+        '',
+        '| Step | Title | Status | Remaining | State |',
+        '|---|---|---|---|---|',
+      );
       for (const st of steps)
-        out.push(`| ${link(s, st.id)} | ${cell(short(st.title, 100))} | ${cell(st.status)} | ${cell(st.remaining)} | ${cell(stepState(st))} |`);
+        out.push(
+          `| ${link(s, st.id)} | ${cell(short(st.title, 100))} | ${cell(st.status)} | ${cell(st.remaining)} | ${cell(stepState(st))} |`,
+        );
       out.push('', '</details>');
     }
   }
 
   // Gap review: proposals only (docs/agents/gap-review.md). Each gap names the repository that would own the fix.
   const gaps = gapReview(sources, order, index, link);
-  out.push('', '## Gap review (proposals)', '', 'Possible missing steps, found by reading every backlog. Each row proposes a record or step in the owning repository; nothing is created until the owner accepts it. Procedure: [gap review](agents/gap-review.md).', '');
+  out.push(
+    '',
+    '## Gap review (proposals)',
+    '',
+    'Possible missing steps, found by reading every backlog. Each row proposes a record or step in the owning repository; nothing is created until the owner accepts it. Procedure: [gap review](agents/gap-review.md).',
+    '',
+  );
   out.push('| # | Kind | Found in | Evidence | Proposed, in the owning repository |', '|---:|---|---|---|---|');
-  gaps.forEach((g, n) => out.push(`| ${n + 1} | ${g.kind} | ${g.where} | ${cell(short(g.evidence, 280))} | ${cell(g.proposal)} |`));
+  gaps.forEach((g, n) =>
+    out.push(`| ${n + 1} | ${g.kind} | ${g.where} | ${cell(short(g.evidence, 280))} | ${cell(g.proposal)} |`),
+  );
   if (!gaps.length) out.push('| — | No gaps found | | | |');
 
-  out.push('', '## Source and order problems', '', ...(problems.length ? problems.map((p) => `- ${cell(p)}`) : ['None detected. This checks references and structure, not the truth of the records.']), '');
+  out.push(
+    '',
+    '## Source and order problems',
+    '',
+    ...(problems.length
+      ? problems.map((p) => `- ${cell(p)}`)
+      : ['None detected. This checks references and structure, not the truth of the records.']),
+    '',
+  );
   return { text: out.join('\n'), problems, snapshot };
 }
 
@@ -243,13 +343,16 @@ try {
     const expected = JSON.parse(readFileSync(new URL('expected.json', fixtures), 'utf8'));
     const failures = checkFixtures((name) => readFileSync(new URL(name, fixtures), 'utf8'), expected);
     [...problems, ...failures].forEach((p) => console.error(p));
-    console.log(`Solution order: ${items.length} item(s); ${problems.length} problem(s). Fixtures: ${Object.keys(expected).length - failures.length} of ${Object.keys(expected).length} as expected.`);
+    console.log(
+      `Solution order: ${items.length} item(s); ${problems.length} problem(s). Fixtures: ${Object.keys(expected).length - failures.length} of ${Object.keys(expected).length} checks as expected.`,
+    );
     process.exitCode = problems.length || failures.length ? 1 : 0;
   } else {
     const { text, problems, snapshot } = await build();
     if (has('--write')) {
       const dest = resolve(root, OUT);
-      if (existsSync(dest) && !readFileSync(dest, 'utf8').startsWith(MARK)) throw new Error(`Refusing to replace ${OUT}: not a generated file`);
+      if (existsSync(dest) && !readFileSync(dest, 'utf8').startsWith(MARK))
+        throw new Error(`Refusing to replace ${OUT}: not a generated file`);
       writeFileSync(dest, text);
       console.log(`Wrote ${OUT} (${snapshot}); ${problems.length} problem(s).`);
     } else console.log(text);

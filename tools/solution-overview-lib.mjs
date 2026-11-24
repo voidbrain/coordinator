@@ -8,7 +8,8 @@ export function readOrder(text, ids, ORDER = 'docs/solution-order.md') {
   const problems = [];
   const start = text.indexOf('<!-- order:start -->');
   const end = text.indexOf('<!-- order:end -->');
-  if (start < 0 || end < start) return { items: [], problems: [`${ORDER}: missing <!-- order:start --> / <!-- order:end --> markers`] };
+  if (start < 0 || end < start)
+    return { items: [], problems: [`${ORDER}: missing <!-- order:start --> / <!-- order:end --> markers`] };
   const items = [];
   const seen = new Set();
   for (const line of text.slice(start, end).split('\n').slice(1)) {
@@ -22,7 +23,8 @@ export function readOrder(text, ids, ORDER = 'docs/solution-order.md') {
     if (!ref) problems.push(`${ORDER}: ${m[2]} is not repo:ID (B-nnn, F-nnn or a step ID such as F-005-T29)`);
     else if (!ids.has(ref[1])) problems.push(`${ORDER}: ${m[2]} names no manifest repository (${[...ids].join(', ')})`);
     if (seen.has(m[2])) problems.push(`${ORDER}: ${m[2]} is listed twice`);
-    if (Number(m[1]) !== items.length + 1) problems.push(`${ORDER}: line "${m[1]}." should be numbered ${items.length + 1}`);
+    if (Number(m[1]) !== items.length + 1)
+      problems.push(`${ORDER}: line "${m[1]}." should be numbered ${items.length + 1}`);
     seen.add(m[2]);
     items.push({ ref: m[2], repo: ref?.[1], id: ref?.[2], note: m[3] ?? '' });
   }
@@ -30,7 +32,11 @@ export function readOrder(text, ids, ORDER = 'docs/solution-order.md') {
 }
 
 // ---------- backlog parsing ----------
-export const cells = (line) => line.split(/(?<!\\)\|/).slice(1, -1).map((c) => c.trim());
+export const cells = (line) =>
+  line
+    .split(/(?<!\\)\|/)
+    .slice(1, -1)
+    .map((c) => c.trim());
 export const plain = (s) =>
   String(s ?? '')
     .replace(/<[^>]+>/g, ' ')
@@ -82,7 +88,9 @@ export function parseBacklog(markdown, repo, problems = []) {
   heads.forEach((h, n) => {
     const known = HEADING.exec(h[0]);
     if (!known) {
-      problems.push(`${repo}: unsupported record heading "${h[0].trim()}" (expected "### F-001"); its record is not shown`);
+      problems.push(
+        `${repo}: unsupported record heading "${h[0].trim()}" (expected "### F-001"); its record is not shown`,
+      );
       return;
     }
     h = [h[0], known[1]];
@@ -109,7 +117,9 @@ export function parseBacklog(markdown, repo, problems = []) {
     const decision = row.Decisions ? row.Decisions !== '—' : human === 'Decision' || human === 'Both';
     const arrow = lines.find((l) => l.includes('→'));
     const nextRaw = arrow ?? '';
-    const next = arrow ? plain(arrow.replace(/^.*?→(\*\*)?/, '').replace(/^\s*(Human action required: \w+\*\*)?/, '')) : '';
+    const next = arrow
+      ? plain(arrow.replace(/^.*?→(\*\*)?/, '').replace(/^\s*(Human action required: \w+\*\*)?/, ''))
+      : '';
     const record = {
       repo,
       id: h[1],
@@ -158,14 +168,14 @@ export function parseBacklog(markdown, repo, problems = []) {
   return records;
 }
 
-
 // ---------- states ----------
 export const OPEN = (s) => !['Closed'].includes(s);
 export function stepState(s) {
   if (/Completed|Closed|Verified|Cancelled/.test(s.status)) return 'Done';
   // ⏳ marks a waiting step; a bug's Steps table has no Who column, so an open prerequisite there means waiting too.
   if (s.who.startsWith('⏳') || (!s.whoRaw && s.depends !== '—')) return `Waiting on ${s.depends}`;
-  if (/🧑‍🔧|🤔|🧑/.test(s.who) && !s.who.includes('🤖')) return s.who.includes('🤔') ? 'Owner: decision' : 'Owner: procedure';
+  if (/🧑‍🔧|🤔|🧑/.test(s.who) && !s.who.includes('🤖'))
+    return s.who.includes('🤔') ? 'Owner: decision' : 'Owner: procedure';
   return 'Ready';
 }
 export function recordState(r) {
@@ -180,7 +190,6 @@ export function recordState(r) {
   return 'No agent work';
 }
 
-
 // ---------- gap review ----------
 export const ID = /\b[BF]-\d+(?:-T\d+)?\b/g;
 export const OPEN_STEP = (st) => stepState(st) !== 'Done';
@@ -190,13 +199,16 @@ export function gapReview(sources, order, index, link) {
   const alias = (s) => new RegExp(`\\b${s.repository.split('/')[1].replace(/[-.]/g, '[- ]?')}\\b`, 'i');
   // 1. Cross-repository dependencies with no record on the other side: a sentence that names another component
   // together with a dependency word, and no open record in that component that names this one back.
-  const NEED = /\b(wait|waits|waiting|request|requested|need|needs|depend|depends|requires|blocked|backlog|tracked|recorded in|create|move|from that repository)/i;
+  const NEED =
+    /\b(wait|waits|waiting|request|requested|need|needs|depend|depends|requires|blocked|backlog|tracked|recorded in|create|move|from that repository)/i;
   for (const a of live.filter((s) => s.id !== 'solution'))
     for (const r of a.records.filter((x) => OPEN(x.status)))
       for (const b of live.filter((s) => s.id !== a.id && s.id !== 'solution')) {
         const sentence = r.prose.split(/(?<=[.;:])\s/).find((t) => alias(b).test(t) && NEED.test(t));
         if (!sentence) continue;
-        const counterpart = b.records.find((x) => OPEN(x.status) && (alias(a).test(x.prose) || x.text.includes(`${a.id}:${r.id}`)));
+        const counterpart = b.records.find(
+          (x) => OPEN(x.status) && (alias(a).test(x.prose) || x.text.includes(`${a.id}:${r.id}`)),
+        );
         if (counterpart) continue;
         const coordinated = sources[0].records.find((x) => OPEN(x.status) && x.text.includes(`${a.id}:${r.id}`));
         gaps.push({
@@ -210,12 +222,18 @@ export function gapReview(sources, order, index, link) {
   for (const a of live) {
     const known = new Set(a.records.flatMap((r) => [r.id, ...r.anchors]));
     const done = new Set(a.records.flatMap((r) => r.steps.filter((st) => !OPEN_STEP(st)).map((st) => st.id)));
-    const openIds = new Set(a.records.filter((r) => OPEN(r.status)).flatMap((r) => [r.id, ...r.steps.filter(OPEN_STEP).map((st) => st.id)]));
+    const openIds = new Set(
+      a.records.filter((r) => OPEN(r.status)).flatMap((r) => [r.id, ...r.steps.filter(OPEN_STEP).map((st) => st.id)]),
+    );
     const items = a.records.filter((r) => OPEN(r.status)).flatMap((r) => [r, ...r.steps.filter(OPEN_STEP)]);
     for (const it of items)
       for (const dep of it.depends.match(ID) ?? []) {
         if (openIds.has(dep)) continue;
-        const why = !known.has(dep) ? 'is not in the active backlog (closed, archived or a wrong ID)' : done.has(dep) ? 'is already done' : 'belongs to a closed record';
+        const why = !known.has(dep)
+          ? 'is not in the active backlog (closed, archived or a wrong ID)'
+          : done.has(dep)
+            ? 'is already done'
+            : 'belongs to a closed record';
         gaps.push({
           kind: '2 Dependency missing or done',
           where: link(a, it.id),
@@ -251,14 +269,23 @@ export function gapReview(sources, order, index, link) {
       const generated = r.agent !== null;
       const openSteps = r.steps.filter(OPEN_STEP);
       if ((generated && !openSteps.length) || !r.next)
-        gaps.push({ kind: '4 No next step', where: link(a, r.id), evidence: `${r.id} is ${r.status} with no ${generated ? 'open step' : 'next action'}${r.next ? `: "${short(r.next, 80)}"` : ''}`, proposal: `${a.id}: add the next step to ${r.id}, or verify and close it` });
-      const noEstimate = [r.effort, r.remaining].some((v) => !v || v === '—') && !(r.remaining === '—' && !generated && r.effort && r.effort !== '—');
+        gaps.push({
+          kind: '4 No next step',
+          where: link(a, r.id),
+          evidence: `${r.id} is ${r.status} with no ${generated ? 'open step' : 'next action'}${r.next ? `: "${short(r.next, 80)}"` : ''}`,
+          proposal: `${a.id}: add the next step to ${r.id}, or verify and close it`,
+        });
+      const noEstimate =
+        [r.effort, r.remaining].some((v) => !v || v === '—') &&
+        !(r.remaining === '—' && !generated && r.effort && r.effort !== '—');
       const stepsNoEstimate = openSteps.filter((st) => (!st.estimate || st.estimate === '—') && !hours(st.remaining));
       if (noEstimate || stepsNoEstimate.length)
         gaps.push({
           kind: '4 No estimate',
           where: link(a, r.id),
-          evidence: noEstimate ? `${r.id} has no effort or remaining estimate` : `steps without an estimate: ${stepsNoEstimate.map((st) => st.id).join(', ')}`,
+          evidence: noEstimate
+            ? `${r.id} has no effort or remaining estimate`
+            : `steps without an estimate: ${stepsNoEstimate.map((st) => st.id).join(', ')}`,
           proposal: `${a.id}: estimate ${noEstimate ? r.id : stepsNoEstimate.map((st) => st.id).join(', ')}`,
         });
     }
@@ -266,11 +293,15 @@ export function gapReview(sources, order, index, link) {
   for (const o of order.items) {
     const src = sources.find((x) => x.id === o.repo);
     if (src?.available && !index.has(o.ref))
-      gaps.push({ kind: '5 Order item missing', where: `[solution order](solution-order.md)`, evidence: `${o.ref} is not in ${o.repo}'s active backlog`, proposal: `solution: remove ${o.ref} from the order, or ${o.repo}: create the record the owner meant` });
+      gaps.push({
+        kind: '5 Order item missing',
+        where: `[solution order](solution-order.md)`,
+        evidence: `${o.ref} is not in ${o.repo}'s active backlog`,
+        proposal: `solution: remove ${o.ref} from the order, or ${o.repo}: create the record the owner meant`,
+      });
   }
   return gaps;
 }
-
 
 // Text of a GitHub contents API response, or null when it carries no content (files over 1 MB come back without it).
 export function contentsText(file) {
@@ -278,12 +309,55 @@ export function contentsText(file) {
   return Buffer.from(file.content, 'base64').toString('utf8');
 }
 
+// ---------- remaining hours ----------
+const round = (n) => Math.round(n * 100) / 100;
+
+// The backlog's own total line (between the totals markers), as plain text; '' when it has none.
+export function totalsLine(markdown) {
+  const m = /<!-- totals:start -->\s*\n([\s\S]*?)\n<!-- totals:end -->/.exec(markdown);
+  return m ? plain(m[1]) : '';
+}
+
+// Remaining agent and owner hours of one backlog, as it states them: its total line first, else the sum of its open
+// records' Remaining cells when every one has hours. null when neither can be read, or when the backlog's records
+// could not all be read (problems), so a partial reading never passes for a complete one.
+export function backlogHours(totals, records, problemCount = 0) {
+  if (problemCount) return null;
+  const from = "the backlog's total line";
+  if (/no open steps/i.test(totals)) return { agent: 0, owner: 0, from };
+  const head = totals.split(/ across /)[0];
+  const stated = /Remaining effort/i.test(head) ? hours(head) : null;
+  if (stated) return { agent: round(stated.agent), owner: round(stated.owner), from };
+  const open = records.filter((r) => OPEN(r.status));
+  if (!open.length) return { agent: 0, owner: 0, from: 'no open records' };
+  if (!open.every((r) => r.hours)) return null;
+  return {
+    agent: round(open.reduce((a, r) => a + r.hours.agent, 0)),
+    owner: round(open.reduce((a, r) => a + r.hours.owner, 0)),
+    from: "its open records' Remaining cells",
+  };
+}
+
+// Hours summed across backlogs (never a percentage). Unknown backlogs make the sum partial: "at least".
+export function solutionTotal(rows) {
+  const known = rows.filter((r) => r.hours);
+  return {
+    agent: round(known.reduce((a, r) => a + r.hours.agent, 0)),
+    owner: round(known.reduce((a, r) => a + r.hours.owner, 0)),
+    partial: known.length < rows.length,
+    unknown: rows.filter((r) => !r.hours).map((r) => r.id),
+  };
+}
+
 // Self-check for --check: parse each fixture and compare with test/fixtures/expected.json (offline).
 export function checkFixtures(read, expected) {
   const failures = [];
+  const totals = [];
   for (const [name, want] of Object.entries(expected)) {
+    if (name === '__total__') continue;
     const problems = [];
-    const records = parseBacklog(read(name), 'example', problems);
+    const markdown = read(name);
+    const records = parseBacklog(markdown, 'example', problems);
     const sources = [
       { id: 'solution', repository: 'acme/coordinator', available: true, records: [] },
       { id: 'example', repository: 'acme/example', available: true, records },
@@ -294,9 +368,19 @@ export function checkFixtures(read, expected) {
       steps: Object.fromEntries(records.flatMap((r) => r.steps.filter(OPEN_STEP)).map((st) => [st.id, stepState(st)])),
       gaps: gapReview(sources, { items: [] }, new Map(), (s, id) => `${s.id}:${id}`).length,
       problems: problems.length,
+      hours: backlogHours(totalsLine(markdown), records, problems.length),
     };
+    totals.push({ id: name, hours: got.hours });
+    if (got.hours) got.hours = { agent: got.hours.agent, owner: got.hours.owner };
     if (JSON.stringify(got) !== JSON.stringify(want))
       failures.push(`${name}: expected ${JSON.stringify(want)}, got ${JSON.stringify(got)}`);
+  }
+  if (expected.__total__) {
+    const { agent, owner, partial } = solutionTotal(totals);
+    if (JSON.stringify({ agent, owner, partial }) !== JSON.stringify(expected.__total__))
+      failures.push(
+        `solution total: expected ${JSON.stringify(expected.__total__)}, got ${JSON.stringify({ agent, owner, partial })}`,
+      );
   }
   return failures;
 }

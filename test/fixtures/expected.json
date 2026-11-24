@@ -1,17 +1,73 @@
 {
   "generated.md": {
-    "records": { "F-001": "Ready", "B-002": "Waiting on B-009-T01", "F-003": "No agent work" },
-    "steps": { "F-001-T02": "Ready", "F-001-T03": "Waiting on F-001-T02", "F-001-T04": "Owner: procedure", "B-002-T01": "Waiting on B-009-T01" },
+    "records": {
+      "F-001": "Ready",
+      "B-002": "Waiting on B-009-T01",
+      "F-003": "No agent work"
+    },
+    "steps": {
+      "F-001-T02": "Ready",
+      "F-001-T03": "Waiting on F-001-T02",
+      "F-001-T04": "Owner: procedure",
+      "B-002-T01": "Waiting on B-009-T01"
+    },
     "gaps": 5,
-    "problems": 0
+    "problems": 0,
+    "hours": {
+      "agent": 4,
+      "owner": 0.5
+    }
   },
   "authored.md": {
-    "records": { "F-001": "Owner: procedure", "B-002": "Ready", "F-003": "Owner: decision", "F-004": "Blocked" },
+    "records": {
+      "F-001": "Owner: procedure",
+      "B-002": "Ready",
+      "F-003": "Owner: decision",
+      "F-004": "Blocked"
+    },
     "steps": {},
     "gaps": 1,
-    "problems": 0
+    "problems": 0,
+    "hours": null
   },
-  "empty.md": { "records": {}, "steps": {}, "gaps": 0, "problems": 0 },
-  "unsupported-heading.md": { "records": {}, "steps": {}, "gaps": 0, "problems": 1 },
-  "renamed-header.md": { "records": {}, "steps": {}, "gaps": 0, "problems": 1 }
+  "empty.md": {
+    "records": {},
+    "steps": {},
+    "gaps": 0,
+    "problems": 0,
+    "hours": {
+      "agent": 0,
+      "owner": 0
+    }
+  },
+  "unsupported-heading.md": {
+    "records": {},
+    "steps": {},
+    "gaps": 0,
+    "problems": 1,
+    "hours": null
+  },
+  "renamed-header.md": {
+    "records": {},
+    "steps": {},
+    "gaps": 0,
+    "problems": 1,
+    "hours": null
+  },
+  "unreadable-total.md": {
+    "records": {
+      "F-001": "Ready"
+    },
+    "steps": {
+      "F-001-T01": "Ready"
+    },
+    "gaps": 1,
+    "problems": 0,
+    "hours": null
+  },
+  "__total__": {
+    "agent": 4,
+    "owner": 0.5,
+    "partial": true
+  }
 }

@@ -8,6 +8,7 @@ The owner's order of work across all repositories: one reference per line, top =
 - Work not listed here follows each repository's own priority. <!-- project -->
 - Reordering is an owner instruction, landed as a small PR that changes only this list. <!-- project -->
 - The order never skips a prerequisite or an owner decision: an item waiting on either is passed over until it is ready, not forced. <!-- project -->
+- Ready comes from each component's own markup: ⏳ and 🧑 cells, Depends on and the record's status in a generated ledger; only the status and the "Human action required" line in an authored four-column backlog, which has no Depends on, so such a record can show Ready while it waits on something written only in its prose. Before starting an item, read its record and check its prerequisites there. <!-- project -->
 - References only (`repo:ID`, a record or a step such as `nerv:F-005-T29`), with an optional short note on why it sits here; no status. A closed or archived item is removed in the next reorder or refresh PR. <!-- project -->
 
 ## Order

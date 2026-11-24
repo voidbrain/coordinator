@@ -1,7 +1,16 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { parseBacklog, recordState, stepState, gapReview, readOrder } from '../tools/solution-overview-lib.mjs';
+import {
+  parseBacklog,
+  recordState,
+  stepState,
+  gapReview,
+  readOrder,
+  totalsLine,
+  backlogHours,
+  solutionTotal,
+} from '../tools/solution-overview-lib.mjs';
 
 const fixture = (name) => readFileSync(new URL(`./fixtures/${name}`, import.meta.url), 'utf8');
 const parse = (name) => {
@@ -107,4 +116,31 @@ test('solution order: syntax, known repositories, duplicates and numbering', () 
     ids,
   );
   assert.equal(bad.problems.length, 6); // unknown repo twice, bad ID, duplicate, two numbering slips
+});
+
+test('remaining hours per backlog and the solution total; an unreadable total makes the sum partial', () => {
+  const read = (name) => {
+    const problems = [];
+    const markdown = fixture(name);
+    const records = parseBacklog(markdown, 'example', problems);
+    return backlogHours(totalsLine(markdown), records, problems.length);
+  };
+  assert.deepEqual(read('generated.md'), { agent: 4, owner: 0.5, from: "the backlog's total line" });
+  assert.deepEqual(read('empty.md'), { agent: 0, owner: 0, from: "the backlog's total line" });
+  assert.equal(read('unreadable-total.md'), null);
+  assert.equal(read('authored.md'), null);
+  assert.deepEqual(
+    solutionTotal([
+      { id: 'a', hours: read('generated.md') },
+      { id: 'b', hours: read('empty.md') },
+    ]),
+    { agent: 4, owner: 0.5, partial: false, unknown: [] },
+  );
+  assert.deepEqual(
+    solutionTotal([
+      { id: 'a', hours: read('generated.md') },
+      { id: 'c', hours: read('unreadable-total.md') },
+    ]),
+    { agent: 4, owner: 0.5, partial: true, unknown: ['c'] },
+  );
 });
