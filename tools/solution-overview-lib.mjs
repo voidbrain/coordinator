@@ -303,6 +303,15 @@ export function gapReview(sources, order, index, link) {
           proposal: `${a.id}: estimate ${noEstimate ? r.id : stepsNoEstimate.map((st) => st.id).join(', ')}`,
         });
     }
+  // 6. A project behind the latest harness release: propose its reconcile record (the owner accepts it first).
+  for (const a of live)
+    if (a.harness?.behind)
+      gaps.push({
+        kind: '6 Harness behind',
+        where: `${a.id} \`.harness.json\``,
+        evidence: `${a.id} is on harness v${a.harness.version}; the latest template release is v${a.harness.latest}`,
+        proposal: `${a.id}: a record "Reconcile to harness v${a.harness.latest}" (APPLY.md, Reconciling), done in a session of that repository`,
+      });
   // 5. Solution order items whose record does not exist.
   for (const o of order.items) {
     const src = sources.find((x) => x.id === o.repo);
@@ -472,12 +481,24 @@ export function runway(sources) {
     return result;
   };
   const perRepo = new Map(
-    sources.map((s) => [s.id, { runway: 0, unknownHours: [], authored: 0, blocks: [], ownerNext: 0 }]),
+    sources.map((s) => [
+      s.id,
+      { runway: 0, unknownHours: [], authored: 0, blocks: [], blocked: [], stops: [], ownerNext: 0 },
+    ]),
   );
   const ownerRoots = new Set();
   for (const node of nodes.values()) {
     const row = perRepo.get(node.repo);
     const r = resolve(node.key, []);
+    // Every agent item that cannot start, with its root cause: the Blocked table.
+    // Owner steps and external waits themselves.
+    if (node.kind !== 'agent') row.stops.push({ item: node.key, kind: node.kind });
+    if (node.kind === 'agent' && !r.ok)
+      row.blocked.push({
+        item: node.key,
+        on: r.root,
+        kind: r.why === 'a dependency cycle' ? `cycle ${r.cycle}` : r.why,
+      });
     if (node.kind === 'agent' && r.ok) {
       if (node.agent === null) row.unknownHours.push(node.id);
       else row.runway += node.agent;
@@ -514,7 +535,74 @@ export function runway(sources) {
     const r = resolve(key, []);
     return { kind: node.kind, doable: node.kind === 'agent' && r.ok, root: r.root, why: r.why };
   };
-  return { perRepo, total, state };
+  // Open prerequisites of an item (a step, or every open step of a record): [itemKey, prerequisiteKey] pairs.
+  const waits = (key) => {
+    const keys = nodes.has(key) ? [key] : (recordSteps.get(key) ?? []);
+    return keys.flatMap((k) => (nodes.get(k)?.deps ?? []).filter((d) => !done.has(d)).map((d) => [k, d]));
+  };
+  return { perRepo, total, state, waits };
+}
+
+// ---------- project facts: harness, audits, reviews, idle reasons ----------
+const semver = (v) => (/^v?(\d+)\.(\d+)\.(\d+)$/.exec(String(v ?? '')) ?? []).slice(1).map(Number);
+const newer = (a, b) => {
+  for (let i = 0; i < 3; i++) if (a[i] !== b[i]) return a[i] > b[i];
+  return false;
+};
+// The highest vX.Y.Z among tag names.
+export function latestRelease(tags) {
+  const releases = tags.filter((t) => semver(t).length === 3);
+  return (
+    releases.reduce((best, t) => (!best || newer(semver(t), semver(best)) ? t : best), null)?.replace(/^v/, '') ?? null
+  );
+}
+export function harnessStatus(version, latest) {
+  if (!version) return { version: null, latest, behind: false, text: 'no harness stamp' };
+  if (!latest || semver(version).length !== 3) return { version, latest, behind: false, text: `v${version}` };
+  const behind = newer(semver(latest), semver(version));
+  return { version, latest, behind, text: behind ? `v${version}, behind v${latest}` : `v${version} (latest)` };
+}
+const day = (iso) => String(iso).slice(0, 10);
+const addDays = (date, n) => new Date(Date.parse(`${date}T00:00:00Z`) + n * 86400000).toISOString().slice(0, 10);
+// Last audit (newest manifest by its reviewed time) and when the next is due, after `days`.
+export function auditStatus(manifests, days, today) {
+  const dated = manifests
+    .filter((m) => m?.reviewed)
+    .sort((a, b) => String(b.reviewed).localeCompare(String(a.reviewed)));
+  if (!dated.length) return null;
+  const last = day(dated[0].reviewed);
+  const next = addDays(last, days);
+  return { last, kind: dated[0].kind ?? 'audit', next, overdue: next < today };
+}
+// Periodic reviews configured under reviews.<name>.days, from files docs/reviews/<name>/<date>.md or
+// docs/reviews/<date>-<name>.md.
+export function reviewStatus(config, files, today) {
+  return Object.entries(config ?? {}).map(([name, { days }]) => {
+    const dates = files
+      .map((f) =>
+        new RegExp(`^docs/reviews/(?:${name}/(\\d{4}-\\d{2}-\\d{2})\\.md|(\\d{4}-\\d{2}-\\d{2})-${name}\\.md)$`).exec(
+          f,
+        ),
+      )
+      .filter(Boolean)
+      .map((m) => m[1] ?? m[2])
+      .sort();
+    const last = dates.at(-1) ?? null;
+    const next = last ? addDays(last, days) : null;
+    return { name, last, next, overdue: !last || next < today };
+  });
+}
+// Why a project has no doable agent work, or null when it has some.
+export function idleReason(source, row) {
+  if (!source.available) return 'backlog unreadable';
+  if (!source.records.some((r) => OPEN(r.status))) return 'no open records';
+  if (row.runway > 0 || row.unknownHours.length) return null;
+  const roots = row.blocked.map((b) => b.on.split(':')[0]);
+  if (roots.some((repo) => repo !== source.id)) return 'waiting on another project';
+  const kinds = [...row.blocked.map((b) => b.kind), ...row.stops.map((x) => x.kind)];
+  if (kinds.length && kinds.every((k) => k.startsWith('owner'))) return 'all waiting on the owner';
+  if (kinds.length && kinds.every((k) => k.startsWith('external'))) return 'waiting on an external event (Blocked)';
+  return 'everything blocked (see Blocked)';
 }
 
 // Self-check for --check: parse each fixture and compare with test/fixtures/expected.json (offline).
@@ -556,6 +644,23 @@ export function checkFixtures(read, expected) {
     const wanted = { total: want.total, blocks: want.blocks };
     if (JSON.stringify(got) !== JSON.stringify(wanted))
       failures.push(`runway: expected ${JSON.stringify(wanted)}, got ${JSON.stringify(got)}`);
+  }
+  if (expected.__harness__) {
+    const { tags, version, behind } = expected.__harness__;
+    const status = harnessStatus(version, latestRelease(tags));
+    const gap = gapReview(
+      [
+        { id: 'solution', repository: 'acme/coordinator', available: true, records: [] },
+        { id: 'example', repository: 'acme/example', available: true, records: [], harness: status },
+      ],
+      { items: [] },
+      new Map(),
+      (s, id) => `${s.id}:${id}`,
+    ).some((g) => g.kind.startsWith('6'));
+    if (status.behind !== behind || gap !== behind)
+      failures.push(
+        `harness: expected behind=${behind} with a reconcile proposal, got behind=${status.behind}, proposal=${gap}`,
+      );
   }
   if (expected.__total__) {
     const { agent, owner, partial } = solutionTotal(totals);

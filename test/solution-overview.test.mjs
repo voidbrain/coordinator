@@ -12,6 +12,11 @@ import {
   solutionTotal,
   runway,
   proseDeps,
+  latestRelease,
+  harnessStatus,
+  auditStatus,
+  reviewStatus,
+  idleReason,
 } from '../tools/solution-overview-lib.mjs';
 
 const fixture = (name) => readFileSync(new URL(`./fixtures/${name}`, import.meta.url), 'utf8');
@@ -204,4 +209,113 @@ test('runway: steps under a Blocked record are external blocks, not runway', () 
   assert.equal(total, 0);
   assert.equal(state('alpha:F-001-T01').doable, false);
   assert.deepEqual(perRepo.get('alpha').blocks, ['F-001-T01: external (record Blocked)']);
+});
+
+// Owner requests 2026-11-24: the overview's Blocked, Nothing to do, Audits and Harness tables.
+const loadAll = () => {
+  const load = (id, name) => ({
+    id,
+    repository: `acme/${id}`,
+    available: true,
+    records: parseBacklog(fixture(name), id),
+  });
+  return [
+    load('alpha', 'runway-alpha.md'),
+    load('beta', 'runway-beta.md'),
+    load('gamma', 'empty.md'),
+    load('delta', 'runway-blocked.md'),
+    { id: 'omega', repository: 'acme/omega', available: false, records: [] },
+  ];
+};
+
+test('Blocked table: each blocked agent item with its root cause, and the open prerequisites of an order item', () => {
+  const sources = loadAll();
+  const { perRepo, waits } = runway(sources);
+  assert.deepEqual(perRepo.get('beta').blocked, [
+    { item: 'beta:F-002-T03', on: 'beta:F-002-T02', kind: 'owner procedure' },
+    { item: 'beta:B-003-T01', on: 'beta:B-003-T01', kind: 'cycle B-003-T01 → B-003-T02 → B-003-T01' },
+    { item: 'beta:B-003-T02', on: 'beta:B-003-T01', kind: 'cycle B-003-T01 → B-003-T02 → B-003-T01' },
+    { item: 'beta:B-003-T03', on: 'beta:B-003-T09', kind: 'an unknown prerequisite' },
+  ]);
+  assert.deepEqual(waits('beta:F-002'), [
+    ['beta:F-002-T01', 'alpha:F-001-T01'],
+    ['beta:F-002-T02', 'beta:F-002-T01'],
+    ['beta:F-002-T03', 'beta:F-002-T02'],
+  ]);
+});
+
+test('Nothing to do table: the reason a project has no doable agent work', () => {
+  const sources = loadAll();
+  const { perRepo } = runway(sources);
+  const why = (id) =>
+    idleReason(
+      sources.find((s) => s.id === id),
+      perRepo.get(id),
+    );
+  assert.equal(why('alpha'), null);
+  assert.equal(why('gamma'), 'no open records');
+  assert.equal(why('omega'), 'backlog unreadable');
+  assert.equal(why('delta'), 'waiting on an external event (Blocked)');
+  // A project whose only agent step waits on another project.
+  const waiting = {
+    id: 'beta',
+    repository: 'acme/beta',
+    available: true,
+    records: parseBacklog(fixture('runway-beta.md'), 'beta'),
+  };
+  const lone = runway([{ id: 'alpha', repository: 'acme/alpha', available: true, records: [] }, waiting]);
+  assert.equal(idleReason(waiting, lone.perRepo.get('beta')), 'waiting on another project');
+});
+
+test('Audits table: last audit and the next due date; periodic reviews from either file layout', () => {
+  assert.deepEqual(
+    auditStatus(
+      [
+        { kind: 'scoped', reviewed: '2026-11-20T10:00:00Z' },
+        { kind: 'full', reviewed: '2026-11-10T10:00:00Z' },
+      ],
+      7,
+      '2026-11-28',
+    ),
+    { last: '2026-11-20', kind: 'scoped', next: '2026-11-27', overdue: true },
+  );
+  assert.equal(auditStatus([], 7, '2026-11-28'), null);
+  assert.deepEqual(
+    reviewStatus(
+      { token: { days: 30 }, skills: { days: 30 } },
+      ['docs/reviews/token/2026-11-01.md', 'docs/reviews/2026-11-20-token.md'],
+      '2026-11-28',
+    ),
+    [
+      { name: 'token', last: '2026-11-20', next: '2026-12-20', overdue: false },
+      { name: 'skills', last: null, next: null, overdue: true },
+    ],
+  );
+});
+
+test('Harness table and gap review: a project behind the latest release gets a reconcile proposal', () => {
+  const latest = latestRelease(['v10.7.0', 'v10.10.0', 'v10.9.0', 'not-a-release']);
+  assert.equal(latest, '10.10.0');
+  assert.deepEqual(harnessStatus('10.9.0', latest), {
+    version: '10.9.0',
+    latest: '10.10.0',
+    behind: true,
+    text: 'v10.9.0, behind v10.10.0',
+  });
+  assert.equal(harnessStatus('10.10.0', latest).behind, false);
+  const sources = [
+    {
+      id: 'solution',
+      repository: 'acme/coordinator',
+      available: true,
+      records: [],
+      harness: harnessStatus('10.10.0', latest),
+    },
+    { id: 'alpha', repository: 'acme/alpha', available: true, records: [], harness: harnessStatus('10.9.0', latest) },
+  ];
+  const found = gapReview(sources, { items: [] }, new Map(), (s, id) => `${s.id}:${id}`).filter((g) =>
+    g.kind.startsWith('6'),
+  );
+  assert.equal(found.length, 1);
+  assert.match(found[0].proposal, /^alpha: a record "Reconcile to harness v10\.10\.0"/);
 });
