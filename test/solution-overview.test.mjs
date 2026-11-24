@@ -196,3 +196,12 @@ test('gap review resolves repo:ID prerequisites against the other repository', (
     ['B-003-T03 depends on B-003-T09, which is not in the active backlog (closed, archived or a wrong ID)'],
   );
 });
+
+// Re-review of PR #1, finding 3: the steps of a Blocked record are blocked, however ready they look.
+test('runway: steps under a Blocked record are external blocks, not runway', () => {
+  const records = parseBacklog(fixture('runway-blocked.md'), 'alpha');
+  const { perRepo, total, state } = runway([{ id: 'alpha', repository: 'acme/alpha', available: true, records }]);
+  assert.equal(total, 0);
+  assert.equal(state('alpha:F-001-T01').doable, false);
+  assert.deepEqual(perRepo.get('alpha').blocks, ['F-001-T01: external (record Blocked)']);
+});
