@@ -8,8 +8,7 @@ on:
     branches: [main]
   push:
     branches: [main]
-  # The Refresh solution views workflow starts CI on its branch this way: a push or PR made with the workflow token
-  # starts no workflow, and a PR without a passing check cannot be landed (merge-when-green).
+  # By hand on any branch. (Refresh PRs get CI from pull_request: they are opened and pushed with REFRESH_TOKEN.)
   workflow_dispatch:
 
 permissions:
