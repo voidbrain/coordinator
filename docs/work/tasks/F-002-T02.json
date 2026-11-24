@@ -30,7 +30,7 @@
   "effort": {
     "size": "small",
     "estimate": "0.25 h",
-    "basis": "Landed with the owner's order; items whose record has not merged yet (nerv PR #730, gauntlet-protocol PR #85) are marked pending in the order. Closes on the PR's green CI.",
+    "basis": "Landed with the owner's order; nerv:F-122 and nerv:F-123 are marked pending until NERV PR #730 merges (gauntlet-protocol F-015 to F-020 merged before this PR). Closes on the PR's green CI.",
     "reviewed": "2026-11-24",
     "agentHours": 0,
     "ownerHours": 0,

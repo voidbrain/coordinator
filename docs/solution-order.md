@@ -38,10 +38,10 @@ Set by the owner on 2026-11-24 (F-002): the proposed order kept as 1–17, `grov
 19. `nerv:F-123` — pending: NERV PR #730; MCP connection to Grover's hub
 20. `fpvbuddy:F-005` — M1 FPV battery core; T02 waits on nerv:F-101-T04
 21. `nerv:F-121` — printed parts per drone, print by chat
-22. `gauntlet-protocol:F-015` — pending: gauntlet-protocol PR #85; coding-v1 pack
-23. `gauntlet-protocol:F-016` — pending: gauntlet-protocol PR #85; embedded-v1 pack
-24. `gauntlet-protocol:F-017` — pending: gauntlet-protocol PR #85; logic-math-v1 pack
-25. `gauntlet-protocol:F-018` — pending: gauntlet-protocol PR #85; italian-quality-v1 pack
-26. `gauntlet-protocol:F-019` — pending: gauntlet-protocol PR #85; cad-3d-v1 pack
-27. `gauntlet-protocol:F-020` — pending: gauntlet-protocol PR #85; code-review-v1 pack
+22. `gauntlet-protocol:F-015` — coding-v1 pack
+23. `gauntlet-protocol:F-016` — embedded-v1 pack
+24. `gauntlet-protocol:F-017` — logic-math-v1 pack
+25. `gauntlet-protocol:F-018` — italian-quality-v1 pack
+26. `gauntlet-protocol:F-019` — cad-3d-v1 pack
+27. `gauntlet-protocol:F-020` — code-review-v1 pack
 <!-- order:end -->
