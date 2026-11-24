@@ -1,14 +1,14 @@
 <!-- generated: project-harness solution dashboard; edit owning backlogs, not this file -->
 # voidbrain solution dashboard
 
-Snapshot: 2026-11-24T23:19:30.134Z. Read-only aggregation; no combined completion percentage. Solution integration status is independent of component status.
+Snapshot: 2026-11-24T23:28:35.581Z. Read-only aggregation; no combined completion percentage. Solution integration status is independent of component status.
 
 | Source | Revision | Snapshot state |
 |---|---|---|
-| solution | [c46963233a3e](https://github.com/voidbrain/coordinator/commit/c46963233a3e43f86035a2d8880048aa3a7d7e87) | Local changes — not a committed snapshot; requested working checkout; local checkout, not fetched |
+| solution | [0aa43f16216d](https://github.com/voidbrain/coordinator/commit/0aa43f16216d6e542f46695ce1fb147dc3e4f178) | Local changes — not a committed snapshot; requested working checkout; local checkout, not fetched |
 | nerv | [774a08f94a64](https://github.com/voidbrain/nerv/commit/774a08f94a649b22ce05117d2bc0c4806f543b42) | Committed snapshot; requested main; GitHub |
 | gauntlet-protocol | [019fba8044ef](https://github.com/voidbrain/gauntlet-protocol/commit/019fba8044efa1f9d9fe82283186bf44ea905e11) | Committed snapshot; requested main; GitHub |
-| project-harness | [2e534fad80cb](https://github.com/voidbrain/project-harness/commit/2e534fad80cb53a8945832253bbdcc70a56389bb) | Committed snapshot; requested main; GitHub |
+| project-harness | [d04799202d14](https://github.com/voidbrain/project-harness/commit/d04799202d14eba610ecfa16bebf84fe391c7b53) | Committed snapshot; requested main; GitHub |
 | fpvbuddy | [383242f31ab6](https://github.com/voidbrain/FPVBuddy/commit/383242f31ab67dd4278ee36495a587d2f4f3a9f8) | Committed snapshot; requested main; GitHub |
 | grover | [44b893baa495](https://github.com/voidbrain/Grover/commit/44b893baa4959cac17ea9a1670b6a7647467da51) | Committed snapshot; requested main; GitHub |
 
@@ -19,7 +19,7 @@ Snapshot: 2026-11-24T23:19:30.134Z. Read-only aggregation; no combined completio
 | [solution:F-001](BACKLOG.md#f-001) | Coordinator repository with harness v10.9.0, the solution profile, the solution order and the gap review | Implemented | No | 🟢 Small | — |
 | [solution:F-002](BACKLOG.md#f-002) | Owner sets the first solution order | Open | No | 🟢 Small | — |
 | [solution:F-003](BACKLOG.md#f-003) | Owner accepts or rejects the first gap-review proposals | Open | No | 🟢 Small | — |
-| [solution:F-004](BACKLOG.md#f-004) | Propose the solution order, hours, runway, gap review, cross-repository dependencies and on-demand backlog views to the template | Open | Procedure | 🟡 Medium | — |
+| [solution:F-004](BACKLOG.md#f-004) | Propose the solution order, hours, runway, gap review, cross-repository dependencies and on-demand backlog views to the template | Open | No | 🟡 Medium | — |
 | [solution:F-006](BACKLOG.md#f-006) | NERV delivers Grover alerts end to end | Open | No | 🟢 Small | grover:F-008 |
 | [solution:F-007](BACKLOG.md#f-007) | NERV capability coverage in the Gauntlet across both repositories | Open | No | 🟢 Small | nerv:F-120 |
 
@@ -102,10 +102,10 @@ Snapshot: 2026-11-24T23:19:30.134Z. Read-only aggregation; no combined completio
 | [gauntlet-protocol:F-016](https://github.com/voidbrain/gauntlet-protocol/blob/019fba8044efa1f9d9fe82283186bf44ea905e11/docs/BACKLOG.md#f-016) | embedded-v1: Arduino, ESP32 and Raspberry Pi pack | Open | Procedure | 🔴 Large | 2026-11-24 |
 | [gauntlet-protocol:F-022](https://github.com/voidbrain/gauntlet-protocol/blob/019fba8044efa1f9d9fe82283186bf44ea905e11/docs/BACKLOG.md#f-022) | Packs or recorded skips for estimation, research, scheduling-time and backlog-management | Open | No | 🟡 Medium | 2026-11-24 |
 | [gauntlet-protocol:F-021](https://github.com/voidbrain/gauntlet-protocol/blob/019fba8044efa1f9d9fe82283186bf44ea905e11/docs/BACKLOG.md#f-021) | image-generation-v1: runner and grader after a design decision | Open | No | 🔴 Large | 2026-11-24 |
-| [project-harness:F-095](https://github.com/voidbrain/project-harness/blob/2e534fad80cb53a8945832253bbdcc70a56389bb/docs/BACKLOG.md#f-095) | Solution profile: one order and an owner view, with cross-repository step prerequisites | Open | No | 🟣 Very large | 2026-11-24 |
-| [project-harness:F-098](https://github.com/voidbrain/project-harness/blob/2e534fad80cb53a8945832253bbdcc70a56389bb/docs/BACKLOG.md#f-098) | Convention check reads configured source folders | Open | No | 🟡 Medium | 2026-11-25 |
-| [project-harness:F-097](https://github.com/voidbrain/project-harness/blob/2e534fad80cb53a8945832253bbdcc70a56389bb/docs/BACKLOG.md#f-097) | Solution profile: agent runway, audits per project and gap review | Open | No | 🔴 Large | 2026-11-24 |
-| [project-harness:F-096](https://github.com/voidbrain/project-harness/blob/2e534fad80cb53a8945832253bbdcc70a56389bb/docs/BACKLOG.md#f-096) | Stop committing generated backlog views | Open | No | 🟣 Very large | 2026-11-24 |
+| [project-harness:F-095](https://github.com/voidbrain/project-harness/blob/d04799202d14eba610ecfa16bebf84fe391c7b53/docs/BACKLOG.md#f-095) | Solution profile: one order and an owner view, with cross-repository step prerequisites | Open | No | 🟣 Very large | 2026-11-24 |
+| [project-harness:F-098](https://github.com/voidbrain/project-harness/blob/d04799202d14eba610ecfa16bebf84fe391c7b53/docs/BACKLOG.md#f-098) | Convention check reads configured source folders | Open | No | 🟢 Small | 2026-11-25 |
+| [project-harness:F-097](https://github.com/voidbrain/project-harness/blob/d04799202d14eba610ecfa16bebf84fe391c7b53/docs/BACKLOG.md#f-097) | Solution profile: agent runway, audits per project and gap review | Open | No | 🔴 Large | 2026-11-24 |
+| [project-harness:F-096](https://github.com/voidbrain/project-harness/blob/d04799202d14eba610ecfa16bebf84fe391c7b53/docs/BACKLOG.md#f-096) | Stop committing generated backlog views | Open | No | 🟣 Very large | 2026-11-24 |
 | [fpvbuddy:F-005](https://github.com/voidbrain/FPVBuddy/blob/383242f31ab67dd4278ee36495a587d2f4f3a9f8/docs/BACKLOG.md#f-005) | M1 — FPV battery core package | Open | No | 🟡 Medium | 2026-11-24 |
 | [grover:F-005](https://github.com/voidbrain/Grover/blob/44b893baa4959cac17ea9a1670b6a7647467da51/docs/BACKLOG.md#f-005) | Deploy hub and agent on the Pi behind Tailscale | Open | Procedure | 🟢 Small | 2026-11-24 |
 | [grover:F-003](https://github.com/voidbrain/Grover/blob/44b893baa4959cac17ea9a1670b6a7647467da51/docs/BACKLOG.md#f-003) | Hardware bring-up on the Raspberry Pi | Open | Decision | 🟡 Medium | 2026-11-24 |
