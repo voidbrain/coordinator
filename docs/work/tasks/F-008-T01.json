@@ -28,11 +28,16 @@
   "effort": {
     "size": "small",
     "estimate": "0.25 h",
-    "basis": "Estimated 2026-11-24: dispatch the workflow once after PR #1 merges, read the run and link it. Not a measurement.",
+    "basis": "Estimated 2026-11-24: dispatch the workflow once after PR #2 merges (the version on main from PR #1 lacks the re-review fixes), read the run and link it. Not a measurement.",
     "reviewed": "2026-11-24",
     "agentHours": 0.25,
     "ownerHours": 0,
     "estimateAgentHours": 0.25
   },
-  "prs": []
+  "prs": [
+    {
+      "pr": 2,
+      "note": "workflow fixes"
+    }
+  ]
 }

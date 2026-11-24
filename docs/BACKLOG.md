@@ -28,10 +28,10 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status |
-|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-001-t01"></a>F-001-T01 — Adopt the harness, the solution profile, the views, the order and the gap review | 0.5 h | 0 h | 0.5 h | Implemented; verification pending |
-| 🟢 Small | **Total** | 0.5 h | 0 h (0 of 1 steps recorded) | 0.5 h | 0 of 1 completed |
+| Effort | Step | Estimate | Actual | Remaining | Status | PRs |
+|---|---|---|---|---|---|---|
+| 🟢 Small | <a id="f-001-t01"></a>F-001-T01 — Adopt the harness, the solution profile, the views, the order and the gap review | 0.5 h | 0 h | 0.5 h | Implemented; verification pending | [PR #1](https://github.com/voidbrain/coordinator/pull/1) adoption, merged; [PR #2](https://github.com/voidbrain/coordinator/pull/2) re-review fixes |
+| 🟢 Small | **Total** | 0.5 h | 0 h (0 of 1 steps recorded) | 0.5 h | 0 of 1 completed | |
 
 <details>
 <summary>Next action, estimates and PR history</summary>
@@ -40,7 +40,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | [#1](https://github.com/voidbrain/coordinator/pull/1) |
+| PR / evidence | Steps: F-001-T01: [PR #1](https://github.com/voidbrain/coordinator/pull/1) adoption, merged; [PR #2](https://github.com/voidbrain/coordinator/pull/2) re-review fixes. [#1](https://github.com/voidbrain/coordinator/pull/1) |
 | Opened | 2026-11-24 |
 | Verification | Pending |
 | Reviewed | 2026-11-24 |
@@ -269,10 +269,10 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status |
-|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-008-t01"></a>F-008-T01 — Daily refresh workflow: first run after the merge, linked | 0.25 h | 0 h | 0.25 h | Implemented; verification pending |
-| 🟢 Small | **Total** | 0.25 h | 0 h (0 of 1 steps recorded) | 0.25 h | 0 of 1 completed |
+| Effort | Step | Estimate | Actual | Remaining | Status | PRs |
+|---|---|---|---|---|---|---|
+| 🟢 Small | <a id="f-008-t01"></a>F-008-T01 — Daily refresh workflow: first run after the merge, linked | 0.25 h | 0 h | 0.25 h | Implemented; verification pending | [PR #2](https://github.com/voidbrain/coordinator/pull/2) workflow fixes |
+| 🟢 Small | **Total** | 0.25 h | 0 h (0 of 1 steps recorded) | 0.25 h | 0 of 1 completed | |
 
 <details>
 <summary>Next action, estimates and PR history</summary>
@@ -281,7 +281,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | [#1](https://github.com/voidbrain/coordinator/pull/1) |
+| PR / evidence | Steps: F-008-T01: [PR #2](https://github.com/voidbrain/coordinator/pull/2) workflow fixes. [#1](https://github.com/voidbrain/coordinator/pull/1) |
 | Opened | 2026-11-24 |
 | Verification | Pending: first run after merge |
 | Reviewed | 2026-11-24 |

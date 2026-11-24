@@ -6,7 +6,7 @@
   "goal": "Adopt the harness, the solution profile, the views, the order and the gap review",
   "status": "implemented",
   "acceptance": [
-    "PR #1 merged on green CI after an independent review"
+    "PR #1 merged on green CI after an independent review; its re-review fixes merged on green CI in PR #2"
   ],
   "dependsOn": [],
   "resources": [
@@ -29,11 +29,20 @@
   "effort": {
     "size": "small",
     "estimate": "0.5 h",
-    "basis": "Estimated 2026-11-24: the work is in PR #1; what remains is answering its independent review, the merge and closing the record. Not a measurement.",
+    "basis": "Estimated 2026-11-24: PR #1 merged (1c69fee) after review; its re-review fixes are in PR #2, which closes the record on green CI. Not a measurement.",
     "reviewed": "2026-11-24",
     "agentHours": 0.5,
     "ownerHours": 0,
     "estimateAgentHours": 0.5
   },
-  "prs": []
+  "prs": [
+    {
+      "pr": 1,
+      "note": "adoption, merged"
+    },
+    {
+      "pr": 2,
+      "note": "re-review fixes"
+    }
+  ]
 }
