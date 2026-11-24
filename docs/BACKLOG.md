@@ -1,20 +1,24 @@
-# Coordinator backlog
+# <a id="top"></a>Coordinator backlog
 
 Current work ledger, reviewed 24 November 2026 against main `e03eb0c`. Cross-repository work only; each component's work lives in its own backlog ([overview](SOLUTION-OVERVIEW.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
+
+<!-- totals:start -->
+**Remaining effort:** 5.25 h agent + 2.25 h owner across 12 open steps of 7 features. Generated from the task files.
+<!-- totals:end -->
 
 ## Work items
 
 Bugs (B-) and features (F-) in one list, most urgent first.
 
-### F-001
+### <a id="f-001"></a>[✨ F-001](#top)
 
 **Coordinator repository with harness v10.9.0, the solution profile, the solution order and the gap review**
 
-| Signal | Priority | Status | Effort |
-|:---:|---|---|---|
-| 🟡 | 🔺 P1 | Implemented | 🟢 Small |
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🟡 Implemented | 🔺 P1 | 🟢 Small | 0.5 h | — | — | 🤖 | — | — |
 
-💻 **→ Human action required: No**<br />Let PR #1's CI run; it closes on green.
+💻 **→** Next: F-001-T01 — Adopt the harness, the solution profile, the views, the order and the gap review (Implemented; verification pending).
 
 | | |
 |---|---|
@@ -22,16 +26,21 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | **Reproduce** | `npm run check:fast`; `npm run solution:refresh` regenerates `docs/SOLUTION-OVERVIEW.md` and `docs/SOLUTION-DASHBOARD.md` from GitHub. |
 | **Check** | CI passes on the first PR; the overview lists every component's open work, owner checks, blocked work, effort, the solution order with live state and the gap review; `check:freshness` ends with the harness on v10.9.0. |
 
+**Feature steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status | PRs |
+|---|---|---|---|---|---|---|
+| 🟢 Small | <a id="f-001-t01"></a>F-001-T01 — Adopt the harness, the solution profile, the views, the order and the gap review | 0.5 h | 0 h | 0.5 h | Implemented; verification pending | [PR #1](https://github.com/voidbrain/coordinator/pull/1) adoption, merged; [PR #2](https://github.com/voidbrain/coordinator/pull/2) re-review fixes |
+| 🟢 Small | **Total** | 0.5 h | 0 h (0 of 1 steps recorded) | 0.5 h | 0 of 1 completed | |
+
 <details>
 <summary>Next action, estimates and PR history</summary>
 
-**Next action / closure evidence:** Applied core and the solution profile from template v10.9.0 on `harness/agent-harness`; manifest with five components; project tool `tools/solution-overview.mjs` for the order, owner, blocked, effort and gap sections the template dashboard does not have (proposed for the template, F-004). Review fixes on the same PR: unknown headings, summary tables and statuses are reported as problems (failing tests first), Prettier and ESLint on the project's own tools and tests, fixture tests for the generated, authored and empty layouts run in CI and in `--check`. Closes on PR #1's green CI.
-
-**Estimates:** Small remaining effort. Estimated 2026-11-24; not acceptance evidence.
+[Full notes & evidence](work/records/F-001.md)
 
 | Field | Value |
 |---|---|
-| PR / evidence | [#1](https://github.com/voidbrain/coordinator/pull/1) |
+| PR / evidence | Steps: F-001-T01: [PR #1](https://github.com/voidbrain/coordinator/pull/1) adoption, merged; [PR #2](https://github.com/voidbrain/coordinator/pull/2) re-review fixes. [#1](https://github.com/voidbrain/coordinator/pull/1) |
 | Opened | 2026-11-24 |
 | Verification | Pending |
 | Reviewed | 2026-11-24 |
@@ -40,15 +49,15 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 ---
 
-### F-002
+### <a id="f-002"></a>[✨ F-002](#top)
 
 **Owner sets the first solution order**
 
-| Signal | Priority | Status | Effort |
-|:---:|---|---|---|
-| 🔴 | 🔺 P1 | Open | 🟢 Small |
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🔴 Open | 🔺 P1 | 🟢 Small | 0.25 h agent + 0.25 h owner | — | — | ⏳ | — | 🤔 |
 
-🧑 **→ Human action required: Decision**<br />Read the proposed order in [docs/solution-order.md](solution-order.md) and its live states in the [overview](SOLUTION-OVERVIEW.md#solution-order); reply with the order you want (for example "move grover:F-003 to 1, drop nerv:F-021").
+🧑 **→** Next: [🤔](solution-order.md) F-002-T01 — Owner decides the first solution order (Ready).
 
 | | |
 |---|---|
@@ -56,12 +65,18 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | **Reproduce** | Open `docs/solution-order.md`: its Order section says "Proposal of 2026-11-24". |
 | **Check** | The owner's order is landed in a small PR and the "Proposal" sentence is replaced by the date the owner set it. |
 
+**Feature steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who |
+|---|---|---|---|---|---|---|---|:---:|
+| 🟢 Small | <a id="f-002-t01"></a>F-002-T01 — Owner decides the first solution order | — | 0 h | 0 h agent + 0.25 h owner | Ready | — | [F-002-T02](#f-002-t02) | [🤔](solution-order.md) |
+| 🟢 Small | <a id="f-002-t02"></a>F-002-T02 — Land the owner's order in a PR that changes only the list | 0.25 h | 0 h | 0.25 h | Planned | [F-002-T01](#f-002-t01) | — | ⏳ 🤖 |
+| 🟢 Small | **Total** | 0.25 h (1 of 2 steps) | 0 h (0 of 2 steps recorded) | 0.25 h agent + 0.25 h owner | 0 of 2 completed | | | |
+
 <details>
 <summary>Next action, estimates and PR history</summary>
 
-**Next action / closure evidence:** Waits on the owner's reorder; then one PR that changes only the list.
-
-**Estimates:** Small remaining effort. Estimated 2026-11-24; not acceptance evidence.
+[Full notes & evidence](work/records/F-002.md)
 
 | Field | Value |
 |---|---|
@@ -74,15 +89,15 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 ---
 
-### F-003
+### <a id="f-003"></a>[✨ F-003](#top)
 
 **Owner accepts or rejects the first gap-review proposals**
 
-| Signal | Priority | Status | Effort |
-|:---:|---|---|---|
-| 🔴 | 🔺 P1 | Open | 🟢 Small |
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🔴 Open | 🔺 P1 | 🟢 Small | 0.25 h agent + 0.5 h owner | — | — | ⏳ | — | 🤔 |
 
-🧑 **→ Human action required: Decision**<br />Read the [gap review](SOLUTION-OVERVIEW.md#gap-review-proposals) and reply with the row numbers to create; each becomes a record or step in its own repository, created in a session of that repository.
+🧑 **→** Next: [🤔](SOLUTION-OVERVIEW.md#gap-review-proposals) F-003-T01 — Owner accepts or rejects each gap-review proposal (Ready).
 
 | | |
 |---|---|
@@ -90,12 +105,18 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | **Reproduce** | `npm run solution:refresh`, then the "Gap review (proposals)" section of `docs/SOLUTION-OVERVIEW.md`. |
 | **Check** | Every proposal is accepted or rejected by the owner; accepted ones exist in their owning backlogs (the next refresh no longer lists them); rejected ones are recorded here with the reason. |
 
+**Feature steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who |
+|---|---|---|---|---|---|---|---|:---:|
+| 🟢 Small | <a id="f-003-t01"></a>F-003-T01 — Owner accepts or rejects each gap-review proposal | — | 0 h | 0 h agent + 0.5 h owner | Ready | — | [F-003-T02](#f-003-t02) | [🤔](SOLUTION-OVERVIEW.md#gap-review-proposals) |
+| 🟢 Small | <a id="f-003-t02"></a>F-003-T02 — Record the dispositions and confirm accepted gaps are gone after the next refresh | 0.25 h | 0 h | 0.25 h | Planned | [F-003-T01](#f-003-t01) | — | ⏳ 🤖 |
+| 🟢 Small | **Total** | 0.25 h (1 of 2 steps) | 0 h (0 of 2 steps recorded) | 0.25 h agent + 0.5 h owner | 0 of 2 completed | | | |
+
 <details>
 <summary>Next action, estimates and PR history</summary>
 
-**Next action / closure evidence:** Waits on the owner's choice. Accepted proposals are created by sessions in their owning repositories; this record only tracks the owner's disposition and the refresh that shows them gone.
-
-**Estimates:** Small remaining effort. Estimated 2026-11-24; not acceptance evidence.
+[Full notes & evidence](work/records/F-003.md)
 
 | Field | Value |
 |---|---|
@@ -108,15 +129,15 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 ---
 
-### F-004
+### <a id="f-004"></a>[✨ F-004](#top)
 
 **Propose the solution order, hours, runway, gap review, cross-repository dependencies and on-demand backlog views to the template**
 
-| Signal | Priority | Status | Effort |
-|:---:|---|---|---|
-| 🔴 | 🔶 P2 | Open | 🟢 Small |
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🔴 Open | 🔶 P2 | 🟡 Medium | 2 h agent + 1 h owner | — | — | ⏳ | 🧑‍🔧 | — |
 
-🧑 **→ Human action required: Procedure**<br />Take [docs/proposals/solution-order-in-template.md](proposals/solution-order-in-template.md) to a project-harness session; when a release ships it, this repository reconciles and drops its project tool.
+🧑 **→** Next: [🧑‍🔧](proposals/solution-order-in-template.md) F-004-T01 — Owner takes the template proposal to a project-harness session (Ready).
 
 | | |
 |---|---|
@@ -124,12 +145,18 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | **Reproduce** | Read `docs/proposals/solution-order-in-template.md`. |
 | **Check** | The owner has taken the proposal to the template; once a template release covers it, this repository reconciles to it and removes `tools/solution-overview.mjs` or keeps only what the release leaves project-specific. |
 
+**Feature steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who |
+|---|---|---|---|---|---|---|---|:---:|
+| 🟢 Small | <a id="f-004-t01"></a>F-004-T01 — Owner takes the template proposal to a project-harness session | — | 0 h | 0 h agent + 1 h owner | Ready | — | [F-004-T02](#f-004-t02) | [🧑‍🔧](proposals/solution-order-in-template.md) |
+| 🟡 Medium | <a id="f-004-t02"></a>F-004-T02 — Reconcile to the template release that ships the proposal and retire the project tool | 2 h | 0 h | 2 h | Planned | [F-004-T01](#f-004-t01) | — | ⏳ 🤖 |
+| 🟡 Medium | **Total** | 2 h (1 of 2 steps) | 0 h (0 of 2 steps recorded) | 2 h agent + 1 h owner | 0 of 2 completed | | | |
+
 <details>
 <summary>Next action, estimates and PR history</summary>
 
-**Next action / closure evidence:** The template change itself is the template's work and record, never this backlog's. This record closes when the owner has dispositioned the proposal and any released replacement has been reconciled here.
-
-**Estimates:** Small remaining effort. Estimated 2026-11-24; not acceptance evidence.
+[Full notes & evidence](work/records/F-004.md)
 
 | Field | Value |
 |---|---|
@@ -142,49 +169,15 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 ---
 
-### F-008
-
-**Daily refresh of the solution views as a PR**
-
-| Signal | Priority | Status | Effort |
-|:---:|---|---|---|
-| 🟡 | 🔶 P2 | Implemented | 🟢 Small |
-
-💻 **→ Human action required: No**<br />After PR #1 merges, start the Refresh solution views workflow once by hand (`gh workflow run refresh-views.yml --repo voidbrain/coordinator`) and link the run here.
-
-| | |
-|---|---|
-| **Issue** | The owner decided a daily refresh proposed as a PR (F-005). |
-| **Reproduce** | `.github/workflows/refresh-views.yml`: daily at 05:30 UTC and on demand. |
-| **Check** | A run regenerates both views from GitHub, runs the offline checks, and when anything besides the snapshot time and this repository's own revision changed, pushes `chore/refresh-solution-views` (no force-push) and opens or updates the PR "chore: refresh solution views"; an unchanged day opens nothing. |
-
-<details>
-<summary>Next action, estimates and PR history</summary>
-
-**Next action / closure evidence:** Workflow added in PR #1 with `contents: write` and `pull-requests: write` only; CI stays `contents: read`. A scheduled or dispatched workflow runs only from the default branch, so the first run follows the merge. A PR opened with the workflow token does not start the CI workflow, so the refresh workflow runs the offline checks itself before pushing. A refresh with source problems fails the run and opens no PR; GitHub's failed-run notification reports it. Closes on the first successful run, linked here.
-
-**Estimates:** Small remaining effort. Estimated 2026-11-24; not acceptance evidence.
-
-| Field | Value |
-|---|---|
-| PR / evidence | [#1](https://github.com/voidbrain/coordinator/pull/1) |
-| Opened | 2026-11-24 |
-| Verification | Pending: first run after merge |
-| Reviewed | 2026-11-24 |
-
-</details>
-
----
-
-### F-006
+### <a id="f-006"></a>[✨ F-006](#top)
 
 **NERV delivers Grover alerts end to end**
 
-| Signal | Priority | Status | Effort |
-|:---:|---|---|---|
-| 🔴 | 🔶 P2 | Open | 🟡 Medium |
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🔴 Open | 🔶 P2 | 🟢 Small | 1 h agent + 0.5 h owner | — | — | 🤖 | — | — |
 
-💻 **→ Human action required: No**<br />Once grover:F-008 lands its alerts tool, record the contract (`grover_alerts`) in docs/SOLUTION.md and the end-to-end check NERV must pass.
+💻 **→** Next: F-006-T01 — Record the grover&#95;alerts contract and its end-to-end check in docs/SOLUTION.md (waits on grover:F-008) (Planned).
 
 | | |
 |---|---|
@@ -192,12 +185,18 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | **Reproduce** | Grover `docs/DESIGN.md`, "Alerts" and "NERV"; NERV's backlog has no record mentioning Grover. |
 | **Check** | An alert raised on a running Grover hub reaches the owner through NERV; the contract and the check are in docs/SOLUTION.md. |
 
+**Feature steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who |
+|---|---|---|---|---|---|---|---|:---:|
+| 🟢 Small | <a id="f-006-t01"></a>F-006-T01 — Record the grover&#95;alerts contract and its end-to-end check in docs/SOLUTION.md (waits on grover:F-008) | 1 h | 0 h | 1 h | Planned | — | [F-006-T02](#f-006-t02) | 🤖 |
+| 🟢 Small | <a id="f-006-t02"></a>F-006-T02 — Owner sees a Grover alert arrive through NERV | — | 0 h | 0 h agent + 0.5 h owner | Planned | [F-006-T01](#f-006-t01) | — | ⏳ 🧑‍🔧 |
+| 🟢 Small | **Total** | 1 h (1 of 2 steps) | 0 h (0 of 2 steps recorded) | 1 h agent + 0.5 h owner | 0 of 2 completed | | | |
+
 <details>
 <summary>Next action, estimates and PR history</summary>
 
-**Next action / closure evidence:** Coordination only: the alert tool is Grover's work, its delivery NERV's. The NERV-side record is a gap-review proposal for the owner (F-003).
-
-**Estimates:** Medium remaining effort, mostly waiting on the components. Estimated 2026-11-24; not acceptance evidence.
+[Full notes & evidence](work/records/F-006.md)
 
 | Field | Value |
 |---|---|
@@ -211,15 +210,15 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 ---
 
-### F-007
+### <a id="f-007"></a>[✨ F-007](#top)
 
 **NERV capability coverage in the Gauntlet across both repositories**
 
-| Signal | Priority | Status | Effort |
-|:---:|---|---|---|
-| 🔴 | 🔶 P2 | Open | 🟢 Small |
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🔴 Open | 🔶 P2 | 🟢 Small | 1 h | — | — | 🤖 | — | — |
 
-💻 **→ Human action required: No**<br />Record in docs/SOLUTION.md which Gauntlet release NERV needs for nerv:F-120 and the check that shows its cases run.
+💻 **→** Next: F-007-T01 — Name the Gauntlet release NERV needs for its new cases in docs/SOLUTION.md (waits on nerv:F-120) (Planned).
 
 | | |
 |---|---|
@@ -227,12 +226,18 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | **Reproduce** | nerv F-120 Issue; gauntlet-protocol backlog: no open records on 2026-11-24. |
 | **Check** | The required gauntlet-protocol release and NERV's vendored version are named in docs/SOLUTION.md, and a Gauntlet run of the new NERV cases is linked. |
 
+**Feature steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks |
+|---|---|---|---|---|---|---|---|
+| 🟢 Small | <a id="f-007-t01"></a>F-007-T01 — Name the Gauntlet release NERV needs for its new cases in docs/SOLUTION.md (waits on nerv:F-120) | 0.5 h | 0 h | 0.5 h | Planned | — | [F-007-T02](#f-007-t02) |
+| 🟢 Small | <a id="f-007-t02"></a>F-007-T02 — Link a Gauntlet run of the new NERV cases as acceptance | 0.5 h | 0 h | 0.5 h | Planned | [F-007-T01](#f-007-t01) | — |
+| 🟢 Small | **Total** | 1 h | 0 h (0 of 2 steps recorded) | 1 h | 0 of 2 completed | | |
+
 <details>
 <summary>Next action, estimates and PR history</summary>
 
-**Next action / closure evidence:** Coordination only; the packs are gauntlet-protocol's work and the coverage NERV's. The gauntlet-protocol record is a gap-review proposal for the owner (F-003).
-
-**Estimates:** Small remaining effort. Estimated 2026-11-24; not acceptance evidence.
+[Full notes & evidence](work/records/F-007.md)
 
 | Field | Value |
 |---|---|
@@ -240,6 +245,45 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | Components | nerv:F-120 |
 | Opened | 2026-11-24 |
 | Verification | Pending |
+| Reviewed | 2026-11-24 |
+
+</details>
+
+---
+
+### <a id="f-008"></a>[✨ F-008](#top)
+
+**Daily refresh of the solution views as a PR**
+
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🟡 Implemented | 🔶 P2 | 🟢 Small | 0.25 h | — | — | 🤖 | — | — |
+
+💻 **→** Next: F-008-T01 — Daily refresh workflow: first run after the merge, linked (Implemented; verification pending).
+
+| | |
+|---|---|
+| **Issue** | The owner decided a daily refresh proposed as a PR (F-005). |
+| **Reproduce** | `.github/workflows/refresh-views.yml`: daily at 05:30 UTC and on demand. |
+| **Check** | A run regenerates both views from GitHub, runs the offline checks, and when anything besides the snapshot time and this repository's own revision changed, pushes `chore/refresh-solution-views` (no force-push), opens or updates the PR "chore: refresh solution views" and starts CI on it; an unchanged day opens nothing. |
+
+**Feature steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status | PRs |
+|---|---|---|---|---|---|---|
+| 🟢 Small | <a id="f-008-t01"></a>F-008-T01 — Daily refresh workflow: first run after the merge, linked | 0.25 h | 0 h | 0.25 h | Implemented; verification pending | [PR #2](https://github.com/voidbrain/coordinator/pull/2) workflow fixes |
+| 🟢 Small | **Total** | 0.25 h | 0 h (0 of 1 steps recorded) | 0.25 h | 0 of 1 completed | |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+[Full notes & evidence](work/records/F-008.md)
+
+| Field | Value |
+|---|---|
+| PR / evidence | Steps: F-008-T01: [PR #2](https://github.com/voidbrain/coordinator/pull/2) workflow fixes. [#1](https://github.com/voidbrain/coordinator/pull/1) |
+| Opened | 2026-11-24 |
+| Verification | Pending: first run after merge |
 | Reviewed | 2026-11-24 |
 
 </details>

@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "id": "F-007-T01",
+  "parent": "F-007",
+  "title": "Name the Gauntlet release NERV needs for its new cases in docs/SOLUTION.md (waits on nerv:F-120)",
+  "goal": "Name the Gauntlet release NERV needs for its new cases in docs/SOLUTION.md (waits on nerv:F-120)",
+  "status": "planned",
+  "acceptance": [
+    "Name the Gauntlet release NERV needs for its new cases in docs/SOLUTION.md (waits on nerv:F-120)"
+  ],
+  "dependsOn": [],
+  "resources": [
+    "docs/SOLUTION.md",
+    "docs/work/records/F-007.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "0.5 h",
+    "basis": "Estimated 2026-11-24: read nerv:F-120 and the gauntlet-protocol release notes, update the compatibility table. Not a measurement.",
+    "reviewed": "2026-11-24",
+    "agentHours": 0.5,
+    "ownerHours": 0,
+    "estimateAgentHours": 0.5
+  },
+  "prs": []
+}

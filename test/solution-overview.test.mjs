@@ -12,6 +12,11 @@ import {
   solutionTotal,
   runway,
   proseDeps,
+  latestRelease,
+  harnessStatus,
+  auditStatus,
+  reviewStatus,
+  idleReason,
 } from '../tools/solution-overview-lib.mjs';
 
 const fixture = (name) => readFileSync(new URL(`./fixtures/${name}`, import.meta.url), 'utf8');
@@ -21,7 +26,7 @@ const parse = (name) => {
 };
 const gaps = (records, order = { items: [] }) => {
   const sources = [
-    { id: 'solution', repository: 'acme/coordinator', available: true, records: [] },
+    { id: 'coordinator', repository: 'acme/coordinator', available: true, records: [] },
     { id: 'example', repository: 'acme/example', available: true, records },
     { id: 'widget-lab', repository: 'acme/widget-lab', available: true, records: [] },
   ];
@@ -103,7 +108,7 @@ test('a summary table without Status and Priority columns is a problem, not an e
 });
 
 test('solution order: syntax, known repositories, duplicates and numbering', () => {
-  const ids = new Set(['solution', 'example']);
+  const ids = new Set(['coordinator', 'example']);
   const ok = readOrder(
     '<!-- order:start -->\n1. `example:F-001` — first\n2. `example:F-001-T02`\n<!-- order:end -->',
     ids,
@@ -117,7 +122,10 @@ test('solution order: syntax, known repositories, duplicates and numbering', () 
     '<!-- order:start -->\n1. `other:F-001`\n3. `example:X-1`\n4. `other:F-001`\n<!-- order:end -->',
     ids,
   );
-  assert.equal(bad.problems.length, 6); // unknown repo twice, bad ID, duplicate, two numbering slips
+  assert.equal(bad.problems.length, 6);
+  // This repository's own records are `coordinator:ID`; `solution` is the template dashboard's internal name only.
+  assert.equal(readOrder('<!-- order:start -->\n1. `coordinator:F-002`\n<!-- order:end -->', ids).problems.length, 0);
+  assert.equal(readOrder('<!-- order:start -->\n1. `solution:F-002`\n<!-- order:end -->', ids).problems.length, 1); // unknown repo twice, bad ID, duplicate, two numbering slips
 });
 
 test('remaining hours per backlog and the solution total; an unreadable total makes the sum partial', () => {
@@ -184,7 +192,7 @@ test('gap review resolves repo:ID prerequisites against the other repository', (
     records: parseBacklog(fixture(name), id),
   });
   const sources = [
-    { id: 'solution', repository: 'acme/coordinator', available: true, records: [] },
+    { id: 'coordinator', repository: 'acme/coordinator', available: true, records: [] },
     load('alpha', 'runway-alpha.md'),
     load('beta', 'runway-beta.md'),
   ];
@@ -195,4 +203,122 @@ test('gap review resolves repo:ID prerequisites against the other repository', (
     found.map((g) => g.evidence),
     ['B-003-T03 depends on B-003-T09, which is not in the active backlog (closed, archived or a wrong ID)'],
   );
+});
+
+// Re-review of PR #1, finding 3: the steps of a Blocked record are blocked, however ready they look.
+test('runway: steps under a Blocked record are external blocks, not runway', () => {
+  const records = parseBacklog(fixture('runway-blocked.md'), 'alpha');
+  const { perRepo, total, state } = runway([{ id: 'alpha', repository: 'acme/alpha', available: true, records }]);
+  assert.equal(total, 0);
+  assert.equal(state('alpha:F-001-T01').doable, false);
+  assert.deepEqual(perRepo.get('alpha').blocks, ['F-001-T01: external (record Blocked)']);
+});
+
+// Owner requests 2026-11-24: the overview's Blocked, Nothing to do, Audits and Harness tables.
+const loadAll = () => {
+  const load = (id, name) => ({
+    id,
+    repository: `acme/${id}`,
+    available: true,
+    records: parseBacklog(fixture(name), id),
+  });
+  return [
+    load('alpha', 'runway-alpha.md'),
+    load('beta', 'runway-beta.md'),
+    load('gamma', 'empty.md'),
+    load('delta', 'runway-blocked.md'),
+    { id: 'omega', repository: 'acme/omega', available: false, records: [] },
+  ];
+};
+
+test('Blocked table: each blocked agent item with its root cause, and the open prerequisites of an order item', () => {
+  const sources = loadAll();
+  const { perRepo, waits } = runway(sources);
+  assert.deepEqual(perRepo.get('beta').blocked, [
+    { item: 'beta:F-002-T03', on: 'beta:F-002-T02', kind: 'owner procedure' },
+    { item: 'beta:B-003-T01', on: 'beta:B-003-T01', kind: 'cycle B-003-T01 → B-003-T02 → B-003-T01' },
+    { item: 'beta:B-003-T02', on: 'beta:B-003-T01', kind: 'cycle B-003-T01 → B-003-T02 → B-003-T01' },
+    { item: 'beta:B-003-T03', on: 'beta:B-003-T09', kind: 'an unknown prerequisite' },
+  ]);
+  assert.deepEqual(waits('beta:F-002'), [
+    ['beta:F-002-T01', 'alpha:F-001-T01'],
+    ['beta:F-002-T02', 'beta:F-002-T01'],
+    ['beta:F-002-T03', 'beta:F-002-T02'],
+  ]);
+});
+
+test('Nothing to do table: the reason a project has no doable agent work', () => {
+  const sources = loadAll();
+  const { perRepo } = runway(sources);
+  const why = (id) =>
+    idleReason(
+      sources.find((s) => s.id === id),
+      perRepo.get(id),
+    );
+  assert.equal(why('alpha'), null);
+  assert.equal(why('gamma'), 'no open records');
+  assert.equal(why('omega'), 'backlog unreadable');
+  assert.equal(why('delta'), 'waiting on an external event (Blocked)');
+  // A project whose only agent step waits on another project.
+  const waiting = {
+    id: 'beta',
+    repository: 'acme/beta',
+    available: true,
+    records: parseBacklog(fixture('runway-beta.md'), 'beta'),
+  };
+  const lone = runway([{ id: 'alpha', repository: 'acme/alpha', available: true, records: [] }, waiting]);
+  assert.equal(idleReason(waiting, lone.perRepo.get('beta')), 'waiting on another project');
+});
+
+test('Audits table: last audit and the next due date; periodic reviews from either file layout', () => {
+  assert.deepEqual(
+    auditStatus(
+      [
+        { kind: 'scoped', reviewed: '2026-11-20T10:00:00Z' },
+        { kind: 'full', reviewed: '2026-11-10T10:00:00Z' },
+      ],
+      7,
+      '2026-11-28',
+    ),
+    { last: '2026-11-20', kind: 'scoped', next: '2026-11-27', overdue: true },
+  );
+  assert.equal(auditStatus([], 7, '2026-11-28'), null);
+  assert.deepEqual(
+    reviewStatus(
+      { token: { days: 30 }, skills: { days: 30 } },
+      ['docs/reviews/token/2026-11-01.md', 'docs/reviews/2026-11-20-token.md'],
+      '2026-11-28',
+    ),
+    [
+      { name: 'token', last: '2026-11-20', next: '2026-12-20', overdue: false },
+      { name: 'skills', last: null, next: null, overdue: true },
+    ],
+  );
+});
+
+test('Harness table and gap review: a project behind the latest release gets a reconcile proposal', () => {
+  const latest = latestRelease(['v10.7.0', 'v10.10.0', 'v10.9.0', 'not-a-release']);
+  assert.equal(latest, '10.10.0');
+  assert.deepEqual(harnessStatus('10.9.0', latest), {
+    version: '10.9.0',
+    latest: '10.10.0',
+    behind: true,
+    text: 'v10.9.0, behind v10.10.0',
+  });
+  assert.equal(harnessStatus('10.10.0', latest).behind, false);
+  const sources = [
+    {
+      id: 'coordinator',
+      repository: 'acme/coordinator',
+      available: true,
+      records: [],
+      harness: harnessStatus('10.10.0', latest),
+    },
+    { id: 'alpha', repository: 'acme/alpha', available: true, records: [], harness: harnessStatus('10.9.0', latest) },
+  ];
+  const found = gapReview(sources, { items: [] }, new Map(), (s, id) => `${s.id}:${id}`).filter((g) =>
+    g.kind.startsWith('6'),
+  );
+  assert.equal(found.length, 1);
+  assert.match(found[0].proposal, /^alpha: a record "Reconcile to harness v10\.10\.0"/);
 });

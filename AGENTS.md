@@ -6,7 +6,7 @@ The project is **Coordinator**, the solution coordinator for the voidbrain proje
 
 - Components own their work. Records, statuses and history stay in each component's backlog; this repository holds references (`repo:ID`) only and never copies or mirrors a component status. Status flows one way: components → generated views here.
 - Components are listed in [.solution.json](.solution.json) (`nerv`, `gauntlet-protocol`, `project-harness`, `fpvbuddy`, `grover`). [docs/SOLUTION.md](docs/SOLUTION.md) owns the contracts and integration acceptance between them.
-- [docs/BACKLOG.md](docs/BACKLOG.md) holds cross-repository work only: contracts, version compatibility, end-to-end acceptance, coordination. Implementation work goes in the component's own backlog.
+- [docs/BACKLOG.md](docs/BACKLOG.md) holds cross-repository work only: contracts, version compatibility, end-to-end acceptance, coordination. Implementation work goes in the component's own backlog. It is generated (`npm run work:build`) from `docs/work/records/<ID>.md` and the step files `docs/work/tasks/<ID>-T*.json`, which carry agent and owner hours; edit those, never the ledger. <!-- project -->
 - The gap review proposes missing records and steps to the repositories that would own them; the owner decides which are created ([gap review](docs/agents/gap-review.md)).
 - The overview sums remaining agent and owner hours across all backlogs, the coordinator's included: hours only, never a percentage, labelled as each project's own estimates, and "at least" when a backlog cannot be read. Its agent runway counts agent steps doable before a block, across repositories (`repo:ID` prerequisites). <!-- project -->
 - Generated, never edited by hand: [docs/SOLUTION-OVERVIEW.md](docs/SOLUTION-OVERVIEW.md) (`tools/solution-overview.mjs`, project tool) and [docs/SOLUTION-DASHBOARD.md](docs/SOLUTION-DASHBOARD.md) (`tools/solution.mjs`, from the template). `npm run solution:refresh` rewrites both from GitHub.
@@ -71,6 +71,7 @@ Each procedure is binding when its trigger applies: read it before the task; a s
 | start a session | [session start](docs/agents/session-start.md) |
 | open, update or merge a PR | [pull requests](docs/agents/pull-requests.md) |
 | update or close a backlog record | [backlog rules](docs/BACKLOG-RULES.md) (it names the one file a change needs) |
+| add, estimate or close a step (task file) | [parallel work](docs/agents/parallel-work.md), upfront feature plans |
 | write or change documentation | [documentation](docs/backlog/documentation.md) |
 | change something an output is derived from (generated pages and data, recordings, translations, guides, a value used in two places) | [change impact](docs/agents/change-impact.md); do each row `check:freshness` lists, or record why not |
 | switch tasks or hand off context | [task context](docs/agents/task-context.md) |

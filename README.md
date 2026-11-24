@@ -12,7 +12,7 @@ The solution coordinator for the voidbrain projects: one place to see and steer 
 
 ## Read it
 
-- [Overview](docs/SOLUTION-OVERVIEW.md): the solution order with each item's live state, what waits for the owner, what is blocked, remaining agent and owner hours per backlog with the solution total, the agent runway before the next owner block, effort per repository, all open records and steps, and the gap review.
+- [Overview](docs/SOLUTION-OVERVIEW.md): a summary per project (🧭 coordinator, 𖣂 nerv, 🤖 gauntlet-protocol, 🦺 project-harness, 🚁 fpvbuddy, 🪴 grover), the solution order with each item's live state, hours and open prerequisites, what is blocked and on what, which projects have nothing to do and why, audits and harness releases, what waits for the owner, what is blocked, remaining agent and owner hours per backlog with the solution total, the agent runway before the next owner block, effort per repository, all open records and steps, and the gap review.
 - [Solution order](docs/solution-order.md): the owner's order; agents take the first ready item.
 - [Dashboard](docs/SOLUTION-DASHBOARD.md): the harness template's view of the same sources, with revisions and link checks.
 - [Backlog](docs/BACKLOG.md): cross-repository work only. [Solution](docs/SOLUTION.md): components, contracts, integration acceptance.
@@ -27,7 +27,7 @@ npm run check:fast                                    # format, lint, tests, bac
 npm run check:freshness                               # at session start
 ```
 
-The Refresh solution views workflow does this daily and opens or updates the PR "chore: refresh solution views" when something besides the snapshot changed. By hand, commit the regenerated views in a PR; each names its snapshot time and the source commits it read.
+The Refresh solution views workflow does this daily, opens or updates the PR "chore: refresh solution views" when something besides the snapshot changed, and starts CI on it; the lander merges it on green CI. The branch `chore/refresh-solution-views` belongs to the workflow: when no refresh PR is open it is deleted and recreated from main, so a commit a person pushes there is discarded. By hand, commit the regenerated views in a PR; each names its snapshot time and the source commits it read.
 
 ## Where things are
 

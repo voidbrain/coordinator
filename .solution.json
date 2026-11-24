@@ -11,7 +11,8 @@
       "path": "../NERV/NERV",
       "ref": "main",
       "backlog": "docs/BACKLOG.md",
-      "archives": []
+      "archives": [],
+      "emoji": "𖣂"
     },
     {
       "id": "gauntlet-protocol",
@@ -19,7 +20,8 @@
       "path": "../gauntlet-protocol",
       "ref": "main",
       "backlog": "docs/BACKLOG.md",
-      "archives": []
+      "archives": [],
+      "emoji": "🤖"
     },
     {
       "id": "project-harness",
@@ -27,7 +29,8 @@
       "path": "../project-harness",
       "ref": "main",
       "backlog": "docs/BACKLOG.md",
-      "archives": []
+      "archives": [],
+      "emoji": "🦺"
     },
     {
       "id": "fpvbuddy",
@@ -35,7 +38,8 @@
       "path": "../FPVBuddy/FPVBuddy",
       "ref": "main",
       "backlog": "docs/BACKLOG.md",
-      "archives": []
+      "archives": [],
+      "emoji": "🚁"
     },
     {
       "id": "grover",
@@ -43,7 +47,9 @@
       "path": "../Grover",
       "ref": "main",
       "backlog": "docs/BACKLOG.md",
-      "archives": []
+      "archives": [],
+      "emoji": "🪴"
     }
-  ]
+  ],
+  "emoji": "🧭"
 }

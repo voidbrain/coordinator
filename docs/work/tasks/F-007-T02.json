@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "id": "F-007-T02",
+  "parent": "F-007",
+  "title": "Link a Gauntlet run of the new NERV cases as acceptance",
+  "goal": "Link a Gauntlet run of the new NERV cases as acceptance",
+  "status": "planned",
+  "acceptance": [
+    "Link a Gauntlet run of the new NERV cases as acceptance"
+  ],
+  "dependsOn": [
+    "F-007-T01"
+  ],
+  "resources": [
+    "docs/SOLUTION.md",
+    "docs/work/records/F-007.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "0.5 h",
+    "basis": "Estimated 2026-11-24: find the run in NERV's ledger and link it. Not a measurement.",
+    "reviewed": "2026-11-24",
+    "agentHours": 0.5,
+    "ownerHours": 0,
+    "estimateAgentHours": 0.5
+  },
+  "prs": []
+}

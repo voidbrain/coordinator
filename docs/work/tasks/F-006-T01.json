@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "id": "F-006-T01",
+  "parent": "F-006",
+  "title": "Record the grover_alerts contract and its end-to-end check in docs/SOLUTION.md (waits on grover:F-008)",
+  "goal": "Record the grover_alerts contract and its end-to-end check in docs/SOLUTION.md (waits on grover:F-008)",
+  "status": "planned",
+  "acceptance": [
+    "Record the grover_alerts contract and its end-to-end check in docs/SOLUTION.md (waits on grover:F-008)"
+  ],
+  "dependsOn": [],
+  "resources": [
+    "docs/SOLUTION.md",
+    "docs/work/records/F-006.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "1 h",
+    "basis": "Estimated 2026-11-24: read Grover's alerts tool once it lands and NERV's delivery record, write the contract row and the check. Not a measurement.",
+    "reviewed": "2026-11-24",
+    "agentHours": 1,
+    "ownerHours": 0,
+    "estimateAgentHours": 1
+  },
+  "prs": []
+}

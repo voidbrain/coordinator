@@ -34,11 +34,15 @@
     "check:order": "node tools/solution-overview.mjs --check",
     "solution:overview": "node tools/solution-overview.mjs --remote --write",
     "solution:refresh": "npm run solution:overview; o=$?; npm run solution:dashboard; d=$?; exit $((o || d))",
-    "check:fast": "npm run format:check && npm run lint && npm test && npm run check:backlog && npm run check:rules && npm run check:tooling && npm run check:maintenance && npm run check:integrations && npm run check:order && npm run check:solution",
+    "check:fast": "npm run format:check && npm run lint && npm test && npm run check:work && npm run check:backlog && npm run check:rules && npm run check:tooling && npm run check:maintenance && npm run check:integrations && npm run check:order && npm run check:solution",
     "test": "node --test --test-reporter=./tools/quiet-reporter.mjs --test-reporter-destination=stdout --test-reporter=spec --test-reporter-destination=.test-report.txt 'test/*.test.mjs'",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "work:build": "node tools/work-items.mjs build",
+    "check:work": "node tools/work-items.mjs check",
+    "work:tasks": "node tools/work-items.mjs tasks",
+    "work:next": "node tools/work-items.mjs next"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
