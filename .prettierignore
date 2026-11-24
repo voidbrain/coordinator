@@ -11,3 +11,4 @@ test/fixtures/
 *.json
 *.yml
 *.yaml
+!tools/refresh-branch.mjs

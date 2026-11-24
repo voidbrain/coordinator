@@ -1,17 +1,20 @@
 name: Refresh solution views
 
 # Owner decision 2026-11-24 (F-005): refresh the generated views daily and propose them as a PR, never a direct push
-# to main. Reads every component's main from GitHub; writes only docs/SOLUTION-OVERVIEW.md and
-# docs/SOLUTION-DASHBOARD.md on the branch below. Needs the repository setting "Allow GitHub Actions to create and
-# approve pull requests" (approved by the owner on 2026-11-24). The CI workflow stays read-only.
+# to main. Reads every component's main from GitHub; commits only docs/SOLUTION-OVERVIEW.md and
+# docs/SOLUTION-DASHBOARD.md to the branch below, then starts CI on it. The lander merges the PR on green CI like any
+# other (node tools/merge-when-green.mjs). Needs the repository setting "Allow GitHub Actions to create and approve
+# pull requests" (owner-approved 2026-11-24; it approves nothing while no review is required). The CI workflow stays
+# read-only. main cannot be branch-protected on this plan, so only main's reviewed tools run here with write access.
 on:
   schedule:
     - cron: '30 5 * * *' # daily, 05:30 UTC (Actions may start it later)
   workflow_dispatch:
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: write # push the refresh branch
+  pull-requests: write # open the refresh PR
+  actions: write # start CI on the refresh branch
 
 concurrency:
   group: refresh-solution-views
@@ -27,30 +30,31 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          ref: main
           fetch-depth: 0
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
 
-      - name: Start from the open refresh branch, brought up to date with main (no force-push), or from main
+      - name: Continue the open refresh PR (merging main; only view conflicts are resolved, to main's copy) or start from main
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          if git ls-remote --exit-code --heads origin "$BRANCH" >/dev/null; then
-            git fetch origin "$BRANCH"
-            git switch -c "$BRANCH" "origin/$BRANCH"
-            git merge --no-edit origin/main
-          else
-            git switch -c "$BRANCH"
-          fi
+          cp tools/refresh-branch.mjs "$RUNNER_TEMP/refresh-branch.mjs" # main's reviewed copy, whatever the branch holds
+          if [ -n "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[].number')" ]; then pr=open; else pr=none; fi
+          node "$RUNNER_TEMP/refresh-branch.mjs" "$BRANCH" "$pr"
+
+      - name: Run only main's reviewed tools
+        run: git checkout origin/main -- tools package.json package-lock.json && git reset -q
 
       - name: Regenerate both views from GitHub
         env:
           GH_TOKEN: ${{ github.token }}
         run: npm run solution:refresh
 
-      - name: Offline checks the refresh PR would otherwise miss
-        # A PR opened with the workflow token does not start the CI workflow, so the offline checks run here.
+      - name: Offline checks
         run: |
           node tools/check-backlog.mjs
           node tools/solution-overview.mjs --check
@@ -58,22 +62,23 @@ jobs:
       - name: Did anything change besides the snapshot time and this repository's own revision?
         id: diff
         run: |
-          if git diff --quiet -I '^Snapshot' -I '^\| solution \|' -I '^\| \[solution:' -- docs/SOLUTION-OVERVIEW.md docs/SOLUTION-DASHBOARD.md; then
+          if git diff --quiet -I '^Snapshot' -I '^\| solution \|' -I '^\| \[solution:' -I '^\| 🧭' -- docs/SOLUTION-OVERVIEW.md docs/SOLUTION-DASHBOARD.md; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "Views unchanged apart from the snapshot; no PR."
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Commit, push and open or update the PR
+      - name: Commit, push, open or update the PR, and start CI on it
         if: steps.diff.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           git add docs/SOLUTION-OVERVIEW.md docs/SOLUTION-DASHBOARD.md
-          git commit -m "$TITLE" -m "Scheduled refresh (F-005): generated views from each component's main on GitHub."
-          git push origin "$BRANCH"
+          git commit -m "$TITLE" -m "Scheduled refresh (F-008): generated views from each component's main on GitHub."
+          git push origin "HEAD:$BRANCH"
           if [ -z "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[].number')" ]; then
             gh pr create --base main --head "$BRANCH" --title "$TITLE" \
-              --body "Daily refresh of the generated views (F-005). Review the source revisions and the problems section of each view before merging. Opened by the Refresh solution views workflow; the offline checks ran in that workflow run."
+              --body "Daily refresh of the generated views (F-008). CI is started on this branch by the refresh workflow. The lander merges it on green CI like any PR; review the source revisions and each view's problems section."
           fi
+          gh workflow run ci.yml --ref "$BRANCH"

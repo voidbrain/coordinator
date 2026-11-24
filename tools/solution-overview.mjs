@@ -65,7 +65,11 @@ async function readSource(repo) {
   const backlog = repo.backlog ?? 'docs/BACKLOG.md';
   if (repo.id === 'solution') {
     const revision = git(root, 'rev-parse', 'HEAD').trim();
-    return { revision, via: 'working checkout', text: readFileSync(resolve(root, backlog), 'utf8') };
+    const dirty = git(root, 'status', '--porcelain').trim() !== '';
+    const via = dirty
+      ? 'working checkout; local changes present, read as they are (not a committed snapshot)'
+      : 'working checkout';
+    return { revision, via, text: readFileSync(resolve(root, backlog), 'utf8') };
   }
   if (has('--remote')) {
     const commit = await github(`repos/${repo.repository}/commits/${encodeURIComponent(repo.ref)}`);
