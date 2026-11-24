@@ -189,6 +189,9 @@ export function recordState(r) {
   if (r.status === 'Blocked') return `Blocked${r.depends !== '—' ? ` on ${r.depends}` : ''}`;
   if (r.status === 'Verified') return 'Verified, to close';
   if (r.agent !== null) {
+    // The generated next line turns 🧑 when the next step is the owner's turn (steps.md): that wins over the Agent cell.
+    if (r.nextRaw.trim().startsWith('🧑'))
+      return /🤔/.test(r.nextRaw.split('→')[1] ?? '') ? 'Owner: decision' : 'Owner: procedure';
     if (r.agent.startsWith('🤖')) return 'Ready';
     if (r.agent.startsWith('⏳')) return `Waiting on ${r.depends}`;
   } else if (!r.procedure && !r.decision) return 'Ready';

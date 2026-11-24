@@ -345,3 +345,19 @@ test('an order item marked pending is shown but is not a missing-record gap unti
     ["example:F-002 is not in example's active backlog"],
   );
 });
+
+// Owner instruction 2026-11-25 (agent work first): a generated record whose next step is the owner's showed "Waiting on —".
+test("a generated record whose next line is the owner's (🧑) is in the owner's hands", () => {
+  const md = `### <a id="f-009"></a>[✨ F-009](#top)
+
+**Try the feed**
+
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🟡 Implemented | 🔺 P1 | 🟢 Small | 0.5 h owner | — | — | ⏳ | 🧑‍🔧 | — |
+
+🧑 **→** Next: [🧑‍🔧](acceptance/feed.md) F-009-T02 — Owner tries a feed (Ready).
+`;
+  const [record] = parseBacklog(md, 'example');
+  assert.equal(recordState(record), 'Owner: procedure');
+});
