@@ -1,11 +1,11 @@
 <!-- generated: tools/solution-overview.mjs; edit docs/solution-order.md or the owning backlogs, not this file -->
 # voidbrain solution: overview
 
-Snapshot 2026-11-24T21:20:21.291Z, read from the sources below. Status comes from each owning backlog; this page is regenerated, never edited. The [solution order](solution-order.md) is the owner's; everything else follows each repository's own priority. No combined completion percentage.
+Snapshot 2026-11-24T21:23:12.976Z, read from the sources below. Status comes from each owning backlog; this page is regenerated, never edited. The [solution order](solution-order.md) is the owner's; everything else follows each repository's own priority. No combined completion percentage.
 
 | Source | Revision | Read from | Open records | Open steps |
 |---|---|---|---:|---:|
-| solution | [e03eb0cd21c1](https://github.com/voidbrain/coordinator/commit/e03eb0cd21c19321833f0da31cdcbea7addcec66) | working checkout | 7 | 0 |
+| solution | [8bf8099cce8f](https://github.com/voidbrain/coordinator/commit/8bf8099cce8f2db5e7b46e90d40da7a676c05f7a) | working checkout | 7 | 0 |
 | nerv | [ccf8adf586e1](https://github.com/voidbrain/nerv/commit/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316) | GitHub | 65 | 120 |
 | gauntlet-protocol | [aadb60e840b6](https://github.com/voidbrain/gauntlet-protocol/commit/aadb60e840b6e4d34f5a5d2f02ba067d5aaf7ea2) | GitHub | 0 | 0 |
 | project-harness | [7ae24ea9ee87](https://github.com/voidbrain/project-harness/commit/7ae24ea9ee875ac1076f908ceedf786b862f8ad2) | GitHub | 0 | 0 |
@@ -361,9 +361,9 @@ Possible missing steps, found by reading every backlog. Each row proposes a reco
 
 | # | Kind | Found in | Evidence | Proposed, in the owning repository |
 |---:|---|---|---|---|
-| 1 | 1 Cross-repository, no counterpart | [nerv:F-120](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-120) | "General domain packs (coding, embedded, logic, Italian quality, 3D printing, image generation) were requested from gauntlet-protocol the same day and…" — gauntlet-protocol has no open record that na… | gauntlet-protocol: a record for what nerv:F-120 needs from it, or nerv: drop the dependency |
+| 1 | 1 Cross-repository, no counterpart | [nerv:F-120](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-120) | "General domain packs (coding, embedded, logic, Italian quality, 3D printing, image generation) were requested from gauntlet-protocol the same day and…" — gauntlet-protocol has no open record that names nerv (coordinated by solution:F-007) | gauntlet-protocol: a record for what nerv:F-120 needs from it, or nerv: drop the dependency |
 | 2 | 1 Cross-repository, no counterpart | [nerv:F-101](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-101) | "F-101-T04 — Create/wire the FPVBuddy core repository and move the core into it (Planned)." — fpvbuddy has no open record that names nerv | fpvbuddy: a record for what nerv:F-101 needs from it, or nerv: drop the dependency |
-| 3 | 1 Cross-repository, no counterpart | [grover:F-008](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-008) | "The hub raises and clears alerts with hysteresis, lists them in the client and through an MCP tool, and NERV can deliver them (its own pack, recorded…" — nerv has no open record that names grover (c… | nerv: a record for what grover:F-008 needs from it, or grover: drop the dependency |
+| 3 | 1 Cross-repository, no counterpart | [grover:F-008](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-008) | "The hub raises and clears alerts with hysteresis, lists them in the client and through an MCP tool, and NERV can deliver them (its own pack, recorded…" — nerv has no open record that names grover (coordinated by solution:F-006) | nerv: a record for what grover:F-008 needs from it, or grover: drop the dependency |
 | 4 | 3 Owner check without a page | [grover:F-018](https://github.com/voidbrain/Grover/blob/77851b12718ee6e90263758cfc218dea6f87e218/docs/BACKLOG.md#f-018) | F-018 waits on the owner, but its next action links no page and gives no command: "Confirm the pump wiring (L298N inputs on which MCP23017 pins) and run the device check with the own…" | grover: add the exact commands or text to paste, and the expected result, to F-018 |
 | 5 | 4 No next step | [nerv:F-115](https://github.com/voidbrain/nerv/blob/ccf8adf586e152bbcdcaa30e940b4de6b9fb4316/docs/BACKLOG.md#f-115) | F-115 is Open with no open step: "Next: all steps closed; verify and close the record." | nerv: add the next step to F-115, or verify and close it |
 
