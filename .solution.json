@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "name": "voidbrain solution",
+  "repository": "voidbrain/coordinator",
+  "backlog": "docs/BACKLOG.md",
+  "dashboard": "docs/SOLUTION-DASHBOARD.md",
+  "repositories": [
+    {
+      "id": "nerv",
+      "repository": "voidbrain/nerv",
+      "path": "../NERV/NERV",
+      "ref": "main",
+      "backlog": "docs/BACKLOG.md",
+      "archives": []
+    },
+    {
+      "id": "gauntlet-protocol",
+      "repository": "voidbrain/gauntlet-protocol",
+      "path": "../gauntlet-protocol",
+      "ref": "main",
+      "backlog": "docs/BACKLOG.md",
+      "archives": []
+    },
+    {
+      "id": "project-harness",
+      "repository": "voidbrain/project-harness",
+      "path": "../project-harness",
+      "ref": "main",
+      "backlog": "docs/BACKLOG.md",
+      "archives": []
+    },
+    {
+      "id": "fpvbuddy",
+      "repository": "voidbrain/FPVBuddy",
+      "path": "../FPVBuddy/FPVBuddy",
+      "ref": "main",
+      "backlog": "docs/BACKLOG.md",
+      "archives": []
+    },
+    {
+      "id": "grover",
+      "repository": "voidbrain/Grover",
+      "path": "../Grover",
+      "ref": "main",
+      "backlog": "docs/BACKLOG.md",
+      "archives": []
+    }
+  ]
+}
