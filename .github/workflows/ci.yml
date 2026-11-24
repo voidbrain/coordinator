@@ -22,7 +22,13 @@ jobs:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
+          cache: npm
+      - run: npm ci
 
+      - name: Format (Prettier) and lint (ESLint) the project's own tools and tests
+        run: npm run format:check && npm run lint
+      - name: Overview readers and gap review on the fixtures
+        run: npm test
       - name: Coordinator backlog and archive integrity
         run: node tools/check-backlog.mjs
       - name: Optional MCP recommendation metadata
@@ -35,9 +41,9 @@ jobs:
         run: node tools/check-rules.mjs
       - name: Rule load budgets (warnings only)
         run: node tools/rule-load.mjs --check
-      - name: Formatter and linter, or the recorded exemption
+      - name: A formatter check and a linter exist and run in CI
         run: node tools/check-tooling.mjs
-      - name: Solution order references (offline)
+      - name: Solution order references and the fixture self-check (offline)
         run: node tools/solution-overview.mjs --check
 
       - name: Optional backlog dependency validation

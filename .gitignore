@@ -8,3 +8,6 @@ node_modules
 .harness/friction.jsonl
 .harness/friction-session.json
 .harness/review-outcomes.json
+
+# The complete test report the quiet reporter pairs with (tools/quiet-reporter.mjs).
+.test-report.txt

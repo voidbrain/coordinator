@@ -146,7 +146,10 @@
     ".solution.json": "solution/solution.json",
     "docs/SOLUTION.md": "solution/docs/SOLUTION.md",
     "package.json": "solution/package-scripts.json",
-    ".github/workflows/ci.yml": "solution/.github/workflows/ci.yml"
+    ".github/workflows/ci.yml": "solution/.github/workflows/ci.yml",
+    "eslint.config.mjs": "core/eslint.config.mjs",
+    ".prettierignore": "core/prettierignore.txt",
+    ".prettierrc.json": "core/.prettierrc.json"
   },
   "ciStatus": {
     "workflow": "CI",
@@ -233,8 +236,5 @@
     "role": "coordinator",
     "manifest": ".solution.json"
   },
-  "defaultBranch": "main",
-  "tooling": {
-    "exempt": "Coordinator repository: no product source code. It holds references, documentation, generated views and copied harness tools; the one project tool (tools/solution-overview.mjs) is a small generator checked by its own --check run in CI."
-  }
+  "defaultBranch": "main"
 }
