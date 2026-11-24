@@ -4,7 +4,7 @@ import { execFileSync } from 'node:child_process';
 import { mkdtempSync, writeFileSync, readFileSync, mkdirSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { prepare } from '../tools/refresh-branch.mjs';
+import { prepare, refresh } from '../tools/refresh-branch.mjs';
 
 const git = (cwd, ...args) =>
   execFileSync('git', args, { cwd, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim();
@@ -65,4 +65,28 @@ test('without an open PR the branch starts again from main and the leftover remo
   assert.equal(prepare(work, 'chore/refresh', 'none'), 'started from origin/main');
   assert.equal(git(work, 'rev-parse', 'HEAD'), git(work, 'rev-parse', 'origin/main'));
   assert.equal(git(work, 'ls-remote', '--heads', 'origin', 'chore/refresh'), '');
+});
+
+// Re-check of PR #2: a failing `gh pr list` read as "no PR open" deleted the open PR's branch.
+test('when the open-PR lookup fails, nothing is deleted and the run fails', () => {
+  const work = setup();
+  const failingGh = () => {
+    throw new Error('gh: HTTP 502');
+  };
+  assert.throws(() => refresh(work, 'chore/refresh', failingGh), /Could not tell whether a refresh PR is open/);
+  assert.notEqual(git(work, 'ls-remote', '--heads', 'origin', 'chore/refresh'), '');
+});
+
+test('the open-PR lookup decides between continuing and starting again', () => {
+  const work = setup();
+  assert.match(
+    refresh(work, 'chore/refresh', () => '1\n'),
+    /taking main's/,
+  );
+  const again = setup();
+  assert.equal(
+    refresh(again, 'chore/refresh', () => '0\n'),
+    'started from origin/main',
+  );
+  assert.throws(() => refresh(setup(), 'chore/refresh', () => 'not a number'), /Could not tell/);
 });
