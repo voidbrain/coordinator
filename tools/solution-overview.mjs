@@ -9,7 +9,11 @@
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { readOrder as parseOrder, parseBacklog, plain, cell, short, OPEN, stepState, recordState, gapReview } from './solution-overview-lib.mjs';
+import {
+  readOrder as parseOrder,
+  parseBacklog,
+  contentsText,
+  checkFixtures, plain, cell, short, OPEN, stepState, recordState, gapReview } from './solution-overview-lib.mjs';
 
 const root = process.cwd();
 const args = process.argv.slice(2);
@@ -54,7 +58,12 @@ async function readSource(repo) {
     const commit = await github(`repos/${repo.repository}/commits/${encodeURIComponent(repo.ref)}`);
     if (!/^[a-f0-9]{40}$/.test(commit.sha ?? '')) throw new Error('unsupported commit response');
     const file = await github(`repos/${repo.repository}/contents/${backlog}?ref=${commit.sha}`);
-    return { revision: commit.sha, via: 'GitHub', text: Buffer.from(file.content, 'base64').toString('utf8') };
+    // Files over 1 MB come back without content: read the same blob through the Git data API instead.
+    let text = contentsText(file);
+    if (text === null && /^[a-f0-9]{40}$/.test(file?.sha ?? ''))
+      text = contentsText(await github(`repos/${repo.repository}/git/blobs/${file.sha}`));
+    if (text === null) throw new Error(`${backlog}: GitHub returned no content (file too large or not a file)`);
+    return { revision: commit.sha, via: 'GitHub', text };
   }
   const base = resolve(dirname(manifestPath), repo.path);
   if (!existsSync(base)) throw new Error(`checkout unavailable at ${repo.path}`);
@@ -62,7 +71,9 @@ async function readSource(repo) {
   if (!origin.toLowerCase().endsWith(`/${repo.repository.toLowerCase()}`) && !origin.toLowerCase().endsWith(`:${repo.repository.toLowerCase()}`))
     throw new Error('checkout origin does not match the declared repository');
   const revision = git(base, 'rev-parse', repo.ref).trim();
-  return { revision, via: 'local checkout, not fetched', text: git(base, 'show', `${revision}:${backlog}`) };
+  const dirty = git(base, 'status', '--porcelain').trim() !== '';
+  const via = `local checkout at ${repo.ref}, not fetched${dirty ? '; local changes present, not read (committed ref only)' : ''}`;
+  return { revision, via, text: git(base, 'show', `${revision}:${backlog}`) };
 }
 
 
@@ -75,7 +86,7 @@ async function build() {
   for (const repo of all) {
     try {
       const src = await readSource(repo);
-      const records = parseBacklog(src.text, repo.id);
+      const records = parseBacklog(src.text, repo.id, problems);
       const totals = /<!-- totals:start -->\s*\n([\s\S]*?)\n<!-- totals:end -->/.exec(src.text)?.[1] ?? '';
       sources.push({ ...repo, ...src, records, totals: plain(totals), available: true });
     } catch (e) {
@@ -227,9 +238,13 @@ try {
   if (has('--check')) {
     if (has('--remote') || has('--write')) throw new Error('--check runs offline and writes nothing');
     const { items, problems } = readOrder();
-    problems.forEach((p) => console.error(p));
-    console.log(`Solution order: ${items.length} item(s); ${problems.length} problem(s).`);
-    process.exitCode = problems.length ? 1 : 0;
+    // The readers, states and gap review on the fixtures, so CI notices a reader change that breaks a known layout.
+    const fixtures = new URL('../test/fixtures/', import.meta.url);
+    const expected = JSON.parse(readFileSync(new URL('expected.json', fixtures), 'utf8'));
+    const failures = checkFixtures((name) => readFileSync(new URL(name, fixtures), 'utf8'), expected);
+    [...problems, ...failures].forEach((p) => console.error(p));
+    console.log(`Solution order: ${items.length} item(s); ${problems.length} problem(s). Fixtures: ${Object.keys(expected).length - failures.length} of ${Object.keys(expected).length} as expected.`);
+    process.exitCode = problems.length || failures.length ? 1 : 0;
   } else {
     const { text, problems, snapshot } = await build();
     if (has('--write')) {

@@ -69,10 +69,24 @@ export function table(lines, start, need) {
   return [];
 }
 
-export function parseBacklog(markdown, repo) {
+// Record headings the readers know: `### F-001` (authored) and `### <a id="f-001"></a>[✨ F-001](#top)` (generated).
+const HEADING = /^### (?:<a id="[fb]-\d+"><\/a>)?(?:\[(?:✨|🐞) )?([BF]-\d+)(?:\]\(#top\))?\s*$/;
+// Any level-3 heading that names a record ID. One the readers do not know is a problem, never a silent skip:
+// an unknown layout must not look like a repository with no work.
+const ANY_RECORD_HEADING = /^### .*\b[BF]-\d+\b.*$/gm;
+
+// Records of one backlog. Problems (unknown headings, summary tables or statuses) are appended to `problems`.
+export function parseBacklog(markdown, repo, problems = []) {
   const records = [];
-  const heads = [...markdown.matchAll(/^### (?:<a id="[fb]-\d+"><\/a>)?(?:\[(?:✨|🐞) )?([BF]-\d+)(?:\]\(#top\))?\s*$/gm)];
+  const heads = [...markdown.matchAll(ANY_RECORD_HEADING)];
   heads.forEach((h, n) => {
+    const known = HEADING.exec(h[0]);
+    if (!known) {
+      problems.push(`${repo}: unsupported record heading "${h[0].trim()}" (expected "### F-001"); its record is not shown`);
+      return;
+    }
+    h = [h[0], known[1]];
+    h.index = heads[n].index;
     const end = n + 1 < heads.length ? heads[n + 1].index : markdown.length;
     let block = markdown.slice(h.index, end);
     const cut = block.search(/^## /m);
@@ -80,9 +94,16 @@ export function parseBacklog(markdown, repo) {
     const lines = block.split('\n');
     const title = plain(lines.find((l) => /^\*\*[^*].*\*\*$/.test(l)) ?? '');
     const [row] = table(lines, 0, ['Status', 'Priority']);
-    if (!row) return;
+    if (!row) {
+      problems.push(`${repo}:${h[1]}: no summary table with Status and Priority columns; the record is not shown`);
+      return;
+    }
     let status = plain(row.Status).replace(/^\S+ /, '');
     if (!STATUSES.includes(status)) status = plain(row.Status);
+    if (!STATUSES.includes(status)) {
+      problems.push(`${repo}:${h[1]}: unknown status "${status}"; the record is not shown`);
+      return;
+    }
     const human = /Human action required: (Procedure|Decision|Both|No)/.exec(block)?.[1];
     const procedure = row.Procedures ? row.Procedures !== '—' : human === 'Procedure' || human === 'Both';
     const decision = row.Decisions ? row.Decisions !== '—' : human === 'Decision' || human === 'Both';
@@ -249,3 +270,32 @@ export function gapReview(sources, order, index, link) {
   return gaps;
 }
 
+
+// Text of a GitHub contents API response, or null when it carries no content (files over 1 MB come back without it).
+export function contentsText(file) {
+  if (file?.encoding !== 'base64' || typeof file.content !== 'string' || !file.content) return null;
+  return Buffer.from(file.content, 'base64').toString('utf8');
+}
+
+// Self-check for --check: parse each fixture and compare with test/fixtures/expected.json (offline).
+export function checkFixtures(read, expected) {
+  const failures = [];
+  for (const [name, want] of Object.entries(expected)) {
+    const problems = [];
+    const records = parseBacklog(read(name), 'example', problems);
+    const sources = [
+      { id: 'solution', repository: 'acme/coordinator', available: true, records: [] },
+      { id: 'example', repository: 'acme/example', available: true, records },
+      { id: 'widget-lab', repository: 'acme/widget-lab', available: true, records: [] },
+    ];
+    const got = {
+      records: Object.fromEntries(records.map((r) => [r.id, recordState(r)])),
+      steps: Object.fromEntries(records.flatMap((r) => r.steps.filter(OPEN_STEP)).map((st) => [st.id, stepState(st)])),
+      gaps: gapReview(sources, { items: [] }, new Map(), (s, id) => `${s.id}:${id}`).length,
+      problems: problems.length,
+    };
+    if (JSON.stringify(got) !== JSON.stringify(want))
+      failures.push(`${name}: expected ${JSON.stringify(want)}, got ${JSON.stringify(got)}`);
+  }
+  return failures;
+}
