@@ -1,13 +1,13 @@
 <!-- generated: project-harness solution dashboard; edit owning backlogs, not this file -->
 # voidbrain solution dashboard
 
-Snapshot: 2026-11-24T23:04:53.358Z. Read-only aggregation; no combined completion percentage. Solution integration status is independent of component status.
+Snapshot: 2026-11-24T23:07:03.744Z. Read-only aggregation; no combined completion percentage. Solution integration status is independent of component status.
 
 | Source | Revision | Snapshot state |
 |---|---|---|
-| solution | [d1077d5643aa](https://github.com/voidbrain/coordinator/commit/d1077d5643aa60b6fc3ca98a8c0103b2f24d6d63) | Local changes — not a committed snapshot; requested working checkout; local checkout, not fetched |
+| solution | [f62d6d843ca8](https://github.com/voidbrain/coordinator/commit/f62d6d843ca838572afc2bd55bfd2273721287bc) | Local changes — not a committed snapshot; requested working checkout; local checkout, not fetched |
 | nerv | [774a08f94a64](https://github.com/voidbrain/nerv/commit/774a08f94a649b22ce05117d2bc0c4806f543b42) | Committed snapshot; requested main; GitHub |
-| gauntlet-protocol | [c38f4a752b79](https://github.com/voidbrain/gauntlet-protocol/commit/c38f4a752b793815a0e15610021ef5367e98fb82) | Committed snapshot; requested main; GitHub |
+| gauntlet-protocol | [c236be10c037](https://github.com/voidbrain/gauntlet-protocol/commit/c236be10c037bc798cf6308e0ce14c4b68378e50) | Committed snapshot; requested main; GitHub |
 | project-harness | [7ae24ea9ee87](https://github.com/voidbrain/project-harness/commit/7ae24ea9ee875ac1076f908ceedf786b862f8ad2) | Committed snapshot; requested main; GitHub |
 | fpvbuddy | [383242f31ab6](https://github.com/voidbrain/FPVBuddy/commit/383242f31ab67dd4278ee36495a587d2f4f3a9f8) | Committed snapshot; requested main; GitHub |
 | grover | [b62a29bdae13](https://github.com/voidbrain/Grover/commit/b62a29bdae137d9f01429fb918dd9290fb1f7e4b) | Committed snapshot; requested main; GitHub |
@@ -95,14 +95,14 @@ Snapshot: 2026-11-24T23:04:53.358Z. Read-only aggregation; no combined completio
 | [nerv:B-096](https://github.com/voidbrain/nerv/blob/774a08f94a649b22ce05117d2bc0c4806f543b42/docs/BACKLOG.md#b-096) | Sephirot flow: a sortie that stops at Misato's apartment has no route to Debrief | Implemented | Procedure | 🟢 Small | 2026-11-19 |
 | [nerv:B-110](https://github.com/voidbrain/nerv/blob/774a08f94a649b22ce05117d2bc0c4806f543b42/docs/BACKLOG.md#b-110) | Dashboard offers Update now when already up to date, away from the update status | Implemented | Procedure | 🟢 Small | 2026-11-23 |
 | [nerv:B-112](https://github.com/voidbrain/nerv/blob/774a08f94a649b22ce05117d2bc0c4806f543b42/docs/BACKLOG.md#b-112) | Sephirot flow lights routes the sortie did not take and hides the map when no sortie is selected | Implemented | Procedure | 🟢 Small | 2026-11-23 |
-| [gauntlet-protocol:F-015](https://github.com/voidbrain/gauntlet-protocol/blob/c38f4a752b793815a0e15610021ef5367e98fb82/docs/BACKLOG.md#f-015) | coding-v1: coding pack and sandboxed reference runner | Open | Both | 🟡 Medium | 2026-11-24 |
-| [gauntlet-protocol:F-017](https://github.com/voidbrain/gauntlet-protocol/blob/c38f4a752b793815a0e15610021ef5367e98fb82/docs/BACKLOG.md#f-017) | logic-math-v1: puzzles, arithmetic and constraints | Open | No | 🟢 Small | 2026-11-24 |
-| [gauntlet-protocol:F-018](https://github.com/voidbrain/gauntlet-protocol/blob/c38f4a752b793815a0e15610021ef5367e98fb82/docs/BACKLOG.md#f-018) | italian-quality-v1: Italian summary, rewrite and register | Open | No | 🟡 Medium | 2026-11-24 |
-| [gauntlet-protocol:F-019](https://github.com/voidbrain/gauntlet-protocol/blob/c38f4a752b793815a0e15610021ef5367e98fb82/docs/BACKLOG.md#f-019) | cad-3d-v1: OpenSCAD build-and-measure and printing questions | Open | No | 🟡 Medium | 2026-11-24 |
-| [gauntlet-protocol:F-020](https://github.com/voidbrain/gauntlet-protocol/blob/c38f4a752b793815a0e15610021ef5367e98fb82/docs/BACKLOG.md#f-020) | code-review-v1: seeded-defect diffs | Open | No | 🟡 Medium | 2026-11-24 |
-| [gauntlet-protocol:F-016](https://github.com/voidbrain/gauntlet-protocol/blob/c38f4a752b793815a0e15610021ef5367e98fb82/docs/BACKLOG.md#f-016) | embedded-v1: Arduino, ESP32 and Raspberry Pi pack | Open | No | 🔴 Large | 2026-11-24 |
-| [gauntlet-protocol:F-022](https://github.com/voidbrain/gauntlet-protocol/blob/c38f4a752b793815a0e15610021ef5367e98fb82/docs/BACKLOG.md#f-022) | Packs or recorded skips for estimation, research, scheduling-time and backlog-management | Open | No | 🟡 Medium | 2026-11-24 |
-| [gauntlet-protocol:F-021](https://github.com/voidbrain/gauntlet-protocol/blob/c38f4a752b793815a0e15610021ef5367e98fb82/docs/BACKLOG.md#f-021) | image-generation-v1: runner and grader after a design decision | Open | No | 🔴 Large | 2026-11-24 |
+| [gauntlet-protocol:F-017](https://github.com/voidbrain/gauntlet-protocol/blob/c236be10c037bc798cf6308e0ce14c4b68378e50/docs/BACKLOG.md#f-017) | logic-math-v1: puzzles, arithmetic and constraints | Open | No | 🟢 Small | 2026-11-24 |
+| [gauntlet-protocol:F-018](https://github.com/voidbrain/gauntlet-protocol/blob/c236be10c037bc798cf6308e0ce14c4b68378e50/docs/BACKLOG.md#f-018) | italian-quality-v1: Italian summary, rewrite and register | Open | No | 🟡 Medium | 2026-11-24 |
+| [gauntlet-protocol:F-015](https://github.com/voidbrain/gauntlet-protocol/blob/c236be10c037bc798cf6308e0ce14c4b68378e50/docs/BACKLOG.md#f-015) | coding-v1: coding pack and sandboxed reference runner | Open | Procedure | 🟡 Medium | 2026-11-25 |
+| [gauntlet-protocol:F-019](https://github.com/voidbrain/gauntlet-protocol/blob/c236be10c037bc798cf6308e0ce14c4b68378e50/docs/BACKLOG.md#f-019) | cad-3d-v1: OpenSCAD build-and-measure and printing questions | Open | No | 🟡 Medium | 2026-11-24 |
+| [gauntlet-protocol:F-020](https://github.com/voidbrain/gauntlet-protocol/blob/c236be10c037bc798cf6308e0ce14c4b68378e50/docs/BACKLOG.md#f-020) | code-review-v1: seeded-defect diffs | Open | No | 🟡 Medium | 2026-11-24 |
+| [gauntlet-protocol:F-016](https://github.com/voidbrain/gauntlet-protocol/blob/c236be10c037bc798cf6308e0ce14c4b68378e50/docs/BACKLOG.md#f-016) | embedded-v1: Arduino, ESP32 and Raspberry Pi pack | Open | No | 🔴 Large | 2026-11-24 |
+| [gauntlet-protocol:F-022](https://github.com/voidbrain/gauntlet-protocol/blob/c236be10c037bc798cf6308e0ce14c4b68378e50/docs/BACKLOG.md#f-022) | Packs or recorded skips for estimation, research, scheduling-time and backlog-management | Open | No | 🟡 Medium | 2026-11-24 |
+| [gauntlet-protocol:F-021](https://github.com/voidbrain/gauntlet-protocol/blob/c236be10c037bc798cf6308e0ce14c4b68378e50/docs/BACKLOG.md#f-021) | image-generation-v1: runner and grader after a design decision | Open | No | 🔴 Large | 2026-11-24 |
 | [fpvbuddy:F-005](https://github.com/voidbrain/FPVBuddy/blob/383242f31ab67dd4278ee36495a587d2f4f3a9f8/docs/BACKLOG.md#f-005) | M1 — FPV battery core package | Open | No | 🟡 Medium | 2026-11-24 |
 | [grover:F-005](https://github.com/voidbrain/Grover/blob/b62a29bdae137d9f01429fb918dd9290fb1f7e4b/docs/BACKLOG.md#f-005) | Deploy hub and agent on the Pi behind Tailscale | Open | Procedure | 🟢 Small | 2026-11-24 |
 | [grover:F-003](https://github.com/voidbrain/Grover/blob/b62a29bdae137d9f01429fb918dd9290fb1f7e4b/docs/BACKLOG.md#f-003) | Hardware bring-up on the Raspberry Pi | Open | Decision | 🟡 Medium | 2026-11-24 |
