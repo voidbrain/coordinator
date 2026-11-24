@@ -17,6 +17,7 @@ import {
   auditStatus,
   reviewStatus,
   idleReason,
+  isPending,
 } from '../tools/solution-overview-lib.mjs';
 
 const fixture = (name) => readFileSync(new URL(`./fixtures/${name}`, import.meta.url), 'utf8');
@@ -321,4 +322,26 @@ test('Harness table and gap review: a project behind the latest release gets a r
   );
   assert.equal(found.length, 1);
   assert.match(found[0].proposal, /^alpha: a record "Reconcile to harness v10\.10\.0"/);
+});
+
+// Owner decisions 2026-11-24: items the owner ordered before their record has merged are marked "pending".
+test('an order item marked pending is shown but is not a missing-record gap until it lands', () => {
+  const sources = [
+    { id: 'coordinator', repository: 'acme/coordinator', available: true, records: [] },
+    { id: 'example', repository: 'acme/example', available: true, records: [] },
+  ];
+  const order = readOrder(
+    '<!-- order:start -->\n1. `example:F-001` — pending: example PR #1\n2. `example:F-002` — no note of that kind\n<!-- order:end -->',
+    new Set(['coordinator', 'example']),
+  );
+  assert.deepEqual(order.problems, []);
+  assert.equal(isPending(order.items[0]), true);
+  assert.equal(isPending(order.items[1]), false);
+  const missing = gapReview(sources, order, new Map(), (s, id) => `${s.id}:${id}`).filter((g) =>
+    g.kind.startsWith('5'),
+  );
+  assert.deepEqual(
+    missing.map((g) => g.evidence),
+    ["example:F-002 is not in example's active backlog"],
+  );
 });
