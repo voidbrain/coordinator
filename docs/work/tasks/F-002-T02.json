@@ -4,7 +4,7 @@
   "parent": "F-002",
   "title": "Land the owner's order in a PR that changes only the list",
   "goal": "Land the owner's order in a PR that changes only the list",
-  "status": "planned",
+  "status": "implemented",
   "acceptance": [
     "Land the owner's order in a PR that changes only the list"
   ],
@@ -30,11 +30,18 @@
   "effort": {
     "size": "small",
     "estimate": "0.25 h",
-    "basis": "Estimated 2026-11-24: one edit, check:order, refresh and a small PR. Not a measurement.",
+    "basis": "Landed with the owner's order; items whose record has not merged yet (nerv PR #730, gauntlet-protocol PR #85) are marked pending in the order. Closes on the PR's green CI.",
     "reviewed": "2026-11-24",
-    "agentHours": 0.25,
+    "agentHours": 0,
     "ownerHours": 0,
-    "estimateAgentHours": 0.25
+    "estimateAgentHours": 0.25,
+    "actualAgentHours": 0.25,
+    "actualSource": "stated"
   },
-  "prs": []
+  "prs": [
+    {
+      "pr": 4,
+      "note": "the owner's order"
+    }
+  ]
 }

@@ -3,7 +3,7 @@
 Current work ledger, reviewed 24 November 2026 against main `e03eb0c`. Cross-repository work only; each component's work lives in its own backlog ([overview](SOLUTION-OVERVIEW.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 5.25 h agent + 2.25 h owner across 12 open steps of 7 features. Generated from the task files.
+**Remaining effort:** 6 h agent + 1.75 h owner across 12 open steps of 7 features. 0.25 h of actual effort recorded on 1 step. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -55,9 +55,9 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔺 P1 | 🟢 Small | 0.25 h agent + 0.25 h owner | — | — | ⏳ | — | 🤔 |
+| 🔴 Open | 🔺 P1 | 🟢 Small | 0 h | — | — | 🤖 | — | — |
 
-🧑 **→** Next: [🤔](solution-order.md) F-002-T01 — Owner decides the first solution order (Ready).
+💻 **→** Next: F-002-T02 — Land the owner's order in a PR that changes only the list (Implemented; verification pending).
 
 | | |
 |---|---|
@@ -67,11 +67,18 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who |
-|---|---|---|---|---|---|---|---|:---:|
-| 🟢 Small | <a id="f-002-t01"></a>F-002-T01 — Owner decides the first solution order | — | 0 h | 0 h agent + 0.25 h owner | Ready | — | [F-002-T02](#f-002-t02) | [🤔](solution-order.md) |
-| 🟢 Small | <a id="f-002-t02"></a>F-002-T02 — Land the owner's order in a PR that changes only the list | 0.25 h | 0 h | 0.25 h | Planned | [F-002-T01](#f-002-t01) | — | ⏳ 🤖 |
-| 🟢 Small | **Total** | 0.25 h (1 of 2 steps) | 0 h (0 of 2 steps recorded) | 0.25 h agent + 0.25 h owner | 0 of 2 completed | | | |
+| Effort | Step | Estimate | Actual | Remaining | Status | Who | PRs |
+|---|---|---|---|---|---|:---:|---|
+| 🟢 Small | <a id="f-002-t02"></a>F-002-T02 — Land the owner's order in a PR that changes only the list | 0.25 h | 0.25 h so far (stated) | 0 h | Implemented; verification pending | 🤖 | [PR #4](https://github.com/voidbrain/coordinator/pull/4) the owner's order |
+| 🟢 Small | **Total** | 0.25 h (1 of 2 steps) | 0.25 h (1 of 2 steps recorded) | 0 h | 1 of 2 completed | | |
+
+<details><summary>Done steps (1)</summary>
+
+| Effort | Step | Estimate | Actual | Status | PRs |
+|---|---|---|---|---|---|
+| — | <a id="f-002-t01"></a>F-002-T01 — Owner decides the first solution order | — | 0 h | Completed | — |
+
+</details>
 
 <details>
 <summary>Next action, estimates and PR history</summary>
@@ -80,7 +87,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | — |
+| PR / evidence | Steps: F-002-T02: [PR #4](https://github.com/voidbrain/coordinator/pull/4) the owner's order. — |
 | Opened | 2026-11-24 |
 | Verification | Pending |
 | Reviewed | 2026-11-24 |
@@ -95,9 +102,9 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔺 P1 | 🟢 Small | 0.25 h agent + 0.5 h owner | — | — | ⏳ | — | 🤔 |
+| 🔴 Open | 🔺 P1 | 🟢 Small | 0.25 h | — | — | 🤖 | — | — |
 
-🧑 **→** Next: [🤔](SOLUTION-OVERVIEW.md#gap-review-proposals) F-003-T01 — Owner accepts or rejects each gap-review proposal (Ready).
+💻 **→** Next: F-003-T02 — Confirm after the refreshes that each accepted gap is gone (NERV PR #730, gauntlet-protocol PR #85, Grover PR #30, NERV's F-115 closure) (Ready).
 
 | | |
 |---|---|
@@ -107,11 +114,18 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who |
-|---|---|---|---|---|---|---|---|:---:|
-| 🟢 Small | <a id="f-003-t01"></a>F-003-T01 — Owner accepts or rejects each gap-review proposal | — | 0 h | 0 h agent + 0.5 h owner | Ready | — | [F-003-T02](#f-003-t02) | [🤔](SOLUTION-OVERVIEW.md#gap-review-proposals) |
-| 🟢 Small | <a id="f-003-t02"></a>F-003-T02 — Record the dispositions and confirm accepted gaps are gone after the next refresh | 0.25 h | 0 h | 0.25 h | Planned | [F-003-T01](#f-003-t01) | — | ⏳ 🤖 |
-| 🟢 Small | **Total** | 0.25 h (1 of 2 steps) | 0 h (0 of 2 steps recorded) | 0.25 h agent + 0.5 h owner | 0 of 2 completed | | | |
+| Effort | Step | Estimate | Actual | Remaining | Status | Who |
+|---|---|---|---|---|---|:---:|
+| 🟢 Small | <a id="f-003-t02"></a>F-003-T02 — Confirm after the refreshes that each accepted gap is gone (NERV PR #730, gauntlet-protocol PR #85, Grover PR #30, NERV's F-115 closure) | 0.25 h | 0 h | 0.25 h | Ready | 🤖 |
+| 🟢 Small | **Total** | 0.25 h (1 of 2 steps) | 0 h (0 of 2 steps recorded) | 0.25 h | 1 of 2 completed | |
+
+<details><summary>Done steps (1)</summary>
+
+| Effort | Step | Estimate | Actual | Status |
+|---|---|---|---|---|
+| — | <a id="f-003-t01"></a>F-003-T01 — Owner accepts or rejects each gap-review proposal | — | 0 h | Completed |
+
+</details>
 
 <details>
 <summary>Next action, estimates and PR history</summary>
@@ -257,7 +271,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🟡 Implemented | 🔶 P2 | 🟢 Small | 0.25 h | — | — | 🤖 | — | — |
+| 🟡 Implemented | 🔶 P2 | 🟡 Medium | 1.25 h agent + 0.25 h owner | — | — | 🤖 | — | 🤔 |
 
 💻 **→** Next: F-008-T01 — Daily refresh workflow: first run after the merge, linked (Implemented; verification pending).
 
@@ -269,10 +283,12 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status | PRs |
-|---|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-008-t01"></a>F-008-T01 — Daily refresh workflow: first run after the merge, linked | 0.25 h | 0 h | 0.25 h | Implemented; verification pending | [PR #2](https://github.com/voidbrain/coordinator/pull/2) workflow fixes |
-| 🟢 Small | **Total** | 0.25 h | 0 h (0 of 1 steps recorded) | 0.25 h | 0 of 1 completed | |
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who | PRs |
+|---|---|---|---|---|---|---|---|:---:|---|
+| 🟢 Small | <a id="f-008-t01"></a>F-008-T01 — Daily refresh workflow: first run after the merge, linked | 0.25 h | 0 h | 0.25 h | Implemented; verification pending | — | — | 🤖 | [PR #2](https://github.com/voidbrain/coordinator/pull/2) workflow fixes; [PR #3](https://github.com/voidbrain/coordinator/pull/3) first refresh PR, no counting check |
+| 🟢 Small | <a id="f-008-t02"></a>F-008-T02 — Owner decides how refresh PRs get a check that counts | — | 0 h | 0 h agent + 0.25 h owner | Ready | — | [F-008-T03](#f-008-t03) | [🤔](decisions/refresh-pr-checks.md) | — |
+| 🟢 Small | <a id="f-008-t03"></a>F-008-T03 — Apply the decision to the refresh workflow and land one refresh PR on a counting check | 1 h | 0 h | 1 h | Planned | [F-008-T02](#f-008-t02) | — | ⏳ 🤖 | — |
+| 🟡 Medium | **Total** | 1.25 h (2 of 3 steps) | 0 h (0 of 3 steps recorded) | 1.25 h agent + 0.25 h owner | 0 of 3 completed | | | | |
 
 <details>
 <summary>Next action, estimates and PR history</summary>
@@ -281,7 +297,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Steps: F-008-T01: [PR #2](https://github.com/voidbrain/coordinator/pull/2) workflow fixes. [#1](https://github.com/voidbrain/coordinator/pull/1) |
+| PR / evidence | Steps: F-008-T01: [PR #2](https://github.com/voidbrain/coordinator/pull/2) workflow fixes; [PR #3](https://github.com/voidbrain/coordinator/pull/3) first refresh PR, no counting check. [#1](https://github.com/voidbrain/coordinator/pull/1) |
 | Opened | 2026-11-24 |
 | Verification | Pending: first run after merge |
 | Reviewed | 2026-11-24 |

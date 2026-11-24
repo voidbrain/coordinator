@@ -4,7 +4,7 @@
   "parent": "F-003",
   "title": "Owner accepts or rejects each gap-review proposal",
   "goal": "Owner accepts or rejects each gap-review proposal",
-  "status": "ready",
+  "status": "closed",
   "acceptance": [
     "Each proposal is accepted or rejected"
   ],
@@ -28,10 +28,10 @@
   "effort": {
     "size": "small",
     "estimate": "0.5 h owner",
-    "basis": "Estimated 2026-11-24: five proposals, each read at its evidence link, about 30 minutes. Not a measurement.",
+    "basis": "Owner decision 2026-11-24: \"accept all\". Outcomes: 1 gauntlet-protocol domain packs, created as gauntlet-protocol F-015 to F-022 (PR #85); 2 nerv:F-101 needs FPVBuddy, covered by fpvbuddy:F-005; 3 grover:F-008 needs NERV, covered by nerv:F-122 (NERV PR #730); 4–6 Grover owner checks without a page (F-016, F-017, F-018), Grover PR #30 adds acceptance pages; 7 nerv:F-115, verified and closed by NERV at its next reconcile. No actual: owner time not measured.",
     "reviewed": "2026-11-24",
     "agentHours": 0,
-    "ownerHours": 0.5,
+    "ownerHours": 0,
     "ownerKind": "decision"
   },
   "prs": [],

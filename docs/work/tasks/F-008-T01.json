@@ -28,7 +28,7 @@
   "effort": {
     "size": "small",
     "estimate": "0.25 h",
-    "basis": "Estimated 2026-11-24: dispatch the workflow once after PR #2 merges (the version on main from PR #1 lacks the re-review fixes), read the run and link it. Not a measurement.",
+    "basis": "First run by hand 2026-11-24 (run 45503340953): branch started from main, views refreshed, PR #3 opened, CI dispatched and passed on the branch head (run 45503404765), but PR #3 shows no checks and its pull_request CI run waits for approval (run 45503409127); see docs/decisions/refresh-pr-checks.md. Remaining: close once a refresh PR lands on a counting check (F-008-T03).",
     "reviewed": "2026-11-24",
     "agentHours": 0.25,
     "ownerHours": 0,
@@ -38,6 +38,10 @@
     {
       "pr": 2,
       "note": "workflow fixes"
+    },
+    {
+      "pr": 3,
+      "note": "first refresh PR, no counting check"
     }
   ]
 }
