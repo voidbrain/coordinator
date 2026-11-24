@@ -4,7 +4,7 @@
   "parent": "F-002",
   "title": "Owner decides the first solution order",
   "goal": "Owner decides the first solution order",
-  "status": "ready",
+  "status": "closed",
   "acceptance": [
     "The owner's order, or 'keep it', is given"
   ],
@@ -28,10 +28,10 @@
   "effort": {
     "size": "small",
     "estimate": "0.25 h owner",
-    "basis": "Estimated 2026-11-24: reading 18 references with their live states and replying with changes, about 15 minutes. Not a measurement.",
+    "basis": "Owner decision 2026-11-24, in the owner's words: keep the proposed order 1–17, \"REMOVE item 18 grover:F-005 (owner: skip it for now)\", then append nerv:F-122, nerv:F-123, fpvbuddy:F-005, nerv:F-121 and the gauntlet-protocol domain-pack records F-015 to F-020 (F-021 and F-022 left unlisted). No actual: owner time not measured.",
     "reviewed": "2026-11-24",
     "agentHours": 0,
-    "ownerHours": 0.25,
+    "ownerHours": 0,
     "ownerKind": "decision"
   },
   "prs": [],

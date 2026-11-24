@@ -2,11 +2,11 @@
   "version": 1,
   "id": "F-003-T02",
   "parent": "F-003",
-  "title": "Record the dispositions and confirm accepted gaps are gone after the next refresh",
-  "goal": "Record the dispositions and confirm accepted gaps are gone after the next refresh",
-  "status": "planned",
+  "title": "Confirm after the refreshes that each accepted gap is gone (NERV PR #730, gauntlet-protocol PR #85, Grover PR #30, NERV's F-115 closure)",
+  "goal": "Confirm after the refreshes that each accepted gap is gone (NERV PR #730, gauntlet-protocol PR #85, Grover PR #30, NERV's F-115 closure)",
+  "status": "ready",
   "acceptance": [
-    "Record the dispositions and confirm accepted gaps are gone after the next refresh"
+    "The gap review no longer lists the seven accepted proposals, or what is left is recorded here"
   ],
   "dependsOn": [
     "F-003-T01"
@@ -29,7 +29,7 @@
   "effort": {
     "size": "small",
     "estimate": "0.25 h",
-    "basis": "Estimated 2026-11-24: record the owner's answers here and check one refresh; the records themselves are created in their own repositories. Not a measurement.",
+    "basis": "Estimated 2026-11-24: read the gap review after each of the four component changes lands and record what is left; the records themselves are created in their own repositories.",
     "reviewed": "2026-11-24",
     "agentHours": 0.25,
     "ownerHours": 0,

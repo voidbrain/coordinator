@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "id": "F-008-T03",
+  "parent": "F-008",
+  "title": "Apply the decision to the refresh workflow and land one refresh PR on a counting check",
+  "goal": "Apply the decision to the refresh workflow and land one refresh PR on a counting check",
+  "status": "planned",
+  "acceptance": [
+    "A refresh PR shows a passing check and is merged with merge-when-green"
+  ],
+  "dependsOn": [
+    "F-008-T02"
+  ],
+  "resources": [
+    ".github/workflows/refresh-views.yml",
+    "docs/work/records/F-008.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "1 h",
+    "basis": "Estimated 2026-11-24: change how the PR is opened (token) or document the approval click, drop the dispatch step, run once and land the PR. Not a measurement.",
+    "reviewed": "2026-11-24",
+    "agentHours": 1,
+    "ownerHours": 0,
+    "estimateAgentHours": 1
+  },
+  "prs": []
+}

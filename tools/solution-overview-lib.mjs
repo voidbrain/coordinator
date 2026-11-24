@@ -4,6 +4,10 @@
 // This repository's own backlog, as references and labels call it (the template's solution.mjs calls it `solution`).
 export const COORDINATOR = 'coordinator';
 
+// An order item the owner placed before its record merged: its note starts with "pending" (for example
+// "pending: nerv PR #730"). It shows as pending, not as a missing record, until it lands.
+export const isPending = (item) => /^pending\b/i.test(item?.note ?? '');
+
 export const REF = /^([a-z][a-z0-9-]*):([BF]-\d+(?:-T\d+)?)$/;
 
 // ---------- solution order ----------
@@ -318,7 +322,7 @@ export function gapReview(sources, order, index, link) {
   // 5. Solution order items whose record does not exist.
   for (const o of order.items) {
     const src = sources.find((x) => x.id === o.repo);
-    if (src?.available && !index.has(o.ref))
+    if (src?.available && !index.has(o.ref) && !isPending(o))
       gaps.push({
         kind: '5 Order item missing',
         where: `[solution order](solution-order.md)`,

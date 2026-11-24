@@ -11,6 +11,7 @@ import { dirname, resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import {
   COORDINATOR,
+  isPending,
   readOrder as parseOrder,
   parseBacklog,
   contentsText,
@@ -306,8 +307,13 @@ async function build() {
     const src = sources.find((s) => s.id === o.repo);
     const emoji = src?.emoji ?? '';
     if (!hit) {
-      const why = src && !src.available ? 'Source unavailable' : 'Not in the active backlog (closed or archived?)';
-      if (src?.available)
+      const why =
+        src && !src.available
+          ? 'Source unavailable'
+          : isPending(o)
+            ? 'Pending: not in its backlog yet'
+            : 'Not in the active backlog (closed or archived?)';
+      if (src?.available && !isPending(o))
         problems.push(`${ORDER}: ${o.ref} is not in ${o.repo}'s active backlog; remove it or fix the ID`);
       out.push(`| ${n + 1} | ${emoji} | ${o.ref} | — | ${why} | — | — | — | ${cell(o.note)} |`);
       return;
