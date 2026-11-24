@@ -4,7 +4,7 @@
   "parent": "F-008",
   "title": "Daily refresh workflow: first run after the merge, linked",
   "goal": "Daily refresh workflow: first run after the merge, linked",
-  "status": "implemented",
+  "status": "closed",
   "acceptance": [
     "Daily refresh workflow: first run after the merge, linked"
   ],
@@ -28,11 +28,13 @@
   "effort": {
     "size": "small",
     "estimate": "0.25 h",
-    "basis": "First run by hand 2026-11-24 (run 45503340953): branch started from main, views refreshed, PR #3 opened, CI dispatched and passed on the branch head (run 45503404765), but PR #3 shows no checks and its pull_request CI run waits for approval (run 45503409127); see docs/decisions/refresh-pr-checks.md. Remaining: close once a refresh PR lands on a counting check (F-008-T03).",
+    "basis": "First run by hand 2026-11-24 (run 45503340953): branch started from main, views refreshed, PR #3 opened, CI dispatched and passed on the branch head (run 45503404765) but did not count on the PR; the PR's own pull_request run (45503409127) was held for approval, approved by the owner, passed, and the owner merged PR #3 at 22:49Z. How later refresh PRs get their check: F-008-T02.",
     "reviewed": "2026-11-24",
-    "agentHours": 0.25,
+    "agentHours": 0,
     "ownerHours": 0,
-    "estimateAgentHours": 0.25
+    "estimateAgentHours": 0.25,
+    "actualAgentHours": 0.25,
+    "actualSource": "stated"
   },
   "prs": [
     {
@@ -41,7 +43,7 @@
     },
     {
       "pr": 3,
-      "note": "first refresh PR, no counting check"
+      "note": "first refresh PR, merged on its approved pull_request check"
     }
   ]
 }

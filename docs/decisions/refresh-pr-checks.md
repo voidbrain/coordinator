@@ -10,7 +10,7 @@ On 2026-11-24 the Refresh solution views workflow ran once by hand ([run 4550334
 - PR #3 still shows **no checks** (`gh pr checks 3`: "no checks reported"; the GraphQL status rollup is empty), so `merge-when-green` cannot land it;
 - the PR also started the normal `pull_request` CI run ([run 45503409127](https://github.com/voidbrain/coordinator/actions/runs/45503409127)), which GitHub holds as **action required**: a run for a PR opened by `github-actions[bot]` waits for someone to approve it.
 
-So starting CI with `workflow_dispatch` does not give the refresh PR a check that counts.
+So starting CI with `workflow_dispatch` does not give the refresh PR a check that counts. The owner then approved the held run; it passed and became PR #3's check, and the owner merged PR #3 (2026-11-24 22:49Z). That was option A below, once.
 
 ## Options
 

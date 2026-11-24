@@ -3,7 +3,7 @@
 Current work ledger, reviewed 24 November 2026 against main `e03eb0c`. Cross-repository work only; each component's work lives in its own backlog ([overview](SOLUTION-OVERVIEW.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 6 h agent + 1.75 h owner across 12 open steps of 7 features. 0.25 h of actual effort recorded on 1 step. Generated from the task files.
+**Remaining effort:** 5.75 h agent + 1.75 h owner across 11 open steps of 7 features. 0.5 h of actual effort recorded on 2 steps. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -271,9 +271,9 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🟡 Implemented | 🔶 P2 | 🟡 Medium | 1.25 h agent + 0.25 h owner | — | — | 🤖 | — | 🤔 |
+| 🟡 Implemented | 🔶 P2 | 🟢 Small | 1 h agent + 0.25 h owner | — | — | ⏳ | — | 🤔 |
 
-💻 **→** Next: F-008-T01 — Daily refresh workflow: first run after the merge, linked (Implemented; verification pending).
+🧑 **→** Next: [🤔](decisions/refresh-pr-checks.md) F-008-T02 — Owner decides how refresh PRs get a check that counts (Ready).
 
 | | |
 |---|---|
@@ -285,10 +285,17 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who | PRs |
 |---|---|---|---|---|---|---|---|:---:|---|
-| 🟢 Small | <a id="f-008-t01"></a>F-008-T01 — Daily refresh workflow: first run after the merge, linked | 0.25 h | 0 h | 0.25 h | Implemented; verification pending | — | — | 🤖 | [PR #2](https://github.com/voidbrain/coordinator/pull/2) workflow fixes; [PR #3](https://github.com/voidbrain/coordinator/pull/3) first refresh PR, no counting check |
 | 🟢 Small | <a id="f-008-t02"></a>F-008-T02 — Owner decides how refresh PRs get a check that counts | — | 0 h | 0 h agent + 0.25 h owner | Ready | — | [F-008-T03](#f-008-t03) | [🤔](decisions/refresh-pr-checks.md) | — |
 | 🟢 Small | <a id="f-008-t03"></a>F-008-T03 — Apply the decision to the refresh workflow and land one refresh PR on a counting check | 1 h | 0 h | 1 h | Planned | [F-008-T02](#f-008-t02) | — | ⏳ 🤖 | — |
-| 🟡 Medium | **Total** | 1.25 h (2 of 3 steps) | 0 h (0 of 3 steps recorded) | 1.25 h agent + 0.25 h owner | 0 of 3 completed | | | | |
+| 🟢 Small | **Total** | 1.25 h (2 of 3 steps) | 0.25 h (1 of 3 steps recorded) | 1 h agent + 0.25 h owner | 1 of 3 completed | | | | |
+
+<details><summary>Done steps (1)</summary>
+
+| Effort | Step | Estimate | Actual | Status | PRs |
+|---|---|---|---|---|---|
+| — | <a id="f-008-t01"></a>F-008-T01 — Daily refresh workflow: first run after the merge, linked | 0.25 h | 0.25 h (stated) | Completed | [PR #2](https://github.com/voidbrain/coordinator/pull/2) workflow fixes; [PR #3](https://github.com/voidbrain/coordinator/pull/3) first refresh PR, merged on its approved pull&#95;request check |
+
+</details>
 
 <details>
 <summary>Next action, estimates and PR history</summary>
@@ -297,7 +304,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Steps: F-008-T01: [PR #2](https://github.com/voidbrain/coordinator/pull/2) workflow fixes; [PR #3](https://github.com/voidbrain/coordinator/pull/3) first refresh PR, no counting check. [#1](https://github.com/voidbrain/coordinator/pull/1) |
+| PR / evidence | Steps: F-008-T01: [PR #2](https://github.com/voidbrain/coordinator/pull/2) workflow fixes; [PR #3](https://github.com/voidbrain/coordinator/pull/3) first refresh PR, merged on its approved pull&#95;request check. [#1](https://github.com/voidbrain/coordinator/pull/1) |
 | Opened | 2026-11-24 |
 | Verification | Pending: first run after merge |
 | Reviewed | 2026-11-24 |
