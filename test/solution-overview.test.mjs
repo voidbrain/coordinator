@@ -175,3 +175,24 @@ test('cross-repository prerequisites in prose ("depends on repo:ID") are read un
     'beta:B-1',
   ]);
 });
+
+test('gap review resolves repo:ID prerequisites against the other repository', () => {
+  const load = (id, name) => ({
+    id,
+    repository: `acme/${id}`,
+    available: true,
+    records: parseBacklog(fixture(name), id),
+  });
+  const sources = [
+    { id: 'solution', repository: 'acme/coordinator', available: true, records: [] },
+    load('alpha', 'runway-alpha.md'),
+    load('beta', 'runway-beta.md'),
+  ];
+  const found = gapReview(sources, { items: [] }, new Map(), (s, id) => `${s.id}:${id}`).filter((g) =>
+    g.kind.startsWith('2'),
+  );
+  assert.deepEqual(
+    found.map((g) => g.evidence),
+    ['B-003-T03 depends on B-003-T09, which is not in the active backlog (closed, archived or a wrong ID)'],
+  );
+});

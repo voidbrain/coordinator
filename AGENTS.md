@@ -8,6 +8,7 @@ The project is **Coordinator**, the solution coordinator for the voidbrain proje
 - Components are listed in [.solution.json](.solution.json) (`nerv`, `gauntlet-protocol`, `project-harness`, `fpvbuddy`, `grover`). [docs/SOLUTION.md](docs/SOLUTION.md) owns the contracts and integration acceptance between them.
 - [docs/BACKLOG.md](docs/BACKLOG.md) holds cross-repository work only: contracts, version compatibility, end-to-end acceptance, coordination. Implementation work goes in the component's own backlog.
 - The gap review proposes missing records and steps to the repositories that would own them; the owner decides which are created ([gap review](docs/agents/gap-review.md)).
+- The overview sums remaining agent and owner hours across all backlogs, the coordinator's included: hours only, never a percentage, labelled as each project's own estimates, and "at least" when a backlog cannot be read. Its agent runway counts agent steps doable before a block, across repositories (`repo:ID` prerequisites). <!-- project -->
 - Generated, never edited by hand: [docs/SOLUTION-OVERVIEW.md](docs/SOLUTION-OVERVIEW.md) (`tools/solution-overview.mjs`, project tool) and [docs/SOLUTION-DASHBOARD.md](docs/SOLUTION-DASHBOARD.md) (`tools/solution.mjs`, from the template). `npm run solution:refresh` rewrites both from GitHub.
 
 ### Solution order

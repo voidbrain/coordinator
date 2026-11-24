@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "reviewed": "2026-11-24T21:22:20.039Z",
+  "reviewed": "2026-11-24T21:39:20.904Z",
   "policy": "c9570a34ab0c7e4f1274fe37802a6eff8e7edfb8266c98f0cec7119533729b2b",
   "inputs": {
-    "AGENTS.md": "f25ee66aef0d737754ecb57b954475190defa3e5b63f2ef4094a68e31a51a81f",
+    "AGENTS.md": "ca6cd4ed57c4eaab0e44f428dc23cd2ff6084b337afab86916b2f6ad0db7d469",
     "docs/BACKLOG-RULES.md": "a090ba3c7571d60c50a386f32e30aab528104003a2a9da6c31cedec6ef05b77a",
     "docs/agents/architecture-review.md": "5d967314854912b1a5f1446aeab309763b14f9856bceb3c82df5c6c25c166526",
-    "docs/agents/areas.md": "d5b5bbabdef744f7a6842e7d5932a7564f16b260e07a184d9d3d9e4a32896c0d",
+    "docs/agents/areas.md": "6782cfd2d6a1cd5f681236a3821e64925afb21ccb4a91776444cdf846d3a43a0",
     "docs/agents/audit.md": "e58480c21e8afe9a825df4726fa93b8a7f841557f4267f1fc2c61ac3dac8f642",
     "docs/agents/change-impact.md": "dc1c473e274f76bd70a87ff57bbc53fc75dc75a35d121cf67baf163a2fd2e975",
     "docs/agents/coverage-guide.md": "3d539eb8beedfa101a5e47d9973cdf85dce197436fab2ab096f760e12d208106",
@@ -97,19 +97,19 @@
     {
       "kind": "none",
       "disposition": "no-change",
-      "evidence": "First adoption at template v10.9.0 on 2026-11-24 with core and the solution profile: governing files adapted for a coordinator with no source code (tooling.exempt recorded); one friction sample (adoption, wall clock from repository creation). No template rule or copied tool is changed. Checks run: check:backlog, check:rules, check:tooling, check:integrations, impact-map, solution.mjs dashboard --remote."
+      "evidence": "First adoption at template v10.9.0 on 2026-11-24 with core and the solution profile, then the review of PR #1: Prettier and ESLint on the project's own tools and tests (no longer tooling.exempt), fixture tests in CI. One friction sample (adoption, wall clock from repository creation). No template rule or copied tool is changed. Checks run: check:backlog, check:rules, check:tooling, check:integrations, format:check, lint, npm test, impact-map, solution:refresh."
     },
     {
       "kind": "tool",
       "disposition": "backlog",
       "target": "F-004",
-      "evidence": "The template's solution dashboard has no solution order, readiness, owner, effort or gap sections; this repository adds them as a project tool (tools/solution-overview.mjs) and proposes them to the template in docs/proposals/solution-order-in-template.md."
+      "evidence": "The template's solution dashboard has no solution order, readiness, owner, hours, runway, effort or gap sections and no cross-repository dependencies; this repository adds them as a project tool (tools/solution-overview.mjs and its library) and proposes them to the template in docs/proposals/solution-order-in-template.md."
     },
     {
       "kind": "rule",
       "disposition": "implemented",
       "target": "AGENTS.md",
-      "evidence": "Project lines (marked <!-- project -->): the solution order rules, the gap review, and never editing component repositories or the template from this repository; check:rules passes."
+      "evidence": "Project lines (marked <!-- project -->): the solution order rules and their readiness limits, hours and runway, the gap review, tests for every reader change, and never editing component repositories or the template from this repository; check:rules passes."
     }
   ]
 }

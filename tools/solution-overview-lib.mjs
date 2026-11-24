@@ -218,27 +218,41 @@ export function gapReview(sources, order, index, link) {
           proposal: `${b.id}: a record for what ${a.id}:${r.id} needs from it, or ${a.id}: drop the dependency`,
         });
       }
-  // 2. Depends on a record or step that does not exist or is already done.
+  // 2. Depends on a record or step that does not exist or is already done, in this or another repository (repo:ID).
+  const sets = new Map(
+    live.map((a) => [
+      a.id,
+      {
+        known: new Set(a.records.flatMap((r) => [r.id, ...r.anchors])),
+        done: new Set(a.records.flatMap((r) => r.steps.filter((st) => !OPEN_STEP(st)).map((st) => st.id))),
+        open: new Set(
+          a.records
+            .filter((r) => OPEN(r.status))
+            .flatMap((r) => [r.id, ...r.steps.filter(OPEN_STEP).map((st) => st.id)]),
+        ),
+      },
+    ]),
+  );
   for (const a of live) {
-    const known = new Set(a.records.flatMap((r) => [r.id, ...r.anchors]));
-    const done = new Set(a.records.flatMap((r) => r.steps.filter((st) => !OPEN_STEP(st)).map((st) => st.id)));
-    const openIds = new Set(
-      a.records.filter((r) => OPEN(r.status)).flatMap((r) => [r.id, ...r.steps.filter(OPEN_STEP).map((st) => st.id)]),
-    );
     const items = a.records.filter((r) => OPEN(r.status)).flatMap((r) => [r, ...r.steps.filter(OPEN_STEP)]);
     for (const it of items)
-      for (const dep of it.depends.match(ID) ?? []) {
-        if (openIds.has(dep)) continue;
-        const why = !known.has(dep)
-          ? 'is not in the active backlog (closed, archived or a wrong ID)'
-          : done.has(dep)
-            ? 'is already done'
-            : 'belongs to a closed record';
+      for (const key of parseDeps(it.depends, a.id)) {
+        const [repo, dep] = key.split(':');
+        const set = sets.get(repo);
+        if (set?.open.has(dep)) continue;
+        const name = repo === a.id ? dep : key;
+        const why = !set
+          ? `names a repository the manifest does not list or could not read (${repo})`
+          : !set.known.has(dep)
+            ? `is not in ${repo === a.id ? 'the' : `${repo}'s`} active backlog (closed, archived or a wrong ID)`
+            : set.done.has(dep)
+              ? 'is already done'
+              : 'belongs to a closed record';
         gaps.push({
           kind: '2 Dependency missing or done',
           where: link(a, it.id),
-          evidence: `${it.id} depends on ${dep}, which ${why}`,
-          proposal: `${a.id}: correct ${it.id}'s prerequisites (remove ${dep} or add the missing step)`,
+          evidence: `${it.id} depends on ${name}, which ${why}`,
+          proposal: `${a.id}: correct ${it.id}'s prerequisites (remove ${name} or add the missing step)`,
         });
       }
   }

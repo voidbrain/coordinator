@@ -2,7 +2,7 @@
 
 Written 2026-11-24 in voidbrain/coordinator for the owner to take to a project-harness session. Nothing here changes the template; the template's own session decides, records and releases. This repository tracks only its side (`solution:F-004`): delivering the proposals and reconciling to a release that adopts them.
 
-## Proposal 1: solution order, owner view and gap review in the solution profile
+## Proposal 1: solution order, owner view, hours, runway, gap review and cross-repository dependencies in the solution profile
 
 ### Problem
 
@@ -25,14 +25,22 @@ The coordinator has these today as project content: `docs/solution-order.md`, `t
    - Solution order with each item's live status, priority, remaining and state (Ready, Waiting on X, Owner: procedure/decision, Blocked, Not in backlog), the first Ready item marked;
    - Waiting for the owner (records and steps, kind, owner hours, next action);
    - Blocked or waiting on a prerequisite;
-   - Effort per component: counts by priority, remaining agent/owner hours as each backlog states them, sizes, and the component's own totals line; no hours summed across repositories that estimate differently, no combined percentage;
+   - Remaining hours per backlog, the coordinator's own included: agent and owner hours from each backlog's total line (else its records' Remaining cells), and a **solution total** that sums them. Hours only, never a percentage (the profile forbids a combined completion percentage, not a sum of hours); labelled as each project's own estimates, not cross-calibrated; a backlog whose hours cannot be read shows Unknown and the total reads "at least N h";
+   - **Agent runway**: agent hours doable before work reaches a block. A step is doable when it is agent work, not done, and every prerequisite is done or itself doable, transitively and across repositories; a block is an owner step, a step waiting on one, an unknown prerequisite, a cycle (reported once, never looped) or an external wait (Blocked). Per backlog and for the solution: runway hours, the first blocks reached ("F-006-T29 waits on owner F-006-T28") and the owner hours that unblock the next layer;
+   - Effort per component: counts by priority, sizes, and the component's own totals line;
    - Open steps per component (collapsed).
    It needs the reader to keep the generated ledger's Priority, Remaining, Depends on, Agent, Procedures and Decisions cells and its steps table, which `records()` already sees but discards.
-3. **Gap review** as a dashboard section plus a procedure in `docs/agents/`: proposals only, each naming the repository that would own the fix. Kinds: (1) cross-repository dependency with no counterpart record; (2) Depends on naming a missing or done ID; (3) owner's turn with no `ownerLink` page; (4) open record with no next step or no estimate; (5) order item not in its backlog. The coordinator never creates the records; the owner accepts which are created, in their own repositories. Kind 1 is a text heuristic (a sentence naming another component with a dependency word); the template version could add an explicit, validated cross-repository `Depends on` form such as `gauntlet-protocol:F-012` so most of kind 1 becomes exact.
+3. **Gap review** as a dashboard section plus a procedure in `docs/agents/`: proposals only, each naming the repository that would own the fix. Kinds: (1) cross-repository dependency with no counterpart record; (2) Depends on naming a missing or done ID; (3) owner's turn with no `ownerLink` page; (4) open record with no next step or no estimate; (5) order item not in its backlog. The coordinator never creates the records; the owner accepts which are created, in their own repositories. Kind 1 is a text heuristic (a sentence naming another component with a dependency word); with item 4 most of it becomes exact.
+4. **Cross-repository step dependencies, first-class** (owner decision 2026-11-24: every project uses step-level dependencies). A task file's `dependsOn` may contain `"repo:STEP-ID"` (for example `"nerv:F-101-T04"`), where `repo` is an ID in the solution manifest:
+   - the component's `check:work` accepts it as an **external** prerequisite (valid syntax, not resolved, not an error) and the generated ledger shows it in Depends on as `repo:STEP-ID`, linked to that repository; the component's own readiness treats an external prerequisite as waiting (⏳) unless the component records it as met;
+   - the component needs no access to the other repository; a component outside any solution can still use the form, and the reference is simply not resolved;
+   - the coordinator resolves it against the manifest at the same resolved commits as the dashboard: for readiness in the solution order, the agent runway and gap review kind 2 (a `repo:ID` that is missing, done or names an unknown repository);
+   - until a release ships it, the coordinator's project tool reads `repo:ID` in Depends on cells and the text form "depends on repo:ID" / "waits on repo:ID".
+5. **Unknown layouts are problems.** The dashboard reader reports a record heading, summary table or status it does not know, and fails, instead of showing the component as having no work (found in the review of this repository's PR #1); the GitHub contents API's empty response for files over 1 MB is read through the blob API or reported.
 
 ### Acceptance in the template
 
-Fixture coordinators and components in the template's own tests: an order with a ready item behind a waiting one; an order reference to a closed record; a step whose owner face has no link; a cross-repository sentence with and without a counterpart; a component on the authored four-column layout. No real solution is needed for the release.
+Fixture coordinators and components in the template's own tests: an order with a ready item behind a waiting one; an order reference to a closed record; a step whose owner face has no link; a cross-repository sentence with and without a counterpart; a component on the authored four-column layout; an unknown heading and a renamed summary column (reported, not empty); a backlog with an unreadable total (partial sum); a cross-repository chain A (agent) → B (agent, other repository) → C (owner) that counts A and B and reports C; a cycle and a missing prerequisite (reported, not looped). This repository's `test/fixtures/` has invented versions of each. No real solution is needed for the release.
 
 ### Migration here
 

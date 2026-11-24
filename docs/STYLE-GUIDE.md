@@ -20,7 +20,7 @@ This guide governs repository writing and the generated views; [Backlog rules](B
 
 - The first line of a generated file is its generator marker; the generator refuses to overwrite a file without it.
 - Every view states its snapshot time and the revision it read from each source. An unavailable source shows as Unknown, never as empty.
-- No combined completion percentage, and no hours added up across repositories that estimate differently.
+- No completion percentage, combined or not. Remaining hours are summed across backlogs only with the label that each project estimates on its own (not cross-calibrated); an unreadable backlog makes the sum "at least". The agent runway says which items are less certain.
 - Long lists (all open steps of a repository) sit in `<details>` so the page stays scannable.
 
 ## Writing in this repository

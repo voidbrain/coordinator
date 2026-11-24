@@ -110,7 +110,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 ### F-004
 
-**Propose the solution order, the gap review and on-demand backlog views to the template**
+**Propose the solution order, hours, runway, gap review, cross-repository dependencies and on-demand backlog views to the template**
 
 | Signal | Priority | Status | Effort |
 |:---:|---|---|---|

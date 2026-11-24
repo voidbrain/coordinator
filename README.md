@@ -12,22 +12,22 @@ The solution coordinator for the voidbrain projects: one place to see and steer 
 
 ## Read it
 
-- [Overview](docs/SOLUTION-OVERVIEW.md): the solution order with each item's live state, what waits for the owner, what is blocked, effort per repository, all open records and steps, and the gap review.
+- [Overview](docs/SOLUTION-OVERVIEW.md): the solution order with each item's live state, what waits for the owner, what is blocked, remaining agent and owner hours per backlog with the solution total, the agent runway before the next owner block, effort per repository, all open records and steps, and the gap review.
 - [Solution order](docs/solution-order.md): the owner's order; agents take the first ready item.
 - [Dashboard](docs/SOLUTION-DASHBOARD.md): the harness template's view of the same sources, with revisions and link checks.
 - [Backlog](docs/BACKLOG.md): cross-repository work only. [Solution](docs/SOLUTION.md): components, contracts, integration acceptance.
 
 ## Run it
 
-Node 22 or later, `git`; `gh` for a token when the GitHub API rate limit is reached. No dependencies to install.
+Node 22 or later, `git`; `gh` for a token when the GitHub API rate limit is reached. `npm ci` installs Prettier and ESLint for the project's own tools; the refresh itself needs no dependencies.
 
 ```bash
 GH_TOKEN=$(gh auth token) npm run solution:refresh   # regenerate the overview and dashboard from each component's main on GitHub
-npm run check:fast                                    # backlog, rules, tooling, maintenance, order, manifest and links
+npm run check:fast                                    # format, lint, tests, backlog, rules, tooling, maintenance, order, links
 npm run check:freshness                               # at session start
 ```
 
-Commit the regenerated views in a PR; each names its snapshot time and the source commits it read.
+The Refresh solution views workflow does this daily and opens or updates the PR "chore: refresh solution views" when something besides the snapshot changed. By hand, commit the regenerated views in a PR; each names its snapshot time and the source commits it read.
 
 ## Where things are
 
