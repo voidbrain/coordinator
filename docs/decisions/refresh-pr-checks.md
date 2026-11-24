@@ -24,4 +24,4 @@ Recommendation: B, with A as the interim until the secret exists. With A or B, t
 
 ## Answer
 
-Reply with A, B or C (or something else). The agent then updates the workflow (F-008-T03) and records the decision here.
+Owner decision 2026-11-24: **B**. The owner created a fine-grained token and stored it as the repository secret `REFRESH_TOKEN`. The refresh workflow pushes the branch and opens the PR with it; the `gh workflow run ci.yml` step and the workflow token's write permissions are gone (it is `contents: read`); a missing secret fails the run (F-008-T03).
