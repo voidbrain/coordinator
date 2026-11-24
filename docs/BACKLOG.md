@@ -3,7 +3,7 @@
 Current work ledger, reviewed 24 November 2026 against main `e03eb0c`. Cross-repository work only; each component's work lives in its own backlog ([overview](SOLUTION-OVERVIEW.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 4.75 h agent + 1.5 h owner across 9 open steps of 6 features. 0.25 h of actual effort recorded on 1 step. Generated from the task files.
+**Remaining effort:** 4.75 h agent + 0.5 h owner across 8 open steps of 6 features. 0.25 h of actual effort recorded on 1 step. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -149,9 +149,9 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔶 P2 | 🟡 Medium | 2 h agent + 1 h owner | — | — | ⏳ | 🧑‍🔧 | — |
+| 🔴 Open | 🔶 P2 | 🟡 Medium | 2 h | — | — | 🤖 | — | — |
 
-🧑 **→** Next: [🧑‍🔧](proposals/solution-order-in-template.md) F-004-T01 — Owner takes the template proposal to a project-harness session (Ready).
+💻 **→** Next: F-004-T02 — Reconcile to the template release that ships the proposal and retire the project tool (Planned).
 
 | | |
 |---|---|
@@ -161,11 +161,18 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who |
-|---|---|---|---|---|---|---|---|:---:|
-| 🟢 Small | <a id="f-004-t01"></a>F-004-T01 — Owner takes the template proposal to a project-harness session | — | 0 h | 0 h agent + 1 h owner | Ready | — | [F-004-T02](#f-004-t02) | [🧑‍🔧](proposals/solution-order-in-template.md) |
-| 🟡 Medium | <a id="f-004-t02"></a>F-004-T02 — Reconcile to the template release that ships the proposal and retire the project tool | 2 h | 0 h | 2 h | Planned | [F-004-T01](#f-004-t01) | — | ⏳ 🤖 |
-| 🟡 Medium | **Total** | 2 h (1 of 2 steps) | 0 h (0 of 2 steps recorded) | 2 h agent + 1 h owner | 0 of 2 completed | | | |
+| Effort | Step | Estimate | Actual | Remaining | Status | Who |
+|---|---|---|---|---|---|:---:|
+| 🟡 Medium | <a id="f-004-t02"></a>F-004-T02 — Reconcile to the template release that ships the proposal and retire the project tool | 2 h | 0 h | 2 h | Planned | 🤖 |
+| 🟡 Medium | **Total** | 2 h (1 of 2 steps) | 0 h (0 of 2 steps recorded) | 2 h | 1 of 2 completed | |
+
+<details><summary>Done steps (1)</summary>
+
+| Effort | Step | Estimate | Actual | Status |
+|---|---|---|---|---|
+| — | <a id="f-004-t01"></a>F-004-T01 — Owner takes the template proposal to a project-harness session | — | 0 h | Completed |
+
+</details>
 
 <details>
 <summary>Next action, estimates and PR history</summary>

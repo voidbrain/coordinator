@@ -4,7 +4,7 @@
   "parent": "F-004",
   "title": "Owner takes the template proposal to a project-harness session",
   "goal": "Owner takes the template proposal to a project-harness session",
-  "status": "ready",
+  "status": "closed",
   "acceptance": [
     "The template session has recorded the proposal"
   ],
@@ -28,10 +28,10 @@
   "effort": {
     "size": "small",
     "estimate": "1 h owner",
-    "basis": "Estimated 2026-11-24: starting a template session with the proposal and answering its questions, about an hour of owner time. Not a measurement.",
-    "reviewed": "2026-11-24",
+    "basis": "Done 2026-11-24/25 in project-harness sessions: Proposal 1 accepted as project-harness F-095 (T01 shipped in v10.10.0, https://github.com/voidbrain/project-harness/releases/tag/v10.10.0, tagged 2026-11-25) and F-097; Proposal 2 accepted as F-096 (owner decision B). Owner's words 2026-11-25: no need to choose between them; both proceed. No actual: owner time not measured.",
+    "reviewed": "2026-11-25",
     "agentHours": 0,
-    "ownerHours": 1,
+    "ownerHours": 0,
     "ownerKind": "procedure"
   },
   "prs": [],

@@ -31,8 +31,8 @@
   "effort": {
     "size": "medium",
     "estimate": "2 h",
-    "basis": "Estimated 2026-11-24: reconcile, move the order format if it changed, delete tools/solution-overview*.mjs and their tests, refresh; depends on a template release that does not exist yet, so this can grow. Not a measurement.",
-    "reviewed": "2026-11-24",
+    "basis": "Estimated 2026-11-24: reconcile, move the order format if it changed, delete tools/solution-overview*.mjs and their tests, refresh; depends on a template release that does not exist yet, so this can grow. 2026-11-25: the template plans this as project-harness F-095 (first part in v10.10.0: a step may wait on a step of another repository), F-096 and F-097; reconcile as each release lands, and retire the project tools when the dashboard covers them. Not a measurement.",
+    "reviewed": "2026-11-25",
     "agentHours": 2,
     "ownerHours": 0,
     "estimateAgentHours": 2

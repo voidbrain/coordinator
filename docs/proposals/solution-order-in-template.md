@@ -1,6 +1,6 @@
 # Proposals for the harness template
 
-Written 2026-11-24 in voidbrain/coordinator for the owner to take to a project-harness session. Nothing here changes the template; the template's own session decides, records and releases. This repository tracks only its side (`coordinator:F-004`): delivering the proposals and reconciling to a release that adopts them.
+Written 2026-11-24 in voidbrain/coordinator for the owner to take to a project-harness session. **Outcome (2026-11-25):** both accepted in project-harness. Proposal 1 is F-095 (its first part, cross-repository step dependencies, shipped in [v10.10.0](https://github.com/voidbrain/project-harness/releases/tag/v10.10.0)) and F-097; Proposal 2 is F-096 (owner decision B). The owner: no need to choose between them; both proceed. Nothing here changes the template; the template's own session decides, records and releases. This repository tracks only its side (`coordinator:F-004`): delivering the proposals and reconciling to a release that adopts them.
 
 ## Proposal 1: solution order, owner view, hours, runway, gap review and cross-repository dependencies in the solution profile
 
