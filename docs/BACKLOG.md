@@ -265,7 +265,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|
 | **Issue** | The owner decided a daily refresh proposed as a PR (F-005). |
 | **Reproduce** | `.github/workflows/refresh-views.yml`: daily at 05:30 UTC and on demand. |
-| **Check** | A run regenerates both views from GitHub, runs the offline checks, and when anything besides the snapshot time and this repository's own revision changed, pushes `chore/refresh-solution-views` (no force-push) and opens or updates the PR "chore: refresh solution views"; an unchanged day opens nothing. |
+| **Check** | A run regenerates both views from GitHub, runs the offline checks, and when anything besides the snapshot time and this repository's own revision changed, pushes `chore/refresh-solution-views` (no force-push), opens or updates the PR "chore: refresh solution views" and starts CI on it; an unchanged day opens nothing. |
 
 **Feature steps**
 

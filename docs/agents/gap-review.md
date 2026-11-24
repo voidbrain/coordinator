@@ -18,6 +18,7 @@ The "Gap review (proposals)" section of [the overview](../SOLUTION-OVERVIEW.md#g
 | 2 Dependency missing or done | A record or step whose Depends on names an ID that is not in the active backlog, or is already done, in its own or another repository | Every ID in a Depends on cell (`repo:ID` resolved against that repository through the manifest) against the open records and steps |
 | 3 Owner check without a page | The owner's turn with no copy-paste procedure or decision page | A step whose Who cell shows 🧑‍🔧 or 🤔 without ⏳ and without a link (its `ownerLink` is missing); an authored record waiting on the owner whose next action has no link and no command |
 | 4 No next step or no estimate | An Open or Investigate record with no open step (or no next action), or with no effort or remaining estimate; open steps with neither an estimate nor remaining hours | The summary row and steps table |
+| 6 Harness behind | A project whose `.harness.json` version is older than the latest template release | The project's stamp against the template's highest `vX.Y.Z` tag; the proposal is a reconcile record in that project |
 | 5 Order item missing | A `docs/solution-order.md` reference to a record or step that is not in its backlog | The order against the backlogs |
 
 What it cannot see: a request the owner made in a conversation that nobody recorded anywhere. When the owner names one, add it to the review by hand as kind 1 with the owner's words as evidence.
