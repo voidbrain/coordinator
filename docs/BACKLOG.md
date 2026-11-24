@@ -14,7 +14,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |:---:|---|---|---|
 | 🟡 | 🔺 P1 | Implemented | 🟢 Small |
 
-💻 **→ Human action required: No**<br />Let the first PR's CI run; it closes on green.
+💻 **→ Human action required: No**<br />Let PR #1's CI run; it closes on green.
 
 | | |
 |---|---|
@@ -31,7 +31,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | PR pending |
+| PR / evidence | [#1](https://github.com/voidbrain/coordinator/pull/1) |
 | Opened | 2026-11-24 |
 | Verification | Pending |
 | Reviewed | 2026-11-24 |
