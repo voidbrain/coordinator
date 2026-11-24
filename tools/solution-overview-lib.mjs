@@ -163,7 +163,8 @@ export function parseBacklog(markdown, repo, problems = []) {
 export const OPEN = (s) => !['Closed'].includes(s);
 export function stepState(s) {
   if (/Completed|Closed|Verified|Cancelled/.test(s.status)) return 'Done';
-  if (s.who.startsWith('⏳')) return `Waiting on ${s.depends}`;
+  // ⏳ marks a waiting step; a bug's Steps table has no Who column, so an open prerequisite there means waiting too.
+  if (s.who.startsWith('⏳') || (!s.whoRaw && s.depends !== '—')) return `Waiting on ${s.depends}`;
   if (/🧑‍🔧|🤔|🧑/.test(s.who) && !s.who.includes('🤖')) return s.who.includes('🤔') ? 'Owner: decision' : 'Owner: procedure';
   return 'Ready';
 }
