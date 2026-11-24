@@ -38,3 +38,38 @@ Closed records of the [backlog](../BACKLOG.md), in closing-date order. History, 
 
 ---
 
+## Closed 2026-11-25
+
+### F-008
+
+**Daily refresh of the solution views as a PR**
+
+| Signal | Priority | Status | Effort |
+|:---:|---|---|---|
+| 🔵 | ◻️ P2 | Closed | 🟢 Small |
+
+💻 **→ Human action required: No**<br />Closed 2026-11-25: PR #6 merged on green CI; dispatched refresh run 45507081422 opened PR #7 with REFRESH_TOKEN, whose pull_request CI (run 45507149360) started by itself and showed as its check; PR #7 landed with merge-when-green on 2026-11-24.
+
+| | |
+|---|---|
+| **Issue** | The owner decided a daily refresh proposed as a PR (F-005). |
+| **Reproduce** | `.github/workflows/refresh-views.yml`: daily at 05:30 UTC and on demand. |
+| **Check** | A run regenerates both views from GitHub, runs the offline checks, and when anything besides the snapshot time and this repository's own revision changed, pushes `chore/refresh-solution-views` (no force-push), opens or updates the PR "chore: refresh solution views" with `REFRESH_TOKEN`, so CI runs on it by itself; an unchanged day opens nothing. |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+**Next action / closure evidence:** Closed 2026-11-25: PR #6 merged on green CI; dispatched refresh run 45507081422 opened PR #7 with REFRESH_TOKEN, whose pull_request CI (run 45507149360) started by itself and showed as its check; PR #7 landed with merge-when-green on 2026-11-24. Workflow added in PR #1 and fixed in PR #2 with `contents: write`, `pull-requests: write` and `actions: write` only; CI stays `contents: read`. A scheduled or dispatched workflow runs only from the default branch, so the first run follows the merge of PR #2 (the copy merged with PR #1 lacks the re-review fixes; until then a scheduled run of it can open a refresh PR that CI does not check). A push or PR made with the workflow token starts no workflow, so the refresh workflow starts CI on its branch with `gh workflow run` (CI has `workflow_dispatch`); the lander merges the refresh PR on green CI like any PR. Re-review of PR #1: an open refresh branch is brought up to date by merging main, taking main's copy when only the generated views conflict (`tools/refresh-branch.mjs`, tested on throwaway repositories); any other conflict fails the run; with no open refresh PR the branch starts again from main. Only main's tools run with write access, since main cannot be branch-protected on this plan. The repository setting that lets Actions create PRs also lets them approve, which has no effect while no review is required. A refresh with source problems fails the run and opens no PR. Closes on the first successful run, linked here. First run 2026-11-24 (run 45503340953): the branch started from main and PR #3 opened; the dispatched CI run passed on the branch head, but PR #3 shows no checks and its own pull_request run waits for approval because a bot opened the PR. The owner approved that run; it passed and the owner merged PR #3. The owner then chose option B ([decision page](../decisions/refresh-pr-checks.md), F-008-T02): the branch is pushed and the PR opened with the repository secret `REFRESH_TOKEN`, so CI starts by itself; the workflow token is read-only and the dispatch step is gone (F-008-T03, PR #6).
+
+**Estimates:** No remaining effort.
+
+| Field | Value |
+|---|---|
+| PR / evidence | [#1](https://github.com/voidbrain/coordinator/pull/1) |
+| Opened | 2026-11-24 |
+| Verification | Owner decisions F-005 (daily refresh as a PR) and F-008-T02 (option B) applied; first manual run and a refresh PR landed on its own CI check, 2026-11-24. |
+| Reviewed | 2026-11-24 |
+
+</details>
+
+---
