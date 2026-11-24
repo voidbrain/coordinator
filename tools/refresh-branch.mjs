@@ -27,10 +27,13 @@ export function prepare(cwd, branch, pr) {
   try {
     git(cwd, 'merge', '--no-edit', 'origin/main');
     return 'merged origin/main';
-  } catch {
+  } catch (error) {
     const conflicts = git(cwd, 'diff', '--name-only', '--diff-filter=U').split('\n').filter(Boolean);
+    // No conflict: the merge did not start (no identity, a dirty tree); report git's own reason.
+    if (!conflicts.length)
+      throw new Error(`Merging origin/main into ${branch} failed: ${String(error.stderr ?? error.message).trim()}`);
     const others = conflicts.filter((f) => !VIEWS.includes(f));
-    if (!conflicts.length || others.length) {
+    if (others.length) {
       git(cwd, 'merge', '--abort');
       throw new Error(
         `Merging origin/main into ${branch} conflicts outside the generated views (${others.join(', ') || 'no file listed'}); resolve it by hand`,

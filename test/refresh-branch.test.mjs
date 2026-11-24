@@ -24,6 +24,9 @@ function setup({ alsoConflictIn } = {}) {
   const work = join(base, 'work');
   git(base, 'init', '-q', '--bare', '-b', 'main', origin);
   git(base, 'clone', '-q', origin, work);
+  // The workflow sets an identity before it merges; so does the test (CI runners have none).
+  git(work, 'config', 'user.name', 't');
+  git(work, 'config', 'user.email', 't@example.invalid');
   write(work, 'docs/SOLUTION-OVERVIEW.md', 'snapshot 1\n');
   write(work, 'README.md', 'readme 1\n');
   commit(work, 'init');
