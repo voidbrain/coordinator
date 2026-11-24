@@ -1,21 +1,21 @@
 <!-- generated: tools/solution-overview.mjs; edit docs/solution-order.md or the owning backlogs, not this file -->
 # voidbrain solution: overview
 
-Snapshot 2026-11-24T22:49:40.059Z. Status comes from each owning backlog; this page is regenerated, never edited. The [solution order](solution-order.md) is the owner's; everything else follows each repository's own priority. Hours are each project's own estimates, not cross-calibrated; no completion percentage.
+Snapshot 2026-11-24T22:51:11.100Z. Status comes from each owning backlog; this page is regenerated, never edited. The [solution order](solution-order.md) is the owner's; everything else follows each repository's own priority. Hours are each project's own estimates, not cross-calibrated; no completion percentage.
 
 ## Summary
 
 | Project | Open records | Doable agent h | Owner h | Blocked | Harness | Next audit |
 |---|---:|---:|---:|---:|---|---|
-| 🧭 coordinator | 7 | 3 | 1.75 | 2 | v10.9.0 (latest) | 2026-12-01 |
+| 🧭 coordinator | 7 | 2.75 | 1.75 | 2 | v10.9.0 (latest) | 2026-12-01 |
 | 𖣂 nerv | 65 | 83.75 | 11 | 10 | v10.9.0 (latest) | 2026-11-27 |
 | 🤖 gauntlet-protocol | 8 | 13 | 3 | 8 | v10.9.0 (latest) | 2026-11-29 |
 | 🦺 project-harness | 0 | 0 | 0 | 0 | v10.9.0 (latest) | 2026-11-29 |
 | 🚁 fpvbuddy | 1 | 4 | 0 | 0 | v10.9.0 (latest) | 2026-11-29 |
 | 🪴 grover | 22 | 0 + 8 without hours | Unknown | 0 | v10.9.0 (latest) | 2026-12-01 |
-| **Solution** | 103 | **103.75** | **at least 15.75** | 20 | latest v10.9.0 | |
+| **Solution** | 103 | **103.5** | **at least 15.75** | 20 | latest v10.9.0 | |
 
-Remaining in all backlogs: at least 128.25 h agent + at least 15.75 h owner. Doable agent h is the runway: agent work whose prerequisites are done or doable, across projects.
+Remaining in all backlogs: at least 128 h agent + at least 15.75 h owner. Doable agent h is the runway: agent work whose prerequisites are done or doable, across projects.
 
 ## Solution order
 
@@ -136,29 +136,29 @@ Remaining agent and owner (human) hours as each backlog states them, summed acro
 
 | Backlog | Agent h | Owner h |
 |---|---:|---:|
-| 🧭 coordinator | 6 | 1.75 |
+| 🧭 coordinator | 5.75 | 1.75 |
 | 𖣂 nerv | 88.25 | 11 |
 | 🤖 gauntlet-protocol | 30 | 3 |
 | 🦺 project-harness | 0 | 0 |
 | 🚁 fpvbuddy | 4 | 0 |
 | 🪴 grover | Unknown | Unknown |
-| **Solution total** | **at least 128.25** | **at least 15.75** |
+| **Solution total** | **at least 128** | **at least 15.75** |
 
 Partial: no readable hours in 🪴 grover.
 
 ## Agent runway
 
-Agent runway before the next owner block: **103.75 h** plus doable items without hours; then blocked on the items below. A step counts when it is agent work, not done, and every prerequisite is done or itself doable, across repositories (`repo:ID` in Depends on, or "depends on repo:ID" in the text). A block is an owner step, a step waiting on one, an unknown prerequisite, a cycle or a Blocked status. 8 item(s) come from authored backlogs without Depends on and count as doable unless their status or human action says otherwise: less certain.
+Agent runway before the next owner block: **103.5 h** plus doable items without hours; then blocked on the items below. A step counts when it is agent work, not done, and every prerequisite is done or itself doable, across repositories (`repo:ID` in Depends on, or "depends on repo:ID" in the text). A block is an owner step, a step waiting on one, an unknown prerequisite, a cycle or a Blocked status. 8 item(s) come from authored backlogs without Depends on and count as doable unless their status or human action says otherwise: less certain.
 
 | Backlog | Runway (agent h) | Doable, no hours | First blocks reached | Owner h to unblock the next layer |
 |---|---:|---|---|---:|
-| 🧭 coordinator | 3 | — | F-004-T01: owner procedure (1 h owner); F-004-T02 waits on owner coordinator:F-004-T01; F-006-T02: owner procedure (0.5 h owner); F-008-T02: owner decision (0.25 h owner); F-008-T03 waits on owner coordinator:F-008-T02 | 1.75 |
+| 🧭 coordinator | 2.75 | — | F-004-T01: owner procedure (1 h owner); F-004-T02 waits on owner coordinator:F-004-T01; F-006-T02: owner procedure (0.5 h owner); F-008-T02: owner decision (0.25 h owner); F-008-T03 waits on owner coordinator:F-008-T02 | 1.75 |
 | 𖣂 nerv | 83.75 | — | F-006-T28: owner procedure (0.25 h owner); F-006-T29 waits on owner nerv:F-006-T28; F-004-T06: owner procedure (0.5 h owner); F-004-T07 waits on owner nerv:F-004-T06; F-016-T09: owner procedure (1 h owner); F-016-T11 waits on owner nerv:F-016-T09; and 27 more | 10.5 |
 | 🤖 gauntlet-protocol | 13 | — | F-015-T02: owner decision (0.25 h owner); F-015-T03 waits on owner gauntlet-protocol:F-015-T02; F-017-T02: owner procedure (0.25 h owner); F-018-T03: owner procedure (0.25 h owner); F-020-T03: owner procedure (0.25 h owner); F-016-T01: owner decision (0.25 h owner); and 6 more | 2 |
 | 🦺 project-harness | 0 | — | — | 0 |
 | 🚁 fpvbuddy | 4 | — | — | 0 |
 | 🪴 grover | 0 | B-004, B-006, B-005, F-019, F-008, F-009, B-002, F-010 | F-013: owner procedure (owner time not estimated); B-007: owner decision (owner time not estimated); F-011: owner procedure (owner time not estimated); F-012: owner procedure (owner time not estimated); F-015: owner procedure (owner time not estimated); F-016: owner procedure (owner time not estimated); and 8 more | at least 0 |
-| **Solution** | **103.75** | | | **at least 14.25** |
+| **Solution** | **103.5** | | | **at least 14.25** |
 
 ## Audits and reviews
 
@@ -192,7 +192,7 @@ Open records by priority, the hours as each backlog states them, sizes, and the 
 
 | Source | P1 | P2 | P3 | Other | Remaining (agent / owner) | Sizes | The backlog's own total |
 |---|---:|---:|---:|---:|---|---|---|
-| 🧭 coordinator | 3 | 4 | 0 | 0 | 6 h / 1.75 h | 5 🟢 Small, 2 🟡 Medium | Remaining effort: 6 h agent + 1.75 h owner across 12 open steps of 7 features. 0.25 h of actual effort recorded on 1 step. Generated from the task files. |
+| 🧭 coordinator | 3 | 4 | 0 | 0 | 5.75 h / 1.75 h | 6 🟢 Small, 1 🟡 Medium | Remaining effort: 5.75 h agent + 1.75 h owner across 11 open steps of 7 features. 0.5 h of actual effort recorded on 2 steps. Generated from the task files. |
 | 𖣂 nerv | 12 | 34 | 19 | 0 | 88.25 h / 11 h | 16 🟡 Medium, 44 🟢 Small, 4 🔴 Large, 1 🟣 Very large | Remaining effort: 88.25 h agent + 11 h owner across 122 open steps of 36 features and 28 other records. 165.5 h of actual effort recorded on 153 steps. Generat… |
 | 🤖 gauntlet-protocol | 0 | 6 | 2 | 0 | 30 h / 3 h | 3 🔴 Large, 1 🟢 Small, 4 🟡 Medium | Remaining effort: 30 h agent + 3 h owner across 28 open steps of 8 features. Generated from the task files. |
 | 🦺 project-harness | 0 | 0 | 0 | 0 | — | — | Remaining effort: no open steps. Generated from the task files. |
@@ -213,9 +213,9 @@ In each backlog's own order (most urgent first). State: Ready = an agent can sta
 | [coordinator:F-004](BACKLOG.md#f-004) | Propose the solution order, hours, runway, gap review, cross-repository dependencies and … | Open | P2 | 🟡 Medium | 2 h agent + 1 h owner | Waiting on — | Next: 🧑‍🔧 F-004-T01 — Owner takes the template proposal to a project-harness session (Ready). |
 | [coordinator:F-006](BACKLOG.md#f-006) | NERV delivers Grover alerts end to end | Open | P2 | 🟢 Small | 1 h agent + 0.5 h owner | Ready | Next: F-006-T01 — Record the grover&#95;alerts contract and its end-to-end check in docs/SOLUTION.md (waits on grover:F… |
 | [coordinator:F-007](BACKLOG.md#f-007) | NERV capability coverage in the Gauntlet across both repositories | Open | P2 | 🟢 Small | 1 h | Ready | Next: F-007-T01 — Name the Gauntlet release NERV needs for its new cases in docs/SOLUTION.md (waits on nerv:F-120) (Pla… |
-| [coordinator:F-008](BACKLOG.md#f-008) | Daily refresh of the solution views as a PR | Implemented | P2 | 🟡 Medium | 1.25 h agent + 0.25 h owner | Ready | Next: F-008-T01 — Daily refresh workflow: first run after the merge, linked (Implemented; verification pending). |
+| [coordinator:F-008](BACKLOG.md#f-008) | Daily refresh of the solution views as a PR | Implemented | P2 | 🟢 Small | 1 h agent + 0.25 h owner | Waiting on — | Next: 🤔 F-008-T02 — Owner decides how refresh PRs get a check that counts (Ready). |
 
-<details><summary>12 open steps</summary>
+<details><summary>11 open steps</summary>
 
 | Step | Title | Status | Remaining | State |
 |---|---|---|---|---|
@@ -228,7 +228,6 @@ In each backlog's own order (most urgent first). State: Ready = an agent can sta
 | [coordinator:F-006-T02](BACKLOG.md#f-006-t02) | Owner sees a Grover alert arrive through NERV | Planned | 0 h agent + 0.5 h owner | Waiting on F-006-T01 |
 | [coordinator:F-007-T01](BACKLOG.md#f-007-t01) | Name the Gauntlet release NERV needs for its new cases in docs/SOLUTION.md (waits on nerv:F-120) | Planned | 0.5 h | Ready |
 | [coordinator:F-007-T02](BACKLOG.md#f-007-t02) | Link a Gauntlet run of the new NERV cases as acceptance | Planned | 0.5 h | Waiting on F-007-T01 |
-| [coordinator:F-008-T01](BACKLOG.md#f-008-t01) | Daily refresh workflow: first run after the merge, linked | Implemented; verification pending | 0.25 h | Ready |
 | [coordinator:F-008-T02](BACKLOG.md#f-008-t02) | Owner decides how refresh PRs get a check that counts | Ready | 0 h agent + 0.25 h owner | Owner: decision |
 | [coordinator:F-008-T03](BACKLOG.md#f-008-t03) | Apply the decision to the refresh workflow and land one refresh PR on a counting check | Planned | 1 h | Waiting on F-008-T02 |
 
@@ -544,7 +543,7 @@ Possible missing steps, found by reading every backlog. Each row proposes a reco
 
 | Source | Revision | Read from | Open records | Open steps |
 |---|---|---|---:|---:|
-| 🧭 coordinator | [e45d28a7af07](https://github.com/voidbrain/coordinator/commit/e45d28a7af07f46da7511deb51dc0237ea23c675) | working checkout | 7 | 12 |
+| 🧭 coordinator | [13b7d6ee5899](https://github.com/voidbrain/coordinator/commit/13b7d6ee5899175752ad6747a58a6a5125738aac) | working checkout | 7 | 11 |
 | 𖣂 nerv | [29eeee9359ad](https://github.com/voidbrain/nerv/commit/29eeee9359adeb9918e0555d0e6339f27b4ebc26) | GitHub | 65 | 122 |
 | 🤖 gauntlet-protocol | [d6fd4bab9ec8](https://github.com/voidbrain/gauntlet-protocol/commit/d6fd4bab9ec85c985257a3906656e53f78f8d00a) | GitHub | 8 | 28 |
 | 🦺 project-harness | [7ae24ea9ee87](https://github.com/voidbrain/project-harness/commit/7ae24ea9ee875ac1076f908ceedf786b862f8ad2) | GitHub | 0 | 0 |

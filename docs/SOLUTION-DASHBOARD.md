@@ -1,11 +1,11 @@
 <!-- generated: project-harness solution dashboard; edit owning backlogs, not this file -->
 # voidbrain solution dashboard
 
-Snapshot: 2026-11-24T22:49:47.756Z. Read-only aggregation; no combined completion percentage. Solution integration status is independent of component status.
+Snapshot: 2026-11-24T22:51:15.884Z. Read-only aggregation; no combined completion percentage. Solution integration status is independent of component status.
 
 | Source | Revision | Snapshot state |
 |---|---|---|
-| solution | [e45d28a7af07](https://github.com/voidbrain/coordinator/commit/e45d28a7af07f46da7511deb51dc0237ea23c675) | Local changes — not a committed snapshot; requested working checkout; local checkout, not fetched |
+| solution | [13b7d6ee5899](https://github.com/voidbrain/coordinator/commit/13b7d6ee5899175752ad6747a58a6a5125738aac) | Local changes — not a committed snapshot; requested working checkout; local checkout, not fetched |
 | nerv | [29eeee9359ad](https://github.com/voidbrain/nerv/commit/29eeee9359adeb9918e0555d0e6339f27b4ebc26) | Committed snapshot; requested main; GitHub |
 | gauntlet-protocol | [d6fd4bab9ec8](https://github.com/voidbrain/gauntlet-protocol/commit/d6fd4bab9ec85c985257a3906656e53f78f8d00a) | Committed snapshot; requested main; GitHub |
 | project-harness | [7ae24ea9ee87](https://github.com/voidbrain/project-harness/commit/7ae24ea9ee875ac1076f908ceedf786b862f8ad2) | Committed snapshot; requested main; GitHub |
@@ -22,7 +22,7 @@ Snapshot: 2026-11-24T22:49:47.756Z. Read-only aggregation; no combined completio
 | [solution:F-004](BACKLOG.md#f-004) | Propose the solution order, hours, runway, gap review, cross-repository dependencies and on-demand backlog views to the template | Open | Procedure | 🟡 Medium | — |
 | [solution:F-006](BACKLOG.md#f-006) | NERV delivers Grover alerts end to end | Open | No | 🟢 Small | grover:F-008 |
 | [solution:F-007](BACKLOG.md#f-007) | NERV capability coverage in the Gauntlet across both repositories | Open | No | 🟢 Small | nerv:F-120 |
-| [solution:F-008](BACKLOG.md#f-008) | Daily refresh of the solution views as a PR | Implemented | Decision | 🟡 Medium | — |
+| [solution:F-008](BACKLOG.md#f-008) | Daily refresh of the solution views as a PR | Implemented | Decision | 🟢 Small | — |
 
 ## Component work
 
