@@ -1,16 +1,16 @@
 <!-- generated: project-harness solution dashboard; edit owning backlogs, not this file -->
 # voidbrain solution dashboard
 
-Snapshot: 2026-11-24T22:29:21.363Z. Read-only aggregation; no combined completion percentage. Solution integration status is independent of component status.
+Snapshot: 2026-11-24T22:35:18.709Z. Read-only aggregation; no combined completion percentage. Solution integration status is independent of component status.
 
 | Source | Revision | Snapshot state |
 |---|---|---|
-| solution | [c7a4dff84992](https://github.com/voidbrain/coordinator/commit/c7a4dff849920cd56ffeb25fbf46bcdfdd8bed57) | Local changes — not a committed snapshot; requested working checkout; local checkout, not fetched |
+| solution | [e0f5eabe2d71](https://github.com/voidbrain/coordinator/commit/e0f5eabe2d71bc70c904e8a89705e6e1cc83d1f4) | Local changes — not a committed snapshot; requested working checkout; local checkout, not fetched |
 | nerv | [f19d657a972b](https://github.com/voidbrain/nerv/commit/f19d657a972b9cb2d749ec72e94c3e700146dfdd) | Committed snapshot; requested main; GitHub |
 | gauntlet-protocol | [aadb60e840b6](https://github.com/voidbrain/gauntlet-protocol/commit/aadb60e840b6e4d34f5a5d2f02ba067d5aaf7ea2) | Committed snapshot; requested main; GitHub |
 | project-harness | [7ae24ea9ee87](https://github.com/voidbrain/project-harness/commit/7ae24ea9ee875ac1076f908ceedf786b862f8ad2) | Committed snapshot; requested main; GitHub |
-| fpvbuddy | [d435eda61e36](https://github.com/voidbrain/FPVBuddy/commit/d435eda61e36ac954f0147e5d00d316a55db07d1) | Committed snapshot; requested main; GitHub |
-| grover | [236a17fca210](https://github.com/voidbrain/Grover/commit/236a17fca210af70d43ffb7a56fdfad6160ecec0) | Committed snapshot; requested main; GitHub |
+| fpvbuddy | [065fa1dfa1b5](https://github.com/voidbrain/FPVBuddy/commit/065fa1dfa1b5b277886977088c2d0cf4221cce86) | Committed snapshot; requested main; GitHub |
+| grover | [c5e0bf3b655d](https://github.com/voidbrain/Grover/commit/c5e0bf3b655d33ccc821238f689b68899595e797) | Committed snapshot; requested main; GitHub |
 
 ## Integration outcomes
 
@@ -93,28 +93,28 @@ Snapshot: 2026-11-24T22:29:21.363Z. Read-only aggregation; no combined completio
 | [nerv:B-096](https://github.com/voidbrain/nerv/blob/f19d657a972b9cb2d749ec72e94c3e700146dfdd/docs/BACKLOG.md#b-096) | Sephirot flow: a sortie that stops at Misato's apartment has no route to Debrief | Implemented | Procedure | 🟢 Small | 2026-11-19 |
 | [nerv:B-110](https://github.com/voidbrain/nerv/blob/f19d657a972b9cb2d749ec72e94c3e700146dfdd/docs/BACKLOG.md#b-110) | Dashboard offers Update now when already up to date, away from the update status | Implemented | Procedure | 🟢 Small | 2026-11-23 |
 | [nerv:B-112](https://github.com/voidbrain/nerv/blob/f19d657a972b9cb2d749ec72e94c3e700146dfdd/docs/BACKLOG.md#b-112) | Sephirot flow lights routes the sortie did not take and hides the map when no sortie is selected | Implemented | Procedure | 🟢 Small | 2026-11-23 |
-| [fpvbuddy:F-003](https://github.com/voidbrain/FPVBuddy/blob/d435eda61e36ac954f0147e5d00d316a55db07d1/docs/BACKLOG.md#f-003) | Adopt source-owned records and upfront feature plans | Implemented | No | 🟢 Small | 2026-11-24 |
-| [grover:F-013](https://github.com/voidbrain/Grover/blob/236a17fca210af70d43ffb7a56fdfad6160ecec0/docs/BACKLOG.md#f-013) | Plant cycle: nursery, cuttings, harvest, a plant per pot, phase per plant | Implemented | Procedure | 🟢 Small | 2026-11-24 |
-| [grover:B-004](https://github.com/voidbrain/Grover/blob/236a17fca210af70d43ffb7a56fdfad6160ecec0/docs/BACKLOG.md#b-004) | A probe read was stored only when the agent's reading event arrived | Implemented | No | 🟢 Small | 2026-11-24 |
-| [grover:B-006](https://github.com/voidbrain/Grover/blob/236a17fca210af70d43ffb7a56fdfad6160ecec0/docs/BACKLOG.md#b-006) | An upgraded agent drops its cached config until the hub answers | Open | No | 🟢 Small | 2026-11-24 |
-| [grover:B-005](https://github.com/voidbrain/Grover/blob/236a17fca210af70d43ffb7a56fdfad6160ecec0/docs/BACKLOG.md#b-005) | Run on a pump queued another run on each click while it ran | Implemented | No | 🟢 Small | 2026-11-24 |
-| [grover:F-011](https://github.com/voidbrain/Grover/blob/236a17fca210af70d43ffb7a56fdfad6160ecec0/docs/BACKLOG.md#f-011) | Feed cycle per pot: supply tanks, mixing tank, pot pumps | Implemented | Procedure | 🟢 Small | 2026-11-24 |
-| [grover:F-012](https://github.com/voidbrain/Grover/blob/236a17fca210af70d43ffb7a56fdfad6160ecec0/docs/BACKLOG.md#f-012) | Plants and strains: origin, generation, breeder, ancestry | Implemented | Procedure | 🟢 Small | 2026-11-24 |
-| [grover:F-015](https://github.com/voidbrain/Grover/blob/236a17fca210af70d43ffb7a56fdfad6160ecec0/docs/BACKLOG.md#f-015) | Rig map: the tent as a live diagram, with its controls | Implemented | Procedure | 🟢 Small | 2026-11-24 |
-| [grover:F-016](https://github.com/voidbrain/Grover/blob/236a17fca210af70d43ffb7a56fdfad6160ecec0/docs/BACKLOG.md#f-016) | Schedules by day of week, weekends apart | Implemented | Procedure | 🟢 Small | 2026-11-24 |
-| [grover:F-017](https://github.com/voidbrain/Grover/blob/236a17fca210af70d43ffb7a56fdfad6160ecec0/docs/BACKLOG.md#f-017) | Nutrient colours: each supply tank in its nutrient's real colour | Open | No | 🟢 Small | 2026-11-24 |
-| [grover:F-018](https://github.com/voidbrain/Grover/blob/236a17fca210af70d43ffb7a56fdfad6160ecec0/docs/BACKLOG.md#f-018) | Pumps through an L298N driver (two pins on the MCP23017) | Open | Procedure | 🟢 Small | 2026-11-24 |
-| [grover:F-019](https://github.com/voidbrain/Grover/blob/236a17fca210af70d43ffb7a56fdfad6160ecec0/docs/BACKLOG.md#f-019) | Install Grover as a web app on the phone | Open | No | 🟢 Small | 2026-11-24 |
-| [grover:F-003](https://github.com/voidbrain/Grover/blob/236a17fca210af70d43ffb7a56fdfad6160ecec0/docs/BACKLOG.md#f-003) | Hardware bring-up on the Raspberry Pi | Open | Procedure | 🟡 Medium | 2026-11-24 |
-| [grover:F-014](https://github.com/voidbrain/Grover/blob/236a17fca210af70d43ffb7a56fdfad6160ecec0/docs/BACKLOG.md#f-014) | Plant page with statistics, as in the old app | Implemented | Procedure | 🟢 Small | 2026-11-24 |
-| [grover:F-004](https://github.com/voidbrain/Grover/blob/236a17fca210af70d43ffb7a56fdfad6160ecec0/docs/BACKLOG.md#f-004) | Calibrate analog probes (volts to pH and EC) | Implemented | Procedure | 🟢 Small | 2026-11-24 |
-| [grover:F-005](https://github.com/voidbrain/Grover/blob/236a17fca210af70d43ffb7a56fdfad6160ecec0/docs/BACKLOG.md#f-005) | Deploy hub and agent on the Pi behind Tailscale | Open | Procedure | 🟢 Small | 2026-11-24 |
-| [grover:F-006](https://github.com/voidbrain/Grover/blob/236a17fca210af70d43ffb7a56fdfad6160ecec0/docs/BACKLOG.md#f-006) | Set-up screens in the client | Implemented | Procedure | 🟢 Small | 2026-11-24 |
-| [grover:F-007](https://github.com/voidbrain/Grover/blob/236a17fca210af70d43ffb7a56fdfad6160ecec0/docs/BACKLOG.md#f-007) | Lights follow the grow calendar; Switch to bloom | Implemented | Procedure | 🟢 Small | 2026-11-24 |
-| [grover:F-008](https://github.com/voidbrain/Grover/blob/236a17fca210af70d43ffb7a56fdfad6160ecec0/docs/BACKLOG.md#f-008) | Alerts for NERV: out-of-range values, offline agent, faults | Open | No | 🟡 Medium | 2026-11-24 |
-| [grover:F-009](https://github.com/voidbrain/Grover/blob/236a17fca210af70d43ffb7a56fdfad6160ecec0/docs/BACKLOG.md#f-009) | Browser tests and accessibility checks for the client | Open | No | 🟡 Medium | 2026-11-24 |
-| [grover:B-002](https://github.com/voidbrain/Grover/blob/236a17fca210af70d43ffb7a56fdfad6160ecec0/docs/BACKLOG.md#b-002) | `check:conventions` does not see the client in this monorepo | Open | No | 🟢 Small | 2026-11-24 |
-| [grover:F-010](https://github.com/voidbrain/Grover/blob/236a17fca210af70d43ffb7a56fdfad6160ecec0/docs/BACKLOG.md#f-010) | Hub data retention and backups | Open | No | 🟢 Small | 2026-11-24 |
+| [fpvbuddy:F-004](https://github.com/voidbrain/FPVBuddy/blob/065fa1dfa1b5b277886977088c2d0cf4221cce86/docs/BACKLOG.md#f-004) | Owner follow-ups 2026-11-24: restored rules, push guard, roadmap, check:fast | Implemented | Decision | 🟢 Small | 2026-11-24 |
+| [grover:F-013](https://github.com/voidbrain/Grover/blob/c5e0bf3b655d33ccc821238f689b68899595e797/docs/BACKLOG.md#f-013) | Plant cycle: nursery, cuttings, harvest, a plant per pot, phase per plant | Implemented | Procedure | 🟢 Small | 2026-11-24 |
+| [grover:B-004](https://github.com/voidbrain/Grover/blob/c5e0bf3b655d33ccc821238f689b68899595e797/docs/BACKLOG.md#b-004) | A probe read was stored only when the agent's reading event arrived | Implemented | No | 🟢 Small | 2026-11-24 |
+| [grover:B-006](https://github.com/voidbrain/Grover/blob/c5e0bf3b655d33ccc821238f689b68899595e797/docs/BACKLOG.md#b-006) | An upgraded agent drops its cached config until the hub answers | Open | No | 🟢 Small | 2026-11-24 |
+| [grover:B-005](https://github.com/voidbrain/Grover/blob/c5e0bf3b655d33ccc821238f689b68899595e797/docs/BACKLOG.md#b-005) | Run on a pump queued another run on each click while it ran | Implemented | No | 🟢 Small | 2026-11-24 |
+| [grover:F-011](https://github.com/voidbrain/Grover/blob/c5e0bf3b655d33ccc821238f689b68899595e797/docs/BACKLOG.md#f-011) | Feed cycle per pot: supply tanks, mixing tank, pot pumps | Implemented | Procedure | 🟢 Small | 2026-11-24 |
+| [grover:F-012](https://github.com/voidbrain/Grover/blob/c5e0bf3b655d33ccc821238f689b68899595e797/docs/BACKLOG.md#f-012) | Plants and strains: origin, generation, breeder, ancestry | Implemented | Procedure | 🟢 Small | 2026-11-24 |
+| [grover:F-015](https://github.com/voidbrain/Grover/blob/c5e0bf3b655d33ccc821238f689b68899595e797/docs/BACKLOG.md#f-015) | Rig map: the tent as a live diagram, with its controls | Implemented | Procedure | 🟢 Small | 2026-11-24 |
+| [grover:F-016](https://github.com/voidbrain/Grover/blob/c5e0bf3b655d33ccc821238f689b68899595e797/docs/BACKLOG.md#f-016) | Schedules by day of week, weekends apart | Implemented | Procedure | 🟢 Small | 2026-11-24 |
+| [grover:F-017](https://github.com/voidbrain/Grover/blob/c5e0bf3b655d33ccc821238f689b68899595e797/docs/BACKLOG.md#f-017) | Nutrient colours: each supply tank in its nutrient's real colour | Implemented | Procedure | 🟢 Small | 2026-11-24 |
+| [grover:F-018](https://github.com/voidbrain/Grover/blob/c5e0bf3b655d33ccc821238f689b68899595e797/docs/BACKLOG.md#f-018) | Pumps through an L298N driver (two pins on the MCP23017) | Open | Procedure | 🟢 Small | 2026-11-24 |
+| [grover:F-019](https://github.com/voidbrain/Grover/blob/c5e0bf3b655d33ccc821238f689b68899595e797/docs/BACKLOG.md#f-019) | Install Grover as a web app on the phone | Open | No | 🟢 Small | 2026-11-24 |
+| [grover:F-003](https://github.com/voidbrain/Grover/blob/c5e0bf3b655d33ccc821238f689b68899595e797/docs/BACKLOG.md#f-003) | Hardware bring-up on the Raspberry Pi | Open | Procedure | 🟡 Medium | 2026-11-24 |
+| [grover:F-014](https://github.com/voidbrain/Grover/blob/c5e0bf3b655d33ccc821238f689b68899595e797/docs/BACKLOG.md#f-014) | Plant page with statistics, as in the old app | Implemented | Procedure | 🟢 Small | 2026-11-24 |
+| [grover:F-004](https://github.com/voidbrain/Grover/blob/c5e0bf3b655d33ccc821238f689b68899595e797/docs/BACKLOG.md#f-004) | Calibrate analog probes (volts to pH and EC) | Implemented | Procedure | 🟢 Small | 2026-11-24 |
+| [grover:F-005](https://github.com/voidbrain/Grover/blob/c5e0bf3b655d33ccc821238f689b68899595e797/docs/BACKLOG.md#f-005) | Deploy hub and agent on the Pi behind Tailscale | Open | Procedure | 🟢 Small | 2026-11-24 |
+| [grover:F-006](https://github.com/voidbrain/Grover/blob/c5e0bf3b655d33ccc821238f689b68899595e797/docs/BACKLOG.md#f-006) | Set-up screens in the client | Implemented | Procedure | 🟢 Small | 2026-11-24 |
+| [grover:F-007](https://github.com/voidbrain/Grover/blob/c5e0bf3b655d33ccc821238f689b68899595e797/docs/BACKLOG.md#f-007) | Lights follow the grow calendar; Switch to bloom | Implemented | Procedure | 🟢 Small | 2026-11-24 |
+| [grover:F-008](https://github.com/voidbrain/Grover/blob/c5e0bf3b655d33ccc821238f689b68899595e797/docs/BACKLOG.md#f-008) | Alerts for NERV: out-of-range values, offline agent, faults | Open | No | 🟡 Medium | 2026-11-24 |
+| [grover:F-009](https://github.com/voidbrain/Grover/blob/c5e0bf3b655d33ccc821238f689b68899595e797/docs/BACKLOG.md#f-009) | Browser tests and accessibility checks for the client | Open | No | 🟡 Medium | 2026-11-24 |
+| [grover:B-002](https://github.com/voidbrain/Grover/blob/c5e0bf3b655d33ccc821238f689b68899595e797/docs/BACKLOG.md#b-002) | `check:conventions` does not see the client in this monorepo | Open | No | 🟢 Small | 2026-11-24 |
+| [grover:F-010](https://github.com/voidbrain/Grover/blob/c5e0bf3b655d33ccc821238f689b68899595e797/docs/BACKLOG.md#f-010) | Hub data retention and backups | Open | No | 🟢 Small | 2026-11-24 |
 
 ## Source and link problems
 
