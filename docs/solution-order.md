@@ -24,19 +24,18 @@ Set by the owner on 2026-11-24 (F-002): the proposed order kept as 1–17, `grov
 5. `nerv:B-091` — prerequisite of nerv:F-005-T29
 6. `nerv:F-005` — remote workers (after B-091)
 7. `nerv:B-119` — prerequisite of nerv:F-006
-8. `nerv:F-021` — MCP protocol, 0.25 h left
-9. `nerv:B-082` — Windows logon task from SSH, 0.25 h left
-10. `grover:F-008` — alerts NERV can deliver (cross-repository)
-11. `nerv:F-120` — Gauntlet coverage of NERV capabilities (cross-repository)
-12. `nerv:F-122` — Grover alert delivery, unblocks grover:F-008
-13. `nerv:F-123` — MCP connection to Grover's hub
-14. `fpvbuddy:F-005` — M1 FPV battery core; T02 waits on nerv:F-101-T04
-15. `nerv:F-121` — printed parts per drone, print by chat
-16. `gauntlet-protocol:F-018` — italian-quality-v1 pack
-17. `gauntlet-protocol:F-019` — cad-3d-v1 pack
-18. `gauntlet-protocol:F-020` — code-review-v1 pack
-19. `grover:F-011` — implemented P1 feed cycle; owner try-out pending
-20. `grover:F-004` — implemented P1 probe calibration
-21. `nerv:F-006` — orchestration across nodes (after B-119)
-22. `grover:F-003` — hardware bring-up on the Pi (P1, needs the device)
+8. `nerv:B-082` — Windows logon task from SSH, 0.25 h left
+9. `grover:F-008` — alerts NERV can deliver (cross-repository)
+10. `nerv:F-120` — Gauntlet coverage of NERV capabilities (cross-repository)
+11. `nerv:F-122` — Grover alert delivery, unblocks grover:F-008
+12. `nerv:F-123` — MCP connection to Grover's hub
+13. `fpvbuddy:F-005` — M1 FPV battery core; T02 waits on nerv:F-101-T04
+14. `nerv:F-121` — printed parts per drone, print by chat
+15. `gauntlet-protocol:F-018` — italian-quality-v1 pack
+16. `gauntlet-protocol:F-019` — cad-3d-v1 pack
+17. `gauntlet-protocol:F-020` — code-review-v1 pack
+18. `grover:F-011` — implemented P1 feed cycle; owner try-out pending
+19. `grover:F-004` — implemented P1 probe calibration
+20. `nerv:F-006` — orchestration across nodes (after B-119)
+21. `grover:F-003` — hardware bring-up on the Pi (P1, needs the device)
 <!-- order:end -->
