@@ -15,3 +15,7 @@ PR #25 (reconcile; F-001 and F-002 closed) merged on green CI. B-001 closed on i
 ## 2026-11-25 — main `d4536ab`
 
 PR #26 (B-001 closed) merged on green CI. Delivery audit of 2026-11-25 recorded; B-002 opened and B-003 opened in Investigate from its findings.
+
+## 2026-11-25 — main `9706998`
+
+PR #27 (delivery audit; B-002 and B-003 opened) merged on green CI. B-002 and B-003 now name it.
