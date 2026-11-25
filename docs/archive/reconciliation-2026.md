@@ -27,3 +27,7 @@ PR #28 (B-002 and B-003 name PR #27) merged on green CI; no record change needed
 ## 2026-11-25 — main `b9615f0`
 
 PRs #29 to #37 (F-004-T02 reconcile to 10.20.1, F-010 self-merging refresh PRs and their records, refresh PRs #30, #32, #34, #37) merged on green CI. Harness reconciled to v10.21.1 in the F-004-T05 PR.
+
+## 2026-11-25 — main `69da441`
+
+PRs #38 (F-006 coordination) and #39 (F-004-T05 reconcile to 10.21.1, overview retired) merged on green CI. Harness reconciled to v10.21.2 in the F-011 PR.

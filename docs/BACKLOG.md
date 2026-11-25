@@ -1,10 +1,10 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 25 November 2026 against main `b9615f0`. PRs #29 to #37 (F-004-T02 reconcile to 10.20.1, F-010 self-merging refresh PRs and their records, refresh PRs #30, #32, #34, #37) merged on green CI. Harness reconciled to v10.21.1 in the F-004-T05 PR.
+Current work ledger, reviewed 25 November 2026 against main `69da441`. PRs #38 (F-006 coordination) and #39 (F-004-T05 reconcile to 10.21.1, overview retired) merged on green CI. Harness reconciled to v10.21.2 in the F-011 PR.
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 3 h agent + 0.5 h owner across 7 open steps of 3 features and 2 other records. Generated from the task files.
+**Remaining effort:** 3 h agent + 0.5 h owner across 8 open steps of 4 features and 2 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -201,6 +201,45 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|
 | PR / evidence | Steps: F-009-T01: [PR #19](https://github.com/voidbrain/coordinator/pull/19). Opened in [PR #19](https://github.com/voidbrain/coordinator/pull/19).; [#23](https://github.com/voidbrain/coordinator/pull/23) |
 | Components | project-harness:F-096 |
+| Opened | 2026-11-25 |
+| Verification | Pending |
+| Reviewed | 2026-11-25 |
+
+</details>
+
+---
+### <a id="f-011"></a>[✨ F-011](#top)
+
+**Reconcile to harness 10.21.2: the dashboard's five overview gaps and the coordinator label**
+
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🟡 Implemented | 🔹 P3 | 🟢 Small | 0 h | — | — | 🤖 | — | — |
+
+💻 **→** Next: from tasks; closes on the reconcile PR's green CI and the next refresh.
+
+| | |
+|---|---|
+| **Issue** | The 10.21.1 dashboard that replaced the retired overview (F-004-T05) left five differences the owner relies on: ▶ picked nerv:F-016 although its next open step is the owner's; a scoped audit did not count; no per-record open-work table with state; gap proposals were not numbered; this repository's rows read `solution`, not `coordinator`. project-harness:B-060 fixes them in 10.21.2. |
+| **Reproduce** | `.harness.json` names 10.21.1; the dashboard of `69da441` marks nerv:F-016 ▶ and lists open steps only, collapsed. |
+| **Check** | `.harness.json` names 10.21.2; the three solution files match the tag byte for byte; `.solution.json` sets `"label": "coordinator"`; the regenerated dashboard shows ▶ past nerv:F-016, scoped audits, Open work by repository, numbered gaps and 🧭 coordinator rows. |
+
+**Feature steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status |
+|---|---|---|---|---|---|
+| 🟢 Small | <a id="f-011-t01"></a>F-011-T01 — Copy the 10.21.2 solution files, label the coordinator and regenerate the dashboard | 0.5 h | 0 h | 0 h | Implemented; verification pending |
+| 🟢 Small | **Total** | 0.5 h | 0 h (0 of 1 steps recorded) | 0 h | 0 of 1 completed |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+[Full notes & evidence](work/records/F-011.md)
+
+| Field | Value |
+|---|---|
+| PR / evidence | [#40](https://github.com/voidbrain/coordinator/pull/40) |
+| Components | project-harness:B-060 |
 | Opened | 2026-11-25 |
 | Verification | Pending |
 | Reviewed | 2026-11-25 |
