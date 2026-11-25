@@ -1,7 +1,7 @@
 <!-- generated: tools/solution-overview.mjs; edit docs/solution-order.md or the owning backlogs, not this file -->
 # voidbrain solution: overview
 
-Snapshot 2026-11-25T15:51:53.390Z. Status comes from each owning backlog; this page is regenerated, never edited. The [solution order](solution-order.md) is the owner's; everything else follows each repository's own priority. Hours are each project's own estimates, not cross-calibrated; no completion percentage.
+Snapshot 2026-11-25T16:14:58.510Z. Status comes from each owning backlog; this page is regenerated, never edited. The [solution order](solution-order.md) is the owner's; everything else follows each repository's own priority. Hours are each project's own estimates, not cross-calibrated; no completion percentage.
 
 ## Summary
 
@@ -160,13 +160,13 @@ Agent runway before the next owner block: **116 h**; then blocked on the items b
 
 | Backlog | Runway (agent h) | Doable, no hours | First blocks reached | Owner h to unblock the next layer |
 |---|---:|---|---|---:|
-| 🧭 coordinator | 1 | — | F-004-T04: owner procedure (0.25 h owner); F-004-T05 waits on owner coordinator:F-004-T04 | 0.25 |
+| 🧭 coordinator | 1 | — | F-004-T04: owner procedure (0.25 h owner); F-004-T05 waits on owner coordinator:F-004-T04; F-006-T01 waits on owner grover:F-008-T03 | 0.25 |
 | 𖣂 nerv | 100.75 | — | F-062-T07: owner procedure (0.25 h owner); F-011-T02: owner procedure (0.5 h owner); F-011-T05 waits on owner nerv:F-011-T02; F-011-T06 waits on owner nerv:F-011-T03; F-004-T06: owner procedure (0.5 h owner); F-004-T07 waits on owner nerv:F-004-T06; and 35 more | 12.75 |
 | 🤖 gauntlet-protocol | 2.25 | — | F-022-T02: owner decision (0.25 h owner); F-022-T03 waits on owner gauntlet-protocol:F-022-T02; F-021-T02: owner decision (0.5 h owner); F-021-T03 waits on owner gauntlet-protocol:F-021-T02 | 0.75 |
 | 🦺 project-harness | 0.5 | — | — | 0 |
 | 🚁 fpvbuddy | 3 | — | — | 0 |
-| 🪴 grover | 8.5 | — | F-005-T01: owner procedure (1.25 h owner); F-005-T03 waits on owner grover:F-005-T01; F-003-T01: owner decision (0.5 h owner); F-003-T03 waits on owner grover:F-003-T01; F-003-T05 waits on owner grover:F-003-T04; F-004-T03 waits on owner grover:F-004-T02; and 21 more | 10 |
-| **Solution** | **116** | | | **23.75** |
+| 🪴 grover | 8.5 | — | F-005-T01: owner procedure (1.25 h owner); F-005-T03 waits on owner grover:F-005-T01; F-003-T01: owner decision (0.5 h owner); F-003-T03 waits on owner grover:F-003-T01; F-003-T05 waits on owner grover:F-003-T04; F-004-T03 waits on owner grover:F-004-T02; and 21 more | 10.25 |
+| **Solution** | **116** | | | **24** |
 
 ## Audits and reviews
 
@@ -218,7 +218,7 @@ In each backlog's own order (most urgent first). State: Ready = an agent can sta
 | [coordinator:B-002](BACKLOG.md#b-002) | check:fast fails with a bare HTTP 403 when GH_TOKEN is unset | Open | P3 | 🟢 Small | 0.5 h | Ready | Next: B-002-T01 — Make check:fast supply or ask for GH&#95;TOKEN (Planned). |
 | [coordinator:B-003](BACKLOG.md#b-003) | Neither scheduled workflow has run on its schedule yet | Investigate | P3 | 🟢 Small | 0.25 h | Ready | Next: B-003-T01 — Check that both scheduled workflows have run on their schedule (Planned). |
 | [coordinator:F-004](BACKLOG.md#f-004) | Propose the solution order, hours, runway, gap review, cross-repository dependencies and … | Open | P2 | 🟡 Medium | 1.5 h agent + 0.25 h owner | Owner: procedure | Next: 🧑‍🔧 F-004-T04 — Owner takes Proposal 4 (the overview's layout the dashboard lacks) to a project-harness session… |
-| [coordinator:F-006](BACKLOG.md#f-006) | NERV delivers Grover alerts end to end | Open | P2 | 🟢 Small | 1 h agent + 0.5 h owner | Ready | Next: F-006-T01 — Record the grover&#95;alerts contract and its end-to-end check in docs/SOLUTION.md (waits on grover:F… |
+| [coordinator:F-006](BACKLOG.md#f-006) | NERV delivers Grover alerts end to end | Open | P2 | 🟢 Small | 1 h agent + 0.5 h owner | Waiting on `grover:F-008-T03`, `nerv:F-122-T02` | Next: F-006-T01 — Record the grover&#95;alerts contract and its end-to-end check in docs/SOLUTION.md (waits on grover:F… |
 | [coordinator:F-007](BACKLOG.md#f-007) | NERV capability coverage in the Gauntlet across both repositories | Open | P2 | 🟢 Small | 1 h | Ready | Next: F-007-T01 — Name the Gauntlet release NERV needs for its new cases in docs/SOLUTION.md (waits on nerv:F-120) (Pla… |
 | [coordinator:F-009](BACKLOG.md#f-009) | Reconcile to the latest harness and read built backlog views | Implemented | P3 | 🟢 Small | 0.25 h | Ready | Next: from tasks; F-009-T01 is verified once NERV publishes built views (nerv:F-125) and a refresh reads them. |
 
@@ -230,7 +230,7 @@ In each backlog's own order (most urgent first). State: Ready = an agent can sta
 | [coordinator:B-003-T01](BACKLOG.md#b-003-t01) | Check that both scheduled workflows have run on their schedule | Planned | 0.25 h | Ready |
 | [coordinator:F-004-T04](BACKLOG.md#f-004-t04) | Owner takes Proposal 4 (the overview's layout the dashboard lacks) to a project-harness session | Planned | 0 h agent + 0.25 h owner | Owner: procedure |
 | [coordinator:F-004-T05](BACKLOG.md#f-004-t05) | Retire the overview tool once a template release covers Proposal 4 | Planned | 1.5 h | Waiting on F-004-T04 |
-| [coordinator:F-006-T01](BACKLOG.md#f-006-t01) | Record the grover&#95;alerts contract and its end-to-end check in docs/SOLUTION.md (waits on grover… | Planned | 1 h | Ready |
+| [coordinator:F-006-T01](BACKLOG.md#f-006-t01) | Record the grover&#95;alerts contract and its end-to-end check in docs/SOLUTION.md (waits on grover… | Planned | 1 h | Waiting on `grover:F-008-T03`, `nerv:F-122-T02` |
 | [coordinator:F-006-T02](BACKLOG.md#f-006-t02) | Owner sees a Grover alert arrive through NERV | Planned | 0 h agent + 0.5 h owner | Waiting on F-006-T01 |
 | [coordinator:F-007-T01](BACKLOG.md#f-007-t01) | Name the Gauntlet release NERV needs for its new cases in docs/SOLUTION.md (waits on nerv:F-120) | Planned | 0.5 h | Ready |
 | [coordinator:F-007-T02](BACKLOG.md#f-007-t02) | Link a Gauntlet run of the new NERV cases as acceptance | Planned | 0.5 h | Waiting on F-007-T01 |
@@ -610,7 +610,7 @@ Possible missing steps, found by reading every backlog. Each row proposes a reco
 
 | Source | Revision | Read from | Open records | Open steps |
 |---|---|---|---:|---:|
-| 🧭 coordinator | [7c5b84ace2b4](https://github.com/voidbrain/coordinator/commit/7c5b84ace2b46a20e99b266aa7ff954eb6d123f2) | working checkout; local changes present, read as they are (not a committed snapshot) | 6 | 9 |
+| 🧭 coordinator | [d0dd09293938](https://github.com/voidbrain/coordinator/commit/d0dd09293938389088dd99fcf0ec18438be9aa50) | working checkout; local changes present, read as they are (not a committed snapshot) | 6 | 9 |
 | 𖣂 nerv | [9db5bf810b9c](https://github.com/voidbrain/nerv/commit/9db5bf810b9cffe97705ffefa619462ff0e7020d) | GitHub | 72 | 131 |
 | 🤖 gauntlet-protocol | [2339e413222c](https://github.com/voidbrain/gauntlet-protocol/commit/2339e413222c65a205cf8dc0f94d00f704cca7af) | GitHub | 3 | 9 |
 | 🦺 project-harness | [5b1fd43411f1](https://github.com/voidbrain/project-harness/commit/5b1fd43411f1621dee50598f23d41fec6723ebd0) | GitHub | 3 | 7 |
