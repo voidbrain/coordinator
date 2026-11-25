@@ -46,6 +46,10 @@
     {
       "pr": 34,
       "note": "self-merged refresh PR, branch deleted"
+    },
+    {
+      "pr": 35,
+      "note": "recorded and closed"
     }
   ]
 }

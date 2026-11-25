@@ -236,6 +236,7 @@ Closed records of the [backlog](../BACKLOG.md), in closing-date order. History, 
 | Field | Value |
 |---|---|
 | PR / evidence | Recorded in [PR #33](https://github.com/voidbrain/coordinator/pull/33); [PR #31](https://github.com/voidbrain/coordinator/pull/31) merged; refresh [PR #32](https://github.com/voidbrain/coordinator/pull/32) merged itself; refresh [PR #34](https://github.com/voidbrain/coordinator/pull/34) merged itself and its branch was deleted |
+| Closed in | 2026-11-25 (dated correction): [PR #35](https://github.com/voidbrain/coordinator/pull/35) recorded F-010-T02 and closed F-010 |
 | Components | — |
 | Opened | 2026-11-25 |
 | Verification | 2026-11-25: self-merge verified (PR #32, PR #34); branch deletion verified (PR #34, branch 404). Closed 2026-11-25 |
