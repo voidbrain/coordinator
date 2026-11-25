@@ -59,6 +59,15 @@
       "backlog": "docs/BACKLOG.md",
       "archives": [],
       "emoji": "🏚️"
+    },
+    {
+      "id": "hobo",
+      "repository": "voidbrain/hobo",
+      "path": "../hobo",
+      "ref": "main",
+      "backlog": "docs/BACKLOG.md",
+      "archives": [],
+      "emoji": "🗺️"
     }
   ],
   "emoji": "🚦",

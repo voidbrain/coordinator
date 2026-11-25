@@ -12,6 +12,7 @@ This repository owns solution outcomes, shared contracts and integration accepta
 | `fpvbuddy` | [voidbrain/FPVBuddy](https://github.com/voidbrain/FPVBuddy) | FPV companion app (Angular) | No contract recorded yet; harness consumer |
 | `openbando` | [voidbrain/openbando](https://github.com/voidbrain/openbando) | OpenBando: browser app (Angular, Three.js, Leaflet) to build abandoned places in 3D from the map, replay real FPV flights from Betaflight Blackbox logs and DVR, fly a simulator and share | No contract recorded yet; harness consumer |
 | `grover` | [voidbrain/Grover](https://github.com/voidbrain/Grover) | Grow-tent controller: hub, Pi agent, client | MCP tool surface used by NERV, alerts included (`grover_alerts`; tool table in Grover's `docs/DESIGN.md`, "NERV"); harness consumer |
+| `hobo` | [voidbrain/hobo](https://github.com/voidbrain/hobo) | Hobo: trip planner (Angular, Leaflet, OpenRouteService): places, trips, routes and variants | Planned MCP surface for NERV (places, trips, route totals; hobo:F-011); maps/geo a candidate shared package with openbando (hobo:F-012); shared UI from bricks (solution:F-012); harness consumer |
 
 Which domains each component covers, and which ones two or more share, is in the [domain map](DOMAINS.md).
 
@@ -21,7 +22,7 @@ Contracts are owned by the component that publishes them; this table links, it d
 
 | Consumer | Depends on | Pinned by |
 |---|---|---|
-| Every component | project-harness release | `version` in its `.harness.json` (nerv 10.7.0, gauntlet-protocol 10.9.0, fpvbuddy 10.3.0, grover 10.9.0 on 2026-11-24, openbando 10.8.1 on 2026-11-25) |
+| Every component | project-harness release | `version` in its `.harness.json` (nerv 10.7.0, gauntlet-protocol 10.9.0, fpvbuddy 10.3.0, grover 10.9.0 on 2026-11-24, openbando 10.8.1 on 2026-11-25, hobo 10.21.3 on 2026-11-25) |
 | nerv | Grover hub MCP tools | Grover's MCP tool names and `PROTOCOL_VERSION` (MQTT, inside Grover) |
 | nerv | gauntlet-protocol | the vendored package `@voidbrain/gauntlet-protocol` in nerv's `package.json` (0.9.1 on 2026-11-24), used by `tools/gauntlet.mjs` |
 
