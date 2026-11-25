@@ -9,7 +9,7 @@ The project is **Coordinator**, the solution coordinator for the voidbrain proje
 - [docs/BACKLOG.md](docs/BACKLOG.md) holds cross-repository work only: contracts, version compatibility, end-to-end acceptance, coordination. Implementation work goes in the component's own backlog. It is generated (`npm run work:build`) from `docs/work/records/<ID>.md` and the step files `docs/work/tasks/<ID>-T*.json`, which carry agent and owner hours; edit those, never the ledger. <!-- project -->
 - The gap review proposes missing records and steps to the repositories that would own them; the owner decides which are created ([gap review](docs/agents/gap-review.md)).
 - The overview sums remaining agent and owner hours across all backlogs, the coordinator's included: hours only, never a percentage, labelled as each project's own estimates, and "at least" when a backlog cannot be read. Its agent runway counts agent steps doable before a block, across repositories (`repo:ID` prerequisites). <!-- project -->
-- Generated, never edited by hand: [docs/SOLUTION-OVERVIEW.md](docs/SOLUTION-OVERVIEW.md) (`tools/solution-overview.mjs`, project tool) and [docs/SOLUTION-DASHBOARD.md](docs/SOLUTION-DASHBOARD.md) (`tools/solution.mjs`, from the template). `npm run solution:refresh` rewrites both from GitHub.
+- Generated, never edited by hand: [docs/SOLUTION-OVERVIEW.md](docs/SOLUTION-OVERVIEW.md) (`tools/solution-overview.mjs`, project tool, kept for its layout until F-004-T05) and [docs/SOLUTION-DASHBOARD.md](docs/SOLUTION-DASHBOARD.md) (`tools/solution.mjs`, from the template, which also drops Done order items). `npm run solution:refresh` rewrites both from GitHub. <!-- project -->
 
 ### Solution order
 

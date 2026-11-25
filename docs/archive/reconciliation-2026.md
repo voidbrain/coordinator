@@ -19,3 +19,7 @@ PR #26 (B-001 closed) merged on green CI. Delivery audit of 2026-11-25 recorded;
 ## 2026-11-25 — main `9706998`
 
 PR #27 (delivery audit; B-002 and B-003 opened) merged on green CI. B-002 and B-003 now name it.
+
+## 2026-11-25 — main `7c0e5b8`
+
+PR #28 (B-002 and B-003 name PR #27) merged on green CI; no record change needed. Harness reconciled to v10.20.1 in the F-004-T02 PR.

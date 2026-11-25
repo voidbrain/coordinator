@@ -80,6 +80,19 @@ Compared on 2026-11-25: `node tools/solution.mjs dashboard --remote` (10.20.0) a
 
 A closed or archived order item shows "Not in backlog" and stays in the order. The coordinator shows it ✅ Done with where it closed and drops it from the order on refresh (coordinator B-001; the order's rule "a closed or archived item is removed in the next reorder or refresh PR").
 
-### Kept here until a release covers both
+### Outcome
 
-`tools/solution-overview.mjs`, its library and tests, and `docs/SOLUTION-OVERVIEW.md` stay the owner's view (emojis per row, linked items, ▶ next item, open prerequisites per order item). The order already uses the template's format.
+Both shipped in v10.20.1 as project-harness B-057 and B-058 (PR #284). This repository reconciled to it (F-004-T02): Blocked matches (nerv 9 against the overview's 10), the order items read Ready, and `dashboard --write --prune-order` now drops Done items in the refresh. The overview's own pruning was removed.
+
+## Proposal 4: the overview layout the dashboard still lacks (found at the 10.20.1 reconcile, F-004-T02)
+
+Compared on 2026-11-25: `node tools/solution.mjs dashboard --remote` (10.20.1) against `node tools/solution-overview.mjs --remote` on the same component commits. The counts now agree; what the owner reads in the overview and would lose is layout:
+
+- **Solution order table**: no project emoji per row, no link on the item, one Remaining cell instead of agent h and owner h columns, and no "Open prerequisites" column (each waiting step and what it waits on, linked).
+- **Blocked and Waiting for the owner tables**: no links, no titles in Blocked; no priority, owner time or next step in Waiting for the owner.
+- **Summary**: the owner view has no Harness and Next audit columns and no Solution total row; this repository reads "solution" with no emoji (the manifest's `emoji` is per component only).
+- **Next pick**: the dashboard marks a Verified record with 0 h left ("to close") as "Ready — next" ahead of records whose steps are Implemented and await verification; the overview marks the first record with remaining work.
+- **Audits**: a scoped audit does not count, so this repository and grover read "no complete full audit" (the overview shows the newest scoped one). This may be intended.
+- **Blocked count**: the dashboard also counts owner steps behind another owner step (grover 23 against the overview's 15). This may be intended.
+
+Proposed: the template's dashboard carries the emoji and links per row, the open prerequisites and the hours split in the order, and a summary with harness, next audit and totals; or says which of these it declines. Until then the overview stays as the owner's layout view (F-004-T05 retires it).

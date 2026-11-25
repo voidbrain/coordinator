@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "id": "F-004-T05",
+  "parent": "F-004",
+  "title": "Retire the overview tool once a template release covers Proposal 4",
+  "goal": "tools/solution-overview*.mjs, their tests, check:order, solution:overview and docs/SOLUTION-OVERVIEW.md are gone; the dashboard is the owner's view",
+  "status": "planned",
+  "acceptance": [
+    "Reconcile to the release that covers Proposal 4, compare both views on the same commits, then remove the project tool, its tests, scripts, CI steps and generated view"
+  ],
+  "dependsOn": [
+    "F-004-T04"
+  ],
+  "resources": [
+    "tools/solution-overview.mjs",
+    "tools/solution-overview-lib.mjs",
+    "docs/work/records/F-004.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "1.5 h",
+    "basis": "Estimated 2026-11-25: reconcile, compare, delete the tool and its references, refresh; depends on a template release that does not exist yet, so this can grow. Not a measurement.",
+    "reviewed": "2026-11-25",
+    "agentHours": 1.5,
+    "ownerHours": 0,
+    "estimateAgentHours": 1.5
+  },
+  "prs": []
+}
