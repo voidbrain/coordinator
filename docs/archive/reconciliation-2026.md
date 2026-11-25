@@ -11,3 +11,7 @@ Per PR: #1, #2: F-001 (and F-005, F-008); #3, #7, #9, #13, #15, #17, #20, #24: R
 ## 2026-11-25 — main `41faf38`
 
 PR #25 (reconcile; F-001 and F-002 closed) merged on green CI. B-001 closed on its verified evidence: PRs #16 and #18, Refresh run 45575332245.
+
+## 2026-11-25 — main `d4536ab`
+
+PR #26 (B-001 closed) merged on green CI. Delivery audit of 2026-11-25 recorded; B-002 opened and B-003 opened in Investigate from its findings.

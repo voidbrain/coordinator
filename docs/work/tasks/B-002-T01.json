@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "id": "B-002-T01",
+  "parent": "B-002",
+  "title": "Make check:fast supply or ask for GH_TOKEN",
+  "goal": "An agent following AGENTS.md runs check:fast with a GitHub token and gets a clear message without one",
+  "status": "planned",
+  "acceptance": [
+    "check:fast passes when run as AGENTS.md says, with gh logged in",
+    "Without a token the documented command names what is missing, not a bare 403",
+    "Changes stay in project-owned lines or scripts; copied harness tools are not edited"
+  ],
+  "dependsOn": [],
+  "resources": [
+    "AGENTS.md",
+    "README.md",
+    "package.json",
+    "docs/work/records/B-002.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "0.5 h agent",
+    "basis": "Estimated 2026-11-25: one script or two project lines, then a run with and without a token. Not a measurement.",
+    "reviewed": "2026-11-25",
+    "agentHours": 0.5,
+    "ownerHours": 0,
+    "baselineAgentHours": 0.5,
+    "estimateAgentHours": 0.5
+  }
+}
