@@ -2,11 +2,11 @@
   "version": 1,
   "id": "F-012-T04",
   "parent": "F-012",
-  "title": "Owner: create the voidbrain/ui library repository",
-  "goal": "The owner decides on the voidbrain/ui repository (name, visibility, how it publishes) for an Angular library",
+  "title": "Owner: create the voidbrain/bricks library repository",
+  "goal": "The owner creates the voidbrain/bricks repository (Bricks 🧱, Angular library @voidbrain/bricks; name decided 2026-11-25) and chooses its visibility and how it publishes",
   "status": "planned",
   "acceptance": [
-    "The owner chooses: name (voidbrain/ui proposed), visibility, and publishing (GitHub Packages npm or Git tags); Angular library, web components only if a non-Angular consumer appears"
+    "Name decided 2026-11-25: Bricks, emoji 🧱, repository voidbrain/bricks, Angular library package @voidbrain/bricks; the owner chooses visibility and publishing (GitHub Packages npm or Git tags) and creates the repository; web components only if a non-Angular consumer appears"
   ],
   "dependsOn": [
     "F-012-T03"

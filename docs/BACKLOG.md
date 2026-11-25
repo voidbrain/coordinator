@@ -287,7 +287,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 ---
 ### <a id="f-012"></a>[✨ F-012](#top)
 
-**Shared UI library for the voidbrain projects**
+**Bricks 🧱: shared UI library for the voidbrain projects**
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
@@ -299,7 +299,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|
 | **Issue** | Owner request 2026-11-25. Every UI project is Angular: NERV `web/src` (22), Grover `apps/client` (22), FPVBuddy (21). Each styles and builds its own status rows, cards, approval cards and fleet and battery views. NERV's dashboard migration ([nerv:F-130](https://github.com/voidbrain/nerv/blob/main/docs/BACKLOG.md#f-130)) is about to produce these as Angular components, so the solution needs one contract for versions, tokens and shared components before each project copies them. |
 | **Reproduce** | Compare the three projects' `package.json` (`@angular/core` 22, 22, 21) and their style sheets: no shared tokens or components. |
-| **Check** | docs/SOLUTION.md records the Angular 22 contract, the design tokens (CSS custom properties matching nerv `docs/STYLE-GUIDE.md`) and the shared component contract; `voidbrain/ui` is a solution component with its first release; the three projects pin the same release; the owner's side-by-side check. |
+| **Check** | docs/SOLUTION.md records the Angular 22 contract, the design tokens (CSS custom properties matching nerv `docs/STYLE-GUIDE.md`) and the shared component contract; `voidbrain/bricks` is a solution component with its first release; the three projects pin the same release; the owner's side-by-side check. |
 
 **Feature steps**
 
@@ -308,8 +308,8 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | 🟢 Small | <a id="f-012-t01"></a>F-012-T01 — Angular version contract: every UI component on Angular 22 | 0.5 h | 0 h | 0.5 h | Planned | — | [F-012-T02](#f-012-t02) | 🤖 |
 | 🟡 Medium | <a id="f-012-t02"></a>F-012-T02 — Design-token contract matching NERV's style guide | 2 h | 0 h | 2 h | Planned | [F-012-T01](#f-012-t01) | [F-012-T03](#f-012-t03) | ⏳ 🤖 |
 | 🟡 Medium | <a id="f-012-t03"></a>F-012-T03 — Shared component contract from what the NERV dashboard migration produced | 2 h | 0 h | 2 h | Planned | [F-012-T02](#f-012-t02), `nerv:F-130-T02`, `nerv:F-130-T05`, `nerv:F-130-T09` | [F-012-T04](#f-012-t04) | ⏳ 🤖 |
-| 🟢 Small | <a id="f-012-t04"></a>F-012-T04 — Owner: create the voidbrain/ui library repository | 0 h | 0 h | 0 h agent + 0.25 h owner | Planned | [F-012-T03](#f-012-t03) | [F-012-T05](#f-012-t05) | ⏳ 🤔 |
-| 🟢 Small | <a id="f-012-t05"></a>F-012-T05 — Add voidbrain/ui to the solution and propose its adoption | 1 h | 0 h | 1 h | Planned | [F-012-T04](#f-012-t04) | [F-012-T06](#f-012-t06) | ⏳ 🤖 |
+| 🟢 Small | <a id="f-012-t04"></a>F-012-T04 — Owner: create the voidbrain/bricks library repository | 0 h | 0 h | 0 h agent + 0.25 h owner | Planned | [F-012-T03](#f-012-t03) | [F-012-T05](#f-012-t05) | ⏳ 🤔 |
+| 🟢 Small | <a id="f-012-t05"></a>F-012-T05 — Add voidbrain/bricks to the solution and propose its adoption | 1 h | 0 h | 1 h | Planned | [F-012-T04](#f-012-t04) | [F-012-T06](#f-012-t06) | ⏳ 🤖 |
 | 🟢 Small | <a id="f-012-t06"></a>F-012-T06 — Integration acceptance: the three projects on one library release | 1 h | 0 h | 1 h | Planned | [F-012-T05](#f-012-t05) | [F-012-T07](#f-012-t07) | ⏳ 🤖 |
 | 🟢 Small | <a id="f-012-t07"></a>F-012-T07 — Owner: look at the three apps side by side | 0 h | 0 h | 0 h agent + 0.5 h owner | Planned | [F-012-T06](#f-012-t06) | — | ⏳ 🧑‍🔧 |
 | 🔴 Large | **Total** | 6.5 h | 0 h (0 of 7 steps recorded) | 6.5 h agent + 0.75 h owner | 0 of 7 completed | | | |
@@ -321,7 +321,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | [#44](https://github.com/voidbrain/coordinator/pull/44); owner request 2026-11-25; nerv:F-130 is planned in [voidbrain/nerv#770](https://github.com/voidbrain/nerv/pull/770), so `check:solution` reports it missing until that merges |
+| PR / evidence | [#44](https://github.com/voidbrain/coordinator/pull/44), [#45](https://github.com/voidbrain/coordinator/pull/45) (Bricks name); owner request 2026-11-25; nerv:F-130 is planned in [voidbrain/nerv#770](https://github.com/voidbrain/nerv/pull/770), so `check:solution` reports it missing until that merges |
 | Components | nerv:F-130 |
 | Opened | 2026-11-25 |
 | Verification | Pending |
