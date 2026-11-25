@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "id": "F-012-T07",
+  "parent": "F-012",
+  "title": "Owner: look at the three apps side by side",
+  "goal": "The owner confirms NERV, Grover and FPVBuddy share the tokens and components",
+  "status": "planned",
+  "acceptance": [
+    "Open the three apps: status rows, cards and approval cards look and behave the same; colours and type match NERV's style guide"
+  ],
+  "dependsOn": [
+    "F-012-T06"
+  ],
+  "resources": [
+    "docs/SOLUTION.md",
+    "docs/work/records/F-012.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "evidence-review"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "validation": [
+    "Owner procedure, recorded in F-012"
+  ],
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "0.5 h owner",
+    "basis": "Estimated 2026-11-25: a visual walk through three apps. Not a measurement.",
+    "reviewed": "2026-11-25",
+    "agentHours": 0,
+    "baselineAgentHours": 0,
+    "estimateAgentHours": 0,
+    "ownerHours": 0.5,
+    "ownerKind": "procedure"
+  }
+}

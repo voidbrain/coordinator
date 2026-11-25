@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "id": "F-012-T03",
+  "parent": "F-012",
+  "title": "Shared component contract from what the NERV dashboard migration produced",
+  "goal": "Once nerv:F-130 has produced them, the components that really repeat (status rows, cards, approval cards, fleet and battery views) are listed with their inputs and outputs",
+  "status": "planned",
+  "acceptance": [
+    "Each candidate component names where it exists today in NERV, Grover and FPVBuddy and its inputs, outputs and tokens; one used by a single project is left out",
+    "Fleet and battery views name the NERV and FPVBuddy data they show"
+  ],
+  "dependsOn": [
+    "F-012-T02",
+    "nerv:F-130-T02",
+    "nerv:F-130-T05",
+    "nerv:F-130-T09"
+  ],
+  "resources": [
+    "docs/SOLUTION.md",
+    "docs/work/records/F-012.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "2 h",
+    "basis": "Estimated 2026-11-25: read the migrated NERV components and the matching FPVBuddy and Grover views. Not a measurement.",
+    "reviewed": "2026-11-25",
+    "agentHours": 2,
+    "baselineAgentHours": 2,
+    "estimateAgentHours": 2,
+    "ownerHours": 0
+  }
+}
