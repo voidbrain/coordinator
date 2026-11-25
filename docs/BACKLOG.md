@@ -407,7 +407,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | PR_PLACEHOLDER |
+| PR / evidence | Opened in [PR #51](https://github.com/voidbrain/coordinator/pull/51); owner decision 2026-11-26 |
 | Components | nerv:F-120, openbando:B-009, openbando:F-026, gauntlet-protocol:F-075, fpvbuddy:F-102, grover:F-099 |
 | Opened | 2026-11-26 |
 | Verification | Pending |
@@ -446,7 +446,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | PR_PLACEHOLDER |
+| PR / evidence | Opened in [PR #51](https://github.com/voidbrain/coordinator/pull/51); owner decision 2026-11-26 |
 | Opened | 2026-11-26 |
 | Verification | Pending |
 | Reviewed | 2026-11-26 |
