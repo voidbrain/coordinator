@@ -41,6 +41,10 @@
     {
       "pr": 21,
       "note": "Gaps 2 to 7 gone; gap 1 (nerv:F-120 counterpart) remains"
+    },
+    {
+      "pr": 22,
+      "note": "Gap 1 resolved by owner decision; step and F-003 closed"
     }
   ]
 }
