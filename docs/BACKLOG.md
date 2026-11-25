@@ -4,7 +4,7 @@ Current work ledger, reviewed 25 November 2026 against main `69da441`. PRs #38 (
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 3 h agent + 0.5 h owner across 8 open steps of 4 features and 2 other records. Generated from the task files.
+**Remaining effort:** 3 h agent + 0.5 h owner across 9 open steps of 4 features and 3 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -80,6 +80,44 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | Field | Value |
 |---|---|
 | PR / evidence | Audit [2026-11-25 delivery](audits/2026-11-25-delivery.md), opened in [#27](https://github.com/voidbrain/coordinator/pull/27) |
+| Opened | 2026-11-25 |
+| Verification | Pending |
+| Reviewed | 2026-11-25 |
+
+</details>
+
+---
+### <a id="b-004"></a>[🐞 B-004](#top)
+
+**An hourly refresh would open a PR every hour: the coordinator's own revision row was not ignored**
+
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🟡 Implemented | 🔹 P3 | 🟢 Small | 0 h | — | — | 🤖 | — | — |
+
+💻 **→** Next: from tasks; closes on green CI and a day of scheduled runs that open no PR without a component change.
+
+| | |
+|---|---|
+| **Issue** | Owner decision 2026-11-25: refresh the solution views hourly instead of daily (F-005's daily schedule of 2026-11-24). The workflow's "did anything change" check ignored the snapshot and the coordinator's rows by the label `solution`; since the 10.21.2 reconcile (F-011) the source row reads `coordinator`, so each merged refresh PR moved that row and made the next run open another PR: hourly, a PR every hour. |
+| **Reproduce** | `git diff -I '^Snapshot' -I '^\| solution \|' -I '^\| \[solution:' -I '^\| 🧭' -I '^\| [0-9]+ \| 🧭' --stat 615c443^ 615c443` (refresh PR #41) still shows one changed line, the `\| coordinator \|` source row. |
+| **Check** | `test/views-changed.test.mjs` passes; the workflow runs `tools/views-changed.mjs` on cron `17 * * * *`; `gh pr list -R voidbrain/coordinator --state all --search 'refresh solution views'` shows no refresh PR whose only change is the snapshot and the coordinator's revision. |
+
+**Steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status |
+|---|---|---|---|---|---|
+| 🟢 Small | <a id="b-004-t01"></a>B-004-T01 — Refresh hourly; a run with only the snapshot and the coordinator's revision opens no PR | 0.5 h | 0 h | 0 h | Implemented; verification pending |
+| 🟢 Small | **Total** | 0.5 h | 0 h (0 of 1 steps recorded) | 0 h | 0 of 1 completed |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+[Full notes & evidence](work/records/B-004.md)
+
+| Field | Value |
+|---|---|
+| PR / evidence | Pending |
 | Opened | 2026-11-25 |
 | Verification | Pending |
 | Reviewed | 2026-11-25 |

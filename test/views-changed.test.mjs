@@ -24,7 +24,7 @@ const dashboard = ({ time, sha, alpha = 'Open: Ready' }) =>
     `| coordinator | [${sha.slice(0, 12)}](${own(sha)}) | Committed snapshot; requested working checkout |`,
     '| alpha | [aaaaaaaaaaaa](https://github.com/example/alpha/commit/aaaaaaaaaaaa) | Committed snapshot; GitHub |',
     '',
-    `| 🧭 coordinator | [solution:F-001-T01](${blob(sha)}) | Step | — | owner procedure |`,
+    `| 🚦 coordinator | [solution:F-001-T01](${blob(sha)}) | Step | — | owner procedure |`,
     `| [solution:F-001](${blob(sha)}) | Feature | Open |`,
     `| 1 | 🅰 | [alpha:F-001](https://github.com/example/alpha/blob/aaaa/docs/BACKLOG.md#f-001) | One | ${alpha} |`,
     '',
@@ -33,7 +33,7 @@ const dashboard = ({ time, sha, alpha = 'Open: Ready' }) =>
 function repo() {
   const dir = mkdtempSync(join(tmpdir(), 'views-changed-'));
   git(dir, 'init', '-q', '-b', 'main');
-  write(dir, '.solution.json', JSON.stringify({ repository: 'example/coord', label: 'coordinator' }));
+  write(dir, '.solution.json', JSON.stringify({ repository: 'example/coord', label: 'coordinator', emoji: '🚦' }));
   write(dir, 'docs/solution-order.md', '# Order\n');
   write(dir, 'docs/SOLUTION-DASHBOARD.md', dashboard({ time: '2026-11-25T10:00:00Z', sha: '1'.repeat(40) }));
   git(dir, 'add', '-A');

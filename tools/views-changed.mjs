@@ -15,19 +15,20 @@ import { REFRESHED } from './refresh-branch.mjs';
 const escape = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 // POSIX extended regular expressions for git diff -I: a hunk is ignored when all its changed lines match one.
-export function ignorePatterns(repository, label = 'coordinator') {
+export function ignorePatterns(repository, label = 'coordinator', emoji = '🚦') {
   return [
     '^Snapshot',
-    '^\\| solution \\|',
+    `^\\| (solution|${escape(label)}) \\|`,
     '^\\| \\[solution:',
-    '^\\| 🧭',
-    '^\\| [0-9]+ \\| 🧭',
+    `^\\| ${escape(emoji)}`,
+    `^\\| [0-9]+ \\| ${escape(emoji)}`,
+    `github\\.com/${escape(repository)}/(commit|blob)/`,
   ];
 }
 
 export function viewsChanged(cwd) {
   const manifest = JSON.parse(readFileSync(join(cwd, '.solution.json'), 'utf8'));
-  const args = ['diff', '--quiet', ...ignorePatterns(manifest.repository, manifest.label).flatMap((p) => ['-I', p])];
+  const args = ['diff', '--quiet', ...ignorePatterns(manifest.repository, manifest.label, manifest.emoji).flatMap((p) => ['-I', p])];
   try {
     execFileSync('git', [...args, '--', ...REFRESHED], { cwd, stdio: 'ignore' });
     return false;

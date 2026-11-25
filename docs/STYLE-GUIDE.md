@@ -13,7 +13,7 @@ This guide governs repository writing and the generated views; [Backlog rules](B
 - **Voice:** short, direct, addressed to the owner. No "we", no exclamation marks.
 - **Sentence case** for headings and table columns.
 - **Say what happened, then what to do.** "nerv:B-124 is not in nerv's active backlog; remove it or fix the ID."
-- Projects are shown with their emoji from `.solution.json`: 🧭 solution (this repository), 𖣂 nerv, 🤖 gauntlet-protocol, 🦺 project-harness, 🚁 fpvbuddy, 🪴 grover.
+- Projects are shown with their emoji from `.solution.json`: 🚦 coordinator (this repository; 🧭 until the owner decision of 2026-11-25), 𖣂 nerv, 🤖 gauntlet-protocol, 🦺 project-harness, 🚁 fpvbuddy, 🪴 grover.
 - References are always repository-qualified: `nerv:B-124`, `grover:F-003`, `solution:F-002` for this repository's own records, as the template's dashboard and order check name it (older text says `coordinator:F-002`).
 - Hours as the owning backlog states them (`3.5 h agent + 1 h owner`); dates as `2026-11-24`; snapshot times in UTC ISO 8601.
 

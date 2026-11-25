@@ -1,7 +1,8 @@
 name: Refresh solution views
 
-# Owner decision 2026-11-24 (F-005): refresh the generated views daily and propose them as a PR, never a direct push
-# to main. Reads every component's main from GitHub; commits only docs/SOLUTION-DASHBOARD.md and
+# Owner decision 2026-11-25 (B-004): refresh the generated views hourly (was daily, 2026-11-24, F-005) and propose them
+# as a PR, never a direct push to main. A run whose views changed only in the snapshot time or this repository's own
+# revision opens no PR (tools/views-changed.mjs, B-004). Reads every component's main from GitHub; commits only docs/SOLUTION-DASHBOARD.md and
 # docs/solution-order.md (Done items dropped by the template's tools/solution.mjs dashboard --prune-order,
 # F-004-T02; the project's own overview was retired in F-004-T05) to the branch below and opens or updates the refresh PR, which merges itself on green CI
 # (F-010, last step) unless it changes more than those generated files.
@@ -11,7 +12,7 @@ name: Refresh solution views
 # secret fails the run. Only main's reviewed tools run here.
 on:
   schedule:
-    - cron: '30 5 * * *' # daily, 05:30 UTC (Actions may start it later)
+    - cron: '17 * * * *' # hourly at :17 UTC, off the top of the hour (Actions may start it later)
   workflow_dispatch:
 
 permissions:
@@ -69,11 +70,18 @@ jobs:
       - name: Did anything change besides the snapshot time and this repository's own revision?
         id: diff
         run: |
-          if git diff --quiet -I '^Snapshot' -I '^\| solution \|' -I '^\| \[solution:' -I '^\| 🧭' -I '^\| [0-9]+ \| 🧭' -- docs/SOLUTION-DASHBOARD.md docs/solution-order.md; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "Views unchanged apart from the snapshot; no PR."
-          else
+          set +e
+          node tools/views-changed.mjs # main's copy; exit 0 changed, 1 unchanged, 2 git error
+          status=$?
+          set -e
+          if [ "$status" = 0 ]; then
             echo "changed=true" >> "$GITHUB_OUTPUT"
+          elif [ "$status" = 1 ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Views unchanged apart from the snapshot and this repository's revision; no PR."
+          else
+            echo "::error::Could not compare the views"
+            exit 1
           fi
 
       - name: Commit, push, and open the PR if none is open (CI starts by itself on the token's push)
@@ -87,7 +95,7 @@ jobs:
           open=$(gh pr list --head "$BRANCH" --state open --json number --jq length) || exit 1
           if [ "$open" = 0 ]; then
             gh pr create --base main --head "$BRANCH" --title "$TITLE" \
-              --body "Daily refresh of the generated views (F-008). CI runs on this PR like on any other; it merges itself once every required check passes (F-010), unless its guard finds a change outside the generated files. Review the source revisions and each view's problems section."
+              --body "Scheduled refresh of the generated views (F-008). CI runs on this PR like on any other; it merges itself once every required check passes (F-010), unless its guard finds a change outside the generated files. Review the source revisions and each view's problems section."
           fi
 
       # Owner decision 2026-11-25 (F-010): a refresh PR merges itself once every required check on main passes, and its
