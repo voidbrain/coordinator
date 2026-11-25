@@ -1,11 +1,11 @@
 <!-- generated: project-harness solution dashboard; edit owning backlogs, not this file -->
 # voidbrain solution dashboard
 
-Snapshot: 2026-11-25T17:33:09.469Z. Read-only aggregation; no combined completion percentage. Solution integration status is independent of component status.
+Snapshot: 2026-11-25T17:37:05.645Z. Read-only aggregation; no combined completion percentage. Solution integration status is independent of component status.
 
 | Source | Revision | Snapshot state |
 |---|---|---|
-| coordinator | [b3f3139c7cb6](https://github.com/voidbrain/coordinator/commit/b3f3139c7cb654743b71842231fae0afd1fbb6a1) | Committed snapshot; requested working checkout; local checkout, not fetched |
+| coordinator | [74f50b4bd040](https://github.com/voidbrain/coordinator/commit/74f50b4bd04040d1b62752b3f34ac99ef245af62) | Committed snapshot; requested working checkout; local checkout, not fetched |
 | nerv | [fb055bb5a143](https://github.com/voidbrain/nerv/commit/fb055bb5a1432071d3d01d0a720ebd3420cfcf42) | Committed snapshot; requested main; GitHub |
 | gauntlet-protocol | [2339e413222c](https://github.com/voidbrain/gauntlet-protocol/commit/2339e413222c65a205cf8dc0f94d00f704cca7af) | Committed snapshot; requested main; GitHub |
 | project-harness | [73b4e84e41f7](https://github.com/voidbrain/project-harness/commit/73b4e84e41f71c352eadb68387aca5642fa2c159) | Committed snapshot; requested main; GitHub |
@@ -56,9 +56,9 @@ Agent work that cannot start, per project, with the first block its chain reache
 
 | Project | Blocked item | Title | Waits on | Kind |
 |---|---|---|---|---|
-| 🧭 coordinator | [solution:F-006-T01](https://github.com/voidbrain/coordinator/blob/b3f3139c7cb654743b71842231fae0afd1fbb6a1/docs/BACKLOG.md#f-006-t01) | Record the grover&#95;alerts contract and its end-to-end check in doc… | [grover:F-005-T01](https://github.com/voidbrain/Grover/blob/14dfdffefd14f29b41b81ce9be4542f0bfb62dd6/docs/BACKLOG.md#f-005-t01) | owner procedure |
-| 🧭 coordinator | [solution:F-007-T01](https://github.com/voidbrain/coordinator/blob/b3f3139c7cb654743b71842231fae0afd1fbb6a1/docs/BACKLOG.md#f-007-t01) | Name the Gauntlet release NERV needs for its new cases in docs/SOLUTI… | [nerv:F-120-T03](https://github.com/voidbrain/nerv/blob/fb055bb5a1432071d3d01d0a720ebd3420cfcf42/docs/BACKLOG.md#f-120-t03) | owner procedure |
-| 🧭 coordinator | [solution:F-007-T02](https://github.com/voidbrain/coordinator/blob/b3f3139c7cb654743b71842231fae0afd1fbb6a1/docs/BACKLOG.md#f-007-t02) | Link a Gauntlet run of the new NERV cases as acceptance | [nerv:F-120-T03](https://github.com/voidbrain/nerv/blob/fb055bb5a1432071d3d01d0a720ebd3420cfcf42/docs/BACKLOG.md#f-120-t03) | owner procedure |
+| 🧭 coordinator | [solution:F-006-T01](https://github.com/voidbrain/coordinator/blob/74f50b4bd04040d1b62752b3f34ac99ef245af62/docs/BACKLOG.md#f-006-t01) | Record the grover&#95;alerts contract and its end-to-end check in doc… | [grover:F-005-T01](https://github.com/voidbrain/Grover/blob/14dfdffefd14f29b41b81ce9be4542f0bfb62dd6/docs/BACKLOG.md#f-005-t01) | owner procedure |
+| 🧭 coordinator | [solution:F-007-T01](https://github.com/voidbrain/coordinator/blob/74f50b4bd04040d1b62752b3f34ac99ef245af62/docs/BACKLOG.md#f-007-t01) | Name the Gauntlet release NERV needs for its new cases in docs/SOLUTI… | [nerv:F-120-T03](https://github.com/voidbrain/nerv/blob/fb055bb5a1432071d3d01d0a720ebd3420cfcf42/docs/BACKLOG.md#f-120-t03) | owner procedure |
+| 🧭 coordinator | [solution:F-007-T02](https://github.com/voidbrain/coordinator/blob/74f50b4bd04040d1b62752b3f34ac99ef245af62/docs/BACKLOG.md#f-007-t02) | Link a Gauntlet run of the new NERV cases as acceptance | [nerv:F-120-T03](https://github.com/voidbrain/nerv/blob/fb055bb5a1432071d3d01d0a720ebd3420cfcf42/docs/BACKLOG.md#f-120-t03) | owner procedure |
 | 𖣂 nerv | [nerv:F-011-T05](https://github.com/voidbrain/nerv/blob/fb055bb5a1432071d3d01d0a720ebd3420cfcf42/docs/BACKLOG.md#f-011-t05) | Record the evidence of F-011-T02 and close it | [nerv:F-011-T02](https://github.com/voidbrain/nerv/blob/fb055bb5a1432071d3d01d0a720ebd3420cfcf42/docs/BACKLOG.md#f-011-t02) | owner procedure |
 | 𖣂 nerv | [nerv:F-011-T06](https://github.com/voidbrain/nerv/blob/fb055bb5a1432071d3d01d0a720ebd3420cfcf42/docs/BACKLOG.md#f-011-t06) | Record the evidence of F-011-T03 and close it | [nerv:F-011-T02](https://github.com/voidbrain/nerv/blob/fb055bb5a1432071d3d01d0a720ebd3420cfcf42/docs/BACKLOG.md#f-011-t02) | owner procedure |
 | 𖣂 nerv | [nerv:F-004-T07](https://github.com/voidbrain/nerv/blob/fb055bb5a1432071d3d01d0a720ebd3420cfcf42/docs/BACKLOG.md#f-004-t07) | Record the evidence of F-004-T06 and close it | [nerv:F-004-T06](https://github.com/voidbrain/nerv/blob/fb055bb5a1432071d3d01d0a720ebd3420cfcf42/docs/BACKLOG.md#f-004-t06) | owner procedure |
@@ -197,12 +197,12 @@ Each open record in its backlog's order. State: Ready = an agent can start its n
 
 | Item | Title | Status | Priority | Open steps | Agent h | Owner h | State |
 |---|---|---|---|---:|---:|---:|---|
-| [solution:B-002](https://github.com/voidbrain/coordinator/blob/b3f3139c7cb654743b71842231fae0afd1fbb6a1/docs/BACKLOG.md#b-002) | check:fast fails with a bare HTTP 403 when GH_TOKEN is unset | Open | 🔹 P3 | 1 | 0.5 | 0 | Ready |
-| [solution:B-003](https://github.com/voidbrain/coordinator/blob/b3f3139c7cb654743b71842231fae0afd1fbb6a1/docs/BACKLOG.md#b-003) | Neither scheduled workflow has run on its schedule yet | Investigate | 🔹 P3 | 1 | 0.25 | 0 | Ready |
-| [solution:F-006](https://github.com/voidbrain/coordinator/blob/b3f3139c7cb654743b71842231fae0afd1fbb6a1/docs/BACKLOG.md#f-006) | NERV delivers Grover alerts end to end | Open | 🔶 P2 | 2 | 1 | 0.5 | Blocked: owner step grover:F-005-T01 |
-| [solution:F-007](https://github.com/voidbrain/coordinator/blob/b3f3139c7cb654743b71842231fae0afd1fbb6a1/docs/BACKLOG.md#f-007) | NERV capability coverage in the Gauntlet across both repositories | Open | 🔶 P2 | 2 | 1 | 0 | Blocked: owner step nerv:F-120-T03 |
-| [solution:F-009](https://github.com/voidbrain/coordinator/blob/b3f3139c7cb654743b71842231fae0afd1fbb6a1/docs/BACKLOG.md#f-009) | Reconcile to the latest harness and read built backlog views | Implemented | 🔹 P3 | 1 | 0.25 | 0 | Ready (verification) |
-| [solution:F-011](https://github.com/voidbrain/coordinator/blob/b3f3139c7cb654743b71842231fae0afd1fbb6a1/docs/BACKLOG.md#f-011) | Reconcile to harness 10.21.2: the dashboard's five overview gaps and the coordi… | Implemented | 🔹 P3 | 1 | 0 | 0 | Ready (verification) |
+| [solution:B-002](https://github.com/voidbrain/coordinator/blob/74f50b4bd04040d1b62752b3f34ac99ef245af62/docs/BACKLOG.md#b-002) | check:fast fails with a bare HTTP 403 when GH_TOKEN is unset | Open | 🔹 P3 | 1 | 0.5 | 0 | Ready |
+| [solution:B-003](https://github.com/voidbrain/coordinator/blob/74f50b4bd04040d1b62752b3f34ac99ef245af62/docs/BACKLOG.md#b-003) | Neither scheduled workflow has run on its schedule yet | Investigate | 🔹 P3 | 1 | 0.25 | 0 | Ready |
+| [solution:F-006](https://github.com/voidbrain/coordinator/blob/74f50b4bd04040d1b62752b3f34ac99ef245af62/docs/BACKLOG.md#f-006) | NERV delivers Grover alerts end to end | Open | 🔶 P2 | 2 | 1 | 0.5 | Blocked: owner step grover:F-005-T01 |
+| [solution:F-007](https://github.com/voidbrain/coordinator/blob/74f50b4bd04040d1b62752b3f34ac99ef245af62/docs/BACKLOG.md#f-007) | NERV capability coverage in the Gauntlet across both repositories | Open | 🔶 P2 | 2 | 1 | 0 | Blocked: owner step nerv:F-120-T03 |
+| [solution:F-009](https://github.com/voidbrain/coordinator/blob/74f50b4bd04040d1b62752b3f34ac99ef245af62/docs/BACKLOG.md#f-009) | Reconcile to the latest harness and read built backlog views | Implemented | 🔹 P3 | 1 | 0.25 | 0 | Ready (verification) |
+| [solution:F-011](https://github.com/voidbrain/coordinator/blob/74f50b4bd04040d1b62752b3f34ac99ef245af62/docs/BACKLOG.md#f-011) | Reconcile to harness 10.21.2: the dashboard's five overview gaps and the coordi… | Implemented | 🔹 P3 | 1 | 0 | 0 | Ready (verification) |
 
 <details><summary>🧭 coordinator: 8 open steps</summary>
 
@@ -593,12 +593,12 @@ Hours each backlog still holds, as each project's own, uncalibrated estimate. Th
 
 | Record | Outcome | Status | Human action | Effort | Component links |
 |---|---|---|---|---|---|
-| [solution:B-002](https://github.com/voidbrain/coordinator/blob/b3f3139c7cb654743b71842231fae0afd1fbb6a1/docs/BACKLOG.md#b-002) | check:fast fails with a bare HTTP 403 when GH_TOKEN is unset | Open | No | 🟢 Small | — |
-| [solution:B-003](https://github.com/voidbrain/coordinator/blob/b3f3139c7cb654743b71842231fae0afd1fbb6a1/docs/BACKLOG.md#b-003) | Neither scheduled workflow has run on its schedule yet | Investigate | No | 🟢 Small | — |
-| [solution:F-006](https://github.com/voidbrain/coordinator/blob/b3f3139c7cb654743b71842231fae0afd1fbb6a1/docs/BACKLOG.md#f-006) | NERV delivers Grover alerts end to end | Open | No | 🟢 Small | grover:F-008, nerv:F-122, nerv:F-123 |
-| [solution:F-007](https://github.com/voidbrain/coordinator/blob/b3f3139c7cb654743b71842231fae0afd1fbb6a1/docs/BACKLOG.md#f-007) | NERV capability coverage in the Gauntlet across both repositories | Open | No | 🟢 Small | nerv:F-120 |
-| [solution:F-009](https://github.com/voidbrain/coordinator/blob/b3f3139c7cb654743b71842231fae0afd1fbb6a1/docs/BACKLOG.md#f-009) | Reconcile to the latest harness and read built backlog views | Implemented | No | 🟢 Small | project-harness:F-096 |
-| [solution:F-011](https://github.com/voidbrain/coordinator/blob/b3f3139c7cb654743b71842231fae0afd1fbb6a1/docs/BACKLOG.md#f-011) | Reconcile to harness 10.21.2: the dashboard's five overview gaps and the coordinator label | Implemented | No | 🟢 Small | project-harness:B-060 |
+| [solution:B-002](https://github.com/voidbrain/coordinator/blob/74f50b4bd04040d1b62752b3f34ac99ef245af62/docs/BACKLOG.md#b-002) | check:fast fails with a bare HTTP 403 when GH_TOKEN is unset | Open | No | 🟢 Small | — |
+| [solution:B-003](https://github.com/voidbrain/coordinator/blob/74f50b4bd04040d1b62752b3f34ac99ef245af62/docs/BACKLOG.md#b-003) | Neither scheduled workflow has run on its schedule yet | Investigate | No | 🟢 Small | — |
+| [solution:F-006](https://github.com/voidbrain/coordinator/blob/74f50b4bd04040d1b62752b3f34ac99ef245af62/docs/BACKLOG.md#f-006) | NERV delivers Grover alerts end to end | Open | No | 🟢 Small | grover:F-008, nerv:F-122, nerv:F-123 |
+| [solution:F-007](https://github.com/voidbrain/coordinator/blob/74f50b4bd04040d1b62752b3f34ac99ef245af62/docs/BACKLOG.md#f-007) | NERV capability coverage in the Gauntlet across both repositories | Open | No | 🟢 Small | nerv:F-120 |
+| [solution:F-009](https://github.com/voidbrain/coordinator/blob/74f50b4bd04040d1b62752b3f34ac99ef245af62/docs/BACKLOG.md#f-009) | Reconcile to the latest harness and read built backlog views | Implemented | No | 🟢 Small | project-harness:F-096 |
+| [solution:F-011](https://github.com/voidbrain/coordinator/blob/74f50b4bd04040d1b62752b3f34ac99ef245af62/docs/BACKLOG.md#f-011) | Reconcile to harness 10.21.2: the dashboard's five overview gaps and the coordinator label | Implemented | No | 🟢 Small | project-harness:B-060 |
 
 ## Component work
 
