@@ -37,5 +37,10 @@
     "ownerHours": 0,
     "estimateAgentHours": 1
   },
-  "prs": []
+  "prs": [
+    {
+      "pr": 38,
+      "note": "dependsOn grover:F-008-T03, nerv:F-122-T02"
+    }
+  ]
 }

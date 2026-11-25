@@ -1,7 +1,7 @@
 <!-- generated: tools/solution-overview.mjs; edit docs/solution-order.md or the owning backlogs, not this file -->
 # voidbrain solution: overview
 
-Snapshot 2026-11-25T16:11:36.195Z. Status comes from each owning backlog; this page is regenerated, never edited. The [solution order](solution-order.md) is the owner's; everything else follows each repository's own priority. Hours are each project's own estimates, not cross-calibrated; no completion percentage.
+Snapshot 2026-11-25T16:14:58.510Z. Status comes from each owning backlog; this page is regenerated, never edited. The [solution order](solution-order.md) is the owner's; everything else follows each repository's own priority. Hours are each project's own estimates, not cross-calibrated; no completion percentage.
 
 ## Summary
 
@@ -610,7 +610,7 @@ Possible missing steps, found by reading every backlog. Each row proposes a reco
 
 | Source | Revision | Read from | Open records | Open steps |
 |---|---|---|---:|---:|
-| 🧭 coordinator | [b9615f001d04](https://github.com/voidbrain/coordinator/commit/b9615f001d043c4b498bde5afd2e382bc90c4d29) | working checkout; local changes present, read as they are (not a committed snapshot) | 6 | 9 |
+| 🧭 coordinator | [d0dd09293938](https://github.com/voidbrain/coordinator/commit/d0dd09293938389088dd99fcf0ec18438be9aa50) | working checkout; local changes present, read as they are (not a committed snapshot) | 6 | 9 |
 | 𖣂 nerv | [9db5bf810b9c](https://github.com/voidbrain/nerv/commit/9db5bf810b9cffe97705ffefa619462ff0e7020d) | GitHub | 72 | 131 |
 | 🤖 gauntlet-protocol | [2339e413222c](https://github.com/voidbrain/gauntlet-protocol/commit/2339e413222c65a205cf8dc0f94d00f704cca7af) | GitHub | 3 | 9 |
 | 🦺 project-harness | [5b1fd43411f1](https://github.com/voidbrain/project-harness/commit/5b1fd43411f1621dee50598f23d41fec6723ebd0) | GitHub | 3 | 7 |
