@@ -4,7 +4,7 @@
   "parent": "B-001",
   "title": "Show closed order items as Done and drop them from the order in the refresh",
   "goal": "Show closed order items as Done and drop them from the order in the refresh",
-  "status": "implemented",
+  "status": "closed",
   "acceptance": [
     "An order item in its repository's archive or closed in its work-item data shows ✅ Done with where it closed, and is no problem",
     "The refresh drops Done items from docs/solution-order.md and renumbers; the workflow commits the order with the views",
@@ -45,6 +45,10 @@
     {
       "pr": 16,
       "note": "fix and tests"
+    },
+    {
+      "pr": 18,
+      "note": "verified: refresh run 45575332245 and PR #17"
     }
   ]
 }
