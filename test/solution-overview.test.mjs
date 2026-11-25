@@ -376,8 +376,10 @@ test('an order item closed in its repository is Done with where it closed, not a
   });
   // A plain heading whose section names no date takes the date of its "Closed" day.
   assert.equal(closedIn('F-010', { archives }).date, '2026-11-24');
-  // A step of an archived record closed with it.
+  // A step of an archived record closed with it, when the archived section names it.
   assert.equal(closedIn('B-121-T02', { archives }).where, 'docs/archive/backlog-2026.md');
+  // Review of B-001: a mistyped step of an archived record is not Done.
+  assert.equal(closedIn('B-121-T99', { archives }), null);
   // A step closed in the work-item data.
   assert.deepEqual(closedIn('F-030-T02', { archives, task: fixture('closed-task.json') }), {
     where: 'docs/work/tasks/F-030-T02.json',

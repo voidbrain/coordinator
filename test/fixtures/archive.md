@@ -27,6 +27,6 @@ Closed records, moved from the active backlog with their full history. Dated evi
 <details>
 <summary>Next action, estimates and PR history</summary>
 
-**Next action / closure evidence:** Closed 2026-11-25: PR #1 merged on green CI.
+**Next action / closure evidence:** Closed 2026-11-25: PR #1 merged on green CI; B-121-T02 closed with it.
 
 </details>
