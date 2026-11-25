@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "id": "F-012-T05",
+  "parent": "F-012",
+  "title": "Add voidbrain/ui to the solution and propose its adoption",
+  "goal": "voidbrain/ui is a component of the solution, with its contract and first release in docs/SOLUTION.md, and adoption is proposed to each UI project",
+  "status": "planned",
+  "acceptance": [
+    "`.solution.json` lists ui; docs/SOLUTION.md names what it owns, the token and component contract, and the release each project pins",
+    "Gap proposals for nerv, grover and fpvbuddy adoption are written for the owner; the library's own build is planned in its own backlog"
+  ],
+  "dependsOn": [
+    "F-012-T04"
+  ],
+  "resources": [
+    "docs/SOLUTION.md",
+    ".solution.json",
+    "docs/work/records/F-012.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "1 h",
+    "basis": "Estimated 2026-11-25: one component entry, a compatibility row and three gap proposals. Not a measurement.",
+    "reviewed": "2026-11-25",
+    "agentHours": 1,
+    "baselineAgentHours": 1,
+    "estimateAgentHours": 1,
+    "ownerHours": 0
+  }
+}

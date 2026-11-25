@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "id": "F-012-T02",
+  "parent": "F-012",
+  "title": "Design-token contract matching NERV's style guide",
+  "goal": "docs/SOLUTION.md defines the shared design tokens (colours, spacing, type) as CSS custom properties, taken from nerv docs/STYLE-GUIDE.md, with each project's current values mapped to them",
+  "status": "planned",
+  "acceptance": [
+    "A token table (name, value, use) in docs/SOLUTION.md matches nerv docs/STYLE-GUIDE.md on main",
+    "Grover's and FPVBuddy's current colours, spacing and type are mapped to the tokens, with the differences listed for the owner"
+  ],
+  "dependsOn": [
+    "F-012-T01"
+  ],
+  "resources": [
+    "docs/SOLUTION.md",
+    "docs/work/records/F-012.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "2 h",
+    "basis": "Estimated 2026-11-25: read three style sheets and write the mapping. Not a measurement.",
+    "reviewed": "2026-11-25",
+    "agentHours": 2,
+    "baselineAgentHours": 2,
+    "estimateAgentHours": 2,
+    "ownerHours": 0
+  }
+}

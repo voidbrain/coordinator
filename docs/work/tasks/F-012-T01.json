@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "id": "F-012-T01",
+  "parent": "F-012",
+  "title": "Angular version contract: every UI component on Angular 22",
+  "goal": "docs/SOLUTION.md records that NERV web/src, Grover apps/client and FPVBuddy target the same Angular major (22), and FPVBuddy's upgrade from 21 is proposed to its backlog",
+  "status": "planned",
+  "acceptance": [
+    "Version compatibility in docs/SOLUTION.md names each UI project's Angular major, read from its package.json on main",
+    "A gap proposal for fpvbuddy (Angular 21 to 22) is written for the owner; the coordinator does not upgrade FPVBuddy"
+  ],
+  "dependsOn": [],
+  "resources": [
+    "docs/SOLUTION.md",
+    "docs/work/records/F-012.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "0.5 h",
+    "basis": "Estimated 2026-11-25: read three package.json files, one table row and one gap proposal. Not a measurement.",
+    "reviewed": "2026-11-25",
+    "agentHours": 0.5,
+    "baselineAgentHours": 0.5,
+    "estimateAgentHours": 0.5,
+    "ownerHours": 0
+  }
+}

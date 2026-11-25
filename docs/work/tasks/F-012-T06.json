@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "id": "F-012-T06",
+  "parent": "F-012",
+  "title": "Integration acceptance: the three projects on one library release",
+  "goal": "NERV, Grover and FPVBuddy pin the same voidbrain/ui release and use its tokens, checked from their main branches",
+  "status": "planned",
+  "acceptance": [
+    "Version compatibility shows each project's pinned voidbrain/ui release; an integration-acceptance row says how it is checked",
+    "Any project still on its own copy of a shared component is listed, not fixed here"
+  ],
+  "dependsOn": [
+    "F-012-T05"
+  ],
+  "resources": [
+    "docs/SOLUTION.md",
+    "docs/work/records/F-012.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "1 h",
+    "basis": "Estimated 2026-11-25: read three package.json files and their style imports after adoption. Not a measurement.",
+    "reviewed": "2026-11-25",
+    "agentHours": 1,
+    "baselineAgentHours": 1,
+    "estimateAgentHours": 1,
+    "ownerHours": 0
+  }
+}
