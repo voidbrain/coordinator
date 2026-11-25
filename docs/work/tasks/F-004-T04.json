@@ -4,7 +4,7 @@
   "parent": "F-004",
   "title": "Owner takes Proposal 4 (the overview's layout the dashboard lacks) to a project-harness session",
   "goal": "The template records, or declines, the layout parts of the overview the owner relies on",
-  "status": "planned",
+  "status": "closed",
   "acceptance": [
     "A template record covers Proposal 4, or the owner declines it and the overview is retired as it stands"
   ],
@@ -28,10 +28,10 @@
   "effort": {
     "size": "small",
     "estimate": "0.25 h owner",
-    "basis": "Estimated 2026-11-25: one template session reads Proposal 4. Not a measurement.",
+    "basis": "Estimated 2026-11-25: one template session reads Proposal 4. Not a measurement. Done 2026-11-25: the owner approved Proposal 4 and took it to the template, which shipped it as project-harness F-099 in v10.21.0 (owner layout: emoji and links per row, open prerequisites, agent and owner hours apart, summary with harness, next audit and totals, Blocked / Nothing to do / Waiting for the owner tables, top-level emoji), with Markdown link escaping fixed in v10.21.1 (B-059). No actual: owner time not measured.",
     "reviewed": "2026-11-25",
     "agentHours": 0,
-    "ownerHours": 0.25,
+    "ownerHours": 0,
     "ownerKind": "procedure"
   },
   "prs": [],

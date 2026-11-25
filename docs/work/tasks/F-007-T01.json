@@ -8,7 +8,11 @@
   "acceptance": [
     "Name the Gauntlet release NERV needs for its new cases in docs/SOLUTION.md (waits on nerv:F-120)"
   ],
-  "dependsOn": [],
+  "dependsOn": [
+    "nerv:F-120-T01",
+    "nerv:F-120-T02",
+    "nerv:F-120-T03"
+  ],
   "resources": [
     "docs/SOLUTION.md",
     "docs/work/records/F-007.md",
