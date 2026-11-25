@@ -52,6 +52,13 @@ test('10.21 order layout: dropping Done items is allowed, dropping a Ready one i
   ]);
 });
 
+test('numbered rows of a later table are not read with the order table columns', () => {
+  const later = `${dashboard1021(false)}\n\n## Other\n\n| Kind | x | Item | y | Status |\n|---|---|---|---|---|\n| 2 | 🅰 | a:F-002 | t | Closed: ✅ Done: closed in [x](y) |`;
+  assert.deepEqual(orderReasons(before, order('a:F-001 — one', 'a:F-003 — three'), later), [
+    'docs/solution-order.md: a:F-002 was removed but the dashboard does not show it Closed',
+  ]);
+});
+
 test('dropping an item the dashboard does not show Closed is refused', () => {
   assert.deepEqual(orderReasons(before, order('a:F-001 — one', 'a:F-003 — three'), dashboard(false)), [
     'docs/solution-order.md: a:F-002 was removed but the dashboard does not show it Closed',

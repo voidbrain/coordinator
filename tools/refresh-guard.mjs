@@ -34,6 +34,12 @@ function closedRefs(dashboard) {
   let item = -1;
   let status = -1;
   for (const line of dashboard.split('\n')) {
+    // The order table ends at the first line that is not a table row; numbered rows of a later table are not read.
+    if (!line.startsWith('|')) {
+      item = -1;
+      status = -1;
+      continue;
+    }
     const cells = line.split(/(?<!\\)\|/).map((c) => c.trim());
     if (cells[1] === '#') {
       item = cells.indexOf('Item');
