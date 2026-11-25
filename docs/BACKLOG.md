@@ -348,11 +348,11 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks |
-|---|---|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-013-t01"></a>F-013-T01 — Add openbando to the solution and write the domain map | 1 h | 0 h | 0 h | Implemented; verification pending | — | [F-013-T02](#f-013-t02) |
-| 🟢 Small | <a id="f-013-t02"></a>F-013-T02 — First gap review against the domain map | 0.5 h | 0 h | 0.5 h | Planned | [F-013-T01](#f-013-t01) | — |
-| 🟢 Small | **Total** | 1.5 h | 0 h (0 of 2 steps recorded) | 0.5 h | 0 of 2 completed | | |
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | PRs |
+|---|---|---|---|---|---|---|---|---|
+| 🟢 Small | <a id="f-013-t01"></a>F-013-T01 — Add openbando to the solution and write the domain map | 1 h | 0 h | 0 h | Implemented; verification pending | — | [F-013-T02](#f-013-t02) | [PR #46](https://github.com/voidbrain/coordinator/pull/46) |
+| 🟢 Small | <a id="f-013-t02"></a>F-013-T02 — First gap review against the domain map | 0.5 h | 0 h | 0.5 h | Planned | [F-013-T01](#f-013-t01) | — | — |
+| 🟢 Small | **Total** | 1.5 h | 0 h (0 of 2 steps recorded) | 0.5 h | 0 of 2 completed | | | |
 
 <details>
 <summary>Next action, estimates and PR history</summary>
@@ -361,7 +361,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Owner request and approval 2026-11-25. No review: documentation only, a few lines in adapted files (`.solution.json`, AGENTS.md, docs/SOLUTION.md), no behaviour |
+| PR / evidence | Steps: F-013-T01: [PR #46](https://github.com/voidbrain/coordinator/pull/46). [#46](https://github.com/voidbrain/coordinator/pull/46); owner request and approval 2026-11-25. No review: documentation only, a few lines in adapted files (`.solution.json`, AGENTS.md, docs/SOLUTION.md), no behaviour |
 | Opened | 2026-11-25 |
 | Verification | Pending |
 | Reviewed | 2026-11-25 |
