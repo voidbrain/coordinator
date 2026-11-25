@@ -4,6 +4,7 @@
   "repository": "voidbrain/coordinator",
   "backlog": "docs/BACKLOG.md",
   "dashboard": "docs/SOLUTION-DASHBOARD.md",
+  "order": "docs/solution-order.md",
   "repositories": [
     {
       "id": "nerv",

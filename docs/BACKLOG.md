@@ -3,7 +3,7 @@
 Current work ledger, reviewed 24 November 2026 against main `e03eb0c`. Cross-repository work only; each component's work lives in its own backlog ([overview](SOLUTION-OVERVIEW.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 6 h agent + 0.5 h owner across 8 open steps of 6 features. 2.25 h of actual effort recorded on 2 steps. Generated from the task files.
+**Remaining effort:** 4.25 h agent + 0.75 h owner across 9 open steps of 6 features. 2.25 h of actual effort recorded on 2 steps. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -147,9 +147,9 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔶 P2 | 🟡 Medium | 2 h | — | — | 🤖 | — | — |
+| 🔴 Open | 🔶 P2 | 🟡 Medium | 1.5 h agent + 0.25 h owner | — | — | ⏳ | 🧑‍🔧 | — |
 
-💻 **→** Next: F-004-T02 — Reconcile to the template release that ships the proposal and retire the project tool (Planned).
+🧑 **→** Next: [🧑‍🔧](proposals/solution-order-in-template.md#proposal-3-what-the-shipped-dashboard-still-misses-found-reconciling-to-10200-f-004-t02) F-004-T03 — Owner takes Proposal 3 (dashboard defects found at the 10.20.0 reconcile) to a project-harness session (Planned).
 
 | | |
 |---|---|
@@ -159,10 +159,11 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status | Who |
-|---|---|---|---|---|---|:---:|
-| 🟡 Medium | <a id="f-004-t02"></a>F-004-T02 — Reconcile to the template release that ships the proposal and retire the project tool | 2 h | 0 h | 2 h | Planned | 🤖 |
-| 🟡 Medium | **Total** | 2 h (1 of 2 steps) | 0 h (0 of 2 steps recorded) | 2 h | 1 of 2 completed | |
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who |
+|---|---|---|---|---|---|---|---|:---:|
+| 🟢 Small | <a id="f-004-t03"></a>F-004-T03 — Owner takes Proposal 3 (dashboard defects found at the 10.20.0 reconcile) to a project-harness session | — | 0 h | 0 h agent + 0.25 h owner | Planned | — | [F-004-T02](#f-004-t02) | [🧑‍🔧](proposals/solution-order-in-template.md#proposal-3-what-the-shipped-dashboard-still-misses-found-reconciling-to-10200-f-004-t02) |
+| 🟡 Medium | <a id="f-004-t02"></a>F-004-T02 — Reconcile to the template release that ships the proposal and retire the project tool | 2 h | 0 h | 1.5 h | Planned | [F-004-T03](#f-004-t03) | — | ⏳ 🤖 |
+| 🟡 Medium | **Total** | 2 h (1 of 3 steps) | 0 h (0 of 3 steps recorded) | 1.5 h agent + 0.25 h owner | 1 of 3 completed | | | |
 
 <details><summary>Done steps (1)</summary>
 
@@ -182,7 +183,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | PR / evidence | — |
 | Opened | 2026-11-24 |
 | Verification | Pending |
-| Reviewed | 2026-11-24 |
+| Reviewed | 2026-11-25 |
 
 </details>
 
@@ -276,9 +277,9 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔹 P3 | 🟡 Medium | 1.5 h | — | — | 🤖 | — | — |
+| 🟡 Implemented | 🔹 P3 | 🟢 Small | 0.25 h | — | — | 🤖 | — | — |
 
-💻 **→** Next: from tasks; F-009-T01 starts only once the project-harness template backlog is empty.
+💻 **→** Next: from tasks; F-009-T01 is verified once NERV publishes built views (nerv:F-125) and a refresh reads them.
 
 | | |
 |---|---|
@@ -290,8 +291,8 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | PRs |
 |---|---|---|---|---|---|---|
-| 🟡 Medium | <a id="f-009-t01"></a>F-009-T01 — Reconcile to the latest harness and read built backlog views | 1.5 h | 0 h | 1.5 h | Planned | [PR #19](https://github.com/voidbrain/coordinator/pull/19) |
-| 🟡 Medium | **Total** | 1.5 h | 0 h (0 of 1 steps recorded) | 1.5 h | 0 of 1 completed | |
+| 🟢 Small | <a id="f-009-t01"></a>F-009-T01 — Reconcile to the latest harness and read built backlog views | 1.5 h | 0 h | 0.25 h | Implemented; verification pending | [PR #19](https://github.com/voidbrain/coordinator/pull/19) |
+| 🟢 Small | **Total** | 1.5 h | 0 h (0 of 1 steps recorded) | 0.25 h | 0 of 1 completed | |
 
 <details>
 <summary>Next action, estimates and PR history</summary>

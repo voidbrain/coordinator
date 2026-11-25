@@ -21,19 +21,21 @@ export function readOrder(text, ids, ORDER = 'docs/solution-order.md') {
   const seen = new Set();
   for (const line of text.slice(start, end).split('\n').slice(1)) {
     if (!line.trim()) continue;
-    const m = /^(\d+)\. `([^`]+)`(?: — (.*))?$/.exec(line.trim());
+    // The template's format (harness 10.12.1, F-004-T02): "N. repo:ID — note", this repository named `solution`.
+    const m = /^(\d+)\. (\S+)(?: — (.*))?$/.exec(line.trim());
     if (!m) {
-      problems.push(`${ORDER}: not an order line ("N. \`repo:ID\` — note"): ${line.trim()}`);
+      problems.push(`${ORDER}: not an order line ("N. repo:ID — note"): ${line.trim()}`);
       continue;
     }
     const ref = REF.exec(m[2]);
+    const repo = ref?.[1] === 'solution' ? COORDINATOR : ref?.[1];
     if (!ref) problems.push(`${ORDER}: ${m[2]} is not repo:ID (B-nnn, F-nnn or a step ID such as F-005-T29)`);
-    else if (!ids.has(ref[1])) problems.push(`${ORDER}: ${m[2]} names no manifest repository (${[...ids].join(', ')})`);
+    else if (!ids.has(repo)) problems.push(`${ORDER}: ${m[2]} names no manifest repository (${[...ids].join(', ')})`);
     if (seen.has(m[2])) problems.push(`${ORDER}: ${m[2]} is listed twice`);
     if (Number(m[1]) !== items.length + 1)
       problems.push(`${ORDER}: line "${m[1]}." should be numbered ${items.length + 1}`);
     seen.add(m[2]);
-    items.push({ ref: m[2], repo: ref?.[1], id: ref?.[2], note: m[3] ?? '' });
+    items.push({ ref: m[2], repo, id: ref?.[2], note: m[3] ?? '' });
   }
   return { items, problems };
 }
@@ -52,10 +54,10 @@ export function pruneOrder(text, refs) {
     .split('\n')
     .map((line, i) => {
       if (i === 0) return line;
-      const m = /^(\d+)\. `([^`]+)`(.*)$/.exec(line.trim());
+      const m = /^(\d+)\. (\S+)(.*)$/.exec(line.trim());
       if (!m) return line;
       if (drop.has(m[2])) return null;
-      return `${++n}. \`${m[2]}\`${m[3]}`;
+      return `${++n}. ${m[2]}${m[3]}`;
     })
     .filter((line) => line !== null);
   return text.slice(0, start) + lines.join('\n') + text.slice(end);
