@@ -296,7 +296,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Steps: F-010-T01: [PR #31](https://github.com/voidbrain/coordinator/pull/31); [PR #32](https://github.com/voidbrain/coordinator/pull/32) first self-merged refresh PR · F-010-T02: [PR #32](https://github.com/voidbrain/coordinator/pull/32). [PR #31](https://github.com/voidbrain/coordinator/pull/31) merged; refresh [PR #32](https://github.com/voidbrain/coordinator/pull/32) merged itself |
+| PR / evidence | Steps: F-010-T01: [PR #31](https://github.com/voidbrain/coordinator/pull/31); [PR #32](https://github.com/voidbrain/coordinator/pull/32) first self-merged refresh PR · F-010-T02: [PR #32](https://github.com/voidbrain/coordinator/pull/32). Recorded in [PR #33](https://github.com/voidbrain/coordinator/pull/33); [PR #31](https://github.com/voidbrain/coordinator/pull/31) merged; refresh [PR #32](https://github.com/voidbrain/coordinator/pull/32) merged itself |
 | Components | — |
 | Opened | 2026-11-25 |
 | Verification | Partial 2026-11-25: self-merge verified (PR #32); branch deletion pending |
