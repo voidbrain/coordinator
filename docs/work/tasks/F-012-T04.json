@@ -4,13 +4,12 @@
   "parent": "F-012",
   "title": "Owner: create the voidbrain/bricks library repository",
   "goal": "The owner creates the voidbrain/bricks repository (Bricks 🧱, Angular library @voidbrain/bricks; name decided 2026-11-25) and chooses its visibility and how it publishes",
-  "status": "planned",
+  "status": "implemented",
   "acceptance": [
-    "Name decided 2026-11-25: Bricks, emoji 🧱, repository voidbrain/bricks, Angular library package @voidbrain/bricks; the owner chooses visibility and publishing (GitHub Packages npm or Git tags) and creates the repository; web components only if a non-Angular consumer appears"
+    "Name decided 2026-11-25: Bricks, emoji 🧱, repository voidbrain/bricks, Angular library package @voidbrain/bricks; web components only if a non-Angular consumer appears",
+    "Done 2026-11-25 at the owner's request, before F-012-T03 and nerv:F-130 (started early): the repository exists, public; publishing on public npm with trusted publishing (owner decision 2026-11-25, bricks:F-004)"
   ],
-  "dependsOn": [
-    "F-012-T03"
-  ],
+  "dependsOn": [],
   "resources": [
     "docs/SOLUTION.md",
     "docs/work/records/F-012.md",
@@ -28,13 +27,13 @@
   ],
   "effort": {
     "size": "small",
-    "estimate": "0.25 h owner",
-    "basis": "Estimated 2026-11-25: one decision on the options T03 writes down. Not a measurement.",
+    "estimate": "0 remaining",
+    "basis": "Done 2026-11-25: the owner approved creating the repository early; visibility public and npm publishing decided that day. Not a measurement.",
     "reviewed": "2026-11-25",
     "agentHours": 0,
     "baselineAgentHours": 0,
     "estimateAgentHours": 0,
-    "ownerHours": 0.25,
+    "ownerHours": 0,
     "ownerKind": "decision"
   }
 }
