@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "id": "B-001-T01",
+  "parent": "B-001",
+  "title": "Show closed order items as Done and drop them from the order in the refresh",
+  "goal": "Show closed order items as Done and drop them from the order in the refresh",
+  "status": "implemented",
+  "acceptance": [
+    "An order item in its repository's archive or closed in its work-item data shows ✅ Done with where it closed, and is no problem",
+    "The refresh drops Done items from docs/solution-order.md and renumbers; the workflow commits the order with the views",
+    "An ID in neither the active backlog nor the archive still fails the refresh",
+    "A Refresh solution views run on main succeeds"
+  ],
+  "dependsOn": [],
+  "resources": [
+    "tools/solution-overview.mjs",
+    "tools/solution-overview-lib.mjs",
+    "tools/refresh-branch.mjs",
+    ".github/workflows/refresh-views.yml",
+    "test/**",
+    "docs/work/records/B-001.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "validation": [
+    "Test: test/solution-overview.test.mjs (closed order items), test/refresh-branch.test.mjs (order conflict); check:fast; a Refresh solution views run"
+  ],
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "2 h",
+    "basis": "Estimated 2026-11-25: archive lookup, order pruning and workflow change with fixtures. Not a measurement.",
+    "reviewed": "2026-11-25",
+    "agentHours": 2,
+    "ownerHours": 0,
+    "estimateAgentHours": 2
+  },
+  "prs": [
+    {
+      "pr": 16,
+      "note": "fix and tests"
+    }
+  ]
+}

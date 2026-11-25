@@ -38,6 +38,89 @@ export function readOrder(text, ids, ORDER = 'docs/solution-order.md') {
   return { items, problems };
 }
 
+// The order with the given references removed and the rest renumbered; everything outside the markers is kept.
+// The refresh drops Done items this way (docs/solution-order.md: "A closed or archived item is removed in the next
+// reorder or refresh PR").
+export function pruneOrder(text, refs) {
+  const start = text.indexOf('<!-- order:start -->');
+  const end = text.indexOf('<!-- order:end -->');
+  if (!refs.length || start < 0 || end < start) return text;
+  const drop = new Set(refs);
+  let n = 0;
+  const lines = text
+    .slice(start, end)
+    .split('\n')
+    .map((line, i) => {
+      if (i === 0) return line;
+      const m = /^(\d+)\. `([^`]+)`(.*)$/.exec(line.trim());
+      if (!m) return line;
+      if (drop.has(m[2])) return null;
+      return `${++n}. \`${m[2]}\`${m[3]}`;
+    })
+    .filter((line) => line !== null);
+  return text.slice(0, start) + lines.join('\n') + text.slice(end);
+}
+
+// Where an ID that is not in its repository's active backlog closed, or null when it is in neither place (a wrong
+// ID). `archives` are [{path, text}] of the repository's closed-backlog files; `task` is the text of its
+// docs/work/tasks/<ID>.json and `record` of docs/work/records/<ID>.md, when they exist. A step closes with its
+// archived record when that record's section names it.
+export function closedIn(id, { archives = [], task = null, record = null } = {}) {
+  const recordId = id.replace(/-T\d+$/, '');
+  for (const { path, text } of archives) {
+    const lines = text.split('\n');
+    const at = lines.findIndex((l) => HEADING.exec(l)?.[1] === recordId);
+    if (at < 0) continue;
+    const next = lines.findIndex((l, i) => i > at && /^#{2,3} /.test(l));
+    const section = lines.slice(at, next < 0 ? lines.length : next).join('\n');
+    const day = lines
+      .slice(0, at)
+      .reverse()
+      .map((l) => /^## Closed (\d{4}-\d{2}-\d{2})/.exec(l)?.[1])
+      .find(Boolean);
+    const date = /\bClosed (\d{4}-\d{2}-\d{2})/.exec(section)?.[1] ?? day ?? null;
+    // A step closed with its record only when the archived section names it: a mistyped step ID stays a problem.
+    if (id !== recordId && !new RegExp(`\\b${id}\\b`).test(section)) break;
+    return { where: path, anchor: recordId.toLowerCase(), date };
+  }
+  if (record) {
+    const [r] = parseBacklog(record, 'record');
+    if (r?.id === recordId && r.status === 'Closed')
+      return { where: `docs/work/records/${recordId}.md`, anchor: null, date: null };
+  }
+  if (task && id !== recordId) {
+    let data = null;
+    try {
+      data = JSON.parse(task);
+    } catch {
+      // an unreadable task file says nothing about closure
+    }
+    if (data?.id === id && data.status === 'closed')
+      return { where: `docs/work/tasks/${id}.json`, anchor: null, date: null };
+  }
+  return null;
+}
+
+// What the overview shows for one order item and whether it is a problem. `hit` is its entry in the active-backlog
+// index, `closure` what closedIn found. Only an ID in neither the active backlog nor the archive is a problem.
+export function orderItemState(o, { hit, source, closure = null }) {
+  if (hit) return { kind: 'open', problem: null };
+  if (!source?.available) return { kind: 'unavailable', text: 'Source unavailable', problem: null };
+  if (isPending(o)) return { kind: 'pending', text: 'Pending: not in its backlog yet', problem: null };
+  if (closure)
+    return {
+      kind: 'done',
+      text: `✅ Done: closed${closure.date ? ` ${closure.date}` : ''} in ${closure.where}`,
+      closure,
+      problem: null,
+    };
+  return {
+    kind: 'missing',
+    text: 'Not in the active backlog or its archive (wrong ID?)',
+    problem: `${o.ref} is not in ${o.repo}'s active backlog or its archive; remove it or fix the ID`,
+  };
+}
+
 // ---------- backlog parsing ----------
 export const cells = (line) =>
   line
@@ -325,11 +408,11 @@ export function gapReview(sources, order, index, link) {
   // 5. Solution order items whose record does not exist.
   for (const o of order.items) {
     const src = sources.find((x) => x.id === o.repo);
-    if (src?.available && !index.has(o.ref) && !isPending(o))
+    if (src?.available && !index.has(o.ref) && !isPending(o) && !o.done)
       gaps.push({
         kind: '5 Order item missing',
         where: `[solution order](solution-order.md)`,
-        evidence: `${o.ref} is not in ${o.repo}'s active backlog`,
+        evidence: `${o.ref} is not in ${o.repo}'s active backlog or its archive`,
         proposal: `coordinator: remove ${o.ref} from the order, or ${o.repo}: create the record the owner meant`,
       });
   }

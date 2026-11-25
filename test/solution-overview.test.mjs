@@ -18,6 +18,9 @@ import {
   reviewStatus,
   idleReason,
   isPending,
+  closedIn,
+  orderItemState,
+  pruneOrder,
 } from '../tools/solution-overview-lib.mjs';
 
 const fixture = (name) => readFileSync(new URL(`./fixtures/${name}`, import.meta.url), 'utf8');
@@ -342,7 +345,7 @@ test('an order item marked pending is shown but is not a missing-record gap unti
   );
   assert.deepEqual(
     missing.map((g) => g.evidence),
-    ["example:F-002 is not in example's active backlog"],
+    ["example:F-002 is not in example's active backlog or its archive"],
   );
 });
 
@@ -360,4 +363,73 @@ test("a generated record whose next line is the owner's (🧑) is in the owner's
 `;
   const [record] = parseBacklog(md, 'example');
   assert.equal(recordState(record), 'Owner: procedure');
+});
+
+// B-001: an order item closed in its own repository failed the daily refresh ("is not in X's active backlog").
+test('an order item closed in its repository is Done with where it closed, not a problem', () => {
+  const archives = [{ path: 'docs/archive/backlog-2026.md', text: fixture('archive.md') }];
+  // A record archived under the template's linked heading, with its closing date.
+  assert.deepEqual(closedIn('B-121', { archives }), {
+    where: 'docs/archive/backlog-2026.md',
+    anchor: 'b-121',
+    date: '2026-11-25',
+  });
+  // A plain heading whose section names no date takes the date of its "Closed" day.
+  assert.equal(closedIn('F-010', { archives }).date, '2026-11-24');
+  // A step of an archived record closed with it, when the archived section names it.
+  assert.equal(closedIn('B-121-T02', { archives }).where, 'docs/archive/backlog-2026.md');
+  // Review of B-001: a mistyped step of an archived record is not Done.
+  assert.equal(closedIn('B-121-T99', { archives }), null);
+  // A step closed in the work-item data.
+  assert.deepEqual(closedIn('F-030-T02', { archives, task: fixture('closed-task.json') }), {
+    where: 'docs/work/tasks/F-030-T02.json',
+    anchor: null,
+    date: null,
+  });
+  // An open step in the work-item data, or an ID in neither place, is not closed.
+  assert.equal(closedIn('F-030-T02', { task: fixture('closed-task.json').replace('closed', 'planned') }), null);
+  assert.equal(closedIn('F-999', { archives }), null);
+
+  const order = readOrder(
+    '<!-- order:start -->\n1. `example:B-121` — archived\n2. `example:F-999` — wrong ID\n3. `example:F-001` — pending: example PR #2\n<!-- order:end -->',
+    new Set(['coordinator', 'example']),
+  );
+  const source = { id: 'example', available: true };
+  const [done, unknown, pending] = order.items.map((o) =>
+    orderItemState(o, { hit: null, source, closure: closedIn(o.id, { archives }) }),
+  );
+  assert.equal(done.kind, 'done');
+  assert.equal(done.problem, null);
+  assert.match(done.text, /^✅ Done: closed 2026-11-25 in docs\/archive\/backlog-2026\.md/);
+  assert.equal(unknown.kind, 'missing');
+  assert.match(unknown.problem, /example:F-999 is not in example's active backlog or its archive/);
+  assert.equal(pending.kind, 'pending');
+  assert.equal(pending.problem, null);
+  assert.equal(orderItemState(order.items[0], { hit: null, source: { available: false } }).kind, 'unavailable');
+
+  // Done items are not "order item missing" gaps.
+  order.items[0].done = done;
+  const sources = [
+    { id: 'coordinator', repository: 'acme/coordinator', available: true, records: [] },
+    { id: 'example', repository: 'acme/example', available: true, records: [] },
+  ];
+  const missing = gapReview(sources, order, new Map(), (s, id) => `${s.id}:${id}`).filter((g) =>
+    g.kind.startsWith('5'),
+  );
+  assert.deepEqual(
+    missing.map((g) => g.evidence),
+    ["example:F-999 is not in example's active backlog or its archive"],
+  );
+});
+
+test('the refresh drops Done items from the order and renumbers it, leaving the rest of the file', () => {
+  const text =
+    '# Solution order\n\nIntro.\n\n<!-- order:start -->\n1. `example:F-001` — first\n2. `example:B-121` — archived\n3. `example:F-002`\n4. `example:F-010` — also closed\n<!-- order:end -->\n';
+  const pruned = pruneOrder(text, ['example:B-121', 'example:F-010']);
+  assert.equal(
+    pruned,
+    '# Solution order\n\nIntro.\n\n<!-- order:start -->\n1. `example:F-001` — first\n2. `example:F-002`\n<!-- order:end -->\n',
+  );
+  assert.deepEqual(readOrder(pruned, new Set(['coordinator', 'example'])).problems, []);
+  assert.equal(pruneOrder(text, []), text);
 });

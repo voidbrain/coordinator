@@ -6,13 +6,17 @@
 // never read as "no PR open", which would delete the open PR's branch.
 //
 // open: a refresh PR from <branch> is open. Continue it and bring it up to date with origin/main by a merge (never a
-//       force-push). When only the generated views conflict, take main's copy of them (they are regenerated next);
-//       any other conflict aborts the merge and fails, so a person looks at it.
+//       force-push). When only the generated views or the solution order conflict, take main's copy of them (the
+//       views are regenerated and the order's Done items dropped again by the solution:refresh step that runs after
+//       this one, B-001); any other conflict aborts the
+//       merge and fails, so a person looks at it.
 // none: no open refresh PR (never opened, merged, or closed unmerged). Start again from origin/main; a leftover
 //       remote branch is deleted first so the next push needs no force.
 import { execFileSync } from 'node:child_process';
 
 export const VIEWS = ['docs/SOLUTION-OVERVIEW.md', 'docs/SOLUTION-DASHBOARD.md'];
+// Files the refresh writes: the views, and the order it drops Done items from (B-001).
+export const REFRESHED = [...VIEWS, 'docs/solution-order.md'];
 
 const git = (cwd, ...args) =>
   execFileSync('git', args, { cwd, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim();
@@ -35,7 +39,7 @@ export function prepare(cwd, branch, pr) {
     // No conflict: the merge did not start (no identity, a dirty tree); report git's own reason.
     if (!conflicts.length)
       throw new Error(`Merging origin/main into ${branch} failed: ${String(error.stderr ?? error.message).trim()}`);
-    const others = conflicts.filter((f) => !VIEWS.includes(f));
+    const others = conflicts.filter((f) => !REFRESHED.includes(f));
     if (others.length) {
       git(cwd, 'merge', '--abort');
       throw new Error(
