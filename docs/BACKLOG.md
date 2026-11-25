@@ -238,7 +238,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | — |
+| PR / evidence | [#40](https://github.com/voidbrain/coordinator/pull/40) |
 | Components | project-harness:B-060 |
 | Opened | 2026-11-25 |
 | Verification | Pending |
