@@ -19,20 +19,18 @@ Set by the owner on 2026-11-24 (F-002): the proposed order kept as 1–17, `grov
 
 <!-- order:start -->
 1. nerv:B-118 — Windows CI limit: every NERV PR waits on it
-2. nerv:B-124 — re-target fences the running main too early (P1, relocation safety)
-3. nerv:B-125 — replayable signed Kaji reply (P2, security)
-4. nerv:F-016 — relocate the coordinator without split brain (after B-124)
-5. nerv:B-091 — prerequisite of nerv:F-005-T29
-6. nerv:F-005 — remote workers (after B-091)
-7. nerv:B-119 — prerequisite of nerv:F-006
-8. grover:F-008 — alerts NERV can deliver (cross-repository)
-9. nerv:F-120 — Gauntlet coverage of NERV capabilities (cross-repository)
-10. nerv:F-122 — Grover alert delivery, unblocks grover:F-008
-11. nerv:F-123 — MCP connection to Grover's hub
-12. fpvbuddy:F-005 — M1 FPV battery core; T02 waits on nerv:F-101-T04
-13. nerv:F-121 — printed parts per drone, print by chat
-14. grover:F-011 — implemented P1 feed cycle; owner try-out pending
-15. grover:F-004 — implemented P1 probe calibration
-16. nerv:F-006 — orchestration across nodes (after B-119)
-17. grover:F-003 — hardware bring-up on the Pi (P1, needs the device)
+2. nerv:B-125 — replayable signed Kaji reply (P2, security)
+3. nerv:F-016 — relocate the coordinator without split brain (after B-124)
+4. nerv:B-091 — prerequisite of nerv:F-005-T29
+5. nerv:F-005 — remote workers (after B-091)
+6. grover:F-008 — alerts NERV can deliver (cross-repository)
+7. nerv:F-120 — Gauntlet coverage of NERV capabilities (cross-repository)
+8. nerv:F-122 — Grover alert delivery, unblocks grover:F-008
+9. nerv:F-123 — MCP connection to Grover's hub
+10. fpvbuddy:F-005 — M1 FPV battery core; T02 waits on nerv:F-101-T04
+11. nerv:F-121 — printed parts per drone, print by chat
+12. grover:F-011 — implemented P1 feed cycle; owner try-out pending
+13. grover:F-004 — implemented P1 probe calibration
+14. nerv:F-006 — orchestration across nodes (after B-119)
+15. grover:F-003 — hardware bring-up on the Pi (P1, needs the device)
 <!-- order:end -->
