@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "parent": "F-013",
+  "dependsOn": [],
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "id": "F-013-T01",
+  "title": "Add openbando to the solution and write the domain map",
+  "goal": "openbando is a solution component and docs/DOMAINS.md maps every project's domains and the shared ones",
+  "status": "implemented",
+  "acceptance": [
+    "openbando is in .solution.json with an unused emoji, and npm run check:solution reads its backlog",
+    "docs/DOMAINS.md lists each component's modules with code links, the shared domains with who has or needs them, and the extraction rule",
+    "docs/agents/gap-review.md tells the reviewer to read the page"
+  ],
+  "resources": [
+    ".solution.json",
+    "docs/DOMAINS.md",
+    "docs/SOLUTION.md",
+    "docs/agents/gap-review.md",
+    "README.md",
+    "AGENTS.md",
+    "docs/work/records/F-013.md",
+    "generated:backlog-views"
+  ],
+  "validation": [
+    "check:fast; solution:refresh; final applicable CI"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "1 h agent",
+    "basis": "Estimated 2026-11-25: one manifest entry, one page read from six repositories, one procedure line. Not a measurement.",
+    "reviewed": "2026-11-25",
+    "agentHours": 0,
+    "ownerHours": 0,
+    "baselineAgentHours": 1,
+    "estimateAgentHours": 1
+  },
+  "prs": [
+    {
+      "pr": 46
+    }
+  ]
+}

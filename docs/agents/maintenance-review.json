@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "reviewed": "2026-11-25T16:13:11.663Z",
+  "reviewed": "2026-11-25T21:04:41.489Z",
   "policy": "c9570a34ab0c7e4f1274fe37802a6eff8e7edfb8266c98f0cec7119533729b2b",
   "inputs": {
-    "AGENTS.md": "2e7b5ebdf1feefa0d540fd984bec4e01781d1efc6fd1c5e595fa39f5110854a6",
+    "AGENTS.md": "34713ab22e59b02a5ec88a569de4eaf3b90da69de85092e082c166a1b4723c81",
     "docs/BACKLOG-RULES.md": "a090ba3c7571d60c50a386f32e30aab528104003a2a9da6c31cedec6ef05b77a",
     "docs/agents/architecture-review.md": "5d967314854912b1a5f1446aeab309763b14f9856bceb3c82df5c6c25c166526",
     "docs/agents/areas.md": "b7e3bc2a676befba66bf9825b18801ca43944a9a2b62014508be459a011f3e86",
@@ -121,6 +121,12 @@
       "kind": "none",
       "disposition": "no-change",
       "evidence": "Harness 10.21.1 -> 10.21.2 (F-011): tools/solution.mjs, docs/agents/solution-dashboard.md and solution-gaps.md copied byte for byte; label coordinator set in .solution.json; no adapted file changed in the release"
+    },
+    {
+      "kind": "rule",
+      "disposition": "implemented",
+      "target": "AGENTS.md",
+      "evidence": "F-013-T01: the Architecture line lists openbando among the components and links docs/DOMAINS.md; docs/agents/gap-review.md (project procedure) reads the domain map by hand because the template gap review has no domain check; no safety rule changed (check:rules passes)"
     }
   ]
 }

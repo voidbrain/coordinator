@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "parent": "F-013",
+  "dependsOn": [
+    "F-013-T01"
+  ],
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "id": "F-013-T02",
+  "title": "First gap review against the domain map",
+  "goal": "The next gap review reads docs/DOMAINS.md and reports extraction candidates and page corrections",
+  "status": "planned",
+  "acceptance": [
+    "The review lists each shared domain whose Has column names two projects as an extraction candidate (Telemetry and Blackbox today: openbando and nerv), with the owning repository, or says why not",
+    "Corrections to the page found on the review are made in the same PR",
+    "F-013 closes when the review is recorded"
+  ],
+  "resources": [
+    "docs/DOMAINS.md",
+    "docs/work/records/F-013.md",
+    "generated:backlog-views"
+  ],
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "0.5 h agent",
+    "basis": "Estimated 2026-11-25: compare two Blackbox readers and re-read the page. Not a measurement.",
+    "reviewed": "2026-11-25",
+    "agentHours": 0.5,
+    "ownerHours": 0,
+    "baselineAgentHours": 0.5,
+    "estimateAgentHours": 0.5
+  }
+}
