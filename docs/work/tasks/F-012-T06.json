@@ -2,15 +2,19 @@
   "version": 1,
   "id": "F-012-T06",
   "parent": "F-012",
-  "title": "Integration acceptance: the three projects on one library release",
-  "goal": "NERV, Grover and FPVBuddy pin the same voidbrain/bricks release and use its tokens, checked from their main branches",
+  "title": "Integration acceptance: the UI projects on one library release",
+  "goal": "NERV, Hobo, Grover and FPVBuddy pin the same voidbrain/bricks release and use its tokens, checked from their main branches",
   "status": "planned",
   "acceptance": [
     "Version compatibility shows each project's pinned voidbrain/bricks release; an integration-acceptance row says how it is checked",
     "Any project still on its own copy of a shared component is listed, not fixed here"
   ],
   "dependsOn": [
-    "F-012-T05"
+    "F-012-T05",
+    "nerv:F-130-T13",
+    "hobo:F-010-T02",
+    "grover:F-020-T07",
+    "fpvbuddy:F-008-T06"
   ],
   "resources": [
     "docs/SOLUTION.md",

@@ -7,7 +7,7 @@
   "status": "planned",
   "acceptance": [
     "`.solution.json` lists the `bricks` component (repository voidbrain/bricks, emoji 🧱), added only once the repository exists because each component needs a checkout path and ref; docs/SOLUTION.md names what it owns, the token and component contract, and the @voidbrain/bricks release each project pins",
-    "Gap proposals for nerv, grover and fpvbuddy adoption are written for the owner; the library's own build is planned in its own backlog"
+    "Adoption is planned in each project's backlog (2026-11-25): nerv:F-130, hobo:F-010, grover:F-020, fpvbuddy:F-008 (after fpvbuddy:F-007); the library's own build is planned in its own backlog"
   ],
   "dependsOn": [
     "F-012-T04"
