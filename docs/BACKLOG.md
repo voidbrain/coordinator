@@ -143,21 +143,21 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔶 P2 | 🟢 Small | 1 h agent + 0.5 h owner | — | — | 🤖 | — | — |
+| 🔴 Open | 🔶 P2 | 🟢 Small | 1 h agent + 0.5 h owner | `grover:F-008-T03`, `nerv:F-122-T02` | — | ⏳ | — | — |
 
-💻 **→** Next: F-006-T01 — Record the grover&#95;alerts contract and its end-to-end check in docs/SOLUTION.md (waits on grover:F-008) (Planned).
+💻 **→** Next: F-006-T01 — Record the grover&#95;alerts contract and its end-to-end check in docs/SOLUTION.md (waits on grover:F-008-T03 and nerv:F-122-T02) (Planned).
 
 | | |
 |---|---|
-| **Issue** | Grover F-008 says NERV delivers its alerts through NERV's own pack, recorded in NERV's backlog; NERV has no such record yet (gap review, kind 1). |
-| **Reproduce** | Grover `docs/DESIGN.md`, "Alerts" and "NERV"; NERV's backlog has no record mentioning Grover. |
+| **Issue** | Coordinates Grover alert delivery end to end: Grover raises alerts (grover:F-008), NERV connects to Grover's hub over MCP (nerv:F-123) and delivers the alerts to the owner (nerv:F-122). This record owns the `grover_alerts` contract and the end-to-end check. |
+| **Reproduce** | Grover `docs/DESIGN.md`, "Alerts" and "NERV"; NERV `docs/decisions/grover-alert-delivery.md` (nerv#747); raise an out-of-range reading on a running hub once grover:F-008-T03 and nerv:F-122-T02 land. |
 | **Check** | An alert raised on a running Grover hub reaches the owner through NERV; the contract and the check are in docs/SOLUTION.md. |
 
 **Feature steps**
 
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who |
 |---|---|---|---|---|---|---|---|:---:|
-| 🟢 Small | <a id="f-006-t01"></a>F-006-T01 — Record the grover&#95;alerts contract and its end-to-end check in docs/SOLUTION.md (waits on grover:F-008) | 1 h | 0 h | 1 h | Planned | — | [F-006-T02](#f-006-t02) | 🤖 |
+| 🟢 Small | <a id="f-006-t01"></a>F-006-T01 — Record the grover&#95;alerts contract and its end-to-end check in docs/SOLUTION.md (waits on grover:F-008-T03 and nerv:F-122-T02) | 1 h | 0 h | 1 h | Planned | `grover:F-008-T03`, `nerv:F-122-T02` | [F-006-T02](#f-006-t02) | ⏳ 🤖 |
 | 🟢 Small | <a id="f-006-t02"></a>F-006-T02 — Owner sees a Grover alert arrive through NERV | — | 0 h | 0 h agent + 0.5 h owner | Planned | [F-006-T01](#f-006-t01) | — | ⏳ 🧑‍🔧 |
 | 🟢 Small | **Total** | 1 h (1 of 2 steps) | 0 h (0 of 2 steps recorded) | 1 h agent + 0.5 h owner | 0 of 2 completed | | | |
 
@@ -169,10 +169,10 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | Field | Value |
 |---|---|
 | PR / evidence | — |
-| Components | grover:F-008 |
+| Components | grover:F-008, nerv:F-122, nerv:F-123 |
 | Opened | 2026-11-24 |
 | Verification | Pending |
-| Reviewed | 2026-11-24 |
+| Reviewed | 2026-11-25 |
 
 </details>
 

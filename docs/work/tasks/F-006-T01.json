@@ -2,13 +2,16 @@
   "version": 1,
   "id": "F-006-T01",
   "parent": "F-006",
-  "title": "Record the grover_alerts contract and its end-to-end check in docs/SOLUTION.md (waits on grover:F-008)",
-  "goal": "Record the grover_alerts contract and its end-to-end check in docs/SOLUTION.md (waits on grover:F-008)",
+  "title": "Record the grover_alerts contract and its end-to-end check in docs/SOLUTION.md (waits on grover:F-008-T03 and nerv:F-122-T02)",
+  "goal": "Record the grover_alerts contract and its end-to-end check in docs/SOLUTION.md (waits on grover:F-008-T03 and nerv:F-122-T02)",
   "status": "planned",
   "acceptance": [
-    "Record the grover_alerts contract and its end-to-end check in docs/SOLUTION.md (waits on grover:F-008)"
+    "Record the grover_alerts contract and its end-to-end check in docs/SOLUTION.md (waits on grover:F-008-T03 and nerv:F-122-T02)"
   ],
-  "dependsOn": [],
+  "dependsOn": [
+    "grover:F-008-T03",
+    "nerv:F-122-T02"
+  ],
   "resources": [
     "docs/SOLUTION.md",
     "docs/work/records/F-006.md",
