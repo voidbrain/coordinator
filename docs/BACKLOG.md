@@ -276,11 +276,11 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks |
-|---|---|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-010-t01"></a>F-010-T01 — Guarded auto-merge for refresh PRs, on required checks | 1 h | 0 h | 1 h | Planned | — | [F-010-T02](#f-010-t02) |
-| 🟢 Small | <a id="f-010-t02"></a>F-010-T02 — Dispatch a refresh and see its PR merge itself | 0.25 h | 0 h | 0.25 h | Planned | [F-010-T01](#f-010-t01) | — |
-| 🟡 Medium | **Total** | 1.25 h | 0 h (0 of 2 steps recorded) | 1.25 h | 0 of 2 completed | | |
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | PRs |
+|---|---|---|---|---|---|---|---|---|
+| 🟢 Small | <a id="f-010-t01"></a>F-010-T01 — Guarded auto-merge for refresh PRs, on required checks | 1 h | 0 h | 1 h | Planned | — | [F-010-T02](#f-010-t02) | [PR #31](https://github.com/voidbrain/coordinator/pull/31) |
+| 🟢 Small | <a id="f-010-t02"></a>F-010-T02 — Dispatch a refresh and see its PR merge itself | 0.25 h | 0 h | 0.25 h | Planned | [F-010-T01](#f-010-t01) | — | — |
+| 🟡 Medium | **Total** | 1.25 h | 0 h (0 of 2 steps recorded) | 1.25 h | 0 of 2 completed | | | |
 
 <details>
 <summary>Next action, estimates and PR history</summary>
@@ -289,7 +289,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Pending |
+| PR / evidence | Steps: F-010-T01: [PR #31](https://github.com/voidbrain/coordinator/pull/31). Opened in [PR #31](https://github.com/voidbrain/coordinator/pull/31) |
 | Components | — |
 | Opened | 2026-11-25 |
 | Verification | Pending |
