@@ -107,3 +107,71 @@ Closed records of the [backlog](../BACKLOG.md), in closing-date order. History, 
 </details>
 
 ---
+
+### F-001
+
+**Coordinator repository with harness v10.9.0, the solution profile, the solution order and the gap review**
+
+| Signal | Priority | Status | Effort |
+|:---:|---|---|---|
+| 🔵 | ◻️ P1 | Closed | 🟢 Small |
+
+💻 **→ Human action required: No**<br />Closed 2026-11-25: PR #1 and PR #2 merged on green CI (ci:status 2026-11-25); refresh runs since regenerate both views (PR #24); check:freshness reports the harness on v10.20.0, past the v10.9.0 the check names (F-009).
+
+| | |
+|---|---|
+| **Issue** | The owner (2026-11-24) asked for one private repository where all work of all projects is seen and steered, with records left in their own repositories. |
+| **Reproduce** | `npm run check:fast`; `npm run solution:refresh` regenerates `docs/SOLUTION-OVERVIEW.md` and `docs/SOLUTION-DASHBOARD.md` from GitHub. |
+| **Check** | CI passes on the first PR; the overview lists every component's open work, owner checks, blocked work, effort, the solution order with live state and the gap review; `check:freshness` ends with the harness on v10.9.0. |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+**Next action / closure evidence:** Closed 2026-11-25: PR #1 and PR #2 merged on green CI (ci:status 2026-11-25); refresh runs since regenerate both views (PR #24); check:freshness reports the harness on v10.20.0, past the v10.9.0 the check names (F-009). Applied core and the solution profile from template v10.9.0 on `harness/agent-harness`; manifest with five components; project tool `tools/solution-overview.mjs` for the order, owner, blocked, effort and gap sections the template dashboard does not have (proposed for the template, F-004). Review fixes on the same PR: unknown headings, summary tables and statuses are reported as problems (failing tests first), Prettier and ESLint on the project's own tools and tests, fixture tests for the generated, authored and empty layouts run in CI and in `--check`. Re-review fixes and the owner's additions on the same PR: refresh branch preparation and CI on the refresh PR, Blocked records in the runway, hours for this backlog (task files), and the overview of all projects (summary, order table, blocked, nothing to do, audits, harness, emojis). PR #1 merged 2026-11-24 (1c69fee); the re-review fixes and these additions are in PR #2. Closes on PR #2's green CI.
+
+**Estimates:** No remaining effort.
+
+| Field | Value |
+|---|---|
+| PR / evidence | [#1](https://github.com/voidbrain/coordinator/pull/1); [#2](https://github.com/voidbrain/coordinator/pull/2) |
+| Opened | 2026-11-24 |
+| Verification | 2026-11-25: ci:status #1 and #2 green; Refresh solution views merged as PR #24; check:freshness on harness v10.20.0. Review: independent review of PR #1, its findings fixed in PR #2 (record evidence above). Closed 2026-11-25 |
+| Reviewed | 2026-11-24 |
+
+</details>
+
+---
+
+### F-002
+
+**Owner sets the first solution order**
+
+| Signal | Priority | Status | Effort |
+|:---:|---|---|---|
+| 🔵 | ◻️ P1 | Closed | 🟢 Small |
+
+💻 **→ Human action required: No**<br />Closed 2026-11-25: PR #4 (owner's order, dated 2026-11-24 in docs/solution-order.md) and PR #11 (owner's reorder of 2026-11-25) merged on green CI (ci:status 2026-11-25).
+
+| | |
+|---|---|
+| **Issue** | The seeded order is a proposal from the components' P1 and P2 work, not the owner's order. |
+| **Reproduce** | Open `docs/solution-order.md`: its Order section says "Proposal of 2026-11-24". |
+| **Check** | The owner's order is landed in a small PR and the "Proposal" sentence is replaced by the date the owner set it. |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+**Next action / closure evidence:** Closed 2026-11-25: PR #4 (owner's order, dated 2026-11-24 in docs/solution-order.md) and PR #11 (owner's reorder of 2026-11-25) merged on green CI (ci:status 2026-11-25). Waits on the owner's reorder; then one PR that changes only the list.
+
+**Estimates:** No remaining effort.
+
+| Field | Value |
+|---|---|
+| PR / evidence | [#4](https://github.com/voidbrain/coordinator/pull/4); [#11](https://github.com/voidbrain/coordinator/pull/11) |
+| Opened | 2026-11-24 |
+| Verification | 2026-11-25: ci:status #4 and #11 green; docs/solution-order.md says 'Set by the owner on 2026-11-24'. No review: order-list and record changes only, no behaviour. Closed 2026-11-25 |
+| Reviewed | 2026-11-24 |
+
+</details>
+
+---

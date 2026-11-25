@@ -4,7 +4,7 @@
   "parent": "F-001",
   "title": "Adopt the harness, the solution profile, the views, the order and the gap review",
   "goal": "Adopt the harness, the solution profile, the views, the order and the gap review",
-  "status": "implemented",
+  "status": "closed",
   "acceptance": [
     "PR #1 merged on green CI after an independent review; its re-review fixes merged on green CI in PR #2"
   ],
@@ -28,10 +28,10 @@
   ],
   "effort": {
     "size": "small",
-    "estimate": "0.5 h",
-    "basis": "Estimated 2026-11-24: PR #1 merged (1c69fee) after review; its re-review fixes are in PR #2, which closes the record on green CI. Not a measurement.",
-    "reviewed": "2026-11-24",
-    "agentHours": 0.5,
+    "estimate": "0 remaining",
+    "basis": "Estimated 2026-11-24: PR #1 merged (1c69fee) after review; its re-review fixes are in PR #2, which closes the record on green CI. Not a measurement. Closed 2026-11-25.",
+    "reviewed": "2026-11-25",
+    "agentHours": 0,
     "ownerHours": 0,
     "estimateAgentHours": 0.5
   },
