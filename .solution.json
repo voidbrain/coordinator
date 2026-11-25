@@ -68,6 +68,15 @@
       "backlog": "docs/BACKLOG.md",
       "archives": [],
       "emoji": "🗺️"
+    },
+    {
+      "id": "bricks",
+      "repository": "voidbrain/bricks",
+      "path": "../bricks",
+      "ref": "main",
+      "backlog": "docs/BACKLOG.md",
+      "archives": [],
+      "emoji": "🧱"
     }
   ],
   "emoji": "🚦",

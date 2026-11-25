@@ -4,9 +4,9 @@
   "parent": "F-012",
   "title": "Add voidbrain/bricks to the solution and propose its adoption",
   "goal": "voidbrain/bricks is a component of the solution, with its contract and first release in docs/SOLUTION.md, and adoption is proposed to each UI project",
-  "status": "planned",
+  "status": "ready",
   "acceptance": [
-    "`.solution.json` lists the `bricks` component (repository voidbrain/bricks, emoji 🧱), added only once the repository exists because each component needs a checkout path and ref; docs/SOLUTION.md names what it owns, the token and component contract, and the @voidbrain/bricks release each project pins",
+    "`.solution.json` lists the `bricks` component (repository voidbrain/bricks, emoji 🧱; added 2026-11-25); docs/SOLUTION.md names what it owns and its contract (added 2026-11-25) and the @voidbrain/bricks release each project pins (after bricks:F-004 publishes)",
     "Adoption is planned in each project's backlog (2026-11-25): nerv:F-130, hobo:F-010, grover:F-020, fpvbuddy:F-008 (after fpvbuddy:F-007); the library's own build is planned in its own backlog"
   ],
   "dependsOn": [
@@ -31,12 +31,12 @@
   ],
   "effort": {
     "size": "small",
-    "estimate": "1 h",
-    "basis": "Estimated 2026-11-25: one component entry, a compatibility row and three gap proposals. Not a measurement.",
+    "estimate": "0.5 h",
+    "basis": "Re-estimated 2026-11-25: the component entry and contract row are done; the pinned release and the adoption proposals remain. Not a measurement.",
     "reviewed": "2026-11-25",
-    "agentHours": 1,
+    "agentHours": 0.5,
     "baselineAgentHours": 1,
-    "estimateAgentHours": 1,
+    "estimateAgentHours": 0.5,
     "ownerHours": 0
   }
 }

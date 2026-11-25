@@ -1,18 +1,19 @@
 <!-- generated: project-harness solution dashboard; edit owning backlogs, not this file -->
 # voidbrain solution dashboard
 
-Snapshot: 2026-11-25T21:12:51.856Z. Read-only aggregation; no combined completion percentage. Solution integration status is independent of component status.
+Snapshot: 2026-11-25T21:48:07.540Z. Read-only aggregation; no combined completion percentage. Solution integration status is independent of component status.
 
 | Source | Revision | Snapshot state |
 |---|---|---|
-| coordinator | [71c906fcfc8f](https://github.com/voidbrain/coordinator/commit/71c906fcfc8f5727494f48853174640fe3b93301) | Local changes — not a committed snapshot; requested working checkout; local checkout, not fetched |
+| coordinator | [30ed787fd7a6](https://github.com/voidbrain/coordinator/commit/30ed787fd7a66ea07df7646246aff9b4cbfa9be8) | Committed snapshot; requested working checkout; local checkout, not fetched |
 | nerv | [5e1237dd83a1](https://github.com/voidbrain/nerv/commit/5e1237dd83a16950172521a87df93f99af92f1a9) | Committed snapshot; requested main; GitHub; view published on backlog-views at 72b05ba37cf6 |
 | gauntlet-protocol | [2339e413222c](https://github.com/voidbrain/gauntlet-protocol/commit/2339e413222c65a205cf8dc0f94d00f704cca7af) | Committed snapshot; requested main; GitHub |
 | project-harness | [e118aa537031](https://github.com/voidbrain/project-harness/commit/e118aa5370314617dd6ef9c9d0bb0c57e897578a) | Committed snapshot; requested main; GitHub |
-| fpvbuddy | [9ba5e862a7e5](https://github.com/voidbrain/FPVBuddy/commit/9ba5e862a7e51cf2169868192db7eddb7b320e60) | Committed snapshot; requested main; GitHub |
-| grover | [ec23d79330cb](https://github.com/voidbrain/Grover/commit/ec23d79330cb3d30d63de9556ffd6035415b9cf1) | Committed snapshot; requested main; GitHub |
+| fpvbuddy | [69b278c69211](https://github.com/voidbrain/FPVBuddy/commit/69b278c692110fa56a9267c352313d047f583d00) | Committed snapshot; requested main; GitHub |
+| grover | [db0a4c951498](https://github.com/voidbrain/Grover/commit/db0a4c951498475fcb94afa1514f584e1d046721) | Committed snapshot; requested main; GitHub |
 | openbando | [5c96a1858627](https://github.com/voidbrain/openbando/commit/5c96a1858627cb6c8be9f2b76ba6edc723863a46) | Committed snapshot; requested main; GitHub |
-| hobo | [8af2527bfc89](https://github.com/voidbrain/hobo/commit/8af2527bfc892f33bc8eb25d028e67ec7ce06a29) | Committed snapshot; requested main; GitHub |
+| hobo | [1f2ec2155086](https://github.com/voidbrain/hobo/commit/1f2ec2155086345263a90bd313194bd67ffd80dd) | Committed snapshot; requested main; GitHub |
+| bricks | [0cd001d8bbcc](https://github.com/voidbrain/bricks/commit/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43) | Committed snapshot; requested main; GitHub |
 
 ## Summary
 
@@ -20,17 +21,18 @@ Open work per project. Doable agent h is the agent runway (below): agent work wh
 
 | Project | Open records | Doable agent h | Owner h | Blocked | Harness | Next audit |
 |---|---:|---:|---:|---:|---|---|
-| 🚦 coordinator | 9 | 6 | 1.25 | 5 | v10.21.2, behind v10.21.3 | 2026-12-01 |
+| 🚦 coordinator | 9 | 7.5 | 1 | 3 | v10.21.2, behind v10.21.3 | 2026-12-01 |
 | 𖣂 nerv | 84 | 162.25 | 15.75 | 13 | v10.21.3 (latest) | 2026-11-27 |
 | 🤖 gauntlet-protocol | 3 | 2.25 | 1 | 3 | v10.20.0, behind v10.21.3 | 2026-11-29 |
 | 🦺 project-harness | 1 | 0.25 | 0 | 0 | v10.21.3 (latest) | 2026-11-29 |
-| 🚁 fpvbuddy | 2 | 3 | 0 | 0 | v10.20.0, behind v10.21.3 | 2026-11-29 |
-| 🪴 grover | 21 | 8.75 | 12.75 | 15 | v10.20.0, behind v10.21.3 | 2026-12-01 |
+| 🚁 fpvbuddy | 4 | 19.5 | 1 | 0 | v10.20.0, behind v10.21.3 | 2026-11-29 |
+| 🪴 grover | 22 | 25.75 | 13.25 | 15 | v10.20.0, behind v10.21.3 | 2026-12-01 |
 | 🏚️ openbando | 21 | 0 + 9 without hours | Unknown | 1 | v10.8.1, behind v10.21.3 | 2026-11-30 |
 | 🗺️ hobo | 14 | 53.5 | 2.75 | 2 | v10.21.3 (latest) | 2026-12-02 |
-| **Solution** | 155 | **at least 236** | **at least 33.5** | 39 | latest v10.21.3 | |
+| 🧱 bricks | 9 | 55 | 1.25 | 5 | v10.21.3 (latest) | 2026-12-02 |
+| **Solution** | 167 | **at least 326** | **at least 36** | 42 | latest v10.21.3 | |
 
-Remaining in all backlogs: at least 267 h agent + at least 33.5 h owner.
+Remaining in all backlogs: at least 366 h agent + at least 36 h owner.
 
 ## Solution order
 
@@ -43,16 +45,16 @@ The owner's order (docs/solution-order.md): take the first ready item; it never 
 | 3 | 𖣂 | [nerv:F-016](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-016) | Relocate the logical coordinator without split brain | Open: Owner: Procedure | 1.75 | 1 | [nerv:F-016-T11](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-016-t11) waits on [nerv:F-016-T09](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-016-t09) | relocate the coordinator without split brain (after B-124) |
 | 4 | 𖣂 | [nerv:B-091](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#b-091) | Windows: a fenced stop ends uncertain after a SQLite "disk I/O error" while rec… | Open: Ready (verification) | 3 | 0 | — | prerequisite of nerv:F-005-T29 |
 | 5 | 𖣂 | [nerv:F-005](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-005) | Discover, install and operate enrolled remote workers | Open: Ready (verification) | 3.5 | 0 | [nerv:F-005-T29](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-005-t29) waits on [nerv:B-091-T01](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#b-091-t01); [nerv:F-005-T36](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-005-t36) waits on [nerv:F-005-T29](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-005-t29); [nerv:F-005-T30](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-005-t30) waits on [nerv:F-005-T36](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-005-t36) | remote workers (after B-091) |
-| 6 | 🪴 | [grover:F-008](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-008) | Alerts for NERV: out-of-range values, offline agent, faults | Open: Blocked: owner step grover:F-005-T01 | 0 | 0.25 | [grover:F-008-T03](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-008-t03) waits on [grover:F-005-T01](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-005-t01) | alerts NERV can deliver (cross-repository) |
+| 6 | 🪴 | [grover:F-008](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-008) | Alerts for NERV: out-of-range values, offline agent, faults | Open: Blocked: owner step grover:F-005-T01 | 0 | 0.25 | [grover:F-008-T03](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-008-t03) waits on [grover:F-005-T01](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-005-t01) | alerts NERV can deliver (cross-repository) |
 | 7 | 𖣂 | [nerv:F-120](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-120) | Gauntlet coverage of NERV capabilities | Open: ▶ Ready | 3 | 0.5 | — | Gauntlet coverage of NERV capabilities (cross-repository) |
 | 8 | 𖣂 | [nerv:F-122](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-122) | Deliver Grover alerts | Open: Ready | 3 | 0.5 | [nerv:F-122-T03](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-122-t03) waits on [nerv:F-122-T02](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-122-t02) | Grover alert delivery, unblocks grover:F-008 |
 | 9 | 𖣂 | [nerv:F-123](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-123) | Connect NERV to Grover's hub over MCP | Open: Owner: Procedure | 0 | 0.5 | — | MCP connection to Grover's hub |
-| 10 | 🚁 | [fpvbuddy:F-005](https://github.com/voidbrain/FPVBuddy/blob/9ba5e862a7e51cf2169868192db7eddb7b320e60/docs/BACKLOG.md#f-005) | M1 — FPV battery core package | Open: Ready | 3 | 0 | [fpvbuddy:F-005-T03](https://github.com/voidbrain/FPVBuddy/blob/9ba5e862a7e51cf2169868192db7eddb7b320e60/docs/BACKLOG.md#f-005-t03) waits on [fpvbuddy:F-005-T02](https://github.com/voidbrain/FPVBuddy/blob/9ba5e862a7e51cf2169868192db7eddb7b320e60/docs/BACKLOG.md#f-005-t02); [fpvbuddy:F-005-T04](https://github.com/voidbrain/FPVBuddy/blob/9ba5e862a7e51cf2169868192db7eddb7b320e60/docs/BACKLOG.md#f-005-t04) waits on [fpvbuddy:F-005-T02](https://github.com/voidbrain/FPVBuddy/blob/9ba5e862a7e51cf2169868192db7eddb7b320e60/docs/BACKLOG.md#f-005-t02) | M1 FPV battery core; T02 waits on nerv:F-101-T04 |
+| 10 | 🚁 | [fpvbuddy:F-005](https://github.com/voidbrain/FPVBuddy/blob/69b278c692110fa56a9267c352313d047f583d00/docs/BACKLOG.md#f-005) | M1 — FPV battery core package | Open: Ready | 3 | 0 | [fpvbuddy:F-005-T03](https://github.com/voidbrain/FPVBuddy/blob/69b278c692110fa56a9267c352313d047f583d00/docs/BACKLOG.md#f-005-t03) waits on [fpvbuddy:F-005-T02](https://github.com/voidbrain/FPVBuddy/blob/69b278c692110fa56a9267c352313d047f583d00/docs/BACKLOG.md#f-005-t02); [fpvbuddy:F-005-T04](https://github.com/voidbrain/FPVBuddy/blob/69b278c692110fa56a9267c352313d047f583d00/docs/BACKLOG.md#f-005-t04) waits on [fpvbuddy:F-005-T02](https://github.com/voidbrain/FPVBuddy/blob/69b278c692110fa56a9267c352313d047f583d00/docs/BACKLOG.md#f-005-t02) | M1 FPV battery core; T02 waits on nerv:F-101-T04 |
 | 11 | 𖣂 | [nerv:F-121](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-121) | Printed parts per drone: "print Smoke's feet" | Open: Ready (verification) | 0 | 0.5 | [nerv:F-121-T03](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-121-t03) waits on [nerv:F-121-T04](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-121-t04); [nerv:F-121-T03](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-121-t03) waits on [nerv:B-133-T01](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#b-133-t01) | printed parts per drone, print by chat |
-| 12 | 🪴 | [grover:F-011](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-011) | Feed cycle per pot: supply tanks, mixing tank, pot pumps | Implemented: Owner: Procedure | 0.5 | 0.5 | [grover:F-011-T03](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-011-t03) waits on [grover:F-011-T02](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-011-t02) | implemented P1 feed cycle; owner try-out pending |
-| 13 | 🪴 | [grover:F-004](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-004) | Calibrate analog probes (volts to pH and EC) | Implemented: Blocked: owner step grover:F-005-T01 | 0.25 | 1 | [grover:F-004-T02](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-004-t02) waits on [grover:F-003-T02](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-003-t02); [grover:F-004-T03](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-004-t03) waits on [grover:F-004-T02](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-004-t02) | implemented P1 probe calibration |
+| 12 | 🪴 | [grover:F-011](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-011) | Feed cycle per pot: supply tanks, mixing tank, pot pumps | Implemented: Owner: Procedure | 0.5 | 0.5 | [grover:F-011-T03](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-011-t03) waits on [grover:F-011-T02](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-011-t02) | implemented P1 feed cycle; owner try-out pending |
+| 13 | 🪴 | [grover:F-004](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-004) | Calibrate analog probes (volts to pH and EC) | Implemented: Blocked: owner step grover:F-005-T01 | 0.25 | 1 | [grover:F-004-T02](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-004-t02) waits on [grover:F-003-T02](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-003-t02); [grover:F-004-T03](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-004-t03) waits on [grover:F-004-T02](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-004-t02) | implemented P1 probe calibration |
 | 14 | 𖣂 | [nerv:F-006](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-006) | Orchestrate agents and models across nodes | Open: Ready (verification) | 0 | 0 | — | orchestration across nodes (after B-119) |
-| 15 | 🪴 | [grover:F-003](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-003) | Hardware bring-up on the Raspberry Pi | Open: Owner: Decision | 2.5 | 4.5 | [grover:F-003-T02](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-003-t02) waits on [grover:F-005-T01](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-005-t01); [grover:F-003-T03](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-003-t03) waits on [grover:F-003-T01](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-003-t01); [grover:F-003-T04](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-003-t04) waits on [grover:F-003-T02](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-003-t02); and 2 more | hardware bring-up on the Pi (P1, needs the device) |
+| 15 | 🪴 | [grover:F-003](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-003) | Hardware bring-up on the Raspberry Pi | Open: Owner: Decision | 2.5 | 4.5 | [grover:F-003-T02](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-003-t02) waits on [grover:F-005-T01](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-005-t01); [grover:F-003-T03](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-003-t03) waits on [grover:F-003-T01](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-003-t01); [grover:F-003-T04](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-003-t04) waits on [grover:F-003-T02](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-003-t02); and 2 more | hardware bring-up on the Pi (P1, needs the device) |
 
 ## Blocked
 
@@ -60,11 +62,9 @@ Agent work that cannot start, per project, with the first block its chain reache
 
 | Project | Blocked item | Title | Waits on | Kind |
 |---|---|---|---|---|
-| 🚦 coordinator | [solution:F-006-T01](BACKLOG.md#f-006-t01) | Record the grover&#95;alerts contract and its end-to-end check in doc… | [grover:F-005-T01](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-005-t01) | owner procedure |
-| 🚦 coordinator | [solution:F-007-T01](BACKLOG.md#f-007-t01) | Name the Gauntlet release NERV needs for its new cases in docs/SOLUTI… | [nerv:F-120-T03](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-120-t03) | owner procedure |
-| 🚦 coordinator | [solution:F-007-T02](BACKLOG.md#f-007-t02) | Link a Gauntlet run of the new NERV cases as acceptance | [nerv:F-120-T03](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-120-t03) | owner procedure |
-| 🚦 coordinator | [solution:F-012-T05](BACKLOG.md#f-012-t05) | Add voidbrain/bricks to the solution and propose its adoption | [solution:F-012-T04](BACKLOG.md#f-012-t04) | owner decision |
-| 🚦 coordinator | [solution:F-012-T06](BACKLOG.md#f-012-t06) | Integration acceptance: the three projects on one library release | [solution:F-012-T04](BACKLOG.md#f-012-t04) | owner decision |
+| 🚦 coordinator | [solution:F-006-T01](https://github.com/voidbrain/coordinator/blob/30ed787fd7a66ea07df7646246aff9b4cbfa9be8/docs/BACKLOG.md#f-006-t01) | Record the grover&#95;alerts contract and its end-to-end check in doc… | [grover:F-005-T01](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-005-t01) | owner procedure |
+| 🚦 coordinator | [solution:F-007-T01](https://github.com/voidbrain/coordinator/blob/30ed787fd7a66ea07df7646246aff9b4cbfa9be8/docs/BACKLOG.md#f-007-t01) | Name the Gauntlet release NERV needs for its new cases in docs/SOLUTI… | [nerv:F-120-T03](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-120-t03) | owner procedure |
+| 🚦 coordinator | [solution:F-007-T02](https://github.com/voidbrain/coordinator/blob/30ed787fd7a66ea07df7646246aff9b4cbfa9be8/docs/BACKLOG.md#f-007-t02) | Link a Gauntlet run of the new NERV cases as acceptance | [nerv:F-120-T03](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-120-t03) | owner procedure |
 | 𖣂 nerv | [nerv:F-011-T05](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-011-t05) | Record the evidence of F-011-T02 and close it | [nerv:F-011-T02](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-011-t02) | owner procedure |
 | 𖣂 nerv | [nerv:F-011-T06](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-011-t06) | Record the evidence of F-011-T03 and close it | [nerv:F-011-T02](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-011-t02) | owner procedure |
 | 𖣂 nerv | [nerv:F-004-T07](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-004-t07) | Record the evidence of F-004-T06 and close it | [nerv:F-004-T06](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#f-004-t06) | owner procedure |
@@ -81,24 +81,29 @@ Agent work that cannot start, per project, with the first block its chain reache
 | 🤖 gauntlet-protocol | [gauntlet-protocol:F-022-T03](https://github.com/voidbrain/gauntlet-protocol/blob/2339e413222c65a205cf8dc0f94d00f704cca7af/docs/BACKLOG.md#f-022-t03) | Record the outcome | [gauntlet-protocol:F-022-T02](https://github.com/voidbrain/gauntlet-protocol/blob/2339e413222c65a205cf8dc0f94d00f704cca7af/docs/BACKLOG.md#f-022-t02) | owner decision |
 | 🤖 gauntlet-protocol | [gauntlet-protocol:F-021-T03](https://github.com/voidbrain/gauntlet-protocol/blob/2339e413222c65a205cf8dc0f94d00f704cca7af/docs/BACKLOG.md#f-021-t03) | Image-generation runner | [gauntlet-protocol:F-021-T02](https://github.com/voidbrain/gauntlet-protocol/blob/2339e413222c65a205cf8dc0f94d00f704cca7af/docs/BACKLOG.md#f-021-t02) | owner decision |
 | 🤖 gauntlet-protocol | [gauntlet-protocol:F-021-T04](https://github.com/voidbrain/gauntlet-protocol/blob/2339e413222c65a205cf8dc0f94d00f704cca7af/docs/BACKLOG.md#f-021-t04) | Image grader and pack | [gauntlet-protocol:F-021-T02](https://github.com/voidbrain/gauntlet-protocol/blob/2339e413222c65a205cf8dc0f94d00f704cca7af/docs/BACKLOG.md#f-021-t02) | owner decision |
-| 🪴 grover | [grover:F-005-T03](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-005-t03) | Fix the README and service files from the first install | [grover:F-005-T01](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-005-t01) | owner procedure |
-| 🪴 grover | [grover:F-003-T03](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-003-t03) | Driver for the chosen level sensor | [grover:F-003-T01](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-003-t01) | owner decision |
-| 🪴 grover | [grover:F-003-T05](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-003-t05) | Record the bring-up results; open B- records for driver faults | [grover:F-005-T01](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-005-t01) | owner procedure |
-| 🪴 grover | [grover:F-004-T03](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-004-t03) | Record the calibration result; fix what it found | [grover:F-005-T01](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-005-t01) | owner procedure |
-| 🪴 grover | [grover:F-011-T03](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-011-t03) | Record the try of a feed; fix what it found | [grover:F-011-T02](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-011-t02) | owner procedure |
-| 🪴 grover | [grover:F-012-T03](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-012-t03) | Record the try of the import; fix what it found | [grover:F-005-T01](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-005-t01) | owner procedure |
-| 🪴 grover | [grover:F-006-T03](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-006-t03) | Record the try of the Setup pages; fix what it found | [grover:F-006-T02](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-006-t02) | owner procedure |
-| 🪴 grover | [grover:F-007-T03](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-007-t03) | Record the try of Switch to bloom; fix what it found | [grover:F-007-T02](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-007-t02) | owner procedure |
-| 🪴 grover | [grover:F-013-T03](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-013-t03) | Record the try of the plant cycle; fix what it found | [grover:F-013-T02](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-013-t02) | owner procedure |
-| 🪴 grover | [grover:F-014-T03](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-014-t03) | Record the try of the plant page; fix what it found | [grover:F-014-T02](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-014-t02) | owner procedure |
-| 🪴 grover | [grover:F-015-T03](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-015-t03) | Record the try of the rig map; fix what it found | [grover:F-015-T02](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-015-t02) | owner procedure |
-| 🪴 grover | [grover:F-016-T03](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-016-t03) | Record the try of weekday schedules; fix what it found | [grover:F-016-T02](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-016-t02) | owner procedure |
-| 🪴 grover | [grover:F-018-T04](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-018-t04) | Record the pump device check; fix what it found | [grover:F-018-T01](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-018-t01) | owner procedure |
-| 🪴 grover | [grover:B-009-T02](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#b-009-t02) | Close the v1 Dependabot PRs and delete their branches | [grover:B-009-T01](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#b-009-t01) | owner decision |
-| 🪴 grover | [grover:F-017-T04](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-017-t04) | Record the colour choice; fix what it found | [grover:F-017-T03](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-017-t03) | owner procedure |
+| 🪴 grover | [grover:F-005-T03](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-005-t03) | Fix the README and service files from the first install | [grover:F-005-T01](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-005-t01) | owner procedure |
+| 🪴 grover | [grover:F-003-T03](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-003-t03) | Driver for the chosen level sensor | [grover:F-003-T01](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-003-t01) | owner decision |
+| 🪴 grover | [grover:F-003-T05](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-003-t05) | Record the bring-up results; open B- records for driver faults | [grover:F-005-T01](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-005-t01) | owner procedure |
+| 🪴 grover | [grover:F-004-T03](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-004-t03) | Record the calibration result; fix what it found | [grover:F-005-T01](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-005-t01) | owner procedure |
+| 🪴 grover | [grover:F-011-T03](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-011-t03) | Record the try of a feed; fix what it found | [grover:F-011-T02](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-011-t02) | owner procedure |
+| 🪴 grover | [grover:F-012-T03](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-012-t03) | Record the try of the import; fix what it found | [grover:F-005-T01](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-005-t01) | owner procedure |
+| 🪴 grover | [grover:F-006-T03](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-006-t03) | Record the try of the Setup pages; fix what it found | [grover:F-006-T02](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-006-t02) | owner procedure |
+| 🪴 grover | [grover:F-007-T03](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-007-t03) | Record the try of Switch to bloom; fix what it found | [grover:F-007-T02](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-007-t02) | owner procedure |
+| 🪴 grover | [grover:F-013-T03](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-013-t03) | Record the try of the plant cycle; fix what it found | [grover:F-013-T02](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-013-t02) | owner procedure |
+| 🪴 grover | [grover:F-014-T03](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-014-t03) | Record the try of the plant page; fix what it found | [grover:F-014-T02](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-014-t02) | owner procedure |
+| 🪴 grover | [grover:F-015-T03](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-015-t03) | Record the try of the rig map; fix what it found | [grover:F-015-T02](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-015-t02) | owner procedure |
+| 🪴 grover | [grover:F-016-T03](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-016-t03) | Record the try of weekday schedules; fix what it found | [grover:F-016-T02](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-016-t02) | owner procedure |
+| 🪴 grover | [grover:F-018-T04](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-018-t04) | Record the pump device check; fix what it found | [grover:F-018-T01](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-018-t01) | owner procedure |
+| 🪴 grover | [grover:B-009-T02](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#b-009-t02) | Close the v1 Dependabot PRs and delete their branches | [grover:B-009-T01](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#b-009-t01) | owner decision |
+| 🪴 grover | [grover:F-017-T04](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-017-t04) | Record the colour choice; fix what it found | [grover:F-017-T03](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-017-t03) | owner procedure |
 | 🏚️ openbando | [openbando:F-039](https://github.com/voidbrain/openbando/blob/5c96a1858627cb6c8be9f2b76ba6edc723863a46/docs/BACKLOG.md#f-039) | Coverage of the browser tests in the coverage table | [openbando:F-039](https://github.com/voidbrain/openbando/blob/5c96a1858627cb6c8be9f2b76ba6edc723863a46/docs/BACKLOG.md#f-039) | record marked Blocked |
-| 🗺️ hobo | [hobo:F-008-T04](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-008-t04) | Read-only share link | [hobo:F-008-T03](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-008-t03) | owner decision |
-| 🗺️ hobo | [hobo:F-014-T02](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-014-t02) | Google place-details provider | [hobo:F-014-T01](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-014-t01) | owner decision |
+| 🗺️ hobo | [hobo:F-008-T04](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-008-t04) | Read-only share link | [hobo:F-008-T03](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-008-t03) | owner decision |
+| 🗺️ hobo | [hobo:F-014-T02](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-014-t02) | Google place-details provider | [hobo:F-014-T01](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-014-t01) | owner decision |
+| 🧱 bricks | [bricks:F-004-T06](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-004-t06) | First publish of 0.1.0 and an install check | [bricks:F-004-T02](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-004-t02) | owner procedure |
+| 🧱 bricks | [bricks:F-006-T03](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-006-t03) | Migration note for NERV and the release that carries it | [bricks:F-004-T02](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-004-t02) | owner procedure |
+| 🧱 bricks | [bricks:F-008-T02](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-008-t02) | Migration note for Grover and the release that carries it | [bricks:F-004-T02](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-004-t02) | owner procedure |
+| 🧱 bricks | [bricks:F-009-T02](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-009-t02) | Migration note for FPVBuddy (after its Angular 22 upgrade) and the re… | [bricks:F-004-T02](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-004-t02) | owner procedure |
+| 🧱 bricks | [bricks:F-007-T03](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-007-t03) | Migration note for Hobo and the release that carries it | [bricks:F-004-T02](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-004-t02) | owner procedure |
 
 ## Nothing to do
 
@@ -148,18 +153,18 @@ Records and steps whose next move is an owner procedure (🧑‍🔧) or decisio
 | [nerv:B-112](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#b-112) | Sephirot flow lights routes the sortie did not take and hides the map when no s… | Procedure | 🔹 P3 | — | After the update, open a few sorties (S-6AD9, one answered without an action, one that asked you something) and deselect: check the routes … |
 | [nerv:B-130](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#b-130) | A finished sortie that never needed approval shows Misato's Apt faded as skippe… | Procedure | 🔹 P3 | — | After the update reaches the service, on the Mac run `nerv open dashboard` and select a finished sortie the MAGI granted without asking you… |
 | [nerv:B-141](https://github.com/voidbrain/nerv/blob/72b05ba37cf65c381086c3b83b8fed29a75dc84d/docs/BACKLOG.md#b-141) | Dashboard: the updater status is lost among the Health rows, and Settings is mi… | Procedure | 🔹 P3 | — | After the update reaches the service, on the Mac run `nerv open dashboard`: an updater status under Update availability is a bordered box i… |
-| [grover:F-005](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-005) | Deploy hub and agent on the Pi behind Tailscale | Procedure | 🔶 P2 | 1.5 h | F-005-T01: Owner installs hub and agent on the Pi behind Tailscale |
-| [grover:F-003](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-003) | Hardware bring-up on the Raspberry Pi | Decision | 🔺 P1 | 4.5 h | F-003-T01: Owner chooses the water-level sensor |
-| [grover:F-011](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-011) | Feed cycle per pot: supply tanks, mixing tank, pot pumps | Procedure | 🔺 P1 | 0.5 h | F-011-T02: Owner tries a feed on the simulated rig on the dev stack |
-| [grover:F-006](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-006) | Set-up screens in the client | Procedure | 🔶 P2 | 0.5 h | F-006-T02: Owner tries the Setup pages on the dev stack |
-| [grover:F-007](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-007) | Lights follow the grow calendar; Switch to bloom | Procedure | 🔶 P2 | 0.25 h | F-007-T02: Owner tries Switch to bloom and the light line on the dev stack |
-| [grover:F-013](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-013) | Plant cycle: nursery, cuttings, harvest, a plant per pot, phase per plant | Procedure | 🔶 P2 | 0.5 h | F-013-T02: Owner tries the plant cycle on the dev stack |
-| [grover:F-014](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-014) | Plant page with statistics, as in the old app | Procedure | 🔶 P2 | 0.25 h | F-014-T02: Owner tries the plant page on the dev stack |
-| [grover:F-015](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-015) | Rig map: the tent as a live diagram, with its controls | Procedure | 🔶 P2 | 0.5 h | F-015-T02: Owner tries the rig map on a phone and a laptop, light and dark on the dev stack |
-| [grover:F-016](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-016) | Schedules by day of week, weekends apart | Procedure | 🔶 P2 | 0.25 h | F-016-T02: Owner tries weekday schedules on the dev stack |
-| [grover:F-018](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-018) | Pumps through an L298N driver (two pins on the MCP23017) | Procedure | 🔶 P2 | 1.5 h | F-018-T01: Owner writes down the pump wiring (L298N inputs on MCP23017 pins) |
-| [grover:B-009](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#b-009) | Eight Dependabot PRs from 2021 to 2023 still open against the removed v1 tree | Decision | 🔹 P3 | 0.25 h | B-009-T01: Owner decides on closing the eight v1 Dependabot PRs |
-| [grover:F-017](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-017) | Nutrient colours: each supply tank in its nutrient's real colour | Procedure | 🔹 P3 | 0.25 h | F-017-T03: Owner picks the nutrient colours |
+| [grover:F-005](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-005) | Deploy hub and agent on the Pi behind Tailscale | Procedure | 🔶 P2 | 1.5 h | F-005-T01: Owner installs hub and agent on the Pi behind Tailscale |
+| [grover:F-003](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-003) | Hardware bring-up on the Raspberry Pi | Decision | 🔺 P1 | 4.5 h | F-003-T01: Owner chooses the water-level sensor |
+| [grover:F-011](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-011) | Feed cycle per pot: supply tanks, mixing tank, pot pumps | Procedure | 🔺 P1 | 0.5 h | F-011-T02: Owner tries a feed on the simulated rig on the dev stack |
+| [grover:F-006](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-006) | Set-up screens in the client | Procedure | 🔶 P2 | 0.5 h | F-006-T02: Owner tries the Setup pages on the dev stack |
+| [grover:F-007](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-007) | Lights follow the grow calendar; Switch to bloom | Procedure | 🔶 P2 | 0.25 h | F-007-T02: Owner tries Switch to bloom and the light line on the dev stack |
+| [grover:F-013](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-013) | Plant cycle: nursery, cuttings, harvest, a plant per pot, phase per plant | Procedure | 🔶 P2 | 0.5 h | F-013-T02: Owner tries the plant cycle on the dev stack |
+| [grover:F-014](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-014) | Plant page with statistics, as in the old app | Procedure | 🔶 P2 | 0.25 h | F-014-T02: Owner tries the plant page on the dev stack |
+| [grover:F-015](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-015) | Rig map: the tent as a live diagram, with its controls | Procedure | 🔶 P2 | 0.5 h | F-015-T02: Owner tries the rig map on a phone and a laptop, light and dark on the dev stack |
+| [grover:F-016](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-016) | Schedules by day of week, weekends apart | Procedure | 🔶 P2 | 0.25 h | F-016-T02: Owner tries weekday schedules on the dev stack |
+| [grover:F-018](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-018) | Pumps through an L298N driver (two pins on the MCP23017) | Procedure | 🔶 P2 | 1.5 h | F-018-T01: Owner writes down the pump wiring (L298N inputs on MCP23017 pins) |
+| [grover:B-009](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#b-009) | Eight Dependabot PRs from 2021 to 2023 still open against the removed v1 tree | Decision | 🔹 P3 | 0.25 h | B-009-T01: Owner decides on closing the eight v1 Dependabot PRs |
+| [grover:F-017](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-017) | Nutrient colours: each supply tank in its nutrient's real colour | Procedure | 🔹 P3 | 0.25 h | F-017-T03: Owner picks the nutrient colours |
 | [openbando:B-009](https://github.com/voidbrain/openbando/blob/5c96a1858627cb6c8be9f2b76ba6edc723863a46/docs/BACKLOG.md#b-009) | Simulator and selected-flight/video regression | Procedure | 🔶 P2 | — | Manually check simulator entry, collisions and selected-flight/video replay. |
 | [openbando:B-017](https://github.com/voidbrain/openbando/blob/5c96a1858627cb6c8be9f2b76ba6edc723863a46/docs/BACKLOG.md#b-017) | Villetta replay misalignment with video | Procedure | 🔶 P2 | — | Pin the demo flight at your three moments on the live site (since #258) and say whether the replay then follows the video. |
 | [openbando:B-018](https://github.com/voidbrain/openbando/blob/5c96a1858627cb6c8be9f2b76ba6edc723863a46/docs/BACKLOG.md#b-018) | Hidden-origin GPS projection distorts flight paths | Procedure | 🔺 P1 | — | Compare the corrected path with the real flight and test real GPS devices. |
@@ -171,9 +176,11 @@ Records and steps whose next move is an owner procedure (🧑‍🔧) or decisio
 | [openbando:F-031](https://github.com/voidbrain/openbando/blob/5c96a1858627cb6c8be9f2b76ba6edc723863a46/docs/BACKLOG.md#f-031) | Clips and films say when their sources changed since recording | Procedure | 🔹 P3 | — | Re-record and review the guide clips and Welcome films. |
 | [openbando:F-033](https://github.com/voidbrain/openbando/blob/5c96a1858627cb6c8be9f2b76ba6edc723863a46/docs/BACKLOG.md#f-033) | Full impact map: chains, content, couplings, outside the repository, as a reada… | Procedure | 🔶 P2 | — | Read `docs/agents/impact-map.md` and say what is missing or wrong: it is meant to list everything that follows a change. |
 | [openbando:F-053](https://github.com/voidbrain/openbando/blob/5c96a1858627cb6c8be9f2b76ba6edc723863a46/docs/BACKLOG.md#f-053) | Rebuild a bando as a point cloud from a flight's video, placed by its blackbox … | Decision | 🔹 P3 | — | Choose survey pass and import tool, in-app reconstruction, or stop: options and results. |
-| [hobo:F-001](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-001) | Angular scaffold and project harness | Procedure | 🔶 P2 | 0.25 h | F-001-T02: Owner sets branch protection and auto-merge |
-| [hobo:F-008](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-008) | Share and export | Decision | 🔹 P3 | 0.5 h | F-008-T03: Owner decides how a read-only link is served |
-| [hobo:F-014](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-014) | Google Maps place data (optional, later) | Decision | 🔹 P3 | 0.25 h | F-014-T01: Owner decides whether to add Google place data |
+| [hobo:F-001](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-001) | Angular scaffold and project harness | Procedure | 🔶 P2 | 0.25 h | F-001-T02: Owner sets branch protection and auto-merge |
+| [hobo:F-008](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-008) | Share and export | Decision | 🔹 P3 | 0.5 h | F-008-T03: Owner decides how a read-only link is served |
+| [hobo:F-014](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-014) | Google Maps place data (optional, later) | Decision | 🔹 P3 | 0.25 h | F-014-T01: Owner decides whether to add Google place data |
+| [bricks:F-001](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-001) | Workspace, harness and repository setup | Procedure | 🔶 P2 | 0.25 h | F-001-T02: Owner sets branch protection and auto-merge |
+| [bricks:F-004](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-004) | Publish the package on npm with trusted publishing | Procedure | 🔶 P2 | 0.75 h | F-004-T02: Owner creates or confirms the npm account |
 
 ## Agent runway
 
@@ -181,15 +188,16 @@ Agent hours that can run before work reaches a block: open agent work that is re
 
 | Project | Runway | First blocks reached | Owner hours for the next layer |
 |---|---|---|---|
-| 🚦 coordinator | 6 h | owner step grover:F-005-T01; owner step nerv:F-120-T03; owner step solution:F-012-T04 | 0.25 h |
+| 🚦 coordinator | 7.5 h | owner step grover:F-005-T01; owner step nerv:F-120-T03; owner step solution:F-012-T07 | 0.5 h |
 | 𖣂 nerv | 162.25 h | owner step nerv:F-062-T07; owner step nerv:F-011-T02; owner step nerv:F-004-T06; owner step nerv:F-004-T10; owner step nerv:F-012-T05; owner step nerv:F-016-T09; owner step nerv:B-139-T02; owner step nerv:F-082-T04; owner step nerv:F-083-T09; owner step nerv:F-120-T03; owner step nerv:F-088-T04; owner step nerv:F-117-T05; owner step nerv:F-130-T14; owner step nerv:F-089-T03; owner step nerv:F-090-T03; owner step nerv:F-094-T04; owner step nerv:B-099-T03; owner step nerv:F-086-T04; owner step nerv:F-087-T04; owner step nerv:F-092-T04; owner step nerv:B-057-T02; owner step nerv:B-068-T02; owner step nerv:B-122-T02; owner step nerv:B-123-T02; owner step nerv:B-128-T02; owner step nerv:F-129-T03; owner step nerv:F-126-T03; owner step nerv:F-098-T04; owner step nerv:F-060-T01; owner step nerv:F-116-T02; owner step nerv:F-007-T05; owner step nerv:F-123-T02; owner step nerv:F-122-T03; owner step nerv:B-056-T02 | 15 h |
 | 🤖 gauntlet-protocol | 2.25 h | owner step gauntlet-protocol:F-022-T02; owner step gauntlet-protocol:F-021-T02 | 0.75 h |
 | 🦺 project-harness | 0.25 h | — | 0 h |
-| 🚁 fpvbuddy | 3 h | — | 0 h |
-| 🪴 grover | 8.75 h | owner step grover:F-005-T01; owner step grover:F-003-T01; owner step grover:F-011-T02; owner step grover:F-006-T02; owner step grover:F-007-T02; owner step grover:F-013-T02; owner step grover:F-014-T02; owner step grover:F-015-T02; owner step grover:F-016-T02; owner step grover:F-018-T01; owner step grover:B-009-T01; owner step grover:F-017-T03 | 5.5 h |
+| 🚁 fpvbuddy | 19.5 h | owner step fpvbuddy:F-007-T04; owner step fpvbuddy:F-008-T07; owner step fpvbuddy:F-008-T08 | 1 h |
+| 🪴 grover | 25.75 h | owner step grover:F-005-T01; owner step grover:F-003-T01; owner step grover:F-011-T02; owner step grover:F-006-T02; owner step grover:F-007-T02; owner step grover:F-013-T02; owner step grover:F-014-T02; owner step grover:F-015-T02; owner step grover:F-016-T02; owner step grover:F-018-T01; owner step grover:F-020-T08; owner step grover:B-009-T01; owner step grover:F-017-T03 | 6 h |
 | 🏚️ openbando | 0 h; not estimated: openbando:B-045, openbando:B-050, openbando:B-051, openbando:F-021, openbando:F-024, openbando:F-040, openbando:F-041, openbando:F-042, openbando:F-043 | owner step openbando:B-009; owner step openbando:B-017; owner step openbando:B-018; owner step openbando:B-028; owner step openbando:F-001; owner step openbando:F-009; owner step openbando:F-025; owner step openbando:F-026; owner step openbando:F-031; owner step openbando:F-033; record marked Blocked: openbando:F-039; owner step openbando:F-053 | 0 h; not estimated: openbando:B-009, openbando:B-017, openbando:B-018, openbando:B-028, openbando:F-001, openbando:F-009, openbando:F-025, openbando:F-026, openbando:F-031, openbando:F-033, openbando:F-053 |
 | 🗺️ hobo | 53.5 h | owner step hobo:F-007-T04; owner step hobo:F-001-T02; owner step hobo:F-008-T03; owner step hobo:F-011-T02; owner step hobo:F-013-T03; owner step hobo:F-014-T01 | 2.5 h |
-| **Solution** | at least 236 h | 67 | at least 24 h |
+| 🧱 bricks | 55 h | owner step bricks:F-001-T02; owner step bricks:F-004-T02; owner step bricks:F-007-T02 | 0.75 h |
+| **Solution** | at least 326 h | 74 | at least 26.5 h |
 
 ## Audits, reviews and harness
 
@@ -205,6 +213,7 @@ Each project's own evidence at its resolved commit: the newest audit against its
 | 🪴 grover | **v10.20.0, behind v10.21.3** | 2026-11-25 (scoped), no complete full audit; next 2026-12-01 | — | — |
 | 🏚️ openbando | **v10.8.1, behind v10.21.3** | 2026-11-23 (full); next 2026-11-30 | — | — |
 | 🗺️ hobo | v10.21.3 (latest) | 2026-11-25 (scoped), no complete full audit; next 2026-12-02 | — | — |
+| 🧱 bricks | v10.21.3 (latest) | 2026-11-25 (scoped), no complete full audit; next 2026-12-02 | — | — |
 
 ## Gap review
 
@@ -236,15 +245,15 @@ Each open record in its backlog's order. State: Ready = an agent can start its n
 
 | Item | Title | Status | Priority | Open steps | Agent h | Owner h | State |
 |---|---|---|---|---:|---:|---:|---|
-| [solution:B-002](BACKLOG.md#b-002) | check:fast fails with a bare HTTP 403 when GH_TOKEN is unset | Open | 🔹 P3 | 1 | 0.5 | 0 | Ready |
-| [solution:B-003](BACKLOG.md#b-003) | Neither scheduled workflow has run on its schedule yet | Investigate | 🔹 P3 | 1 | 0.25 | 0 | Ready |
-| [solution:B-004](BACKLOG.md#b-004) | An hourly refresh would open a PR every hour: the coordinator's own revision ro… | Implemented | 🔹 P3 | 1 | 0 | 0 | Ready (verification) |
-| [solution:F-006](BACKLOG.md#f-006) | NERV delivers Grover alerts end to end | Open | 🔶 P2 | 2 | 1 | 0.5 | Blocked: owner step grover:F-005-T01 |
-| [solution:F-007](BACKLOG.md#f-007) | NERV capability coverage in the Gauntlet across both repositories | Open | 🔶 P2 | 2 | 1 | 0 | Blocked: owner step nerv:F-120-T03 |
-| [solution:F-009](BACKLOG.md#f-009) | Reconcile to the latest harness and read built backlog views | Implemented | 🔹 P3 | 1 | 0.25 | 0 | Ready (verification) |
-| [solution:F-011](BACKLOG.md#f-011) | Reconcile to harness 10.21.2: the dashboard's five overview gaps and the coordi… | Implemented | 🔹 P3 | 1 | 0 | 0 | Ready (verification) |
-| [solution:F-012](BACKLOG.md#f-012) | Bricks 🧱: shared UI library for the voidbrain projects | Open | 🔹 P3 | 7 | 6.5 | 0.75 | Ready |
-| [solution:F-013](BACKLOG.md#f-013) | OpenBando 🏚️ in the solution, and a domain map | Open | 🔹 P3 | 2 | 0.5 | 0 | Ready (verification) |
+| [solution:B-002](https://github.com/voidbrain/coordinator/blob/30ed787fd7a66ea07df7646246aff9b4cbfa9be8/docs/BACKLOG.md#b-002) | check:fast fails with a bare HTTP 403 when GH_TOKEN is unset | Open | 🔹 P3 | 1 | 0.5 | 0 | Ready |
+| [solution:B-003](https://github.com/voidbrain/coordinator/blob/30ed787fd7a66ea07df7646246aff9b4cbfa9be8/docs/BACKLOG.md#b-003) | Neither scheduled workflow has run on its schedule yet | Investigate | 🔹 P3 | 1 | 0.25 | 0 | Ready |
+| [solution:B-004](https://github.com/voidbrain/coordinator/blob/30ed787fd7a66ea07df7646246aff9b4cbfa9be8/docs/BACKLOG.md#b-004) | An hourly refresh would open a PR every hour: the coordinator's own revision ro… | Implemented | 🔹 P3 | 1 | 0 | 0 | Ready (verification) |
+| [solution:F-006](https://github.com/voidbrain/coordinator/blob/30ed787fd7a66ea07df7646246aff9b4cbfa9be8/docs/BACKLOG.md#f-006) | NERV delivers Grover alerts end to end | Open | 🔶 P2 | 2 | 1 | 0.5 | Blocked: owner step grover:F-005-T01 |
+| [solution:F-007](https://github.com/voidbrain/coordinator/blob/30ed787fd7a66ea07df7646246aff9b4cbfa9be8/docs/BACKLOG.md#f-007) | NERV capability coverage in the Gauntlet across both repositories | Open | 🔶 P2 | 2 | 1 | 0 | Blocked: owner step nerv:F-120-T03 |
+| [solution:F-009](https://github.com/voidbrain/coordinator/blob/30ed787fd7a66ea07df7646246aff9b4cbfa9be8/docs/BACKLOG.md#f-009) | Reconcile to the latest harness and read built backlog views | Implemented | 🔹 P3 | 1 | 0.25 | 0 | Ready (verification) |
+| [solution:F-011](https://github.com/voidbrain/coordinator/blob/30ed787fd7a66ea07df7646246aff9b4cbfa9be8/docs/BACKLOG.md#f-011) | Reconcile to harness 10.21.2: the dashboard's five overview gaps and the coordi… | Implemented | 🔹 P3 | 1 | 0 | 0 | Ready (verification) |
+| [solution:F-012](https://github.com/voidbrain/coordinator/blob/30ed787fd7a66ea07df7646246aff9b4cbfa9be8/docs/BACKLOG.md#f-012) | Bricks 🧱: shared UI library for the voidbrain projects | Open | 🔹 P3 | 7 | 6 | 0.5 | Ready |
+| [solution:F-013](https://github.com/voidbrain/coordinator/blob/30ed787fd7a66ea07df7646246aff9b4cbfa9be8/docs/BACKLOG.md#f-013) | OpenBando 🏚️ in the solution, and a domain map | Open | 🔹 P3 | 2 | 0.5 | 0 | Ready (verification) |
 
 <details><summary>🚦 coordinator: 18 open steps</summary>
 
@@ -260,11 +269,11 @@ Each open record in its backlog's order. State: Ready = an agent can start its n
 | solution:F-009-T01 | Reconcile to the latest harness and read built backlog views | Implemented; verification pending | 0.25 h | 🤖 | — | Ready (verification) |
 | solution:F-011-T01 | Copy the 10.21.2 solution files, label the coordinator and regenerate the dashboard | Implemented; verification pending | 0 h | 🤖 | — | Ready (verification) |
 | solution:F-012-T01 | Angular version contract: every UI component on Angular 22 | Planned | 0.5 h | 🤖 | — | Ready |
+| solution:F-012-T04 | Owner: create the voidbrain/bricks library repository | Implemented; verification pending | 0 h | 🤖 | — | Ready (verification) |
 | solution:F-012-T02 | Design-token contract matching NERV's style guide | Planned | 2 h | ⏳ 🤖 | F-012-T01 | Waiting on solution:F-012-T01 |
 | solution:F-012-T03 | Shared component contract from what the NERV dashboard migration produced | Planned | 2 h | ⏳ 🤖 | F-012-T02, nerv:F-130-T02, nerv:F-130-T05, nerv:F-130-T09 | Waiting on solution:F-012-T02 |
-| solution:F-012-T04 | Owner: create the voidbrain/bricks library repository | Planned | 0 h agent + 0.25 h owner | ⏳ 🤔 | F-012-T03 | Waiting on solution:F-012-T03 |
-| solution:F-012-T05 | Add voidbrain/bricks to the solution and propose its adoption | Planned | 1 h | ⏳ 🤖 | F-012-T04 | Waiting on solution:F-012-T04 |
-| solution:F-012-T06 | Integration acceptance: the three projects on one library release | Planned | 1 h | ⏳ 🤖 | F-012-T05 | Waiting on solution:F-012-T05 |
+| solution:F-012-T05 | Add voidbrain/bricks to the solution and propose its adoption | Ready | 0.5 h | ⏳ 🤖 | F-012-T04 | Waiting on solution:F-012-T04 |
+| solution:F-012-T06 | Integration acceptance: the UI projects on one library release | Planned | 1 h | ⏳ 🤖 | F-012-T05, nerv:F-130-T13, hobo:F-010-T02, grover:F-020-T07, fpvbuddy:F-008-T06 | Waiting on solution:F-012-T05 |
 | solution:F-012-T07 | Owner: look at the three apps side by side | Planned | 0 h agent + 0.5 h owner | ⏳ 🧑‍🔧 | F-012-T06 | Waiting on solution:F-012-T06 |
 | solution:F-013-T01 | Add openbando to the solution and write the domain map | Implemented; verification pending | 0 h | 🤖 | — | Ready (verification) |
 | solution:F-013-T02 | First gap review against the domain map | Planned | 0.5 h | ⏳ 🤖 | F-013-T01 | Waiting on solution:F-013-T01 |
@@ -569,10 +578,12 @@ Each open record in its backlog's order. State: Ready = an agent can start its n
 
 | Item | Title | Status | Priority | Open steps | Agent h | Owner h | State |
 |---|---|---|---|---:|---:|---:|---|
-| [fpvbuddy:F-005](https://github.com/voidbrain/FPVBuddy/blob/9ba5e862a7e51cf2169868192db7eddb7b320e60/docs/BACKLOG.md#f-005) | M1 — FPV battery core package | Open | 🔶 P2 | 3 | 3 | 0 | Ready |
-| [fpvbuddy:F-006](https://github.com/voidbrain/FPVBuddy/blob/9ba5e862a7e51cf2169868192db7eddb7b320e60/docs/BACKLOG.md#f-006) | Reconcile project-harness v10.9.0 → v10.20.0 | Open | 🔹 P3 | 1 | 0 | 0 | Ready (verification) |
+| [fpvbuddy:F-005](https://github.com/voidbrain/FPVBuddy/blob/69b278c692110fa56a9267c352313d047f583d00/docs/BACKLOG.md#f-005) | M1 — FPV battery core package | Open | 🔶 P2 | 3 | 3 | 0 | Ready |
+| [fpvbuddy:F-006](https://github.com/voidbrain/FPVBuddy/blob/69b278c692110fa56a9267c352313d047f583d00/docs/BACKLOG.md#f-006) | Reconcile project-harness v10.9.0 → v10.20.0 | Open | 🔹 P3 | 1 | 0 | 0 | Ready (verification) |
+| [fpvbuddy:F-007](https://github.com/voidbrain/FPVBuddy/blob/69b278c692110fa56a9267c352313d047f583d00/docs/BACKLOG.md#f-007) | Upgrade Angular 21 → 22 | Open | 🔹 P3 | 4 | 3 | 0.25 | Ready |
+| [fpvbuddy:F-008](https://github.com/voidbrain/FPVBuddy/blob/69b278c692110fa56a9267c352313d047f583d00/docs/BACKLOG.md#f-008) | Adopt 🧱 bricks | Open | 🔹 P3 | 8 | 13.5 | 0.75 | Waiting on fpvbuddy:F-007-T03 |
 
-<details><summary>🚁 fpvbuddy: 4 open steps</summary>
+<details><summary>🚁 fpvbuddy: 16 open steps</summary>
 
 | Step | Title | Status | Remaining | Who | Depends on | State |
 |---|---|---|---|---|---|---|
@@ -580,6 +591,18 @@ Each open record in its backlog's order. State: Ready = an agent can start its n
 | fpvbuddy:F-005-T03 | Document the core's public API | Planned | 0.5 h | ⏳ 🤖 | F-005-T02 | Waiting on fpvbuddy:F-005-T02 |
 | fpvbuddy:F-005-T04 | Install check without the FPVBuddy app | Planned | 1 h | ⏳ 🤖 | F-005-T02 | Waiting on fpvbuddy:F-005-T02 |
 | fpvbuddy:F-006-T01 | Reconcile harness files v10.9.0 -&gt; v10.20.0 | Implemented; verification pending | 0 h | 🤖 | — | Ready (verification) |
+| fpvbuddy:F-007-T01 | Check every dependency against Angular 22 | Planned | 0.5 h | 🤖 | — | Ready |
+| fpvbuddy:F-007-T02 | Run ng update to 22 and apply its migrations | Planned | 1.5 h | ⏳ 🤖 | F-007-T01 | Waiting on fpvbuddy:F-007-T01 |
+| fpvbuddy:F-007-T03 | CI and offline build check on 22 | Planned | 1 h | ⏳ 🤖 | F-007-T02 | Waiting on fpvbuddy:F-007-T02 |
+| fpvbuddy:F-007-T04 | Owner: open the upgraded app on the phone | Planned | 0 h agent + 0.25 h owner | ⏳ 🧑‍🔧 | F-007-T03 | Waiting on fpvbuddy:F-007-T03 |
+| fpvbuddy:F-008-T01 | Check the bricks mapping against its first release | Planned | 1 h | ⏳ 🤖 | F-007-T03 | Waiting on fpvbuddy:F-007-T03 |
+| fpvbuddy:F-008-T02 | Pin @voidbrain/bricks and adopt its tokens with an FPVBuddy theme | Planned | 2.5 h | ⏳ 🤖 | F-008-T01 | Waiting on fpvbuddy:F-008-T01 |
+| fpvbuddy:F-008-T03 | Primitives: buttons, input, filter toggles and badges | Planned | 2 h | ⏳ 🤖 | F-008-T02 | Waiting on fpvbuddy:F-008-T02 |
+| fpvbuddy:F-008-T04 | Shell: header, panels and bottom navigation | Planned | 2 h | ⏳ 🤖 | F-008-T03 | Waiting on fpvbuddy:F-008-T03 |
+| fpvbuddy:F-008-T05 | Batteries page: status rows, filters and empty state | Planned | 2 h | ⏳ 🤖 | F-008-T04 | Waiting on fpvbuddy:F-008-T04 |
+| fpvbuddy:F-008-T06 | Compare battery and fleet views with NERV; contribute missing generic pieces to bricks | Planned | 4 h | ⏳ 🤖 | F-008-T05, nerv:F-130-T09 | Waiting on fpvbuddy:F-008-T05 |
+| fpvbuddy:F-008-T07 | Owner: battery and fleet views as a bricks pattern or a shared domain package | Planned | 0 h agent + 0.25 h owner | ⏳ 🤔 | F-008-T06 | Waiting on fpvbuddy:F-008-T06 |
+| fpvbuddy:F-008-T08 | Owner: look at FPVBuddy on bricks on the phone | Planned | 0 h agent + 0.5 h owner | ⏳ 🧑‍🔧 | F-008-T06 | Waiting on fpvbuddy:F-008-T06 |
 
 </details>
 
@@ -587,29 +610,30 @@ Each open record in its backlog's order. State: Ready = an agent can start its n
 
 | Item | Title | Status | Priority | Open steps | Agent h | Owner h | State |
 |---|---|---|---|---:|---:|---:|---|
-| [grover:B-008](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#b-008) | The feed end-to-end test fails now and then on CI: feed done, mixing tank not e… | Implemented | 🔺 P1 | 2 | 0 | 0 | Ready (verification) |
-| [grover:F-005](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-005) | Deploy hub and agent on the Pi behind Tailscale | Open | 🔶 P2 | 3 | 0.5 | 1.5 | Owner: Procedure |
-| [grover:F-003](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-003) | Hardware bring-up on the Raspberry Pi | Open | 🔺 P1 | 5 | 2.5 | 4.5 | Owner: Decision |
-| [grover:F-004](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-004) | Calibrate analog probes (volts to pH and EC) | Implemented | 🔺 P1 | 2 | 0.25 | 1 | Blocked: owner step grover:F-005-T01 |
-| [grover:F-011](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-011) | Feed cycle per pot: supply tanks, mixing tank, pot pumps | Implemented | 🔺 P1 | 2 | 0.5 | 0.5 | Owner: Procedure |
-| [grover:B-006](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#b-006) | An upgraded agent drops its cached config until the hub answers | Open | 🔶 P2 | 1 | 1 | 0 | Ready |
-| [grover:B-010](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#b-010) | Held threshold alerts read as if the value were still past the threshold, and t… | Implemented | 🔶 P2 | 1 | 0.25 | 0 | Ready (verification) |
-| [grover:F-008](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-008) | Alerts for NERV: out-of-range values, offline agent, faults | Open | 🔶 P2 | 1 | 0 | 0.25 | Blocked: owner step grover:F-005-T01 |
-| [grover:F-012](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-012) | Plants and strains: origin, generation, breeder, ancestry | Implemented | 🔶 P2 | 2 | 0.25 | 0.5 | Blocked: owner step grover:F-005-T01 |
-| [grover:F-006](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-006) | Set-up screens in the client | Implemented | 🔶 P2 | 2 | 0.5 | 0.5 | Owner: Procedure |
-| [grover:F-007](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-007) | Lights follow the grow calendar; Switch to bloom | Implemented | 🔶 P2 | 2 | 0.25 | 0.25 | Owner: Procedure |
-| [grover:F-013](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-013) | Plant cycle: nursery, cuttings, harvest, a plant per pot, phase per plant | Implemented | 🔶 P2 | 2 | 0.5 | 0.5 | Owner: Procedure |
-| [grover:F-014](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-014) | Plant page with statistics, as in the old app | Implemented | 🔶 P2 | 2 | 0.5 | 0.25 | Owner: Procedure |
-| [grover:F-015](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-015) | Rig map: the tent as a live diagram, with its controls | Implemented | 🔶 P2 | 2 | 0.5 | 0.5 | Owner: Procedure |
-| [grover:F-016](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-016) | Schedules by day of week, weekends apart | Implemented | 🔶 P2 | 2 | 0.5 | 0.25 | Owner: Procedure |
-| [grover:F-018](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-018) | Pumps through an L298N driver (two pins on the MCP23017) | Implemented | 🔶 P2 | 3 | 0.25 | 1.5 | Owner: Procedure |
-| [grover:F-019](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-019) | Install Grover as a web app on the phone | Implemented | 🔹 P3 | 3 | 0 | 0.25 | Ready (verification) |
-| [grover:F-010](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-010) | Hub data retention and backups | Open | 🔹 P3 | 2 | 2.5 | 0 | Ready |
-| [grover:F-009](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-009) | Browser tests and accessibility checks for the client | Open | 🔹 P3 | 3 | 5 | 0 | Ready |
-| [grover:B-009](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#b-009) | Eight Dependabot PRs from 2021 to 2023 still open against the removed v1 tree | Open | 🔹 P3 | 2 | 0.25 | 0.25 | Owner: Decision |
-| [grover:F-017](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-017) | Nutrient colours: each supply tank in its nutrient's real colour | Implemented | 🔹 P3 | 2 | 0.5 | 0.25 | Owner: Procedure |
+| [grover:B-008](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#b-008) | The feed end-to-end test fails now and then on CI: feed done, mixing tank not e… | Implemented | 🔺 P1 | 2 | 0 | 0 | Ready (verification) |
+| [grover:F-005](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-005) | Deploy hub and agent on the Pi behind Tailscale | Open | 🔶 P2 | 3 | 0.5 | 1.5 | Owner: Procedure |
+| [grover:F-003](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-003) | Hardware bring-up on the Raspberry Pi | Open | 🔺 P1 | 5 | 2.5 | 4.5 | Owner: Decision |
+| [grover:F-004](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-004) | Calibrate analog probes (volts to pH and EC) | Implemented | 🔺 P1 | 2 | 0.25 | 1 | Blocked: owner step grover:F-005-T01 |
+| [grover:F-011](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-011) | Feed cycle per pot: supply tanks, mixing tank, pot pumps | Implemented | 🔺 P1 | 2 | 0.5 | 0.5 | Owner: Procedure |
+| [grover:B-006](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#b-006) | An upgraded agent drops its cached config until the hub answers | Open | 🔶 P2 | 1 | 1 | 0 | Ready |
+| [grover:B-010](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#b-010) | Held threshold alerts read as if the value were still past the threshold, and t… | Implemented | 🔶 P2 | 1 | 0.25 | 0 | Ready (verification) |
+| [grover:F-008](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-008) | Alerts for NERV: out-of-range values, offline agent, faults | Open | 🔶 P2 | 1 | 0 | 0.25 | Blocked: owner step grover:F-005-T01 |
+| [grover:F-012](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-012) | Plants and strains: origin, generation, breeder, ancestry | Implemented | 🔶 P2 | 2 | 0.25 | 0.5 | Blocked: owner step grover:F-005-T01 |
+| [grover:F-006](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-006) | Set-up screens in the client | Implemented | 🔶 P2 | 2 | 0.5 | 0.5 | Owner: Procedure |
+| [grover:F-007](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-007) | Lights follow the grow calendar; Switch to bloom | Implemented | 🔶 P2 | 2 | 0.25 | 0.25 | Owner: Procedure |
+| [grover:F-013](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-013) | Plant cycle: nursery, cuttings, harvest, a plant per pot, phase per plant | Implemented | 🔶 P2 | 2 | 0.5 | 0.5 | Owner: Procedure |
+| [grover:F-014](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-014) | Plant page with statistics, as in the old app | Implemented | 🔶 P2 | 2 | 0.5 | 0.25 | Owner: Procedure |
+| [grover:F-015](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-015) | Rig map: the tent as a live diagram, with its controls | Implemented | 🔶 P2 | 2 | 0.5 | 0.5 | Owner: Procedure |
+| [grover:F-016](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-016) | Schedules by day of week, weekends apart | Implemented | 🔶 P2 | 2 | 0.5 | 0.25 | Owner: Procedure |
+| [grover:F-018](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-018) | Pumps through an L298N driver (two pins on the MCP23017) | Implemented | 🔶 P2 | 3 | 0.25 | 1.5 | Owner: Procedure |
+| [grover:F-019](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-019) | Install Grover as a web app on the phone | Implemented | 🔹 P3 | 3 | 0 | 0.25 | Ready (verification) |
+| [grover:F-010](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-010) | Hub data retention and backups | Open | 🔹 P3 | 2 | 2.5 | 0 | Ready |
+| [grover:F-009](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-009) | Browser tests and accessibility checks for the client | Open | 🔹 P3 | 3 | 5 | 0 | Ready |
+| [grover:F-020](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-020) | Adopt 🧱 bricks in the client | Open | 🔹 P3 | 8 | 17 | 0.5 | Ready |
+| [grover:B-009](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#b-009) | Eight Dependabot PRs from 2021 to 2023 still open against the removed v1 tree | Open | 🔹 P3 | 2 | 0.25 | 0.25 | Owner: Decision |
+| [grover:F-017](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-017) | Nutrient colours: each supply tank in its nutrient's real colour | Implemented | 🔹 P3 | 2 | 0.5 | 0.25 | Owner: Procedure |
 
-<details><summary>🪴 grover: 46 open steps</summary>
+<details><summary>🪴 grover: 54 open steps</summary>
 
 | Step | Title | Status | Remaining | Who | Depends on | State |
 |---|---|---|---|---|---|---|
@@ -655,6 +679,14 @@ Each open record in its backlog's order. State: Ready = an agent can start its n
 | grover:F-009-T01 | Playwright against the dev stack: the dashboard renders the demo tent | Ready | 2 h | 🤖 | — | Ready |
 | grover:F-009-T02 | Browser scenarios: run a pump, switch the mode, axe scan | Planned | 2 h | ⏳ 🤖 | F-009-T01 | Waiting on grover:F-009-T01 |
 | grover:F-009-T03 | Run the browser suite in CI | Planned | 1 h | ⏳ 🤖 | F-009-T02 | Waiting on grover:F-009-T02 |
+| grover:F-020-T01 | Check the bricks mapping against its first release | Planned | 1 h | 🤖 | — | Ready |
+| grover:F-020-T02 | Pin @voidbrain/bricks and adopt its tokens with a Grover theme | Planned | 2 h | ⏳ 🤖 | F-020-T01 | Waiting on grover:F-020-T01 |
+| grover:F-020-T03 | Primitives: buttons, inputs, selects, switch and badges | Planned | 3 h | ⏳ 🤖 | F-020-T02 | Waiting on grover:F-020-T02 |
+| grover:F-020-T04 | Setup pages: form field, data table, card and confirm dialog | Planned | 3 h | ⏳ 🤖 | F-020-T03 | Waiting on grover:F-020-T03 |
+| grover:F-020-T05 | Dashboard and room card: card, status rows, empty state, dialog | Planned | 3 h | ⏳ 🤖 | F-020-T04 | Waiting on grover:F-020-T04 |
+| grover:F-020-T06 | Plant page, probe page and rig map on bricks | Planned | 2 h | ⏳ 🤖 | F-020-T05 | Waiting on grover:F-020-T05 |
+| grover:F-020-T07 | Contribute segmented control and stat tile to bricks, then use them | Planned | 3 h | ⏳ 🤖 | F-020-T06 | Waiting on grover:F-020-T06 |
+| grover:F-020-T08 | Owner: look at the client on bricks, phone and desktop | Planned | 0 h agent + 0.5 h owner | ⏳ 🧑‍🔧 | F-020-T07 | Waiting on grover:F-020-T07 |
 | grover:B-009-T01 | Owner decides on closing the eight v1 Dependabot PRs | Ready | 0 h agent + 0.25 h owner | 🤔 | — | Owner: Decision |
 | grover:B-009-T02 | Close the v1 Dependabot PRs and delete their branches | Planned | 0.25 h | ⏳ 🤖 | B-009-T01 | Blocked: owner step grover:B-009-T01 |
 | grover:F-017-T03 | Owner picks the nutrient colours | Ready | 0 h agent + 0.25 h owner | 🧑‍🔧 | — | Owner: Procedure |
@@ -692,26 +724,26 @@ Each open record in its backlog's order. State: Ready = an agent can start its n
 
 | Item | Title | Status | Priority | Open steps | Agent h | Owner h | State |
 |---|---|---|---|---:|---:|---:|---|
-| [hobo:F-007](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-007) | Map provider adapter: Leaflet and OpenRouteService | Open | 🔶 P2 | 4 | 7 | 0.25 | Ready |
-| [hobo:F-002](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-002) | Places: collect and organise | Open | 🔶 P2 | 5 | 11.5 | 0 | Ready |
-| [hobo:F-003](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-003) | Trips: dates, start and end, stops | Open | 🔶 P2 | 3 | 7 | 0 | Waiting on hobo:F-002-T01 |
-| [hobo:F-004](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-004) | Routing totals per leg, per day and per trip | Open | 🔶 P2 | 3 | 5.5 | 0 | Ready |
-| [hobo:F-001](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-001) | Angular scaffold and project harness | Implemented | 🔶 P2 | 2 | 0 | 0.25 | Ready (verification) |
-| [hobo:F-008](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-008) | Share and export | Open | 🔹 P3 | 4 | 6.5 | 0.5 | Owner: Decision |
-| [hobo:F-009](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-009) | Multi-user editing (deferred) | Open | 🔹 P3 | 1 | 0 | 0.25 | Blocked: owner step hobo:F-008-T03 |
-| [hobo:F-012](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-012) | Shared maps/geo package with openbando (candidate) | Open | 🔹 P3 | 1 | 1 | 0 | Waiting on hobo:F-007-T02 |
-| [hobo:F-005](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-005) | What-if: compare another order or set of stops | Open | 🔹 P3 | 2 | 4 | 0 | Waiting on hobo:F-004-T02 |
-| [hobo:F-006](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-006) | Variants: tabs per trip for A/B testing | Open | 🔹 P3 | 2 | 3.5 | 0 | Waiting on hobo:F-003-T01 |
-| [hobo:F-010](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-010) | Shared UI built to move to 🧱 bricks | Open | 🔹 P3 | 2 | 3.5 | 0 | Ready |
-| [hobo:F-011](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-011) | NERV integration: MCP server for places, trips and totals | Open | 🔹 P3 | 2 | 2.5 | 0.25 | Waiting on hobo:F-002-T01 |
-| [hobo:F-013](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-013) | Self-hosted routing and geocoding (later) | Open | 🔹 P3 | 3 | 4 | 1 | Waiting on hobo:F-007-T01 |
-| [hobo:F-014](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-014) | Google Maps place data (optional, later) | Open | 🔹 P3 | 2 | 2 | 0.25 | Owner: Decision |
+| [hobo:F-007](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-007) | Map provider adapter: Leaflet and OpenRouteService | Open | 🔶 P2 | 4 | 7 | 0.25 | Waiting on hobo:F-002-T01 |
+| [hobo:F-002](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-002) | Places: collect and organise | Open | 🔶 P2 | 5 | 11.5 | 0 | Ready |
+| [hobo:F-003](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-003) | Trips: dates, start and end, stops | Open | 🔶 P2 | 3 | 7 | 0 | Waiting on hobo:F-002-T01 |
+| [hobo:F-004](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-004) | Routing totals per leg, per day and per trip | Open | 🔶 P2 | 3 | 5.5 | 0 | Ready |
+| [hobo:F-001](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-001) | Angular scaffold and project harness | Implemented | 🔶 P2 | 2 | 0 | 0.25 | Ready (verification) |
+| [hobo:F-008](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-008) | Share and export | Open | 🔹 P3 | 4 | 6.5 | 0.5 | Owner: Decision |
+| [hobo:F-009](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-009) | Multi-user editing (deferred) | Open | 🔹 P3 | 1 | 0 | 0.25 | Blocked: owner step hobo:F-008-T03 |
+| [hobo:F-012](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-012) | Shared maps/geo package with openbando (candidate) | Open | 🔹 P3 | 1 | 1 | 0 | Waiting on hobo:F-007-T02 |
+| [hobo:F-005](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-005) | What-if: compare another order or set of stops | Open | 🔹 P3 | 2 | 4 | 0 | Waiting on hobo:F-004-T02 |
+| [hobo:F-006](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-006) | Variants: tabs per trip for A/B testing | Open | 🔹 P3 | 2 | 3.5 | 0 | Waiting on hobo:F-003-T01 |
+| [hobo:F-010](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-010) | Shared UI built to move to 🧱 bricks | Open | 🔹 P3 | 2 | 3.5 | 0 | Ready |
+| [hobo:F-011](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-011) | NERV integration: MCP server for places, trips and totals | Open | 🔹 P3 | 2 | 2.5 | 0.25 | Waiting on hobo:F-002-T01 |
+| [hobo:F-013](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-013) | Self-hosted routing and geocoding (later) | Open | 🔹 P3 | 3 | 4 | 1 | Waiting on hobo:F-007-T01 |
+| [hobo:F-014](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-014) | Google Maps place data (optional, later) | Open | 🔹 P3 | 2 | 2 | 0.25 | Owner: Decision |
 
 <details><summary>🗺️ hobo: 36 open steps</summary>
 
 | Step | Title | Status | Remaining | Who | Depends on | State |
 |---|---|---|---|---|---|---|
-| hobo:F-007-T01 | Adapter interface, local config and leg cache | Ready | 2 h | 🤖 | — | Ready |
+| hobo:F-007-T01 | Adapter interface, local config and leg cache | Planned | 2 h | ⏳ 🤖 | F-002-T01 | Waiting on hobo:F-002-T01 |
 | hobo:F-007-T02 | Leaflet map component | Planned | 2 h | ⏳ 🤖 | F-007-T01 | Waiting on hobo:F-007-T01 |
 | hobo:F-007-T03 | OpenRouteService provider | Planned | 3 h | ⏳ 🤖 | F-007-T01 | Waiting on hobo:F-007-T01 |
 | hobo:F-007-T04 | Owner adds an OpenRouteService key and checks a live route | Planned | 0 h agent + 0.25 h owner | ⏳ 🧑‍🔧 | F-007-T03 | Waiting on hobo:F-007-T03 |
@@ -731,7 +763,7 @@ Each open record in its backlog's order. State: Ready = an agent can start its n
 | hobo:F-008-T03 | Owner decides how a read-only link is served | Ready | 0 h agent + 0.5 h owner | 🤔 | — | Owner: Decision |
 | hobo:F-008-T01 | GPX and KML export | Planned | 2 h | ⏳ 🤖 | F-004-T02 | Waiting on hobo:F-004-T02 |
 | hobo:F-008-T02 | PDF itinerary | Planned | 2 h | ⏳ 🤖 | F-004-T03 | Waiting on hobo:F-004-T03 |
-| hobo:F-008-T04 | Read-only share link | Planned | 2.5 h | ⏳ 🤖 | F-008-T03 | Blocked: owner step hobo:F-008-T03 |
+| hobo:F-008-T04 | Read-only share link | Planned | 2.5 h | ⏳ 🤖 | F-008-T03, F-003-T01, F-004-T03 | Blocked: owner step hobo:F-008-T03 |
 | hobo:F-009-T01 | Owner decides whether and when to plan multi-user editing | Planned | 0 h agent + 0.25 h owner | ⏳ 🤔 | F-008-T04 | Blocked: owner step hobo:F-008-T03 |
 | hobo:F-012-T01 | Compare and propose | Planned | 1 h | ⏳ 🤖 | F-007-T02 | Waiting on hobo:F-007-T02 |
 | hobo:F-005-T01 | Pure what-if evaluation | Planned | 1.5 h | ⏳ 🤖 | F-004-T02 | Waiting on hobo:F-004-T02 |
@@ -740,7 +772,7 @@ Each open record in its backlog's order. State: Ready = an agent can start its n
 | hobo:F-006-T02 | Variant tabs and comparison | Planned | 2 h | ⏳ 🤖 | F-006-T01, F-004-T03 | Waiting on hobo:F-006-T01 |
 | hobo:F-010-T01 | Bricks-ready contract and check | Ready | 1.5 h | 🤖 | — | Ready |
 | hobo:F-010-T02 | Move shared components to bricks | Planned | 2 h | ⏳ 🤖 | F-010-T01 | Waiting on hobo:F-010-T01 |
-| hobo:F-011-T01 | MCP endpoint in the local service | Planned | 2.5 h | ⏳ 🤖 | F-002-T01, F-004-T01 | Waiting on hobo:F-002-T01 |
+| hobo:F-011-T01 | MCP endpoint in the local service | Planned | 2.5 h | ⏳ 🤖 | F-002-T01, F-003-T01, F-004-T01, F-004-T02 | Waiting on hobo:F-002-T01 |
 | hobo:F-011-T02 | Owner connects Hobo to NERV and checks it from chat | Planned | 0 h agent + 0.25 h owner | ⏳ 🧑‍🔧 | F-011-T01 | Waiting on hobo:F-011-T01 |
 | hobo:F-013-T01 | OSRM provider | Planned | 2 h | ⏳ 🤖 | F-007-T01 | Waiting on hobo:F-007-T01 |
 | hobo:F-013-T02 | Nominatim or Photon geocoding provider | Planned | 2 h | ⏳ 🤖 | F-007-T01 | Waiting on hobo:F-007-T01 |
@@ -750,35 +782,87 @@ Each open record in its backlog's order. State: Ready = an agent can start its n
 
 </details>
 
+### 🧱 bricks
+
+| Item | Title | Status | Priority | Open steps | Agent h | Owner h | State |
+|---|---|---|---|---:|---:|---:|---|
+| [bricks:F-005](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-005) | Semantic versioning and a changelog | Open | 🔶 P2 | 2 | 4 | 0 | Ready |
+| [bricks:F-001](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-001) | Workspace, harness and repository setup | Implemented | 🔶 P2 | 2 | 0 | 0.25 | Ready (verification) |
+| [bricks:F-002](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-002) | First content: tokens, themes and NERV's genUI surfaces | Implemented | 🔶 P2 | 3 | 0 | 0 | Ready (verification) |
+| [bricks:F-004](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-004) | Publish the package on npm with trusted publishing | Implemented | 🔶 P2 | 6 | 5 | 0.75 | Ready (verification) |
+| [bricks:F-006](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-006) | NERV adoption: what bricks ships for NERV | Open | 🔶 P2 | 3 | 9 | 0 | Ready |
+| [bricks:F-008](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-008) | Grover adoption: what bricks ships for Grover | Open | 🔹 P3 | 2 | 4 | 0 | Ready |
+| [bricks:F-009](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-009) | FPVBuddy adoption: what bricks ships for FPVBuddy | Open | 🔹 P3 | 2 | 4 | 0 | Ready |
+| [bricks:F-007](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-007) | Hobo adoption: what bricks ships for Hobo | Open | 🔹 P3 | 3 | 5 | 0.25 | Ready |
+| [bricks:F-003](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-003) | Components, patterns and the live-view helper, on demand | Open | 🔹 P3 | 7 | 35 | 0 | Ready |
+
+<details><summary>🧱 bricks: 30 open steps</summary>
+
+| Step | Title | Status | Remaining | Who | Depends on | State |
+|---|---|---|---|---|---|---|
+| bricks:F-005-T01 | CHANGELOG.md and the version-to-changelog check | Planned | 3 h | 🤖 | — | Ready |
+| bricks:F-005-T02 | Release procedure: version, changelog, tag | Planned | 1 h | ⏳ 🤖 | F-005-T01 | Waiting on bricks:F-005-T01 |
+| bricks:F-001-T01 | Scaffold the workspace and apply harness v10.21.3 | Implemented; verification pending | 0 h | 🤖 | — | Ready (verification) |
+| bricks:F-001-T02 | Owner sets branch protection and auto-merge | Ready | 0 h agent + 0.25 h owner | 🧑‍🔧 | — | Owner: Procedure |
+| bricks:F-002-T01 | Tokens, foundations and the base, plain and eva themes | Implemented; verification pending | 0 h | 🤖 | — | Ready (verification) |
+| bricks:F-002-T02 | Port the four genUI surface cards with their schemas and validation | Implemented; verification pending | 0 h | 🤖 | — | Ready (verification) |
+| bricks:F-002-T03 | Catalogue in all three themes with axe in CI | Implemented; verification pending | 0 h | 🤖 | — | Ready (verification) |
+| bricks:F-004-T01 | Registry decision: public npm with trusted publishing | Implemented; verification pending | 0 h | 🤖 | — | Ready (verification) |
+| bricks:F-004-T02 | Owner creates or confirms the npm account | Ready | 0 h agent + 0.25 h owner | 🧑‍🔧 | — | Owner: Procedure |
+| bricks:F-004-T03 | Owner creates the npm organisation voidbrain | Planned | 0 h agent + 0.25 h owner | ⏳ 🧑‍🔧 | F-004-T02 | Blocked: owner step bricks:F-004-T02 |
+| bricks:F-004-T04 | Release workflow with npm trusted publishing | Planned | 3 h | ⏳ 🤖 | F-005-T01 | Waiting on bricks:F-005-T01 |
+| bricks:F-004-T05 | Owner enables trusted publishing for voidbrain/bricks | Planned | 0 h agent + 0.25 h owner | ⏳ 🧑‍🔧 | F-004-T03, F-004-T04 | Blocked: owner step bricks:F-004-T02 |
+| bricks:F-004-T06 | First publish of 0.1.0 and an install check | Planned | 2 h | ⏳ 🤖 | F-004-T05, F-005-T02 | Blocked: owner step bricks:F-004-T02 |
+| bricks:F-006-T01 | Inventory NERV's UI against bricks | Planned | 2 h | 🤖 | — | Ready |
+| bricks:F-006-T02 | Eva light mode and the five accents as theme variants | Planned | 5 h | ⏳ 🤖 | F-006-T01 | Waiting on bricks:F-006-T01 |
+| bricks:F-006-T03 | Migration note for NERV and the release that carries it | Planned | 2 h | ⏳ 🤖 | F-006-T01, F-004-T06 | Blocked: owner step bricks:F-004-T02 |
+| bricks:F-008-T01 | Inventory Grover's UI against bricks | Planned | 2 h | 🤖 | — | Ready |
+| bricks:F-008-T02 | Migration note for Grover and the release that carries it | Planned | 2 h | ⏳ 🤖 | F-008-T01, F-004-T06 | Blocked: owner step bricks:F-004-T02 |
+| bricks:F-009-T01 | Inventory FPVBuddy's UI against bricks | Planned | 2 h | 🤖 | — | Ready |
+| bricks:F-009-T02 | Migration note for FPVBuddy (after its Angular 22 upgrade) and the release that carries it | Planned | 2 h | ⏳ 🤖 | F-009-T01, F-004-T06 | Blocked: owner step bricks:F-004-T02 |
+| bricks:F-007-T01 | Inventory Hobo's UI and map its tokens | Planned | 2 h | 🤖 | — | Ready |
+| bricks:F-007-T02 | Owner picks Hobo's look: base or a Hobo theme | Planned | 0 h agent + 0.25 h owner | ⏳ 🤔 | F-007-T01 | Waiting on bricks:F-007-T01 |
+| bricks:F-007-T03 | Migration note for Hobo and the release that carries it | Planned | 3 h | ⏳ 🤖 | F-007-T02, F-004-T06 | Blocked: owner step bricks:F-004-T02 |
+| bricks:F-003-T01 | Primitives: button, input, select, toggle, tag | Planned | 6 h | 🤖 | — | Ready |
+| bricks:F-003-T03 | Live-view helper: render once, update changed values, keyed rows | Planned | 4 h | 🤖 | — | Ready |
+| bricks:F-003-T07 | Foundations: layout and icons | Planned | 4 h | 🤖 | — | Ready |
+| bricks:F-003-T02 | Components: form field, list row, tabs | Planned | 5 h | ⏳ 🤖 | F-003-T01 | Waiting on bricks:F-003-T01 |
+| bricks:F-003-T04 | Dialog and toast | Planned | 5 h | ⏳ 🤖 | F-003-T01 | Waiting on bricks:F-003-T01 |
+| bricks:F-003-T05 | Patterns: status row, approval card, empty state | Planned | 5 h | ⏳ 🤖 | F-003-T01 | Waiting on bricks:F-003-T01 |
+| bricks:F-003-T06 | Patterns: data table and filters | Planned | 6 h | ⏳ 🤖 | F-003-T02 | Waiting on bricks:F-003-T02 |
+
+</details>
+
 ## Remaining effort
 
 Hours each backlog still holds, as each project's own, uncalibrated estimate. The solution line adds them; it is no completion measure.
 
 | Source | Agent | Owner | From | Open records by priority | Open records by size |
 |---|---|---|---|---|---|
-| 🚦 coordinator | 10 h | 1.25 h | totals line | 🔶 P2: 2, 🔹 P3: 7 | 🟢 Small: 8, 🔴 Large: 1 |
+| 🚦 coordinator | 9.5 h | 1 h | totals line | 🔶 P2: 2, 🔹 P3: 7 | 🟢 Small: 8, 🔴 Large: 1 |
 | 𖣂 nerv | 171.5 h | 15.75 h | totals line | 🔺 P1: 10, 🔶 P2: 45, 🔹 P3: 29 | 🟢 Small: 55, 🟡 Medium: 21, 🔴 Large: 5, 🟣 Very large: 3 |
 | 🤖 gauntlet-protocol | 7.75 h | 1 h | totals line | 🔶 P2: 1, 🔹 P3: 2 | 🟢 Small: 1, 🟡 Medium: 1, 🔴 Large: 1 |
 | 🦺 project-harness | 0.25 h | 0 h | totals line | 🔶 P2: 1 | 🟢 Small: 1 |
-| 🚁 fpvbuddy | 3 h | 0 h | Remaining cells of 2 open records | 🔶 P2: 1, 🔹 P3: 1 | 🟢 Small: 1, 🟡 Medium: 1 |
-| 🪴 grover | 16.5 h | 12.75 h | totals line | 🔺 P1: 4, 🔶 P2: 12, 🔹 P3: 5 | 🟢 Small: 18, 🟡 Medium: 2, 🔴 Large: 1 |
+| 🚁 fpvbuddy | 19.5 h | 1 h | Remaining cells of 4 open records | 🔶 P2: 1, 🔹 P3: 3 | 🟢 Small: 1, 🟡 Medium: 2, 🟣 Very large: 1 |
+| 🪴 grover | 33.5 h | 13.25 h | totals line | 🔺 P1: 4, 🔶 P2: 12, 🔹 P3: 6 | 🟢 Small: 18, 🟡 Medium: 2, 🔴 Large: 1, 🟣 Very large: 1 |
 | 🏚️ openbando | Unknown | Unknown | no totals line or Remaining cells | 🔺 P1: 1, 🔶 P2: 10, ◻️ P3: 1, 🔹 P3: 9 | 🟢 Small: 8, 🟡 Medium: 9, 🔴 Large: 4 |
 | 🗺️ hobo | 58 h | 2.75 h | totals line | 🔶 P2: 5, 🔹 P3: 9 | 🟢 Small: 3, 🟡 Medium: 6, 🔴 Large: 4, 🟣 Very large: 1 |
-| **Solution** | at least 267 h | at least 33.5 h | 7 of 8 backlogs | | |
+| 🧱 bricks | 66 h | 1.25 h | totals line | 🔶 P2: 5, 🔹 P3: 4 | 🟢 Small: 2, 🟡 Medium: 3, 🔴 Large: 2, 🟣 Very large: 2 |
+| **Solution** | at least 366 h | at least 36 h | 8 of 9 backlogs | | |
 
 ## Integration outcomes
 
 | Record | Outcome | Status | Human action | Effort | Component links |
 |---|---|---|---|---|---|
-| [solution:B-002](BACKLOG.md#b-002) | check:fast fails with a bare HTTP 403 when GH_TOKEN is unset | Open | No | 🟢 Small | — |
-| [solution:B-003](BACKLOG.md#b-003) | Neither scheduled workflow has run on its schedule yet | Investigate | No | 🟢 Small | — |
-| [solution:B-004](BACKLOG.md#b-004) | An hourly refresh would open a PR every hour: the coordinator's own revision row was not ignored | Implemented | No | 🟢 Small | — |
-| [solution:F-006](BACKLOG.md#f-006) | NERV delivers Grover alerts end to end | Open | No | 🟢 Small | grover:F-008, nerv:F-122, nerv:F-123 |
-| [solution:F-007](BACKLOG.md#f-007) | NERV capability coverage in the Gauntlet across both repositories | Open | No | 🟢 Small | nerv:F-120 |
-| [solution:F-009](BACKLOG.md#f-009) | Reconcile to the latest harness and read built backlog views | Implemented | No | 🟢 Small | project-harness:F-096 |
-| [solution:F-011](BACKLOG.md#f-011) | Reconcile to harness 10.21.2: the dashboard's five overview gaps and the coordinator label | Implemented | No | 🟢 Small | project-harness:B-060 |
-| [solution:F-012](BACKLOG.md#f-012) | Bricks 🧱: shared UI library for the voidbrain projects | Open | No | 🔴 Large | nerv:F-130 |
-| [solution:F-013](BACKLOG.md#f-013) | OpenBando 🏚️ in the solution, and a domain map | Open | No | 🟢 Small | — |
+| [solution:B-002](https://github.com/voidbrain/coordinator/blob/30ed787fd7a66ea07df7646246aff9b4cbfa9be8/docs/BACKLOG.md#b-002) | check:fast fails with a bare HTTP 403 when GH_TOKEN is unset | Open | No | 🟢 Small | — |
+| [solution:B-003](https://github.com/voidbrain/coordinator/blob/30ed787fd7a66ea07df7646246aff9b4cbfa9be8/docs/BACKLOG.md#b-003) | Neither scheduled workflow has run on its schedule yet | Investigate | No | 🟢 Small | — |
+| [solution:B-004](https://github.com/voidbrain/coordinator/blob/30ed787fd7a66ea07df7646246aff9b4cbfa9be8/docs/BACKLOG.md#b-004) | An hourly refresh would open a PR every hour: the coordinator's own revision row was not ignored | Implemented | No | 🟢 Small | — |
+| [solution:F-006](https://github.com/voidbrain/coordinator/blob/30ed787fd7a66ea07df7646246aff9b4cbfa9be8/docs/BACKLOG.md#f-006) | NERV delivers Grover alerts end to end | Open | No | 🟢 Small | grover:F-008, nerv:F-122, nerv:F-123 |
+| [solution:F-007](https://github.com/voidbrain/coordinator/blob/30ed787fd7a66ea07df7646246aff9b4cbfa9be8/docs/BACKLOG.md#f-007) | NERV capability coverage in the Gauntlet across both repositories | Open | No | 🟢 Small | nerv:F-120 |
+| [solution:F-009](https://github.com/voidbrain/coordinator/blob/30ed787fd7a66ea07df7646246aff9b4cbfa9be8/docs/BACKLOG.md#f-009) | Reconcile to the latest harness and read built backlog views | Implemented | No | 🟢 Small | project-harness:F-096 |
+| [solution:F-011](https://github.com/voidbrain/coordinator/blob/30ed787fd7a66ea07df7646246aff9b4cbfa9be8/docs/BACKLOG.md#f-011) | Reconcile to harness 10.21.2: the dashboard's five overview gaps and the coordinator label | Implemented | No | 🟢 Small | project-harness:B-060 |
+| [solution:F-012](https://github.com/voidbrain/coordinator/blob/30ed787fd7a66ea07df7646246aff9b4cbfa9be8/docs/BACKLOG.md#f-012) | Bricks 🧱: shared UI library for the voidbrain projects | Open | No | 🔴 Large | nerv:F-130, hobo:F-010, grover:F-020, fpvbuddy:F-007, fpvbuddy:F-008, bricks:F-001, bricks:F-002, bricks:F-004 |
+| [solution:F-013](https://github.com/voidbrain/coordinator/blob/30ed787fd7a66ea07df7646246aff9b4cbfa9be8/docs/BACKLOG.md#f-013) | OpenBando 🏚️ in the solution, and a domain map | Open | No | 🟢 Small | — |
 
 ## Component work
 
@@ -872,29 +956,32 @@ Hours each backlog still holds, as each project's own, uncalibrated estimate. Th
 | [gauntlet-protocol:F-022](https://github.com/voidbrain/gauntlet-protocol/blob/2339e413222c65a205cf8dc0f94d00f704cca7af/docs/BACKLOG.md#f-022) | Packs or recorded skips for estimation, research, scheduling-time and backlog-management | Open | No | 🟡 Medium | 2026-11-24 |
 | [gauntlet-protocol:F-021](https://github.com/voidbrain/gauntlet-protocol/blob/2339e413222c65a205cf8dc0f94d00f704cca7af/docs/BACKLOG.md#f-021) | image-generation-v1: runner and grader after a design decision | Open | No | 🔴 Large | 2026-11-24 |
 | [project-harness:F-096](https://github.com/voidbrain/project-harness/blob/e118aa5370314617dd6ef9c9d0bb0c57e897578a/docs/BACKLOG.md#f-096) | Stop committing generated backlog views | Open | No | 🟢 Small | 2026-11-25 |
-| [fpvbuddy:F-005](https://github.com/voidbrain/FPVBuddy/blob/9ba5e862a7e51cf2169868192db7eddb7b320e60/docs/BACKLOG.md#f-005) | M1 — FPV battery core package | Open | No | 🟡 Medium | 2026-11-25 |
-| [fpvbuddy:F-006](https://github.com/voidbrain/FPVBuddy/blob/9ba5e862a7e51cf2169868192db7eddb7b320e60/docs/BACKLOG.md#f-006) | Reconcile project-harness v10.9.0 → v10.20.0 | Open | No | 🟢 Small | 2026-11-25 |
-| [grover:B-008](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#b-008) | The feed end-to-end test fails now and then on CI: feed done, mixing tank not emptied | Implemented | No | 🟢 Small | 2026-11-25 |
-| [grover:F-005](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-005) | Deploy hub and agent on the Pi behind Tailscale | Open | Procedure | 🟢 Small | 2026-11-25 |
-| [grover:F-003](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-003) | Hardware bring-up on the Raspberry Pi | Open | Decision | 🟡 Medium | 2026-11-24 |
-| [grover:F-004](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-004) | Calibrate analog probes (volts to pH and EC) | Implemented | No | 🟢 Small | 2026-11-24 |
-| [grover:F-011](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-011) | Feed cycle per pot: supply tanks, mixing tank, pot pumps | Implemented | Procedure | 🟢 Small | 2026-11-24 |
-| [grover:B-006](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#b-006) | An upgraded agent drops its cached config until the hub answers | Open | No | 🟢 Small | 2026-11-24 |
-| [grover:B-010](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#b-010) | Held threshold alerts read as if the value were still past the threshold, and threshold checks lack float tolerance | Implemented | No | 🟢 Small | 2026-11-25 |
-| [grover:F-008](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-008) | Alerts for NERV: out-of-range values, offline agent, faults | Open | No | 🟢 Small | 2026-11-25 |
-| [grover:F-012](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-012) | Plants and strains: origin, generation, breeder, ancestry | Implemented | No | 🟢 Small | 2026-11-24 |
-| [grover:F-006](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-006) | Set-up screens in the client | Implemented | Procedure | 🟢 Small | 2026-11-24 |
-| [grover:F-007](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-007) | Lights follow the grow calendar; Switch to bloom | Implemented | Procedure | 🟢 Small | 2026-11-24 |
-| [grover:F-013](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-013) | Plant cycle: nursery, cuttings, harvest, a plant per pot, phase per plant | Implemented | Procedure | 🟢 Small | 2026-11-24 |
-| [grover:F-014](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-014) | Plant page with statistics, as in the old app | Implemented | Procedure | 🟢 Small | 2026-11-24 |
-| [grover:F-015](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-015) | Rig map: the tent as a live diagram, with its controls | Implemented | Procedure | 🟢 Small | 2026-11-24 |
-| [grover:F-016](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-016) | Schedules by day of week, weekends apart | Implemented | Procedure | 🟢 Small | 2026-11-24 |
-| [grover:F-018](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-018) | Pumps through an L298N driver (two pins on the MCP23017) | Implemented | Procedure | 🟢 Small | 2026-11-24 |
-| [grover:F-019](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-019) | Install Grover as a web app on the phone | Implemented | No | 🟢 Small | 2026-11-24 |
-| [grover:F-010](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-010) | Hub data retention and backups | Open | No | 🟡 Medium | 2026-11-24 |
-| [grover:F-009](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-009) | Browser tests and accessibility checks for the client | Open | No | 🔴 Large | 2026-11-24 |
-| [grover:B-009](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#b-009) | Eight Dependabot PRs from 2021 to 2023 still open against the removed v1 tree | Open | Decision | 🟢 Small | 2026-11-25 |
-| [grover:F-017](https://github.com/voidbrain/Grover/blob/ec23d79330cb3d30d63de9556ffd6035415b9cf1/docs/BACKLOG.md#f-017) | Nutrient colours: each supply tank in its nutrient's real colour | Implemented | Procedure | 🟢 Small | 2026-11-24 |
+| [fpvbuddy:F-005](https://github.com/voidbrain/FPVBuddy/blob/69b278c692110fa56a9267c352313d047f583d00/docs/BACKLOG.md#f-005) | M1 — FPV battery core package | Open | No | 🟡 Medium | 2026-11-25 |
+| [fpvbuddy:F-006](https://github.com/voidbrain/FPVBuddy/blob/69b278c692110fa56a9267c352313d047f583d00/docs/BACKLOG.md#f-006) | Reconcile project-harness v10.9.0 → v10.20.0 | Open | No | 🟢 Small | 2026-11-25 |
+| [fpvbuddy:F-007](https://github.com/voidbrain/FPVBuddy/blob/69b278c692110fa56a9267c352313d047f583d00/docs/BACKLOG.md#f-007) | Upgrade Angular 21 → 22 | Open | No | 🟡 Medium | 2026-11-25 |
+| [fpvbuddy:F-008](https://github.com/voidbrain/FPVBuddy/blob/69b278c692110fa56a9267c352313d047f583d00/docs/BACKLOG.md#f-008) | Adopt 🧱 bricks | Open | No | 🟣 Very large | 2026-11-25 |
+| [grover:B-008](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#b-008) | The feed end-to-end test fails now and then on CI: feed done, mixing tank not emptied | Implemented | No | 🟢 Small | 2026-11-25 |
+| [grover:F-005](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-005) | Deploy hub and agent on the Pi behind Tailscale | Open | Procedure | 🟢 Small | 2026-11-25 |
+| [grover:F-003](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-003) | Hardware bring-up on the Raspberry Pi | Open | Decision | 🟡 Medium | 2026-11-24 |
+| [grover:F-004](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-004) | Calibrate analog probes (volts to pH and EC) | Implemented | No | 🟢 Small | 2026-11-24 |
+| [grover:F-011](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-011) | Feed cycle per pot: supply tanks, mixing tank, pot pumps | Implemented | Procedure | 🟢 Small | 2026-11-24 |
+| [grover:B-006](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#b-006) | An upgraded agent drops its cached config until the hub answers | Open | No | 🟢 Small | 2026-11-24 |
+| [grover:B-010](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#b-010) | Held threshold alerts read as if the value were still past the threshold, and threshold checks lack float tolerance | Implemented | No | 🟢 Small | 2026-11-25 |
+| [grover:F-008](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-008) | Alerts for NERV: out-of-range values, offline agent, faults | Open | No | 🟢 Small | 2026-11-25 |
+| [grover:F-012](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-012) | Plants and strains: origin, generation, breeder, ancestry | Implemented | No | 🟢 Small | 2026-11-24 |
+| [grover:F-006](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-006) | Set-up screens in the client | Implemented | Procedure | 🟢 Small | 2026-11-24 |
+| [grover:F-007](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-007) | Lights follow the grow calendar; Switch to bloom | Implemented | Procedure | 🟢 Small | 2026-11-24 |
+| [grover:F-013](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-013) | Plant cycle: nursery, cuttings, harvest, a plant per pot, phase per plant | Implemented | Procedure | 🟢 Small | 2026-11-24 |
+| [grover:F-014](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-014) | Plant page with statistics, as in the old app | Implemented | Procedure | 🟢 Small | 2026-11-24 |
+| [grover:F-015](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-015) | Rig map: the tent as a live diagram, with its controls | Implemented | Procedure | 🟢 Small | 2026-11-24 |
+| [grover:F-016](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-016) | Schedules by day of week, weekends apart | Implemented | Procedure | 🟢 Small | 2026-11-24 |
+| [grover:F-018](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-018) | Pumps through an L298N driver (two pins on the MCP23017) | Implemented | Procedure | 🟢 Small | 2026-11-24 |
+| [grover:F-019](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-019) | Install Grover as a web app on the phone | Implemented | No | 🟢 Small | 2026-11-24 |
+| [grover:F-010](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-010) | Hub data retention and backups | Open | No | 🟡 Medium | 2026-11-24 |
+| [grover:F-009](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-009) | Browser tests and accessibility checks for the client | Open | No | 🔴 Large | 2026-11-24 |
+| [grover:F-020](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-020) | Adopt 🧱 bricks in the client | Open | No | 🟣 Very large | 2026-11-25 |
+| [grover:B-009](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#b-009) | Eight Dependabot PRs from 2021 to 2023 still open against the removed v1 tree | Open | Decision | 🟢 Small | 2026-11-25 |
+| [grover:F-017](https://github.com/voidbrain/Grover/blob/db0a4c951498475fcb94afa1514f584e1d046721/docs/BACKLOG.md#f-017) | Nutrient colours: each supply tank in its nutrient's real colour | Implemented | Procedure | 🟢 Small | 2026-11-24 |
 | [openbando:B-009](https://github.com/voidbrain/openbando/blob/5c96a1858627cb6c8be9f2b76ba6edc723863a46/docs/BACKLOG.md#b-009) | Simulator and selected-flight/video regression | Implemented | Procedure | 🟢 Small | 2026-10-31 |
 | [openbando:B-017](https://github.com/voidbrain/openbando/blob/5c96a1858627cb6c8be9f2b76ba6edc723863a46/docs/BACKLOG.md#b-017) | Villetta replay misalignment with video | Implemented | Procedure | 🟢 Small | 2026-10-31 |
 | [openbando:B-018](https://github.com/voidbrain/openbando/blob/5c96a1858627cb6c8be9f2b76ba6edc723863a46/docs/BACKLOG.md#b-018) | Hidden-origin GPS projection distorts flight paths | Implemented | Procedure | 🟡 Medium | 2026-10-31 |
@@ -916,20 +1003,29 @@ Hours each backlog still holds, as each project's own, uncalibrated estimate. Th
 | [openbando:F-042](https://github.com/voidbrain/openbando/blob/5c96a1858627cb6c8be9f2b76ba6edc723863a46/docs/BACKLOG.md#f-042) | Right-click in the editor's 3D view: the same context menu as on the plan | Open | No | 🟡 Medium | 2026-10-31 |
 | [openbando:F-043](https://github.com/voidbrain/openbando/blob/5c96a1858627cb6c8be9f2b76ba6edc723863a46/docs/BACKLOG.md#f-043) | Line tools also draw by click A, live preview, click B (keeping the drag) | Open | No | 🔴 Large | 2026-10-31 |
 | [openbando:F-053](https://github.com/voidbrain/openbando/blob/5c96a1858627cb6c8be9f2b76ba6edc723863a46/docs/BACKLOG.md#f-053) | Rebuild a bando as a point cloud from a flight's video, placed by its blackbox and GPS | Open | Decision | 🔴 Large | 2026-11-24 |
-| [hobo:F-007](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-007) | Map provider adapter: Leaflet and OpenRouteService | Open | No | 🔴 Large | 2026-11-25 |
-| [hobo:F-002](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-002) | Places: collect and organise | Open | No | 🟣 Very large | 2026-11-25 |
-| [hobo:F-003](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-003) | Trips: dates, start and end, stops | Open | No | 🔴 Large | 2026-11-25 |
-| [hobo:F-004](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-004) | Routing totals per leg, per day and per trip | Open | No | 🔴 Large | 2026-11-25 |
-| [hobo:F-001](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-001) | Angular scaffold and project harness | Implemented | Procedure | 🟢 Small | 2026-11-25 |
-| [hobo:F-008](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-008) | Share and export | Open | Decision | 🔴 Large | 2026-11-25 |
-| [hobo:F-009](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-009) | Multi-user editing (deferred) | Open | No | 🟢 Small | 2026-11-25 |
-| [hobo:F-012](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-012) | Shared maps/geo package with openbando (candidate) | Open | No | 🟢 Small | 2026-11-25 |
-| [hobo:F-005](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-005) | What-if: compare another order or set of stops | Open | No | 🟡 Medium | 2026-11-25 |
-| [hobo:F-006](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-006) | Variants: tabs per trip for A/B testing | Open | No | 🟡 Medium | 2026-11-25 |
-| [hobo:F-010](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-010) | Shared UI built to move to 🧱 bricks | Open | No | 🟡 Medium | 2026-11-25 |
-| [hobo:F-011](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-011) | NERV integration: MCP server for places, trips and totals | Open | No | 🟡 Medium | 2026-11-25 |
-| [hobo:F-013](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-013) | Self-hosted routing and geocoding (later) | Open | No | 🟡 Medium | 2026-11-25 |
-| [hobo:F-014](https://github.com/voidbrain/hobo/blob/8af2527bfc892f33bc8eb25d028e67ec7ce06a29/docs/BACKLOG.md#f-014) | Google Maps place data (optional, later) | Open | Decision | 🟡 Medium | 2026-11-25 |
+| [hobo:F-007](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-007) | Map provider adapter: Leaflet and OpenRouteService | Open | No | 🔴 Large | 2026-11-25 |
+| [hobo:F-002](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-002) | Places: collect and organise | Open | No | 🟣 Very large | 2026-11-25 |
+| [hobo:F-003](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-003) | Trips: dates, start and end, stops | Open | No | 🔴 Large | 2026-11-25 |
+| [hobo:F-004](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-004) | Routing totals per leg, per day and per trip | Open | No | 🔴 Large | 2026-11-25 |
+| [hobo:F-001](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-001) | Angular scaffold and project harness | Implemented | Procedure | 🟢 Small | 2026-11-25 |
+| [hobo:F-008](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-008) | Share and export | Open | Decision | 🔴 Large | 2026-11-25 |
+| [hobo:F-009](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-009) | Multi-user editing (deferred) | Open | No | 🟢 Small | 2026-11-25 |
+| [hobo:F-012](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-012) | Shared maps/geo package with openbando (candidate) | Open | No | 🟢 Small | 2026-11-25 |
+| [hobo:F-005](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-005) | What-if: compare another order or set of stops | Open | No | 🟡 Medium | 2026-11-25 |
+| [hobo:F-006](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-006) | Variants: tabs per trip for A/B testing | Open | No | 🟡 Medium | 2026-11-25 |
+| [hobo:F-010](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-010) | Shared UI built to move to 🧱 bricks | Open | No | 🟡 Medium | 2026-11-25 |
+| [hobo:F-011](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-011) | NERV integration: MCP server for places, trips and totals | Open | No | 🟡 Medium | 2026-11-25 |
+| [hobo:F-013](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-013) | Self-hosted routing and geocoding (later) | Open | No | 🟡 Medium | 2026-11-25 |
+| [hobo:F-014](https://github.com/voidbrain/hobo/blob/1f2ec2155086345263a90bd313194bd67ffd80dd/docs/BACKLOG.md#f-014) | Google Maps place data (optional, later) | Open | Decision | 🟡 Medium | 2026-11-25 |
+| [bricks:F-005](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-005) | Semantic versioning and a changelog | Open | No | 🟡 Medium | 2026-11-25 |
+| [bricks:F-001](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-001) | Workspace, harness and repository setup | Implemented | Procedure | 🟢 Small | 2026-11-25 |
+| [bricks:F-002](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-002) | First content: tokens, themes and NERV's genUI surfaces | Implemented | No | 🟢 Small | 2026-11-25 |
+| [bricks:F-004](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-004) | Publish the package on npm with trusted publishing | Implemented | Procedure | 🔴 Large | 2026-11-25 |
+| [bricks:F-006](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-006) | NERV adoption: what bricks ships for NERV | Open | No | 🟣 Very large | 2026-11-25 |
+| [bricks:F-008](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-008) | Grover adoption: what bricks ships for Grover | Open | No | 🟡 Medium | 2026-11-25 |
+| [bricks:F-009](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-009) | FPVBuddy adoption: what bricks ships for FPVBuddy | Open | No | 🟡 Medium | 2026-11-25 |
+| [bricks:F-007](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-007) | Hobo adoption: what bricks ships for Hobo | Open | No | 🔴 Large | 2026-11-25 |
+| [bricks:F-003](https://github.com/voidbrain/bricks/blob/0cd001d8bbcce74a01471fd6285cc0dcc1ccae43/docs/BACKLOG.md#f-003) | Components, patterns and the live-view helper, on demand | Open | No | 🟣 Very large | 2026-11-25 |
 
 ## Source and link problems
 

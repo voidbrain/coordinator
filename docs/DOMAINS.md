@@ -8,6 +8,8 @@ A shared package (for example `@voidbrain/geo` or a Blackbox log parser) is extr
 
 When extraction is due, it is a coordination record in [this backlog](BACKLOG.md) with `Components` links; the package itself is built in the repository that owns it.
 
+Where shared code goes: UI (tokens, themes, components, genUI surfaces) in 🧱 bricks (`voidbrain/bricks`, `@voidbrain/bricks`); shared domain logic in a separate monorepo, 🧊 blocks (`voidbrain/blocks`, npm workspaces, one package per domain such as `@voidbrain/geo` or `@voidbrain/blackbox`), created only when its first package is really shared (owner decision 2026-11-25). Bricks never holds domain logic, and blocks never holds UI.
+
 ## Projects
 
 ### 𖣂 nerv
@@ -76,6 +78,13 @@ When extraction is due, it is a coordination record in [this backlog](BACKLOG.md
 
 Not a component yet; its modules are listed here once its repository exists.
 
+### 🧱 bricks
+
+| Module | Domain | Code |
+|---|---|---|
+| Tokens and themes | Design tokens in three layers; themes base, plain (neutral) and eva (NERV's EVA look) | [styles](https://github.com/voidbrain/bricks/tree/main/projects/bricks/styles), [tokens](https://github.com/voidbrain/bricks/tree/main/projects/bricks/tokens), [themes](https://github.com/voidbrain/bricks/tree/main/projects/bricks/themes) |
+| UI components and genUI surfaces | `bx-card`, `bx-badge`; nerv's four surface cards with the same contract, and `bx-surface` | [components](https://github.com/voidbrain/bricks/tree/main/projects/bricks/components), [surfaces](https://github.com/voidbrain/bricks/tree/main/projects/bricks/surfaces) |
+
 ## Shared domains
 
 "Has" means the code exists on `main`; "needs" means a recorded or planned need; "idea" means nothing is recorded yet. A domain shared by two projects that both have code is a candidate for extraction under the rule above, not before.
@@ -86,7 +95,7 @@ Not a component yet; its modules are listed here once its repository exists.
 | Routing and places | — | 🗺️ hobo (planned) | Not yet |
 | Telemetry and Blackbox | 🏚️ openbando: log parser, analysis, replay ([core/flight](https://github.com/voidbrain/openbando/tree/main/src/app/core/flight)); 𖣂 nerv FPV pack: vibration analysis ([blackbox.ts](https://github.com/voidbrain/nerv/blob/main/src/blackbox.ts)) | 🚁 fpvbuddy | Candidate: two projects read Blackbox logs; compare the parsers before proposing a shared one |
 | 3D (three.js) | 🏚️ openbando ([src/app/three](https://github.com/voidbrain/openbando/tree/main/src/app/three)) | — | Not yet |
-| UI components and genUI surfaces | 𖣂 nerv: [shared/surface.ts](https://github.com/voidbrain/nerv/blob/main/shared/surface.ts) catalogue (`nerv-status-card`, `nerv-notice-card`, `nerv-checklist-card`, `nerv-recipe-card`), rendered by [web/src/surface-renderer.ts](https://github.com/voidbrain/nerv/blob/main/web/src/surface-renderer.ts); 🏚️ openbando [design-system](https://github.com/voidbrain/openbando/tree/main/design-system) | 🧱 bricks (planned), with Grover and FPVBuddy as consumers | Planned in [coordinator:F-012](BACKLOG.md#f-012), only for components that really repeat |
+| UI components and genUI surfaces | 𖣂 nerv: [shared/surface.ts](https://github.com/voidbrain/nerv/blob/main/shared/surface.ts) catalogue (`nerv-status-card`, `nerv-notice-card`, `nerv-checklist-card`, `nerv-recipe-card`), rendered by [web/src/surface-renderer.ts](https://github.com/voidbrain/nerv/blob/main/web/src/surface-renderer.ts); 🧱 bricks: tokens, themes base/plain/eva and the same four surfaces as Angular components ([projects/bricks](https://github.com/voidbrain/bricks/tree/main/projects/bricks), first content 2026-11-25, unpublished); 🏚️ openbando [design-system](https://github.com/voidbrain/openbando/tree/main/design-system) | Consumers nerv (nerv:F-130), hobo, grover and fpvbuddy | 🧱 bricks, started early at the owner's request ([coordinator:F-012](BACKLOG.md#f-012)); components added only on real demand |
 | Fleet, batteries and crashes | 𖣂 nerv FPV pack ([fleet.ts](https://github.com/voidbrain/nerv/blob/main/src/fleet.ts), [batteries.ts](https://github.com/voidbrain/nerv/blob/main/src/batteries.ts)); 🚁 fpvbuddy battery views | Moves from nerv's FPV pack to 🚁 fpvbuddy | A move, not a shared package |
 
 ## Keeping it current
