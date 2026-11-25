@@ -40,5 +40,10 @@
     "actualAgentHours": 2,
     "actualSource": "stated"
   },
-  "prs": []
+  "prs": [
+    {
+      "pr": 29,
+      "note": "reconcile 10.20.1, template prune, parity"
+    }
+  ]
 }
