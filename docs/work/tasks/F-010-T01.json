@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "id": "F-010-T01",
+  "parent": "F-010",
+  "title": "Guarded auto-merge for refresh PRs, on required checks",
+  "goal": "A refresh PR that changes only generated files merges itself on green CI and deletes its branch",
+  "status": "planned",
+  "acceptance": [
+    "main requires the CI check check (PR required, 0 approvals, admins included, no force-push or deletion); allow_auto_merge on; Actions-can-approve off",
+    "The refresh workflow enables auto-merge with --delete-branch only when tools/refresh-guard.mjs passes; otherwise it comments why and leaves auto-merge off",
+    "npm test covers the guard"
+  ],
+  "dependsOn": [],
+  "resources": [
+    ".github/workflows/refresh-views.yml",
+    "tools/refresh-guard.mjs",
+    "test/refresh-guard.test.mjs",
+    "docs/agents/areas.md",
+    "README.md",
+    "docs/work/records/F-010.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "validation": [
+    "check:fast; npm test; final applicable CI"
+  ],
+  "escalation": [
+    "Repository settings are the owner's: ask before changing them",
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "1 h agent",
+    "basis": "Estimated 2026-11-25: one workflow step, a small guard tool with tests, two settings calls. Not a measurement.",
+    "reviewed": "2026-11-25",
+    "agentHours": 1,
+    "estimateAgentHours": 1
+  },
+  "prs": []
+}
