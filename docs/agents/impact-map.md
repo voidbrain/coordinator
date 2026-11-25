@@ -33,4 +33,4 @@ What can change an output with no commit here, and how we would notice.
 
 | What | Affects | Noticed by |
 |---|---|---|
-| Each component backlog (docs/BACKLOG.md on main of nerv, gauntlet-protocol, project-harness, FPVBuddy, Grover) and its ledger layout | docs/SOLUTION-DASHBOARD.md | Only on the next npm run solution:refresh; a layout the readers do not know shows as no records or a source problem |
+| Each component backlog (docs/BACKLOG.md on main of gauntlet-protocol, project-harness, FPVBuddy, Grover; for nerv, built views: its backlog-views publication of main, or a rebuild from its sources) and its ledger layout | docs/SOLUTION-DASHBOARD.md | Only on the next npm run solution:refresh; a layout the readers do not know shows as no records or a source problem |
