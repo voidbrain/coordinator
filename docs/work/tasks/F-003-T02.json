@@ -29,11 +29,16 @@
   "effort": {
     "size": "small",
     "estimate": "0.25 h",
-    "basis": "Estimated 2026-11-24: read the gap review after each of the four component changes lands and record what is left; the records themselves are created in their own repositories. 2026-11-24: NERV PR #730 merged; nerv:F-122 and nerv:F-123 are on NERV main and no longer pending in the solution order (proposal 3 is covered once the next refresh shows it gone).",
-    "reviewed": "2026-11-24",
+    "basis": "Estimated 2026-11-24: read the gap review after each of the four component changes lands and record what is left; the records themselves are created in their own repositories. 2026-11-24: NERV PR #730 merged; nerv:F-122 and nerv:F-123 are on NERV main and no longer pending in the solution order (proposal 3 is covered once the next refresh shows it gone). 2026-11-25 check against the 09:32 UTC refresh (coordinator c121830) and component main branches: proposals 2 (nerv:F-101, fpvbuddy), 3 (grover:F-008, NERV PR #730 merged), 4 to 6 (grover:F-016 to F-018, Grover PR #30 merged) and 7 (nerv:F-115) are gone from the gap review. Proposal 1 is still present (gap row 1): gauntlet-protocol PR #85 merged and created F-015 to F-022, but F-015 to F-020 are closed and its open records (B-003, F-021, F-022 on main 1578bd0) never name nerv, so the review still finds no counterpart for nerv:F-120 (Open on NERV main 9d0e80f). Step stays open; nothing else opened.",
+    "reviewed": "2026-11-25",
     "agentHours": 0.25,
     "ownerHours": 0,
     "estimateAgentHours": 0.25
   },
-  "prs": []
+  "prs": [
+    {
+      "pr": 21,
+      "note": "Gaps 2 to 7 gone; gap 1 (nerv:F-120 counterpart) remains"
+    }
+  ]
 }
