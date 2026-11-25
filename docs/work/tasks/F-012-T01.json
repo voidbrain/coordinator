@@ -7,7 +7,7 @@
   "status": "planned",
   "acceptance": [
     "Version compatibility in docs/SOLUTION.md names each UI project's Angular major, read from its package.json on main",
-    "A gap proposal for fpvbuddy (Angular 21 to 22) is written for the owner; the coordinator does not upgrade FPVBuddy"
+    "FPVBuddy's upgrade from 21 to 22 is planned in its own backlog as fpvbuddy:F-007 (2026-11-25); the coordinator does not upgrade FPVBuddy"
   ],
   "dependsOn": [],
   "resources": [

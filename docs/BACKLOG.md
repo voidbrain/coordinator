@@ -291,7 +291,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔹 P3 | 🔴 Large | 6.5 h agent + 0.75 h owner | `nerv:F-130-T02`, `nerv:F-130-T05`, `nerv:F-130-T09` | — | 🤖 | — | — |
+| 🔴 Open | 🔹 P3 | 🔴 Large | 6.5 h agent + 0.75 h owner | `nerv:F-130-T02`, `nerv:F-130-T05`, `nerv:F-130-T09`, `nerv:F-130-T13`, `hobo:F-010-T02`, `grover:F-020-T07`, `fpvbuddy:F-008-T06` | — | 🤖 | — | — |
 
 💻 **→** Next: F-012-T01 — Angular version contract: every UI component on Angular 22 (Planned).
 
@@ -310,7 +310,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | 🟡 Medium | <a id="f-012-t03"></a>F-012-T03 — Shared component contract from what the NERV dashboard migration produced | 2 h | 0 h | 2 h | Planned | [F-012-T02](#f-012-t02), `nerv:F-130-T02`, `nerv:F-130-T05`, `nerv:F-130-T09` | [F-012-T04](#f-012-t04) | ⏳ 🤖 |
 | 🟢 Small | <a id="f-012-t04"></a>F-012-T04 — Owner: create the voidbrain/bricks library repository | 0 h | 0 h | 0 h agent + 0.25 h owner | Planned | [F-012-T03](#f-012-t03) | [F-012-T05](#f-012-t05) | ⏳ 🤔 |
 | 🟢 Small | <a id="f-012-t05"></a>F-012-T05 — Add voidbrain/bricks to the solution and propose its adoption | 1 h | 0 h | 1 h | Planned | [F-012-T04](#f-012-t04) | [F-012-T06](#f-012-t06) | ⏳ 🤖 |
-| 🟢 Small | <a id="f-012-t06"></a>F-012-T06 — Integration acceptance: the three projects on one library release | 1 h | 0 h | 1 h | Planned | [F-012-T05](#f-012-t05) | [F-012-T07](#f-012-t07) | ⏳ 🤖 |
+| 🟢 Small | <a id="f-012-t06"></a>F-012-T06 — Integration acceptance: the UI projects on one library release | 1 h | 0 h | 1 h | Planned | [F-012-T05](#f-012-t05), `nerv:F-130-T13`, `hobo:F-010-T02`, `grover:F-020-T07`, `fpvbuddy:F-008-T06` | [F-012-T07](#f-012-t07) | ⏳ 🤖 |
 | 🟢 Small | <a id="f-012-t07"></a>F-012-T07 — Owner: look at the three apps side by side | 0 h | 0 h | 0 h agent + 0.5 h owner | Planned | [F-012-T06](#f-012-t06) | — | ⏳ 🧑‍🔧 |
 | 🔴 Large | **Total** | 6.5 h | 0 h (0 of 7 steps recorded) | 6.5 h agent + 0.75 h owner | 0 of 7 completed | | | |
 
@@ -321,8 +321,8 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | [#44](https://github.com/voidbrain/coordinator/pull/44), [#45](https://github.com/voidbrain/coordinator/pull/45) (Bricks name); owner request 2026-11-25; nerv:F-130 is planned in [voidbrain/nerv#770](https://github.com/voidbrain/nerv/pull/770), so `check:solution` reports it missing until that merges |
-| Components | nerv:F-130 |
+| PR / evidence | [#44](https://github.com/voidbrain/coordinator/pull/44), [#45](https://github.com/voidbrain/coordinator/pull/45) (Bricks name); grover [#40](https://github.com/voidbrain/Grover/pull/40), fpvbuddy [#12](https://github.com/voidbrain/FPVBuddy/pull/12) (adoption records); owner request 2026-11-25; nerv:F-130 is planned in [voidbrain/nerv#770](https://github.com/voidbrain/nerv/pull/770), so `check:solution` reports it missing until that merges |
+| Components | nerv:F-130, hobo:F-010, grover:F-020, fpvbuddy:F-007, fpvbuddy:F-008 |
 | Opened | 2026-11-25 |
 | Verification | Pending |
 | Reviewed | 2026-11-25 |
