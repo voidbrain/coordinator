@@ -116,6 +116,11 @@
       "kind": "none",
       "disposition": "no-change",
       "evidence": "Harness 10.20.1 -> 10.21.1: tools/solution.mjs, tools/impact-map.mjs, docs/agents/solution-profile.md and solution-dashboard.md copied byte for byte; no adapted file changed in the release"
+    },
+    {
+      "kind": "none",
+      "disposition": "no-change",
+      "evidence": "Harness 10.21.1 -> 10.21.2 (F-011): tools/solution.mjs, docs/agents/solution-dashboard.md and solution-gaps.md copied byte for byte; label coordinator set in .solution.json; no adapted file changed in the release"
     }
   ]
 }
