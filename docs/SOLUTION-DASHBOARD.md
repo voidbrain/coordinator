@@ -1,12 +1,12 @@
 <!-- generated: project-harness solution dashboard; edit owning backlogs, not this file -->
 # voidbrain solution dashboard
 
-Snapshot: 2026-11-25T11:54:38.393Z. Read-only aggregation; no combined completion percentage. Solution integration status is independent of component status.
+Snapshot: 2026-11-25T11:59:49.071Z. Read-only aggregation; no combined completion percentage. Solution integration status is independent of component status.
 
 | Source | Revision | Snapshot state |
 |---|---|---|
-| solution | [7c0e5b8006fa](https://github.com/voidbrain/coordinator/commit/7c0e5b8006fa3cac8fc7a523159c89e5f98be9be) | Local changes — not a committed snapshot; requested working checkout; local checkout, not fetched |
-| nerv | [4dae734e0f14](https://github.com/voidbrain/nerv/commit/4dae734e0f147ec62160965c8d91de931a46f642) | Committed snapshot; requested main; GitHub |
+| solution | [122f5c288e53](https://github.com/voidbrain/coordinator/commit/122f5c288e53ca6c5527bf9070ba717aec964207) | Committed snapshot; requested working checkout; local checkout, not fetched |
+| nerv | [896182392525](https://github.com/voidbrain/nerv/commit/896182392525573e79df323165575c85ad0d3d00) | Committed snapshot; requested main; GitHub |
 | gauntlet-protocol | [2339e413222c](https://github.com/voidbrain/gauntlet-protocol/commit/2339e413222c65a205cf8dc0f94d00f704cca7af) | Committed snapshot; requested main; GitHub |
 | project-harness | [8f79b3c14d98](https://github.com/voidbrain/project-harness/commit/8f79b3c14d9808b47acb9e9119bdd6ce60fa39ad) | Committed snapshot; requested main; GitHub |
 | fpvbuddy | [9ba5e862a7e5](https://github.com/voidbrain/FPVBuddy/commit/9ba5e862a7e51cf2169868192db7eddb7b320e60) | Committed snapshot; requested main; GitHub |
@@ -19,7 +19,7 @@ Open work per project, by what it waits on. Remaining hours are each project's o
 | Project | Ready | Waiting for the owner | Blocked | Waiting on other work | Remaining |
 |---|---|---|---|---|---|
 | solution | 5 | 1 | 1 | 2 | 5.25 h |
-| 𖣂 nerv | 64 | 16 | 9 | 37 | 116 h |
+| 𖣂 nerv | 60 | 18 | 13 | 31 | 115.5 h |
 | 🤖 gauntlet-protocol | 3 | 0 | 0 | 6 | 8.75 h |
 | 🦺 project-harness | 1 | 0 | 0 | 0 | 0.25 h |
 | 🚁 fpvbuddy | 2 | 0 | 0 | 2 | 3 h |
@@ -32,12 +32,12 @@ The owner's order (docs/solution-order.md): take the first ready item; it never 
 | # | Item | Title | Status | Priority | Remaining | State | Note |
 |---|---|---|---|---|---|---|---|
 | 1 | nerv:B-118 | Windows CI: the test step runs into its 18-minute limit | Open | 🔺 P1 | 5 h | Ready (verification) | Windows CI limit: every NERV PR waits on it |
-| 2 | nerv:B-124 | A re-target `kaji relocate` signs fences the running main before the target's checks run | Implemented | 🔺 P1 | 2 h | Ready (verification) | re-target fences the running main too early (P1, relocation safety) |
-| 3 | nerv:B-125 | A signed Kaji reply is not bound to its request, so an old epoch-push reply can be replayed | Open | 🔶 P2 | 2 h | Ready (verification) | replayable signed Kaji reply (P2, security) |
-| 4 | nerv:F-016 | Relocate the logical coordinator without split brain | Open | 🔺 P1 | 1.75 h agent + 1 h owner | Waiting on nerv:B-124-T01 | relocate the coordinator without split brain (after B-124) |
+| 2 | nerv:B-124 | A re-target `kaji relocate` signs fences the running main before the target's checks run | Closed | — | — | ✅ Done: closed 2026-11-25 in [docs/archive/backlog-2026.md](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/archive/backlog-2026.md#b-124) | re-target fences the running main too early (P1, relocation safety) |
+| 3 | nerv:B-125 | A signed Kaji reply is not bound to its request, so an old epoch-push reply can be replayed | Implemented | 🔶 P2 | 2 h | Ready (verification) | replayable signed Kaji reply (P2, security) |
+| 4 | nerv:F-016 | Relocate the logical coordinator without split brain | Open | 🔺 P1 | 1.75 h agent + 1 h owner | **Ready — next** | relocate the coordinator without split brain (after B-124) |
 | 5 | nerv:B-091 | Windows: a fenced stop ends uncertain after a SQLite "disk I/O error" while recording it | Open | 🔶 P2 | 3 h | Ready (verification) | prerequisite of nerv:F-005-T29 |
 | 6 | nerv:F-005 | Discover, install and operate enrolled remote workers | Open | 🔺 P1 | 3.5 h | Ready (verification) | remote workers (after B-091) |
-| 7 | nerv:B-119 | Placement probes longer than 15 s are cut off by the HTTP server | Verified | 🔶 P2 | 0 h | **Ready — next** | prerequisite of nerv:F-006 |
+| 7 | nerv:B-119 | Placement probes longer than 15 s are cut off by the HTTP server | Closed | — | — | ✅ Done: closed 2026-11-25 in [docs/archive/backlog-2026.md](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/archive/backlog-2026.md#b-119) | prerequisite of nerv:F-006 |
 | 8 | grover:F-008 | Alerts for NERV: out-of-range values, offline agent, faults | Open | 🔶 P2 | 0.25 h owner | Blocked: owner step grover:F-005-T01 | alerts NERV can deliver (cross-repository) |
 | 9 | nerv:F-120 | Gauntlet coverage of NERV capabilities | Open | 🔶 P2 | 5 h | Ready | Gauntlet coverage of NERV capabilities (cross-repository) |
 | 10 | nerv:F-122 | Deliver Grover alerts | Open | 🔹 P3 | 4 h agent + 0.5 h owner | Ready (verification) | Grover alert delivery, unblocks grover:F-008 |
@@ -58,6 +58,7 @@ The owner's order (docs/solution-order.md): take the first ready item; it never 
 | nerv:F-011-T02 | Procedure | Live menu, service-button and login acceptance on the Mac |
 | nerv:F-004-T06 | Procedure | Phone install and push acceptance |
 | nerv:F-012-T05 | Procedure | Edge cases and real-host acceptance |
+| nerv:F-016-T09 | Procedure | Step 5b — Two-device relocation acceptance |
 | nerv:F-086-T04 | Procedure | Owner check with the owner's account |
 | nerv:F-087-T04 | Procedure | Owner check on the real printer |
 | nerv:F-092-T04 | Procedure | Owner check on the Mac |
@@ -66,6 +67,7 @@ The owner's order (docs/solution-order.md): take the first ready item; it never 
 | nerv:B-122-T02 | Procedure | Owner updates NERV-01 and sees the foreground reason |
 | nerv:B-123-T02 | Procedure | Owner: Update now shows the updater's status in Health |
 | nerv:B-128-T02 | Procedure | Owner: scan the Settings pairing QR from the Mac with the phone |
+| nerv:F-098-T04 | Procedure | Live check with a real crash |
 | nerv:F-060-T01 | Procedure | herdr-core trial in the development workspace |
 | nerv:F-116-T02 | Decision | Owner decision: build model splitting or close |
 | nerv:F-007-T05 | Procedure | Step 2c — Voice corpus evaluation run and report |
@@ -94,6 +96,10 @@ The owner's order (docs/solution-order.md): take the first ready item; it never 
 | nerv:F-004-T07 | owner step nerv:F-004-T06, in this project |
 | nerv:F-004-T09 | owner step nerv:F-004-T06, in this project |
 | nerv:F-012-T06 | owner step nerv:F-012-T05, in this project |
+| nerv:F-016-T11 | owner step nerv:F-016-T09, in this project |
+| nerv:F-101-T04 | owner step nerv:F-098-T04, in this project |
+| nerv:F-101-T05 | owner step nerv:F-098-T04, in this project |
+| nerv:F-101-T06 | owner step nerv:F-098-T04, in this project |
 | nerv:F-060-T03 | owner step nerv:F-060-T01, in this project |
 | nerv:F-060-T02 | owner step nerv:F-060-T01, in this project |
 | nerv:F-007-T10 | owner step nerv:F-007-T05, in this project |
@@ -132,12 +138,12 @@ Agent hours that can run before work reaches a block: open agent work that is re
 | Project | Runway | First blocks reached | Owner hours for the next layer |
 |---|---|---|---|
 | solution | 3 h | owner step solution:F-004-T04; owner step solution:F-006-T02 | 0.75 h |
-| 𖣂 nerv | 98.25 h | owner step nerv:F-016-T09; owner step nerv:F-062-T07; owner step nerv:F-011-T02; owner step nerv:F-004-T06; owner step nerv:F-012-T05; owner step nerv:F-082-T04; owner step nerv:F-083-T09; owner step nerv:F-088-T04; owner step nerv:F-117-T05; owner step nerv:F-089-T03; owner step nerv:F-090-T03; owner step nerv:F-094-T04; owner step nerv:B-099-T03; owner step nerv:F-086-T04; owner step nerv:F-087-T04; owner step nerv:F-092-T04; owner step nerv:B-057-T02; owner step nerv:B-068-T02; owner step nerv:B-122-T02; owner step nerv:B-123-T02; owner step nerv:B-128-T02; owner step nerv:F-123-T02; owner step nerv:F-060-T01; owner step nerv:F-116-T02; owner step nerv:F-007-T05; owner step nerv:F-122-T03; owner step nerv:B-056-T02 | 11.5 h |
+| 𖣂 nerv | 92.5 h | owner step nerv:F-062-T07; owner step nerv:F-011-T02; owner step nerv:F-004-T06; owner step nerv:F-012-T05; owner step nerv:F-016-T09; owner step nerv:F-082-T04; owner step nerv:F-083-T09; owner step nerv:F-088-T04; owner step nerv:F-117-T05; owner step nerv:F-089-T03; owner step nerv:F-090-T03; owner step nerv:F-094-T04; owner step nerv:B-099-T03; owner step nerv:F-086-T04; owner step nerv:F-087-T04; owner step nerv:F-092-T04; owner step nerv:B-057-T02; owner step nerv:B-068-T02; owner step nerv:B-122-T02; owner step nerv:B-123-T02; owner step nerv:B-128-T02; owner step nerv:F-123-T02; owner step nerv:F-098-T04; owner step nerv:F-060-T01; owner step nerv:F-116-T02; owner step nerv:F-007-T05; owner step nerv:F-122-T03; owner step nerv:B-056-T02 | 11.75 h |
 | 🤖 gauntlet-protocol | 2.25 h | owner step gauntlet-protocol:F-022-T02; owner step gauntlet-protocol:F-021-T02 | 0.75 h |
 | 🦺 project-harness | 0.25 h | — | 0 h |
 | 🚁 fpvbuddy | 3 h | — | 0 h |
 | 🪴 grover | 10.5 h | owner step grover:F-005-T01; owner step grover:F-003-T01; owner step grover:F-011-T02; owner step grover:F-006-T02; owner step grover:F-007-T02; owner step grover:F-013-T02; owner step grover:F-014-T02; owner step grover:F-015-T02; owner step grover:F-016-T02; owner step grover:F-018-T01; owner step grover:B-009-T01; owner step grover:F-017-T03 | 5.5 h |
-| **Solution** | 117.25 h | 43 | 18.5 h |
+| **Solution** | 111.5 h | 44 | 18.75 h |
 
 ## Audits, reviews and harness
 
@@ -159,7 +165,6 @@ Proposals only, each naming the repository that would own the fix: the coordinat
 | Kind | Where | Evidence | Proposal |
 |---|---|---|---|
 | Cross-repository need with no counterpart (text heuristic) | nerv:F-120 | "General domain packs (coding, embedded, logic, Italian quality, 3D printing, image generation) were requested from gauntlet-protocol the sa…"; gauntlet-protocol has no open record that names nerv | gauntlet-protocol: a record for what nerv:F-120 needs from it, or nerv: drop the dependency |
-| No next step | nerv:B-131 | B-131 is Open with no open step | nerv: add the next step to B-131, or verify and close it |
 | Behind the harness | nerv .harness.json | nerv is on v10.9.0; the latest template release is v10.20.1 | nerv: a record "Reconcile to harness v10.20.1", done in a session of that repository |
 | Behind the harness | gauntlet-protocol .harness.json | gauntlet-protocol is on v10.20.0; the latest template release is v10.20.1 | gauntlet-protocol: a record "Reconcile to harness v10.20.1", done in a session of that repository |
 | Behind the harness | fpvbuddy .harness.json | fpvbuddy is on v10.20.0; the latest template release is v10.20.1 | fpvbuddy: a record "Reconcile to harness v10.20.1", done in a session of that repository |
@@ -181,7 +186,7 @@ Proposals only, each naming the repository that would own the fix: the coordinat
 
 </details>
 
-<details><summary>nerv: 124 open steps</summary>
+<details><summary>nerv: 122 open steps</summary>
 
 | Step | Title | Status | Remaining | Who | Depends on |
 |---|---|---|---|---|---|
@@ -192,10 +197,6 @@ Proposals only, each naming the repository that would own the fix: the coordinat
 | nerv:F-005-T30 | T11e — Parent acceptance and closure reconciliation | Planned | 0.25 h | ⏳ 🤖 | F-005-T36 |
 | nerv:F-006-T29 | Rerun the P3 role cases with role-sized probes and update the report | Implemented; verification pending | 0 h | 🤖 | — |
 | nerv:F-006-T31 | Rerun the P3 Misato cases with the fixed probe budget and update the report | Implemented; verification pending | 0 h | 🤖 | — |
-| nerv:B-124-T01 | kaji relocate pushes a re-target only after the target's prechecks pass | Implemented; verification pending | 2 h | 🤖 | — |
-| nerv:F-016-T09 | Step 5b — Two-device relocation acceptance | Planned | 0 h agent + 1 h owner | ⏳ 🧑‍🔧 | B-124-T01 |
-| nerv:F-016-T11 | Record the evidence of F-016-T09 and close it | Planned | 0.25 h | ⏳ 🤖 | F-016-T09 |
-| nerv:F-016-T21 | Export the seed snapshot off serve's event loop | Planned | 1.5 h | ⏳ 🤖 | B-124-T01 |
 | nerv:B-118-T01 | Make the Windows test step fit its limit with margin | Implemented; verification pending | 0.5 h | 🤖 | — |
 | nerv:B-118-T02 | Worker-link test files always exit; find why they time out on Windows | Implemented; verification pending | 0.5 h | 🤖 | — |
 | nerv:B-118-T03 | Other Runtime test files always exit; failing tests named in a stopped run | Implemented; verification pending | 2 h | ⏳ 🤖 | B-118-T02 |
@@ -214,6 +215,9 @@ Proposals only, each naming the repository that would own the fix: the coordinat
 | nerv:F-004-T09 | Delivery order: push first, Telegram as fallback | Planned | 2 h | ⏳ 🤖 | F-004-T06, F-124-T01 |
 | nerv:F-012-T05 | Edge cases and real-host acceptance | Planned | 0 h agent + 0.5 h owner | 🧑‍🔧 | — |
 | nerv:F-012-T06 | Record the evidence of F-012-T05 and close it | Planned | 0.25 h | ⏳ 🤖 | F-012-T05 |
+| nerv:F-016-T09 | Step 5b — Two-device relocation acceptance | Planned | 0 h agent + 1 h owner | 🧑‍🔧 | — |
+| nerv:F-016-T21 | Export the seed snapshot off serve's event loop | Planned | 1.5 h | 🤖 | — |
+| nerv:F-016-T11 | Record the evidence of F-016-T09 and close it | Planned | 0.25 h | ⏳ 🤖 | F-016-T09 |
 | nerv:F-082-T02 | Checklist card in the dashboard chat | Implemented; verification pending | 0 h | 🤖 | — |
 | nerv:F-082-T04 | Owner check: add by Telegram, tick on the dashboard | Planned | 0 h agent + 0.25 h owner | ⏳ 🧑‍🔧 | F-082-T02 |
 | nerv:F-083-T07 | Timers in a cooking session | Implemented; verification pending | 0.5 h | 🤖 | — |
@@ -237,7 +241,6 @@ Proposals only, each naming the repository that would own the fix: the coordinat
 | nerv:F-117-T05 | Owner runs nerv update on NERV-01 | Planned | 0.25 h owner | ⏳ 🧑‍🔧 | F-117-T03 |
 | nerv:F-118-T04 | Phone procedure: Tailscale serve, pairing and push, then the owner check | Planned | 0.5 h | 🤖 | — |
 | nerv:F-089-T04 | Bind a live browser driver to the click adapter | Implemented; verification pending | 0 h | 🤖 | — |
-| nerv:F-089-T06 | A browser.click chat tool for Misato | Implemented; verification pending | 0 h | 🤖 | — |
 | nerv:F-089-T03 | Owner check on a real page | Planned | 0 h agent + 0.25 h owner | ⏳ 🧑‍🔧 | F-089-T04 |
 | nerv:F-090-T04 | Resume automatically when a session limit resets | Implemented; verification pending | 0 h | 🤖 | — |
 | nerv:F-090-T03 | Owner check on a real interrupted session | Planned | 0 h agent + 0.25 h owner | ⏳ 🧑‍🔧 | F-090-T04 |
@@ -258,9 +261,7 @@ Proposals only, each naming the repository that would own the fix: the coordinat
 | nerv:B-066-T02 | Decouple worker-link frame verification from per-frame nervous IPC | Implemented; verification pending | 0.5 h | 🤖 | — |
 | nerv:B-066-T03 | Find why worker-link tests still lose the connection under load | Implemented; verification pending | 0.25 h | 🤖 | — |
 | nerv:B-120-T01 | kaji promote removes its marker before it starts the service | Implemented; verification pending | 0 h | 🤖 | — |
-| nerv:B-132-T01 | Wait for executors that answer later, within a bound | Implemented; verification pending | 0 h | 🤖 | — |
-| nerv:B-125-T01 | Bind every signed Kaji reply to the request it answers | Implemented; verification pending | 2 h | 🤖 | — |
-| nerv:B-126-T01 | Name why the nervous child is not ready on Windows and fix it | Implemented; verification pending | 1.5 h | 🤖 | — |
+| nerv:B-136-T01 | Name why the planner's first chat reply is invalid and fix it | Planned | 1.5 h | 🤖 | — |
 | nerv:F-086-T04 | Owner check with the owner's account | Planned | 0 h agent + 0.5 h owner | 🧑‍🔧 | — |
 | nerv:F-087-T04 | Owner check on the real printer | Planned | 0 h agent + 0.5 h owner | 🧑‍🔧 | — |
 | nerv:F-092-T04 | Owner check on the Mac | Planned | 0 h agent + 0.25 h owner | 🧑‍🔧 | — |
@@ -274,6 +275,7 @@ Proposals only, each naming the repository that would own the fix: the coordinat
 | nerv:B-129-T01 | Run doctor calls GET /api/doctor and shows the answer next to the button | Implemented; verification pending | 1 h | 🤖 | — |
 | nerv:B-134-T01 | Default VAPID subject Apple accepts, push failures logged, Phone push line in Health | Implemented; verification pending | 0 h | 🤖 | — |
 | nerv:B-135-T01 | A slow or failing doctor probe is named as such, not as an ownership refusal | Implemented; verification pending | 0 h | 🤖 | — |
+| nerv:B-125-T01 | Bind every signed Kaji reply to the request it answers | Implemented; verification pending | 2 h | 🤖 | — |
 | nerv:F-109-T02 | Store a pilot's call name and second name through a validated interface | Implemented; verification pending | 1 h | 🤖 | — |
 | nerv:F-109-T03 | Persona card layout with one Apply for every change | Implemented; verification pending | 1.5 h | 🤖 | F-109-T02 |
 | nerv:F-109-T04 | Silhouette image on the persona card | Planned | 0.5 h | ⏳ 🤖 | F-109-T03 |
@@ -281,13 +283,13 @@ Proposals only, each naming the repository that would own the fix: the coordinat
 | nerv:F-110-T04 | Brief time, time zone, Sync Ratio threshold and Telegram freshness window through the same interface | Planned | 1.5 h | ⏳ 🤖 | F-110-T03 |
 | nerv:F-110-T05 | Common settings for every base, with a per-base override | Planned | 2 h | ⏳ 🤖 | F-110-T04 |
 | nerv:F-113-T03 | Gauntlet comparison of prompt size and task success with the compact index | Planned | 1 h | 🤖 | — |
-| nerv:F-098-T04 | Live check with a real crash | Planned | 0.25 h | 🤖 | — |
 | nerv:F-123-T01 | Register a remote MCP server on the tailnet | Implemented; verification pending | 2.5 h | 🤖 | — |
 | nerv:F-123-T02 | Owner check: NERV lists the Grover tools | Planned | 0 h agent + 0.5 h owner | ⏳ 🧑‍🔧 | F-123-T01 |
 | nerv:F-099-T04 | Read a diyfpv.com build through the browser adapter | Implemented; verification pending | 0 h | 🤖 | — |
 | nerv:B-133-T01 | Name why the cache probe answered in 698 ms on Windows CI and fix or bound it | Planned | 1 h | 🤖 | — |
 | nerv:F-121-T04 | Send the part file with the print job | Implemented; verification pending | 0 h | 🤖 | — |
 | nerv:F-121-T03 | Owner: enter the parts and print one | Planned | 0 h agent + 0.5 h owner | ⏳ 🤖 | F-121-T04, B-133-T01 |
+| nerv:F-098-T04 | Live check with a real crash | Planned | 0 h agent + 0.25 h owner | 🧑‍🔧 | — |
 | nerv:F-101-T04 | Create/wire the FPVBuddy core repository and move the core into it | Planned | 2 h | ⏳ 🤖 | F-098-T04 |
 | nerv:F-101-T05 | NERV FPV pack uses the FPV core package | Planned | 1.5 h | ⏳ 🤖 | F-101-T04 |
 | nerv:F-101-T06 | Dashboard uses the FPV core's web components | Planned | 1.5 h | ⏳ 🤖 | F-101-T05 |
@@ -295,6 +297,7 @@ Proposals only, each naming the repository that would own the fix: the coordinat
 | nerv:B-076-T01 | Name the cause of each scattered CI failure of 2026-11-18 | Implemented; verification pending | 0.25 h | 🤖 | — |
 | nerv:B-127-T01 | Name what the F-118-T02 browser test waits on under load and fix or bound it | Planned | 1 h | 🤖 | — |
 | nerv:B-094-T03 | A remote result that arrived before Misato's reply is in that reply | Implemented; verification pending | 1.5 h | 🤖 | — |
+| nerv:B-137-T01 | Add a drone by chat with its model and version | Planned | 1.5 h | 🤖 | — |
 | nerv:F-060-T01 | herdr-core trial in the development workspace | Planned | 0 h agent + 2 h owner | 🧑‍🔧 | — |
 | nerv:F-060-T03 | Record the evidence of F-060-T01 and close it | Planned | 0.25 h | ⏳ 🤖 | F-060-T01 |
 | nerv:F-060-T02 | Answer the five questions and per-record outcomes | Planned | 0.25 h | ⏳ 🤖 | F-060-T03 |
@@ -406,99 +409,96 @@ Hours each backlog still holds, as each project's own, uncalibrated estimate. Th
 | Source | Agent | Owner | From | Open records by priority | Open records by size |
 |---|---|---|---|---|---|
 | solution | 4.5 h | 0.75 h | totals line | 🔶 P2: 3, 🔹 P3: 3 | 🟢 Small: 5, 🟡 Medium: 1 |
-| nerv | 103.75 h | 12.25 h | totals line | 🔺 P1: 9, 🔶 P2: 39, 🔹 P3: 23 | 🟢 Small: 49, 🟡 Medium: 15, 🔴 Large: 5, 🟣 Very large: 2 |
+| nerv | 103 h | 12.5 h | totals line | 🔺 P1: 8, 🔶 P2: 36, 🔹 P3: 24 | 🟢 Small: 46, 🟡 Medium: 15, 🔴 Large: 5, 🟣 Very large: 2 |
 | gauntlet-protocol | 7.75 h | 1 h | totals line | 🔶 P2: 1, 🔹 P3: 2 | 🟢 Small: 1, 🟡 Medium: 1, 🔴 Large: 1 |
 | project-harness | 0.25 h | 0 h | totals line | 🔶 P2: 1 | 🟢 Small: 1 |
 | fpvbuddy | 3 h | 0 h | Remaining cells of 2 open records | 🔶 P2: 1, 🔹 P3: 1 | 🟢 Small: 1, 🟡 Medium: 1 |
 | grover | 18.25 h | 12.75 h | totals line | 🔺 P1: 4, 🔶 P2: 11, 🔹 P3: 5 | 🟢 Small: 16, 🟡 Medium: 3, 🔴 Large: 1 |
-| **Solution** | 137.5 h | 26.75 h | 6 of 6 backlogs | | |
+| **Solution** | 136.75 h | 27 h | 6 of 6 backlogs | | |
 
 ## Integration outcomes
 
 | Record | Outcome | Status | Human action | Effort | Component links |
 |---|---|---|---|---|---|
-| [solution:B-002](BACKLOG.md#b-002) | check:fast fails with a bare HTTP 403 when GH_TOKEN is unset | Open | No | 🟢 Small | — |
-| [solution:B-003](BACKLOG.md#b-003) | Neither scheduled workflow has run on its schedule yet | Investigate | No | 🟢 Small | — |
-| [solution:F-004](BACKLOG.md#f-004) | Propose the solution order, hours, runway, gap review, cross-repository dependencies and on-demand backlog views to the template | Open | Procedure | 🟡 Medium | — |
-| [solution:F-006](BACKLOG.md#f-006) | NERV delivers Grover alerts end to end | Open | No | 🟢 Small | grover:F-008 |
-| [solution:F-007](BACKLOG.md#f-007) | NERV capability coverage in the Gauntlet across both repositories | Open | No | 🟢 Small | nerv:F-120 |
-| [solution:F-009](BACKLOG.md#f-009) | Reconcile to the latest harness and read built backlog views | Implemented | No | 🟢 Small | project-harness:F-096 |
+| [solution:B-002](https://github.com/voidbrain/coordinator/blob/122f5c288e53ca6c5527bf9070ba717aec964207/docs/BACKLOG.md#b-002) | check:fast fails with a bare HTTP 403 when GH_TOKEN is unset | Open | No | 🟢 Small | — |
+| [solution:B-003](https://github.com/voidbrain/coordinator/blob/122f5c288e53ca6c5527bf9070ba717aec964207/docs/BACKLOG.md#b-003) | Neither scheduled workflow has run on its schedule yet | Investigate | No | 🟢 Small | — |
+| [solution:F-004](https://github.com/voidbrain/coordinator/blob/122f5c288e53ca6c5527bf9070ba717aec964207/docs/BACKLOG.md#f-004) | Propose the solution order, hours, runway, gap review, cross-repository dependencies and on-demand backlog views to the template | Open | Procedure | 🟡 Medium | — |
+| [solution:F-006](https://github.com/voidbrain/coordinator/blob/122f5c288e53ca6c5527bf9070ba717aec964207/docs/BACKLOG.md#f-006) | NERV delivers Grover alerts end to end | Open | No | 🟢 Small | grover:F-008 |
+| [solution:F-007](https://github.com/voidbrain/coordinator/blob/122f5c288e53ca6c5527bf9070ba717aec964207/docs/BACKLOG.md#f-007) | NERV capability coverage in the Gauntlet across both repositories | Open | No | 🟢 Small | nerv:F-120 |
+| [solution:F-009](https://github.com/voidbrain/coordinator/blob/122f5c288e53ca6c5527bf9070ba717aec964207/docs/BACKLOG.md#f-009) | Reconcile to the latest harness and read built backlog views | Implemented | No | 🟢 Small | project-harness:F-096 |
 
 ## Component work
 
 | Record | Item | Status | Human action | Effort | Reviewed |
 |---|---|---|---|---|---|
-| [nerv:B-091](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-091) | Windows: a fenced stop ends uncertain after a SQLite "disk I/O error" while recording it | Open | No | 🟡 Medium | 2026-11-25 |
-| [nerv:F-005](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-005) | Discover, install and operate enrolled remote workers | Open | No | 🟡 Medium | 2026-11-18 |
-| [nerv:F-006](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-006) | Orchestrate agents and models across nodes | Open | No | 🟢 Small | 2026-11-25 |
-| [nerv:B-124](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-124) | A re-target `kaji relocate` signs fences the running main before the target's checks run | Implemented | No | 🟡 Medium | 2026-11-24 |
-| [nerv:F-016](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-016) | Relocate the logical coordinator without split brain | Open | No | 🟡 Medium | 2026-11-25 |
-| [nerv:B-118](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-118) | Windows CI: the test step runs into its 18-minute limit | Open | No | 🔴 Large | 2026-11-25 |
-| [nerv:F-062](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-062) | Backup and restore: agreed loss bounds, off-host snapshots and a restore drill | Open | Procedure | 🟢 Small | 2026-11-18 |
-| [nerv:F-011](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-011) | Native macOS menu-bar companion without Electron | Implemented | Procedure | 🟢 Small | 2026-11-10 |
-| [nerv:F-124](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-124) | Fuse Midori's Telegram and the phone app into one conversation | Open | No | 🟣 Very large | 2026-11-25 |
-| [nerv:F-004](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-004) | Angular PWA and validated GenUI | Open | Procedure | 🟡 Medium | 2026-11-25 |
-| [nerv:F-012](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-012) | Resume a specific paused job after its provider limit resets | Open | Procedure | 🟢 Small | 2026-11-21 |
-| [nerv:F-082](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-082) | Lists: add items by chat or Telegram, recall them as a checklist card | Open | No | 🟢 Small | 2026-11-21 |
-| [nerv:F-083](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-083) | Saved recipes: keep them by category, recall them, compute only from saved values | Open | No | 🟡 Medium | 2026-11-18 |
-| [nerv:F-120](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-120) | Gauntlet coverage of NERV capabilities | Open | No | 🔴 Large | 2026-11-24 |
-| [nerv:F-088](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-088) | Storage base: copy files from a known removable card when it is inserted | Open | No | 🟢 Small | 2026-11-18 |
-| [nerv:B-108](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-108) | Dashboard "Update now" and the scheduled apply cannot update the service they run in | Implemented | No | 🟢 Small | 2026-11-24 |
-| [nerv:F-102](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-102) | Scheduled automatic updates with advance notice | Open | No | 🟢 Small | 2026-11-18 |
-| [nerv:B-111](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-111) | The live service never records health samples: "No health samples yet" forever | Implemented | No | 🟢 Small | 2026-11-23 |
-| [nerv:F-103](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-103) | Service health and link load between bases, measured | Open | No | 🟡 Medium | 2026-11-21 |
-| [nerv:F-117](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-117) | One command to update a base: `nerv update` | Open | No | 🟡 Medium | 2026-11-24 |
-| [nerv:F-118](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-118) | Pair a phone once: device sign-in with a 90-day sliding limit | Open | No | 🟢 Small | 2026-11-24 |
-| [nerv:F-089](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-089) | Browser control: act on a named control in an open page | Open | No | 🟢 Small | 2026-11-24 |
-| [nerv:F-090](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-090) | Resume interrupted coding work without the editor | Open | No | 🟢 Small | 2026-11-24 |
-| [nerv:F-093](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-093) | Desktop control: click a named control in an app on screen | Open | No | 🟢 Small | 2026-11-24 |
-| [nerv:F-094](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-094) | App workflows: open an app, open a file, save it as another file | Open | No | 🟢 Small | 2026-11-24 |
-| [nerv:F-106](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-106) | Per-turn prompt size on the local route, then deferred domain tool loading | Open | No | 🟡 Medium | 2026-11-18 |
-| [nerv:B-099](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-099) | An EVA-03 job's child in its own session survives the job's timeout and cancellation | Open | No | 🔴 Large | 2026-11-19 |
-| [nerv:F-049](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-049) | EVA instances: an EVA is a class, each job gets a fresh sandbox | Open | No | 🟣 Very large | 2026-11-18 |
-| [nerv:F-008](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-008) | FPV batteries: registry, charge state, resistance checks and storage reminders | Open | No | 🟢 Small | 2026-11-21 |
-| [nerv:B-066](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-066) | Worker-link heartbeat verification awaits nervous SQLite IPC on every frame | Open | No | 🟢 Small | 2026-11-25 |
-| [nerv:B-119](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-119) | Placement probes longer than 15 s are cut off by the HTTP server | Verified | No | 🟢 Small | 2026-11-24 |
-| [nerv:B-120](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-120) | `kaji promote` starts the service before removing its marker, so the service can refuse to start | Implemented | No | 🟢 Small | 2026-11-24 |
-| [nerv:B-131](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-131) | Role-sized placement probes fail their own token budget: it counts the prompt but is sized from the output limit | Open | No | 🟢 Small | 2026-11-25 |
-| [nerv:B-132](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-132) | An executor that answers later reached the ledger and the caller as `{}`, and its failure was never caught | Open | No | 🟢 Small | 2026-11-24 |
-| [nerv:B-125](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-125) | A signed Kaji reply is not bound to its request, so an old epoch-push reply can be replayed | Open | No | 🟡 Medium | 2026-11-25 |
-| [nerv:B-126](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-126) | Windows CI: `pilot-model.test.ts` fails with "nervous process not ready; nothing was sent." | Open | No | 🟡 Medium | 2026-11-25 |
-| [nerv:F-086](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-086) | Gmail: search and read, then draft and send behind approval | Open | Procedure | 🟢 Small | 2026-11-21 |
-| [nerv:F-087](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-087) | 3D printing: slice a model with a material profile and send it to the printer | Open | Procedure | 🟢 Small | 2026-11-18 |
-| [nerv:F-092](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-092) | Record desktop input and replay it | Open | Procedure | 🟢 Small | 2026-11-21 |
-| [nerv:B-057](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-057) | Companion error messages are Italian only and do not say what went wrong | Open | Procedure | 🟢 Small | 2026-11-13 |
-| [nerv:B-068](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-068) | Companion keeps Start NERV disabled after Stop NERV | Open | Procedure | 🟢 Small | 2026-11-18 |
-| [nerv:B-107](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-107) | Pilot cards: model select leaves its card and name inputs are too narrow to read | Implemented | Procedure | 🟢 Small | 2026-11-23 |
-| [nerv:B-113](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-113) | Updating from the dashboard signs it out, then offers a stale Update now that fails | Implemented | Procedure | 🟢 Small | 2026-11-23 |
-| [nerv:B-122](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-122) | Update now is refused with "ownership is unknown" while NERV runs as a foreground `nerv launch` | Implemented | Procedure | 🟢 Small | 2026-11-24 |
-| [nerv:B-123](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-123) | After Update now the dashboard never shows the updater's result | Implemented | Procedure | 🟢 Small | 2026-11-25 |
-| [nerv:B-128](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-128) | Settings → Pair a device on a 127.0.0.1 dashboard puts a loopback address in the QR, which a phone cannot open | Implemented | Procedure | 🟢 Small | 2026-11-25 |
-| [nerv:B-129](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-129) | Health → Run doctor logs a canned "all ok" line and never asks the service | Implemented | Procedure | 🟢 Small | 2026-11-24 |
-| [nerv:B-134](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-134) | Every Web Push to Apple fails with 403 BadJwtToken, and the failure is invisible | Implemented | Procedure | 🟢 Small | 2026-11-25 |
-| [nerv:B-135](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-135) | Update now on a busy Mac is refused as an ownership problem when NERV's health check is slow | Implemented | Procedure | 🟢 Small | 2026-11-25 |
-| [nerv:F-109](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-109) | Pilots as persona cards with editable names and one Apply | Open | No | 🟡 Medium | 2026-11-20 |
-| [nerv:F-110](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-110) | Owner settings in the dashboard for values that are fixed today | Open | No | 🔴 Large | 2026-11-19 |
-| [nerv:F-113](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-113) | Compact tool index with details on request | Open | No | 🟢 Small | 2026-11-24 |
-| [nerv:F-098](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-098) | FPV fleet diary: crashes, parts, spares and photos | Open | No | 🟢 Small | 2026-11-24 |
-| [nerv:F-123](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-123) | Connect NERV to Grover's hub over MCP | Open | No | 🟡 Medium | 2026-11-24 |
-| [nerv:F-099](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-099) | FPV build knowledge: components and wiring from cited sources | Open | No | 🟢 Small | 2026-11-18 |
-| [nerv:B-133](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-133) | Windows CI: the F-121-T04 cache probe answered in 698 ms while its test allows 300 ms | Open | No | 🟢 Small | 2026-11-25 |
-| [nerv:F-121](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-121) | Printed parts per drone: "print Smoke's feet" | Open | No | 🟢 Small | 2026-11-25 |
-| [nerv:F-101](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-101) | Share the FPV battery manager outside NERV | Open | No | 🔴 Large | 2026-11-20 |
-| [nerv:B-072](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-072) | Windows CI: native TLS tests fail when openssl takes over 15 s | Open | No | 🟢 Small | 2026-11-18 |
-| [nerv:B-076](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-076) | CI 2026-11-18: scattered one-off failures in unrelated tests on Windows and Linux | Open | No | 🟢 Small | 2026-11-25 |
-| [nerv:B-127](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-127) | F-118-T02 browser test times out when it runs together with many test files | Open | No | 🟢 Small | 2026-11-24 |
-| [nerv:B-094](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-094) | Remote action wording: a doubled full stop, "queued" for a finished job, "offline" for a revoked base | Open | No | 🟡 Medium | 2026-11-19 |
-| [nerv:F-060](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-060) | Spike: herdr-core as a coding-agent terminal runtime | Investigate | Procedure | 🟢 Small | 2026-11-06 |
-| [nerv:F-116](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-116) | Split a model too big for one base across bases | Open | Decision | 🟢 Small | 2026-11-22 |
-| [nerv:F-007](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-007) | Voice and evaluated skill improvement | Open | Procedure | 🟢 Small | 2026-11-15 |
-| [nerv:F-122](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#f-122) | Deliver Grover alerts | Open | Decision | 🟡 Medium | 2026-11-24 |
-| [nerv:B-056](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-056) | A renewal the companion refuses on the Mac says it was not confirmed | Implemented | Procedure | 🟢 Small | 2026-11-13 |
-| [nerv:B-096](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-096) | Sephirot flow: a sortie that stops at Misato's apartment has no route to Debrief | Implemented | Procedure | 🟢 Small | 2026-11-19 |
-| [nerv:B-110](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-110) | Dashboard offers Update now when already up to date, away from the update status | Implemented | Procedure | 🟢 Small | 2026-11-23 |
-| [nerv:B-112](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-112) | Sephirot flow lights routes the sortie did not take and hides the map when no sortie is selected | Implemented | Procedure | 🟢 Small | 2026-11-23 |
-| [nerv:B-130](https://github.com/voidbrain/nerv/blob/4dae734e0f147ec62160965c8d91de931a46f642/docs/BACKLOG.md#b-130) | A finished sortie that never needed approval shows Misato's Apt faded as skipped, unlike the other unvisited steps | Implemented | Procedure | 🟢 Small | 2026-11-24 |
+| [nerv:B-091](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-091) | Windows: a fenced stop ends uncertain after a SQLite "disk I/O error" while recording it | Open | No | 🟡 Medium | 2026-11-25 |
+| [nerv:F-005](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-005) | Discover, install and operate enrolled remote workers | Open | No | 🟡 Medium | 2026-11-18 |
+| [nerv:F-006](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-006) | Orchestrate agents and models across nodes | Open | No | 🟢 Small | 2026-11-25 |
+| [nerv:B-118](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-118) | Windows CI: the test step runs into its 18-minute limit | Open | No | 🔴 Large | 2026-11-25 |
+| [nerv:F-062](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-062) | Backup and restore: agreed loss bounds, off-host snapshots and a restore drill | Open | Procedure | 🟢 Small | 2026-11-18 |
+| [nerv:F-011](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-011) | Native macOS menu-bar companion without Electron | Implemented | Procedure | 🟢 Small | 2026-11-10 |
+| [nerv:F-124](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-124) | Fuse Midori's Telegram and the phone app into one conversation | Open | No | 🟣 Very large | 2026-11-25 |
+| [nerv:F-004](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-004) | Angular PWA and validated GenUI | Open | Procedure | 🟡 Medium | 2026-11-25 |
+| [nerv:F-012](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-012) | Resume a specific paused job after its provider limit resets | Open | Procedure | 🟢 Small | 2026-11-21 |
+| [nerv:F-016](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-016) | Relocate the logical coordinator without split brain | Open | Procedure | 🟡 Medium | 2026-11-25 |
+| [nerv:F-082](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-082) | Lists: add items by chat or Telegram, recall them as a checklist card | Open | No | 🟢 Small | 2026-11-21 |
+| [nerv:F-083](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-083) | Saved recipes: keep them by category, recall them, compute only from saved values | Open | No | 🟡 Medium | 2026-11-18 |
+| [nerv:F-120](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-120) | Gauntlet coverage of NERV capabilities | Open | No | 🔴 Large | 2026-11-24 |
+| [nerv:F-088](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-088) | Storage base: copy files from a known removable card when it is inserted | Open | No | 🟢 Small | 2026-11-18 |
+| [nerv:B-108](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-108) | Dashboard "Update now" and the scheduled apply cannot update the service they run in | Implemented | No | 🟢 Small | 2026-11-24 |
+| [nerv:F-102](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-102) | Scheduled automatic updates with advance notice | Open | No | 🟢 Small | 2026-11-18 |
+| [nerv:B-111](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-111) | The live service never records health samples: "No health samples yet" forever | Implemented | No | 🟢 Small | 2026-11-23 |
+| [nerv:F-103](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-103) | Service health and link load between bases, measured | Open | No | 🟡 Medium | 2026-11-21 |
+| [nerv:F-117](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-117) | One command to update a base: `nerv update` | Open | No | 🟡 Medium | 2026-11-24 |
+| [nerv:F-118](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-118) | Pair a phone once: device sign-in with a 90-day sliding limit | Open | No | 🟢 Small | 2026-11-24 |
+| [nerv:F-089](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-089) | Browser control: act on a named control in an open page | Open | No | 🟢 Small | 2026-11-24 |
+| [nerv:F-090](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-090) | Resume interrupted coding work without the editor | Open | No | 🟢 Small | 2026-11-24 |
+| [nerv:F-093](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-093) | Desktop control: click a named control in an app on screen | Open | No | 🟢 Small | 2026-11-24 |
+| [nerv:F-094](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-094) | App workflows: open an app, open a file, save it as another file | Open | No | 🟢 Small | 2026-11-24 |
+| [nerv:F-106](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-106) | Per-turn prompt size on the local route, then deferred domain tool loading | Open | No | 🟡 Medium | 2026-11-18 |
+| [nerv:B-099](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-099) | An EVA-03 job's child in its own session survives the job's timeout and cancellation | Open | No | 🔴 Large | 2026-11-19 |
+| [nerv:F-049](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-049) | EVA instances: an EVA is a class, each job gets a fresh sandbox | Open | No | 🟣 Very large | 2026-11-18 |
+| [nerv:F-008](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-008) | FPV batteries: registry, charge state, resistance checks and storage reminders | Open | No | 🟢 Small | 2026-11-21 |
+| [nerv:B-066](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-066) | Worker-link heartbeat verification awaits nervous SQLite IPC on every frame | Open | No | 🟢 Small | 2026-11-25 |
+| [nerv:B-120](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-120) | `kaji promote` starts the service before removing its marker, so the service can refuse to start | Implemented | No | 🟢 Small | 2026-11-24 |
+| [nerv:B-136](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-136) | `nerv chat` gets an "(invalid reply)" from the planner before every answer | Open | No | 🟡 Medium | 2026-11-25 |
+| [nerv:F-086](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-086) | Gmail: search and read, then draft and send behind approval | Open | Procedure | 🟢 Small | 2026-11-21 |
+| [nerv:F-087](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-087) | 3D printing: slice a model with a material profile and send it to the printer | Open | Procedure | 🟢 Small | 2026-11-18 |
+| [nerv:F-092](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-092) | Record desktop input and replay it | Open | Procedure | 🟢 Small | 2026-11-21 |
+| [nerv:B-057](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-057) | Companion error messages are Italian only and do not say what went wrong | Open | Procedure | 🟢 Small | 2026-11-13 |
+| [nerv:B-068](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-068) | Companion keeps Start NERV disabled after Stop NERV | Open | Procedure | 🟢 Small | 2026-11-18 |
+| [nerv:B-107](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-107) | Pilot cards: model select leaves its card and name inputs are too narrow to read | Implemented | Procedure | 🟢 Small | 2026-11-23 |
+| [nerv:B-113](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-113) | Updating from the dashboard signs it out, then offers a stale Update now that fails | Implemented | Procedure | 🟢 Small | 2026-11-23 |
+| [nerv:B-122](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-122) | Update now is refused with "ownership is unknown" while NERV runs as a foreground `nerv launch` | Implemented | Procedure | 🟢 Small | 2026-11-24 |
+| [nerv:B-123](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-123) | After Update now the dashboard never shows the updater's result | Implemented | Procedure | 🟢 Small | 2026-11-25 |
+| [nerv:B-128](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-128) | Settings → Pair a device on a 127.0.0.1 dashboard puts a loopback address in the QR, which a phone cannot open | Implemented | Procedure | 🟢 Small | 2026-11-25 |
+| [nerv:B-129](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-129) | Health → Run doctor logs a canned "all ok" line and never asks the service | Implemented | Procedure | 🟢 Small | 2026-11-24 |
+| [nerv:B-134](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-134) | Every Web Push to Apple fails with 403 BadJwtToken, and the failure is invisible | Implemented | Procedure | 🟢 Small | 2026-11-25 |
+| [nerv:B-135](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-135) | Update now on a busy Mac is refused as an ownership problem when NERV's health check is slow | Implemented | Procedure | 🟢 Small | 2026-11-25 |
+| [nerv:B-125](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-125) | A signed Kaji reply is not bound to its request, so an old epoch-push reply can be replayed | Implemented | Procedure | 🟡 Medium | 2026-11-25 |
+| [nerv:F-109](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-109) | Pilots as persona cards with editable names and one Apply | Open | No | 🟡 Medium | 2026-11-20 |
+| [nerv:F-110](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-110) | Owner settings in the dashboard for values that are fixed today | Open | No | 🔴 Large | 2026-11-19 |
+| [nerv:F-113](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-113) | Compact tool index with details on request | Open | No | 🟢 Small | 2026-11-24 |
+| [nerv:F-123](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-123) | Connect NERV to Grover's hub over MCP | Open | No | 🟡 Medium | 2026-11-24 |
+| [nerv:F-099](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-099) | FPV build knowledge: components and wiring from cited sources | Open | No | 🟢 Small | 2026-11-18 |
+| [nerv:B-133](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-133) | Windows CI: the F-121-T04 cache probe answered in 698 ms while its test allows 300 ms | Open | No | 🟢 Small | 2026-11-25 |
+| [nerv:F-121](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-121) | Printed parts per drone: "print Smoke's feet" | Open | No | 🟢 Small | 2026-11-25 |
+| [nerv:F-098](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-098) | FPV fleet diary: crashes, parts, spares and photos | Open | Procedure | 🟢 Small | 2026-11-24 |
+| [nerv:F-101](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-101) | Share the FPV battery manager outside NERV | Open | No | 🔴 Large | 2026-11-20 |
+| [nerv:B-072](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-072) | Windows CI: native TLS tests fail when openssl takes over 15 s | Open | No | 🟢 Small | 2026-11-18 |
+| [nerv:B-076](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-076) | CI 2026-11-18: scattered one-off failures in unrelated tests on Windows and Linux | Open | No | 🟢 Small | 2026-11-25 |
+| [nerv:B-127](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-127) | F-118-T02 browser test times out when it runs together with many test files | Open | No | 🟢 Small | 2026-11-24 |
+| [nerv:B-094](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-094) | Remote action wording: a doubled full stop, "queued" for a finished job, "offline" for a revoked base | Open | No | 🟡 Medium | 2026-11-19 |
+| [nerv:B-137](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-137) | Fleet chat reads a new drone's model and version as part categories | Open | No | 🟡 Medium | 2026-11-25 |
+| [nerv:F-060](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-060) | Spike: herdr-core as a coding-agent terminal runtime | Investigate | Procedure | 🟢 Small | 2026-11-06 |
+| [nerv:F-116](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-116) | Split a model too big for one base across bases | Open | Decision | 🟢 Small | 2026-11-22 |
+| [nerv:F-007](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-007) | Voice and evaluated skill improvement | Open | Procedure | 🟢 Small | 2026-11-15 |
+| [nerv:F-122](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#f-122) | Deliver Grover alerts | Open | Decision | 🟡 Medium | 2026-11-24 |
+| [nerv:B-056](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-056) | A renewal the companion refuses on the Mac says it was not confirmed | Implemented | Procedure | 🟢 Small | 2026-11-13 |
+| [nerv:B-096](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-096) | Sephirot flow: a sortie that stops at Misato's apartment has no route to Debrief | Implemented | Procedure | 🟢 Small | 2026-11-19 |
+| [nerv:B-110](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-110) | Dashboard offers Update now when already up to date, away from the update status | Implemented | Procedure | 🟢 Small | 2026-11-23 |
+| [nerv:B-112](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-112) | Sephirot flow lights routes the sortie did not take and hides the map when no sortie is selected | Implemented | Procedure | 🟢 Small | 2026-11-23 |
+| [nerv:B-130](https://github.com/voidbrain/nerv/blob/896182392525573e79df323165575c85ad0d3d00/docs/BACKLOG.md#b-130) | A finished sortie that never needed approval shows Misato's Apt faded as skipped, unlike the other unvisited steps | Implemented | Procedure | 🟢 Small | 2026-11-24 |
 | [gauntlet-protocol:B-003](https://github.com/voidbrain/gauntlet-protocol/blob/2339e413222c65a205cf8dc0f94d00f704cca7af/docs/BACKLOG.md#b-003) | Coding grader blocks at a timeout while a leftover process keeps writing | Open | No | 🟢 Small | 2026-11-25 |
 | [gauntlet-protocol:F-022](https://github.com/voidbrain/gauntlet-protocol/blob/2339e413222c65a205cf8dc0f94d00f704cca7af/docs/BACKLOG.md#f-022) | Packs or recorded skips for estimation, research, scheduling-time and backlog-management | Open | No | 🟡 Medium | 2026-11-24 |
 | [gauntlet-protocol:F-021](https://github.com/voidbrain/gauntlet-protocol/blob/2339e413222c65a205cf8dc0f94d00f704cca7af/docs/BACKLOG.md#f-021) | image-generation-v1: runner and grader after a design decision | Open | No | 🔴 Large | 2026-11-24 |
