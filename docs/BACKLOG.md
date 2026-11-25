@@ -1,9 +1,10 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 24 November 2026 against main `e03eb0c`. Cross-repository work only; each component's work lives in its own backlog ([overview](SOLUTION-OVERVIEW.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
+Current work ledger, reviewed 25 November 2026 against main `f414f65`. PRs #1–#24 merged on green CI. F-001 and F-002 verified on that CI and closed; F-003, F-005 and F-008 were already closed; B-001, F-004 and F-009 updated in their own PRs.
+Cross-repository work only; each component's work lives in its own backlog ([overview](SOLUTION-OVERVIEW.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 4.25 h agent + 0.75 h owner across 9 open steps of 6 features. 2.25 h of actual effort recorded on 2 steps. Generated from the task files.
+**Remaining effort:** 3.75 h agent + 0.75 h owner across 7 open steps of 4 features. 2 h of actual effort recorded on 1 step. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -55,92 +56,6 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 </details>
 
 ---
-### <a id="f-001"></a>[✨ F-001](#top)
-
-**Coordinator repository with harness v10.9.0, the solution profile, the solution order and the gap review**
-
-| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
-|---|---|---|---|---|---|:---:|:---:|:---:|
-| 🟡 Implemented | 🔺 P1 | 🟢 Small | 0.5 h | — | — | 🤖 | — | — |
-
-💻 **→** Next: F-001-T01 — Adopt the harness, the solution profile, the views, the order and the gap review (Implemented; verification pending).
-
-| | |
-|---|---|
-| **Issue** | The owner (2026-11-24) asked for one private repository where all work of all projects is seen and steered, with records left in their own repositories. |
-| **Reproduce** | `npm run check:fast`; `npm run solution:refresh` regenerates `docs/SOLUTION-OVERVIEW.md` and `docs/SOLUTION-DASHBOARD.md` from GitHub. |
-| **Check** | CI passes on the first PR; the overview lists every component's open work, owner checks, blocked work, effort, the solution order with live state and the gap review; `check:freshness` ends with the harness on v10.9.0. |
-
-**Feature steps**
-
-| Effort | Step | Estimate | Actual | Remaining | Status | PRs |
-|---|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-001-t01"></a>F-001-T01 — Adopt the harness, the solution profile, the views, the order and the gap review | 0.5 h | 0 h | 0.5 h | Implemented; verification pending | [PR #1](https://github.com/voidbrain/coordinator/pull/1) adoption, merged; [PR #2](https://github.com/voidbrain/coordinator/pull/2) re-review fixes |
-| 🟢 Small | **Total** | 0.5 h | 0 h (0 of 1 steps recorded) | 0.5 h | 0 of 1 completed | |
-
-<details>
-<summary>Next action, estimates and PR history</summary>
-
-[Full notes & evidence](work/records/F-001.md)
-
-| Field | Value |
-|---|---|
-| PR / evidence | Steps: F-001-T01: [PR #1](https://github.com/voidbrain/coordinator/pull/1) adoption, merged; [PR #2](https://github.com/voidbrain/coordinator/pull/2) re-review fixes. [#1](https://github.com/voidbrain/coordinator/pull/1) |
-| Opened | 2026-11-24 |
-| Verification | Pending |
-| Reviewed | 2026-11-24 |
-
-</details>
-
----
-
-### <a id="f-002"></a>[✨ F-002](#top)
-
-**Owner sets the first solution order**
-
-| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
-|---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔺 P1 | 🟢 Small | 0 h | — | — | 🤖 | — | — |
-
-💻 **→** Next: F-002-T02 — Land the owner's order in a PR that changes only the list (Implemented; verification pending).
-
-| | |
-|---|---|
-| **Issue** | The seeded order is a proposal from the components' P1 and P2 work, not the owner's order. |
-| **Reproduce** | Open `docs/solution-order.md`: its Order section says "Proposal of 2026-11-24". |
-| **Check** | The owner's order is landed in a small PR and the "Proposal" sentence is replaced by the date the owner set it. |
-
-**Feature steps**
-
-| Effort | Step | Estimate | Actual | Remaining | Status | Who | PRs |
-|---|---|---|---|---|---|:---:|---|
-| 🟢 Small | <a id="f-002-t02"></a>F-002-T02 — Land the owner's order in a PR that changes only the list | 0.25 h | 0.25 h so far (stated) | 0 h | Implemented; verification pending | 🤖 | [PR #4](https://github.com/voidbrain/coordinator/pull/4) the owner's order |
-| 🟢 Small | **Total** | 0.25 h (1 of 2 steps) | 0.25 h (1 of 2 steps recorded) | 0 h | 1 of 2 completed | | |
-
-<details><summary>Done steps (1)</summary>
-
-| Effort | Step | Estimate | Actual | Status | PRs |
-|---|---|---|---|---|---|
-| — | <a id="f-002-t01"></a>F-002-T01 — Owner decides the first solution order | — | 0 h | Completed | — |
-
-</details>
-
-<details>
-<summary>Next action, estimates and PR history</summary>
-
-[Full notes & evidence](work/records/F-002.md)
-
-| Field | Value |
-|---|---|
-| PR / evidence | Steps: F-002-T02: [PR #4](https://github.com/voidbrain/coordinator/pull/4) the owner's order. — |
-| Opened | 2026-11-24 |
-| Verification | Pending |
-| Reviewed | 2026-11-24 |
-
-</details>
-
----
-
 ### <a id="f-004"></a>[✨ F-004](#top)
 
 **Propose the solution order, hours, runway, gap review, cross-repository dependencies and on-demand backlog views to the template**
@@ -311,6 +226,8 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 ---
 ## Other changes
+
+Reconciliation history: [reconciliation log 2026](archive/reconciliation-2026.md).
 
 ## How to use this file
 

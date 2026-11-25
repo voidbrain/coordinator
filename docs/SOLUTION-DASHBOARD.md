@@ -1,11 +1,11 @@
 <!-- generated: project-harness solution dashboard; edit owning backlogs, not this file -->
 # voidbrain solution dashboard
 
-Snapshot: 2026-11-25T11:25:50.109Z. Read-only aggregation; no combined completion percentage. Solution integration status is independent of component status.
+Snapshot: 2026-11-25T11:31:07.635Z. Read-only aggregation; no combined completion percentage. Solution integration status is independent of component status.
 
 | Source | Revision | Snapshot state |
 |---|---|---|
-| solution | [bc3350ec6edf](https://github.com/voidbrain/coordinator/commit/bc3350ec6edf910825945cb68c40a411f5dee503) | Local changes — not a committed snapshot; requested working checkout; local checkout, not fetched |
+| solution | [f414f65c11c8](https://github.com/voidbrain/coordinator/commit/f414f65c11c80c1ac9dfdd6bc2831d38ec52719e) | Local changes — not a committed snapshot; requested working checkout; local checkout, not fetched |
 | nerv | [767f8111fbbf](https://github.com/voidbrain/nerv/commit/767f8111fbbf1ca8cb23104f71d1228e1e26bd9f) | Committed snapshot; requested main; GitHub |
 | gauntlet-protocol | [2339e413222c](https://github.com/voidbrain/gauntlet-protocol/commit/2339e413222c65a205cf8dc0f94d00f704cca7af) | Committed snapshot; requested main; GitHub |
 | project-harness | [648b5367a3ab](https://github.com/voidbrain/project-harness/commit/648b5367a3abdd361304ce0a91ce156b41ee1575) | Committed snapshot; requested main; GitHub |
@@ -18,7 +18,7 @@ Open work per project, by what it waits on. Remaining hours are each project's o
 
 | Project | Ready | Waiting for the owner | Blocked | Waiting on other work | Remaining |
 |---|---|---|---|---|---|
-| solution | 3 | 1 | 5 | 1 | 5 h |
+| solution | 2 | 1 | 4 | 1 | 4.5 h |
 | 𖣂 nerv | 31 | 16 | 61 | 18 | 116 h |
 | 🤖 gauntlet-protocol | 2 | 0 | 1 | 6 | 8.75 h |
 | 🦺 project-harness | 1 | 0 | 0 | 0 | 0.25 h |
@@ -86,7 +86,6 @@ The owner's order (docs/solution-order.md): take the first ready item; it never 
 
 | Item | Root cause |
 |---|---|
-| solution:F-001-T01 | no actor in solution:F-001-T01 |
 | solution:F-004-T02 | owner step solution:F-004-T03, in this project |
 | solution:F-007-T01 | no actor in solution:F-007-T01 |
 | solution:F-007-T02 | no actor in solution:F-007-T02 |
@@ -198,13 +197,13 @@ Agent hours that can run before work reaches a block: open agent work that is re
 
 | Project | Runway | First blocks reached | Owner hours for the next layer |
 |---|---|---|---|
-| solution | 1 h | no actor in solution:F-001-T01; owner step solution:F-004-T03; owner step solution:F-006-T02; no actor in solution:F-007-T01; no actor in solution:F-007-T02; no actor in solution:F-009-T01 | 0.75 h |
+| solution | 1 h | owner step solution:F-004-T03; owner step solution:F-006-T02; no actor in solution:F-007-T01; no actor in solution:F-007-T02; no actor in solution:F-009-T01 | 0.75 h |
 | 𖣂 nerv | 45 h | no actor in nerv:B-091-T01; no actor in nerv:B-124-T01; no actor in nerv:B-118-T01; no actor in nerv:B-118-T02; no actor in nerv:B-118-T03; no actor in nerv:B-118-T04; owner step nerv:F-062-T07; owner step nerv:F-011-T02; no actor in nerv:F-124-T01; no actor in nerv:F-124-T02; no actor in nerv:F-124-T03; no actor in nerv:F-124-T04; owner step nerv:F-004-T06; owner step nerv:F-012-T05; owner step nerv:F-082-T04; owner step nerv:F-083-T09; no actor in nerv:F-120-T01; no actor in nerv:F-120-T03; no actor in nerv:F-120-T02; owner step nerv:F-088-T04; no actor in nerv:B-108-T01; no actor in nerv:B-108-T02; no actor in nerv:B-111-T01; no actor in nerv:F-103-T02; no actor in nerv:F-103-T04; owner step nerv:F-117-T05; no actor in nerv:F-118-T04; owner step nerv:F-089-T03; owner step nerv:F-090-T03; owner step nerv:F-094-T04; no actor in nerv:F-106-T03; owner step nerv:B-099-T03; no actor in nerv:B-120-T01; no actor in nerv:B-132-T01; no actor in nerv:B-125-T01; no actor in nerv:B-126-T01; owner step nerv:F-086-T04; owner step nerv:F-087-T04; owner step nerv:F-092-T04; owner step nerv:B-057-T02; owner step nerv:B-068-T02; no actor in nerv:B-107-T01; no actor in nerv:B-113-T01; owner step nerv:B-122-T02; owner step nerv:B-123-T02; owner step nerv:B-128-T02; no actor in nerv:B-129-T01; no actor in nerv:B-134-T01; no actor in nerv:B-135-T01; no actor in nerv:F-113-T03; no actor in nerv:F-098-T04; owner step nerv:F-123-T02; no actor in nerv:B-133-T01; no actor in nerv:F-121-T04; no actor in nerv:F-121-T03; no actor in nerv:B-072-T01; no actor in nerv:B-076-T01; no actor in nerv:B-127-T01; no actor in nerv:B-094-T03; owner step nerv:F-060-T01; owner step nerv:F-116-T02; owner step nerv:F-007-T05; owner step nerv:F-122-T03; owner step nerv:B-056-T02; no actor in nerv:B-096-T01; no actor in nerv:B-110-T01; no actor in nerv:B-112-T01; no actor in nerv:B-130-T01 | 10.5 h |
 | 🤖 gauntlet-protocol | 2 h | no actor in gauntlet-protocol:B-003-T01; owner step gauntlet-protocol:F-022-T02; owner step gauntlet-protocol:F-021-T02 | 0.75 h |
 | 🦺 project-harness | 0.25 h | — | 0 h |
 | 🚁 fpvbuddy | 0 h | no actor in fpvbuddy:F-005-T02; no actor in fpvbuddy:F-005-T03; no actor in fpvbuddy:F-005-T04; no actor in fpvbuddy:F-006-T01 | 0 h |
 | 🪴 grover | 0 h | owner step grover:F-005-T01; owner step grover:F-003-T01; owner step grover:F-011-T02; no actor in grover:B-006-T01; owner step grover:F-006-T02; owner step grover:F-007-T02; owner step grover:F-013-T02; owner step grover:F-014-T02; owner step grover:F-015-T02; owner step grover:F-016-T02; owner step grover:F-018-T01; no actor in grover:F-010-T01; no actor in grover:F-010-T02; no actor in grover:F-009-T01; no actor in grover:F-009-T02; no actor in grover:F-009-T03; owner step grover:F-017-T03 | 5.25 h |
-| **Solution** | 48.25 h | 98 | 17.25 h |
+| **Solution** | 48.25 h | 97 | 17.25 h |
 
 ## Audits, reviews and harness
 
@@ -229,12 +228,10 @@ Proposals only, each naming the repository that would own the fix: the coordinat
 | No next step | nerv:B-131 | B-131 is Open with no open step | nerv: add the next step to B-131, or verify and close it |
 | Behind the harness | nerv .harness.json | nerv is on v10.9.0; the latest template release is v10.20.0 | nerv: a record "Reconcile to harness v10.20.0", done in a session of that repository |
 
-<details><summary>solution: 9 open steps</summary>
+<details><summary>solution: 7 open steps</summary>
 
 | Step | Title | Status | Remaining | Who | Depends on |
 |---|---|---|---|---|---|
-| solution:F-001-T01 | Adopt the harness, the solution profile, the views, the order and the gap review | Implemented; verification pending | 0.5 h | — | — |
-| solution:F-002-T02 | Land the owner's order in a PR that changes only the list | Implemented; verification pending | 0 h | 🤖 | — |
 | solution:F-004-T03 | Owner takes Proposal 3 (dashboard defects found at the 10.20.0 reconcile) to a project-harness session | Planned | 0 h agent + 0.25 h owner | 🧑‍🔧 | — |
 | solution:F-004-T02 | Reconcile to the template release that ships the proposal and retire the project tool | Planned | 1.5 h | ⏳ 🤖 | F-004-T03 |
 | solution:F-006-T01 | Record the grover&#95;alerts contract and its end-to-end check in docs/SOLUTION.md (waits on grover:F-008) | Planned | 1 h | 🤖 | — |
@@ -465,21 +462,19 @@ Hours each backlog still holds, as each project's own, uncalibrated estimate. Th
 
 | Source | Agent | Owner | From | Open records by priority | Open records by size |
 |---|---|---|---|---|---|
-| solution | 4.25 h | 0.75 h | totals line | 🔺 P1: 3, 🔶 P2: 3, 🔹 P3: 1 | 🟢 Small: 6, 🟡 Medium: 1 |
+| solution | 3.75 h | 0.75 h | totals line | 🔺 P1: 1, 🔶 P2: 3, 🔹 P3: 1 | 🟢 Small: 4, 🟡 Medium: 1 |
 | nerv | 103.75 h | 12.25 h | totals line | 🔺 P1: 9, 🔶 P2: 39, 🔹 P3: 23 | 🟢 Small: 49, 🟡 Medium: 15, 🔴 Large: 5, 🟣 Very large: 2 |
 | gauntlet-protocol | 7.75 h | 1 h | totals line | 🔶 P2: 1, 🔹 P3: 2 | 🟢 Small: 1, 🟡 Medium: 1, 🔴 Large: 1 |
 | project-harness | 0.25 h | 0 h | totals line | 🔶 P2: 1 | 🟢 Small: 1 |
 | fpvbuddy | 3 h | 0 h | Remaining cells of 2 open records | 🔶 P2: 1, 🔹 P3: 1 | 🟢 Small: 1, 🟡 Medium: 1 |
 | grover | 16 h | 12.5 h | totals line | 🔺 P1: 3, 🔶 P2: 11, 🔹 P3: 4 | 🟢 Small: 15, 🟡 Medium: 2, 🔴 Large: 1 |
-| **Solution** | 135 h | 26.5 h | 6 of 6 backlogs | | |
+| **Solution** | 134.5 h | 26.5 h | 6 of 6 backlogs | | |
 
 ## Integration outcomes
 
 | Record | Outcome | Status | Human action | Effort | Component links |
 |---|---|---|---|---|---|
 | [solution:B-001](BACKLOG.md#b-001) | The daily refresh fails when a solution-order item closed in its own repository | Verified | No | 🟢 Small | — |
-| [solution:F-001](BACKLOG.md#f-001) | Coordinator repository with harness v10.9.0, the solution profile, the solution order and the gap review | Implemented | No | 🟢 Small | — |
-| [solution:F-002](BACKLOG.md#f-002) | Owner sets the first solution order | Open | No | 🟢 Small | — |
 | [solution:F-004](BACKLOG.md#f-004) | Propose the solution order, hours, runway, gap review, cross-repository dependencies and on-demand backlog views to the template | Open | Procedure | 🟡 Medium | — |
 | [solution:F-006](BACKLOG.md#f-006) | NERV delivers Grover alerts end to end | Open | No | 🟢 Small | grover:F-008 |
 | [solution:F-007](BACKLOG.md#f-007) | NERV capability coverage in the Gauntlet across both repositories | Open | No | 🟢 Small | nerv:F-120 |
