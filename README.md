@@ -9,10 +9,12 @@ The solution coordinator for the voidbrain projects: one place to see and steer 
 | `project-harness` | [voidbrain/project-harness](https://github.com/voidbrain/project-harness) |
 | `fpvbuddy` | [voidbrain/FPVBuddy](https://github.com/voidbrain/FPVBuddy) |
 | `grover` | [voidbrain/Grover](https://github.com/voidbrain/Grover) |
+| `openbando` | [voidbrain/openbando](https://github.com/voidbrain/openbando) |
 
 ## Read it
 
-- [Dashboard](docs/SOLUTION-DASHBOARD.md): a summary per project (🚦 coordinator, 𖣂 nerv, 🤖 gauntlet-protocol, 🦺 project-harness, 🚁 fpvbuddy, 🪴 grover) with harness and next audit, the solution order with each item's live state, agent and owner hours and open prerequisites, what is blocked and on what, which projects have nothing to do and why, what waits for the owner, the agent runway before the next owner block, audits and reviews, the gap review, each project's open steps, remaining hours with the solution total, and the component sources with their revisions and link checks.
+- [Dashboard](docs/SOLUTION-DASHBOARD.md): a summary per project (🚦 coordinator, 𖣂 nerv, 🤖 gauntlet-protocol, 🦺 project-harness, 🚁 fpvbuddy, 🪴 grover, 🏚️ openbando) with harness and next audit, the solution order with each item's live state, agent and owner hours and open prerequisites, what is blocked and on what, which projects have nothing to do and why, what waits for the owner, the agent runway before the next owner block, audits and reviews, the gap review, each project's open steps, remaining hours with the solution total, and the component sources with their revisions and link checks.
+- [Domain map](docs/DOMAINS.md): each project's modules and domains, and the domains two or more projects share.
 - [Solution order](docs/solution-order.md): the owner's order; agents take the first ready item.
 - [Backlog](docs/BACKLOG.md): cross-repository work only. [Solution](docs/SOLUTION.md): components, contracts, integration acceptance.
 

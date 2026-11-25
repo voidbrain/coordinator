@@ -10,7 +10,10 @@ This repository owns solution outcomes, shared contracts and integration accepta
 | `gauntlet-protocol` | [voidbrain/gauntlet-protocol](https://github.com/voidbrain/gauntlet-protocol) | Capability-scoped AI evaluation library and CLI, packs and evidence ledger | Its library, CLI, pack and ledger formats, vendored by NERV as a release tarball; harness consumer |
 | `project-harness` | [voidbrain/project-harness](https://github.com/voidbrain/project-harness) | The reusable harness template: rules, backlog tools, solution profile | Releases (tags `vX.Y.Z`) each component reconciles to; it never depends on them |
 | `fpvbuddy` | [voidbrain/FPVBuddy](https://github.com/voidbrain/FPVBuddy) | FPV companion app (Angular) | No contract recorded yet; harness consumer |
+| `openbando` | [voidbrain/openbando](https://github.com/voidbrain/openbando) | OpenBando: browser app (Angular, Three.js, Leaflet) to build abandoned places in 3D from the map, replay real FPV flights from Betaflight Blackbox logs and DVR, fly a simulator and share | No contract recorded yet; harness consumer |
 | `grover` | [voidbrain/Grover](https://github.com/voidbrain/Grover) | Grow-tent controller: hub, Pi agent, client | MCP tool surface used by NERV, alerts included (`grover_alerts`; tool table in Grover's `docs/DESIGN.md`, "NERV"); harness consumer |
+
+Which domains each component covers, and which ones two or more share, is in the [domain map](DOMAINS.md).
 
 Contracts are owned by the component that publishes them; this table links, it does not copy. A change to a published surface is announced in the publisher's backlog and, when a consumer must follow, recorded here as a coordination record with `Components` links.
 
@@ -18,7 +21,7 @@ Contracts are owned by the component that publishes them; this table links, it d
 
 | Consumer | Depends on | Pinned by |
 |---|---|---|
-| Every component | project-harness release | `version` in its `.harness.json` (nerv 10.7.0, gauntlet-protocol 10.9.0, fpvbuddy 10.3.0, grover 10.9.0 on 2026-11-24) |
+| Every component | project-harness release | `version` in its `.harness.json` (nerv 10.7.0, gauntlet-protocol 10.9.0, fpvbuddy 10.3.0, grover 10.9.0 on 2026-11-24, openbando 10.8.1 on 2026-11-25) |
 | nerv | Grover hub MCP tools | Grover's MCP tool names and `PROTOCOL_VERSION` (MQTT, inside Grover) |
 | nerv | gauntlet-protocol | the vendored package `@voidbrain/gauntlet-protocol` in nerv's `package.json` (0.9.1 on 2026-11-24), used by `tools/gauntlet.mjs` |
 

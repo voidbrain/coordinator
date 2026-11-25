@@ -50,6 +50,15 @@
       "backlog": "docs/BACKLOG.md",
       "archives": [],
       "emoji": "🪴"
+    },
+    {
+      "id": "openbando",
+      "repository": "voidbrain/openbando",
+      "path": "../openbando",
+      "ref": "main",
+      "backlog": "docs/BACKLOG.md",
+      "archives": [],
+      "emoji": "🏚️"
     }
   ],
   "emoji": "🚦",

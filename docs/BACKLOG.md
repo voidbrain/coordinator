@@ -4,7 +4,7 @@ Current work ledger, reviewed 25 November 2026 against main `69da441`. PRs #38 (
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 9.5 h agent + 1.25 h owner across 16 open steps of 5 features and 3 other records. Generated from the task files.
+**Remaining effort:** 10 h agent + 1.25 h owner across 18 open steps of 6 features and 3 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -323,6 +323,45 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|
 | PR / evidence | [#44](https://github.com/voidbrain/coordinator/pull/44), [#45](https://github.com/voidbrain/coordinator/pull/45) (Bricks name); owner request 2026-11-25; nerv:F-130 is planned in [voidbrain/nerv#770](https://github.com/voidbrain/nerv/pull/770), so `check:solution` reports it missing until that merges |
 | Components | nerv:F-130 |
+| Opened | 2026-11-25 |
+| Verification | Pending |
+| Reviewed | 2026-11-25 |
+
+</details>
+
+---
+### <a id="f-013"></a>[✨ F-013](#top)
+
+**OpenBando 🏚️ in the solution, and a domain map**
+
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🔴 Open | 🔹 P3 | 🟢 Small | 0.5 h | — | — | 🤖 | — | — |
+
+💻 **→** Next: F-013-T01 — Add openbando to the solution and write the domain map (Implemented; verification pending).
+
+| | |
+|---|---|
+| **Issue** | Owner request 2026-11-25. voidbrain/openbando is not a solution component, so the dashboard does not show its work, and nothing says which domains the projects share (maps and geo, Blackbox telemetry, 3D, UI components, fleet and batteries), so two projects can build the same thing twice or extract a package nobody shares. |
+| **Reproduce** | `.solution.json` on main before this record has no `openbando`; no page lists the projects' domains. |
+| **Check** | `openbando` is in `.solution.json` with emoji 🏚️ and its backlog reads in the dashboard; [docs/DOMAINS.md](DOMAINS.md) lists every component's modules with code links and the shared domains with who has or needs them, and states that a shared package is extracted only when two projects really share the code; the gap review reads the page (F-013-T02). |
+
+**Feature steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks |
+|---|---|---|---|---|---|---|---|
+| 🟢 Small | <a id="f-013-t01"></a>F-013-T01 — Add openbando to the solution and write the domain map | 1 h | 0 h | 0 h | Implemented; verification pending | — | [F-013-T02](#f-013-t02) |
+| 🟢 Small | <a id="f-013-t02"></a>F-013-T02 — First gap review against the domain map | 0.5 h | 0 h | 0.5 h | Planned | [F-013-T01](#f-013-t01) | — |
+| 🟢 Small | **Total** | 1.5 h | 0 h (0 of 2 steps recorded) | 0.5 h | 0 of 2 completed | | |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+[Full notes & evidence](work/records/F-013.md)
+
+| Field | Value |
+|---|---|
+| PR / evidence | Owner request and approval 2026-11-25 |
 | Opened | 2026-11-25 |
 | Verification | Pending |
 | Reviewed | 2026-11-25 |
