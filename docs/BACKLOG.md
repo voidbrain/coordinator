@@ -117,7 +117,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Pending |
+| PR / evidence | [#43](https://github.com/voidbrain/coordinator/pull/43) |
 | Opened | 2026-11-25 |
 | Verification | Pending |
 | Reviewed | 2026-11-25 |
