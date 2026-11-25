@@ -209,3 +209,38 @@ Closed records of the [backlog](../BACKLOG.md), in closing-date order. History, 
 </details>
 
 ---
+
+### F-010
+
+**Refresh PRs merge themselves on green**
+
+| Signal | Priority | Status | Effort |
+|:---:|---|---|---|
+| 🔵 | ◻️ P3 | Closed | 🟢 Small |
+
+💻 **→ Human action required: No**<br />Closed 2026-11-25: PR #31 merged on green CI; refresh PR #32 merged itself on green; after the owner turned on delete_branch_on_merge, dispatched run 45625090928 opened PR #34, which merged itself after `check` passed and its branch was deleted (404).
+
+| | |
+|---|---|
+| **Issue** | Owner decision 2026-11-25: refresh PRs merge themselves once every check passes, then their branch is deleted. The lander had to merge each one by hand (F-008). The repository is public since 2026-11-25 (owner), so main can be branch-protected. |
+| **Reproduce** | The Refresh solution views workflow opens `chore: refresh solution views` and stops; nothing merges it until an agent runs merge-when-green. |
+| **Check** | main's branch protection requires the CI check `check` (PR required, 0 approvals, admins included, no force-push or deletion); `allow_auto_merge` is on and Actions-can-approve stays off; a dispatched refresh opens a PR that merges itself after `check` passes and its branch is deleted; a refresh PR that changes another file gets a comment and no auto-merge (`test/refresh-guard.test.mjs`). |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+**Next action / closure evidence:** Closed 2026-11-25: PR #31 merged on green CI; refresh PR #32 merged itself on green; after the owner turned on delete_branch_on_merge, dispatched run 45625090928 opened PR #34, which merged itself after `check` passed and its branch was deleted (404). 2026-11-25: owner applied branch protection (required check `check`) and allow_auto_merge; PR #31 merged on green. Dispatched refresh run 45624037674: guard ok, auto-merge enabled on PR #32, which merged itself after `check` passed (13:30:19Z). Not deleted: `chore/refresh-solution-views`, because `gh pr merge --auto --delete-branch` deletes nothing when GitHub merges later and `delete_branch_on_merge` is false. Owner decision: turn on "Automatically delete head branches" (`gh api -X PATCH repos/voidbrain/coordinator -F delete_branch_on_merge=true`), or accept that the next run's `tools/refresh-branch.mjs` deletes the leftover branch. Then dispatch one more refresh and close F-010-T02. 2026-11-25: owner turned on delete_branch_on_merge (`gh api repos/voidbrain/coordinator -q .delete_branch_on_merge` prints true). Dispatched refresh run 45625090928: guard ok, auto-merge enabled on PR #34, which merged itself at 13:36:31Z after `check` passed; `gh api repos/voidbrain/coordinator/branches/chore/refresh-solution-views` then returned 404.
+
+**Estimates:** No remaining effort. Baseline 2026-11-25: T01 1 h agent, T02 0.25 h agent; actual (stated) T01 1.5 h, T02 0.25 h.
+
+| Field | Value |
+|---|---|
+| PR / evidence | Recorded in [PR #33](https://github.com/voidbrain/coordinator/pull/33); [PR #31](https://github.com/voidbrain/coordinator/pull/31) merged; refresh [PR #32](https://github.com/voidbrain/coordinator/pull/32) merged itself; refresh [PR #34](https://github.com/voidbrain/coordinator/pull/34) merged itself and its branch was deleted |
+| Components | — |
+| Opened | 2026-11-25 |
+| Verification | 2026-11-25: self-merge verified (PR #32, PR #34); branch deletion verified (PR #34, branch 404). Closed 2026-11-25 |
+| Reviewed | 2026-11-25 |
+
+</details>
+
+---

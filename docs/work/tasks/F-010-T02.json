@@ -4,7 +4,7 @@
   "parent": "F-010",
   "title": "Dispatch a refresh and see its PR merge itself",
   "goal": "A dispatched refresh PR merges itself after check passes and its branch is deleted",
-  "status": "planned",
+  "status": "closed",
   "acceptance": [
     "gh workflow run \"Refresh solution views\" opens or updates the refresh PR; it merges after check passes with no agent action; chore/refresh-solution-views is gone afterwards"
   ],
@@ -31,14 +31,21 @@
   "effort": {
     "size": "small",
     "estimate": "0.25 h agent",
-    "basis": "Estimated 2026-11-25: one dispatch and a wait. Not a measurement. 2026-11-25: refresh PR #32 merged itself on green, but chore/refresh-solution-views was not deleted: with --auto, gh's --delete-branch does not act when GitHub merges later, and the repository's delete_branch_on_merge is false. The next run's tools/refresh-branch.mjs deletes the leftover branch before it starts. Waits on the owner: turn on \"Automatically delete head branches\" (a repository setting), or accept the next-run cleanup.",
+    "basis": "Estimated 2026-11-25: one dispatch and a wait. Not a measurement. 2026-11-25: refresh PR #32 merged itself but left chore/refresh-solution-views (delete_branch_on_merge was false). Owner turned on delete_branch_on_merge 2026-11-25. Verified 2026-11-25: dispatched run 45625090928, guard ok, auto-merge on PR #34, which merged itself at 13:36:31Z after check passed; the branch then returned 404.",
     "reviewed": "2026-11-25",
-    "agentHours": 0.25,
-    "estimateAgentHours": 0.25
+    "agentHours": 0,
+    "estimateAgentHours": 0.25,
+    "ownerHours": 0,
+    "actualAgentHours": 0.25,
+    "actualSource": "stated"
   },
   "prs": [
     {
       "pr": 32
+    },
+    {
+      "pr": 34,
+      "note": "self-merged refresh PR, branch deleted"
     }
   ]
 }
