@@ -10,6 +10,15 @@ When extraction is due, it is a coordination record in [this backlog](BACKLOG.md
 
 Where shared code goes: UI (tokens, themes, components, genUI surfaces) in 🧱 bricks (`voidbrain/bricks`, `@voidbrain/bricks`); shared domain logic in a separate monorepo, 🧊 blocks (`voidbrain/blocks`, npm workspaces, one package per domain such as `@voidbrain/geo` or `@voidbrain/blackbox`), created only when its first package is really shared (owner decision 2026-11-25). Bricks never holds domain logic, and blocks never holds UI.
 
+## The rule for screens
+
+Screens are owned by their project; NERV integrates via MCP: surface cards (🧱 bricks surfaces) and MCP Apps/links; no duplicate views (owner decision 2026-11-25).
+
+- Each project builds its own screens with 🧱 bricks. NERV keeps no copy of another project's views.
+- **Surface cards in chat**: the project's MCP tools return structured data with a surface type; NERV renders it with the matching 🧱 bricks surface component in NERV's theme.
+- **Full screens**: an MCP Apps page the project's MCP server provides, which NERV displays, or a link to the project's own page.
+- A view NERV already has for another project's domain retires once that domain's code has moved to the owning project.
+
 ## Projects
 
 ### 𖣂 nerv
@@ -96,7 +105,7 @@ Not a component yet; its modules are listed here once its repository exists.
 | Telemetry and Blackbox | 🏚️ openbando: log parser, analysis, replay ([core/flight](https://github.com/voidbrain/openbando/tree/main/src/app/core/flight)); 𖣂 nerv FPV pack: vibration analysis ([blackbox.ts](https://github.com/voidbrain/nerv/blob/main/src/blackbox.ts)) | 🚁 fpvbuddy | Candidate: two projects read Blackbox logs; compare the parsers before proposing a shared one |
 | 3D (three.js) | 🏚️ openbando ([src/app/three](https://github.com/voidbrain/openbando/tree/main/src/app/three)) | — | Not yet |
 | UI components and genUI surfaces | 𖣂 nerv: [shared/surface.ts](https://github.com/voidbrain/nerv/blob/main/shared/surface.ts) catalogue (`nerv-status-card`, `nerv-notice-card`, `nerv-checklist-card`, `nerv-recipe-card`), rendered by [web/src/surface-renderer.ts](https://github.com/voidbrain/nerv/blob/main/web/src/surface-renderer.ts); 🧱 bricks: tokens, themes base/plain/eva and the same four surfaces as Angular components ([projects/bricks](https://github.com/voidbrain/bricks/tree/main/projects/bricks), first content 2026-11-25, unpublished); 🏚️ openbando [design-system](https://github.com/voidbrain/openbando/tree/main/design-system) | Consumers nerv (nerv:F-130), hobo, grover and fpvbuddy | 🧱 bricks, started early at the owner's request ([coordinator:F-012](BACKLOG.md#f-012)); components added only on real demand |
-| Fleet, batteries and crashes | 𖣂 nerv FPV pack ([fleet.ts](https://github.com/voidbrain/nerv/blob/main/src/fleet.ts), [batteries.ts](https://github.com/voidbrain/nerv/blob/main/src/batteries.ts)); 🚁 fpvbuddy battery views | Moves from nerv's FPV pack to 🚁 fpvbuddy | A move, not a shared package |
+| Fleet, batteries and crashes | 𖣂 nerv FPV pack ([fleet.ts](https://github.com/voidbrain/nerv/blob/main/src/fleet.ts), [batteries.ts](https://github.com/voidbrain/nerv/blob/main/src/batteries.ts)); 🚁 fpvbuddy battery views | Moves from nerv's FPV pack to 🚁 fpvbuddy | A move, not a shared package; the battery and fleet views live in 🚁 fpvbuddy and nerv's FPV pack views retire once the core moves (nerv:F-101-T04; rule for screens above) |
 
 ## Keeping it current
 
