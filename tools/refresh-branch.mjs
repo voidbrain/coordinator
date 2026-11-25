@@ -7,7 +7,8 @@
 //
 // open: a refresh PR from <branch> is open. Continue it and bring it up to date with origin/main by a merge (never a
 //       force-push). When only the generated views or the solution order conflict, take main's copy of them (the
-//       views are regenerated next and the order's Done items dropped again, B-001); any other conflict aborts the
+//       views are regenerated and the order's Done items dropped again by the solution:refresh step that runs after
+//       this one, B-001); any other conflict aborts the
 //       merge and fails, so a person looks at it.
 // none: no open refresh PR (never opened, merged, or closed unmerged). Start again from origin/main; a leftover
 //       remote branch is deleted first so the next push needs no force.

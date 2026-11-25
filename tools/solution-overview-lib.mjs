@@ -64,7 +64,7 @@ export function pruneOrder(text, refs) {
 // Where an ID that is not in its repository's active backlog closed, or null when it is in neither place (a wrong
 // ID). `archives` are [{path, text}] of the repository's closed-backlog files; `task` is the text of its
 // docs/work/tasks/<ID>.json and `record` of docs/work/records/<ID>.md, when they exist. A step closes with its
-// archived record.
+// archived record when that record's section names it.
 export function closedIn(id, { archives = [], task = null, record = null } = {}) {
   const recordId = id.replace(/-T\d+$/, '');
   for (const { path, text } of archives) {
@@ -79,6 +79,8 @@ export function closedIn(id, { archives = [], task = null, record = null } = {})
       .map((l) => /^## Closed (\d{4}-\d{2}-\d{2})/.exec(l)?.[1])
       .find(Boolean);
     const date = /\bClosed (\d{4}-\d{2}-\d{2})/.exec(section)?.[1] ?? day ?? null;
+    // A step closed with its record only when the archived section names it: a mistyped step ID stays a problem.
+    if (id !== recordId && !new RegExp(`\\b${id}\\b`).test(section)) break;
     return { where: path, anchor: recordId.toLowerCase(), date };
   }
   if (record) {
