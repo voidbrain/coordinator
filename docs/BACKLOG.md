@@ -4,7 +4,7 @@ Current work ledger, reviewed 25 November 2026 against main `7c0e5b8`. PR #28 (B
 Cross-repository work only; each component's work lives in its own backlog ([overview](SOLUTION-OVERVIEW.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 5.75 h agent + 0.75 h owner across 11 open steps of 5 features and 2 other records. 2 h of actual effort recorded on 1 step. Generated from the task files.
+**Remaining effort:** 4.75 h agent + 0.75 h owner across 10 open steps of 5 features and 2 other records. 3.5 h of actual effort recorded on 2 steps. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -264,9 +264,9 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔹 P3 | 🟡 Medium | 1.25 h | — | — | 🤖 | — | — |
+| 🔴 Open | 🔹 P3 | 🟢 Small | 0.25 h | — | — | 🤖 | — | — |
 
-💻 **→** Next: from tasks; F-010-T01 lands in PR #31 (settings applied by the owner 2026-11-25); then F-010-T02 dispatches a refresh.
+💻 **→** Next: from tasks; F-010-T02 waits on the owner: refresh PRs merge themselves, but the branch stays until the next run unless "Automatically delete head branches" is turned on.
 
 | | |
 |---|---|
@@ -276,11 +276,18 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | PRs |
-|---|---|---|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-010-t01"></a>F-010-T01 — Guarded auto-merge for refresh PRs, on required checks | 1 h | 0 h | 1 h | Planned | — | [F-010-T02](#f-010-t02) | [PR #31](https://github.com/voidbrain/coordinator/pull/31) |
-| 🟢 Small | <a id="f-010-t02"></a>F-010-T02 — Dispatch a refresh and see its PR merge itself | 0.25 h | 0 h | 0.25 h | Planned | [F-010-T01](#f-010-t01) | — | — |
-| 🟡 Medium | **Total** | 1.25 h | 0 h (0 of 2 steps recorded) | 1.25 h | 0 of 2 completed | | | |
+| Effort | Step | Estimate | Actual | Remaining | Status | PRs |
+|---|---|---|---|---|---|---|
+| 🟢 Small | <a id="f-010-t02"></a>F-010-T02 — Dispatch a refresh and see its PR merge itself | 0.25 h | 0 h | 0.25 h | Planned | [PR #32](https://github.com/voidbrain/coordinator/pull/32) |
+| 🟢 Small | **Total** | 1.25 h | 1.5 h (1 of 2 steps recorded) | 0.25 h | 1 of 2 completed | |
+
+<details><summary>Done steps (1)</summary>
+
+| Effort | Step | Estimate | Actual | Status | PRs |
+|---|---|---|---|---|---|
+| — | <a id="f-010-t01"></a>F-010-T01 — Guarded auto-merge for refresh PRs, on required checks | 1 h | 1.5 h (stated) | Completed | [PR #31](https://github.com/voidbrain/coordinator/pull/31); [PR #32](https://github.com/voidbrain/coordinator/pull/32) first self-merged refresh PR |
+
+</details>
 
 <details>
 <summary>Next action, estimates and PR history</summary>
@@ -289,10 +296,10 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Steps: F-010-T01: [PR #31](https://github.com/voidbrain/coordinator/pull/31). Opened in [PR #31](https://github.com/voidbrain/coordinator/pull/31) |
+| PR / evidence | Steps: F-010-T01: [PR #31](https://github.com/voidbrain/coordinator/pull/31); [PR #32](https://github.com/voidbrain/coordinator/pull/32) first self-merged refresh PR · F-010-T02: [PR #32](https://github.com/voidbrain/coordinator/pull/32). [PR #31](https://github.com/voidbrain/coordinator/pull/31) merged; refresh [PR #32](https://github.com/voidbrain/coordinator/pull/32) merged itself |
 | Components | — |
 | Opened | 2026-11-25 |
-| Verification | Pending |
+| Verification | Partial 2026-11-25: self-merge verified (PR #32); branch deletion pending |
 | Reviewed | 2026-11-25 |
 
 </details>

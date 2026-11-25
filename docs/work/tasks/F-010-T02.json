@@ -31,10 +31,14 @@
   "effort": {
     "size": "small",
     "estimate": "0.25 h agent",
-    "basis": "Estimated 2026-11-25: one dispatch and a wait. Not a measurement.",
+    "basis": "Estimated 2026-11-25: one dispatch and a wait. Not a measurement. 2026-11-25: refresh PR #32 merged itself on green, but chore/refresh-solution-views was not deleted: with --auto, gh's --delete-branch does not act when GitHub merges later, and the repository's delete_branch_on_merge is false. The next run's tools/refresh-branch.mjs deletes the leftover branch before it starts. Waits on the owner: turn on \"Automatically delete head branches\" (a repository setting), or accept the next-run cleanup.",
     "reviewed": "2026-11-25",
     "agentHours": 0.25,
     "estimateAgentHours": 0.25
   },
-  "prs": []
+  "prs": [
+    {
+      "pr": 32
+    }
+  ]
 }

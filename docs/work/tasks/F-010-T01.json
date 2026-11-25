@@ -4,7 +4,7 @@
   "parent": "F-010",
   "title": "Guarded auto-merge for refresh PRs, on required checks",
   "goal": "A refresh PR that changes only generated files merges itself on green CI and deletes its branch",
-  "status": "planned",
+  "status": "closed",
   "acceptance": [
     "main requires the CI check check (PR required, 0 approvals, admins included, no force-push or deletion); allow_auto_merge on; Actions-can-approve off",
     "The refresh workflow enables auto-merge with --delete-branch only when tools/refresh-guard.mjs passes; otherwise it comments why and leaves auto-merge off",
@@ -35,14 +35,21 @@
   "effort": {
     "size": "small",
     "estimate": "1 h agent",
-    "basis": "Estimated 2026-11-25: one workflow step, a small guard tool with tests, two settings calls. Not a measurement.",
+    "basis": "Estimated 2026-11-25: one workflow step, a small guard tool with tests, two settings calls. Not a measurement. Verified 2026-11-25: owner applied branch protection (required check `check`) and allow_auto_merge; PR #31 merged on green (merge-when-green); dispatched refresh run 45624037674 ran the guard (\"ok\") and enabled auto-merge on PR #32, which merged itself at 13:30:19Z after `check` passed.",
     "reviewed": "2026-11-25",
-    "agentHours": 1,
-    "estimateAgentHours": 1
+    "agentHours": 0,
+    "estimateAgentHours": 1,
+    "actualAgentHours": 1.5,
+    "actualSource": "stated",
+    "ownerHours": 0
   },
   "prs": [
     {
       "pr": 31
+    },
+    {
+      "pr": 32,
+      "note": "first self-merged refresh PR"
     }
   ]
 }
