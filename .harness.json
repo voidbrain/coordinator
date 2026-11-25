@@ -3,7 +3,7 @@
     "path": "~/Projects/project-harness",
     "repo": "https://github.com/voidbrain/project-harness"
   },
-  "version": "10.9.0",
+  "version": "10.20.0",
   "stacks": [
     "core",
     "solution"
@@ -69,7 +69,9 @@
     "docs/agents/work-usage-sources.md": "core/docs/agents/work-usage-sources.md",
     "docs/agents/work-usage-effectiveness.md": "core/docs/agents/work-usage-effectiveness.md",
     "docs/agents/work-usage-launch.md": "core/docs/agents/work-usage-launch.md",
-    "tools/solution.mjs": "core/tools/solution.mjs"
+    "tools/solution.mjs": "core/tools/solution.mjs",
+    "docs/agents/solution-dashboard.md": "core/docs/agents/solution-dashboard.md",
+    "docs/agents/solution-gaps.md": "core/docs/agents/solution-gaps.md"
   },
   "forked": {},
   "freshness": {
@@ -95,6 +97,7 @@
         "docs/solution-order.md",
         "docs/BACKLOG.md",
         "tools/solution-overview.mjs",
+        "tools/solution-overview-lib.mjs",
         "tools/solution.mjs"
       ],
       "then": "The generated overview and dashboard read these: regenerate both and commit them with their snapshot; reconcile docs/STYLE-GUIDE.md and docs/agents/gap-review.md when the overview layout or a gap rule changes.",

@@ -9,7 +9,8 @@
     "Reconcile to the template release that ships the proposal and retire the project tool"
   ],
   "dependsOn": [
-    "F-004-T01"
+    "F-004-T01",
+    "F-004-T03"
   ],
   "resources": [
     "tools/solution-overview.mjs",
@@ -31,9 +32,9 @@
   "effort": {
     "size": "medium",
     "estimate": "2 h",
-    "basis": "Estimated 2026-11-24: reconcile, move the order format if it changed, delete tools/solution-overview*.mjs and their tests, refresh; depends on a template release that does not exist yet, so this can grow. 2026-11-25: the template plans this as project-harness F-095 (first part in v10.10.0: a step may wait on a step of another repository), F-096 and F-097; reconcile as each release lands, and retire the project tools when the dashboard covers them. Not a measurement.",
+    "basis": "Estimated 2026-11-24: reconcile, move the order format if it changed, delete tools/solution-overview*.mjs and their tests, refresh; depends on a template release that does not exist yet, so this can grow. 2026-11-25: the template plans this as project-harness F-095 (first part in v10.10.0: a step may wait on a step of another repository), F-096 and F-097; reconcile as each release lands, and retire the project tools when the dashboard covers them. Not a measurement. 2026-11-25 (reconcile to 10.20.0, with F-009-T01): the order moved to the shipped format (.solution.json order; N. repo:ID — note; this repository solution:) and both checks pass. The project tool stays: the shipped dashboard reads a step without a Who cell as Blocked and does not drop closed order items (B-001), docs/proposals/solution-order-in-template.md, Proposal 3. Remaining: retire tools/solution-overview*.mjs, their tests, check:order and solution:overview once a template release fixes both.",
     "reviewed": "2026-11-25",
-    "agentHours": 2,
+    "agentHours": 1.5,
     "ownerHours": 0,
     "estimateAgentHours": 2
   },

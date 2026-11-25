@@ -4,7 +4,7 @@
   "parent": "F-009",
   "title": "Reconcile to the latest harness and read built backlog views",
   "goal": "The coordinator runs the latest harness release and its solution tools read components' built backlog views",
-  "status": "planned",
+  "status": "implemented",
   "acceptance": [
     "Started only once the project-harness template backlog is empty (external prerequisite; harness 10.9.0 has no cross-repository dependsOn)",
     ".harness.json names the latest release; tools/solution.mjs and docs/agents/solution-profile.md are at 10.14.0 or later",
@@ -37,9 +37,9 @@
   "effort": {
     "size": "small",
     "estimate": "1.5 h agent",
-    "basis": "Estimated 2026-11-25: reconcile from 10.9.0, mostly copied tools, plus one refresh against a built view. Not a measurement.",
+    "basis": "Estimated 2026-11-25: reconcile from 10.9.0, mostly copied tools, plus one refresh against a built view. Not a measurement. 2026-11-25: reconciled 10.9.0 → 10.20.0 (copied tools and guides, adapted files by hand, solution-dashboard.md and solution-gaps.md added). NERV has not switched to built views yet (no backlog-views branch on voidbrain/nerv; nerv:F-125), so the third check waits on it: the dashboard read every component as a committed snapshot.",
     "reviewed": "2026-11-25",
-    "agentHours": 1.5,
+    "agentHours": 0.25,
     "baselineAgentHours": 1.5,
     "estimateAgentHours": 1.5
   },

@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "id": "F-004-T03",
+  "parent": "F-004",
+  "title": "Owner takes Proposal 3 (dashboard defects found at the 10.20.0 reconcile) to a project-harness session",
+  "goal": "The template records the Who-column defect and the closed-order-item gap",
+  "status": "planned",
+  "acceptance": [
+    "A template record covers the step-without-Who-cell defect and closed order items (Proposal 3)"
+  ],
+  "dependsOn": [],
+  "resources": [
+    "docs/proposals/solution-order-in-template.md",
+    "docs/work/records/F-004.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "0.25 h owner",
+    "basis": "Estimated 2026-11-25: one template session reads Proposal 3. Not a measurement.",
+    "reviewed": "2026-11-25",
+    "agentHours": 0,
+    "ownerHours": 0.25,
+    "ownerKind": "procedure"
+  },
+  "prs": [],
+  "ownerLink": "docs/proposals/solution-order-in-template.md#proposal-3-what-the-shipped-dashboard-still-misses-found-reconciling-to-10200-f-004-t02"
+}

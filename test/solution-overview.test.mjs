@@ -113,23 +113,22 @@ test('a summary table without Status and Priority columns is a problem, not an e
 
 test('solution order: syntax, known repositories, duplicates and numbering', () => {
   const ids = new Set(['coordinator', 'example']);
-  const ok = readOrder(
-    '<!-- order:start -->\n1. `example:F-001` — first\n2. `example:F-001-T02`\n<!-- order:end -->',
-    ids,
-  );
+  const ok = readOrder('<!-- order:start -->\n1. example:F-001 — first\n2. example:F-001-T02\n<!-- order:end -->', ids);
   assert.deepEqual(ok.problems, []);
   assert.deepEqual(
     ok.items.map((i) => i.ref),
     ['example:F-001', 'example:F-001-T02'],
   );
   const bad = readOrder(
-    '<!-- order:start -->\n1. `other:F-001`\n3. `example:X-1`\n4. `other:F-001`\n<!-- order:end -->',
+    '<!-- order:start -->\n1. other:F-001\n3. example:X-1\n4. other:F-001\n<!-- order:end -->',
     ids,
   );
   assert.equal(bad.problems.length, 6);
-  // This repository's own records are `coordinator:ID`; `solution` is the template dashboard's internal name only.
-  assert.equal(readOrder('<!-- order:start -->\n1. `coordinator:F-002`\n<!-- order:end -->', ids).problems.length, 0);
-  assert.equal(readOrder('<!-- order:start -->\n1. `solution:F-002`\n<!-- order:end -->', ids).problems.length, 1); // unknown repo twice, bad ID, duplicate, two numbering slips
+  // Requirement changed in F-004-T02: the order uses the template's format, where this repository is `solution:ID`
+  // (tools/solution.mjs check accepts only that); the overview reads it as this repository's own record.
+  const own = readOrder('<!-- order:start -->\n1. solution:F-002\n<!-- order:end -->', ids);
+  assert.equal(own.problems.length, 0);
+  assert.equal(own.items[0].repo, 'coordinator'); // unknown repo twice, bad ID, duplicate, two numbering slips
 });
 
 test('remaining hours per backlog and the solution total; an unreadable total makes the sum partial', () => {
@@ -334,7 +333,7 @@ test('an order item marked pending is shown but is not a missing-record gap unti
     { id: 'example', repository: 'acme/example', available: true, records: [] },
   ];
   const order = readOrder(
-    '<!-- order:start -->\n1. `example:F-001` — pending: example PR #1\n2. `example:F-002` — no note of that kind\n<!-- order:end -->',
+    '<!-- order:start -->\n1. example:F-001 — pending: example PR #1\n2. example:F-002 — no note of that kind\n<!-- order:end -->',
     new Set(['coordinator', 'example']),
   );
   assert.deepEqual(order.problems, []);
@@ -391,7 +390,7 @@ test('an order item closed in its repository is Done with where it closed, not a
   assert.equal(closedIn('F-999', { archives }), null);
 
   const order = readOrder(
-    '<!-- order:start -->\n1. `example:B-121` — archived\n2. `example:F-999` — wrong ID\n3. `example:F-001` — pending: example PR #2\n<!-- order:end -->',
+    '<!-- order:start -->\n1. example:B-121 — archived\n2. example:F-999 — wrong ID\n3. example:F-001 — pending: example PR #2\n<!-- order:end -->',
     new Set(['coordinator', 'example']),
   );
   const source = { id: 'example', available: true };
@@ -424,11 +423,11 @@ test('an order item closed in its repository is Done with where it closed, not a
 
 test('the refresh drops Done items from the order and renumbers it, leaving the rest of the file', () => {
   const text =
-    '# Solution order\n\nIntro.\n\n<!-- order:start -->\n1. `example:F-001` — first\n2. `example:B-121` — archived\n3. `example:F-002`\n4. `example:F-010` — also closed\n<!-- order:end -->\n';
+    '# Solution order\n\nIntro.\n\n<!-- order:start -->\n1. example:F-001 — first\n2. example:B-121 — archived\n3. example:F-002\n4. example:F-010 — also closed\n<!-- order:end -->\n';
   const pruned = pruneOrder(text, ['example:B-121', 'example:F-010']);
   assert.equal(
     pruned,
-    '# Solution order\n\nIntro.\n\n<!-- order:start -->\n1. `example:F-001` — first\n2. `example:F-002`\n<!-- order:end -->\n',
+    '# Solution order\n\nIntro.\n\n<!-- order:start -->\n1. example:F-001 — first\n2. example:F-002\n<!-- order:end -->\n',
   );
   assert.deepEqual(readOrder(pruned, new Set(['coordinator', 'example'])).problems, []);
   assert.equal(pruneOrder(text, []), text);

@@ -67,3 +67,19 @@ Projects with source-owned work items (`workItems.enabled`) commit generated vie
 - Where the published view lives, and how a component's README and agents link to it.
 - Projects without `workItems` keep hand-authored `docs/BACKLOG.md`; this applies only to generated views.
 - Transition: one release where both the committed and the published view exist, so coordinators and links can move.
+
+## Proposal 3: what the shipped dashboard still misses (found reconciling to 10.20.0, F-004-T02)
+
+Compared on 2026-11-25: `node tools/solution.mjs dashboard --remote` (10.20.0) against `node tools/solution-overview.mjs --remote` on the same component commits.
+
+### Defect: a step with no Who cell is Blocked
+
+`work-items build` writes the steps table's Who column only for a record that has an owner step (`owners` in `tools/work-items.mjs`). The dashboard reads a missing Who cell as `—` and marks the step Blocked, "no actor in". Most agent-only records in every backlog therefore show Blocked: nerv 61 Blocked (the overview: 10), solution order items 1–5 Blocked though Ready, the agent runway 50.5 h instead of 118 h. Expected: a step in a table without a Who column is agent work (🤖), as the writer means, or the writer always writes the column; a fixture of a generated record without owner steps.
+
+### Missing: closed order items
+
+A closed or archived order item shows "Not in backlog" and stays in the order. The coordinator shows it ✅ Done with where it closed and drops it from the order on refresh (coordinator B-001; the order's rule "a closed or archived item is removed in the next reorder or refresh PR").
+
+### Kept here until a release covers both
+
+`tools/solution-overview.mjs`, its library and tests, and `docs/SOLUTION-OVERVIEW.md` stay the owner's view (emojis per row, linked items, ▶ next item, open prerequisites per order item). The order already uses the template's format.
