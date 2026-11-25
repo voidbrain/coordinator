@@ -345,7 +345,7 @@ test('an order item marked pending is shown but is not a missing-record gap unti
   );
   assert.deepEqual(
     missing.map((g) => g.evidence),
-    ["example:F-002 is not in example's active backlog"],
+    ["example:F-002 is not in example's active backlog or its archive"],
   );
 });
 

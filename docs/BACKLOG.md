@@ -16,9 +16,9 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔺 P1 | 🟡 Medium | 2 h | — | — | 🤖 | — | — |
+| 🟡 Implemented | 🔺 P1 | 🟡 Medium | 2 h | — | — | 🤖 | — | — |
 
-💻 **→** Next: B-001-T01 — Show closed order items as Done and drop them from the order in the refresh (Ready).
+💻 **→** Next: B-001-T01 — Show closed order items as Done and drop them from the order in the refresh (Implemented; verification pending).
 
 | | |
 |---|---|
@@ -30,7 +30,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status |
 |---|---|---|---|---|---|
-| 🟡 Medium | <a id="b-001-t01"></a>B-001-T01 — Show closed order items as Done and drop them from the order in the refresh | 2 h | 0 h | 2 h | Ready |
+| 🟡 Medium | <a id="b-001-t01"></a>B-001-T01 — Show closed order items as Done and drop them from the order in the refresh | 2 h | 0 h | 2 h | Implemented; verification pending |
 | 🟡 Medium | **Total** | 2 h | 0 h (0 of 1 steps recorded) | 2 h | 0 of 1 completed |
 
 <details>
@@ -42,7 +42,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|
 | PR / evidence | — |
 | Opened | 2026-11-25 |
-| Verification | Pending |
+| Verification | Unit 2026-11-25: `npm test` 27/27 (Test: test/solution-overview.test.mjs, closed order items; test/refresh-branch.test.mjs, order conflict). Refresh run on main: Pending. |
 | Reviewed | 2026-11-25 |
 
 </details>

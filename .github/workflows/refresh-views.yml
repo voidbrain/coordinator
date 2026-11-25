@@ -1,8 +1,9 @@
 name: Refresh solution views
 
 # Owner decision 2026-11-24 (F-005): refresh the generated views daily and propose them as a PR, never a direct push
-# to main. Reads every component's main from GitHub; commits only docs/SOLUTION-OVERVIEW.md and
-# docs/SOLUTION-DASHBOARD.md to the branch below and opens or updates the refresh PR. The lander merges it on green CI
+# to main. Reads every component's main from GitHub; commits only docs/SOLUTION-OVERVIEW.md,
+# docs/SOLUTION-DASHBOARD.md and docs/solution-order.md (Done items dropped, B-001) to the branch below and opens
+# or updates the refresh PR. The lander merges it on green CI
 # like any other (node tools/merge-when-green.mjs).
 # Owner decision 2026-11-24 (F-008-T02, option B): the branch is pushed and the PR opened with the fine-grained token in
 # the repository secret REFRESH_TOKEN, so the normal pull_request CI starts by itself (a push or PR made with the
@@ -70,7 +71,7 @@ jobs:
       - name: Did anything change besides the snapshot time and this repository's own revision?
         id: diff
         run: |
-          if git diff --quiet -I '^Snapshot' -I '^\| solution \|' -I '^\| \[solution:' -I '^\| 🧭' -I '^\| [0-9]+ \| 🧭' -I '^\| \[coordinator:' -- docs/SOLUTION-OVERVIEW.md docs/SOLUTION-DASHBOARD.md; then
+          if git diff --quiet -I '^Snapshot' -I '^\| solution \|' -I '^\| \[solution:' -I '^\| 🧭' -I '^\| [0-9]+ \| 🧭' -I '^\| \[coordinator:' -- docs/SOLUTION-OVERVIEW.md docs/SOLUTION-DASHBOARD.md docs/solution-order.md; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "Views unchanged apart from the snapshot; no PR."
           else
@@ -82,7 +83,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
         run: |
-          git add docs/SOLUTION-OVERVIEW.md docs/SOLUTION-DASHBOARD.md
+          git add docs/SOLUTION-OVERVIEW.md docs/SOLUTION-DASHBOARD.md docs/solution-order.md
           git commit -m "$TITLE" -m "Scheduled refresh (F-008): generated views from each component's main on GitHub."
           git push origin "HEAD:$BRANCH"
           open=$(gh pr list --head "$BRANCH" --state open --json number --jq length) || exit 1

@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "reviewed": "2026-11-24T23:04:31.203Z",
+  "reviewed": "2026-11-25T08:15:26.242Z",
   "policy": "c9570a34ab0c7e4f1274fe37802a6eff8e7edfb8266c98f0cec7119533729b2b",
   "inputs": {
     "AGENTS.md": "7e64a82d84ac0dd64fe3b9e09ee5c9d06909202535d2e57155e7a8e91cce4765",
     "docs/BACKLOG-RULES.md": "a090ba3c7571d60c50a386f32e30aab528104003a2a9da6c31cedec6ef05b77a",
     "docs/agents/architecture-review.md": "5d967314854912b1a5f1446aeab309763b14f9856bceb3c82df5c6c25c166526",
-    "docs/agents/areas.md": "fe38038a3ff54cabb3ce81a2b58f75daf089b68ada5d91cb76feefc6878868b6",
+    "docs/agents/areas.md": "4818f3b745212c53dbe83bcdda90dfde67d4dca5ae9c71285f4e25b3fc164063",
     "docs/agents/audit.md": "e58480c21e8afe9a825df4726fa93b8a7f841557f4267f1fc2c61ac3dac8f642",
     "docs/agents/change-impact.md": "dc1c473e274f76bd70a87ff57bbc53fc75dc75a35d121cf67baf163a2fd2e975",
     "docs/agents/coverage-guide.md": "3d539eb8beedfa101a5e47d9973cdf85dce197436fab2ab096f760e12d208106",
@@ -95,21 +95,21 @@
   },
   "outcomes": [
     {
-      "kind": "none",
-      "disposition": "no-change",
-      "evidence": "Coordinator on template v10.9.0; this change moves the refresh workflow's writes to the owner's REFRESH_TOKEN (F-008-T03) and updates the area notes to say so. No template rule or copied tool is changed. Checks run: check:fast, workflow YAML parsed, the missing-secret guard run offline both ways."
-    },
-    {
       "kind": "tool",
       "disposition": "backlog",
       "target": "F-004",
       "evidence": "The template's solution dashboard has no solution order, readiness, owner, hours, runway, effort or gap sections and no cross-repository dependencies; this repository adds them as project tools and proposes them to the template in docs/proposals/solution-order-in-template.md."
     },
     {
+      "kind": "none",
+      "disposition": "no-change",
+      "evidence": "Coordinator on template v10.9.0; B-001 changes only project tools (solution-overview, refresh-branch), the refresh workflow and the area notes. No template rule or copied tool is changed. Checks run: check:fast, npm test with the new archive fixtures, a live --remote --write run with archived and unknown order items."
+    },
+    {
       "kind": "rule",
       "disposition": "implemented",
       "target": "docs/agents/areas.md",
-      "evidence": "Area notes: the refresh workflow writes only with REFRESH_TOKEN, its own token is read-only, a missing secret fails the run, and only main's tools run; check:rules passes."
+      "evidence": "Area notes: an order item closed or archived in its repository shows Done and is dropped from the order by the refresh (as docs/solution-order.md's rules allow); an unknown ID still fails; refresh-branch takes main's order on a conflict. Test: test/solution-overview.test.mjs, test/refresh-branch.test.mjs."
     }
   ]
 }

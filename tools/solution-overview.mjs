@@ -5,14 +5,17 @@
 //
 //   node tools/solution-overview.mjs --check            validate docs/solution-order.md offline (CI)
 //   node tools/solution-overview.mjs [--remote]         print the overview
-//   node tools/solution-overview.mjs --remote --write   write docs/SOLUTION-OVERVIEW.md
+//   node tools/solution-overview.mjs --remote --write   write docs/SOLUTION-OVERVIEW.md, and drop the order's Done
+//                                                       items from docs/solution-order.md (B-001)
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import {
   COORDINATOR,
-  isPending,
   readOrder as parseOrder,
+  closedIn,
+  orderItemState,
+  pruneOrder,
   parseBacklog,
   contentsText,
   checkFixtures,
@@ -199,6 +202,28 @@ async function latestTemplateRelease() {
   }
 }
 
+// Where an order item missing from its repository's active backlog closed: its record in a closed-backlog archive
+// (docs/archive/backlog-*.md and the manifest's archives), or a closed record or step in its work-item data (B-001).
+async function closureOf(source, id) {
+  const files = fileReader(source, source.revision);
+  const paths = [
+    ...new Set([
+      ...(await files.list('docs/archive')).filter((f) => /^docs\/archive\/backlog-[^/]+\.md$/.test(f)),
+      ...(source.archives ?? []),
+    ]),
+  ].sort();
+  const archives = [];
+  for (const path of paths) {
+    const text = await files.read(path);
+    if (text !== null) archives.push({ path, text });
+  }
+  return closedIn(id, {
+    archives,
+    task: /-T\d+$/.test(id) ? await files.read(`docs/work/tasks/${id}.json`) : null,
+    record: await files.read(`docs/work/records/${id.replace(/-T\d+$/, '')}.md`),
+  });
+}
+
 // ---------- build ----------
 async function build() {
   const order = readOrder();
@@ -302,20 +327,29 @@ async function build() {
     '|---:|---|---|---|---|---:|---:|---|---|',
   );
   let nextMarked = false;
+  for (const o of order.items) {
+    const src = sources.find((s) => s.id === o.repo);
+    const hit = index.get(o.ref);
+    const closure = !hit && src?.available ? await closureOf(src, o.id) : null;
+    o.state = orderItemState(o, { hit, source: src, closure });
+    if (o.state.kind === 'done') o.done = o.state;
+  }
+  const done = order.items.filter((o) => o.done);
   order.items.forEach((o, n) => {
     const hit = index.get(o.ref);
     const src = sources.find((s) => s.id === o.repo);
     const emoji = src?.emoji ?? '';
     if (!hit) {
-      const why =
-        src && !src.available
-          ? 'Source unavailable'
-          : isPending(o)
-            ? 'Pending: not in its backlog yet'
-            : 'Not in the active backlog (closed or archived?)';
-      if (src?.available && !isPending(o))
-        problems.push(`${ORDER}: ${o.ref} is not in ${o.repo}'s active backlog; remove it or fix the ID`);
-      out.push(`| ${n + 1} | ${emoji} | ${o.ref} | — | ${why} | — | — | — | ${cell(o.note)} |`);
+      const { text, problem, closure } = o.state;
+      if (problem) problems.push(`${ORDER}: ${problem}`);
+      const where =
+        closure?.anchor && src.repository
+          ? `[${closure.where}](https://github.com/${src.repository}/blob/${src.revision}/${closure.where}#${closure.anchor})`
+          : closure && src.repository
+            ? `[${closure.where}](https://github.com/${src.repository}/blob/${src.revision}/${closure.where})`
+            : null;
+      const shown = where ? text.replace(closure.where, where) : cell(text);
+      out.push(`| ${n + 1} | ${emoji} | ${o.ref} | — | ${shown} | — | — | — | ${cell(o.note)} |`);
       return;
     }
     const it = hit.item;
@@ -340,6 +374,13 @@ async function build() {
     );
   });
   if (!order.items.length) out.push('| — | | No items | | | | | | |');
+  if (done.length)
+    out.push(
+      '',
+      has('--write')
+        ? `Done in their repositories, dropped from the [solution order](solution-order.md) by this refresh: ${done.map((o) => o.ref).join(', ')}.`
+        : `Done, to remove from the order: ${done.map((o) => o.ref).join(', ')}.`,
+    );
 
   // Blocked
   out.push(
@@ -614,7 +655,7 @@ async function build() {
       : ['None detected. This checks references and structure, not the truth of the records.']),
     '',
   );
-  return { text: out.join('\n'), problems, snapshot };
+  return { text: out.join('\n'), problems, snapshot, done: done.map((o) => o.ref) };
 }
 
 try {
@@ -631,13 +672,18 @@ try {
     );
     process.exitCode = problems.length || failures.length ? 1 : 0;
   } else {
-    const { text, problems, snapshot } = await build();
+    const { text, problems, snapshot, done } = await build();
     if (has('--write')) {
       const dest = resolve(root, OUT);
       if (existsSync(dest) && !readFileSync(dest, 'utf8').startsWith(MARK))
         throw new Error(`Refusing to replace ${OUT}: not a generated file`);
       writeFileSync(dest, text);
       console.log(`Wrote ${OUT} (${snapshot}); ${problems.length} problem(s).`);
+      if (done.length) {
+        const orderPath = resolve(root, ORDER);
+        writeFileSync(orderPath, pruneOrder(readFileSync(orderPath, 'utf8'), done));
+        console.log(`Dropped ${done.length} Done item(s) from ${ORDER}: ${done.join(', ')}.`);
+      }
     } else console.log(text);
     problems.forEach((p) => console.error(p));
     if (problems.length) process.exitCode = 1;
