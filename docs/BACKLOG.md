@@ -3,7 +3,7 @@
 Current work ledger, reviewed 24 November 2026 against main `e03eb0c`. Cross-repository work only; each component's work lives in its own backlog ([overview](SOLUTION-OVERVIEW.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 4.75 h agent + 0.5 h owner across 8 open steps of 6 features. 2.25 h of actual effort recorded on 2 steps. Generated from the task files.
+**Remaining effort:** 6.25 h agent + 0.5 h owner across 9 open steps of 7 features. 2.25 h of actual effort recorded on 2 steps. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -317,6 +317,45 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 ---
 
+### <a id="f-009"></a>[✨ F-009](#top)
+
+**Reconcile to the latest harness and read built backlog views**
+
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🔴 Open | 🔹 P3 | 🟡 Medium | 1.5 h | — | — | 🤖 | — | — |
+
+💻 **→** Next: from tasks; F-009-T01 starts only once the project-harness template backlog is empty.
+
+| | |
+|---|---|
+| **Issue** | Owner decision 2026-11-25: the project-harness major release that stops committing backlog views (project-harness:F-096-T06) ships only when the template backlog is empty and every project has reconciled to the latest release, and NERV has run with built views for about 10 merged PRs (nerv:F-125). The coordinator is on harness 10.9.0 and reads committed ledgers. |
+| **Reproduce** | `.harness.json` names version 10.9.0; `tools/solution.mjs` predates 10.14.0 and reads a component's committed `docs/BACKLOG.md` only. |
+| **Check** | The coordinator is reconciled to the latest harness release; `tools/solution.mjs` and `docs/agents/solution-profile.md` are at 10.14.0 or later, and `npm run solution:refresh` reads NERV's built views (the `backlog-views` publication) without a missing or stale view. |
+
+**Feature steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status | PRs |
+|---|---|---|---|---|---|---|
+| 🟡 Medium | <a id="f-009-t01"></a>F-009-T01 — Reconcile to the latest harness and read built backlog views | 1.5 h | 0 h | 1.5 h | Planned | [PR #19](https://github.com/voidbrain/coordinator/pull/19) |
+| 🟡 Medium | **Total** | 1.5 h | 0 h (0 of 1 steps recorded) | 1.5 h | 0 of 1 completed | |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+[Full notes & evidence](work/records/F-009.md)
+
+| Field | Value |
+|---|---|
+| PR / evidence | Steps: F-009-T01: [PR #19](https://github.com/voidbrain/coordinator/pull/19). Opened in [PR #19](https://github.com/voidbrain/coordinator/pull/19). |
+| Components | project-harness:F-096 |
+| Opened | 2026-11-25 |
+| Verification | Pending |
+| Reviewed | 2026-11-25 |
+
+</details>
+
+---
 ## Other changes
 
 ## How to use this file

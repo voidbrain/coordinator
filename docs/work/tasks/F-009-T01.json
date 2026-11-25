@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "id": "F-009-T01",
+  "parent": "F-009",
+  "title": "Reconcile to the latest harness and read built backlog views",
+  "goal": "The coordinator runs the latest harness release and its solution tools read components' built backlog views",
+  "status": "planned",
+  "acceptance": [
+    "Started only once the project-harness template backlog is empty (external prerequisite; harness 10.9.0 has no cross-repository dependsOn)",
+    ".harness.json names the latest release; tools/solution.mjs and docs/agents/solution-profile.md are at 10.14.0 or later",
+    "npm run solution:refresh reads a component with built views (NERV once nerv:F-125 switches) from its backlog-views publication"
+  ],
+  "dependsOn": [],
+  "resources": [
+    ".harness.json",
+    "tools/**",
+    "docs/agents/**",
+    "docs/backlog/**",
+    "docs/BACKLOG-RULES.md",
+    "AGENTS.md",
+    ".github/workflows/**",
+    "docs/work/records/F-009.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "validation": [
+    "check:fast; npm test; final applicable CI"
+  ],
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption",
+    "Do not start while the template backlog still has open work"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "1.5 h agent",
+    "basis": "Estimated 2026-11-25: reconcile from 10.9.0, mostly copied tools, plus one refresh against a built view. Not a measurement.",
+    "reviewed": "2026-11-25",
+    "agentHours": 1.5,
+    "baselineAgentHours": 1.5,
+    "estimateAgentHours": 1.5
+  },
+  "prs": [
+    {
+      "pr": 19
+    }
+  ]
+}
