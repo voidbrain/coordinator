@@ -4,7 +4,7 @@
   "parent": "B-001",
   "title": "Show closed order items as Done and drop them from the order in the refresh",
   "goal": "Show closed order items as Done and drop them from the order in the refresh",
-  "status": "implemented",
+  "status": "closed",
   "acceptance": [
     "An order item in its repository's archive or closed in its work-item data shows ✅ Done with where it closed, and is no problem",
     "The refresh drops Done items from docs/solution-order.md and renumbers; the workflow commits the order with the views",
@@ -35,16 +35,22 @@
   "effort": {
     "size": "small",
     "estimate": "2 h",
-    "basis": "Estimated 2026-11-25: archive lookup, order pruning and workflow change with fixtures. Not a measurement.",
+    "basis": "Estimated 2 h on 2026-11-25; done the same day in PR #16 with one review round. Actual stated, not measured.",
     "reviewed": "2026-11-25",
-    "agentHours": 2,
+    "agentHours": 0,
     "ownerHours": 0,
-    "estimateAgentHours": 2
+    "estimateAgentHours": 2,
+    "actualAgentHours": 2,
+    "actualSource": "stated"
   },
   "prs": [
     {
       "pr": 16,
       "note": "fix and tests"
+    },
+    {
+      "pr": 18,
+      "note": "verified: refresh run 45575332245 and PR #17"
     }
   ]
 }

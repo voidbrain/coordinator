@@ -3,7 +3,7 @@
 Current work ledger, reviewed 24 November 2026 against main `e03eb0c`. Cross-repository work only; each component's work lives in its own backlog ([overview](SOLUTION-OVERVIEW.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 6.75 h agent + 0.5 h owner across 9 open steps of 6 features and 1 other record. 0.25 h of actual effort recorded on 1 step. Generated from the task files.
+**Remaining effort:** 4.75 h agent + 0.5 h owner across 8 open steps of 6 features. 2.25 h of actual effort recorded on 2 steps. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -16,9 +16,9 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🟡 Implemented | 🔺 P1 | 🟡 Medium | 2 h | — | — | 🤖 | — | — |
+| 🟢 Verified | 🔺 P1 | 🟢 Small | 0 h | — | — | — | — | — |
 
-💻 **→** Next: B-001-T01 — Show closed order items as Done and drop them from the order in the refresh (Implemented; verification pending).
+💻 **→** Next: all steps closed; verify and close the record.
 
 | | |
 |---|---|
@@ -30,8 +30,15 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | PRs |
 |---|---|---|---|---|---|---|
-| 🟡 Medium | <a id="b-001-t01"></a>B-001-T01 — Show closed order items as Done and drop them from the order in the refresh | 2 h | 0 h | 2 h | Implemented; verification pending | [PR #16](https://github.com/voidbrain/coordinator/pull/16) fix and tests |
-| 🟡 Medium | **Total** | 2 h | 0 h (0 of 1 steps recorded) | 2 h | 0 of 1 completed | |
+| — | **Total** | 2 h | 2 h | 0 h | 1 of 1 completed | |
+
+<details><summary>Done steps (1)</summary>
+
+| Effort | Step | Estimate | Actual | Status | PRs |
+|---|---|---|---|---|---|
+| — | <a id="b-001-t01"></a>B-001-T01 — Show closed order items as Done and drop them from the order in the refresh | 2 h | 2 h (stated) | Completed | [PR #16](https://github.com/voidbrain/coordinator/pull/16) fix and tests; [PR #18](https://github.com/voidbrain/coordinator/pull/18) verified: refresh run 45575332245 and PR #17 |
+
+</details>
 
 <details>
 <summary>Next action, estimates and PR history</summary>
@@ -40,9 +47,9 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Steps: B-001-T01: [PR #16](https://github.com/voidbrain/coordinator/pull/16) fix and tests. [PR #16](https://github.com/voidbrain/coordinator/pull/16) (Test: test/solution-overview.test.mjs, closed order items; test/refresh-branch.test.mjs, order conflict) |
+| PR / evidence | Steps: B-001-T01: [PR #16](https://github.com/voidbrain/coordinator/pull/16) fix and tests; [PR #18](https://github.com/voidbrain/coordinator/pull/18) verified: refresh run 45575332245 and PR #17. [PR #16](https://github.com/voidbrain/coordinator/pull/16) (Test: test/solution-overview.test.mjs, closed order items; test/refresh-branch.test.mjs, order conflict) |
 | Opened | 2026-11-25 |
-| Verification | Unit 2026-11-25: `npm test` 27/27 (Test: test/solution-overview.test.mjs, closed order items; test/refresh-branch.test.mjs, order conflict). Refresh run on main: Pending. |
+| Verification | Unit 2026-11-25: `npm test` 27/27 (Test: test/solution-overview.test.mjs, closed order items; test/refresh-branch.test.mjs, order conflict). Refresh run on main 2026-11-25: run 45575332245 green, PR #17 merged. |
 | Reviewed | 2026-11-25 |
 
 </details>
