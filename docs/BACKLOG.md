@@ -1,16 +1,92 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 25 November 2026 against main `41faf38`. PR #25 (reconcile; F-001 and F-002 closed) merged on green CI. B-001 closed on its verified evidence: PRs #16 and #18, Refresh run 45575332245.
+Current work ledger, reviewed 25 November 2026 against main `d4536ab`. PR #26 (B-001 closed) merged on green CI. Delivery audit of 2026-11-25 recorded; B-002 opened and B-003 opened in Investigate from its findings.
 Cross-repository work only; each component's work lives in its own backlog ([overview](SOLUTION-OVERVIEW.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 3.75 h agent + 0.75 h owner across 7 open steps of 4 features. Generated from the task files.
+**Remaining effort:** 4.5 h agent + 0.75 h owner across 9 open steps of 4 features and 2 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
 
 Bugs (B-) and features (F-) in one list, most urgent first.
 
+### <a id="b-002"></a>[🐞 B-002](#top)
+
+**check:fast fails with a bare HTTP 403 when GH_TOKEN is unset**
+
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🔴 Open | 🔹 P3 | 🟢 Small | 0.5 h | — | — | 🤖 | — | — |
+
+💻 **→** Next: B-002-T01 — Make check:fast supply or ask for GH&#95;TOKEN (Planned).
+
+| | |
+|---|---|
+| **Issue** | `npm run check:fast` runs `check:solution` (`tools/solution.mjs check --remote`), which reads GitHub without a token unless `GH_TOKEN` is set. Once the unauthenticated limit (60 requests an hour) is spent, every component reports "GitHub returned HTTP 403" and the check exits 1. AGENTS.md lists both commands with no token; only the refresh line in README and the solution-refresh guide name `GH_TOKEN`. Found by the delivery audit of 2026-11-25. |
+| **Reproduce** | With `GH_TOKEN` unset and `curl -s https://api.github.com/rate_limit` showing core remaining 0, run `npm run check:solution`: five "GitHub returned HTTP 403" lines; `npm run check:fast` exits 1. |
+| **Check** | An agent following AGENTS.md runs `check:fast` with a token (the check lines or the project's `check:solution` script supply `GH_TOKEN=$(gh auth token)`), and it passes; without `gh` logged in, the documented command says what is missing instead of a bare 403. |
+
+**Steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status |
+|---|---|---|---|---|---|
+| 🟢 Small | <a id="b-002-t01"></a>B-002-T01 — Make check:fast supply or ask for GH&#95;TOKEN | 0.5 h | 0 h | 0.5 h | Planned |
+| 🟢 Small | **Total** | 0.5 h | 0 h (0 of 1 steps recorded) | 0.5 h | 0 of 1 completed |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+[Full notes & evidence](work/records/B-002.md)
+
+| Field | Value |
+|---|---|
+| PR / evidence | Audit [2026-11-25 delivery](audits/2026-11-25-delivery.md) |
+| Opened | 2026-11-25 |
+| Verification | Pending |
+| Reviewed | 2026-11-25 |
+
+</details>
+
+---
+### <a id="b-003"></a>[🐞 B-003](#top)
+
+**Neither scheduled workflow has run on its schedule yet**
+
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🟠 Investigate | 🔹 P3 | 🟢 Small | 0.25 h | — | — | 🤖 | — | — |
+
+💻 **→** Next: B-003-T01 — Check that both scheduled workflows have run on their schedule (Planned).
+
+| | |
+|---|---|
+| **Issue** | Maintenance freshness (`0 9 * * *`) and Refresh solution views (`30 5 * * *`) are on `main` since 2026-11-24 21:53 UTC; at 11:36 UTC on 2026-11-25 neither had a `schedule` run (Maintenance 0 runs; Refresh 10, all `workflow_dispatch`). The same cron in voidbrain/nerv, gauntlet-protocol and project-harness starts 8–12 hours late, so this is probably delay, not a fault. Found by the delivery audit of 2026-11-25 (finding 2). |
+| **Reproduce** | `gh run list -R voidbrain/coordinator --event schedule` lists no run. |
+| **Check** | After 2026-11-26 12:00 UTC the same command lists at least one `schedule` run of each workflow: close as delay, not a defect. If either is still missing, record the cause (Actions schedule state of the repository) and move this record to Open. |
+
+**Steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status |
+|---|---|---|---|---|---|
+| 🟢 Small | <a id="b-003-t01"></a>B-003-T01 — Check that both scheduled workflows have run on their schedule | 0.25 h | 0 h | 0.25 h | Planned |
+| 🟢 Small | **Total** | 0.25 h | 0 h (0 of 1 steps recorded) | 0.25 h | 0 of 1 completed |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+[Full notes & evidence](work/records/B-003.md)
+
+| Field | Value |
+|---|---|
+| PR / evidence | Audit [2026-11-25 delivery](audits/2026-11-25-delivery.md) |
+| Opened | 2026-11-25 |
+| Verification | Pending |
+| Reviewed | 2026-11-25 |
+
+</details>
+
+---
 ### <a id="f-004"></a>[✨ F-004](#top)
 
 **Propose the solution order, hours, runway, gap review, cross-repository dependencies and on-demand backlog views to the template**

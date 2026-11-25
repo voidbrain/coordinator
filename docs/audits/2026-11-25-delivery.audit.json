@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "kind": "scoped",
+  "reviewed": "2026-11-25T11:38:00.000Z",
+  "baseline": "d4536ab8575cc12d97b0cbd3ff4e8dccc33e3aab",
+  "report": "docs/audits/2026-11-25-delivery.md",
+  "areas": {
+    "delivery": {
+      "result": "checked",
+      "evidence": "docs/audits/2026-11-25-delivery.md: all 74 workflow runs, main CI log, scheduled-run history here and in three sibling repositories, action pins, Node versions, npm audit and outdated, check:fast with and without GH_TOKEN",
+      "limits": "Actions scheduling observed through run history only; no release exists; the refresh against built views waits on solution:F-009."
+    }
+  }
+}
