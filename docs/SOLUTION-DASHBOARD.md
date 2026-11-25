@@ -1,11 +1,11 @@
 <!-- generated: project-harness solution dashboard; edit owning backlogs, not this file -->
 # voidbrain solution dashboard
 
-Snapshot: 2026-11-25T11:40:18.205Z. Read-only aggregation; no combined completion percentage. Solution integration status is independent of component status.
+Snapshot: 2026-11-25T11:42:43.759Z. Read-only aggregation; no combined completion percentage. Solution integration status is independent of component status.
 
 | Source | Revision | Snapshot state |
 |---|---|---|
-| solution | [d4536ab8575c](https://github.com/voidbrain/coordinator/commit/d4536ab8575cc12d97b0cbd3ff4e8dccc33e3aab) | Local changes — not a committed snapshot; requested working checkout; local checkout, not fetched |
+| solution | [9706998b490a](https://github.com/voidbrain/coordinator/commit/9706998b490a4a5f5fe66aed840b93cdceb02d69) | Local changes — not a committed snapshot; requested working checkout; local checkout, not fetched |
 | nerv | [4dae734e0f14](https://github.com/voidbrain/nerv/commit/4dae734e0f147ec62160965c8d91de931a46f642) | Committed snapshot; requested main; GitHub |
 | gauntlet-protocol | [2339e413222c](https://github.com/voidbrain/gauntlet-protocol/commit/2339e413222c65a205cf8dc0f94d00f704cca7af) | Committed snapshot; requested main; GitHub |
 | project-harness | [648b5367a3ab](https://github.com/voidbrain/project-harness/commit/648b5367a3abdd361304ce0a91ce156b41ee1575) | Committed snapshot; requested main; GitHub |

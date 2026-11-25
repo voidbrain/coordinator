@@ -1,6 +1,6 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 25 November 2026 against main `d4536ab`. PR #26 (B-001 closed) merged on green CI. Delivery audit of 2026-11-25 recorded; B-002 opened and B-003 opened in Investigate from its findings.
+Current work ledger, reviewed 25 November 2026 against main `9706998`. PR #27 (delivery audit; B-002 and B-003 opened) merged on green CI. B-002 and B-003 now name it.
 Cross-repository work only; each component's work lives in its own backlog ([overview](SOLUTION-OVERVIEW.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
@@ -41,7 +41,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Audit [2026-11-25 delivery](audits/2026-11-25-delivery.md) |
+| PR / evidence | Audit [2026-11-25 delivery](audits/2026-11-25-delivery.md), opened in [#27](https://github.com/voidbrain/coordinator/pull/27) |
 | Opened | 2026-11-25 |
 | Verification | Pending |
 | Reviewed | 2026-11-25 |
@@ -79,7 +79,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Audit [2026-11-25 delivery](audits/2026-11-25-delivery.md) |
+| PR / evidence | Audit [2026-11-25 delivery](audits/2026-11-25-delivery.md), opened in [#27](https://github.com/voidbrain/coordinator/pull/27) |
 | Opened | 2026-11-25 |
 | Verification | Pending |
 | Reviewed | 2026-11-25 |

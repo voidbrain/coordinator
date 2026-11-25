@@ -1,13 +1,13 @@
 <!-- generated: tools/solution-overview.mjs; edit docs/solution-order.md or the owning backlogs, not this file -->
 # voidbrain solution: overview
 
-Snapshot 2026-11-25T11:40:03.682Z. Status comes from each owning backlog; this page is regenerated, never edited. The [solution order](solution-order.md) is the owner's; everything else follows each repository's own priority. Hours are each project's own estimates, not cross-calibrated; no completion percentage.
+Snapshot 2026-11-25T11:42:30.235Z. Status comes from each owning backlog; this page is regenerated, never edited. The [solution order](solution-order.md) is the owner's; everything else follows each repository's own priority. Hours are each project's own estimates, not cross-calibrated; no completion percentage.
 
 ## Summary
 
 | Project | Open records | Doable agent h | Owner h | Blocked | Harness | Next audit |
 |---|---:|---:|---:|---:|---|---|
-| 🧭 coordinator | 6 | 2 | 0.75 | 2 | v10.20.0 (latest) | 2026-12-01 |
+| 🧭 coordinator | 6 | 2 | 0.75 | 2 | v10.20.0 (latest) | 2026-12-02 |
 | 𖣂 nerv | 71 | 98.25 | 12.25 | 10 | v10.9.0, behind v10.20.0 | 2026-11-27 |
 | 🤖 gauntlet-protocol | 3 | 2.25 | 1 | 3 | v10.20.0 (latest) | 2026-11-29 |
 | 🦺 project-harness | 1 | 0.25 | 0 | 0 | v10.20.0 (latest) | 2026-11-29 |
@@ -166,7 +166,7 @@ Each project's newest audit manifest (`docs/audits/*.audit.json`) and the interv
 
 | Project | Last audit | Next audit due | Periodic reviews (last → next) |
 |---|---|---|---|
-| 🧭 coordinator | 2026-11-24 (scoped) | 2026-12-01 | none configured |
+| 🧭 coordinator | 2026-11-25 (scoped) | 2026-12-02 | none configured |
 | 𖣂 nerv | 2026-11-20 (full) | 2026-11-27 | token: 2026-11-16 → 2026-12-16; architecture: 2026-11-16 → 2026-12-16; skills: 2026-11-24 → 2026-12-24 |
 | 🤖 gauntlet-protocol | 2026-11-22 (full) | 2026-11-29 | token: 2026-11-22 → 2026-12-22; architecture: 2026-11-22 → 2026-12-22; skills: 2026-11-24 → 2026-12-24 |
 | 🦺 project-harness | 2026-11-22 (full) | 2026-11-29 | token: 2026-11-22 → 2026-12-22; architecture: 2026-11-22 → 2026-12-22; skills: 2026-11-24 → 2026-12-24 |
@@ -584,7 +584,7 @@ Possible missing steps, found by reading every backlog. Each row proposes a reco
 
 | Source | Revision | Read from | Open records | Open steps |
 |---|---|---|---:|---:|
-| 🧭 coordinator | [d4536ab8575c](https://github.com/voidbrain/coordinator/commit/d4536ab8575cc12d97b0cbd3ff4e8dccc33e3aab) | working checkout; local changes present, read as they are (not a committed snapshot) | 6 | 9 |
+| 🧭 coordinator | [9706998b490a](https://github.com/voidbrain/coordinator/commit/9706998b490a4a5f5fe66aed840b93cdceb02d69) | working checkout; local changes present, read as they are (not a committed snapshot) | 6 | 9 |
 | 𖣂 nerv | [4dae734e0f14](https://github.com/voidbrain/nerv/commit/4dae734e0f147ec62160965c8d91de931a46f642) | GitHub | 71 | 124 |
 | 🤖 gauntlet-protocol | [2339e413222c](https://github.com/voidbrain/gauntlet-protocol/commit/2339e413222c65a205cf8dc0f94d00f704cca7af) | GitHub | 3 | 9 |
 | 🦺 project-harness | [648b5367a3ab](https://github.com/voidbrain/project-harness/commit/648b5367a3abdd361304ce0a91ce156b41ee1575) | GitHub | 1 | 1 |
