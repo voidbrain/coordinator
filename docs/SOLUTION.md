@@ -17,6 +17,8 @@ This repository owns solution outcomes, shared contracts and integration accepta
 
 Which domains each component covers, and which ones two or more share, is in the [domain map](DOMAINS.md).
 
+Screens are owned by their project; NERV integrates via MCP: surface cards (🧱 bricks surfaces) and MCP Apps/links; no duplicate views (owner decision 2026-11-25; details in the [domain map](DOMAINS.md#the-rule-for-screens)). A project that NERV shows publishes MCP tools returning surface-typed data, and an MCP Apps page or a link for full screens.
+
 Contracts are owned by the component that publishes them; this table links, it does not copy. A change to a published surface is announced in the publisher's backlog and, when a consumer must follow, recorded here as a coordination record with `Components` links.
 
 ### Version compatibility
