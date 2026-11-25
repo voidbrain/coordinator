@@ -73,3 +73,37 @@ Closed records of the [backlog](../BACKLOG.md), in closing-date order. History, 
 </details>
 
 ---
+
+### F-003
+
+**Owner accepts or rejects the first gap-review proposals**
+
+| Signal | Priority | Status | Effort |
+|:---:|---|---|---|
+| 🔵 | ◻️ P1 | Closed | 🟢 Small |
+
+💻 **→ Human action required: No**<br />Closed 2026-11-25: Owner disposition F-003-T01 (accept all, 2026-11-24); F-003-T02: gaps 2 to 7 gone in the 2026-11-25 09:32 UTC refresh (coordinator PR #21); gap 1 resolved by owner decision 2026-11-25 (gauntlet-protocol v0.10.0 and v0.11.0, NERV adopts in nerv:F-120-T03, nerv PR #749).
+
+| | |
+|---|---|
+| **Issue** | The first gap review (2026-11-24) found missing cross-repository records, missing estimates and owner checks without a procedure page. The coordinator never edits a component, so each accepted proposal is created in its owning repository. |
+| **Reproduce** | `npm run solution:refresh`, then the "Gap review (proposals)" section of `docs/SOLUTION-OVERVIEW.md`. |
+| **Check** | Every proposal is accepted or rejected by the owner; accepted ones exist in their owning backlogs (the next refresh no longer lists them); rejected ones are recorded here with the reason. |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+**Next action / closure evidence:** Closed 2026-11-25: Owner disposition F-003-T01 (accept all, 2026-11-24); F-003-T02: gaps 2 to 7 gone in the 2026-11-25 09:32 UTC refresh (coordinator PR #21); gap 1 resolved by owner decision 2026-11-25 (gauntlet-protocol v0.10.0 and v0.11.0, NERV adopts in nerv:F-120-T03, nerv PR #749). Waits on the owner's choice. Accepted proposals are created by sessions in their owning repositories; this record only tracks the owner's disposition and the refresh that shows them gone. 2026-11-25 (F-003-T02, refresh 09:32 UTC): proposals 2 to 7 are gone; proposal 1 remains, because gauntlet-protocol's open records (B-003, F-021, F-022) never name nerv, so nerv:F-120 still has no counterpart.
+
+**Estimates:** No remaining effort.
+
+| Field | Value |
+|---|---|
+| PR / evidence | — |
+| Opened | 2026-11-24 |
+| Verification | Pending |
+| Reviewed | 2026-11-25 |
+
+</details>
+
+---
