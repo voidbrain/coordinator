@@ -1,10 +1,10 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 25 November 2026 against main `9706998`. PR #27 (delivery audit; B-002 and B-003 opened) merged on green CI. B-002 and B-003 now name it.
+Current work ledger, reviewed 25 November 2026 against main `7c0e5b8`. PR #28 (B-002 and B-003 name PR #27) merged on green CI; no record change needed. Harness reconciled to v10.20.1 in the F-004-T02 PR.
 Cross-repository work only; each component's work lives in its own backlog ([overview](SOLUTION-OVERVIEW.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 4.5 h agent + 0.75 h owner across 9 open steps of 4 features and 2 other records. Generated from the task files.
+**Remaining effort:** 4.5 h agent + 0.75 h owner across 9 open steps of 4 features and 2 other records. 2 h of actual effort recorded on 1 step. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -95,7 +95,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|---|---|---|---|:---:|:---:|:---:|
 | 🔴 Open | 🔶 P2 | 🟡 Medium | 1.5 h agent + 0.25 h owner | — | — | ⏳ | 🧑‍🔧 | — |
 
-🧑 **→** Next: [🧑‍🔧](proposals/solution-order-in-template.md#proposal-3-what-the-shipped-dashboard-still-misses-found-reconciling-to-10200-f-004-t02) F-004-T03 — Owner takes Proposal 3 (dashboard defects found at the 10.20.0 reconcile) to a project-harness session (Planned).
+🧑 **→** Next: [🧑‍🔧](proposals/solution-order-in-template.md#proposal-4-the-overview-layout-the-dashboard-still-lacks-found-at-the-10201-reconcile-f-004-t02) F-004-T04 — Owner takes Proposal 4 (the overview's layout the dashboard lacks) to a project-harness session (Planned).
 
 | | |
 |---|---|
@@ -105,17 +105,19 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who |
-|---|---|---|---|---|---|---|---|:---:|
-| 🟢 Small | <a id="f-004-t03"></a>F-004-T03 — Owner takes Proposal 3 (dashboard defects found at the 10.20.0 reconcile) to a project-harness session | — | 0 h | 0 h agent + 0.25 h owner | Planned | — | [F-004-T02](#f-004-t02) | [🧑‍🔧](proposals/solution-order-in-template.md#proposal-3-what-the-shipped-dashboard-still-misses-found-reconciling-to-10200-f-004-t02) |
-| 🟡 Medium | <a id="f-004-t02"></a>F-004-T02 — Reconcile to the template release that ships the proposal and retire the project tool | 2 h | 0 h | 1.5 h | Planned | [F-004-T03](#f-004-t03) | — | ⏳ 🤖 |
-| 🟡 Medium | **Total** | 2 h (1 of 3 steps) | 0 h (0 of 3 steps recorded) | 1.5 h agent + 0.25 h owner | 1 of 3 completed | | | |
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who | PRs |
+|---|---|---|---|---|---|---|---|:---:|---|
+| 🟢 Small | <a id="f-004-t04"></a>F-004-T04 — Owner takes Proposal 4 (the overview's layout the dashboard lacks) to a project-harness session | — | 0 h | 0 h agent + 0.25 h owner | Planned | — | [F-004-T05](#f-004-t05) | [🧑‍🔧](proposals/solution-order-in-template.md#proposal-4-the-overview-layout-the-dashboard-still-lacks-found-at-the-10201-reconcile-f-004-t02) | — |
+| 🟡 Medium | <a id="f-004-t05"></a>F-004-T05 — Retire the overview tool once a template release covers Proposal 4 | 1.5 h | 0 h | 1.5 h | Planned | [F-004-T04](#f-004-t04) | — | ⏳ 🤖 | — |
+| 🟡 Medium | **Total** | 3.5 h (2 of 5 steps) | 2 h (1 of 5 steps recorded) | 1.5 h agent + 0.25 h owner | 3 of 5 completed | | | | |
 
-<details><summary>Done steps (1)</summary>
+<details><summary>Done steps (3)</summary>
 
-| Effort | Step | Estimate | Actual | Status |
-|---|---|---|---|---|
-| — | <a id="f-004-t01"></a>F-004-T01 — Owner takes the template proposal to a project-harness session | — | 0 h | Completed |
+| Effort | Step | Estimate | Actual | Status | PRs |
+|---|---|---|---|---|---|
+| — | <a id="f-004-t01"></a>F-004-T01 — Owner takes the template proposal to a project-harness session | — | 0 h | Completed | — |
+| — | <a id="f-004-t02"></a>F-004-T02 — Reconcile to the template release that fixes Proposal 3 and retire what the project tool duplicates | 2 h | 2 h (stated) | Completed | [PR #29](https://github.com/voidbrain/coordinator/pull/29) reconcile 10.20.1, template prune, parity |
+| — | <a id="f-004-t03"></a>F-004-T03 — Owner takes Proposal 3 (dashboard defects found at the 10.20.0 reconcile) to a project-harness session | — | 0 h | Completed | [PR #29](https://github.com/voidbrain/coordinator/pull/29) closed on project-harness v10.20.1 (B-057, B-058) |
 
 </details>
 
@@ -126,7 +128,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | [#23](https://github.com/voidbrain/coordinator/pull/23) |
+| PR / evidence | Steps: F-004-T02: [PR #29](https://github.com/voidbrain/coordinator/pull/29) reconcile 10.20.1, template prune, parity · F-004-T03: [PR #29](https://github.com/voidbrain/coordinator/pull/29) closed on project-harness v10.20.1 (B-057, B-058). [#23](https://github.com/voidbrain/coordinator/pull/23); [#29](https://github.com/voidbrain/coordinator/pull/29) |
 | Opened | 2026-11-24 |
 | Verification | Pending |
 | Reviewed | 2026-11-25 |

@@ -20,7 +20,6 @@ import {
   isPending,
   closedIn,
   orderItemState,
-  pruneOrder,
 } from '../tools/solution-overview-lib.mjs';
 
 const fixture = (name) => readFileSync(new URL(`./fixtures/${name}`, import.meta.url), 'utf8');
@@ -419,16 +418,4 @@ test('an order item closed in its repository is Done with where it closed, not a
     missing.map((g) => g.evidence),
     ["example:F-999 is not in example's active backlog or its archive"],
   );
-});
-
-test('the refresh drops Done items from the order and renumbers it, leaving the rest of the file', () => {
-  const text =
-    '# Solution order\n\nIntro.\n\n<!-- order:start -->\n1. example:F-001 — first\n2. example:B-121 — archived\n3. example:F-002\n4. example:F-010 — also closed\n<!-- order:end -->\n';
-  const pruned = pruneOrder(text, ['example:B-121', 'example:F-010']);
-  assert.equal(
-    pruned,
-    '# Solution order\n\nIntro.\n\n<!-- order:start -->\n1. example:F-001 — first\n2. example:F-002\n<!-- order:end -->\n',
-  );
-  assert.deepEqual(readOrder(pruned, new Set(['coordinator', 'example'])).problems, []);
-  assert.equal(pruneOrder(text, []), text);
 });

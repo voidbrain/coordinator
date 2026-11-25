@@ -4,7 +4,7 @@
   "parent": "F-004",
   "title": "Owner takes Proposal 3 (dashboard defects found at the 10.20.0 reconcile) to a project-harness session",
   "goal": "The template records the Who-column defect and the closed-order-item gap",
-  "status": "planned",
+  "status": "closed",
   "acceptance": [
     "A template record covers the step-without-Who-cell defect and closed order items (Proposal 3)"
   ],
@@ -28,12 +28,17 @@
   "effort": {
     "size": "small",
     "estimate": "0.25 h owner",
-    "basis": "Estimated 2026-11-25: one template session reads Proposal 3. Not a measurement.",
+    "basis": "Estimated 2026-11-25: one template session reads Proposal 3. Not a measurement. Done 2026-11-25: the template recorded both as project-harness B-057 (a steps table without a Who column is agent work) and B-058 (closed order items ✅ Done, dashboard --write --prune-order), shipped in v10.20.1 (project-harness PR #284). No actual: owner time not measured.",
     "reviewed": "2026-11-25",
     "agentHours": 0,
-    "ownerHours": 0.25,
+    "ownerHours": 0,
     "ownerKind": "procedure"
   },
-  "prs": [],
+  "prs": [
+    {
+      "pr": 29,
+      "note": "closed on project-harness v10.20.1 (B-057, B-058)"
+    }
+  ],
   "ownerLink": "docs/proposals/solution-order-in-template.md#proposal-3-what-the-shipped-dashboard-still-misses-found-reconciling-to-10200-f-004-t02"
 }

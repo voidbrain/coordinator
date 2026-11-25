@@ -2,8 +2,8 @@ name: Refresh solution views
 
 # Owner decision 2026-11-24 (F-005): refresh the generated views daily and propose them as a PR, never a direct push
 # to main. Reads every component's main from GitHub; commits only docs/SOLUTION-OVERVIEW.md,
-# docs/SOLUTION-DASHBOARD.md and docs/solution-order.md (Done items dropped, B-001) to the branch below and opens
-# or updates the refresh PR. The lander merges it on green CI
+# docs/SOLUTION-DASHBOARD.md and docs/solution-order.md (Done items dropped by the template's
+# tools/solution.mjs dashboard --prune-order, F-004-T02) to the branch below and opens or updates the refresh PR. The lander merges it on green CI
 # like any other (node tools/merge-when-green.mjs).
 # Owner decision 2026-11-24 (F-008-T02, option B): the branch is pushed and the PR opened with the fine-grained token in
 # the repository secret REFRESH_TOKEN, so the normal pull_request CI starts by itself (a push or PR made with the
@@ -58,10 +58,15 @@ jobs:
       - name: Run only main's reviewed tools
         run: git checkout origin/main -- tools package.json package-lock.json && git reset -q
 
-      - name: Regenerate both views from GitHub
+      - name: Regenerate the dashboard with the template's tool and drop Done order items
         env:
           GH_TOKEN: ${{ github.token }}
-        run: npm run solution:refresh
+        run: node tools/solution.mjs dashboard --remote --write --prune-order
+
+      - name: Regenerate the overview (project tool, the owner's layout) from the pruned order
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node tools/solution-overview.mjs --remote --write
 
       - name: Offline checks
         run: |

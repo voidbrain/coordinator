@@ -5,8 +5,9 @@
 //
 //   node tools/solution-overview.mjs --check            validate docs/solution-order.md offline (CI)
 //   node tools/solution-overview.mjs [--remote]         print the overview
-//   node tools/solution-overview.mjs --remote --write   write docs/SOLUTION-OVERVIEW.md, and drop the order's Done
-//                                                       items from docs/solution-order.md (B-001)
+//   node tools/solution-overview.mjs --remote --write   write docs/SOLUTION-OVERVIEW.md
+// Done order items are dropped by the template's `tools/solution.mjs dashboard --write --prune-order` (F-004-T02),
+// which the refresh runs first.
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
@@ -15,7 +16,6 @@ import {
   readOrder as parseOrder,
   closedIn,
   orderItemState,
-  pruneOrder,
   parseBacklog,
   contentsText,
   checkFixtures,
@@ -377,9 +377,7 @@ async function build() {
   if (done.length)
     out.push(
       '',
-      has('--write')
-        ? `Done in their repositories, dropped from the [solution order](solution-order.md) by this refresh: ${done.map((o) => o.ref).join(', ')}.`
-        : `Done, to remove from the order: ${done.map((o) => o.ref).join(', ')}.`,
+      `Done in their repositories; \`npm run solution:dashboard\` (\`--prune-order\`) drops them from the [solution order](solution-order.md): ${done.map((o) => o.ref).join(', ')}.`,
     );
 
   // Blocked
@@ -655,7 +653,7 @@ async function build() {
       : ['None detected. This checks references and structure, not the truth of the records.']),
     '',
   );
-  return { text: out.join('\n'), problems, snapshot, done: done.map((o) => o.ref) };
+  return { text: out.join('\n'), problems, snapshot };
 }
 
 try {
@@ -672,18 +670,13 @@ try {
     );
     process.exitCode = problems.length || failures.length ? 1 : 0;
   } else {
-    const { text, problems, snapshot, done } = await build();
+    const { text, problems, snapshot } = await build();
     if (has('--write')) {
       const dest = resolve(root, OUT);
       if (existsSync(dest) && !readFileSync(dest, 'utf8').startsWith(MARK))
         throw new Error(`Refusing to replace ${OUT}: not a generated file`);
       writeFileSync(dest, text);
       console.log(`Wrote ${OUT} (${snapshot}); ${problems.length} problem(s).`);
-      if (done.length) {
-        const orderPath = resolve(root, ORDER);
-        writeFileSync(orderPath, pruneOrder(readFileSync(orderPath, 'utf8'), done));
-        console.log(`Dropped ${done.length} Done item(s) from ${ORDER}: ${done.join(', ')}.`);
-      }
     } else console.log(text);
     problems.forEach((p) => console.error(p));
     if (problems.length) process.exitCode = 1;

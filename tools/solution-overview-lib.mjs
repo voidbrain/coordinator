@@ -40,29 +40,6 @@ export function readOrder(text, ids, ORDER = 'docs/solution-order.md') {
   return { items, problems };
 }
 
-// The order with the given references removed and the rest renumbered; everything outside the markers is kept.
-// The refresh drops Done items this way (docs/solution-order.md: "A closed or archived item is removed in the next
-// reorder or refresh PR").
-export function pruneOrder(text, refs) {
-  const start = text.indexOf('<!-- order:start -->');
-  const end = text.indexOf('<!-- order:end -->');
-  if (!refs.length || start < 0 || end < start) return text;
-  const drop = new Set(refs);
-  let n = 0;
-  const lines = text
-    .slice(start, end)
-    .split('\n')
-    .map((line, i) => {
-      if (i === 0) return line;
-      const m = /^(\d+)\. (\S+)(.*)$/.exec(line.trim());
-      if (!m) return line;
-      if (drop.has(m[2])) return null;
-      return `${++n}. ${m[2]}${m[3]}`;
-    })
-    .filter((line) => line !== null);
-  return text.slice(0, start) + lines.join('\n') + text.slice(end);
-}
-
 // Where an ID that is not in its repository's active backlog closed, or null when it is in neither place (a wrong
 // ID). `archives` are [{path, text}] of the repository's closed-backlog files; `task` is the text of its
 // docs/work/tasks/<ID>.json and `record` of docs/work/records/<ID>.md, when they exist. A step closes with its
