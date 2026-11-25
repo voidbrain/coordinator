@@ -182,7 +182,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | PR / evidence | — |
 | Opened | 2026-11-24 |
 | Verification | Pending |
-| Reviewed | 2026-11-24 |
+| Reviewed | 2026-11-25 |
 
 </details>
 
