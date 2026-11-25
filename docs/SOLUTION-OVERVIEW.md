@@ -1,19 +1,19 @@
 <!-- generated: tools/solution-overview.mjs; edit docs/solution-order.md or the owning backlogs, not this file -->
 # voidbrain solution: overview
 
-Snapshot 2026-11-25T11:30:53.219Z. Status comes from each owning backlog; this page is regenerated, never edited. The [solution order](solution-order.md) is the owner's; everything else follows each repository's own priority. Hours are each project's own estimates, not cross-calibrated; no completion percentage.
+Snapshot 2026-11-25T11:33:41.575Z. Status comes from each owning backlog; this page is regenerated, never edited. The [solution order](solution-order.md) is the owner's; everything else follows each repository's own priority. Hours are each project's own estimates, not cross-calibrated; no completion percentage.
 
 ## Summary
 
 | Project | Open records | Doable agent h | Owner h | Blocked | Harness | Next audit |
 |---|---:|---:|---:|---:|---|---|
-| 🧭 coordinator | 5 | 1.25 | 0.75 | 2 | v10.20.0 (latest) | 2026-12-01 |
+| 🧭 coordinator | 4 | 1.25 | 0.75 | 2 | v10.20.0 (latest) | 2026-12-01 |
 | 𖣂 nerv | 71 | 98.25 | 12.25 | 10 | v10.9.0, behind v10.20.0 | 2026-11-27 |
 | 🤖 gauntlet-protocol | 3 | 2.25 | 1 | 3 | v10.20.0 (latest) | 2026-11-29 |
 | 🦺 project-harness | 1 | 0.25 | 0 | 0 | v10.20.0 (latest) | 2026-11-29 |
 | 🚁 fpvbuddy | 2 | 3 | 0 | 0 | v10.20.0 (latest) | 2026-11-29 |
 | 🪴 grover | 18 | 8.5 | 12.5 | 14 | v10.20.0 (latest) | 2026-12-01 |
-| **Solution** | 100 | **113.5** | **26.5** | 29 | latest v10.20.0 | |
+| **Solution** | 99 | **113.5** | **26.5** | 29 | latest v10.20.0 | |
 
 Remaining in all backlogs: 134.5 h agent + 26.5 h owner. Doable agent h is the runway: agent work whose prerequisites are done or doable, across projects.
 
@@ -190,7 +190,7 @@ Open records by priority, the hours as each backlog states them, sizes, and the 
 
 | Source | P1 | P2 | P3 | Other | Remaining (agent / owner) | Sizes | The backlog's own total |
 |---|---:|---:|---:|---:|---|---|---|
-| 🧭 coordinator | 1 | 3 | 1 | 0 | 3.75 h / 0.75 h | 4 🟢 Small, 1 🟡 Medium | Remaining effort: 3.75 h agent + 0.75 h owner across 7 open steps of 4 features. 2 h of actual effort recorded on 1 step. Generated from the task files. |
+| 🧭 coordinator | 0 | 3 | 1 | 0 | 3.75 h / 0.75 h | 1 🟡 Medium, 3 🟢 Small | Remaining effort: 3.75 h agent + 0.75 h owner across 7 open steps of 4 features. Generated from the task files. |
 | 𖣂 nerv | 9 | 39 | 23 | 0 | 103.75 h / 12.25 h | 15 🟡 Medium, 49 🟢 Small, 5 🔴 Large, 2 🟣 Very large | Remaining effort: 103.75 h agent + 12.25 h owner across 126 open steps of 38 features and 33 other records. 165.25 h of actual effort recorded on 150 steps. Ge… |
 | 🤖 gauntlet-protocol | 0 | 1 | 2 | 0 | 7.75 h / 1 h | 1 🟢 Small, 1 🟡 Medium, 1 🔴 Large | Remaining effort: 7.75 h agent + 1 h owner across 9 open steps of 2 features and 1 other record. Generated from the task files. |
 | 🦺 project-harness | 0 | 1 | 0 | 0 | 0.25 h / 0 h | 1 🟢 Small | Remaining effort: 0.25 h across 5 open steps of 1 feature. Generated from the task files. |
@@ -205,7 +205,6 @@ In each backlog's own order (most urgent first). State: Ready = an agent can sta
 
 | Item | Title | Status | Priority | Effort | Remaining | State | Next |
 |---|---|---|---|---|---|---|---|
-| [coordinator:B-001](BACKLOG.md#b-001) | The daily refresh fails when a solution-order item closed in its own repository | Verified | P1 | 🟢 Small | 0 h | Verified, to close | Next: all steps closed; verify and close the record. |
 | [coordinator:F-004](BACKLOG.md#f-004) | Propose the solution order, hours, runway, gap review, cross-repository dependencies and … | Open | P2 | 🟡 Medium | 1.5 h agent + 0.25 h owner | Owner: procedure | Next: 🧑‍🔧 F-004-T03 — Owner takes Proposal 3 (dashboard defects found at the 10.20.0 reconcile) to a project-harness … |
 | [coordinator:F-006](BACKLOG.md#f-006) | NERV delivers Grover alerts end to end | Open | P2 | 🟢 Small | 1 h agent + 0.5 h owner | Ready | Next: F-006-T01 — Record the grover&#95;alerts contract and its end-to-end check in docs/SOLUTION.md (waits on grover:F… |
 | [coordinator:F-007](BACKLOG.md#f-007) | NERV capability coverage in the Gauntlet across both repositories | Open | P2 | 🟢 Small | 1 h | Ready | Next: F-007-T01 — Name the Gauntlet release NERV needs for its new cases in docs/SOLUTION.md (waits on nerv:F-120) (Pla… |
@@ -573,7 +572,7 @@ Possible missing steps, found by reading every backlog. Each row proposes a reco
 
 | Source | Revision | Read from | Open records | Open steps |
 |---|---|---|---:|---:|
-| 🧭 coordinator | [f414f65c11c8](https://github.com/voidbrain/coordinator/commit/f414f65c11c80c1ac9dfdd6bc2831d38ec52719e) | working checkout; local changes present, read as they are (not a committed snapshot) | 5 | 7 |
+| 🧭 coordinator | [41faf387c4dd](https://github.com/voidbrain/coordinator/commit/41faf387c4dd503cf101bcf9ef590ed94783a6c3) | working checkout; local changes present, read as they are (not a committed snapshot) | 4 | 7 |
 | 𖣂 nerv | [767f8111fbbf](https://github.com/voidbrain/nerv/commit/767f8111fbbf1ca8cb23104f71d1228e1e26bd9f) | GitHub | 71 | 124 |
 | 🤖 gauntlet-protocol | [2339e413222c](https://github.com/voidbrain/gauntlet-protocol/commit/2339e413222c65a205cf8dc0f94d00f704cca7af) | GitHub | 3 | 9 |
 | 🦺 project-harness | [648b5367a3ab](https://github.com/voidbrain/project-harness/commit/648b5367a3abdd361304ce0a91ce156b41ee1575) | GitHub | 1 | 1 |

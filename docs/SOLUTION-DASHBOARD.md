@@ -1,11 +1,11 @@
 <!-- generated: project-harness solution dashboard; edit owning backlogs, not this file -->
 # voidbrain solution dashboard
 
-Snapshot: 2026-11-25T11:31:07.635Z. Read-only aggregation; no combined completion percentage. Solution integration status is independent of component status.
+Snapshot: 2026-11-25T11:33:54.791Z. Read-only aggregation; no combined completion percentage. Solution integration status is independent of component status.
 
 | Source | Revision | Snapshot state |
 |---|---|---|
-| solution | [f414f65c11c8](https://github.com/voidbrain/coordinator/commit/f414f65c11c80c1ac9dfdd6bc2831d38ec52719e) | Local changes — not a committed snapshot; requested working checkout; local checkout, not fetched |
+| solution | [41faf387c4dd](https://github.com/voidbrain/coordinator/commit/41faf387c4dd503cf101bcf9ef590ed94783a6c3) | Local changes — not a committed snapshot; requested working checkout; local checkout, not fetched |
 | nerv | [767f8111fbbf](https://github.com/voidbrain/nerv/commit/767f8111fbbf1ca8cb23104f71d1228e1e26bd9f) | Committed snapshot; requested main; GitHub |
 | gauntlet-protocol | [2339e413222c](https://github.com/voidbrain/gauntlet-protocol/commit/2339e413222c65a205cf8dc0f94d00f704cca7af) | Committed snapshot; requested main; GitHub |
 | project-harness | [648b5367a3ab](https://github.com/voidbrain/project-harness/commit/648b5367a3abdd361304ce0a91ce156b41ee1575) | Committed snapshot; requested main; GitHub |
@@ -18,7 +18,7 @@ Open work per project, by what it waits on. Remaining hours are each project's o
 
 | Project | Ready | Waiting for the owner | Blocked | Waiting on other work | Remaining |
 |---|---|---|---|---|---|
-| solution | 2 | 1 | 4 | 1 | 4.5 h |
+| solution | 1 | 1 | 4 | 1 | 4.5 h |
 | 𖣂 nerv | 31 | 16 | 61 | 18 | 116 h |
 | 🤖 gauntlet-protocol | 2 | 0 | 1 | 6 | 8.75 h |
 | 🦺 project-harness | 1 | 0 | 0 | 0 | 0.25 h |
@@ -462,7 +462,7 @@ Hours each backlog still holds, as each project's own, uncalibrated estimate. Th
 
 | Source | Agent | Owner | From | Open records by priority | Open records by size |
 |---|---|---|---|---|---|
-| solution | 3.75 h | 0.75 h | totals line | 🔺 P1: 1, 🔶 P2: 3, 🔹 P3: 1 | 🟢 Small: 4, 🟡 Medium: 1 |
+| solution | 3.75 h | 0.75 h | totals line | 🔶 P2: 3, 🔹 P3: 1 | 🟢 Small: 3, 🟡 Medium: 1 |
 | nerv | 103.75 h | 12.25 h | totals line | 🔺 P1: 9, 🔶 P2: 39, 🔹 P3: 23 | 🟢 Small: 49, 🟡 Medium: 15, 🔴 Large: 5, 🟣 Very large: 2 |
 | gauntlet-protocol | 7.75 h | 1 h | totals line | 🔶 P2: 1, 🔹 P3: 2 | 🟢 Small: 1, 🟡 Medium: 1, 🔴 Large: 1 |
 | project-harness | 0.25 h | 0 h | totals line | 🔶 P2: 1 | 🟢 Small: 1 |
@@ -474,7 +474,6 @@ Hours each backlog still holds, as each project's own, uncalibrated estimate. Th
 
 | Record | Outcome | Status | Human action | Effort | Component links |
 |---|---|---|---|---|---|
-| [solution:B-001](BACKLOG.md#b-001) | The daily refresh fails when a solution-order item closed in its own repository | Verified | No | 🟢 Small | — |
 | [solution:F-004](BACKLOG.md#f-004) | Propose the solution order, hours, runway, gap review, cross-repository dependencies and on-demand backlog views to the template | Open | Procedure | 🟡 Medium | — |
 | [solution:F-006](BACKLOG.md#f-006) | NERV delivers Grover alerts end to end | Open | No | 🟢 Small | grover:F-008 |
 | [solution:F-007](BACKLOG.md#f-007) | NERV capability coverage in the Gauntlet across both repositories | Open | No | 🟢 Small | nerv:F-120 |

@@ -1,61 +1,16 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 25 November 2026 against main `f414f65`. PRs #1–#24 merged on green CI. F-001 and F-002 verified on that CI and closed; F-003, F-005 and F-008 were already closed; B-001, F-004 and F-009 updated in their own PRs.
+Current work ledger, reviewed 25 November 2026 against main `41faf38`. PR #25 (reconcile; F-001 and F-002 closed) merged on green CI. B-001 closed on its verified evidence: PRs #16 and #18, Refresh run 45575332245.
 Cross-repository work only; each component's work lives in its own backlog ([overview](SOLUTION-OVERVIEW.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 3.75 h agent + 0.75 h owner across 7 open steps of 4 features. 2 h of actual effort recorded on 1 step. Generated from the task files.
+**Remaining effort:** 3.75 h agent + 0.75 h owner across 7 open steps of 4 features. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
 
 Bugs (B-) and features (F-) in one list, most urgent first.
 
-### <a id="b-001"></a>[🐞 B-001](#top)
-
-**The daily refresh fails when a solution-order item closed in its own repository**
-
-| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
-|---|---|---|---|---|---|:---:|:---:|:---:|
-| 🟢 Verified | 🔺 P1 | 🟢 Small | 0 h | — | — | — | — | — |
-
-💻 **→** Next: all steps closed; verify and close the record.
-
-| | |
-|---|---|
-| **Issue** | The Refresh solution views workflow failed twice on 2026-11-25 with "X is not in Y's active backlog; remove it or fix the ID": nerv:B-121 (run 45561411464) and gauntlet-protocol:F-015, F-016 and F-017 (run 45573198859). Each had closed and moved to its repository's archive; nothing refreshed until the order was edited by hand. |
-| **Reproduce** | Order an item, close and archive it in its repository, run `npm run solution:refresh`: it exits 1 with the problem above. |
-| **Check** | An order item found in its repository's archive (or closed in its work-item data) shows ✅ Done with where it closed and the refresh succeeds; the refresh drops it from docs/solution-order.md and renumbers (the order's rule "A closed or archived item is removed in the next reorder or refresh PR"); an ID in neither the active backlog nor the archive still fails. |
-
-**Steps**
-
-| Effort | Step | Estimate | Actual | Remaining | Status | PRs |
-|---|---|---|---|---|---|---|
-| — | **Total** | 2 h | 2 h | 0 h | 1 of 1 completed | |
-
-<details><summary>Done steps (1)</summary>
-
-| Effort | Step | Estimate | Actual | Status | PRs |
-|---|---|---|---|---|---|
-| — | <a id="b-001-t01"></a>B-001-T01 — Show closed order items as Done and drop them from the order in the refresh | 2 h | 2 h (stated) | Completed | [PR #16](https://github.com/voidbrain/coordinator/pull/16) fix and tests; [PR #18](https://github.com/voidbrain/coordinator/pull/18) verified: refresh run 45575332245 and PR #17 |
-
-</details>
-
-<details>
-<summary>Next action, estimates and PR history</summary>
-
-[Full notes & evidence](work/records/B-001.md)
-
-| Field | Value |
-|---|---|
-| PR / evidence | Steps: B-001-T01: [PR #16](https://github.com/voidbrain/coordinator/pull/16) fix and tests; [PR #18](https://github.com/voidbrain/coordinator/pull/18) verified: refresh run 45575332245 and PR #17. [PR #16](https://github.com/voidbrain/coordinator/pull/16) (Test: test/solution-overview.test.mjs, closed order items; test/refresh-branch.test.mjs, order conflict) |
-| Opened | 2026-11-25 |
-| Verification | Unit 2026-11-25: `npm test` 27/27 (Test: test/solution-overview.test.mjs, closed order items; test/refresh-branch.test.mjs, order conflict). Refresh run on main 2026-11-25: run 45575332245 green, PR #17 merged. |
-| Reviewed | 2026-11-25 |
-
-</details>
-
----
 ### <a id="f-004"></a>[✨ F-004](#top)
 
 **Propose the solution order, hours, runway, gap review, cross-repository dependencies and on-demand backlog views to the template**
