@@ -3,13 +3,51 @@
 Current work ledger, reviewed 24 November 2026 against main `e03eb0c`. Cross-repository work only; each component's work lives in its own backlog ([overview](SOLUTION-OVERVIEW.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 4.75 h agent + 0.5 h owner across 8 open steps of 6 features. 0.25 h of actual effort recorded on 1 step. Generated from the task files.
+**Remaining effort:** 6.75 h agent + 0.5 h owner across 9 open steps of 6 features and 1 other record. 0.25 h of actual effort recorded on 1 step. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
 
 Bugs (B-) and features (F-) in one list, most urgent first.
 
+### <a id="b-001"></a>[🐞 B-001](#top)
+
+**The daily refresh fails when a solution-order item closed in its own repository**
+
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🔴 Open | 🔺 P1 | 🟡 Medium | 2 h | — | — | 🤖 | — | — |
+
+💻 **→** Next: B-001-T01 — Show closed order items as Done and drop them from the order in the refresh (Ready).
+
+| | |
+|---|---|
+| **Issue** | The Refresh solution views workflow failed twice on 2026-11-25 with "X is not in Y's active backlog; remove it or fix the ID": nerv:B-121 (run 45561411464) and gauntlet-protocol:F-015, F-016 and F-017 (run 45573198859). Each had closed and moved to its repository's archive; nothing refreshed until the order was edited by hand. |
+| **Reproduce** | Order an item, close and archive it in its repository, run `npm run solution:refresh`: it exits 1 with the problem above. |
+| **Check** | An order item found in its repository's archive (or closed in its work-item data) shows ✅ Done with where it closed and the refresh succeeds; the refresh drops it from docs/solution-order.md and renumbers (the order's rule "A closed or archived item is removed in the next reorder or refresh PR"); an ID in neither the active backlog nor the archive still fails. |
+
+**Steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status |
+|---|---|---|---|---|---|
+| 🟡 Medium | <a id="b-001-t01"></a>B-001-T01 — Show closed order items as Done and drop them from the order in the refresh | 2 h | 0 h | 2 h | Ready |
+| 🟡 Medium | **Total** | 2 h | 0 h (0 of 1 steps recorded) | 2 h | 0 of 1 completed |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+[Full notes & evidence](work/records/B-001.md)
+
+| Field | Value |
+|---|---|
+| PR / evidence | — |
+| Opened | 2026-11-25 |
+| Verification | Pending |
+| Reviewed | 2026-11-25 |
+
+</details>
+
+---
 ### <a id="f-001"></a>[✨ F-001](#top)
 
 **Coordinator repository with harness v10.9.0, the solution profile, the solution order and the gap review**

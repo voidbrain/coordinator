@@ -90,3 +90,11 @@ test('the open-PR lookup decides between continuing and starting again', () => {
   );
   assert.throws(() => refresh(setup(), 'chore/refresh', () => 'not a number'), /Could not tell/);
 });
+
+// B-001: the refresh also drops closed items from the order; a reorder on main meanwhile must not stop the refresh.
+test('a conflict in the solution order takes main copy too: the refresh prunes it again', () => {
+  const work = setup({ alsoConflictIn: 'docs/solution-order.md' });
+  assert.match(prepare(work, 'chore/refresh', 'open'), /docs\/solution-order.md/);
+  assert.equal(readFileSync(join(work, 'docs/solution-order.md'), 'utf8'), 'main edit\n');
+  assert.equal(git(work, 'status', '--porcelain'), '');
+});
