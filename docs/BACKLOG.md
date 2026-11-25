@@ -28,10 +28,10 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 **Steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status |
-|---|---|---|---|---|---|
-| 🟡 Medium | <a id="b-001-t01"></a>B-001-T01 — Show closed order items as Done and drop them from the order in the refresh | 2 h | 0 h | 2 h | Implemented; verification pending |
-| 🟡 Medium | **Total** | 2 h | 0 h (0 of 1 steps recorded) | 2 h | 0 of 1 completed |
+| Effort | Step | Estimate | Actual | Remaining | Status | PRs |
+|---|---|---|---|---|---|---|
+| 🟡 Medium | <a id="b-001-t01"></a>B-001-T01 — Show closed order items as Done and drop them from the order in the refresh | 2 h | 0 h | 2 h | Implemented; verification pending | [PR #16](https://github.com/voidbrain/coordinator/pull/16) fix and tests |
+| 🟡 Medium | **Total** | 2 h | 0 h (0 of 1 steps recorded) | 2 h | 0 of 1 completed | |
 
 <details>
 <summary>Next action, estimates and PR history</summary>
@@ -40,7 +40,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | — |
+| PR / evidence | Steps: B-001-T01: [PR #16](https://github.com/voidbrain/coordinator/pull/16) fix and tests. [PR #16](https://github.com/voidbrain/coordinator/pull/16) (Test: test/solution-overview.test.mjs, closed order items; test/refresh-branch.test.mjs, order conflict) |
 | Opened | 2026-11-25 |
 | Verification | Unit 2026-11-25: `npm test` 27/27 (Test: test/solution-overview.test.mjs, closed order items; test/refresh-branch.test.mjs, order conflict). Refresh run on main: Pending. |
 | Reviewed | 2026-11-25 |
