@@ -36,6 +36,9 @@
     "estimateAgentHours": 0.25
   },
   "prs": [
-    21
+    {
+      "pr": 21,
+      "note": "Gaps 2 to 7 gone; gap 1 (nerv:F-120 counterpart) remains"
+    }
   ]
 }
