@@ -1,11 +1,11 @@
 <!-- generated: project-harness solution dashboard; edit owning backlogs, not this file -->
 # voidbrain solution dashboard
 
-Snapshot: 2026-11-25T13:29:23.611Z. Read-only aggregation; no combined completion percentage. Solution integration status is independent of component status.
+Snapshot: 2026-11-25T13:35:43.754Z. Read-only aggregation; no combined completion percentage. Solution integration status is independent of component status.
 
 | Source | Revision | Snapshot state |
 |---|---|---|
-| solution | [1fd1c2e7105a](https://github.com/voidbrain/coordinator/commit/1fd1c2e7105a01e04df43283dd41232afc7fc8b5) | Committed snapshot; requested working checkout; local checkout, not fetched |
+| solution | [2d20507b37aa](https://github.com/voidbrain/coordinator/commit/2d20507b37aa09c0b5950ce0ba95f7cbe1c513b6) | Committed snapshot; requested working checkout; local checkout, not fetched |
 | nerv | [58e0d6742e66](https://github.com/voidbrain/nerv/commit/58e0d6742e66684cbcde010168e0a73b10ed09a2) | Committed snapshot; requested main; GitHub |
 | gauntlet-protocol | [2339e413222c](https://github.com/voidbrain/gauntlet-protocol/commit/2339e413222c65a205cf8dc0f94d00f704cca7af) | Committed snapshot; requested main; GitHub |
 | project-harness | [0208005671cd](https://github.com/voidbrain/project-harness/commit/0208005671cdd836894cafb2ab79deefad0c9508) | Committed snapshot; requested main; GitHub |
@@ -18,7 +18,7 @@ Open work per project, by what it waits on. Remaining hours are each project's o
 
 | Project | Ready | Waiting for the owner | Blocked | Waiting on other work | Remaining |
 |---|---|---|---|---|---|
-| solution | 6 | 1 | 1 | 3 | 6.5 h |
+| solution | 6 | 1 | 1 | 2 | 5.5 h |
 | 𖣂 nerv | 62 | 18 | 10 | 39 | 124.5 h |
 | 🤖 gauntlet-protocol | 3 | 0 | 0 | 6 | 8.75 h |
 | 🦺 project-harness | 2 | 0 | 0 | 4 | 0.5 h |
@@ -132,13 +132,13 @@ Agent hours that can run before work reaches a block: open agent work that is re
 
 | Project | Runway | First blocks reached | Owner hours for the next layer |
 |---|---|---|---|
-| solution | 4.25 h | owner step solution:F-004-T04; owner step solution:F-006-T02 | 0.75 h |
+| solution | 3.25 h | owner step solution:F-004-T04; owner step solution:F-006-T02 | 0.75 h |
 | 𖣂 nerv | 100 h | owner step nerv:F-062-T07; owner step nerv:F-011-T02; owner step nerv:F-004-T06; owner step nerv:F-012-T05; owner step nerv:F-016-T09; owner step nerv:F-082-T04; owner step nerv:F-083-T09; owner step nerv:F-120-T03; owner step nerv:F-088-T04; owner step nerv:F-117-T05; owner step nerv:F-089-T03; owner step nerv:F-090-T03; owner step nerv:F-094-T04; owner step nerv:B-099-T03; owner step nerv:F-086-T04; owner step nerv:F-087-T04; owner step nerv:F-092-T04; owner step nerv:B-057-T02; owner step nerv:B-068-T02; owner step nerv:B-122-T02; owner step nerv:B-123-T02; owner step nerv:B-128-T02; owner step nerv:F-126-T03; owner step nerv:F-123-T02; owner step nerv:F-098-T04; owner step nerv:F-060-T01; owner step nerv:F-116-T02; owner step nerv:F-007-T05; owner step nerv:F-122-T03; owner step nerv:B-056-T02 | 12.5 h |
 | 🤖 gauntlet-protocol | 2.25 h | owner step gauntlet-protocol:F-022-T02; owner step gauntlet-protocol:F-021-T02 | 0.75 h |
 | 🦺 project-harness | 0.5 h | — | 0 h |
 | 🚁 fpvbuddy | 3 h | — | 0 h |
 | 🪴 grover | 8.5 h | owner step grover:F-005-T01; owner step grover:F-003-T01; owner step grover:F-011-T02; owner step grover:F-006-T02; owner step grover:F-007-T02; owner step grover:F-013-T02; owner step grover:F-014-T02; owner step grover:F-015-T02; owner step grover:F-016-T02; owner step grover:F-018-T01; owner step grover:B-009-T01; owner step grover:F-017-T03 | 5.5 h |
-| **Solution** | 118.5 h | 46 | 19.5 h |
+| **Solution** | 117.5 h | 46 | 19.5 h |
 
 ## Audits, reviews and harness
 
@@ -166,7 +166,7 @@ Proposals only, each naming the repository that would own the fix: the coordinat
 | Behind the harness | fpvbuddy .harness.json | fpvbuddy is on v10.20.0; the latest template release is v10.21.0 | fpvbuddy: a record "Reconcile to harness v10.21.0", done in a session of that repository |
 | Behind the harness | grover .harness.json | grover is on v10.20.0; the latest template release is v10.21.0 | grover: a record "Reconcile to harness v10.21.0", done in a session of that repository |
 
-<details><summary>solution: 11 open steps</summary>
+<details><summary>solution: 10 open steps</summary>
 
 | Step | Title | Status | Remaining | Who | Depends on |
 |---|---|---|---|---|---|
@@ -179,8 +179,7 @@ Proposals only, each naming the repository that would own the fix: the coordinat
 | solution:F-007-T01 | Name the Gauntlet release NERV needs for its new cases in docs/SOLUTION.md (waits on nerv:F-120) | Planned | 0.5 h | 🤖 | — |
 | solution:F-007-T02 | Link a Gauntlet run of the new NERV cases as acceptance | Planned | 0.5 h | ⏳ 🤖 | F-007-T01 |
 | solution:F-009-T01 | Reconcile to the latest harness and read built backlog views | Implemented; verification pending | 0.25 h | 🤖 | — |
-| solution:F-010-T01 | Guarded auto-merge for refresh PRs, on required checks | Planned | 1 h | 🤖 | — |
-| solution:F-010-T02 | Dispatch a refresh and see its PR merge itself | Planned | 0.25 h | ⏳ 🤖 | F-010-T01 |
+| solution:F-010-T02 | Dispatch a refresh and see its PR merge itself | Planned | 0.25 h | 🤖 | — |
 
 </details>
 
@@ -418,25 +417,25 @@ Hours each backlog still holds, as each project's own, uncalibrated estimate. Th
 
 | Source | Agent | Owner | From | Open records by priority | Open records by size |
 |---|---|---|---|---|---|
-| solution | 5.75 h | 0.75 h | totals line | 🔶 P2: 3, 🔹 P3: 4 | 🟢 Small: 5, 🟡 Medium: 2 |
+| solution | 4.75 h | 0.75 h | totals line | 🔶 P2: 3, 🔹 P3: 4 | 🟢 Small: 6, 🟡 Medium: 1 |
 | nerv | 111.25 h | 13.25 h | totals line | 🔺 P1: 8, 🔶 P2: 37, 🔹 P3: 26 | 🟢 Small: 46, 🟡 Medium: 17, 🔴 Large: 6, 🟣 Very large: 2 |
 | gauntlet-protocol | 7.75 h | 1 h | totals line | 🔶 P2: 1, 🔹 P3: 2 | 🟢 Small: 1, 🟡 Medium: 1, 🔴 Large: 1 |
 | project-harness | 0.5 h | 0 h | totals line | 🔶 P2: 2 | 🟢 Small: 2 |
 | fpvbuddy | 3 h | 0 h | Remaining cells of 2 open records | 🔶 P2: 1, 🔹 P3: 1 | 🟢 Small: 1, 🟡 Medium: 1 |
 | grover | 16.25 h | 12.75 h | totals line | 🔺 P1: 4, 🔶 P2: 11, 🔹 P3: 5 | 🟢 Small: 17, 🟡 Medium: 2, 🔴 Large: 1 |
-| **Solution** | 144.5 h | 27.75 h | 6 of 6 backlogs | | |
+| **Solution** | 143.5 h | 27.75 h | 6 of 6 backlogs | | |
 
 ## Integration outcomes
 
 | Record | Outcome | Status | Human action | Effort | Component links |
 |---|---|---|---|---|---|
-| [solution:B-002](https://github.com/voidbrain/coordinator/blob/1fd1c2e7105a01e04df43283dd41232afc7fc8b5/docs/BACKLOG.md#b-002) | check:fast fails with a bare HTTP 403 when GH_TOKEN is unset | Open | No | 🟢 Small | — |
-| [solution:B-003](https://github.com/voidbrain/coordinator/blob/1fd1c2e7105a01e04df43283dd41232afc7fc8b5/docs/BACKLOG.md#b-003) | Neither scheduled workflow has run on its schedule yet | Investigate | No | 🟢 Small | — |
-| [solution:F-004](https://github.com/voidbrain/coordinator/blob/1fd1c2e7105a01e04df43283dd41232afc7fc8b5/docs/BACKLOG.md#f-004) | Propose the solution order, hours, runway, gap review, cross-repository dependencies and on-demand backlog views to the template | Open | Procedure | 🟡 Medium | — |
-| [solution:F-006](https://github.com/voidbrain/coordinator/blob/1fd1c2e7105a01e04df43283dd41232afc7fc8b5/docs/BACKLOG.md#f-006) | NERV delivers Grover alerts end to end | Open | No | 🟢 Small | grover:F-008 |
-| [solution:F-007](https://github.com/voidbrain/coordinator/blob/1fd1c2e7105a01e04df43283dd41232afc7fc8b5/docs/BACKLOG.md#f-007) | NERV capability coverage in the Gauntlet across both repositories | Open | No | 🟢 Small | nerv:F-120 |
-| [solution:F-009](https://github.com/voidbrain/coordinator/blob/1fd1c2e7105a01e04df43283dd41232afc7fc8b5/docs/BACKLOG.md#f-009) | Reconcile to the latest harness and read built backlog views | Implemented | No | 🟢 Small | project-harness:F-096 |
-| [solution:F-010](https://github.com/voidbrain/coordinator/blob/1fd1c2e7105a01e04df43283dd41232afc7fc8b5/docs/BACKLOG.md#f-010) | Refresh PRs merge themselves on green | Open | No | 🟡 Medium | — |
+| [solution:B-002](https://github.com/voidbrain/coordinator/blob/2d20507b37aa09c0b5950ce0ba95f7cbe1c513b6/docs/BACKLOG.md#b-002) | check:fast fails with a bare HTTP 403 when GH_TOKEN is unset | Open | No | 🟢 Small | — |
+| [solution:B-003](https://github.com/voidbrain/coordinator/blob/2d20507b37aa09c0b5950ce0ba95f7cbe1c513b6/docs/BACKLOG.md#b-003) | Neither scheduled workflow has run on its schedule yet | Investigate | No | 🟢 Small | — |
+| [solution:F-004](https://github.com/voidbrain/coordinator/blob/2d20507b37aa09c0b5950ce0ba95f7cbe1c513b6/docs/BACKLOG.md#f-004) | Propose the solution order, hours, runway, gap review, cross-repository dependencies and on-demand backlog views to the template | Open | Procedure | 🟡 Medium | — |
+| [solution:F-006](https://github.com/voidbrain/coordinator/blob/2d20507b37aa09c0b5950ce0ba95f7cbe1c513b6/docs/BACKLOG.md#f-006) | NERV delivers Grover alerts end to end | Open | No | 🟢 Small | grover:F-008 |
+| [solution:F-007](https://github.com/voidbrain/coordinator/blob/2d20507b37aa09c0b5950ce0ba95f7cbe1c513b6/docs/BACKLOG.md#f-007) | NERV capability coverage in the Gauntlet across both repositories | Open | No | 🟢 Small | nerv:F-120 |
+| [solution:F-009](https://github.com/voidbrain/coordinator/blob/2d20507b37aa09c0b5950ce0ba95f7cbe1c513b6/docs/BACKLOG.md#f-009) | Reconcile to the latest harness and read built backlog views | Implemented | No | 🟢 Small | project-harness:F-096 |
+| [solution:F-010](https://github.com/voidbrain/coordinator/blob/2d20507b37aa09c0b5950ce0ba95f7cbe1c513b6/docs/BACKLOG.md#f-010) | Refresh PRs merge themselves on green | Open | No | 🟢 Small | — |
 
 ## Component work
 
