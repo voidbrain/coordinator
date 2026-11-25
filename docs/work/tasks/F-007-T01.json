@@ -38,5 +38,10 @@
     "ownerHours": 0,
     "estimateAgentHours": 0.5
   },
-  "prs": []
+  "prs": [
+    {
+      "pr": 39,
+      "note": "dependsOn nerv:F-120 open steps"
+    }
+  ]
 }

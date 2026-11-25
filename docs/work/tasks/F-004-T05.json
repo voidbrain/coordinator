@@ -39,5 +39,10 @@
     "actualAgentHours": 2,
     "actualSource": "stated"
   },
-  "prs": []
+  "prs": [
+    {
+      "pr": 39,
+      "note": "reconcile 10.21.1, parity, retire the overview"
+    }
+  ]
 }

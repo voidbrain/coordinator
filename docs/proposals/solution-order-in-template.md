@@ -96,3 +96,5 @@ Compared on 2026-11-25: `node tools/solution.mjs dashboard --remote` (10.20.1) a
 - **Blocked count**: the dashboard also counts owner steps behind another owner step (grover 23 against the overview's 15). This may be intended.
 
 Proposed: the template's dashboard carries the emoji and links per row, the open prerequisites and the hours split in the order, and a summary with harness, next audit and totals; or says which of these it declines. Until then the overview stays as the owner's layout view (F-004-T05 retires it).
+
+Delivered 2026-11-25: the owner approved Proposal 4; the template shipped it as project-harness F-099 in v10.21.0 (link escaping B-059, v10.21.1). This repository reconciled to v10.21.1 and retired the overview (F-004-T05, PR #39); the differences that remain are listed in F-004-T05.

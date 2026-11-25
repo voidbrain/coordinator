@@ -36,5 +36,10 @@
     "ownerHours": 0,
     "estimateAgentHours": 1
   },
-  "prs": []
+  "prs": [
+    {
+      "pr": 39,
+      "note": "dependsOn grover:F-008-T03"
+    }
+  ]
 }

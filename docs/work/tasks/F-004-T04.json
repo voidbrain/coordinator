@@ -34,6 +34,11 @@
     "ownerHours": 0,
     "ownerKind": "procedure"
   },
-  "prs": [],
+  "prs": [
+    {
+      "pr": 39,
+      "note": "closed on project-harness v10.21.0 (F-099) and v10.21.1 (B-059)"
+    }
+  ],
   "ownerLink": "docs/proposals/solution-order-in-template.md#proposal-4-the-overview-layout-the-dashboard-still-lacks-found-at-the-10201-reconcile-f-004-t02"
 }
