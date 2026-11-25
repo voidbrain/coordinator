@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "reviewed": "2026-11-25T11:57:25.505Z",
+  "reviewed": "2026-11-25T12:13:13.566Z",
   "policy": "c9570a34ab0c7e4f1274fe37802a6eff8e7edfb8266c98f0cec7119533729b2b",
   "inputs": {
     "AGENTS.md": "e1867e9ec5a9bdcc070838b5e842d6c0025a9ef3078421e17d4fc8d1fd080ad7",
     "docs/BACKLOG-RULES.md": "a090ba3c7571d60c50a386f32e30aab528104003a2a9da6c31cedec6ef05b77a",
     "docs/agents/architecture-review.md": "5d967314854912b1a5f1446aeab309763b14f9856bceb3c82df5c6c25c166526",
-    "docs/agents/areas.md": "9b05df3e02e27e51fb0bcaccc314f0cdc74e88e69135395a63cadc31b85da2a3",
+    "docs/agents/areas.md": "116b4fe07a8cb6c565ac572ed38dbf302ecf52daa0ea46807b1500f2c752c825",
     "docs/agents/audit.md": "e58480c21e8afe9a825df4726fa93b8a7f841557f4267f1fc2c61ac3dac8f642",
     "docs/agents/change-impact.md": "dc1c473e274f76bd70a87ff57bbc53fc75dc75a35d121cf67baf163a2fd2e975",
     "docs/agents/coverage-guide.md": "3d539eb8beedfa101a5e47d9973cdf85dce197436fab2ab096f760e12d208106",
@@ -95,21 +95,10 @@
   },
   "outcomes": [
     {
-      "kind": "tool",
-      "disposition": "backlog",
-      "target": "F-004",
-      "evidence": "Reconcile to 10.20.1: the dashboard's Blocked counts, Ready order items and Done order items now match the project overview (project-harness B-057, B-058), so the refresh uses the template's dashboard --write --prune-order and the overview's pruning is removed. The overview stays for the layout the dashboard lacks (Proposal 4); F-004-T04 takes it to the template, F-004-T05 retires the tool after."
-    },
-    {
       "kind": "rule",
       "disposition": "implemented",
       "target": "docs/agents/areas.md",
-      "evidence": "Area notes and AGENTS.md say the template tool drops Done order items and why the overview stays (layout only). Tests: npm test (pruneOrder test removed with the function; the template's own tests cover --prune-order). Checks: check:fast; prune checked on a scratch copy with a closed nerv item."
-    },
-    {
-      "kind": "none",
-      "disposition": "no-change",
-      "evidence": "Harness 10.20.0 -> 10.20.1: tools/solution.mjs and the three solution guides copied byte for byte from v10.20.1; no adapted file changed in the release."
+      "evidence": "F-010: the refresh-workflow area note now says refresh PRs merge themselves behind tools/refresh-guard.mjs and rely on main's required check; reviewed against .github/workflows/refresh-views.yml and test/refresh-guard.test.mjs"
     }
   ]
 }

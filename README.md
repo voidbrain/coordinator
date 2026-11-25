@@ -27,7 +27,7 @@ npm run check:fast                                    # format, lint, tests, bac
 npm run check:freshness                               # at session start
 ```
 
-The Refresh solution views workflow does this daily, opens or updates the PR "chore: refresh solution views" when something besides the snapshot changed, with the owner's token (repository secret `REFRESH_TOKEN`), so CI runs on it like on any PR; the lander merges it on green CI. The branch `chore/refresh-solution-views` belongs to the workflow: when no refresh PR is open it is deleted and recreated from main, so a commit a person pushes there is discarded. By hand, commit the regenerated views in a PR; each names its snapshot time and the source commits it read.
+The Refresh solution views workflow does this daily, opens or updates the PR "chore: refresh solution views" when something besides the snapshot changed, with the owner's token (repository secret `REFRESH_TOKEN`), so CI runs on it like on any PR; it merges itself once the required checks pass and its branch is deleted (F-010), unless it changes more than the generated views and Done items dropped from the order, in which case it says why and a person lands it. The branch `chore/refresh-solution-views` belongs to the workflow: when no refresh PR is open it is deleted and recreated from main, so a commit a person pushes there is discarded. By hand, commit the regenerated views in a PR; each names its snapshot time and the source commits it read.
 
 ## Where things are
 

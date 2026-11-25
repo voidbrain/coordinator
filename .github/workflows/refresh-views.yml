@@ -3,12 +3,12 @@ name: Refresh solution views
 # Owner decision 2026-11-24 (F-005): refresh the generated views daily and propose them as a PR, never a direct push
 # to main. Reads every component's main from GitHub; commits only docs/SOLUTION-OVERVIEW.md,
 # docs/SOLUTION-DASHBOARD.md and docs/solution-order.md (Done items dropped by the template's
-# tools/solution.mjs dashboard --prune-order, F-004-T02) to the branch below and opens or updates the refresh PR. The lander merges it on green CI
-# like any other (node tools/merge-when-green.mjs).
+# tools/solution.mjs dashboard --prune-order, F-004-T02) to the branch below and opens or updates the refresh PR, which merges itself on green CI
+# (F-010, last step) unless it changes more than those generated files.
 # Owner decision 2026-11-24 (F-008-T02, option B): the branch is pushed and the PR opened with the fine-grained token in
 # the repository secret REFRESH_TOKEN, so the normal pull_request CI starts by itself (a push or PR made with the
 # workflow token starts no workflow). The workflow token itself is read-only. The token is never printed; a missing
-# secret fails the run. main cannot be branch-protected on this plan, so only main's reviewed tools run here.
+# secret fails the run. Only main's reviewed tools run here.
 on:
   schedule:
     - cron: '30 5 * * *' # daily, 05:30 UTC (Actions may start it later)
@@ -94,5 +94,32 @@ jobs:
           open=$(gh pr list --head "$BRANCH" --state open --json number --jq length) || exit 1
           if [ "$open" = 0 ]; then
             gh pr create --base main --head "$BRANCH" --title "$TITLE" \
-              --body "Daily refresh of the generated views (F-008). CI runs on this PR like on any other; the lander merges it on green CI. Review the source revisions and each view's problems section."
+              --body "Daily refresh of the generated views (F-008). CI runs on this PR like on any other; it merges itself once every required check passes (F-010), unless its guard finds a change outside the generated files. Review the source revisions and each view's problems section."
+          fi
+
+      # Owner decision 2026-11-25 (F-010): a refresh PR merges itself once every required check on main passes, and its
+      # branch is deleted. Only when it touches nothing but the generated views and, in the order, only drops items the
+      # dashboard shows Closed (tools/refresh-guard.mjs, main's copy). Otherwise auto-merge stays off and the PR says why.
+      - name: Let the PR merge itself on green, or say why not
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
+        run: |
+          pr=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number') || exit 1
+          [ -n "$pr" ] || { echo "::error::No open refresh PR found after the push"; exit 1; }
+          set +e
+          reasons=$(node tools/refresh-guard.mjs origin/main)
+          status=$?
+          set -e
+          if [ "$status" = 0 ]; then
+            gh pr merge "$pr" --auto --merge --delete-branch
+            echo "Auto-merge enabled on #$pr."
+          elif [ "$status" = 1 ]; then
+            gh pr merge "$pr" --disable-auto >/dev/null 2>&1 || true # an earlier run may have enabled it
+            printf 'Auto-merge is off for this refresh PR (F-010): it changes more than the generated files.\n\n%s\n\nA person reviews and lands it with merge-when-green.\n' "$reasons" > "$RUNNER_TEMP/guard.md"
+            gh pr comment "$pr" --body-file "$RUNNER_TEMP/guard.md"
+            echo "::warning title=Auto-merge not enabled::$reasons"
+          else
+            echo "::error::The refresh guard could not read the diff"
+            exit 1
           fi

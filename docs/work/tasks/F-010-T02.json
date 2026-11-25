@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "id": "F-010-T02",
+  "parent": "F-010",
+  "title": "Dispatch a refresh and see its PR merge itself",
+  "goal": "A dispatched refresh PR merges itself after check passes and its branch is deleted",
+  "status": "planned",
+  "acceptance": [
+    "gh workflow run \"Refresh solution views\" opens or updates the refresh PR; it merges after check passes with no agent action; chore/refresh-solution-views is gone afterwards"
+  ],
+  "dependsOn": [
+    "F-010-T01"
+  ],
+  "resources": [
+    ".github/workflows/refresh-views.yml",
+    "docs/work/records/F-010.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "validation": [
+    "The PR's merge event and the deleted branch, read with gh"
+  ],
+  "escalation": [
+    "Repository settings are the owner's: ask before changing them",
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "0.25 h agent",
+    "basis": "Estimated 2026-11-25: one dispatch and a wait. Not a measurement.",
+    "reviewed": "2026-11-25",
+    "agentHours": 0.25,
+    "estimateAgentHours": 0.25
+  },
+  "prs": []
+}

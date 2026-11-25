@@ -4,7 +4,7 @@ Current work ledger, reviewed 25 November 2026 against main `7c0e5b8`. PR #28 (B
 Cross-repository work only; each component's work lives in its own backlog ([overview](SOLUTION-OVERVIEW.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 4.5 h agent + 0.75 h owner across 9 open steps of 4 features and 2 other records. 2 h of actual effort recorded on 1 step. Generated from the task files.
+**Remaining effort:** 5.75 h agent + 0.75 h owner across 11 open steps of 5 features and 2 other records. 2 h of actual effort recorded on 1 step. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -251,6 +251,46 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|
 | PR / evidence | Steps: F-009-T01: [PR #19](https://github.com/voidbrain/coordinator/pull/19). Opened in [PR #19](https://github.com/voidbrain/coordinator/pull/19).; [#23](https://github.com/voidbrain/coordinator/pull/23) |
 | Components | project-harness:F-096 |
+| Opened | 2026-11-25 |
+| Verification | Pending |
+| Reviewed | 2026-11-25 |
+
+</details>
+
+---
+### <a id="f-010"></a>[✨ F-010](#top)
+
+**Refresh PRs merge themselves on green**
+
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🔴 Open | 🔹 P3 | 🟡 Medium | 1.25 h | — | — | 🤖 | — | — |
+
+💻 **→** Next: from tasks; F-010-T01 lands in PR #31 (settings applied by the owner 2026-11-25); then F-010-T02 dispatches a refresh.
+
+| | |
+|---|---|
+| **Issue** | Owner decision 2026-11-25: refresh PRs merge themselves once every check passes, then their branch is deleted. The lander had to merge each one by hand (F-008). The repository is public since 2026-11-25 (owner), so main can be branch-protected. |
+| **Reproduce** | The Refresh solution views workflow opens `chore: refresh solution views` and stops; nothing merges it until an agent runs merge-when-green. |
+| **Check** | main's branch protection requires the CI check `check` (PR required, 0 approvals, admins included, no force-push or deletion); `allow_auto_merge` is on and Actions-can-approve stays off; a dispatched refresh opens a PR that merges itself after `check` passes and its branch is deleted; a refresh PR that changes another file gets a comment and no auto-merge (`test/refresh-guard.test.mjs`). |
+
+**Feature steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | PRs |
+|---|---|---|---|---|---|---|---|---|
+| 🟢 Small | <a id="f-010-t01"></a>F-010-T01 — Guarded auto-merge for refresh PRs, on required checks | 1 h | 0 h | 1 h | Planned | — | [F-010-T02](#f-010-t02) | [PR #31](https://github.com/voidbrain/coordinator/pull/31) |
+| 🟢 Small | <a id="f-010-t02"></a>F-010-T02 — Dispatch a refresh and see its PR merge itself | 0.25 h | 0 h | 0.25 h | Planned | [F-010-T01](#f-010-t01) | — | — |
+| 🟡 Medium | **Total** | 1.25 h | 0 h (0 of 2 steps recorded) | 1.25 h | 0 of 2 completed | | | |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+[Full notes & evidence](work/records/F-010.md)
+
+| Field | Value |
+|---|---|
+| PR / evidence | Steps: F-010-T01: [PR #31](https://github.com/voidbrain/coordinator/pull/31). Opened in [PR #31](https://github.com/voidbrain/coordinator/pull/31) |
+| Components | — |
 | Opened | 2026-11-25 |
 | Verification | Pending |
 | Reviewed | 2026-11-25 |
