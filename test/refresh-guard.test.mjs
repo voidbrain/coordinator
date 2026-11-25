@@ -19,11 +19,11 @@ const dashboard = (closed) =>
 const before = order('a:F-001 — one', 'a:F-002 — two', 'a:F-003 — three');
 
 test('only the generated views changed: auto-merge allowed', () => {
-  assert.deepEqual(guardReasons(['docs/SOLUTION-OVERVIEW.md', 'docs/SOLUTION-DASHBOARD.md'], {}), []);
+  assert.deepEqual(guardReasons(['docs/SOLUTION-DASHBOARD.md'], {}), []);
 });
 
 test('any other path blocks auto-merge and is named', () => {
-  assert.deepEqual(guardReasons(['docs/SOLUTION-OVERVIEW.md', 'tools/solution.mjs'], {}), [
+  assert.deepEqual(guardReasons(['docs/SOLUTION-DASHBOARD.md', 'tools/solution.mjs'], {}), [
     'tools/solution.mjs is not a generated file the refresh writes',
   ]);
 });
