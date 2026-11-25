@@ -32,14 +32,11 @@ Set by the owner on 2026-11-24 (F-002): the proposed order kept as 1–17, `grov
 13. `nerv:F-123` — MCP connection to Grover's hub
 14. `fpvbuddy:F-005` — M1 FPV battery core; T02 waits on nerv:F-101-T04
 15. `nerv:F-121` — printed parts per drone, print by chat
-16. `gauntlet-protocol:F-016` — embedded-v1 pack
-17. `gauntlet-protocol:F-017` — logic-math-v1 pack
-18. `gauntlet-protocol:F-018` — italian-quality-v1 pack
-19. `gauntlet-protocol:F-019` — cad-3d-v1 pack
-20. `gauntlet-protocol:F-020` — code-review-v1 pack
-21. `grover:F-011` — implemented P1 feed cycle; owner try-out pending
-22. `grover:F-004` — implemented P1 probe calibration
-23. `nerv:F-006` — orchestration across nodes (after B-119)
-24. `grover:F-003` — hardware bring-up on the Pi (P1, needs the device)
-25. `gauntlet-protocol:F-015` — coding-v1 pack
+16. `gauntlet-protocol:F-018` — italian-quality-v1 pack
+17. `gauntlet-protocol:F-019` — cad-3d-v1 pack
+18. `gauntlet-protocol:F-020` — code-review-v1 pack
+19. `grover:F-011` — implemented P1 feed cycle; owner try-out pending
+20. `grover:F-004` — implemented P1 probe calibration
+21. `nerv:F-006` — orchestration across nodes (after B-119)
+22. `grover:F-003` — hardware bring-up on the Pi (P1, needs the device)
 <!-- order:end -->
