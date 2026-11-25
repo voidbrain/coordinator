@@ -12,7 +12,7 @@ The solution coordinator for the voidbrain projects: one place to see and steer 
 
 ## Read it
 
-- [Dashboard](docs/SOLUTION-DASHBOARD.md): a summary per project (🧭 solution, 𖣂 nerv, 🤖 gauntlet-protocol, 🦺 project-harness, 🚁 fpvbuddy, 🪴 grover) with harness and next audit, the solution order with each item's live state, agent and owner hours and open prerequisites, what is blocked and on what, which projects have nothing to do and why, what waits for the owner, the agent runway before the next owner block, audits and reviews, the gap review, each project's open steps, remaining hours with the solution total, and the component sources with their revisions and link checks.
+- [Dashboard](docs/SOLUTION-DASHBOARD.md): a summary per project (🚦 coordinator, 𖣂 nerv, 🤖 gauntlet-protocol, 🦺 project-harness, 🚁 fpvbuddy, 🪴 grover) with harness and next audit, the solution order with each item's live state, agent and owner hours and open prerequisites, what is blocked and on what, which projects have nothing to do and why, what waits for the owner, the agent runway before the next owner block, audits and reviews, the gap review, each project's open steps, remaining hours with the solution total, and the component sources with their revisions and link checks.
 - [Solution order](docs/solution-order.md): the owner's order; agents take the first ready item.
 - [Backlog](docs/BACKLOG.md): cross-repository work only. [Solution](docs/SOLUTION.md): components, contracts, integration acceptance.
 
@@ -26,7 +26,7 @@ npm run check:fast                                    # format, lint, tests, bac
 npm run check:freshness                               # at session start
 ```
 
-The Refresh solution views workflow does this daily, opens or updates the PR "chore: refresh solution views" when something besides the snapshot changed, with the owner's token (repository secret `REFRESH_TOKEN`), so CI runs on it like on any PR; it merges itself once the required checks pass and its branch is deleted (F-010), unless it changes more than the generated dashboard and Done items dropped from the order, in which case it says why and a person lands it. The branch `chore/refresh-solution-views` belongs to the workflow: when no refresh PR is open it is deleted and recreated from main, so a commit a person pushes there is discarded. By hand, commit the regenerated views in a PR; each names its snapshot time and the source commits it read.
+The Refresh solution views workflow does this hourly (owner decision 2026-11-25, B-004), opens or updates the PR "chore: refresh solution views" when something besides the snapshot time and this repository's own revision changed, with the owner's token (repository secret `REFRESH_TOKEN`), so CI runs on it like on any PR; it merges itself once the required checks pass and its branch is deleted (F-010), unless it changes more than the generated dashboard and Done items dropped from the order, in which case it says why and a person lands it. The branch `chore/refresh-solution-views` belongs to the workflow: when no refresh PR is open it is deleted and recreated from main, so a commit a person pushes there is discarded. By hand, commit the regenerated views in a PR; each names its snapshot time and the source commits it read.
 
 ## Where things are
 

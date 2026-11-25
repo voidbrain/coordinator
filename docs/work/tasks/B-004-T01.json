@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "id": "B-004-T01",
+  "parent": "B-004",
+  "title": "Refresh hourly; a run with only the snapshot and the coordinator's revision opens no PR",
+  "goal": "The views refresh every hour without a PR per hour when no component changed",
+  "status": "implemented",
+  "acceptance": [
+    "refresh-views.yml runs on cron '17 * * * *' and its header cites the owner decision of 2026-11-25",
+    "tools/views-changed.mjs ignores the snapshot time and every line carrying this repository's own revision; test/views-changed.test.mjs failed before the fix and passes after",
+    "README and docs/SOLUTION.md say hourly",
+    ".solution.json sets the coordinator emoji 🚦; README, the style guide and the regenerated dashboard show it"
+  ],
+  "dependsOn": [],
+  "resources": [
+    ".github/workflows/refresh-views.yml",
+    "tools/views-changed.mjs",
+    "test/views-changed.test.mjs",
+    "README.md",
+    "docs/SOLUTION.md",
+    ".solution.json",
+    "docs/STYLE-GUIDE.md",
+    "docs/SOLUTION-DASHBOARD.md",
+    "docs/work/records/B-004.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "validation": [
+    "check:fast; final applicable CI; scheduled runs over the next day"
+  ],
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "0.5 h agent",
+    "basis": "Estimated 2026-11-25: one cron, one extracted check with a test, two doc lines. Not a measurement.",
+    "reviewed": "2026-11-25",
+    "agentHours": 0,
+    "ownerHours": 0,
+    "estimateAgentHours": 0.5
+  }
+}
