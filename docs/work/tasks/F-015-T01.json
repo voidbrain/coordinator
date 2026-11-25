@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "id": "F-015-T01",
+  "parent": "F-015",
+  "title": "Reconcile harness files v10.21.2 -> v10.21.3",
+  "goal": "The coordinator carries every harness change released in v10.21.3",
+  "status": "planned",
+  "acceptance": [
+    "Copied files byte-identical to v10.21.3 (check-harness --strict)",
+    "Adapted files reconciled from the template diff, project lines kept",
+    "version 10.21.3 in .harness.json"
+  ],
+  "dependsOn": [],
+  "resources": [
+    ".harness.json",
+    "tools/**",
+    "docs/agents/**",
+    "docs/backlog/**",
+    "docs/BACKLOG-RULES.md",
+    "AGENTS.md",
+    ".github/workflows/**",
+    "docs/work/records/F-015.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "0.5 h agent",
+    "basis": "Estimated 2026-11-26: a patch release (v10.21.2 to v10.21.3) at agent speed. Not a measurement.",
+    "reviewed": "2026-11-26",
+    "agentHours": 0.5,
+    "estimateAgentHours": 0.5
+  },
+  "prs": []
+}

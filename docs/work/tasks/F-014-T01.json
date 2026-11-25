@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "id": "F-014-T01",
+  "parent": "F-014",
+  "title": "Owner accepts or rejects each gap-review proposal of 2026-11-26",
+  "goal": "Owner accepts or rejects each gap-review proposal of 2026-11-26",
+  "status": "closed",
+  "acceptance": [
+    "Each proposal is accepted or rejected"
+  ],
+  "dependsOn": [],
+  "resources": [
+    "docs/SOLUTION-DASHBOARD.md",
+    "docs/work/records/F-014.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "0.25 h owner",
+    "basis": "Owner decision 2026-11-26: \"accept all current gap review proposals\". Outcomes: 1 nerv:F-120 Issue reworded, the domain packs are delivered (nerv PR #780); 2-10 openbando owner check page docs/owner-checks.md linked from B-009, B-017, B-018, B-028, F-001, F-009, F-025, F-026, F-031 (openbando PR #291); 11 coordinator F-015; 12 gauntlet-protocol:F-075 (PR #110); 13 fpvbuddy:F-102 (FPVBuddy PR #16); 14 grover:F-099 (Grover PR #43); 15 openbando harness reconcile: accepted, in progress in another openbando session. No actual: owner time not measured.",
+    "reviewed": "2026-11-26",
+    "agentHours": 0,
+    "ownerHours": 0,
+    "ownerKind": "decision"
+  },
+  "prs": [],
+  "ownerLink": "docs/SOLUTION-DASHBOARD.md#gap-review"
+}

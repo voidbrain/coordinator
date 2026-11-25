@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "id": "F-014-T02",
+  "parent": "F-014",
+  "title": "Confirm after the refresh that each accepted gap is gone (proposal 15 once openbando's reconcile lands)",
+  "goal": "Confirm after the refresh that each accepted gap is gone",
+  "status": "planned",
+  "acceptance": [
+    "The gap review no longer lists proposals 1 to 14, and 15 once openbando reconciles, or what is left is recorded here"
+  ],
+  "dependsOn": [
+    "F-014-T01"
+  ],
+  "resources": [
+    "docs/work/records/F-014.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "0.25 h",
+    "basis": "Estimated 2026-11-26: read the refreshed gap review once the component PRs land. Not a measurement.",
+    "reviewed": "2026-11-26",
+    "agentHours": 0.25,
+    "estimateAgentHours": 0.25
+  },
+  "prs": []
+}
