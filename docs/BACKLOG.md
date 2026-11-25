@@ -1,10 +1,10 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 25 November 2026 against main `7c0e5b8`. PR #28 (B-002 and B-003 name PR #27) merged on green CI; no record change needed. Harness reconciled to v10.20.1 in the F-004-T02 PR.
-Cross-repository work only; each component's work lives in its own backlog ([overview](SOLUTION-OVERVIEW.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
+Current work ledger, reviewed 25 November 2026 against main `b9615f0`. PRs #29 to #37 (F-004-T02 reconcile to 10.20.1, F-010 self-merging refresh PRs and their records, refresh PRs #30, #32, #34, #37) merged on green CI. Harness reconciled to v10.21.1 in the F-004-T05 PR.
+Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 4.5 h agent + 0.75 h owner across 9 open steps of 4 features and 2 other records. 2 h of actual effort recorded on 1 step. Generated from the task files.
+**Remaining effort:** 3 h agent + 0.5 h owner across 7 open steps of 3 features and 2 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -87,56 +87,6 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 </details>
 
 ---
-### <a id="f-004"></a>[✨ F-004](#top)
-
-**Propose the solution order, hours, runway, gap review, cross-repository dependencies and on-demand backlog views to the template**
-
-| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
-|---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔶 P2 | 🟡 Medium | 1.5 h agent + 0.25 h owner | — | — | ⏳ | 🧑‍🔧 | — |
-
-🧑 **→** Next: [🧑‍🔧](proposals/solution-order-in-template.md#proposal-4-the-overview-layout-the-dashboard-still-lacks-found-at-the-10201-reconcile-f-004-t02) F-004-T04 — Owner takes Proposal 4 (the overview's layout the dashboard lacks) to a project-harness session (Planned).
-
-| | |
-|---|---|
-| **Issue** | The solution order, the overview sections and the gap review are project content here because the template has none; two proposals for every project are written down for the owner. |
-| **Reproduce** | Read `docs/proposals/solution-order-in-template.md`. |
-| **Check** | The owner has taken the proposal to the template; once a template release covers it, this repository reconciles to it and removes `tools/solution-overview.mjs` or keeps only what the release leaves project-specific. |
-
-**Feature steps**
-
-| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who | PRs |
-|---|---|---|---|---|---|---|---|:---:|---|
-| 🟢 Small | <a id="f-004-t04"></a>F-004-T04 — Owner takes Proposal 4 (the overview's layout the dashboard lacks) to a project-harness session | — | 0 h | 0 h agent + 0.25 h owner | Planned | — | [F-004-T05](#f-004-t05) | [🧑‍🔧](proposals/solution-order-in-template.md#proposal-4-the-overview-layout-the-dashboard-still-lacks-found-at-the-10201-reconcile-f-004-t02) | — |
-| 🟡 Medium | <a id="f-004-t05"></a>F-004-T05 — Retire the overview tool once a template release covers Proposal 4 | 1.5 h | 0 h | 1.5 h | Planned | [F-004-T04](#f-004-t04) | — | ⏳ 🤖 | — |
-| 🟡 Medium | **Total** | 3.5 h (2 of 5 steps) | 2 h (1 of 5 steps recorded) | 1.5 h agent + 0.25 h owner | 3 of 5 completed | | | | |
-
-<details><summary>Done steps (3)</summary>
-
-| Effort | Step | Estimate | Actual | Status | PRs |
-|---|---|---|---|---|---|
-| — | <a id="f-004-t01"></a>F-004-T01 — Owner takes the template proposal to a project-harness session | — | 0 h | Completed | — |
-| — | <a id="f-004-t02"></a>F-004-T02 — Reconcile to the template release that fixes Proposal 3 and retire what the project tool duplicates | 2 h | 2 h (stated) | Completed | [PR #29](https://github.com/voidbrain/coordinator/pull/29) reconcile 10.20.1, template prune, parity |
-| — | <a id="f-004-t03"></a>F-004-T03 — Owner takes Proposal 3 (dashboard defects found at the 10.20.0 reconcile) to a project-harness session | — | 0 h | Completed | [PR #29](https://github.com/voidbrain/coordinator/pull/29) closed on project-harness v10.20.1 (B-057, B-058) |
-
-</details>
-
-<details>
-<summary>Next action, estimates and PR history</summary>
-
-[Full notes & evidence](work/records/F-004.md)
-
-| Field | Value |
-|---|---|
-| PR / evidence | Steps: F-004-T02: [PR #29](https://github.com/voidbrain/coordinator/pull/29) reconcile 10.20.1, template prune, parity · F-004-T03: [PR #29](https://github.com/voidbrain/coordinator/pull/29) closed on project-harness v10.20.1 (B-057, B-058). [#23](https://github.com/voidbrain/coordinator/pull/23); [#29](https://github.com/voidbrain/coordinator/pull/29) |
-| Opened | 2026-11-24 |
-| Verification | Pending |
-| Reviewed | 2026-11-25 |
-
-</details>
-
----
-
 ### <a id="f-006"></a>[✨ F-006](#top)
 
 **NERV delivers Grover alerts end to end**
@@ -184,7 +134,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔶 P2 | 🟢 Small | 1 h | — | — | 🤖 | — | — |
+| 🔴 Open | 🔶 P2 | 🟢 Small | 1 h | `nerv:F-120-T01`, `nerv:F-120-T02`, `nerv:F-120-T03` | — | ⏳ | — | — |
 
 💻 **→** Next: F-007-T01 — Name the Gauntlet release NERV needs for its new cases in docs/SOLUTION.md (waits on nerv:F-120) (Planned).
 
@@ -196,11 +146,11 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks |
-|---|---|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-007-t01"></a>F-007-T01 — Name the Gauntlet release NERV needs for its new cases in docs/SOLUTION.md (waits on nerv:F-120) | 0.5 h | 0 h | 0.5 h | Planned | — | [F-007-T02](#f-007-t02) |
-| 🟢 Small | <a id="f-007-t02"></a>F-007-T02 — Link a Gauntlet run of the new NERV cases as acceptance | 0.5 h | 0 h | 0.5 h | Planned | [F-007-T01](#f-007-t01) | — |
-| 🟢 Small | **Total** | 1 h | 0 h (0 of 2 steps recorded) | 1 h | 0 of 2 completed | | |
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | PRs |
+|---|---|---|---|---|---|---|---|---|
+| 🟢 Small | <a id="f-007-t01"></a>F-007-T01 — Name the Gauntlet release NERV needs for its new cases in docs/SOLUTION.md (waits on nerv:F-120) | 0.5 h | 0 h | 0.5 h | Planned | `nerv:F-120-T01`, `nerv:F-120-T02`, `nerv:F-120-T03` | [F-007-T02](#f-007-t02) | [PR #39](https://github.com/voidbrain/coordinator/pull/39) dependsOn nerv:F-120 open steps |
+| 🟢 Small | <a id="f-007-t02"></a>F-007-T02 — Link a Gauntlet run of the new NERV cases as acceptance | 0.5 h | 0 h | 0.5 h | Planned | [F-007-T01](#f-007-t01) | — | — |
+| 🟢 Small | **Total** | 1 h | 0 h (0 of 2 steps recorded) | 1 h | 0 of 2 completed | | | |
 
 <details>
 <summary>Next action, estimates and PR history</summary>
@@ -209,7 +159,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | — |
+| PR / evidence | Steps: F-007-T01: [PR #39](https://github.com/voidbrain/coordinator/pull/39) dependsOn nerv:F-120 open steps. — |
 | Components | nerv:F-120 |
 | Opened | 2026-11-24 |
 | Verification | Pending |

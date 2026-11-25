@@ -8,13 +8,13 @@ The project is **Coordinator**, the solution coordinator for the voidbrain proje
 - Components are listed in [.solution.json](.solution.json) (`nerv`, `gauntlet-protocol`, `project-harness`, `fpvbuddy`, `grover`). [docs/SOLUTION.md](docs/SOLUTION.md) owns the contracts and integration acceptance between them.
 - [docs/BACKLOG.md](docs/BACKLOG.md) holds cross-repository work only: contracts, version compatibility, end-to-end acceptance, coordination. Implementation work goes in the component's own backlog. It is generated (`npm run work:build`) from `docs/work/records/<ID>.md` and the step files `docs/work/tasks/<ID>-T*.json`, which carry agent and owner hours; edit those, never the ledger. <!-- project -->
 - The gap review proposes missing records and steps to the repositories that would own them; the owner decides which are created ([gap review](docs/agents/gap-review.md)).
-- The overview sums remaining agent and owner hours across all backlogs, the coordinator's included: hours only, never a percentage, labelled as each project's own estimates, and "at least" when a backlog cannot be read. Its agent runway counts agent steps doable before a block, across repositories (`repo:ID` prerequisites). <!-- project -->
-- Generated, never edited by hand: [docs/SOLUTION-OVERVIEW.md](docs/SOLUTION-OVERVIEW.md) (`tools/solution-overview.mjs`, project tool, kept for its layout until F-004-T05) and [docs/SOLUTION-DASHBOARD.md](docs/SOLUTION-DASHBOARD.md) (`tools/solution.mjs`, from the template, which also drops Done order items). `npm run solution:refresh` rewrites both from GitHub. <!-- project -->
+- The dashboard sums remaining agent and owner hours across all backlogs, the coordinator's included: hours only, never a percentage, labelled as each project's own estimates, and "at least" when a backlog cannot be read. Its agent runway counts agent steps doable before a block, across repositories (`repo:ID` prerequisites). <!-- project -->
+- Generated, never edited by hand: [docs/SOLUTION-DASHBOARD.md](docs/SOLUTION-DASHBOARD.md) (`tools/solution.mjs`, from the template, in the owner's layout since 10.21.0; it also drops Done order items). `npm run solution:refresh` rewrites it from GitHub. The project's own overview was retired in F-004-T05. <!-- project -->
 
 ### Solution order
 
 - [docs/solution-order.md](docs/solution-order.md) is the owner's order across all repositories: references `repo:ID`, top = next. <!-- project -->
-- Agents take the first item that is ready and unblocked (State Ready in the overview), after reading its record: Ready relies on each component's ⏳/🧑 markup and record states, and an authored backlog without Depends on can show Ready too early. Work not listed follows each repository's own priority. <!-- project -->
+- Agents take the first item that is ready and unblocked (State Ready, marked ▶ in the dashboard), after reading its record: Ready relies on each component's ⏳/🧑 markup and record states, and an authored backlog without Depends on can show Ready too early. Work not listed follows each repository's own priority. <!-- project -->
 - Reordering is an owner instruction, landed as a small PR that changes only the order. The order never skips prerequisites or owner decisions, and holds references only, no status. <!-- project -->
 
 ### Adding things
@@ -39,11 +39,10 @@ Before you open, update or merge a PR, read [pull requests](docs/agents/pull-req
 ```bash
 npm run check:freshness   # first, at session start: backlog behind main, merged branches, audit age
 npm run check:fast        # format, lint, tests, backlog, rules, tooling, maintenance, order, manifest and links <!-- project -->
-npm test                  # the overview readers, states and gap review on test/fixtures <!-- project -->
+npm test                  # the refresh branch preparation and the auto-merge guard <!-- project -->
 npm run check:backlog     # active record layout and lifecycle cues
-npm run check:order       # docs/solution-order.md references and the fixture self-check, offline <!-- project -->
 npm run check:solution    # manifest, component sources on GitHub and Components links <!-- project -->
-npm run solution:refresh  # regenerate both views from GitHub; commit them with their snapshot <!-- project -->
+npm run solution:refresh  # regenerate the dashboard from GitHub and drop Done order items; commit both <!-- project -->
 npm run format:check      # Prettier on the project's own tools and tests; `npm run format` fixes it <!-- project -->
 npm run lint              # ESLint on the same files (copied harness tools excluded) <!-- project -->
 npm run check:tooling     # a formatter check and a linter exist and run in CI (required for every stack)
@@ -100,7 +99,7 @@ Before changing an area, read its section in [docs/agents/areas.md](docs/agents/
 
 | Area | Covers |
 |---|---|
-| Solution views | `.solution.json`, `docs/solution-order.md`, the generated overview and dashboard, `tools/solution-overview.mjs` |
+| Solution views | `.solution.json`, `docs/solution-order.md`, the generated dashboard, the refresh workflow and its guard |
 | Cross-repository backlog | `docs/BACKLOG.md`, `docs/SOLUTION.md`, contracts and integration acceptance |
 
 ## Privacy

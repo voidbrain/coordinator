@@ -19,11 +19,11 @@ const dashboard = (closed) =>
 const before = order('a:F-001 — one', 'a:F-002 — two', 'a:F-003 — three');
 
 test('only the generated views changed: auto-merge allowed', () => {
-  assert.deepEqual(guardReasons(['docs/SOLUTION-OVERVIEW.md', 'docs/SOLUTION-DASHBOARD.md'], {}), []);
+  assert.deepEqual(guardReasons(['docs/SOLUTION-DASHBOARD.md'], {}), []);
 });
 
 test('any other path blocks auto-merge and is named', () => {
-  assert.deepEqual(guardReasons(['docs/SOLUTION-OVERVIEW.md', 'tools/solution.mjs'], {}), [
+  assert.deepEqual(guardReasons(['docs/SOLUTION-DASHBOARD.md', 'tools/solution.mjs'], {}), [
     'tools/solution.mjs is not a generated file the refresh writes',
   ]);
 });
@@ -31,6 +31,32 @@ test('any other path blocks auto-merge and is named', () => {
 test('dropping Closed items and renumbering the rest is allowed', () => {
   assert.deepEqual(orderReasons(before, order('a:F-002 — two', 'a:F-003 — three'), dashboard(false)), []);
   assert.deepEqual(orderReasons(before, order('a:F-003 — three'), dashboard(true)), []);
+});
+
+// The order table of harness 10.21.0 and later (F-099): an emoji column, the item linked, and a Done item reads
+// "<status>: ✅ Done: closed …" (closed in the archive, or found Closed in the backlog).
+const dashboard1021 = (closed) =>
+  [
+    '| # | | Item | Title | Status / state | Agent h | Owner h | Open prerequisites | Note |',
+    '|---:|---|---|---|---|---:|---:|---|---|',
+    '| 1 | 🅰 | a:F-001 | One | Closed: ✅ Done: closed 2026-11-24 in [docs/archive/backlog-2026.md](https://example.invalid/a#f-001) | — | — | — | n |',
+    `| 2 | 🅰 | [a:F-002](https://example.invalid/a#f-002) | Two \\| pipe | ${closed ? 'Closed: ✅ Done: closed in [F-002.md](https://example.invalid/a/F-002.md)' : 'Open: ▶ Ready'} | 1 | 0 | — | n |`,
+    '| 3 | 🅰 | [a:F-003](https://example.invalid/a#f-003) | Three | Open: Ready | 1 | 0 | — | n |',
+  ].join('\n');
+
+test('10.21 order layout: dropping Done items is allowed, dropping a Ready one is refused', () => {
+  assert.deepEqual(orderReasons(before, order('a:F-002 — two', 'a:F-003 — three'), dashboard1021(false)), []);
+  assert.deepEqual(orderReasons(before, order('a:F-003 — three'), dashboard1021(true)), []);
+  assert.deepEqual(orderReasons(before, order('a:F-001 — one', 'a:F-003 — three'), dashboard1021(false)), [
+    'docs/solution-order.md: a:F-002 was removed but the dashboard does not show it Closed',
+  ]);
+});
+
+test('numbered rows of a later table are not read with the order table columns', () => {
+  const later = `${dashboard1021(false)}\n\n## Other\n\n| Kind | x | Item | y | Status |\n|---|---|---|---|---|\n| 2 | 🅰 | a:F-002 | t | Closed: ✅ Done: closed in [x](y) |`;
+  assert.deepEqual(orderReasons(before, order('a:F-001 — one', 'a:F-003 — three'), later), [
+    'docs/solution-order.md: a:F-002 was removed but the dashboard does not show it Closed',
+  ]);
 });
 
 test('dropping an item the dashboard does not show Closed is refused', () => {

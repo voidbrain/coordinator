@@ -58,8 +58,12 @@ jobs:
         run: node tools/rule-load.mjs --check
       - name: A formatter check and a linter exist and run in CI
         run: node tools/check-tooling.mjs
-      - name: Solution order references and the fixture self-check (offline)
-        run: node tools/solution-overview.mjs --check
+      - name: Solution order format (offline; component checkouts are absent here, so only order problems fail)
+        run: |
+          out=$(node tools/solution.mjs check --offline 2>&1) || true
+          printf '%s\n' "$out"
+          printf '%s\n' "$out" | grep -q '^Solution ' || { echo "::error::tools/solution.mjs check did not run"; exit 1; }
+          if printf '%s\n' "$out" | grep -q '^order:'; then echo "::error::docs/solution-order.md has problems (above)"; exit 1; fi
 
       - name: Optional backlog dependency validation
         run: |

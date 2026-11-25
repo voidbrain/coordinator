@@ -14,7 +14,7 @@
 //       remote branch is deleted first so the next push needs no force.
 import { execFileSync } from 'node:child_process';
 
-export const VIEWS = ['docs/SOLUTION-OVERVIEW.md', 'docs/SOLUTION-DASHBOARD.md'];
+export const VIEWS = ['docs/SOLUTION-DASHBOARD.md'];
 // Files the refresh writes: the views, and the order it drops Done items from (B-001).
 export const REFRESHED = [...VIEWS, 'docs/solution-order.md'];
 

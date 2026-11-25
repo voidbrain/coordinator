@@ -26,13 +26,29 @@ function parseOrder(text) {
   return { outside: text.replace(MARKERS, '$1$3'), lines };
 }
 
-// References the dashboard lists as Closed in its solution order table.
+// References the dashboard lists as Closed in its solution order table. The columns are found by the table's header
+// (`| # | … | Item | … | Status… |`), so both the 10.20 layout (Status "Closed") and the 10.21 one (F-099: an emoji
+// column, the item linked, "<status>: ✅ Done: closed …") are read. Cells split on unescaped pipes only.
 function closedRefs(dashboard) {
   const refs = new Set();
+  let item = -1;
+  let status = -1;
   for (const line of dashboard.split('\n')) {
-    const cells = line.split('|').map((c) => c.trim());
-    // | # | Item | Title | Status | …
-    if (/^\d+$/.test(cells[1] ?? '') && cells[4] === 'Closed') refs.add(cells[2]);
+    // The order table ends at the first line that is not a table row; numbered rows of a later table are not read.
+    if (!line.startsWith('|')) {
+      item = -1;
+      status = -1;
+      continue;
+    }
+    const cells = line.split(/(?<!\\)\|/).map((c) => c.trim());
+    if (cells[1] === '#') {
+      item = cells.indexOf('Item');
+      status = cells.findIndex((c) => c.startsWith('Status'));
+      continue;
+    }
+    if (item < 0 || status < 0 || !/^\d+$/.test(cells[1] ?? '')) continue;
+    const cell = cells[status] ?? '';
+    if (cell === 'Closed' || cell.includes('✅ Done: closed')) refs.add((cells[item] ?? '').replace(/^\[(.*)\]\(.*\)$/, '$1'));
   }
   return refs;
 }

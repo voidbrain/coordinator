@@ -245,3 +245,37 @@ Closed records of the [backlog](../BACKLOG.md), in closing-date order. History, 
 </details>
 
 ---
+
+### F-004
+
+**Propose the solution order, hours, runway, gap review, cross-repository dependencies and on-demand backlog views to the template**
+
+| Signal | Priority | Status | Effort |
+|:---:|---|---|---|
+| 🔵 | ◻️ P2 | Closed | 🟢 Small |
+
+💻 **→ Human action required: No**<br />Closed 2026-11-25: PR #39 reconciled to harness v10.21.1, whose dashboard carries the overview's layout (Proposals 1–4 taken to the template: project-harness F-095, F-096, F-097, B-057, B-058, F-099, B-059); the project overview tool, its tests, scripts, CI steps and page are removed (F-004-T05, parity compared on the same component commits; remaining differences in F-004-T05). Closes on PR #39's green CI.
+
+| | |
+|---|---|
+| **Issue** | The solution order, the overview sections and the gap review are project content here because the template has none; two proposals for every project are written down for the owner. |
+| **Reproduce** | Read `docs/proposals/solution-order-in-template.md`. |
+| **Check** | The owner has taken the proposal to the template; once a template release covers it, this repository reconciles to it and removes `tools/solution-overview.mjs` or keeps only what the release leaves project-specific. |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+**Next action / closure evidence:** Closed 2026-11-25: PR #39 reconciled to harness v10.21.1, whose dashboard carries the overview's layout (Proposals 1–4 taken to the template: project-harness F-095, F-096, F-097, B-057, B-058, F-099, B-059); the project overview tool, its tests, scripts, CI steps and page are removed (F-004-T05, parity compared on the same component commits; remaining differences in F-004-T05). Closes on PR #39's green CI. 2026-11-25: reconciled to 10.20.1, which fixes both Proposal 3 defects (project-harness B-057, B-058); F-004-T03 and F-004-T02 closed. The refresh runs the template's `dashboard --write --prune-order`; the overview's own pruning is gone. The overview stays for its layout only (Proposal 4 in `docs/proposals/solution-order-in-template.md`): F-004-T04, the owner takes Proposal 4 to the template; F-004-T05 then retires the overview. Review: design-reviewer in a fresh context on PR #29, no blockers; F-004-T02 retitled and the prune record documented in the area notes; the record's own cue stays No while T04's 🧑‍🔧 shows (steps rule). The template change itself is the template's work and record, never this backlog's. Earlier, 2026-11-25: reconciled to 10.20.0 (with F-009-T01); the order uses the template's format.
+
+**Estimates:** No remaining effort.
+
+| Field | Value |
+|---|---|
+| PR / evidence | [#23](https://github.com/voidbrain/coordinator/pull/23); [#29](https://github.com/voidbrain/coordinator/pull/29); [#39](https://github.com/voidbrain/coordinator/pull/39) |
+| Opened | 2026-11-24 |
+| Verification | Parity of the template dashboard with the retired overview compared 2026-11-25 on the same component commits (F-004-T05) |
+| Reviewed | 2026-11-25 |
+
+</details>
+
+---

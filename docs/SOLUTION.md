@@ -1,6 +1,6 @@
 # voidbrain solution
 
-This repository owns solution outcomes, shared contracts and integration acceptance. Components own implementation and their own backlogs. The [manifest](../.solution.json) names sources; the [solution backlog](BACKLOG.md) owns integration status; [solution-profile guidance](agents/solution-profile.md) defines aggregation. The [overview](SOLUTION-OVERVIEW.md) and [dashboard](SOLUTION-DASHBOARD.md) are generated evidence, not editable second ledgers.
+This repository owns solution outcomes, shared contracts and integration acceptance. Components own implementation and their own backlogs. The [manifest](../.solution.json) names sources; the [solution backlog](BACKLOG.md) owns integration status; [solution-profile guidance](agents/solution-profile.md) defines aggregation. The [dashboard](SOLUTION-DASHBOARD.md) is generated evidence, not an editable second ledger.
 
 ## Components and contracts
 
@@ -38,7 +38,7 @@ Component CI is evidence for its own scope. The solution may wait for component 
 
 Use ordinary B-/F- IDs in this repository's backlog. A solution record's Issue, next action and closure describe coordination, contracts or integration owned here. Add `| Components | nerv:F-120, grover:F-008 |` to its metadata table to link implementation work, with exact manifest IDs. A component may link back using a `Solution` metadata field; do not copy statuses or histories between ledgers.
 
-The owner steers across repositories with the [solution order](solution-order.md). A component step that needs another repository's step names it as `repo:ID` in its Depends on (owner decision 2026-11-24: every project uses step-level dependencies); until the template has that field, "depends on repo:ID" in the step or record text is read too. The views are refreshed daily as a PR (F-008). Run `npm run solution:refresh` to regenerate the overview and the dashboard from GitHub (both read each component's `main` at one resolved commit). `npm run check:solution` reads local checkouts instead. Commit the views only after reviewing their revisions and problems. A failed source stays Unknown and the command exits non-zero, even when a partial view is written.
+The owner steers across repositories with the [solution order](solution-order.md). A component step that needs another repository's step names it as `repo:ID` in its Depends on (owner decision 2026-11-24: every project uses step-level dependencies); in this repository a step's `dependsOn` takes `repo:STEP-ID`; prose such as "waits on repo:ID" is not read. The views are refreshed daily as a PR (F-008). Run `npm run solution:refresh` to regenerate the dashboard from GitHub (it reads each component's `main` at one resolved commit) and drop Done order items. `npm run check:solution` reads local checkouts instead. Commit the views only after reviewing their revisions and problems. A failed source stays Unknown and the command exits non-zero, even when a partial view is written.
 
 ## MCP and execution environments
 

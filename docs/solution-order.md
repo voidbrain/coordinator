@@ -1,16 +1,16 @@
 # Solution order
 
-The owner's order of work across all repositories: one reference per line, top = next. It holds references only; each item's status, readiness and blockers come from its own backlog and show in the [overview](SOLUTION-OVERVIEW.md) after `npm run solution:refresh`.
+The owner's order of work across all repositories: one reference per line, top = next. It holds references only; each item's status, readiness and blockers come from its own backlog and show in the [dashboard](SOLUTION-DASHBOARD.md) after `npm run solution:refresh`.
 
 ## Rules
 
-- Agents take the first item that is ready and unblocked (State Ready, marked ▶ in the overview). <!-- project -->
+- Agents take the first item that is ready and unblocked (State Ready, marked ▶ in the dashboard). <!-- project -->
 - Work not listed here follows each repository's own priority. <!-- project -->
 - Reordering is an owner instruction, landed as a small PR that changes only this list. <!-- project -->
 - The order never skips a prerequisite or an owner decision: an item waiting on either is passed over until it is ready, not forced. <!-- project -->
 - Ready comes from each component's own markup: ⏳ and 🧑 cells, Depends on and the record's status in a generated ledger; only the status and the "Human action required" line in an authored four-column backlog, which has no Depends on, so such a record can show Ready while it waits on something written only in its prose. Before starting an item, read its record and check its prerequisites there. <!-- project -->
 - An item may be ordered before its record merges: its note starts with "pending: <where it is>", and the note goes when the record lands. <!-- project -->
-- Format: the template's (harness 10.12.1, F-004-T02), one `N. repo:ID — note` per line between the order markers, numbered from 1; `.solution.json` names this file in `order`, and `node tools/solution.mjs check` and `npm run check:order` both validate it. <!-- project -->
+- Format: the template's (harness 10.12.1, F-004-T02), one `N. repo:ID — note` per line between the order markers, numbered from 1; `.solution.json` names this file in `order`, and `node tools/solution.mjs check` validates it (CI runs it offline for the format; `npm run check:solution` also checks each reference on GitHub). <!-- project -->
 - References only (`repo:ID`, a record or a step such as `nerv:F-005-T29`; this repository's own records are `solution:F-002`, as the template names it), with an optional short note on why it sits here; no status. A closed or archived item is removed in the next reorder or refresh PR. <!-- project -->
 
 ## Order
