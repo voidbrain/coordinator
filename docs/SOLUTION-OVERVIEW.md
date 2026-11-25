@@ -1,19 +1,19 @@
 <!-- generated: tools/solution-overview.mjs; edit docs/solution-order.md or the owning backlogs, not this file -->
 # voidbrain solution: overview
 
-Snapshot 2026-11-25T08:07:44.517Z. Status comes from each owning backlog; this page is regenerated, never edited. The [solution order](solution-order.md) is the owner's; everything else follows each repository's own priority. Hours are each project's own estimates, not cross-calibrated; no completion percentage.
+Snapshot 2026-11-25T08:20:13.223Z. Status comes from each owning backlog; this page is regenerated, never edited. The [solution order](solution-order.md) is the owner's; everything else follows each repository's own priority. Hours are each project's own estimates, not cross-calibrated; no completion percentage.
 
 ## Summary
 
 | Project | Open records | Doable agent h | Owner h | Blocked | Harness | Next audit |
 |---|---:|---:|---:|---:|---|---|
-| 🧭 coordinator | 6 | 3.75 | 0.5 | 1 | v10.9.0, behind v10.12.0 | 2026-12-01 |
-| 𖣂 nerv | 72 | 95.75 | 12.25 | 10 | v10.9.0, behind v10.12.0 | 2026-11-27 |
-| 🤖 gauntlet-protocol | 5 | 11 | 1.75 | 3 | v10.9.0, behind v10.12.0 | 2026-11-29 |
-| 🦺 project-harness | 3 | 20.5 | 0 | 0 | v10.11.3, behind v10.12.0 | 2026-11-29 |
-| 🚁 fpvbuddy | 1 | 4 | 0 | 0 | v10.9.0, behind v10.12.0 | 2026-11-29 |
-| 🪴 grover | 19 | 10 | 12.75 | 15 | v10.9.0, behind v10.12.0 | 2026-12-01 |
-| **Solution** | 106 | **145** | **27.25** | 29 | latest v10.12.0 | |
+| 🧭 coordinator | 7 | 5.75 | 0.5 | 1 | v10.9.0, behind v10.12.1 | 2026-12-01 |
+| 𖣂 nerv | 72 | 95.75 | 12.25 | 10 | v10.9.0, behind v10.12.1 | 2026-11-27 |
+| 🤖 gauntlet-protocol | 5 | 11 | 1.75 | 3 | v10.9.0, behind v10.12.1 | 2026-11-29 |
+| 🦺 project-harness | 3 | 18.5 | 0 | 0 | v10.12.1 (latest) | 2026-11-29 |
+| 🚁 fpvbuddy | 1 | 4 | 0 | 0 | v10.9.0, behind v10.12.1 | 2026-11-29 |
+| 🪴 grover | 19 | 10 | 12.75 | 15 | v10.9.0, behind v10.12.1 | 2026-12-01 |
+| **Solution** | 107 | **145** | **27.25** | 29 | latest v10.12.1 | |
 
 Remaining in all backlogs: 165 h agent + 27.25 h owner. Doable agent h is the runway: agent work whose prerequisites are done or doable, across projects.
 
@@ -139,10 +139,10 @@ Remaining agent and owner (human) hours as each backlog states them, summed acro
 
 | Backlog | Agent h | Owner h |
 |---|---:|---:|
-| 🧭 coordinator | 4.75 | 0.5 |
+| 🧭 coordinator | 6.75 | 0.5 |
 | 𖣂 nerv | 101.25 | 12.25 |
 | 🤖 gauntlet-protocol | 16.5 | 1.75 |
-| 🦺 project-harness | 20.5 | 0 |
+| 🦺 project-harness | 18.5 | 0 |
 | 🚁 fpvbuddy | 4 | 0 |
 | 🪴 grover | 18 | 12.75 |
 | **Solution total** | **165** | **27.25** |
@@ -153,10 +153,10 @@ Agent runway before the next owner block: **145 h**; then blocked on the items b
 
 | Backlog | Runway (agent h) | Doable, no hours | First blocks reached | Owner h to unblock the next layer |
 |---|---:|---|---|---:|
-| 🧭 coordinator | 3.75 | — | — | 0 |
+| 🧭 coordinator | 5.75 | — | — | 0 |
 | 𖣂 nerv | 95.75 | — | F-016-T09: owner procedure (1 h owner); F-016-T11 waits on owner nerv:F-016-T09; F-062-T07: owner procedure (0.25 h owner); F-011-T02: owner procedure (0.5 h owner); F-011-T05 waits on owner nerv:F-011-T02; F-011-T06 waits on owner nerv:F-011-T03; and 30 more | 11.75 |
 | 🤖 gauntlet-protocol | 11 | — | F-018-T03: owner procedure (0.25 h owner); F-019-T03: owner procedure (0.25 h owner); F-020-T03: owner procedure (0.25 h owner); F-022-T02: owner decision (0.25 h owner); F-022-T03 waits on owner gauntlet-protocol:F-022-T02; F-021-T02: owner decision (0.5 h owner); and 1 more | 1.5 |
-| 🦺 project-harness | 20.5 | — | — | 0 |
+| 🦺 project-harness | 18.5 | — | — | 0 |
 | 🚁 fpvbuddy | 4 | — | — | 0 |
 | 🪴 grover | 10 | — | F-005-T01: owner procedure (1.25 h owner); F-005-T03 waits on owner grover:F-005-T01; F-003-T01: owner decision (0.5 h owner); F-003-T03 waits on owner grover:F-003-T01; F-003-T05 waits on owner grover:F-003-T04; F-004-T03 waits on owner grover:F-004-T02; and 20 more | 10 |
 | **Solution** | **145** | | | **23.25** |
@@ -176,16 +176,16 @@ Each project's newest audit manifest (`docs/audits/*.audit.json`) and the interv
 
 ## Harness
 
-Each project's harness release (`version` in its `.harness.json`) against the latest template release, v10.12.0. A project behind gets a reconcile proposal in the gap review; it becomes a record in that project when the owner accepts it.
+Each project's harness release (`version` in its `.harness.json`) against the latest template release, v10.12.1. A project behind gets a reconcile proposal in the gap review; it becomes a record in that project when the owner accepts it.
 
 | Project | Harness | Latest | Status |
 |---|---|---|---|
-| 🧭 coordinator | v10.9.0 | v10.12.0 | behind: reconcile proposed |
-| 𖣂 nerv | v10.9.0 | v10.12.0 | behind: reconcile proposed |
-| 🤖 gauntlet-protocol | v10.9.0 | v10.12.0 | behind: reconcile proposed |
-| 🦺 project-harness | v10.11.3 | v10.12.0 | behind: reconcile proposed |
-| 🚁 fpvbuddy | v10.9.0 | v10.12.0 | behind: reconcile proposed |
-| 🪴 grover | v10.9.0 | v10.12.0 | behind: reconcile proposed |
+| 🧭 coordinator | v10.9.0 | v10.12.1 | behind: reconcile proposed |
+| 𖣂 nerv | v10.9.0 | v10.12.1 | behind: reconcile proposed |
+| 🤖 gauntlet-protocol | v10.9.0 | v10.12.1 | behind: reconcile proposed |
+| 🦺 project-harness | v10.12.1 | v10.12.1 | current |
+| 🚁 fpvbuddy | v10.9.0 | v10.12.1 | behind: reconcile proposed |
+| 🪴 grover | v10.9.0 | v10.12.1 | behind: reconcile proposed |
 
 ## Effort
 
@@ -193,10 +193,10 @@ Open records by priority, the hours as each backlog states them, sizes, and the 
 
 | Source | P1 | P2 | P3 | Other | Remaining (agent / owner) | Sizes | The backlog's own total |
 |---|---:|---:|---:|---:|---|---|---|
-| 🧭 coordinator | 3 | 3 | 0 | 0 | 4.75 h / 0.5 h | 5 🟢 Small, 1 🟡 Medium | Remaining effort: 4.75 h agent + 0.5 h owner across 8 open steps of 6 features. 0.25 h of actual effort recorded on 1 step. Generated from the task files. |
+| 🧭 coordinator | 4 | 3 | 0 | 0 | 6.75 h / 0.5 h | 2 🟡 Medium, 5 🟢 Small | Remaining effort: 6.75 h agent + 0.5 h owner across 9 open steps of 6 features and 1 other record. 0.25 h of actual effort recorded on 1 step. Generated from t… |
 | 𖣂 nerv | 11 | 38 | 23 | 0 | 101.25 h / 12.25 h | 16 🟡 Medium, 50 🟢 Small, 2 🟣 Very large, 4 🔴 Large | Remaining effort: 101.25 h agent + 12.25 h owner across 126 open steps of 39 features and 33 other records. 169.5 h of actual effort recorded on 154 steps. Gen… |
 | 🤖 gauntlet-protocol | 0 | 3 | 2 | 0 | 16.5 h / 1.75 h | 4 🟡 Medium, 1 🔴 Large | Remaining effort: 16.5 h agent + 1.75 h owner across 16 open steps of 5 features. Generated from the task files. |
-| 🦺 project-harness | 0 | 3 | 0 | 0 | 20.5 h / 0 h | 1 🟣 Very large, 1 🟡 Medium, 1 🔴 Large | Remaining effort: 20.5 h across 13 open steps of 3 features. Generated from the task files. |
+| 🦺 project-harness | 0 | 3 | 0 | 0 | 18.5 h / 0 h | 2 🔴 Large, 1 🟡 Medium | Remaining effort: 18.5 h across 13 open steps of 3 features. Generated from the task files. |
 | 🚁 fpvbuddy | 0 | 1 | 0 | 0 | 4 h / 0 h | 1 🟡 Medium | — |
 | 🪴 grover | 3 | 11 | 5 | 0 | 18 h / 12.75 h | 15 🟢 Small, 3 🟡 Medium, 1 🔴 Large | Remaining effort: 18 h agent + 12.75 h owner across 44 open steps of 17 features and 2 other records. Generated from the task files. |
 
@@ -208,6 +208,7 @@ In each backlog's own order (most urgent first). State: Ready = an agent can sta
 
 | Item | Title | Status | Priority | Effort | Remaining | State | Next |
 |---|---|---|---|---|---|---|---|
+| [coordinator:B-001](BACKLOG.md#b-001) | The daily refresh fails when a solution-order item closed in its own repository | Implemented | P1 | 🟡 Medium | 2 h | Ready | Next: B-001-T01 — Show closed order items as Done and drop them from the order in the refresh (Implemented; verificatio… |
 | [coordinator:F-001](BACKLOG.md#f-001) | Coordinator repository with harness v10.9.0, the solution profile, the solution order and… | Implemented | P1 | 🟢 Small | 0.5 h | Ready | Next: F-001-T01 — Adopt the harness, the solution profile, the views, the order and the gap review (Implemented; verifi… |
 | [coordinator:F-002](BACKLOG.md#f-002) | Owner sets the first solution order | Open | P1 | 🟢 Small | 0 h | Ready | Next: F-002-T02 — Land the owner's order in a PR that changes only the list (Implemented; verification pending). |
 | [coordinator:F-003](BACKLOG.md#f-003) | Owner accepts or rejects the first gap-review proposals | Open | P1 | 🟢 Small | 0.25 h | Ready | Next: F-003-T02 — Confirm after the refreshes that each accepted gap is gone (NERV PR #730, gauntlet-protocol PR #85, G… |
@@ -215,10 +216,11 @@ In each backlog's own order (most urgent first). State: Ready = an agent can sta
 | [coordinator:F-006](BACKLOG.md#f-006) | NERV delivers Grover alerts end to end | Open | P2 | 🟢 Small | 1 h agent + 0.5 h owner | Ready | Next: F-006-T01 — Record the grover&#95;alerts contract and its end-to-end check in docs/SOLUTION.md (waits on grover:F… |
 | [coordinator:F-007](BACKLOG.md#f-007) | NERV capability coverage in the Gauntlet across both repositories | Open | P2 | 🟢 Small | 1 h | Ready | Next: F-007-T01 — Name the Gauntlet release NERV needs for its new cases in docs/SOLUTION.md (waits on nerv:F-120) (Pla… |
 
-<details><summary>8 open steps</summary>
+<details><summary>9 open steps</summary>
 
 | Step | Title | Status | Remaining | State |
 |---|---|---|---|---|
+| [coordinator:B-001-T01](BACKLOG.md#b-001-t01) | Show closed order items as Done and drop them from the order in the refresh | Implemented; verification pending | 2 h | Ready |
 | [coordinator:F-001-T01](BACKLOG.md#f-001-t01) | Adopt the harness, the solution profile, the views, the order and the gap review | Implemented; verification pending | 0.5 h | Ready |
 | [coordinator:F-002-T02](BACKLOG.md#f-002-t02) | Land the owner's order in a PR that changes only the list | Implemented; verification pending | 0 h | Ready |
 | [coordinator:F-003-T02](BACKLOG.md#f-003-t02) | Confirm after the refreshes that each accepted gap is gone (NERV PR #730, gauntlet-protocol PR #85,… | Ready | 0.25 h | Ready |
@@ -475,25 +477,24 @@ In each backlog's own order (most urgent first). State: Ready = an agent can sta
 
 | Item | Title | Status | Priority | Effort | Remaining | State | Next |
 |---|---|---|---|---|---|---|---|
-| [project-harness:F-095](https://github.com/voidbrain/project-harness/blob/0125a128bf2388ba19c846bf201cc8c9b7cd958d/docs/BACKLOG.md#f-095) | Solution profile: one order and an owner view, with cross-repository step prerequisites | Open | P2 | 🟣 Very large | 9 h | Ready | Next: F-095-T02 — Solution order file and its rules (Planned). |
-| [project-harness:F-096](https://github.com/voidbrain/project-harness/blob/0125a128bf2388ba19c846bf201cc8c9b7cd958d/docs/BACKLOG.md#f-096) | Stop committing generated backlog views | Open | P2 | 🟡 Medium | 4 h | Ready | Next: F-096-T04 — Procedures, links and local reading (Implemented; verification pending). |
-| [project-harness:F-097](https://github.com/voidbrain/project-harness/blob/0125a128bf2388ba19c846bf201cc8c9b7cd958d/docs/BACKLOG.md#f-097) | Solution profile: agent runway, audits per project and gap review | Open | P2 | 🔴 Large | 7.5 h | Waiting on F-095-T03, F-095-T05, F-095-T04 | Next: F-097-T01 — Agent runway across repositories (Planned). |
+| [project-harness:F-095](https://github.com/voidbrain/project-harness/blob/6690b69dabf421567ec67a9ca6e1d735e06c6661/docs/BACKLOG.md#f-095) | Solution profile: one order and an owner view, with cross-repository step prerequisites | Open | P2 | 🔴 Large | 7.5 h | Ready | Next: F-095-T02 — Solution order file and its rules (Implemented; verification pending). |
+| [project-harness:F-096](https://github.com/voidbrain/project-harness/blob/6690b69dabf421567ec67a9ca6e1d735e06c6661/docs/BACKLOG.md#f-096) | Stop committing generated backlog views | Open | P2 | 🟡 Medium | 3.5 h | Waiting on F-095-T03 | Next: F-096-T05 — Solution coordinators read published or rebuilt views (Planned). |
+| [project-harness:F-097](https://github.com/voidbrain/project-harness/blob/6690b69dabf421567ec67a9ca6e1d735e06c6661/docs/BACKLOG.md#f-097) | Solution profile: agent runway, audits per project and gap review | Open | P2 | 🔴 Large | 7.5 h | Waiting on F-095-T03, F-095-T05, F-095-T04 | Next: F-097-T01 — Agent runway across repositories (Planned). |
 
-<details><summary>11 open steps</summary>
+<details><summary>10 open steps</summary>
 
 | Step | Title | Status | Remaining | State |
 |---|---|---|---|---|
-| [project-harness:F-095-T02](https://github.com/voidbrain/project-harness/blob/0125a128bf2388ba19c846bf201cc8c9b7cd958d/docs/BACKLOG.md#f-095-t02) | Solution order file and its rules | Planned | 2 h | Ready |
-| [project-harness:F-095-T03](https://github.com/voidbrain/project-harness/blob/0125a128bf2388ba19c846bf201cc8c9b7cd958d/docs/BACKLOG.md#f-095-t03) | Dashboard reader keeps steps and readiness, and reports unknown layouts | Planned | 2.5 h | Ready |
-| [project-harness:F-095-T04](https://github.com/voidbrain/project-harness/blob/0125a128bf2388ba19c846bf201cc8c9b7cd958d/docs/BACKLOG.md#f-095-t04) | Remaining hours per backlog and a partial solution total | Planned | 1.5 h | Waiting on F-095-T03 |
-| [project-harness:F-095-T05](https://github.com/voidbrain/project-harness/blob/0125a128bf2388ba19c846bf201cc8c9b7cd958d/docs/BACKLOG.md#f-095-t05) | Owner view: order with live state, waiting on the owner, blocked and nothing to do | Planned | 3 h | Waiting on F-095-T02, F-095-T03 |
-| [project-harness:F-096-T04](https://github.com/voidbrain/project-harness/blob/0125a128bf2388ba19c846bf201cc8c9b7cd958d/docs/BACKLOG.md#f-096-t04) | Procedures, links and local reading | Implemented; verification pending | 0.5 h | Ready |
-| [project-harness:F-096-T05](https://github.com/voidbrain/project-harness/blob/0125a128bf2388ba19c846bf201cc8c9b7cd958d/docs/BACKLOG.md#f-096-t05) | Solution coordinators read published or rebuilt views | Planned | 2 h | Waiting on F-095-T03 |
-| [project-harness:F-096-T06](https://github.com/voidbrain/project-harness/blob/0125a128bf2388ba19c846bf201cc8c9b7cd958d/docs/BACKLOG.md#f-096-t06) | Transition and release | Planned | 1.5 h | Waiting on F-096-T04, F-096-T05 |
-| [project-harness:F-097-T01](https://github.com/voidbrain/project-harness/blob/0125a128bf2388ba19c846bf201cc8c9b7cd958d/docs/BACKLOG.md#f-097-t01) | Agent runway across repositories | Planned | 2.5 h | Waiting on F-095-T03 |
-| [project-harness:F-097-T02](https://github.com/voidbrain/project-harness/blob/0125a128bf2388ba19c846bf201cc8c9b7cd958d/docs/BACKLOG.md#f-097-t02) | Audits, reviews and harness release per project | Planned | 1.5 h | Waiting on F-095-T03 |
-| [project-harness:F-097-T03](https://github.com/voidbrain/project-harness/blob/0125a128bf2388ba19c846bf201cc8c9b7cd958d/docs/BACKLOG.md#f-097-t03) | Gap review: proposals for missing cross-repository work | Planned | 2.5 h | Waiting on F-095-T05, F-097-T02 |
-| [project-harness:F-097-T04](https://github.com/voidbrain/project-harness/blob/0125a128bf2388ba19c846bf201cc8c9b7cd958d/docs/BACKLOG.md#f-097-t04) | Coordinator adoption notes and release for the solution views | Planned | 1 h | Waiting on F-095-T04, F-095-T05, F-097-T01, F-097-T03 |
+| [project-harness:F-095-T02](https://github.com/voidbrain/project-harness/blob/6690b69dabf421567ec67a9ca6e1d735e06c6661/docs/BACKLOG.md#f-095-t02) | Solution order file and its rules | Implemented; verification pending | 0.5 h | Ready |
+| [project-harness:F-095-T03](https://github.com/voidbrain/project-harness/blob/6690b69dabf421567ec67a9ca6e1d735e06c6661/docs/BACKLOG.md#f-095-t03) | Dashboard reader keeps steps and readiness, and reports unknown layouts | Planned | 2.5 h | Ready |
+| [project-harness:F-095-T04](https://github.com/voidbrain/project-harness/blob/6690b69dabf421567ec67a9ca6e1d735e06c6661/docs/BACKLOG.md#f-095-t04) | Remaining hours per backlog and a partial solution total | Planned | 1.5 h | Waiting on F-095-T03 |
+| [project-harness:F-095-T05](https://github.com/voidbrain/project-harness/blob/6690b69dabf421567ec67a9ca6e1d735e06c6661/docs/BACKLOG.md#f-095-t05) | Owner view: order with live state, waiting on the owner, blocked and nothing to do | Planned | 3 h | Waiting on F-095-T02, F-095-T03 |
+| [project-harness:F-096-T05](https://github.com/voidbrain/project-harness/blob/6690b69dabf421567ec67a9ca6e1d735e06c6661/docs/BACKLOG.md#f-096-t05) | Solution coordinators read published or rebuilt views | Planned | 2 h | Waiting on F-095-T03 |
+| [project-harness:F-096-T06](https://github.com/voidbrain/project-harness/blob/6690b69dabf421567ec67a9ca6e1d735e06c6661/docs/BACKLOG.md#f-096-t06) | Transition and release | Planned | 1.5 h | Waiting on F-096-T05 |
+| [project-harness:F-097-T01](https://github.com/voidbrain/project-harness/blob/6690b69dabf421567ec67a9ca6e1d735e06c6661/docs/BACKLOG.md#f-097-t01) | Agent runway across repositories | Planned | 2.5 h | Waiting on F-095-T03 |
+| [project-harness:F-097-T02](https://github.com/voidbrain/project-harness/blob/6690b69dabf421567ec67a9ca6e1d735e06c6661/docs/BACKLOG.md#f-097-t02) | Audits, reviews and harness release per project | Planned | 1.5 h | Waiting on F-095-T03 |
+| [project-harness:F-097-T03](https://github.com/voidbrain/project-harness/blob/6690b69dabf421567ec67a9ca6e1d735e06c6661/docs/BACKLOG.md#f-097-t03) | Gap review: proposals for missing cross-repository work | Planned | 2.5 h | Waiting on F-095-T05, F-097-T02 |
+| [project-harness:F-097-T04](https://github.com/voidbrain/project-harness/blob/6690b69dabf421567ec67a9ca6e1d735e06c6661/docs/BACKLOG.md#f-097-t04) | Coordinator adoption notes and release for the solution views | Planned | 1 h | Waiting on F-095-T04, F-095-T05, F-097-T01, F-097-T03 |
 
 </details>
 
@@ -598,21 +599,20 @@ Possible missing steps, found by reading every backlog. Each row proposes a reco
 | 1 | 1 Cross-repository, no counterpart | [nerv:F-120](https://github.com/voidbrain/nerv/blob/9d5ea905af5211a3236b12bec8dbd45696fd3764/docs/BACKLOG.md#f-120) | "General domain packs (coding, embedded, logic, Italian quality, 3D printing, image generation) were requested from gauntlet-protocol the same day and…" — gauntlet-protocol has no open record that names nerv (coordinated by coordinator:F-007) | gauntlet-protocol: a record for what nerv:F-120 needs from it, or nerv: drop the dependency |
 | 2 | 1 Cross-repository, no counterpart | [grover:B-002](https://github.com/voidbrain/Grover/blob/44b893baa4959cac17ea9a1670b6a7647467da51/docs/BACKLOG.md#b-002) | "🧑‍🔧 B-002-T03 — Template release with a configurable convention source is out (waits on project-harness:F-098-T01 (released)) (Planned)." — project-harness has no open record that names grover | project-harness: a record for what grover:B-002 needs from it, or grover: drop the dependency |
 | 3 | 4 No next step | [nerv:B-131](https://github.com/voidbrain/nerv/blob/9d5ea905af5211a3236b12bec8dbd45696fd3764/docs/BACKLOG.md#b-131) | B-131 is Open with no open step: "Next: close after #738 merges (fix merged in #735, live check passed in F-006-T…" | nerv: add the next step to B-131, or verify and close it |
-| 4 | 6 Harness behind | coordinator `.harness.json` | coordinator is on harness v10.9.0; the latest template release is v10.12.0 | coordinator: a record "Reconcile to harness v10.12.0" (APPLY.md, Reconciling), done in a session of that repository |
-| 5 | 6 Harness behind | nerv `.harness.json` | nerv is on harness v10.9.0; the latest template release is v10.12.0 | nerv: a record "Reconcile to harness v10.12.0" (APPLY.md, Reconciling), done in a session of that repository |
-| 6 | 6 Harness behind | gauntlet-protocol `.harness.json` | gauntlet-protocol is on harness v10.9.0; the latest template release is v10.12.0 | gauntlet-protocol: a record "Reconcile to harness v10.12.0" (APPLY.md, Reconciling), done in a session of that repository |
-| 7 | 6 Harness behind | project-harness `.harness.json` | project-harness is on harness v10.11.3; the latest template release is v10.12.0 | project-harness: a record "Reconcile to harness v10.12.0" (APPLY.md, Reconciling), done in a session of that repository |
-| 8 | 6 Harness behind | fpvbuddy `.harness.json` | fpvbuddy is on harness v10.9.0; the latest template release is v10.12.0 | fpvbuddy: a record "Reconcile to harness v10.12.0" (APPLY.md, Reconciling), done in a session of that repository |
-| 9 | 6 Harness behind | grover `.harness.json` | grover is on harness v10.9.0; the latest template release is v10.12.0 | grover: a record "Reconcile to harness v10.12.0" (APPLY.md, Reconciling), done in a session of that repository |
+| 4 | 6 Harness behind | coordinator `.harness.json` | coordinator is on harness v10.9.0; the latest template release is v10.12.1 | coordinator: a record "Reconcile to harness v10.12.1" (APPLY.md, Reconciling), done in a session of that repository |
+| 5 | 6 Harness behind | nerv `.harness.json` | nerv is on harness v10.9.0; the latest template release is v10.12.1 | nerv: a record "Reconcile to harness v10.12.1" (APPLY.md, Reconciling), done in a session of that repository |
+| 6 | 6 Harness behind | gauntlet-protocol `.harness.json` | gauntlet-protocol is on harness v10.9.0; the latest template release is v10.12.1 | gauntlet-protocol: a record "Reconcile to harness v10.12.1" (APPLY.md, Reconciling), done in a session of that repository |
+| 7 | 6 Harness behind | fpvbuddy `.harness.json` | fpvbuddy is on harness v10.9.0; the latest template release is v10.12.1 | fpvbuddy: a record "Reconcile to harness v10.12.1" (APPLY.md, Reconciling), done in a session of that repository |
+| 8 | 6 Harness behind | grover `.harness.json` | grover is on harness v10.9.0; the latest template release is v10.12.1 | grover: a record "Reconcile to harness v10.12.1" (APPLY.md, Reconciling), done in a session of that repository |
 
 ## Sources
 
 | Source | Revision | Read from | Open records | Open steps |
 |---|---|---|---:|---:|
-| 🧭 coordinator | [028ee2e2d50d](https://github.com/voidbrain/coordinator/commit/028ee2e2d50d0ac7ac7e8652aac3ad0a641d95a4) | working checkout | 6 | 8 |
+| 🧭 coordinator | [52f44e618bfb](https://github.com/voidbrain/coordinator/commit/52f44e618bfbe349053530dce27b24989844d20d) | working checkout | 7 | 9 |
 | 𖣂 nerv | [9d5ea905af52](https://github.com/voidbrain/nerv/commit/9d5ea905af5211a3236b12bec8dbd45696fd3764) | GitHub | 72 | 124 |
 | 🤖 gauntlet-protocol | [f47e8539fa20](https://github.com/voidbrain/gauntlet-protocol/commit/f47e8539fa20bb4f5d2d801fe59c80ef79598dc1) | GitHub | 5 | 16 |
-| 🦺 project-harness | [0125a128bf23](https://github.com/voidbrain/project-harness/commit/0125a128bf2388ba19c846bf201cc8c9b7cd958d) | GitHub | 3 | 11 |
+| 🦺 project-harness | [6690b69dabf4](https://github.com/voidbrain/project-harness/commit/6690b69dabf421567ec67a9ca6e1d735e06c6661) | GitHub | 3 | 10 |
 | 🚁 fpvbuddy | [383242f31ab6](https://github.com/voidbrain/FPVBuddy/commit/383242f31ab67dd4278ee36495a587d2f4f3a9f8) | GitHub | 1 | 4 |
 | 🪴 grover | [44b893baa495](https://github.com/voidbrain/Grover/commit/44b893baa4959cac17ea9a1670b6a7647467da51) | GitHub | 19 | 44 |
 
