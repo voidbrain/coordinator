@@ -266,7 +266,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|---|---|---|---|:---:|:---:|:---:|
 | 🔴 Open | 🔹 P3 | 🟡 Medium | 1.25 h | — | — | 🤖 | — | — |
 
-💻 **→** Next: from tasks; F-010-T01 waits on the repository settings (branch protection requiring `check`, allow auto-merge), which the agent's permission system refused to change.
+💻 **→** Next: from tasks; F-010-T01 lands in PR #31 (settings applied by the owner 2026-11-25); then F-010-T02 dispatches a refresh.
 
 | | |
 |---|---|
