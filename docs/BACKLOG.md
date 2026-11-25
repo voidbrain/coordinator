@@ -116,7 +116,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | Effort | Step | Estimate | Actual | Status | PRs |
 |---|---|---|---|---|---|
 | — | <a id="f-004-t01"></a>F-004-T01 — Owner takes the template proposal to a project-harness session | — | 0 h | Completed | — |
-| — | <a id="f-004-t02"></a>F-004-T02 — Reconcile to the template release that ships the proposal and retire the project tool | 2 h | 2 h (stated) | Completed | [PR #29](https://github.com/voidbrain/coordinator/pull/29) reconcile 10.20.1, template prune, parity |
+| — | <a id="f-004-t02"></a>F-004-T02 — Reconcile to the template release that fixes Proposal 3 and retire what the project tool duplicates | 2 h | 2 h (stated) | Completed | [PR #29](https://github.com/voidbrain/coordinator/pull/29) reconcile 10.20.1, template prune, parity |
 | — | <a id="f-004-t03"></a>F-004-T03 — Owner takes Proposal 3 (dashboard defects found at the 10.20.0 reconcile) to a project-harness session | — | 0 h | Completed | [PR #29](https://github.com/voidbrain/coordinator/pull/29) closed on project-harness v10.20.1 (B-057, B-058) |
 
 </details>
