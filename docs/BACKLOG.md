@@ -3,7 +3,7 @@
 Current work ledger, reviewed 24 November 2026 against main `e03eb0c`. Cross-repository work only; each component's work lives in its own backlog ([overview](SOLUTION-OVERVIEW.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 6.25 h agent + 0.5 h owner across 9 open steps of 7 features. 2.25 h of actual effort recorded on 2 steps. Generated from the task files.
+**Remaining effort:** 6 h agent + 0.5 h owner across 8 open steps of 6 features. 2.25 h of actual effort recorded on 2 steps. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -136,53 +136,6 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | Opened | 2026-11-24 |
 | Verification | Pending |
 | Reviewed | 2026-11-24 |
-
-</details>
-
----
-
-### <a id="f-003"></a>[✨ F-003](#top)
-
-**Owner accepts or rejects the first gap-review proposals**
-
-| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
-|---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔺 P1 | 🟢 Small | 0.25 h | — | — | 🤖 | — | — |
-
-💻 **→** Next: F-003-T02 — Confirm after the refreshes that each accepted gap is gone (NERV PR #730, gauntlet-protocol PR #85, Grover PR #30, NERV's F-115 closure) (Ready).
-
-| | |
-|---|---|
-| **Issue** | The first gap review (2026-11-24) found missing cross-repository records, missing estimates and owner checks without a procedure page. The coordinator never edits a component, so each accepted proposal is created in its owning repository. |
-| **Reproduce** | `npm run solution:refresh`, then the "Gap review (proposals)" section of `docs/SOLUTION-OVERVIEW.md`. |
-| **Check** | Every proposal is accepted or rejected by the owner; accepted ones exist in their owning backlogs (the next refresh no longer lists them); rejected ones are recorded here with the reason. |
-
-**Feature steps**
-
-| Effort | Step | Estimate | Actual | Remaining | Status | Who | PRs |
-|---|---|---|---|---|---|:---:|---|
-| 🟢 Small | <a id="f-003-t02"></a>F-003-T02 — Confirm after the refreshes that each accepted gap is gone (NERV PR #730, gauntlet-protocol PR #85, Grover PR #30, NERV's F-115 closure) | 0.25 h | 0 h | 0.25 h | Ready | 🤖 | [PR #21](https://github.com/voidbrain/coordinator/pull/21) Gaps 2 to 7 gone; gap 1 (nerv:F-120 counterpart) remains |
-| 🟢 Small | **Total** | 0.25 h (1 of 2 steps) | 0 h (0 of 2 steps recorded) | 0.25 h | 1 of 2 completed | | |
-
-<details><summary>Done steps (1)</summary>
-
-| Effort | Step | Estimate | Actual | Status | PRs |
-|---|---|---|---|---|---|
-| — | <a id="f-003-t01"></a>F-003-T01 — Owner accepts or rejects each gap-review proposal | — | 0 h | Completed | — |
-
-</details>
-
-<details>
-<summary>Next action, estimates and PR history</summary>
-
-[Full notes & evidence](work/records/F-003.md)
-
-| Field | Value |
-|---|---|
-| PR / evidence | Steps: F-003-T02: [PR #21](https://github.com/voidbrain/coordinator/pull/21) Gaps 2 to 7 gone; gap 1 (nerv:F-120 counterpart) remains. — |
-| Opened | 2026-11-24 |
-| Verification | Pending |
-| Reviewed | 2026-11-25 |
 
 </details>
 
