@@ -93,9 +93,9 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔹 P3 | 🟢 Small | 0.25 h agent + 0.25 h owner | — | — | ⏳ | — | 🤔 |
+| 🔴 Open | 🔹 P3 | 🟢 Small | 0.25 h agent + 0.25 h owner | — | — | 🤖 | — | — |
 
-🧑 **→** The owner chooses how to word the fixture rule: [options in the audit report](audits/2026-11-26-coordinator-full.md#findings) (finding 3).
+💻 **→** Decision (owner, 2026-11-26): option (b). The owner first answered "(a) Drop the line. The simplest.", then replaced it a minute later with: reword it to "a project tool that reads a backlog adds a test with invented data; an unknown layout shows as a problem, never as no work." (the dead `test/fixtures/` and `expected.json` names removed). The line is a project line (`<!-- project -->`), so no harness override applies.
 
 | | |
 |---|---|
@@ -107,8 +107,8 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who |
 |---|---|---|---|---|---|---|---|:---:|
-| 🟢 Small | <a id="b-007-t01"></a>B-007-T01 — Owner: choose the wording of the backlog-reader fixture rule | 0 h | 0 h | 0 h agent + 0.25 h owner | Ready | — | [B-007-T02](#b-007-t02) | [🤔](audits/2026-11-26-coordinator-full.md#findings) |
-| 🟢 Small | <a id="b-007-t02"></a>B-007-T02 — Apply the chosen fixture rule in AGENTS.md | 0.25 h | 0 h | 0.25 h | Planned | [B-007-T01](#b-007-t01) | — | ⏳ 🤖 |
+| 🟢 Small | <a id="b-007-t01"></a>B-007-T01 — Owner: choose the wording of the backlog-reader fixture rule | 0 h | 0 h | 0 h agent + 0.25 h owner | Implemented; verification pending | — | [B-007-T02](#b-007-t02) | [🤔](audits/2026-11-26-coordinator-full.md#findings) |
+| 🟢 Small | <a id="b-007-t02"></a>B-007-T02 — Apply the chosen fixture rule in AGENTS.md | 0.25 h | 0 h | 0.25 h | Implemented; verification pending | [B-007-T01](#b-007-t01) | — | 🤖 |
 | 🟢 Small | **Total** | 0.25 h | 0 h (0 of 2 steps recorded) | 0.25 h agent + 0.25 h owner | 0 of 2 completed | | | |
 
 <details>
