@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "implemented",
+  "status": "closed",
   "id": "F-016-T02",
   "title": "Gap-review checks for the three shared assets",
   "goal": "The gap review flags, per project, work that bypasses a shared asset or lacks a recorded skip",
@@ -36,7 +36,7 @@
   "effort": {
     "size": "small",
     "estimate": "0 remaining",
-    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work; re-estimated the same day for the owner's widened scope. Not a measurement. Implemented 2026-11-26: three shared-asset checks in docs/agents/gap-review.md and a project-harness proposal (docs/proposals/shared-asset-checks.md) for automating them; no harness file edited; verification is the PR's green check:fast in CI.",
+    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work; re-estimated the same day for the owner's widened scope. Not a measurement. Implemented 2026-11-26: three shared-asset checks in docs/agents/gap-review.md and a project-harness proposal (docs/proposals/shared-asset-checks.md) for automating them; no harness file edited; verification is the PR's green check:fast in CI. Closed 2026-11-26 on PR #71's green CI.",
     "reviewed": "2026-11-26",
     "agentHours": 0,
     "ownerHours": 0,
@@ -51,6 +51,10 @@
     {
       "pr": 71,
       "note": "gap-review checks; harness proposal"
+    },
+    {
+      "pr": 72,
+      "note": "close"
     }
   ]
 }

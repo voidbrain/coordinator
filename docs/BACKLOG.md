@@ -1,10 +1,10 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 26 November 2026 against main `486b854`. PR #70 (F-016-T01 Shared assets section in the domain map) merged on green CI.
+Current work ledger, reviewed 26 November 2026 against main `5cd7567`. PR #71 (F-016-T02 shared-asset checks in the gap review, F-016-T01 closed) merged on green CI.
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 21.25 h agent + 1 h owner across 27 open steps of 8 features and 2 other records. Generated from the task files.
+**Remaining effort:** 21.25 h agent + 1 h owner across 26 open steps of 8 features and 2 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -338,7 +338,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|---|---|---|---|:---:|:---:|:---:|
 | 🔴 Open | 🔹 P3 | 🟣 Very large | 10 h | — | — | 🤖 | — | — |
 
-💻 **→** Next: F-016-T02 — Gap-review checks for the three shared assets (Implemented; verification pending).
+💻 **→** Next: F-016-T03 — Gauntlet inventory proposal for nerv (Planned).
 
 | | |
 |---|---|
@@ -350,21 +350,21 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | PRs |
 |---|---|---|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-016-t02"></a>F-016-T02 — Gap-review checks for the three shared assets | 2 h | 0 h | 0 h | Implemented; verification pending | — | [F-016-T03](#f-016-t03), [F-016-T04](#f-016-t04), [F-016-T05](#f-016-t05), [F-016-T06](#f-016-t06), [F-016-T07](#f-016-t07), [F-016-T08](#f-016-t08) | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan; [PR #71](https://github.com/voidbrain/coordinator/pull/71) gap-review checks; harness proposal |
-| 🟡 Medium | <a id="f-016-t03"></a>F-016-T03 — Gauntlet inventory proposal for nerv | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | [F-016-T09](#f-016-t09) | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
-| 🟡 Medium | <a id="f-016-t04"></a>F-016-T04 — Gauntlet inventory proposal for grover | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | [F-016-T09](#f-016-t09) | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
-| 🟡 Medium | <a id="f-016-t05"></a>F-016-T05 — Gauntlet inventory proposal for fpvbuddy | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | [F-016-T09](#f-016-t09) | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
-| 🟡 Medium | <a id="f-016-t06"></a>F-016-T06 — Gauntlet inventory proposal for hobo | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | [F-016-T09](#f-016-t09) | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
-| 🟡 Medium | <a id="f-016-t07"></a>F-016-T07 — Gauntlet inventory proposal for openbando | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | [F-016-T09](#f-016-t09) | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
-| 🟡 Medium | <a id="f-016-t08"></a>F-016-T08 — Shared-logic inventory: whether to create blocks and its first package | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | — | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan; [PR #62](https://github.com/voidbrain/coordinator/pull/62) blocks criterion; [PR #63](https://github.com/voidbrain/coordinator/pull/63) battery core not a blocks candidate |
+| 🟡 Medium | <a id="f-016-t03"></a>F-016-T03 — Gauntlet inventory proposal for nerv | 1.5 h | 0 h | 1.5 h | Planned | — | [F-016-T09](#f-016-t09) | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
+| 🟡 Medium | <a id="f-016-t04"></a>F-016-T04 — Gauntlet inventory proposal for grover | 1.5 h | 0 h | 1.5 h | Planned | — | [F-016-T09](#f-016-t09) | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
+| 🟡 Medium | <a id="f-016-t05"></a>F-016-T05 — Gauntlet inventory proposal for fpvbuddy | 1.5 h | 0 h | 1.5 h | Planned | — | [F-016-T09](#f-016-t09) | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
+| 🟡 Medium | <a id="f-016-t06"></a>F-016-T06 — Gauntlet inventory proposal for hobo | 1.5 h | 0 h | 1.5 h | Planned | — | [F-016-T09](#f-016-t09) | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
+| 🟡 Medium | <a id="f-016-t07"></a>F-016-T07 — Gauntlet inventory proposal for openbando | 1.5 h | 0 h | 1.5 h | Planned | — | [F-016-T09](#f-016-t09) | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
+| 🟡 Medium | <a id="f-016-t08"></a>F-016-T08 — Shared-logic inventory: whether to create blocks and its first package | 1.5 h | 0 h | 1.5 h | Planned | — | — | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan; [PR #62](https://github.com/voidbrain/coordinator/pull/62) blocks criterion; [PR #63](https://github.com/voidbrain/coordinator/pull/63) battery core not a blocks candidate |
 | 🟢 Small | <a id="f-016-t09"></a>F-016-T09 — Consolidated packs and graders proposal for gauntlet-protocol | 1 h | 0 h | 1 h | Planned | [F-016-T03](#f-016-t03), [F-016-T04](#f-016-t04), [F-016-T05](#f-016-t05), [F-016-T06](#f-016-t06), [F-016-T07](#f-016-t07) | — | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
-| 🟣 Very large | **Total** | 13.5 h | 0 h (0 of 9 steps recorded) | 10 h | 1 of 9 completed | | | |
+| 🟣 Very large | **Total** | 13.5 h | 0 h (0 of 9 steps recorded) | 10 h | 2 of 9 completed | | | |
 
-<details><summary>Done steps (1)</summary>
+<details><summary>Done steps (2)</summary>
 
 | Effort | Step | Estimate | Actual | Status | PRs |
 |---|---|---|---|---|---|
 | — | <a id="f-016-t01"></a>F-016-T01 — Shared assets section in docs/DOMAINS.md: bricks, blocks and the Gauntlet | 1.5 h | 0 h | Completed | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan; [PR #62](https://github.com/voidbrain/coordinator/pull/62) blocks criterion; [PR #70](https://github.com/voidbrain/coordinator/pull/70) Shared assets section; [PR #71](https://github.com/voidbrain/coordinator/pull/71) close |
+| — | <a id="f-016-t02"></a>F-016-T02 — Gap-review checks for the three shared assets | 2 h | 0 h | Completed | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan; [PR #71](https://github.com/voidbrain/coordinator/pull/71) gap-review checks; harness proposal; [PR #72](https://github.com/voidbrain/coordinator/pull/72) close |
 
 </details>
 
@@ -375,7 +375,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Steps: F-016-T01: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan; [PR #62](https://github.com/voidbrain/coordinator/pull/62) blocks criterion; [PR #70](https://github.com/voidbrain/coordinator/pull/70) Shared assets section; [PR #71](https://github.com/voidbrain/coordinator/pull/71) close · F-016-T02: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan; [PR #71](https://github.com/voidbrain/coordinator/pull/71) gap-review checks; harness proposal · F-016-T03: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan · F-016-T04: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan · F-016-T05: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan · F-016-T06: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan · F-016-T07: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan · F-016-T08: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan; [PR #62](https://github.com/voidbrain/coordinator/pull/62) blocks criterion; [PR #63](https://github.com/voidbrain/coordinator/pull/63) battery core not a blocks candidate · F-016-T09: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan. [#61](https://github.com/voidbrain/coordinator/pull/61) (plan), [#62](https://github.com/voidbrain/coordinator/pull/62) (blocks criterion), [#65](https://github.com/voidbrain/coordinator/pull/65) (order: solution:F-016 at 7); [#70](https://github.com/voidbrain/coordinator/pull/70) (F-016-T01 Shared assets section); [#71](https://github.com/voidbrain/coordinator/pull/71) (F-016-T02 gap-review checks, close F-016-T01); owner request and approval 2026-11-26; scope widened and blocks candidates corrected by the owner 2026-11-26 |
+| PR / evidence | Steps: F-016-T01: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan; [PR #62](https://github.com/voidbrain/coordinator/pull/62) blocks criterion; [PR #70](https://github.com/voidbrain/coordinator/pull/70) Shared assets section; [PR #71](https://github.com/voidbrain/coordinator/pull/71) close · F-016-T02: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan; [PR #71](https://github.com/voidbrain/coordinator/pull/71) gap-review checks; harness proposal; [PR #72](https://github.com/voidbrain/coordinator/pull/72) close · F-016-T03: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan · F-016-T04: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan · F-016-T05: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan · F-016-T06: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan · F-016-T07: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan · F-016-T08: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan; [PR #62](https://github.com/voidbrain/coordinator/pull/62) blocks criterion; [PR #63](https://github.com/voidbrain/coordinator/pull/63) battery core not a blocks candidate · F-016-T09: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan. [#61](https://github.com/voidbrain/coordinator/pull/61) (plan), [#62](https://github.com/voidbrain/coordinator/pull/62) (blocks criterion), [#65](https://github.com/voidbrain/coordinator/pull/65) (order: solution:F-016 at 7); [#70](https://github.com/voidbrain/coordinator/pull/70) (F-016-T01 Shared assets section); [#71](https://github.com/voidbrain/coordinator/pull/71) (F-016-T02 gap-review checks, close F-016-T01); [#72](https://github.com/voidbrain/coordinator/pull/72) (close F-016-T02); owner request and approval 2026-11-26; scope widened and blocks candidates corrected by the owner 2026-11-26 |
 | Components | nerv:F-120, nerv:F-121, nerv:F-122, nerv:F-123, gauntlet-protocol:F-021, gauntlet-protocol:F-022, bricks:F-006, bricks:F-007, bricks:F-008, bricks:F-009, fpvbuddy:F-005, grover:F-008, nerv:F-101 |
 | Opened | 2026-11-26 |
 | Verification | Pending |

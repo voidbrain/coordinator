@@ -47,3 +47,7 @@ PRs #67, #68 and #69 (F-017-T01 cross-project audit procedure and its close, sol
 ## 2026-11-26 — main `486b854`
 
 PR #70 (F-016-T01 Shared assets section in the domain map) merged on green CI.
+
+## 2026-11-26 — main `5cd7567`
+
+PR #71 (F-016-T02 shared-asset checks in the gap review, F-016-T01 closed) merged on green CI.
