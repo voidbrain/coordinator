@@ -9,7 +9,7 @@ Each component audits itself ([audit](audit.md)), and the gap review finds steps
 1. Refresh the views and run the gap review first: `GH_TOKEN=$(gh auth token) npm run solution:refresh`, then [gap review](gap-review.md), "Run it".
 2. Read every component listed in [.solution.json](../../.solution.json) on GitHub at its `ref` (`main`), not the local checkouts, which can be behind. Note each component's commit SHA: every finding cites the revision it was read at.
 3. Run the six checks below against every component backlog, this repository's own backlog, [the domain map](../DOMAINS.md), [SOLUTION](../SOLUTION.md) and [the solution order](../solution-order.md); check 6 also reads each component's settings, test scripts and CI.
-4. Record the run on the current cross-project audit record (`solution:F-017` for the first run): the date, the SHAs read, each check's result with an evidence link per finding, and "no findings" for a check that found none. A check you could not run is reported as not run, with the reason, never as clean.
+4. Record the run on the current cross-project audit record (`coordinator:F-017` for the first run): the date, the SHAs read, each check's result with an evidence link per finding, and "no findings" for a check that found none. A check you could not run is reported as not run, with the reason, never as clean.
 
 ## The six checks
 
@@ -36,13 +36,13 @@ Each MCP producer against what its consumer expects: tool names, message fields,
 - 🪴 grover's alerts (`grover:F-008`; the hub's `mcp.ts` and `alerts.ts`) against what 𖣂 nerv delivers (`nerv:F-122`).
 - 🚁 fpvbuddy's MCP tools against what 𖣂 nerv consumes (`nerv:F-101-T08` to `nerv:F-101-T10`).
 - 🗺️ hobo's MCP server (`hobo:F-011`: places, trips and totals) against what 𖣂 nerv consumes (`nerv:F-131-T03`).
-- Any alert producer (grover, fpvbuddy, later openbando and hobo) against the producer-neutral alert contract (`solution:F-018`) once it is written.
+- Any alert producer (grover, fpvbuddy, later openbando and hobo) against the producer-neutral alert contract (`coordinator:F-018`) once it is written.
 
 Add a pair when a new producer or consumer is recorded. A side that diverges from the written contract gets the proposal; when the contract is silent or both sides changed, propose a coordination record here with `Components` links, and the owner decides which side moves.
 
 ### 4. Duplication
 
-Use the [shared-asset checks](gap-review.md#shared-asset-checks) in the gap review (bricks for UI, blocks for shared domain logic, the Gauntlet for model-facing features and MCP tools), added by `solution:F-016-T02`, and the gap review's reading of the domain map. They are not repeated here: report their results under this heading, once, with a link to the gap-review finding.
+Use the [shared-asset checks](gap-review.md#shared-asset-checks) in the gap review (bricks for UI, blocks for shared domain logic, the Gauntlet for model-facing features and MCP tools), added by `coordinator:F-016-T02`, and the gap review's reading of the domain map. They are not repeated here: report their results under this heading, once, with a link to the gap-review finding.
 
 ### 5. Audit cadence
 
@@ -75,4 +75,4 @@ Never edit, push to or open a PR on a component repository from this repository 
 ## Limits
 
 - Checks 1 to 3 read text and can be wrong both ways: a reference can be written without a `repo:ID`, and a decision can be recorded only in a conversation. "No findings" does not prove the repositories agree.
-- Checks 1, 5 and 6 are done by hand until the solution tool reports them; the proposal to automate checks 1 and 5 went to 🦺 project-harness (`solution:F-017-T03`, [proposal](../proposals/cross-project-audit-checks.md)). No harness file is edited here.
+- Checks 1, 5 and 6 are done by hand until the solution tool reports them; the proposal to automate checks 1 and 5 went to 🦺 project-harness (`coordinator:F-017-T03`, [proposal](../proposals/cross-project-audit-checks.md)). No harness file is edited here.

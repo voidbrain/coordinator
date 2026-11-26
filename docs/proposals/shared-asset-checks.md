@@ -1,6 +1,6 @@
 # Proposal for the harness template: shared-asset checks in the gap review
 
-Written 2026-11-26 in voidbrain/coordinator (`solution:F-016-T02`) for the owner to take to a project-harness session. Nothing here changes the template. The template's own session decides, records and releases. Until a release adopts it, the coordinator runs these checks by hand ([gap review](../agents/gap-review.md#shared-asset-checks)).
+Written 2026-11-26 in voidbrain/coordinator (`coordinator:F-016-T02`) for the owner to take to a project-harness session. Nothing here changes the template. The template's own session decides, records and releases. Until a release adopts it, the coordinator runs these checks by hand ([gap review](../agents/gap-review.md#shared-asset-checks)).
 
 ## Problem
 

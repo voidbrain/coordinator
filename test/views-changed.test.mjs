@@ -24,8 +24,8 @@ const dashboard = ({ time, sha, alpha = 'Open: Ready' }) =>
     `| coordinator | [${sha.slice(0, 12)}](${own(sha)}) | Committed snapshot; requested working checkout |`,
     '| alpha | [aaaaaaaaaaaa](https://github.com/example/alpha/commit/aaaaaaaaaaaa) | Committed snapshot; GitHub |',
     '',
-    `| 🚦 coordinator | [solution:F-001-T01](${blob(sha)}) | Step | — | owner procedure |`,
-    `| [solution:F-001](${blob(sha)}) | Feature | Open |`,
+    `| 🚦 coordinator | [coordinator:F-001-T01](${blob(sha)}) | Step | — | owner procedure |`,
+    `| [coordinator:F-001](${blob(sha)}) | Feature | Open |`,
     `| 1 | 🅰 | [alpha:F-001](https://github.com/example/alpha/blob/aaaa/docs/BACKLOG.md#f-001) | One | ${alpha} |`,
     '',
   ].join('\n');
@@ -89,8 +89,8 @@ const htmlDashboard = ({ time, sha, alpha = 'Open: Ready' }) =>
     '</table>',
     '',
     '<table>',
-    td('🚦 Coordinator', a(blob(sha), 'solution:F-001-T01'), 'Step', '—', 'owner procedure'),
-    td(a(blob(sha), 'solution:F-001'), 'Feature', 'Open'),
+    td('🚦 Coordinator', a(blob(sha), 'coordinator:F-001-T01'), 'Step', '—', 'owner procedure'),
+    td(a(blob(sha), 'coordinator:F-001'), 'Feature', 'Open'),
     td(
       '<td align="right">1</td>',
       '🅰',

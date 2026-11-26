@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "reviewed": "2026-11-26T17:17:09.706Z",
+  "reviewed": "2026-11-26T17:54:29.793Z",
   "policy": "c9570a34ab0c7e4f1274fe37802a6eff8e7edfb8266c98f0cec7119533729b2b",
   "inputs": {
     "AGENTS.md": "a9231b0e2cee49a8565b36ac8e246f5360e9adfa98e6ee3619cb14d783e841de",
     "docs/BACKLOG-RULES.md": "a090ba3c7571d60c50a386f32e30aab528104003a2a9da6c31cedec6ef05b77a",
     "docs/agents/architecture-review.md": "5d967314854912b1a5f1446aeab309763b14f9856bceb3c82df5c6c25c166526",
-    "docs/agents/areas.md": "b7e3bc2a676befba66bf9825b18801ca43944a9a2b62014508be459a011f3e86",
+    "docs/agents/areas.md": "bc3f78c910a1bed75d2702041b681b9eddeb12c92e5956170607189d106eab5f",
     "docs/agents/audit.md": "e58480c21e8afe9a825df4726fa93b8a7f841557f4267f1fc2c61ac3dac8f642",
     "docs/agents/change-impact.md": "dc1c473e274f76bd70a87ff57bbc53fc75dc75a35d121cf67baf163a2fd2e975",
     "docs/agents/coverage-guide.md": "3d539eb8beedfa101a5e47d9973cdf85dce197436fab2ab096f760e12d208106",
@@ -19,7 +19,7 @@
     "docs/agents/rule-review.md": "20edef109354858933477c5284ff91a16179a3aad85346fd1bb44b4e80bdb195",
     "docs/agents/skills-discovery.md": "ad322a2b93f2dc1b8f27d0b052248d57c050ca852077589ba889447577357057",
     "docs/agents/skills.md": "7da9fc43bd0886b06580cc15b9a45e47d097c6fa7fca627bf7ed0f0202a409a1",
-    "docs/agents/solution-profile.md": "5f7af377d9ca9ea65b93be18e27f450021a1126eac3ece86ac793caa317ebdbe",
+    "docs/agents/solution-profile.md": "8f9e16e860303bb2d9517e717c74d3fde556c7efdc99d1d072ce39c4d9a01737",
     "docs/agents/task-context.md": "c689f02b9571ff747a4866d71690bb01afd7e6654dea640a1ce1c66e7c0fa204",
     "docs/agents/work-usage-launch.md": "3225858b8b840322d2bb073f30659c376826eea3d1f772df8582fb37eef74465",
     "docs/agents/work-usage.md": "9a4c574e6cd2b0af3ddd1cb5a70560dc84c962c991d42567b7829b9a25cae3be",
@@ -97,32 +97,8 @@
     {
       "kind": "rule",
       "disposition": "implemented",
-      "target": "AGENTS.md",
-      "evidence": "2026-11-26: AGENTS.md component list gains hobo and bricks (cross-project audit proposal 6, accepted by the owner); a fact correction, no rule changed."
-    },
-    {
-      "kind": "rule",
-      "disposition": "implemented",
-      "target": "docs/proposals/cross-project-audit-checks.md",
-      "evidence": "2026-11-26: F-017 closed on green CI (#67, #68, #74, #77, #80, #81, #83, #90): cross-project audit procedure, proposal docs/proposals/cross-project-audit-checks.md, full audit docs/audits/2026-11-26-coordinator-full.md and audit.enforce in .harness.json implemented."
-    },
-    {
-      "kind": "rule",
-      "disposition": "implemented",
-      "target": "AGENTS.md",
-      "evidence": "B-007: owner chose option (b) on 2026-11-26; the project line on backlog-reader tests no longer names the retired test/fixtures and expected.json; the requirement (invented data, unknown layout is a problem) is kept."
-    },
-    {
-      "kind": "rule",
-      "disposition": "implemented",
-      "target": "AGENTS.md",
-      "evidence": "2026-11-26: reconcile to project-harness v10.24.1: copied files byte-identical from the tag, behaviour-checks page registered, procedures table and agent-rule lines merged, project lines kept; owner authorised the reconcile in chat 2026-11-26 ('ok to all') although the template backlog is not empty."
-    },
-    {
-      "kind": "rule",
-      "disposition": "implemented",
-      "target": "AGENTS.md",
-      "evidence": "2026-11-26: reconcile to project-harness v10.24.2 (B-129): this repository is the solution coordinator, so it keeps solution-dashboard, solution-refresh, solution-gaps and tools/solution.mjs (owner approved 2026-11-26, 'yep': coordinator-only harness files are copied only here); check-harness, reconcile-preview, maintenance, procedures and solution-profile copied byte-identical from the tag; AGENTS row and docs/SOLUTION.md link the coordinator pages."
+      "target": "docs/agents/solution-profile.md",
+      "evidence": "2026-11-26: reconcile to v10.24.3 (B-130): the coordinator id is set in .solution.json (id coordinator), its records renamed coordinator:ID by owner decision; copied pages byte-identical to the tag."
     }
   ]
 }

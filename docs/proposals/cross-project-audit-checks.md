@@ -1,6 +1,6 @@
 # Proposal for the harness template: cross-reference and audit-cadence gap kinds
 
-Written 2026-11-26 in voidbrain/coordinator (`solution:F-017-T03`) for the owner to take to a project-harness session. Nothing here changes the template. The template's own session decides, records and releases. Until a release adopts it, the coordinator runs checks 1 and 5 of its [cross-project audit](../agents/cross-project-audit.md) by hand.
+Written 2026-11-26 in voidbrain/coordinator (`coordinator:F-017-T03`) for the owner to take to a project-harness session. Nothing here changes the template. The template's own session decides, records and releases. Until a release adopts it, the coordinator runs checks 1 and 5 of its [cross-project audit](../agents/cross-project-audit.md) by hand.
 
 ## Problem
 
@@ -8,7 +8,7 @@ The first cross-project audit ([2026-11-26](../audits/2026-11-26-cross-project.m
 
 | Check | Already in the dashboard (10.21.4) | Missed on 2026-11-26 |
 |---|---|---|
-| 1. Cross-references | "Prerequisite missing or unknown"; "Waits on work that is done", only when **every** prerequisite of a waiting step is done | solution:F-007-T01 waited on nerv:F-120-T01, T02 and T03; T01 and T03 were closed, T02 open, so no gap fired and nothing said to record the two in `externalMet` (proposal 4). A `dependsOn` on a **cancelled** step reads as an unfinished prerequisite, not as stale (nerv:F-101-T05 was cited this way). A wait written only in prose ("waits on bricks being published", hobo:F-010-T02; the order note on fpvbuddy:F-005) is not read (proposals 3, 5) |
+| 1. Cross-references | "Prerequisite missing or unknown"; "Waits on work that is done", only when **every** prerequisite of a waiting step is done | coordinator:F-007-T01 waited on nerv:F-120-T01, T02 and T03; T01 and T03 were closed, T02 open, so no gap fired and nothing said to record the two in `externalMet` (proposal 4). A `dependsOn` on a **cancelled** step reads as an unfinished prerequisite, not as stale (nerv:F-101-T05 was cited this way). A wait written only in prose ("waits on bricks being published", hobo:F-010-T02; the order note on fpvbuddy:F-005) is not read (proposals 3, 5) |
 | 5. Audit cadence | "Audits, reviews and harness": last audit, "no complete full audit", next date per project | No numbered gap, so nothing is proposed to the owning repository; `audit.enforce` is not shown, so "a full baseline exists but enforce is off" (nerv, fpvbuddy, gauntlet-protocol; proposal 17) and "never fully audited" (grover, hobo, bricks, the coordinator; proposal 16) are read off the table by hand |
 
 ## Proposed generic feature
