@@ -15,7 +15,7 @@ The owner's order of work across all repositories: one reference per line, top =
 
 ## Order
 
-Set by the owner on 2026-11-24 (F-002): the proposed order kept as 1–17, `grover:F-005` removed for now, and the day's new work appended. Reordered on the owner's instruction of 2026-11-25: items whose next open work is agent work first, then items whose next step is the owner's, each group in its previous relative order. Items whose note starts with "pending" are ordered but their record has not merged yet; they show as Pending until it does, and the note is removed then. 2026-11-26: coordinator:F-016 added at 7 on the owner's instruction. 2026-11-26: coordinator:F-017 added at 8 on the owner's instruction. 2026-11-26: coordinator:F-020 added after coordinator:F-017 on the owner's instruction.
+Set by the owner on 2026-11-24 (F-002): the proposed order kept as 1–17, `grover:F-005` removed for now, and the day's new work appended. Reordered on the owner's instruction of 2026-11-25: items whose next open work is agent work first, then items whose next step is the owner's, each group in its previous relative order. Items whose note starts with "pending" are ordered but their record has not merged yet; they show as Pending until it does, and the note is removed then. 2026-11-26: coordinator:F-016 added at 7 on the owner's instruction. 2026-11-26: coordinator:F-017 added at 8 on the owner's instruction. 2026-11-26: coordinator:F-020 added after coordinator:F-017 on the owner's instruction. 2026-11-26: coordinator:F-024 added at 7 on the owner's instruction.
 
 <!-- order:start -->
 1. nerv:F-016 — relocate the coordinator without split brain (after B-124)
@@ -24,11 +24,12 @@ Set by the owner on 2026-11-24 (F-002): the proposed order kept as 1–17, `grov
 4. grover:F-008 — alerts NERV can deliver (cross-repository)
 5. nerv:F-120 — Gauntlet coverage of NERV capabilities (cross-repository)
 6. coordinator:F-020 — coherence review: docs and procedures consistent and clear; freeze on new procedures until done
-7. nerv:F-122 — Grover alert delivery, unblocks grover:F-008
-8. nerv:F-123 — MCP connection to Grover's hub
-9. nerv:F-121 — printed parts per drone, print by chat
-10. grover:F-011 — implemented P1 feed cycle; owner try-out pending
-11. grover:F-004 — implemented P1 probe calibration
-12. nerv:F-006 — orchestration across nodes (after B-119)
-13. grover:F-003 — hardware bring-up on the Pi (P1, needs the device)
+7. coordinator:F-024 — live index phase 1 (status); its measurements feed coordinator:F-020's phase-2 decision
+8. nerv:F-122 — Grover alert delivery, unblocks grover:F-008
+9. nerv:F-123 — MCP connection to Grover's hub
+10. nerv:F-121 — printed parts per drone, print by chat
+11. grover:F-011 — implemented P1 feed cycle; owner try-out pending
+12. grover:F-004 — implemented P1 probe calibration
+13. nerv:F-006 — orchestration across nodes (after B-119)
+14. grover:F-003 — hardware bring-up on the Pi (P1, needs the device)
 <!-- order:end -->
