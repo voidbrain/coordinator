@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "id": "F-015-T02",
+  "parent": "F-015",
+  "title": "Dashboard display names and top-aligned tables",
+  "goal": "The owner reads the dashboard by project name, with top-aligned cells",
+  "status": "implemented",
+  "acceptance": [
+    "`.solution.json` label per project and htmlTables true",
+    "views-changed ignores the coordinator's own HTML rows (test failing first)",
+    "the refreshed dashboard on main shows all five owner changes"
+  ],
+  "dependsOn": [
+    "F-015-T01"
+  ],
+  "resources": [
+    ".solution.json",
+    "tools/views-changed.mjs",
+    "test/views-changed.test.mjs",
+    "docs/SOLUTION-DASHBOARD.md",
+    "docs/work/records/F-015.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "0.5 h agent",
+    "basis": "Estimated 2026-11-26: patch releases (v10.21.2 to v10.21.4) at agent speed. Not a measurement.",
+    "reviewed": "2026-11-26",
+    "agentHours": 0.5,
+    "estimateAgentHours": 0.5
+  },
+  "prs": []
+}

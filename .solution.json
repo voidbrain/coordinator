@@ -13,7 +13,8 @@
       "ref": "main",
       "backlog": "docs/BACKLOG.md",
       "archives": [],
-      "emoji": "𖣂"
+      "emoji": "𖣂",
+      "label": "NERV"
     },
     {
       "id": "gauntlet-protocol",
@@ -22,7 +23,8 @@
       "ref": "main",
       "backlog": "docs/BACKLOG.md",
       "archives": [],
-      "emoji": "🤖"
+      "emoji": "🤖",
+      "label": "Gauntlet"
     },
     {
       "id": "project-harness",
@@ -31,7 +33,8 @@
       "ref": "main",
       "backlog": "docs/BACKLOG.md",
       "archives": [],
-      "emoji": "🦺"
+      "emoji": "🦺",
+      "label": "Harness"
     },
     {
       "id": "fpvbuddy",
@@ -40,7 +43,8 @@
       "ref": "main",
       "backlog": "docs/BACKLOG.md",
       "archives": [],
-      "emoji": "🚁"
+      "emoji": "🚁",
+      "label": "FPVBuddy"
     },
     {
       "id": "grover",
@@ -49,7 +53,8 @@
       "ref": "main",
       "backlog": "docs/BACKLOG.md",
       "archives": [],
-      "emoji": "🪴"
+      "emoji": "🪴",
+      "label": "Grover"
     },
     {
       "id": "openbando",
@@ -58,7 +63,8 @@
       "ref": "main",
       "backlog": "docs/BACKLOG.md",
       "archives": [],
-      "emoji": "🏚️"
+      "emoji": "🏚️",
+      "label": "OpenBando"
     },
     {
       "id": "hobo",
@@ -67,7 +73,8 @@
       "ref": "main",
       "backlog": "docs/BACKLOG.md",
       "archives": [],
-      "emoji": "🗺️"
+      "emoji": "🗺️",
+      "label": "Hobo"
     },
     {
       "id": "bricks",
@@ -76,9 +83,11 @@
       "ref": "main",
       "backlog": "docs/BACKLOG.md",
       "archives": [],
-      "emoji": "🧱"
+      "emoji": "🧱",
+      "label": "Bricks"
     }
   ],
   "emoji": "🚦",
-  "label": "coordinator"
+  "label": "Coordinator",
+  "htmlTables": true
 }
