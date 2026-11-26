@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "implemented",
+  "status": "closed",
   "id": "F-017-T02",
   "title": "First cross-project audit run",
   "goal": "The first run is recorded with evidence and the proposals are listed for the owner",
@@ -34,7 +34,7 @@
   "effort": {
     "size": "medium",
     "estimate": "0 remaining",
-    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work, from the size of the gap-review procedure and the F-016 steps of similar scope. Not a measurement. Implemented 2026-11-26: the run is recorded in docs/audits/2026-11-26-cross-project.md and on F-017 with 17 numbered proposals; verification is the PR's green check:fast in CI.",
+    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work, from the size of the gap-review procedure and the F-016 steps of similar scope. Not a measurement. Implemented 2026-11-26: the run is recorded in docs/audits/2026-11-26-cross-project.md and on F-017 with 17 numbered proposals; verification is the PR's green check:fast in CI. Closed 2026-11-26 on PR #74's green CI.",
     "reviewed": "2026-11-26",
     "agentHours": 0,
     "ownerHours": 0,
@@ -49,6 +49,10 @@
     {
       "pr": 74,
       "note": "first run"
+    },
+    {
+      "pr": 75,
+      "note": "close"
     }
   ]
 }
