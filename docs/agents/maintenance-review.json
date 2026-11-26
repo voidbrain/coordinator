@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewed": "2026-11-26T15:00:55.834Z",
+  "reviewed": "2026-11-26T15:03:23.355Z",
   "policy": "c9570a34ab0c7e4f1274fe37802a6eff8e7edfb8266c98f0cec7119533729b2b",
   "inputs": {
     "AGENTS.md": "cdeb1cf2e64308bd0c029fa5afe2a3c9a6adf2df465cb9d0978d1cf34338eba9",
@@ -98,7 +98,25 @@
       "kind": "rule",
       "disposition": "implemented",
       "target": "AGENTS.md",
-      "evidence": "2026-11-26: reconcile to project-harness v10.24.1 (from 10.21.4): copied files byte-identical from the tag, behaviour-checks page registered, procedures table and three Checks-before-you-finish lines and one Work-tracking line merged, project lines kept; owner authorised the reconcile in chat 2026-11-26 ('ok to all') although the template backlog is not empty."
+      "evidence": "2026-11-26: AGENTS.md component list gains hobo and bricks (cross-project audit proposal 6, accepted by the owner); a fact correction, no rule changed."
+    },
+    {
+      "kind": "rule",
+      "disposition": "implemented",
+      "target": "docs/proposals/cross-project-audit-checks.md",
+      "evidence": "2026-11-26: F-017 closed on green CI (#67, #68, #74, #77, #80, #81, #83, #90): cross-project audit procedure, proposal docs/proposals/cross-project-audit-checks.md, full audit docs/audits/2026-11-26-coordinator-full.md and audit.enforce in .harness.json implemented."
+    },
+    {
+      "kind": "rule",
+      "disposition": "implemented",
+      "target": "AGENTS.md",
+      "evidence": "B-007: owner chose option (b) on 2026-11-26; the project line on backlog-reader tests no longer names the retired test/fixtures and expected.json; the requirement (invented data, unknown layout is a problem) is kept."
+    },
+    {
+      "kind": "rule",
+      "disposition": "implemented",
+      "target": "AGENTS.md",
+      "evidence": "2026-11-26: reconcile to project-harness v10.24.1: copied files byte-identical from the tag, behaviour-checks page registered, procedures table and agent-rule lines merged, project lines kept; owner authorised the reconcile in chat 2026-11-26 ('ok to all') although the template backlog is not empty."
     }
   ]
 }
