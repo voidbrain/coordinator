@@ -4,7 +4,7 @@
   "parent": "F-012",
   "title": "Owner: create the voidbrain/bricks library repository",
   "goal": "The owner creates the voidbrain/bricks repository (Bricks 🧱, Angular library @voidbrain/bricks; name decided 2026-11-25) and chooses its visibility and how it publishes",
-  "status": "implemented",
+  "status": "closed",
   "acceptance": [
     "Name decided 2026-11-25: Bricks, emoji 🧱, repository voidbrain/bricks, Angular library package @voidbrain/bricks; web components only if a non-Angular consumer appears",
     "Done 2026-11-25 at the owner's request, before F-012-T03 and nerv:F-130 (started early): the repository exists, public; publishing on public npm with trusted publishing (owner decision 2026-11-25, bricks:F-004)"
@@ -28,8 +28,8 @@
   "effort": {
     "size": "small",
     "estimate": "0 remaining",
-    "basis": "Done 2026-11-25: the owner approved creating the repository early; visibility public and npm publishing decided that day. Not a measurement.",
-    "reviewed": "2026-11-25",
+    "basis": "Done 2026-11-25: the owner approved creating the repository early; visibility public and npm publishing decided that day. Not a measurement. Closed 2026-11-26 (full audit): voidbrain/bricks exists, public, and is in .solution.json (F-012-T05); the dashboard reads it.",
+    "reviewed": "2026-11-26",
     "agentHours": 0,
     "baselineAgentHours": 0,
     "estimateAgentHours": 0,

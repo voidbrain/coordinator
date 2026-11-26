@@ -1,54 +1,16 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 26 November 2026 against main `86abbd7`. PR #76 (order note, audit proposal 5) and PR #77 (audit proposals 4, 6, 9, 16; F-017-T03) merged on green CI; F-017-T03 closed.
+Current work ledger, reviewed 26 November 2026 against main `22744b2`. PRs #78 (close F-017-T03) and #79 (F-018-T01 alert contract) merged on green CI; F-018-T01 closed. The full audit (F-017-T04) closed B-002, F-009 and F-011 and the steps F-012-T04 and F-013-T01, and opened B-005, B-006 and B-007.
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 23.5 h agent + 1.25 h owner across 28 open steps of 9 features and 2 other records. Generated from the task files.
+**Remaining effort:** 21 h agent + 1.75 h owner across 26 open steps of 7 features and 4 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
 
 Bugs (B-) and features (F-) in one list, most urgent first.
 
-### <a id="b-002"></a>[🐞 B-002](#top)
-
-**check:fast fails with a bare HTTP 403 when GH_TOKEN is unset**
-
-| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
-|---|---|---|---|---|---|:---:|:---:|:---:|
-| 🟡 Implemented | 🔹 P3 | 🟢 Small | 0.5 h | — | — | 🤖 | — | — |
-
-💻 **→** Next: B-002-T01 — Make check:fast supply or ask for GH&#95;TOKEN (Implemented; verification pending).
-
-| | |
-|---|---|
-| **Issue** | `npm run check:fast` runs `check:solution` (`tools/solution.mjs check --remote`), which reads GitHub without a token unless `GH_TOKEN` is set. Once the unauthenticated limit (60 requests an hour) is spent, every component reports "GitHub returned HTTP 403" and the check exits 1. AGENTS.md lists both commands with no token; only the refresh line in README and the solution-refresh guide name `GH_TOKEN`. Found by the delivery audit of 2026-11-25. |
-| **Reproduce** | With `GH_TOKEN` unset and `curl -s https://api.github.com/rate_limit` showing core remaining 0, run `npm run check:solution`: five "GitHub returned HTTP 403" lines; `npm run check:fast` exits 1. |
-| **Check** | An agent following AGENTS.md runs `check:fast` with a token (the check lines or the project's `check:solution` script supply `GH_TOKEN=$(gh auth token)`), and it passes; without `gh` logged in, the documented command says what is missing instead of a bare 403. |
-
-**Steps**
-
-| Effort | Step | Estimate | Actual | Remaining | Status |
-|---|---|---|---|---|---|
-| 🟢 Small | <a id="b-002-t01"></a>B-002-T01 — Make check:fast supply or ask for GH&#95;TOKEN | 0.5 h | 0 h | 0.5 h | Implemented; verification pending |
-| 🟢 Small | **Total** | 0.5 h | 0 h (0 of 1 steps recorded) | 0.5 h | 0 of 1 completed |
-
-<details>
-<summary>Next action, estimates and PR history</summary>
-
-[Full notes & evidence](work/records/B-002.md)
-
-| Field | Value |
-|---|---|
-| PR / evidence | Audit [2026-11-25 delivery](audits/2026-11-25-delivery.md), opened in [#27](https://github.com/voidbrain/coordinator/pull/27); [#59](https://github.com/voidbrain/coordinator/pull/59) |
-| Opened | 2026-11-25 |
-| Verification | Pending |
-| Reviewed | 2026-11-25 |
-
-</details>
-
----
 ### <a id="b-004"></a>[🐞 B-004](#top)
 
 **An hourly refresh would open a PR every hour: the coordinator's own revision row was not ignored**
@@ -83,6 +45,121 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | Opened | 2026-11-25 |
 | Verification | Pending |
 | Reviewed | 2026-11-25 |
+
+</details>
+
+---
+### <a id="b-005"></a>[🐞 B-005](#top)
+
+**The refresh guard cannot read the HTML dashboard, so a refresh that drops a Done order item never merges itself**
+
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🔴 Open | 🔹 P3 | 🟢 Small | 1 h | — | — | 🤖 | — | — |
+
+💻 **→** Next: B-005-T01 — Teach the refresh guard the HTML order table, failing test first (Ready).
+
+| | |
+|---|---|
+| **Issue** | Full audit 2026-11-26 ([report](audits/2026-11-26-coordinator-full.md), finding 1). Since the 10.21.4 reconcile (`5209733`, `.solution.json` `htmlTables: true`) the dashboard's order table is HTML, but `closedRefs` in `tools/refresh-guard.mjs` reads only Markdown rows starting with a pipe. It finds no Closed item, so any refresh that drops a Done order item has auto-merge refused (refresh PR #73: "nerv:B-118 was removed but the dashboard does not show it Closed"). It fails safe: a person must land the PR. |
+| **Reproduce** | In a checkout at `22744b2`: `node -e` importing `orderReasons` from `tools/refresh-guard.mjs`, with the committed dashboard where item 1's status cell reads `Closed: ✅ Done: closed` and the order without item 1: it returns the reason above; the same row as a Markdown table returns none. |
+| **Check** | `test/refresh-guard.test.mjs` has a case with an HTML order table (`<tr><td>` cells, the item as a link) that fails before the fix; the guard accepts dropping a Done item from either layout and still refuses an item that is not Closed; the next refresh that drops a Done item merges itself. |
+
+**Steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status |
+|---|---|---|---|---|---|
+| 🟢 Small | <a id="b-005-t01"></a>B-005-T01 — Teach the refresh guard the HTML order table, failing test first | 1 h | 0 h | 1 h | Ready |
+| 🟢 Small | **Total** | 1 h | 0 h (0 of 1 steps recorded) | 1 h | 0 of 1 completed |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+[Full notes & evidence](work/records/B-005.md)
+
+| Field | Value |
+|---|---|
+| PR / evidence | [full audit 2026-11-26](audits/2026-11-26-coordinator-full.md) |
+| Opened | 2026-11-26 |
+| Verification | Pending |
+| Reviewed | 2026-11-26 |
+
+</details>
+
+---
+### <a id="b-006"></a>[🐞 B-006](#top)
+
+**The hourly refresh schedule fires about once a day**
+
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🟠 Investigate | 🔹 P3 | 🟢 Small | 0.5 h agent + 0.25 h owner | — | — | 🤖 | — | — |
+
+💻 **→** Next: B-006-T01 — Count scheduled runs over 48 hours and report (Ready).
+
+| | |
+|---|---|
+| **Issue** | Full audit 2026-11-26 ([report](audits/2026-11-26-coordinator-full.md), finding 2). Since the hourly cron `17 * * * *` landed (PR #43, 2026-11-25 18:13 UTC) to 2026-11-26 09:33 UTC, about 15 hourly slots, Refresh solution views ran on `schedule` once (01:49 UTC); every other run was by hand. Maintenance freshness (`0 9 * * *`) last ran on schedule 2026-11-25 18:57. A hypothesis, not a confirmed bug: GitHub may drop or delay schedules under load. B-004 cannot close on "a day of scheduled runs" until this is understood. |
+| **Reproduce** | `gh run list -R voidbrain/coordinator --workflow refresh-views.yml --event schedule --limit 50 --json createdAt -q '.[].createdAt'` and compare with the hours since 2026-11-25 18:13 UTC. |
+| **Check** | Scheduled runs counted over 48 h here and in one sibling repository with a schedule, with the Actions state of the workflow; the record states whether the schedule fires as configured, and the owner chooses (accept, another minute, or another trigger) if it does not. |
+
+**Steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status |
+|---|---|---|---|---|---|
+| 🟢 Small | <a id="b-006-t01"></a>B-006-T01 — Count scheduled runs over 48 hours and report | 0.5 h | 0 h | 0.5 h agent + 0.25 h owner | Ready |
+| 🟢 Small | **Total** | 0.5 h | 0 h (0 of 1 steps recorded) | 0.5 h agent + 0.25 h owner | 0 of 1 completed |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+[Full notes & evidence](work/records/B-006.md)
+
+| Field | Value |
+|---|---|
+| PR / evidence | [full audit 2026-11-26](audits/2026-11-26-coordinator-full.md) |
+| Opened | 2026-11-26 |
+| Verification | Pending |
+| Reviewed | 2026-11-26 |
+
+</details>
+
+---
+### <a id="b-007"></a>[🐞 B-007](#top)
+
+**AGENTS.md asks for backlog-reader fixtures that no longer exist**
+
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🔴 Open | 🔹 P3 | 🟢 Small | 0.25 h agent + 0.25 h owner | — | — | 🤖 | — | 🤔 |
+
+🧑 **→** The owner chooses how to word the fixture rule: [options in the audit report](audits/2026-11-26-coordinator-full.md#findings) (finding 3).
+
+| | |
+|---|---|
+| **Issue** | Full audit 2026-11-26 ([report](audits/2026-11-26-coordinator-full.md), finding 3). The AGENTS.md project line "A change to a backlog reader adds a fixture to `test/fixtures/` and its expected result to `expected.json`" names files that went with the project's own overview in F-004-T05; the backlog readers are now the copied template `tools/solution.mjs`, which this repository may not edit and the template tests. Changing a governing rule needs the owner (rule review). |
+| **Reproduce** | `ls test/fixtures` fails; `git log --diff-filter=D --name-only -- test/fixtures` shows the removal; docs/agents/areas.md "Retired (F-004-T05)". |
+| **Check** | The owner picks (a) drop the line, (b) reword it for a project-owned reader only ("a project tool that reads a backlog adds a test with invented data; an unknown layout shows as a problem, never as no work"; recommended), or (c) restore fixtures for the template reader; the decision and its date are recorded here and AGENTS.md changes in one PR under the rule review. |
+
+**Steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks |
+|---|---|---|---|---|---|---|---|
+| 🟢 Small | <a id="b-007-t01"></a>B-007-T01 — Owner: choose the wording of the backlog-reader fixture rule | 0 h | 0 h | 0 h agent + 0.25 h owner | Ready | — | [B-007-T02](#b-007-t02) |
+| 🟢 Small | <a id="b-007-t02"></a>B-007-T02 — Apply the chosen fixture rule in AGENTS.md | 0.25 h | 0 h | 0.25 h | Planned | [B-007-T01](#b-007-t01) | — |
+| 🟢 Small | **Total** | 0.25 h | 0 h (0 of 2 steps recorded) | 0.25 h agent + 0.25 h owner | 0 of 2 completed | | |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+[Full notes & evidence](work/records/B-007.md)
+
+| Field | Value |
+|---|---|
+| PR / evidence | [full audit 2026-11-26](audits/2026-11-26-coordinator-full.md) |
+| Opened | 2026-11-26 |
+| Verification | Pending |
+| Reviewed | 2026-11-26 |
 
 </details>
 
@@ -169,83 +246,6 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 ---
 
-### <a id="f-009"></a>[✨ F-009](#top)
-
-**Reconcile to the latest harness and read built backlog views**
-
-| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
-|---|---|---|---|---|---|:---:|:---:|:---:|
-| 🟡 Implemented | 🔹 P3 | 🟢 Small | 0.25 h | — | — | 🤖 | — | — |
-
-💻 **→** Next: from tasks; F-009-T01 is verified once NERV publishes built views (nerv:F-125) and a refresh reads them.
-
-| | |
-|---|---|
-| **Issue** | Owner decision 2026-11-25: the project-harness major release that stops committing backlog views (project-harness:F-096-T06) ships only when the template backlog is empty and every project has reconciled to the latest release, and NERV has run with built views for about 10 merged PRs (nerv:F-125). The coordinator is on harness 10.9.0 and reads committed ledgers. |
-| **Reproduce** | `.harness.json` names version 10.9.0; `tools/solution.mjs` predates 10.14.0 and reads a component's committed `docs/BACKLOG.md` only. |
-| **Check** | The coordinator is reconciled to the latest harness release; `tools/solution.mjs` and `docs/agents/solution-profile.md` are at 10.14.0 or later, and `npm run solution:refresh` reads NERV's built views (the `backlog-views` publication) without a missing or stale view. |
-
-**Feature steps**
-
-| Effort | Step | Estimate | Actual | Remaining | Status | PRs |
-|---|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-009-t01"></a>F-009-T01 — Reconcile to the latest harness and read built backlog views | 1.5 h | 0 h | 0.25 h | Implemented; verification pending | [PR #19](https://github.com/voidbrain/coordinator/pull/19) |
-| 🟢 Small | **Total** | 1.5 h | 0 h (0 of 1 steps recorded) | 0.25 h | 0 of 1 completed | |
-
-<details>
-<summary>Next action, estimates and PR history</summary>
-
-[Full notes & evidence](work/records/F-009.md)
-
-| Field | Value |
-|---|---|
-| PR / evidence | Steps: F-009-T01: [PR #19](https://github.com/voidbrain/coordinator/pull/19). Opened in [PR #19](https://github.com/voidbrain/coordinator/pull/19).; [#23](https://github.com/voidbrain/coordinator/pull/23) |
-| Components | project-harness:F-096 |
-| Opened | 2026-11-25 |
-| Verification | Pending |
-| Reviewed | 2026-11-25 |
-
-</details>
-
----
-### <a id="f-011"></a>[✨ F-011](#top)
-
-**Reconcile to harness 10.21.2: the dashboard's five overview gaps and the coordinator label**
-
-| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
-|---|---|---|---|---|---|:---:|:---:|:---:|
-| 🟡 Implemented | 🔹 P3 | 🟢 Small | 0 h | — | — | 🤖 | — | — |
-
-💻 **→** Next: from tasks; closes on the reconcile PR's green CI and the next refresh.
-
-| | |
-|---|---|
-| **Issue** | The 10.21.1 dashboard that replaced the retired overview (F-004-T05) left five differences the owner relies on: ▶ picked nerv:F-016 although its next open step is the owner's; a scoped audit did not count; no per-record open-work table with state; gap proposals were not numbered; this repository's rows read `solution`, not `coordinator`. project-harness:B-060 fixes them in 10.21.2. |
-| **Reproduce** | `.harness.json` names 10.21.1; the dashboard of `69da441` marks nerv:F-016 ▶ and lists open steps only, collapsed. |
-| **Check** | `.harness.json` names 10.21.2; the three solution files match the tag byte for byte; `.solution.json` sets `"label": "coordinator"`; the regenerated dashboard shows ▶ past nerv:F-016, scoped audits, Open work by repository, numbered gaps and 🧭 coordinator rows. |
-
-**Feature steps**
-
-| Effort | Step | Estimate | Actual | Remaining | Status |
-|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-011-t01"></a>F-011-T01 — Copy the 10.21.2 solution files, label the coordinator and regenerate the dashboard | 0.5 h | 0 h | 0 h | Implemented; verification pending |
-| 🟢 Small | **Total** | 0.5 h | 0 h (0 of 1 steps recorded) | 0 h | 0 of 1 completed |
-
-<details>
-<summary>Next action, estimates and PR history</summary>
-
-[Full notes & evidence](work/records/F-011.md)
-
-| Field | Value |
-|---|---|
-| PR / evidence | [#40](https://github.com/voidbrain/coordinator/pull/40); [#52](https://github.com/voidbrain/coordinator/pull/52) B-060 leaves Components |
-| Opened | 2026-11-25 |
-| Verification | Pending |
-| Reviewed | 2026-11-25 |
-
-</details>
-
----
 ### <a id="f-012"></a>[✨ F-012](#top)
 
 **Bricks 🧱: shared UI library for the voidbrain projects**
@@ -267,13 +267,20 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who |
 |---|---|---|---|---|---|---|---|:---:|
 | 🟢 Small | <a id="f-012-t01"></a>F-012-T01 — Angular version contract: every UI component on Angular 22 | 0.5 h | 0 h | 0.5 h | Planned | — | [F-012-T02](#f-012-t02) | 🤖 |
-| 🟢 Small | <a id="f-012-t04"></a>F-012-T04 — Owner: create the voidbrain/bricks library repository | 0 h | 0 h | 0 h | Implemented; verification pending | — | [F-012-T05](#f-012-t05) | 🤖 |
+| 🟢 Small | <a id="f-012-t05"></a>F-012-T05 — Add voidbrain/bricks to the solution and propose its adoption | 0.5 h | 0 h | 0.5 h | Ready | — | [F-012-T06](#f-012-t06) | 🤖 |
 | 🟡 Medium | <a id="f-012-t02"></a>F-012-T02 — Design-token contract matching NERV's style guide | 2 h | 0 h | 2 h | Planned | [F-012-T01](#f-012-t01) | [F-012-T03](#f-012-t03) | ⏳ 🤖 |
 | 🟡 Medium | <a id="f-012-t03"></a>F-012-T03 — Shared component contract from what the NERV dashboard migration produced | 2 h | 0 h | 2 h | Planned | [F-012-T02](#f-012-t02), `nerv:F-130-T02`, `nerv:F-130-T05`, `nerv:F-130-T09` | — | ⏳ 🤖 |
-| 🟢 Small | <a id="f-012-t05"></a>F-012-T05 — Add voidbrain/bricks to the solution and propose its adoption | 0.5 h | 0 h | 0.5 h | Ready | [F-012-T04](#f-012-t04) | [F-012-T06](#f-012-t06) | ⏳ 🤖 |
 | 🟢 Small | <a id="f-012-t06"></a>F-012-T06 — Integration acceptance: the UI projects on one library release | 1 h | 0 h | 1 h | Planned | [F-012-T05](#f-012-t05), `nerv:F-130-T13`, `hobo:F-010-T02`, `grover:F-020-T07`, `fpvbuddy:F-008-T06` | [F-012-T07](#f-012-t07) | ⏳ 🤖 |
 | 🟢 Small | <a id="f-012-t07"></a>F-012-T07 — Owner: look at the three apps side by side | 0 h | 0 h | 0 h agent + 0.5 h owner | Planned | [F-012-T06](#f-012-t06) | — | ⏳ 🧑‍🔧 |
-| 🔴 Large | **Total** | 6 h | 0 h (0 of 7 steps recorded) | 6 h agent + 0.5 h owner | 0 of 7 completed | | | |
+| 🔴 Large | **Total** | 6 h | 0 h (0 of 7 steps recorded) | 6 h agent + 0.5 h owner | 1 of 7 completed | | | |
+
+<details><summary>Done steps (1)</summary>
+
+| Effort | Step | Estimate | Actual | Status |
+|---|---|---|---|---|
+| — | <a id="f-012-t04"></a>F-012-T04 — Owner: create the voidbrain/bricks library repository | 0 h | 0 h | Completed |
+
+</details>
 
 <details>
 <summary>Next action, estimates and PR history</summary>
@@ -299,7 +306,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|---|---|---|---|:---:|:---:|:---:|
 | 🔴 Open | 🔹 P3 | 🟢 Small | 0.5 h | — | — | 🤖 | — | — |
 
-💻 **→** Next: F-013-T01 — Add openbando to the solution and write the domain map (Implemented; verification pending).
+💻 **→** Next: F-013-T02 — First gap review against the domain map (Planned).
 
 | | |
 |---|---|
@@ -309,11 +316,18 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | PRs |
-|---|---|---|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-013-t01"></a>F-013-T01 — Add openbando to the solution and write the domain map | 1 h | 0 h | 0 h | Implemented; verification pending | — | [F-013-T02](#f-013-t02) | [PR #46](https://github.com/voidbrain/coordinator/pull/46) |
-| 🟢 Small | <a id="f-013-t02"></a>F-013-T02 — First gap review against the domain map | 0.5 h | 0 h | 0.5 h | Planned | [F-013-T01](#f-013-t01) | — | — |
-| 🟢 Small | **Total** | 1.5 h | 0 h (0 of 2 steps recorded) | 0.5 h | 0 of 2 completed | | | |
+| Effort | Step | Estimate | Actual | Remaining | Status | PRs |
+|---|---|---|---|---|---|---|
+| 🟢 Small | <a id="f-013-t02"></a>F-013-T02 — First gap review against the domain map | 0.5 h | 0 h | 0.5 h | Planned | — |
+| 🟢 Small | **Total** | 1.5 h | 0 h (0 of 2 steps recorded) | 0.5 h | 1 of 2 completed | |
+
+<details><summary>Done steps (1)</summary>
+
+| Effort | Step | Estimate | Actual | Status | PRs |
+|---|---|---|---|---|---|
+| — | <a id="f-013-t01"></a>F-013-T01 — Add openbando to the solution and write the domain map | 1 h | 0 h | Completed | [PR #46](https://github.com/voidbrain/coordinator/pull/46) |
+
+</details>
 
 <details>
 <summary>Next action, estimates and PR history</summary>
@@ -390,9 +404,9 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔹 P3 | 🟡 Medium | 2.25 h | — | — | 🤖 | — | — |
+| 🔴 Open | 🔹 P3 | 🟢 Small | 0.25 h | — | — | 🤖 | — | — |
 
-💻 **→** Next: F-017-T04 — Full audit of the coordinator (manifest kind full) (Planned).
+💻 **→** Next: F-017-T04 — Full audit of the coordinator (manifest kind full) (Implemented; verification pending).
 
 | | |
 |---|---|
@@ -404,9 +418,9 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | PRs |
 |---|---|---|---|---|---|---|---|---|
-| 🟡 Medium | <a id="f-017-t04"></a>F-017-T04 — Full audit of the coordinator (manifest kind full) | 2 h | 0 h | 2 h | Planned | — | [F-017-T05](#f-017-t05) | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan |
+| 🟢 Small | <a id="f-017-t04"></a>F-017-T04 — Full audit of the coordinator (manifest kind full) | 2 h | 0 h | 0 h | Implemented; verification pending | — | [F-017-T05](#f-017-t05) | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan |
 | 🟢 Small | <a id="f-017-t05"></a>F-017-T05 — Turn audit.enforce on after the full audit | 0.25 h | 0 h | 0.25 h | Planned | [F-017-T04](#f-017-t04) | — | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan |
-| 🟡 Medium | **Total** | 6.75 h | 0 h (0 of 5 steps recorded) | 2.25 h | 3 of 5 completed | | | |
+| 🟢 Small | **Total** | 6.75 h | 0 h (0 of 5 steps recorded) | 0.25 h | 3 of 5 completed | | | |
 
 <details><summary>Done steps (3)</summary>
 
@@ -440,9 +454,9 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔹 P3 | 🟡 Medium | 2 h agent + 0.25 h owner | — | — | 🤖 | — | — |
+| 🔴 Open | 🔹 P3 | 🟢 Small | 0.5 h agent + 0.25 h owner | — | — | 🤖 | — | — |
 
-💻 **→** Next: F-018-T01 — Write the producer-neutral alert contract in SOLUTION (Implemented; verification pending).
+💻 **→** Next: F-018-T02 — Propose the side changes and record the owner's choice (Planned).
 
 | | |
 |---|---|
@@ -452,11 +466,18 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | PRs |
-|---|---|---|---|---|---|---|---|---|
-| 🟡 Medium | <a id="f-018-t01"></a>F-018-T01 — Write the producer-neutral alert contract in SOLUTION | 1.5 h | 0 h | 1.5 h | Implemented; verification pending | — | [F-018-T02](#f-018-t02) | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan; [PR #79](https://github.com/voidbrain/coordinator/pull/79) contract |
-| 🟢 Small | <a id="f-018-t02"></a>F-018-T02 — Propose the side changes and record the owner's choice | 0.5 h | 0 h | 0.5 h agent + 0.25 h owner | Planned | [F-018-T01](#f-018-t01) | — | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan |
-| 🟡 Medium | **Total** | 2 h | 0 h (0 of 2 steps recorded) | 2 h agent + 0.25 h owner | 0 of 2 completed | | | |
+| Effort | Step | Estimate | Actual | Remaining | Status | PRs |
+|---|---|---|---|---|---|---|
+| 🟢 Small | <a id="f-018-t02"></a>F-018-T02 — Propose the side changes and record the owner's choice | 0.5 h | 0 h | 0.5 h agent + 0.25 h owner | Planned | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan |
+| 🟢 Small | **Total** | 2 h | 0 h (0 of 2 steps recorded) | 0.5 h agent + 0.25 h owner | 1 of 2 completed | |
+
+<details><summary>Done steps (1)</summary>
+
+| Effort | Step | Estimate | Actual | Status | PRs |
+|---|---|---|---|---|---|
+| — | <a id="f-018-t01"></a>F-018-T01 — Write the producer-neutral alert contract in SOLUTION | 1.5 h | 0 h | Completed | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan; [PR #79](https://github.com/voidbrain/coordinator/pull/79) contract |
+
+</details>
 
 <details>
 <summary>Next action, estimates and PR history</summary>

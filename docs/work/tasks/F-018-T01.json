@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "implemented",
+  "status": "closed",
   "id": "F-018-T01",
   "title": "Write the producer-neutral alert contract in SOLUTION",
   "goal": "One written alert shape any producer can send and NERV can deliver",
@@ -30,10 +30,10 @@
   ],
   "effort": {
     "size": "small",
-    "estimate": "1.5 h agent",
-    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work, from the size of F-017-T02 and the F-122 design page. Not a measurement.",
+    "estimate": "0 remaining",
+    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work, from the size of F-017-T02 and the F-122 design page. Not a measurement. Closed 2026-11-26 on PR #79's green CI (merged 22744b2).",
     "reviewed": "2026-11-26",
-    "agentHours": 1.5,
+    "agentHours": 0,
     "ownerHours": 0,
     "baselineAgentHours": 1.5,
     "estimateAgentHours": 1.5

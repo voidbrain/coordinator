@@ -13,7 +13,7 @@
   "id": "F-013-T01",
   "title": "Add openbando to the solution and write the domain map",
   "goal": "openbando is a solution component and docs/DOMAINS.md maps every project's domains and the shared ones",
-  "status": "implemented",
+  "status": "closed",
   "acceptance": [
     "openbando is in .solution.json with an unused emoji, and npm run check:solution reads its backlog",
     "docs/DOMAINS.md lists each component's modules with code links, the shared domains with who has or needs them, and the extraction rule",
@@ -34,9 +34,9 @@
   ],
   "effort": {
     "size": "small",
-    "estimate": "1 h agent",
-    "basis": "Estimated 2026-11-25: one manifest entry, one page read from six repositories, one procedure line. Not a measurement.",
-    "reviewed": "2026-11-25",
+    "estimate": "0 remaining",
+    "basis": "Estimated 2026-11-25: one manifest entry, one page read from six repositories, one procedure line. Not a measurement. Closed 2026-11-26 (full audit): PR #46 merged on green CI; openbando is in .solution.json and read by check:solution, docs/DOMAINS.md has the modules, shared domains and extraction rule, and docs/agents/gap-review.md tells the reviewer to read it.",
+    "reviewed": "2026-11-26",
     "agentHours": 0,
     "ownerHours": 0,
     "baselineAgentHours": 1,

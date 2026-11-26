@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "kind": "full",
+  "reviewed": "2026-11-26T09:40:00.000Z",
+  "baseline": "22744b200e3ac170b632aba42e3cf801180c43d4",
+  "report": "docs/audits/2026-11-26-coordinator-full.md",
+  "areas": {
+    "code": {
+      "result": "checked",
+      "evidence": "docs/audits/2026-11-26-coordinator-full.md: the four project tools read in full, lint clean; finding 1 (refresh guard reads only Markdown order rows)",
+      "limits": "Copied template tools judged by their outputs only; the template owns and tests them."
+    },
+    "logic": {
+      "result": "checked",
+      "evidence": "docs/audits/2026-11-26-coordinator-full.md: refresh path end to end, order rules against the dashboard, the F-018 alert contract against grover 080194c, fpvbuddy 6043323, nerv f71140b4",
+      "limits": "Contracts checked on paper, not run end to end."
+    },
+    "tests": {
+      "result": "checked",
+      "evidence": "docs/audits/2026-11-26-coordinator-full.md: npm test 26/26; failing-first tests for B-002 and B-004; gap: no HTML-layout guard test (finding 1)",
+      "limits": "No coverage tool for project tools; template tools tested in the template."
+    },
+    "documentation": {
+      "result": "checked",
+      "evidence": "docs/audits/2026-11-26-coordinator-full.md: README, AGENTS.md, area notes, SOLUTION.md, DOMAINS.md against scripts, workflows and live state; findings 3 and 4 (4 fixed)",
+      "limits": "docs/agents/cross-project-audit.md excluded: another session is changing it."
+    },
+    "harness": {
+      "result": "checked",
+      "evidence": "docs/audits/2026-11-26-coordinator-full.md: check:harness v10.21.4 match, check:rules, check:rule-load (6 warnings), maintenance evidence current; finding 3",
+      "limits": "Rule-load warnings measured, not re-routed."
+    },
+    "security": {
+      "result": "checked",
+      "evidence": "docs/audits/2026-11-26-coordinator-full.md: secret and personal-data pattern scan, workflow permissions and pinned actions, token handling, npm audit 0, branch protection and ruleset on main",
+      "limits": "REFRESH_TOKEN scopes not visible to the API; no live attack testing."
+    },
+    "delivery": {
+      "result": "checked",
+      "evidence": "docs/audits/2026-11-26-coordinator-full.md: all CI, refresh and maintenance runs since 2026-11-24; findings 2, 7, 8, 10",
+      "limits": "Actions scheduling observed through run history only; nothing is released or deployed."
+    },
+    "backlog": {
+      "result": "checked",
+      "evidence": "docs/audits/2026-11-26-coordinator-full.md: every active record and open step against PRs, CI and acceptance; B-002, F-009, F-011 closed; B-005, B-006, B-007 opened",
+      "limits": "Component records referenced, not reviewed."
+    }
+  }
+}

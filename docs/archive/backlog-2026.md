@@ -386,3 +386,106 @@ Closed records of the [backlog](../BACKLOG.md), in closing-date order. History, 
 </details>
 
 ---
+
+### B-002
+
+**check:fast fails with a bare HTTP 403 when GH_TOKEN is unset**
+
+| Signal | Priority | Status | Effort |
+|:---:|---|---|---|
+| 🔵 | ◻️ P3 | Closed | 🟢 Small |
+
+💻 **→ Human action required: No**<br />Closed 2026-11-26: PR #59 merged on green CI (run of check 2026-11-26); check:fast passes with gh logged in (full audit 2026-11-26).
+
+| | |
+|---|---|
+| **Issue** | `npm run check:fast` runs `check:solution` (`tools/solution.mjs check --remote`), which reads GitHub without a token unless `GH_TOKEN` is set. Once the unauthenticated limit (60 requests an hour) is spent, every component reports "GitHub returned HTTP 403" and the check exits 1. AGENTS.md lists both commands with no token; only the refresh line in README and the solution-refresh guide name `GH_TOKEN`. Found by the delivery audit of 2026-11-25. |
+| **Reproduce** | With `GH_TOKEN` unset and `curl -s https://api.github.com/rate_limit` showing core remaining 0, run `npm run check:solution`: five "GitHub returned HTTP 403" lines; `npm run check:fast` exits 1. |
+| **Check** | An agent following AGENTS.md runs `check:fast` with a token (the check lines or the project's `check:solution` script supply `GH_TOKEN=$(gh auth token)`), and it passes; without `gh` logged in, the documented command says what is missing instead of a bare 403. |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+**Next action / closure evidence:** Closed 2026-11-26: PR #59 merged on green CI (run of check 2026-11-26); check:fast passes with gh logged in (full audit 2026-11-26). Opened 2026-11-25 from the delivery audit ([report](../audits/2026-11-25-delivery.md), finding 1). The 403 message itself lives in the template's copied `tools/solution.mjs`; improving it is the template's, for the owner to take there, never edited here. 2026-11-26: `check:solution` now runs through the project's `tools/with-gh-token.mjs` (`GH_TOKEN`, else `GITHUB_TOKEN`, else `gh auth token`; none: runs unauthenticated and a failure names the missing token); `test/with-gh-token.test.mjs` failed first (module absent). Closes on green CI.
+
+**Estimates:** No remaining effort.
+
+| Field | Value |
+|---|---|
+| PR / evidence | Audit [2026-11-25 delivery](../audits/2026-11-25-delivery.md), opened in [#27](https://github.com/voidbrain/coordinator/pull/27); [#59](https://github.com/voidbrain/coordinator/pull/59) |
+| Opened | 2026-11-25 |
+| Verification | Pending |
+| Reviewed | 2026-11-25 |
+
+</details>
+
+---
+
+### F-009
+
+**Reconcile to the latest harness and read built backlog views**
+
+| Signal | Priority | Status | Effort |
+|:---:|---|---|---|
+| 🔵 | ◻️ P3 | Closed | 🟢 Small |
+
+💻 **→ Human action required: No**<br />Closed 2026-11-26: F-009-T01: PR #19 merged on green CI; harness at v10.21.4 (F-015); the 2026-11-26 dashboard reads NERV from its backlog-views publication (view published on backlog-views at 847b80d8309e), so nerv:F-125's built views are read (full audit 2026-11-26).
+
+| | |
+|---|---|
+| **Issue** | Owner decision 2026-11-25: the project-harness major release that stops committing backlog views (project-harness:F-096-T06) ships only when the template backlog is empty and every project has reconciled to the latest release, and NERV has run with built views for about 10 merged PRs (nerv:F-125). The coordinator is on harness 10.9.0 and reads committed ledgers. |
+| **Reproduce** | `.harness.json` names version 10.9.0; `tools/solution.mjs` predates 10.14.0 and reads a component's committed `docs/BACKLOG.md` only. |
+| **Check** | The coordinator is reconciled to the latest harness release; `tools/solution.mjs` and `docs/agents/solution-profile.md` are at 10.14.0 or later, and `npm run solution:refresh` reads NERV's built views (the `backlog-views` publication) without a missing or stale view. |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+**Next action / closure evidence:** Closed 2026-11-26: F-009-T01: PR #19 merged on green CI; harness at v10.21.4 (F-015); the 2026-11-26 dashboard reads NERV from its backlog-views publication (view published on backlog-views at 847b80d8309e), so nerv:F-125's built views are read (full audit 2026-11-26). 2026-11-25: reconciled to harness 10.20.0 (owner approval 2026-11-25; the template backlog had no open step but F-096, whose T06 waits on the projects). `tools/solution.mjs` and the solution guides are at 10.20.0; the dashboard read every component as a committed snapshot, since voidbrain/nerv has no `backlog-views` branch yet. Verify on the first refresh after NERV switches. Earlier: opened at the owner's decision. F-009-T01 starts only once the project-harness template backlog is empty (external prerequisite, stated in prose: harness 10.9.0 has no cross-repository `dependsOn`; the reconcile brings it). Adoption notes: the harness `docs/apply/built-views.md` (10.14.0). A coordinator misreading a built view is a view incident for nerv:F-125; add nerv:F-125 to Components once voidbrain/nerv#748 lands on NERV main (the check reads main).
+
+**Estimates:** No remaining effort.
+
+| Field | Value |
+|---|---|
+| PR / evidence | Opened in [PR #19](https://github.com/voidbrain/coordinator/pull/19).; [#23](https://github.com/voidbrain/coordinator/pull/23) |
+| Components | project-harness:F-096 |
+| Opened | 2026-11-25 |
+| Verification | Pending |
+| Reviewed | 2026-11-25 |
+
+</details>
+
+---
+
+### F-011
+
+**Reconcile to harness 10.21.2: the dashboard's five overview gaps and the coordinator label**
+
+| Signal | Priority | Status | Effort |
+|:---:|---|---|---|
+| 🔵 | ◻️ P3 | Closed | 🟢 Small |
+
+💻 **→ Human action required: No**<br />Closed 2026-11-26: F-011-T01: PR #40 merged on green CI; superseded by the 10.21.4 reconcile (F-015, closed 2026-11-26); refreshes since read every source with 0 source/link problems (run 45785986150) (full audit 2026-11-26).
+
+| | |
+|---|---|
+| **Issue** | The 10.21.1 dashboard that replaced the retired overview (F-004-T05) left five differences the owner relies on: ▶ picked nerv:F-016 although its next open step is the owner's; a scoped audit did not count; no per-record open-work table with state; gap proposals were not numbered; this repository's rows read `solution`, not `coordinator`. project-harness:B-060 fixes them in 10.21.2. |
+| **Reproduce** | `.harness.json` names 10.21.1; the dashboard of `69da441` marks nerv:F-016 ▶ and lists open steps only, collapsed. |
+| **Check** | `.harness.json` names 10.21.2; the three solution files match the tag byte for byte; `.solution.json` sets `"label": "coordinator"`; the regenerated dashboard shows ▶ past nerv:F-016, scoped audits, Open work by repository, numbered gaps and 🧭 coordinator rows. |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+**Next action / closure evidence:** Closed 2026-11-26: F-011-T01: PR #40 merged on green CI; superseded by the 10.21.4 reconcile (F-015, closed 2026-11-26); refreshes since read every source with 0 source/link problems (run 45785986150) (full audit 2026-11-26). 2026-11-26: project-harness:B-060 closed and archived (released in v10.21.2), so it leaves Components: the link checker reads active records only and the refresh failed on it. 2026-11-25: reconciled and regenerated; see F-011-T01 for what still differs from the owner's needs (reported, not fixed here: the template owns it).
+
+**Estimates:** No remaining effort.
+
+| Field | Value |
+|---|---|
+| PR / evidence | [#40](https://github.com/voidbrain/coordinator/pull/40); [#52](https://github.com/voidbrain/coordinator/pull/52) B-060 leaves Components |
+| Opened | 2026-11-25 |
+| Verification | Pending |
+| Reviewed | 2026-11-25 |
+
+</details>
+
+---

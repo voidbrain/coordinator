@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "id": "B-007-T02",
+  "parent": "B-007",
+  "title": "Apply the chosen fixture rule in AGENTS.md",
+  "goal": "AGENTS.md matches the owner's choice",
+  "status": "planned",
+  "acceptance": [
+    "AGENTS.md changes as chosen in B-007-T01, under the rule review procedure; check:rules passes"
+  ],
+  "dependsOn": [
+    "B-007-T01"
+  ],
+  "resources": [
+    "AGENTS.md",
+    "docs/work/records/B-007.md",
+    "generated:backlog-views"
+  ],
+  "validation": [
+    "check:fast; check:rules; final applicable CI"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "0.25 h agent",
+    "basis": "Estimated 2026-11-26: one AGENTS.md line and its review note. Not a measurement.",
+    "reviewed": "2026-11-26",
+    "agentHours": 0.25,
+    "ownerHours": 0,
+    "baselineAgentHours": 0.25,
+    "estimateAgentHours": 0.25
+  },
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ]
+}
