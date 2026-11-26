@@ -51,6 +51,10 @@
     {
       "pr": 62,
       "note": "blocks criterion"
+    },
+    {
+      "pr": 63,
+      "note": "battery core not a blocks candidate"
     }
   ]
 }
