@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "implemented",
+  "status": "closed",
   "id": "F-017-T03",
   "title": "Proposal to project-harness: automate checks 1 and 5",
   "goal": "project-harness gets a proposal to automate cross-reference and audit-cadence checks in the solution tool",
@@ -32,7 +32,7 @@
   "effort": {
     "size": "small",
     "estimate": "0 remaining",
-    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work, from the size of the gap-review procedure and the F-016 steps of similar scope. Not a measurement. Implemented 2026-11-26: docs/proposals/cross-project-audit-checks.md (three gap kinds and an audit enforce column, with the first run as evidence); verification is the PR's green check:fast in CI.",
+    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work, from the size of the gap-review procedure and the F-016 steps of similar scope. Not a measurement. Implemented 2026-11-26: docs/proposals/cross-project-audit-checks.md (three gap kinds and an audit enforce column, with the first run as evidence); verification is the PR's green check:fast in CI. Closed 2026-11-26 on PR #77's green CI.",
     "reviewed": "2026-11-26",
     "agentHours": 0,
     "ownerHours": 0,
@@ -47,6 +47,10 @@
     {
       "pr": 77,
       "note": "proposal"
+    },
+    {
+      "pr": 78,
+      "note": "close"
     }
   ]
 }

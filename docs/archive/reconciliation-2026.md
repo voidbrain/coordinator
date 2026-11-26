@@ -63,3 +63,7 @@ PR #74 (F-017-T02 first cross-project audit run) merged on green CI; F-017-T02 c
 ## 2026-11-26 — main `4a7680c`
 
 PR #75 (close F-017-T02) merged on green CI; nothing left to close from it.
+
+## 2026-11-26 — main `86abbd7`
+
+PR #76 (order note, audit proposal 5) and PR #77 (audit proposals 4, 6, 9, 16; F-017-T03) merged on green CI; F-017-T03 closed.

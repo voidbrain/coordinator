@@ -1,10 +1,10 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 26 November 2026 against main `4a7680c`. PR #75 (close F-017-T02) merged on green CI; nothing left to close from it.
+Current work ledger, reviewed 26 November 2026 against main `86abbd7`. PR #76 (order note, audit proposal 5) and PR #77 (audit proposals 4, 6, 9, 16; F-017-T03) merged on green CI; F-017-T03 closed.
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 23.5 h agent + 1.25 h owner across 29 open steps of 9 features and 2 other records. Generated from the task files.
+**Remaining effort:** 23.5 h agent + 1.25 h owner across 28 open steps of 9 features and 2 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -392,7 +392,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|---|---|---|---|:---:|:---:|:---:|
 | 🔴 Open | 🔹 P3 | 🟡 Medium | 2.25 h | — | — | 🤖 | — | — |
 
-💻 **→** Next: F-017-T03 — Proposal to project-harness: automate checks 1 and 5 (Implemented; verification pending).
+💻 **→** Next: F-017-T04 — Full audit of the coordinator (manifest kind full) (Planned).
 
 | | |
 |---|---|
@@ -404,17 +404,17 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | PRs |
 |---|---|---|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-017-t03"></a>F-017-T03 — Proposal to project-harness: automate checks 1 and 5 | 0.5 h | 0 h | 0 h | Implemented; verification pending | — | — | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #77](https://github.com/voidbrain/coordinator/pull/77) proposal |
 | 🟡 Medium | <a id="f-017-t04"></a>F-017-T04 — Full audit of the coordinator (manifest kind full) | 2 h | 0 h | 2 h | Planned | — | [F-017-T05](#f-017-t05) | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan |
 | 🟢 Small | <a id="f-017-t05"></a>F-017-T05 — Turn audit.enforce on after the full audit | 0.25 h | 0 h | 0.25 h | Planned | [F-017-T04](#f-017-t04) | — | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan |
-| 🟡 Medium | **Total** | 6.75 h | 0 h (0 of 5 steps recorded) | 2.25 h | 2 of 5 completed | | | |
+| 🟡 Medium | **Total** | 6.75 h | 0 h (0 of 5 steps recorded) | 2.25 h | 3 of 5 completed | | | |
 
-<details><summary>Done steps (2)</summary>
+<details><summary>Done steps (3)</summary>
 
 | Effort | Step | Estimate | Actual | Status | PRs |
 |---|---|---|---|---|---|
 | — | <a id="f-017-t01"></a>F-017-T01 — Cross-project audit procedure | 2.5 h | 0 h | Completed | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #67](https://github.com/voidbrain/coordinator/pull/67) procedure; [PR #68](https://github.com/voidbrain/coordinator/pull/68) undo procedures.md fork; close |
 | — | <a id="f-017-t02"></a>F-017-T02 — First cross-project audit run | 1.5 h | 0 h | Completed | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #74](https://github.com/voidbrain/coordinator/pull/74) first run; [PR #75](https://github.com/voidbrain/coordinator/pull/75) close |
+| — | <a id="f-017-t03"></a>F-017-T03 — Proposal to project-harness: automate checks 1 and 5 | 0.5 h | 0 h | Completed | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #77](https://github.com/voidbrain/coordinator/pull/77) proposal; [PR #78](https://github.com/voidbrain/coordinator/pull/78) close |
 
 </details>
 
@@ -425,7 +425,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Steps: F-017-T01: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #67](https://github.com/voidbrain/coordinator/pull/67) procedure; [PR #68](https://github.com/voidbrain/coordinator/pull/68) undo procedures.md fork; close · F-017-T02: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #74](https://github.com/voidbrain/coordinator/pull/74) first run; [PR #75](https://github.com/voidbrain/coordinator/pull/75) close · F-017-T03: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #77](https://github.com/voidbrain/coordinator/pull/77) proposal · F-017-T04: [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan · F-017-T05: [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan. [#66](https://github.com/voidbrain/coordinator/pull/66) (plan); [#67](https://github.com/voidbrain/coordinator/pull/67) (F-017-T01 procedure); [#68](https://github.com/voidbrain/coordinator/pull/68) (undo the procedures.md fork, close F-017-T01); owner approval 2026-11-26; evidence: nerv#792, FPVBuddy#17, [#63](https://github.com/voidbrain/coordinator/pull/63) · [#69](https://github.com/voidbrain/coordinator/pull/69) (order: solution:F-017 at 8) · [#74](https://github.com/voidbrain/coordinator/pull/74) (F-017-T02 first run); [#75](https://github.com/voidbrain/coordinator/pull/75) (close F-017-T02) · owner accepted all 17 proposals 2026-11-26; [#76](https://github.com/voidbrain/coordinator/pull/76) (order note, proposal 5); [#77](https://github.com/voidbrain/coordinator/pull/77) (proposals 4, 6, 9, 16 and the dispositions) |
+| PR / evidence | Steps: F-017-T01: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #67](https://github.com/voidbrain/coordinator/pull/67) procedure; [PR #68](https://github.com/voidbrain/coordinator/pull/68) undo procedures.md fork; close · F-017-T02: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #74](https://github.com/voidbrain/coordinator/pull/74) first run; [PR #75](https://github.com/voidbrain/coordinator/pull/75) close · F-017-T03: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #77](https://github.com/voidbrain/coordinator/pull/77) proposal; [PR #78](https://github.com/voidbrain/coordinator/pull/78) close · F-017-T04: [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan · F-017-T05: [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan. [#66](https://github.com/voidbrain/coordinator/pull/66) (plan); [#67](https://github.com/voidbrain/coordinator/pull/67) (F-017-T01 procedure); [#68](https://github.com/voidbrain/coordinator/pull/68) (undo the procedures.md fork, close F-017-T01); owner approval 2026-11-26; evidence: nerv#792, FPVBuddy#17, [#63](https://github.com/voidbrain/coordinator/pull/63) · [#69](https://github.com/voidbrain/coordinator/pull/69) (order: solution:F-017 at 8) · [#74](https://github.com/voidbrain/coordinator/pull/74) (F-017-T02 first run); [#75](https://github.com/voidbrain/coordinator/pull/75) (close F-017-T02) · owner accepted all 17 proposals 2026-11-26; [#76](https://github.com/voidbrain/coordinator/pull/76) (order note, proposal 5); [#77](https://github.com/voidbrain/coordinator/pull/77) (proposals 4, 6, 9, 16 and the dispositions); [#78](https://github.com/voidbrain/coordinator/pull/78) (close F-017-T03) |
 | Components | nerv:F-101, nerv:F-122, fpvbuddy:F-005, grover:F-008, hobo:F-011 |
 | Opened | 2026-11-26 |
 | Verification | Pending |
