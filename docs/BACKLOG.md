@@ -409,7 +409,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Steps: F-017-T01: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #67](https://github.com/voidbrain/coordinator/pull/67) procedure · F-017-T02: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan · F-017-T03: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan. [#66](https://github.com/voidbrain/coordinator/pull/66) (plan); [#67](https://github.com/voidbrain/coordinator/pull/67) (F-017-T01 procedure); owner approval 2026-11-26; evidence: nerv#792, FPVBuddy#17, [#63](https://github.com/voidbrain/coordinator/pull/63) |
+| PR / evidence | Steps: F-017-T01: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #67](https://github.com/voidbrain/coordinator/pull/67) procedure · F-017-T02: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan · F-017-T03: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan. [#66](https://github.com/voidbrain/coordinator/pull/66) (plan); [#67](https://github.com/voidbrain/coordinator/pull/67) (F-017-T01 procedure); owner approval 2026-11-26; evidence: nerv#792, FPVBuddy#17, [#63](https://github.com/voidbrain/coordinator/pull/63) · [#69](https://github.com/voidbrain/coordinator/pull/69) (order: solution:F-017 at 8) |
 | Components | nerv:F-101, nerv:F-122, fpvbuddy:F-005, grover:F-008 |
 | Opened | 2026-11-26 |
 | Verification | Pending |
