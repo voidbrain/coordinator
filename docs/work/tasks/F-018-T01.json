@@ -46,6 +46,10 @@
     {
       "pr": 79,
       "note": "contract"
+    },
+    {
+      "pr": 81,
+      "note": "close"
     }
   ]
 }
