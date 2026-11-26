@@ -1,6 +1,6 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 26 November 2026 against main `22744b2`. PRs #78 (close F-017-T03) and #79 (F-018-T01 alert contract) merged on green CI; F-018-T01 closed. The full audit (F-017-T04) closed B-002, F-009 and F-011 and the steps F-012-T04 and F-013-T01, and opened B-005, B-006 and B-007.
+Current work ledger, reviewed 26 November 2026 against main `4ea4115`. PRs #78 (close F-017-T03), #79 (F-018-T01 alert contract) and #80 (F-017-T06 dormant checks) merged on green CI; F-018-T01 closed. The full audit (F-017-T04) closed B-002, F-009 and F-011 and the steps F-012-T04 and F-013-T01, and opened B-005, B-006 and B-007.
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
