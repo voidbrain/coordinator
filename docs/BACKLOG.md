@@ -4,7 +4,7 @@ Current work ledger, reviewed 26 November 2026 against main `4cd62c3`. PR #86 (B
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 19.5 h agent + 1.25 h owner across 23 open steps of 7 features and 2 other records. Generated from the task files.
+**Remaining effort:** 19.5 h agent + 1.25 h owner across 24 open steps of 7 features and 2 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -339,10 +339,11 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status | PRs |
-|---|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-017-t06"></a>F-017-T06 — Check 6: dormant checks, first run | 1.5 h | 0 h | 0 h | Implemented; verification pending | [PR #80](https://github.com/voidbrain/coordinator/pull/80) dormant checks run |
-| 🟢 Small | **Total** | 8.25 h | 0 h (0 of 6 steps recorded) | 0 h | 5 of 6 completed | |
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | PRs |
+|---|---|---|---|---|---|---|---|---|
+| 🟢 Small | <a id="f-017-t06"></a>F-017-T06 — Check 6: dormant checks, first run | 1.5 h | 0 h | 0 h | Implemented; verification pending | — | [F-017-T07](#f-017-t07) | [PR #80](https://github.com/voidbrain/coordinator/pull/80) dormant checks run |
+| 🟢 Small | <a id="f-017-t07"></a>F-017-T07 — NERV practices transfer and situation gaps | 2.5 h | 0 h | 0 h | Implemented; verification pending | [F-017-T06](#f-017-t06) | — | — |
+| 🟢 Small | **Total** | 10.75 h | 0 h (0 of 7 steps recorded) | 0 h | 5 of 7 completed | | | |
 
 <details><summary>Done steps (5)</summary>
 

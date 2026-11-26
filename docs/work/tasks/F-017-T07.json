@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "parent": "F-017",
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "status": "implemented",
+  "id": "F-017-T07",
+  "title": "NERV practices transfer and situation gaps",
+  "goal": "Every NERV procedure, audit and check is mapped to the template, other repositories, the solution or NERV only; what NERV and the solution lack for their situation is ranked with evidence",
+  "acceptance": [
+    "docs/reviews/2026-11-26-nerv-practices-transfer.md inventories NERV's practices beyond the template with file:line evidence and classifies each as template (A), specific projects (B), solution (C) or NERV only (D), marking items already planned (harness F-102 to F-105, coordinator F-016 to F-018) instead of proposing them again",
+    "it lists what NERV lacks that other repositories have, the common practices missing across the nine, and a 'Situation-based gaps (NERV)' section ranked by likelihood and impact, with the same lens for the solution",
+    "the proposals are numbered for the owner; nothing is changed in a component"
+  ],
+  "dependsOn": [
+    "F-017-T06"
+  ],
+  "resources": [
+    "docs/work/records/F-017.md",
+    "docs/reviews/**",
+    "generated:backlog-views"
+  ],
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "effort": {
+    "size": "medium",
+    "estimate": "0 remaining",
+    "basis": "Estimated 2026-11-26 at agent speed from F-017-T06 (a read-only sweep of the same nine repositories) plus the owner's widened situation review. Not a measurement. Implemented 2026-11-26 at the owner's request; verification is the PR's green CI.",
+    "reviewed": "2026-11-26",
+    "agentHours": 0,
+    "ownerHours": 0,
+    "baselineAgentHours": 2.5,
+    "estimateAgentHours": 2.5
+  },
+  "prs": []
+}
