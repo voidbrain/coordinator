@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "kind": "scoped",
+  "reviewed": "2026-11-26T08:55:00.000Z",
+  "baseline": "79744082591f7a8a05028a4619e5583fa55bcdf3",
+  "report": "docs/audits/2026-11-26-cross-project.md",
+  "areas": {
+    "backlog": {
+      "result": "checked",
+      "evidence": "docs/audits/2026-11-26-cross-project.md: every task file, record and archive of the eight components at their origin/main revisions and of this repository; repo:ID dependencies and mentions resolved; audit manifests and .harness.json audit settings per repository; 17 proposals",
+      "limits": "Text heuristics: dependencies written without repo:ID and decisions made only in conversation are not seen; contracts compared on paper and in code, not run end to end."
+    },
+    "documentation": {
+      "result": "checked",
+      "evidence": "docs/audits/2026-11-26-cross-project.md: DOMAINS.md, solution-order.md and AGENTS.md compared with the components' code and backlogs; Grover DESIGN.md and nerv's grover-alert-delivery decision compared",
+      "limits": "Only the solution-level pages; component documentation beyond the contract pages was not reviewed."
+    }
+  }
+}

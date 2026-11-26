@@ -9,14 +9,15 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "planned",
+  "status": "implemented",
   "id": "F-017-T02",
   "title": "First cross-project audit run",
   "goal": "The first run is recorded with evidence and the proposals are listed for the owner",
   "acceptance": [
     "each of the five checks was run against every component backlog and DOMAINS.md, with the evidence link per finding; the 2026-11-26 findings (nerv:F-101-T05, fpvbuddy:F-005 waiting on nerv:F-101-T04) are confirmed fixed",
     "audit freshness is listed per repository (nerv last full audit 2026-11-20; fpvbuddy, hobo and bricks only baseline audits; gauntlet-protocol only a reconcile audit)",
-    "proposals are numbered, name the owning repository and the exact record or step, and are recorded on this record for the owner to accept or reject"
+    "proposals are numbered, name the owning repository and the exact record or step, and are recorded on this record for the owner to accept or reject",
+    "2026-11-26 note: the audit freshness above was written from file names; by manifest kind fpvbuddy (2026-11-22) and gauntlet-protocol (2026-11-22) have full audits, and grover, hobo, bricks and the coordinator have none. The run lists it by kind, as the procedure says."
   ],
   "dependsOn": [
     "F-017-T01"
@@ -24,17 +25,18 @@
   "resources": [
     "docs/work/records/F-017.md",
     "docs/audits/**",
-    "generated:backlog-views"
+    "generated:backlog-views",
+    "docs/audits/2026-11-26-cross-project.md"
   ],
   "validation": [
     "check:fast; final applicable CI"
   ],
   "effort": {
     "size": "medium",
-    "estimate": "1.5 h agent",
-    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work, from the size of the gap-review procedure and the F-016 steps of similar scope. Not a measurement.",
+    "estimate": "0 remaining",
+    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work, from the size of the gap-review procedure and the F-016 steps of similar scope. Not a measurement. Implemented 2026-11-26: the run is recorded in docs/audits/2026-11-26-cross-project.md and on F-017 with 17 numbered proposals; verification is the PR's green check:fast in CI.",
     "reviewed": "2026-11-26",
-    "agentHours": 1.5,
+    "agentHours": 0,
     "ownerHours": 0,
     "baselineAgentHours": 1.5,
     "estimateAgentHours": 1.5
