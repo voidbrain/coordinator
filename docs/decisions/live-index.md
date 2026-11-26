@@ -51,6 +51,8 @@ Generated-file conflicts are a separate, cheaper fix in any option: project-harn
 
 Owner questions 2026-11-26: "NERV or another dedicated project?" and "until a node is up NERV is up, so it can do/continue everything (if models can), correct?". Owning the code and hosting the process are separate choices.
 
+NERV was first proposed for its hosting assets (always-on, SQLite, the GitHub pilot of nerv:F-132), not because the index is NERV's domain. The split below keeps those assets as hosting and puts the code with the domain owner.
+
 **Ownership.** In every option the parsing is project-harness's: `solution.mjs` and `work-items.mjs` already read the backlogs, and the builder is generic (template first).
 
 | Owner of the service | For | Against |
@@ -59,7 +61,14 @@ Owner questions 2026-11-26: "NERV or another dedicated project?" and "until a no
 | (ii) The coordinator | Cross-project state is already its domain: it generates the dashboard and holds the cross-repository records; exposes an MCP server and its own bricks screen, and NERV shows it through MCP surface cards like any project | The coordinator stops being docs-only: its project line "nothing is built or deployed" changes (an owner decision under the F-020 freeze), and it gains source, tests and a release; about 2 h more setup |
 | (iii) A new dedicated project | Clean boundary | A tenth repository with its own harness, backlog and audits, for a domain the coordinator already owns |
 
-**Hosting.** An always-on process needs a base. NERV's bases run 24/7 services: NERV-01 Neo Tokyo-3 (Mac, main: coordinator role, root key, Telegram), NERV-02 Tabgha (Windows mini PC, worker), NERV-03 Calvary (Pi CM4, worker) (nerv `docs/acceptance/f005-device-matrix.md`). The index runs on whichever base holds the coordinator role and moves with it; it is rebuilt from git, so a new host needs no copied state and no replication.
+**Recommended: (ii), confirmed by the owner's lean 2026-11-26 ("coordinator is ok, will have sqlite though?").** What the coordinator gains:
+
+- **A small service**, Node 24 with the built-in `node:sqlite` (`DatabaseSync`, as NERV's backend uses): no new dependency.
+- **SQLite as a rebuildable cache only.** It polls the nine repositories and, on each merge to a `main`, rebuilds a local SQLite file from the records in git. Git stays the source of truth: the file needs no backup, and deleting it and rebuilding is always safe.
+- **It serves** an MCP server (queries, later ID reservation and the decisions-pending tool) and its own screen built with 🧱 bricks. NERV shows it through MCP surface cards like any project; agents query the same MCP server.
+- **Supervised like NERV's own service**: on the Mac a launchd user agent of its own beside `io.nerv.agent` (start at login, restart on exit, logs in its data folder), Task Scheduler on Windows and `systemd --user` on Linux as for NERV's bases. It is not a child of NERV, so a NERV update or restart does not stop the index, and agents can reach it while NERV is down. Its one secret, the read-only GitHub token, is a file on that base only.
+
+**Hosting.** An always-on process needs a base. NERV's bases run 24/7 services: NERV-01 Neo Tokyo-3 (Mac, main: coordinator role, root key, Telegram), NERV-02 Tabgha (Windows mini PC, worker), NERV-03 Calvary (Pi CM4, worker) (nerv `docs/acceptance/f005-device-matrix.md`). The index runs on the base holding NERV's coordinator role (today NERV-01) and moves with it: installing it on the new base is a step of the owner's relocation, and the new host rebuilds from git, so it needs no copied state and no replication.
 
 **Does NERV keep doing everything while one base is up? Not today.** Checked at nerv `origin/main`, 2026-11-26:
 
@@ -91,7 +100,7 @@ How should backlogs and the dashboard become live?
 - **3.** Move the records into a database (option C).
 - **4.** Not now: revisit when F-020 ends.
 
-If 2: who owns the service? **(ii) the coordinator** (recommended; it then becomes a project that builds and runs code), **(i) NERV** or **(iii) a new project**.
+If 2: who owns the service? **(ii) the coordinator** (recommended, and the owner's lean 2026-11-26; it then becomes a project that builds and runs a small service), **(i) NERV** or **(iii) a new project**.
 
 ## Answer
 
