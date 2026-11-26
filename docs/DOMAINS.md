@@ -19,6 +19,48 @@ Screens are owned by their project; NERV integrates via MCP: surface cards (🧱
 - **Full screens**: an MCP Apps page the project's MCP server provides, which NERV displays, or a link to the project's own page.
 - A view NERV already has for another project's domain retires once that domain's code has moved to the owning project.
 
+## Shared assets
+
+The solution has three shared assets. The same three rules hold for each: who owns what, check the asset first, and record a deliberate skip. The [rule for shared code](#the-rule-for-shared-code) and the [rule for screens](#the-rule-for-screens) above still apply; this section does not restate them.
+
+| Asset | Holds | The owning project | The shared repository | The consumer | Model-facing |
+|---|---|---|---|---|---|
+| 🧱 bricks (`voidbrain/bricks`) | UI: tokens, themes, components, genUI surfaces and their surface types | Builds its own screens with bricks and keeps them (rule for screens) | Tokens, themes, components and surfaces that two or more projects use; components added only on real demand | Pins `@voidbrain/bricks` and renders with it in its own theme (NERV renders other projects' surface cards with it) | No |
+| 🧊 blocks (`voidbrain/blocks`) | Shared domain logic, one package per domain, and typed contract code; the repository is created with its first really shared package | Keeps its domain logic until a second project imports it | Packages imported by two or more projects (criterion below) | Pins and imports the package | No |
+| 🤖 Gauntlet (`voidbrain/gauntlet-protocol`) | Model qualification | Writes its own domain cases in its repository, for example `evals/gauntlet/<project>-v1.json` (NERV's `evals/gauntlet/system-v1.json`) | gauntlet-protocol: the runners, the graders and the general packs (coding, tool-use, structured-output, long-context, italian-quality and the others) | NERV picks models per capability from the Gauntlet results | Qualifies the model-facing work of every project |
+
+### The blocks criterion
+
+Owner decisions of 2026-11-25 (blocks) and 2026-11-26 (criterion and FPV core).
+
+- **Code imported by two or more projects** goes to a blocks package. Before then it stays in the project that has it, under the rule for shared code.
+- **Anything reached through MCP stays in its owning project.** A consumer that calls another project's MCP tools does not import that project's code, so nothing moves to blocks. Example: the FPVBuddy battery core ([fpvbuddy:F-005](https://github.com/voidbrain/FPVBuddy/blob/main/docs/BACKLOG.md#f-005)) is FPVBuddy's own package, not a blocks candidate: NERV never imports the FPV core (nerv:F-101-T05 cancelled) and reaches FPV data over FPVBuddy's MCP server only (nerv:F-101-T08).
+- **Typed contract code** (TypeScript types or validators for an MCP message format) that the producer and the consumer both import is code imported by two projects: it goes to a contracts package in blocks.
+- **Surface types stay in bricks**, with the surfaces that render them.
+- **A prose or JSON-schema contract** is not code: it stays where its producer writes it and is listed under [Distributed contracts](#distributed-contracts).
+
+### Check first
+
+New work that needs UI, domain logic another project already has, or a model-facing feature or MCP tool checks the shared asset first: the bricks components and surfaces, the blocks packages and the [shared domains](#shared-domains) table, and the Gauntlet's general packs and the project's own cases. When what it needs is missing, it is proposed in the shared repository (or, for a Gauntlet case, in the owning project's pack) through the [gap review](agents/gap-review.md); the project never writes a private copy. A model-facing feature or MCP tool ships with a Gauntlet case or a recorded skip.
+
+### Recorded skips
+
+A project that deliberately does not use a shared asset for a piece of work records a skip with its reason in that work's record in its own backlog (for example `Skip: Gauntlet, no model in the loop`). A skip that holds for a whole project or asset is listed here. The gap review treats a recorded skip as covered.
+
+| Asset or project | Skips | Reason | Recorded |
+|---|---|---|---|
+| 🧱 bricks | Gauntlet | Not model-facing: UI only | 2026-11-26, [F-016](BACKLOG.md#f-016) |
+| 🧊 blocks | Gauntlet | Not model-facing: domain logic and typed contracts only | 2026-11-26, [F-016](BACKLOG.md#f-016) |
+
+## Distributed contracts
+
+Contracts written as prose or JSON schema between a producer and a consumer, most of them NERV's MCP integration contract. The producer owns the text; this table links it. A contract moves to a blocks contracts package only once both sides import shared TypeScript types or validators (the blocks criterion above).
+
+| Contract | Producer | Consumer | Written in | Records |
+|---|---|---|---|---|
+| Alerts | 🪴 grover (`grover_alerts`) | 𖣂 nerv | Grover's `docs/DESIGN.md`, "NERV" (tool table); [SOLUTION](SOLUTION.md) | grover:F-008, nerv:F-122. Generalised when a second producer sends alerts (fpvbuddy battery warnings, openbando deadlines, hobo departures) |
+| FPV data tools | 🚁 fpvbuddy (MCP server) | 𖣂 nerv | Not written yet: the records describe it | nerv:F-101-T08 to nerv:F-101-T10 |
+
 ## Projects
 
 ### 𖣂 nerv
@@ -105,7 +147,7 @@ Not a component yet; its modules are listed here once its repository exists.
 | Telemetry and Blackbox | 🏚️ openbando: log parser, analysis, replay ([core/flight](https://github.com/voidbrain/openbando/tree/main/src/app/core/flight)); 𖣂 nerv FPV pack: vibration analysis ([blackbox.ts](https://github.com/voidbrain/nerv/blob/main/src/blackbox.ts)) | 🚁 fpvbuddy | Candidate: two projects read Blackbox logs; compare the parsers before proposing a shared one |
 | 3D (three.js) | 🏚️ openbando ([src/app/three](https://github.com/voidbrain/openbando/tree/main/src/app/three)) | — | Not yet |
 | UI components and genUI surfaces | 𖣂 nerv: [shared/surface.ts](https://github.com/voidbrain/nerv/blob/main/shared/surface.ts) catalogue (`nerv-status-card`, `nerv-notice-card`, `nerv-checklist-card`, `nerv-recipe-card`), rendered by [web/src/surface-renderer.ts](https://github.com/voidbrain/nerv/blob/main/web/src/surface-renderer.ts); 🧱 bricks: tokens, themes base/plain/eva and the same four surfaces as Angular components ([projects/bricks](https://github.com/voidbrain/bricks/tree/main/projects/bricks), first content 2026-11-25, unpublished); 🏚️ openbando [design-system](https://github.com/voidbrain/openbando/tree/main/design-system) | Consumers nerv (nerv:F-130), hobo, grover and fpvbuddy | 🧱 bricks, started early at the owner's request ([coordinator:F-012](BACKLOG.md#f-012)); components added only on real demand |
-| Fleet, batteries and crashes | 𖣂 nerv FPV pack ([fleet.ts](https://github.com/voidbrain/nerv/blob/main/src/fleet.ts), [batteries.ts](https://github.com/voidbrain/nerv/blob/main/src/batteries.ts)); 🚁 fpvbuddy battery views | Moves from nerv's FPV pack to 🚁 fpvbuddy | A move, not a shared package; the battery and fleet views live in 🚁 fpvbuddy and nerv's FPV pack views retire once the core moves (nerv:F-101-T04; rule for screens above) |
+| Fleet, batteries and crashes | 𖣂 nerv FPV pack ([fleet.ts](https://github.com/voidbrain/nerv/blob/main/src/fleet.ts), [batteries.ts](https://github.com/voidbrain/nerv/blob/main/src/batteries.ts)); 🚁 fpvbuddy battery views | Moves from nerv's FPV pack to 🚁 fpvbuddy | A move, not a shared package: the battery core is 🚁 fpvbuddy's own package, its views live in fpvbuddy, and NERV reaches the data over fpvbuddy's MCP server only (nerv:F-101-T08; [blocks criterion](#the-blocks-criterion)); nerv's FPV pack views retire once the data moves (rule for screens above) |
 
 ## Keeping it current
 
