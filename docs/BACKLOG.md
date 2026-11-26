@@ -1,10 +1,10 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 26 November 2026 against main `4b843ac`. PR #82 (close F-017-T04) merged on green CI.
+Current work ledger, reviewed 26 November 2026 against main `7a69164`. PRs #83 (F-017-T05, audit.enforce) and #84 (B-005, refresh guard reads the HTML order table) merged on green CI. F-017-T05 and B-005 closed in this PR; B-005 replayed on refresh PR #73 (prints ok).
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 19.75 h agent + 1.5 h owner across 26 open steps of 7 features and 4 other records. Generated from the task files.
+**Remaining effort:** 19.75 h agent + 1.5 h owner across 25 open steps of 7 features and 3 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -45,44 +45,6 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | Opened | 2026-11-25 |
 | Verification | Pending |
 | Reviewed | 2026-11-25 |
-
-</details>
-
----
-### <a id="b-005"></a>[🐞 B-005](#top)
-
-**The refresh guard cannot read the HTML dashboard, so a refresh that drops a Done order item never merges itself**
-
-| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
-|---|---|---|---|---|---|:---:|:---:|:---:|
-| 🟡 Implemented | 🔹 P3 | 🟢 Small | 0 h | — | — | 🤖 | — | — |
-
-💻 **→** Next: B-005-T01 — Teach the refresh guard the HTML order table, failing test first (Implemented; verification pending).
-
-| | |
-|---|---|
-| **Issue** | Full audit 2026-11-26 ([report](audits/2026-11-26-coordinator-full.md), finding 1). Since the 10.21.4 reconcile (`5209733`, `.solution.json` `htmlTables: true`) the dashboard's order table is HTML, but `closedRefs` in `tools/refresh-guard.mjs` reads only Markdown rows starting with a pipe. It finds no Closed item, so any refresh that drops a Done order item has auto-merge refused (refresh PR #73: "nerv:B-118 was removed but the dashboard does not show it Closed"). It fails safe: a person must land the PR. |
-| **Reproduce** | In a checkout at `22744b2`: `node -e` importing `orderReasons` from `tools/refresh-guard.mjs`, with the committed dashboard where item 1's status cell reads `Closed: ✅ Done: closed` and the order without item 1: it returns the reason above; the same row as a Markdown table returns none. |
-| **Check** | `test/refresh-guard.test.mjs` has a case with an HTML order table (`<tr><td>` cells, the item as a link) that fails before the fix; the guard accepts dropping a Done item from either layout and still refuses an item that is not Closed; the next refresh that drops a Done item merges itself. |
-
-**Steps**
-
-| Effort | Step | Estimate | Actual | Remaining | Status | PRs |
-|---|---|---|---|---|---|---|
-| 🟢 Small | <a id="b-005-t01"></a>B-005-T01 — Teach the refresh guard the HTML order table, failing test first | 1 h | 0 h | 0 h | Implemented; verification pending | [PR #84](https://github.com/voidbrain/coordinator/pull/84) fix |
-| 🟢 Small | **Total** | 1 h | 0 h (0 of 1 steps recorded) | 0 h | 0 of 1 completed | |
-
-<details>
-<summary>Next action, estimates and PR history</summary>
-
-[Full notes & evidence](work/records/B-005.md)
-
-| Field | Value |
-|---|---|
-| PR / evidence | Steps: B-005-T01: [PR #84](https://github.com/voidbrain/coordinator/pull/84) fix. [#81](https://github.com/voidbrain/coordinator/pull/81) (opened); [#84](https://github.com/voidbrain/coordinator/pull/84) (fix); [full audit 2026-11-26](audits/2026-11-26-coordinator-full.md) |
-| Opened | 2026-11-26 |
-| Verification | Pending: the PR's green CI; the next refresh that drops a Done item merges itself |
-| Reviewed | 2026-11-26 |
 
 </details>
 
