@@ -4,7 +4,7 @@ Current work ledger, reviewed 26 November 2026 against main `3955e40`. PRs #40 t
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 22.75 h agent + 1 h owner across 26 open steps of 7 features and 2 other records. Generated from the task files.
+**Remaining effort:** 27.25 h agent + 1 h owner across 29 open steps of 8 features and 2 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -370,6 +370,47 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|
 | PR / evidence | Steps: F-016-T01: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan; [PR #62](https://github.com/voidbrain/coordinator/pull/62) blocks criterion · F-016-T02: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan · F-016-T03: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan · F-016-T04: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan · F-016-T05: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan · F-016-T06: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan · F-016-T07: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan · F-016-T08: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan; [PR #62](https://github.com/voidbrain/coordinator/pull/62) blocks criterion; [PR #63](https://github.com/voidbrain/coordinator/pull/63) battery core not a blocks candidate · F-016-T09: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan. [#61](https://github.com/voidbrain/coordinator/pull/61) (plan), [#62](https://github.com/voidbrain/coordinator/pull/62) (blocks criterion); owner request and approval 2026-11-26; scope widened and blocks candidates corrected by the owner 2026-11-26 |
 | Components | nerv:F-120, nerv:F-121, nerv:F-122, nerv:F-123, gauntlet-protocol:F-021, gauntlet-protocol:F-022, bricks:F-006, bricks:F-007, bricks:F-008, bricks:F-009, fpvbuddy:F-005, grover:F-008, nerv:F-101 |
+| Opened | 2026-11-26 |
+| Verification | Pending |
+| Reviewed | 2026-11-26 |
+
+</details>
+
+---
+### <a id="f-017"></a>[✨ F-017](#top)
+
+**Cross-project audit: the repositories agree with each other**
+
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🔴 Open | 🔹 P3 | 🔴 Large | 4.5 h | — | — | 🤖 | — | — |
+
+💻 **→** Next: F-017-T01 — Cross-project audit procedure (Planned).
+
+| | |
+|---|---|
+| **Issue** | Per-project audits exist in all 9 components (7-day cadence; only project-harness and openbando enforce it), and the gap review finds missing steps and harness lag, but nothing checks that the repositories agree with each other. Evidence 2026-11-26: nerv:F-101-T05 had NERV import the FPV core, contradicting the 2026-11-25 screens/domain decision in docs/DOMAINS.md; fpvbuddy:F-005 waited on nerv:F-101-T04 although its own PR (FPVBuddy#17) delivered that step; the owner caught both and no check did (fixed in nerv#792, FPVBuddy#17, coordinator#63). Audit freshness 2026-11-26: nerv last full audit 2026-11-20; fpvbuddy, hobo and bricks only baseline audits; gauntlet-protocol only a reconcile audit. |
+| **Reproduce** | Read docs/agents/gap-review.md and docs/agents/solution-gaps.md: no kind compares a plan with a later decision, a producer with its consumer, or reports a component's audit age; a step that depends on a closed or cancelled step of another repository shows only when the step is missing from its backlog. |
+| **Check** | docs/agents/cross-project-audit.md exists and is linked from AGENTS.md and docs/agents/procedures.md, covering cross-references, decisions, contracts, duplication and audit cadence (F-017-T01); the first run is recorded with evidence and its proposals are listed for the owner (F-017-T02); project-harness has a proposal to automate cross-references and audit cadence in the solution tool (F-017-T03). |
+
+**Feature steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | PRs |
+|---|---|---|---|---|---|---|---|---|
+| 🟡 Medium | <a id="f-017-t01"></a>F-017-T01 — Cross-project audit procedure | 2.5 h | 0 h | 2.5 h | Planned | — | [F-017-T02](#f-017-t02) | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan |
+| 🟡 Medium | <a id="f-017-t02"></a>F-017-T02 — First cross-project audit run | 1.5 h | 0 h | 1.5 h | Planned | [F-017-T01](#f-017-t01) | [F-017-T03](#f-017-t03) | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan |
+| 🟢 Small | <a id="f-017-t03"></a>F-017-T03 — Proposal to project-harness: automate checks 1 and 5 | 0.5 h | 0 h | 0.5 h | Planned | [F-017-T02](#f-017-t02) | — | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan |
+| 🔴 Large | **Total** | 4.5 h | 0 h (0 of 3 steps recorded) | 4.5 h | 0 of 3 completed | | | |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+[Full notes & evidence](work/records/F-017.md)
+
+| Field | Value |
+|---|---|
+| PR / evidence | Steps: F-017-T01: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan · F-017-T02: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan · F-017-T03: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan. [#66](https://github.com/voidbrain/coordinator/pull/66) (plan); owner approval 2026-11-26; evidence: nerv#792, FPVBuddy#17, [#63](https://github.com/voidbrain/coordinator/pull/63) |
+| Components | nerv:F-101, nerv:F-122, fpvbuddy:F-005, grover:F-008, coordinator:F-016 |
 | Opened | 2026-11-26 |
 | Verification | Pending |
 | Reviewed | 2026-11-26 |

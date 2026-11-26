@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "parent": "F-017",
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "status": "planned",
+  "id": "F-017-T01",
+  "title": "Cross-project audit procedure",
+  "goal": "docs/agents/cross-project-audit.md exists as a project procedure, linked from the AGENTS.md procedures table and docs/agents/procedures.md, and run together with the gap review",
+  "acceptance": [
+    "it checks five things: (1) cross-references, a step that depends on another repository's step that is closed, cancelled or missing; (2) decisions, a plan in any repository that contradicts a later decision in docs/DOMAINS.md or the solution order; (3) contracts, MCP producer against consumer expectations (grover alerts against nerv:F-122; fpvbuddy tools against nerv:F-101-T08 to T10); (4) duplication across repositories, reusing the F-016-T02 checks by reference, not copying them; (5) audit cadence, repositories overdue or never fully audited",
+    "findings become proposals to the owning repository and are reported to the owner under the gap-review procedure; the coordinator edits no component",
+    "check:fast passes"
+  ],
+  "dependsOn": [],
+  "resources": [
+    "docs/agents/cross-project-audit.md",
+    "AGENTS.md",
+    "docs/agents/procedures.md",
+    "docs/work/records/F-017.md",
+    "generated:backlog-views"
+  ],
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "effort": {
+    "size": "medium",
+    "estimate": "2.5 h agent",
+    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work, from the size of the gap-review procedure and the F-016 steps of similar scope. Not a measurement.",
+    "reviewed": "2026-11-26",
+    "agentHours": 2.5,
+    "ownerHours": 0,
+    "baselineAgentHours": 2.5,
+    "estimateAgentHours": 2.5
+  },
+  "prs": [
+    {
+      "pr": 66,
+      "note": "plan"
+    }
+  ]
+}
