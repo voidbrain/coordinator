@@ -603,13 +603,13 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who |
-|---|---|---|---|---|---|---|---|:---:|
-| 🟢 Small | <a id="f-025-t01"></a>F-025-T01 — Decision page: how a drag-and-drop reorder becomes a reviewed PR | 1 h | 0 h | 1 h | Planned | — | [F-025-T02](#f-025-t02) | 🤖 |
-| 🟢 Small | <a id="f-025-t02"></a>F-025-T02 — Owner decides the reorder write path | 0 h | 0 h | 0 h agent + 0.25 h owner | Planned | [F-025-T01](#f-025-t01) | [F-025-T03](#f-025-t03) | ⏳ 🤔 |
-| 🟡 Medium | <a id="f-025-t03"></a>F-025-T03 — The chosen write path: a reorder proposal opens a PR to the solution order | 2.5 h | 0 h | 2.5 h | Planned | [F-025-T02](#f-025-t02), [F-024-T04](#f-024-t04) | [F-025-T04](#f-025-t04) | ⏳ 🤖 |
-| 🟢 Small | <a id="f-025-t04"></a>F-025-T04 — Owner reorders in NERV's card and merges the PR | 0 h | 0 h | 0 h agent + 0.25 h owner | Planned | [F-025-T03](#f-025-t03) | — | ⏳ 🧑‍🔧 |
-| 🟡 Medium | **Total** | 3.5 h | 0 h (0 of 4 steps recorded) | 3.5 h agent + 0.5 h owner | 0 of 4 completed | | | |
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who | PRs |
+|---|---|---|---|---|---|---|---|:---:|---|
+| 🟢 Small | <a id="f-025-t01"></a>F-025-T01 — Decision page: how a drag-and-drop reorder becomes a reviewed PR | 1 h | 0 h | 1 h | Planned | — | [F-025-T02](#f-025-t02) | 🤖 | [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan |
+| 🟢 Small | <a id="f-025-t02"></a>F-025-T02 — Owner decides the reorder write path | 0 h | 0 h | 0 h agent + 0.25 h owner | Planned | [F-025-T01](#f-025-t01) | [F-025-T03](#f-025-t03) | ⏳ 🤔 | [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan |
+| 🟡 Medium | <a id="f-025-t03"></a>F-025-T03 — The chosen write path: a reorder proposal opens a PR to the solution order | 2.5 h | 0 h | 2.5 h | Planned | [F-025-T02](#f-025-t02), [F-024-T04](#f-024-t04) | [F-025-T04](#f-025-t04) | ⏳ 🤖 | [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan |
+| 🟢 Small | <a id="f-025-t04"></a>F-025-T04 — Owner reorders in NERV's card and merges the PR | 0 h | 0 h | 0 h agent + 0.25 h owner | Planned | [F-025-T03](#f-025-t03) | — | ⏳ 🧑‍🔧 | [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan |
+| 🟡 Medium | **Total** | 3.5 h | 0 h (0 of 4 steps recorded) | 3.5 h agent + 0.5 h owner | 0 of 4 completed | | | | |
 
 <details>
 <summary>Next action, estimates and PR history</summary>
@@ -618,7 +618,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | pending |
+| PR / evidence | Steps: F-025-T01: [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan · F-025-T02: [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan · F-025-T03: [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan · F-025-T04: [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan. Plan: [#119](https://github.com/voidbrain/coordinator/pull/119) |
 | Opened | 2026-11-26 |
 | Verification | Pending |
 | Reviewed | 2026-11-26 |

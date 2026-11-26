@@ -40,5 +40,10 @@
     "ownerHours": 0.25,
     "ownerKind": "decision"
   },
-  "prs": []
+  "prs": [
+    {
+      "pr": 119,
+      "note": "plan"
+    }
+  ]
 }
