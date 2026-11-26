@@ -4,7 +4,7 @@
   "parent": "B-003",
   "title": "Check that both scheduled workflows have run on their schedule",
   "goal": "Confirm the scheduled workflows fire, or find why not",
-  "status": "planned",
+  "status": "closed",
   "acceptance": [
     "After 2026-11-26 12:00 UTC, gh run list -R voidbrain/coordinator --event schedule shows a run of Maintenance freshness and of Refresh solution views",
     "If either is missing, the cause is recorded and the record moves to Open"
@@ -28,12 +28,13 @@
   ],
   "effort": {
     "size": "small",
-    "estimate": "0.25 h agent",
-    "basis": "Estimated 2026-11-25: one gh query after the date, more only if a run is missing. Not a measurement.",
+    "estimate": "0 remaining",
+    "basis": "Estimated 2026-11-25: one gh query after the date, more only if a run is missing. Not a measurement. Closed 2026-11-26.",
     "reviewed": "2026-11-25",
-    "agentHours": 0.25,
+    "agentHours": 0,
     "ownerHours": 0,
     "baselineAgentHours": 0.25,
     "estimateAgentHours": 0.25
-  }
+  },
+  "prs": []
 }
