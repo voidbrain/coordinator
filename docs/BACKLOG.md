@@ -1,10 +1,10 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 26 November 2026 against main `393663f`. PRs #99 to #114 merged with green CI (`npm run ci:status`): harness reconciles to v10.24.1 to v10.24.3, F-016 closed, F-020 decision work, F-024 opened and ordered at 7. No record waits on their CI; B-004 still waits on a day of scheduled runs (B-006).
+Current work ledger, reviewed 26 November 2026 against main `7f361af`. PRs #115 and #116 merged with green CI (`npm run ci:status`): F-024-T01 and F-024-T06 proposals written and closed. No record waits on their CI; B-004 still waits on a day of scheduled runs (B-006).
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 35.75 h agent + 2.75 h owner across 33 open steps of 11 features and 2 other records. Generated from the task files.
+**Remaining effort:** 32.75 h agent + 2.75 h owner across 33 open steps of 11 features and 2 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -119,7 +119,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | Field | Value |
 |---|---|
 | PR / evidence | Steps: F-006-T01: [PR #38](https://github.com/voidbrain/coordinator/pull/38) dependsOn grover:F-008-T03, nerv:F-122-T02. #38 (2026-11-25): Issue, Components and F-006-T01 cross-repository prerequisites updated |
-| Components | grover:F-008, nerv:F-122, nerv:F-123 |
+| Components | grover:F-008, nerv:F-122 |
 | Opened | 2026-11-24 |
 | Verification | Pending |
 | Reviewed | 2026-11-25 |
@@ -370,9 +370,9 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔹 P3 | 🔴 Large | 6.25 h agent + 0.5 h owner | — | — | 🤖 | — | — |
+| 🔴 Open | 🔹 P3 | 🟡 Medium | 3.25 h agent + 0.5 h owner | — | — | 🤖 | — | — |
 
-💻 **→** Next: F-020-T03 — Measure friction: behaviour checks in 2 or 3 representative repositories plus the friction logs (Planned).
+💻 **→** Next: F-020-T03 — Measure friction: behaviour checks in 2 or 3 representative repositories plus the friction logs (Implemented; verification pending).
 
 | | |
 |---|---|
@@ -385,11 +385,11 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who | PRs |
 |---|---|---|---|---|---|---|---|:---:|---|
-| 🟡 Medium | <a id="f-020-t03"></a>F-020-T03 — Measure friction: behaviour checks in 2 or 3 representative repositories plus the friction logs | 3 h | 0 h | 3 h | Planned | — | [F-020-T04](#f-020-t04) | 🤖 | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan |
+| 🟢 Small | <a id="f-020-t03"></a>F-020-T03 — Measure friction: behaviour checks in 2 or 3 representative repositories plus the friction logs | 3 h | 0 h | 0 h | Implemented; verification pending | — | [F-020-T04](#f-020-t04) | 🤖 | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan |
 | 🟡 Medium | <a id="f-020-t04"></a>F-020-T04 — Consolidation proposals per repository, as proposals to each owning repository | 3 h | 0 h | 3 h | Planned | [F-020-T03](#f-020-t03) | [F-020-T05](#f-020-t05) | ⏳ 🤖 | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan |
 | 🟢 Small | <a id="f-020-t05"></a>F-020-T05 — Owner: accept or reject each proposal; decide the freeze lines for the other repositories | 0 h | 0 h | 0 h agent + 0.5 h owner | Planned | [F-020-T04](#f-020-t04) | [F-020-T06](#f-020-t06) | ⏳ 🤔 | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan |
 | 🟢 Small | <a id="f-020-t06"></a>F-020-T06 — Lift the freeze on new procedures here and record the outcome | 0.25 h | 0 h | 0.25 h | Planned | [F-020-T05](#f-020-t05) | — | ⏳ 🤖 | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan |
-| 🔴 Large | **Total** | 12.25 h | 0 h (0 of 6 steps recorded) | 6.25 h agent + 0.5 h owner | 2 of 6 completed | | | | |
+| 🟡 Medium | **Total** | 12.25 h | 0 h (0 of 6 steps recorded) | 3.25 h agent + 0.5 h owner | 2 of 6 completed | | | | |
 
 <details><summary>Done steps (2)</summary>
 

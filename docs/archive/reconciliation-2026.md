@@ -107,3 +107,7 @@ Reconciles to v10.24.3 (from 10.24.2; project-harness B-130): `tools/solution.mj
 ## 2026-11-26 — main `393663f`
 
 PRs #99 to #114 merged with green CI (`npm run ci:status`): harness reconciles to v10.24.1 to v10.24.3, F-016 closed, F-020 decision work, F-024 opened and ordered at 7. No record waits on their CI; B-004 still waits on a day of scheduled runs (B-006).
+
+## 2026-11-26 — main `7f361af`
+
+PRs #115 and #116 merged with green CI (`npm run ci:status`): F-024-T01 and F-024-T06 proposals written and closed. No record waits on their CI; B-004 still waits on a day of scheduled runs (B-006).

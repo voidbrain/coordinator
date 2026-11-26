@@ -1,6 +1,6 @@
 # Coherence review, 2026-11
 
-Per-repository coherence read for F-020-T01, made on 2026-11-26. The cross-repository page is [cross-repo](cross-repo.md) (F-020-T02). Nothing here changes a component. Each finding is a proposal to the repository named as its fix owner, and the owner decides in F-020-T05.
+Per-repository coherence read for F-020-T01, made on 2026-11-26. The cross-repository page is [cross-repo](cross-repo.md) (F-020-T02); the friction measurement is [friction](friction.md) (F-020-T03). Nothing here changes a component. Each finding is a proposal to the repository named as its fix owner, and the owner decides in F-020-T05.
 
 ## Method
 
