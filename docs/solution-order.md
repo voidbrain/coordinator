@@ -27,7 +27,7 @@ Set by the owner on 2026-11-24 (F-002): the proposed order kept as 1–17, `grov
 7. solution:F-017 — cross-project audit: the repositories agree; its first run reuses F-016's checks
 8. nerv:F-122 — Grover alert delivery, unblocks grover:F-008
 9. nerv:F-123 — MCP connection to Grover's hub
-10. fpvbuddy:F-005 — M1 FPV battery core; T02 waits on nerv:F-101-T04
+10. fpvbuddy:F-005 — M1 FPV battery core; T02 to T04 implemented, verification
 11. nerv:F-121 — printed parts per drone, print by chat
 12. grover:F-011 — implemented P1 feed cycle; owner try-out pending
 13. grover:F-004 — implemented P1 probe calibration
