@@ -75,3 +75,7 @@ PRs #78 (close F-017-T03), #79 (F-018-T01 alert contract) and #80 (F-017-T06 dor
 ## 2026-11-26 — main `d139d48`
 
 PR #81 (F-017-T04 full audit) merged on green CI; F-017-T04 closed.
+
+## 2026-11-26 — main `4b843ac`
+
+PR #82 (close F-017-T04) merged on green CI.
