@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "planned",
+  "status": "implemented",
   "id": "F-020-T02",
   "title": "Cross-repo pass: rules that differ without a project marker, one owner per topic",
   "goal": "Each topic stated in several places has one named owner and the others link to it",
@@ -31,10 +31,10 @@
   ],
   "effort": {
     "size": "medium",
-    "estimate": "2 h agent",
-    "basis": "one read over the nine T01 pages plus the harness template, about 20 topics. Estimated 2026-11-26 at agent speed for coordinator-only work. Not a measurement.",
+    "estimate": "0 remaining",
+    "basis": "Done 2026-11-26 in one session: nine repositories exported from origin/main with git archive and the template at v10.24.1 and v10.24.2; copied files, AGENTS.md lines, reference prefixes and the 103 T01 findings rechecked by script, then read by hand: 12 differing rules, 9 topics, 6 terms; 35 T01 findings resolved, 6 in flight, 56 open. Closes on PR #105's green CI. Estimated at 2 h agent; no actual recorded.",
     "reviewed": "2026-11-26",
-    "agentHours": 2,
+    "agentHours": 0,
     "ownerHours": 0,
     "baselineAgentHours": 2,
     "estimateAgentHours": 2
@@ -43,6 +43,10 @@
     {
       "pr": 89,
       "note": "plan"
+    },
+    {
+      "pr": 105,
+      "note": "cross-repository pass"
     }
   ]
 }
