@@ -31,3 +31,7 @@ PRs #29 to #37 (F-004-T02 reconcile to 10.20.1, F-010 self-merging refresh PRs a
 ## 2026-11-25 — main `69da441`
 
 PRs #38 (F-006 coordination) and #39 (F-004-T05 reconcile to 10.21.1, overview retired) merged on green CI. Harness reconciled to v10.21.2 in the F-011 PR.
+
+## 2026-11-26 — main `3955e40`
+
+PRs #40 to #63 merged on green CI: harness v10.21.2 and v10.21.4 (F-011, F-015), bricks (F-012), openbando and hobo (F-013), screens via MCP, B-002 GH_TOKEN, B-004 hourly refresh, F-016 shared-assets plan; F-014, F-015, B-003 closed; refresh PRs.

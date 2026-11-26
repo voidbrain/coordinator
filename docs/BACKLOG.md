@@ -1,6 +1,6 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 25 November 2026 against main `69da441`. PRs #38 (F-006 coordination) and #39 (F-004-T05 reconcile to 10.21.1, overview retired) merged on green CI. Harness reconciled to v10.21.2 in the F-011 PR.
+Current work ledger, reviewed 26 November 2026 against main `3955e40`. PRs #40 to #63 merged on green CI: harness v10.21.2 and v10.21.4 (F-011, F-015), bricks (F-012), openbando and hobo (F-013), screens via MCP, B-002 GH_TOKEN, B-004 hourly refresh, F-016 shared-assets plan; F-014, F-015, B-003 closed; refresh PRs.
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
