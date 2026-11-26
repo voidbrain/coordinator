@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "parent": "F-020",
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "status": "planned",
+  "id": "F-020-T03",
+  "title": "Measure friction: behaviour checks in 2 or 3 representative repositories plus the friction logs",
+  "goal": "A before-evidence of how often agents slip, with the number of runs used",
+  "acceptance": [
+    "the agent-behaviour checks (`npm run behaviour -- run`, Claude Code runner, `--set=drafting`) run in 2 or 3 representative repositories (suggested: project-harness, nerv, coordinator); the report states the runs used per repository (bounded: scenarios x `behaviour.times`, each run costs agent time) and each scenario's pass count against its last run",
+    "the friction logs (`node tools/friction.mjs report`) and the 2026-11-26 slips (a silently forked copied harness file, a reversed battery-core wording, a skipped failing-first test, an edit in NERV's primary checkout) are read; each slip is matched to a scenario that covers it or listed as a candidate new scenario (a proposal to project-harness: the coordinator edits no harness file)",
+    "written to docs/reviews/2026-11-coherence/friction.md; a scenario failing now becomes a B- record in its repository through the owner"
+  ],
+  "dependsOn": [
+    "F-020-T01"
+  ],
+  "resources": [
+    "docs/work/records/F-020.md",
+    "docs/reviews/2026-11-coherence/**",
+    "generated:backlog-views"
+  ],
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "effort": {
+    "size": "medium",
+    "estimate": "3 h agent",
+    "basis": "3 repositories at about 0.75 h of runner waiting (background) plus 0.75 h reading logs and slips. Estimated 2026-11-26 at agent speed for coordinator-only work. Not a measurement.",
+    "reviewed": "2026-11-26",
+    "agentHours": 3,
+    "ownerHours": 0,
+    "baselineAgentHours": 3,
+    "estimateAgentHours": 3
+  },
+  "prs": [
+    {
+      "pr": 89,
+      "note": "plan"
+    }
+  ]
+}
