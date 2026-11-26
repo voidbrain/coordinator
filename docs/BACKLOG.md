@@ -479,8 +479,8 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | PRs |
 |---|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-019-t01"></a>F-019-T01 — Reviews, work usage and behaviour runner settings | 0.25 h | 0 h | 0 h | Implemented; verification pending | [PR #87](https://github.com/voidbrain/coordinator/pull/87) settings on |
-| 🟢 Small | <a id="f-019-t02"></a>F-019-T02 — First architecture review with outside-landscape comparison and the owner's leads | 0.5 h | 0 h | 0 h | Implemented; verification pending | [PR #87](https://github.com/voidbrain/coordinator/pull/87) first architecture review |
+| 🟢 Small | <a id="f-019-t01"></a>F-019-T01 — Reviews, work usage and behaviour runner settings | 0.25 h | 0 h | 0 h | Implemented; verification pending | [PR #88](https://github.com/voidbrain/coordinator/pull/88) settings on |
+| 🟢 Small | <a id="f-019-t02"></a>F-019-T02 — First architecture review with outside-landscape comparison and the owner's leads | 0.5 h | 0 h | 0 h | Implemented; verification pending | [PR #88](https://github.com/voidbrain/coordinator/pull/88) first architecture review |
 | 🟢 Small | <a id="f-019-t03"></a>F-019-T03 — First token and skills reviews | 1 h | 0 h | 1 h | Planned | — |
 | 🟢 Small | **Total** | 1.75 h | 0 h (0 of 3 steps recorded) | 1 h | 0 of 3 completed | |
 
@@ -491,7 +491,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Steps: F-019-T01: [PR #87](https://github.com/voidbrain/coordinator/pull/87) settings on · F-019-T02: [PR #87](https://github.com/voidbrain/coordinator/pull/87) first architecture review. [#87](https://github.com/voidbrain/coordinator/pull/87) |
+| PR / evidence | Steps: F-019-T01: [PR #88](https://github.com/voidbrain/coordinator/pull/88) settings on · F-019-T02: [PR #88](https://github.com/voidbrain/coordinator/pull/88) first architecture review. [#88](https://github.com/voidbrain/coordinator/pull/88) |
 | Opened | 2026-11-26 |
 | Verification | Pending |
 | Reviewed | 2026-11-26 |
