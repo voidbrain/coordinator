@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "parent": "F-016",
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "status": "planned",
+  "id": "F-016-T01",
+  "title": "Shared assets section in docs/DOMAINS.md: bricks, blocks and the Gauntlet",
+  "goal": "docs/DOMAINS.md gives the same three rules for each shared asset",
+  "acceptance": [
+    "one Shared assets section covers bricks (UI: tokens, themes, components, genUI surfaces), blocks (shared domain logic, repository created with its first shared package) and the Gauntlet (model qualification)",
+    "for each: who owns what (the owning project, the shared repository, the consumer); for the Gauntlet, the owning project writes its domain cases (for example evals/gauntlet/<project>-v1.json), gauntlet-protocol provides runners, graders and general packs, NERV picks models per capability",
+    "for each: new work checks the shared asset first and, when it is missing, proposes it there through the gap review, never a private copy",
+    "for each: a project that deliberately does not use it records a skip with its reason; bricks and blocks are recorded as not model-facing",
+    "the existing shared-code and screens rules are kept and linked, not restated"
+  ],
+  "dependsOn": [],
+  "resources": [
+    "docs/DOMAINS.md",
+    "docs/work/records/F-016.md",
+    "generated:backlog-views"
+  ],
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "1.5 h agent",
+    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work; re-estimated the same day for the owner's widened scope. Not a measurement.",
+    "reviewed": "2026-11-26",
+    "agentHours": 1.5,
+    "ownerHours": 0,
+    "baselineAgentHours": 1.5,
+    "estimateAgentHours": 1.5
+  },
+  "prs": [
+    {
+      "pr": 61,
+      "note": "plan"
+    }
+  ]
+}
