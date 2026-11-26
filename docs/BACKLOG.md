@@ -4,7 +4,7 @@ Current work ledger, reviewed 26 November 2026 against main `4b843ac`. PR #82 (c
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 20.75 h agent + 1.5 h owner across 26 open steps of 7 features and 4 other records. Generated from the task files.
+**Remaining effort:** 19.75 h agent + 1.5 h owner across 26 open steps of 7 features and 4 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -55,9 +55,9 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔹 P3 | 🟢 Small | 1 h | — | — | 🤖 | — | — |
+| 🟡 Implemented | 🔹 P3 | 🟢 Small | 0 h | — | — | 🤖 | — | — |
 
-💻 **→** Next: B-005-T01 — Teach the refresh guard the HTML order table, failing test first (Ready).
+💻 **→** Next: B-005-T01 — Teach the refresh guard the HTML order table, failing test first (Implemented; verification pending).
 
 | | |
 |---|---|
@@ -69,8 +69,8 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status |
 |---|---|---|---|---|---|
-| 🟢 Small | <a id="b-005-t01"></a>B-005-T01 — Teach the refresh guard the HTML order table, failing test first | 1 h | 0 h | 1 h | Ready |
-| 🟢 Small | **Total** | 1 h | 0 h (0 of 1 steps recorded) | 1 h | 0 of 1 completed |
+| 🟢 Small | <a id="b-005-t01"></a>B-005-T01 — Teach the refresh guard the HTML order table, failing test first | 1 h | 0 h | 0 h | Implemented; verification pending |
+| 🟢 Small | **Total** | 1 h | 0 h (0 of 1 steps recorded) | 0 h | 0 of 1 completed |
 
 <details>
 <summary>Next action, estimates and PR history</summary>
@@ -81,7 +81,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|
 | PR / evidence | [#81](https://github.com/voidbrain/coordinator/pull/81) (opened); [full audit 2026-11-26](audits/2026-11-26-coordinator-full.md) |
 | Opened | 2026-11-26 |
-| Verification | Pending |
+| Verification | Pending: the PR's green CI; the next refresh that drops a Done item merges itself |
 | Reviewed | 2026-11-26 |
 
 </details>
