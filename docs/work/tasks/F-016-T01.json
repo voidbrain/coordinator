@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "planned",
+  "status": "implemented",
   "id": "F-016-T01",
   "title": "Shared assets section in docs/DOMAINS.md: bricks, blocks and the Gauntlet",
   "goal": "docs/DOMAINS.md gives the same three rules for each shared asset",
@@ -32,10 +32,10 @@
   ],
   "effort": {
     "size": "small",
-    "estimate": "1.5 h agent",
-    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work; re-estimated the same day for the owner's widened scope. Not a measurement.",
+    "estimate": "0 remaining",
+    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work; re-estimated the same day for the owner's widened scope. Not a measurement. Implemented 2026-11-26: Shared assets section (with the blocks criterion, check first and recorded skips) and a Distributed contracts section in docs/DOMAINS.md; verification is the PR's green check:fast in CI.",
     "reviewed": "2026-11-26",
-    "agentHours": 1.5,
+    "agentHours": 0,
     "ownerHours": 0,
     "baselineAgentHours": 1.5,
     "estimateAgentHours": 1.5
