@@ -14,7 +14,7 @@
   "title": "Lift the freeze on new procedures here and record the outcome",
   "goal": "The freeze line is removed from AGENTS.md; F-020 records what was accepted and made",
   "acceptance": [
-    "the freeze project line is removed from AGENTS.md here once the owner confirms (T05) and the accepted proposals are filed in their repositories; the other repositories lift theirs in their own sessions",
+    "the freeze is declared lifted on F-020 (and its AGENTS.md project line removed with a maintenance review, if one was added) once the owner confirms (T05) and the accepted proposals are filed in their repositories; the other repositories lift theirs in their own sessions",
     "F-020 lists each proposal with its outcome (made, rejected, deferred) and the repository records it created"
   ],
   "dependsOn": [
