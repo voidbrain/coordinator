@@ -86,4 +86,4 @@ PRs #83 (F-017-T05, audit.enforce) and #84 (B-005, refresh guard reads the HTML 
 
 ## 2026-11-26 — main `4cd62c3`
 
-PR #86 (B-007, backlog-reader test rule reworded per owner option b) merged on green CI; B-007 closed in this change.
+PR #86 (B-007, backlog-reader test rule reworded per owner option b) merged on green CI; B-007 closed in #87.
