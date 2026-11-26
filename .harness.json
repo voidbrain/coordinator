@@ -210,7 +210,7 @@
   },
   "audit": {
     "days": 7,
-    "enforce": false
+    "enforce": true
   },
   "rules": {
     "agents": "AGENTS.md",

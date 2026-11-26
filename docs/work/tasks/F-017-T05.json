@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "planned",
+  "status": "implemented",
   "id": "F-017-T05",
   "title": "Turn audit.enforce on after the full audit",
   "goal": "The coordinator enforces its audit cadence (cross-project audit proposal 16)",
@@ -30,10 +30,10 @@
   ],
   "effort": {
     "size": "small",
-    "estimate": "0.25 h agent",
-    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work, from the 2026-11-25 scoped audit of this repository. Not a measurement.",
+    "estimate": "0 remaining",
+    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work, from the 2026-11-25 scoped audit of this repository. Not a measurement. Implemented 2026-11-26: .harness.json audit.enforce true (project setting); check:audits and check:fast pass with it.",
     "reviewed": "2026-11-26",
-    "agentHours": 0.25,
+    "agentHours": 0,
     "ownerHours": 0,
     "baselineAgentHours": 0.25,
     "estimateAgentHours": 0.25
@@ -42,6 +42,10 @@
     {
       "pr": 77,
       "note": "plan"
+    },
+    {
+      "pr": 83,
+      "note": "setting"
     }
   ]
 }
