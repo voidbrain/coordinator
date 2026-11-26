@@ -4,7 +4,7 @@
   "parent": "F-015",
   "title": "Dashboard display names and top-aligned tables",
   "goal": "The owner reads the dashboard by project name, with top-aligned cells",
-  "status": "implemented",
+  "status": "closed",
   "acceptance": [
     "`.solution.json` label per project and htmlTables true",
     "views-changed ignores the coordinator's own HTML rows (test failing first)",
@@ -34,10 +34,10 @@
   ],
   "effort": {
     "size": "small",
-    "estimate": "0.5 h agent",
-    "basis": "Estimated 2026-11-26: patch releases (v10.21.2 to v10.21.4) at agent speed. Not a measurement.",
+    "estimate": "0 remaining",
+    "basis": "Estimated 2026-11-26: patch releases (v10.21.2 to v10.21.4) at agent speed. Not a measurement. Closed 2026-11-26.",
     "reviewed": "2026-11-26",
-    "agentHours": 0.5,
+    "agentHours": 0,
     "estimateAgentHours": 0.5
   },
   "prs": []
