@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "ready",
+  "status": "implemented",
   "id": "F-020-T01",
   "title": "Per-repo coherence read by a fresh-context agent, one checklist item per repository (9)",
   "goal": "One finding list per repository: what is inconsistent, unclear or too long, with file and line",
@@ -29,10 +29,10 @@
   ],
   "effort": {
     "size": "medium",
-    "estimate": "4 h agent",
-    "basis": "9 repositories at about 0.4 h each (3 in parallel, one fresh agent per repo with a short brief). Estimated 2026-11-26 at agent speed for coordinator-only work. Not a measurement.",
+    "estimate": "0 remaining",
+    "basis": "Done 2026-11-26 in one session: nine repositories exported from origin/main with git archive, the repository checks run in each export, links, scripts, reachability and template copies scanned by script, then read by hand; 103 findings. Closes on the PR's green CI. Estimated at 4 h agent; no actual recorded (session start not recorded).",
     "reviewed": "2026-11-26",
-    "agentHours": 4,
+    "agentHours": 0,
     "ownerHours": 0,
     "baselineAgentHours": 4,
     "estimateAgentHours": 4
