@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "implemented",
+  "status": "closed",
   "id": "F-017-T04",
   "title": "Full audit of the coordinator (manifest kind full)",
   "goal": "The coordinator has its first full audit by manifest kind (cross-project audit proposal 16)",
@@ -30,7 +30,7 @@
   "effort": {
     "size": "medium",
     "estimate": "0 remaining",
-    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work, from the 2026-11-25 scoped audit of this repository. Not a measurement. Implemented 2026-11-26: docs/audits/2026-11-26-coordinator-full.md and its kind-full manifest; check:audits passes.",
+    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work, from the 2026-11-25 scoped audit of this repository. Not a measurement. Implemented 2026-11-26: docs/audits/2026-11-26-coordinator-full.md and its kind-full manifest; check:audits passes. Closed 2026-11-26 on PR #81's green CI (merged d139d48).",
     "reviewed": "2026-11-26",
     "agentHours": 0,
     "ownerHours": 0,
@@ -45,6 +45,10 @@
     {
       "pr": 81,
       "note": "full audit"
+    },
+    {
+      "pr": 82,
+      "note": "close"
     }
   ]
 }
