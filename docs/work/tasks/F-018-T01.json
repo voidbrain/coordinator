@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "parent": "F-018",
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "status": "planned",
+  "id": "F-018-T01",
+  "title": "Write the producer-neutral alert contract in SOLUTION",
+  "goal": "One written alert shape any producer can send and NERV can deliver",
+  "acceptance": [
+    "docs/SOLUTION.md has an alert contract section: key, level, message, since and an optional scope that replaces Grover's roomId, with how NERV groups and de-duplicates by producer and key",
+    "a serious/minor (night) table per producer: grover from its key grammar (probe, feed, agent), fpvbuddy from fpvbuddy:F-013; openbando and hobo listed as future producers with no row",
+    "the DOMAINS Distributed contracts Alerts row names the SOLUTION section in 'Written in'; each difference from nerv:F-122's Grover-only design is listed for F-018-T02"
+  ],
+  "dependsOn": [],
+  "resources": [
+    "docs/SOLUTION.md",
+    "docs/DOMAINS.md",
+    "docs/work/records/F-018.md",
+    "generated:backlog-views"
+  ],
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "1.5 h agent",
+    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work, from the size of F-017-T02 and the F-122 design page. Not a measurement.",
+    "reviewed": "2026-11-26",
+    "agentHours": 1.5,
+    "ownerHours": 0,
+    "baselineAgentHours": 1.5,
+    "estimateAgentHours": 1.5
+  },
+  "prs": [
+    {
+      "pr": 77,
+      "note": "plan"
+    }
+  ]
+}

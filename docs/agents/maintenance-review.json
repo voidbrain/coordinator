@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "reviewed": "2026-11-26T08:16:42.379Z",
+  "reviewed": "2026-11-26T09:17:56.425Z",
   "policy": "c9570a34ab0c7e4f1274fe37802a6eff8e7edfb8266c98f0cec7119533729b2b",
   "inputs": {
-    "AGENTS.md": "8f5d0d6dbd2dc8e83836d8efe1ab75fd41774312aee1d2b4898280690f0edd3b",
+    "AGENTS.md": "7cbe24632a1dc85169d16aafd73a748e46c4bd0b80520902e2983dc9b41030fb",
     "docs/BACKLOG-RULES.md": "a090ba3c7571d60c50a386f32e30aab528104003a2a9da6c31cedec6ef05b77a",
     "docs/agents/architecture-review.md": "5d967314854912b1a5f1446aeab309763b14f9856bceb3c82df5c6c25c166526",
     "docs/agents/areas.md": "b7e3bc2a676befba66bf9825b18801ca43944a9a2b62014508be459a011f3e86",
@@ -97,8 +97,14 @@
     {
       "kind": "rule",
       "disposition": "implemented",
-      "target": "docs/agents/cross-project-audit.md",
-      "evidence": "F-017-T01: AGENTS.md procedures table gains one project row pointing at the new cross-project audit procedure (listed like gap-review; docs/agents/procedures.md stays the copied harness file); no existing rule removed or changed; check:rules and check:fast pass."
+      "target": "AGENTS.md",
+      "evidence": "2026-11-26: AGENTS.md component list gains hobo and bricks (cross-project audit proposal 6, accepted by the owner); a fact correction, no rule changed."
+    },
+    {
+      "kind": "rule",
+      "disposition": "backlog",
+      "target": "F-017",
+      "evidence": "2026-11-26: automating cross-project audit checks 1 and 5 is a proposal to project-harness (F-017-T03, docs/proposals/cross-project-audit-checks.md); full audit and audit.enforce planned as F-017-T04 and T05."
     }
   ]
 }

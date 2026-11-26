@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "parent": "F-017",
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "status": "planned",
+  "id": "F-017-T05",
+  "title": "Turn audit.enforce on after the full audit",
+  "goal": "The coordinator enforces its audit cadence (cross-project audit proposal 16)",
+  "acceptance": [
+    "only after F-017-T04's full audit has merged: .harness.json sets audit.enforce to true as a project setting (not a template change)",
+    "npm run check:audits and check:fast pass with enforce on"
+  ],
+  "dependsOn": [
+    "F-017-T04"
+  ],
+  "resources": [
+    ".harness.json",
+    "docs/work/records/F-017.md",
+    "generated:backlog-views"
+  ],
+  "validation": [
+    "check:fast; npm run check:audits; final applicable CI"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "0.25 h agent",
+    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work, from the 2026-11-25 scoped audit of this repository. Not a measurement.",
+    "reviewed": "2026-11-26",
+    "agentHours": 0.25,
+    "ownerHours": 0,
+    "baselineAgentHours": 0.25,
+    "estimateAgentHours": 0.25
+  },
+  "prs": [
+    {
+      "pr": 77,
+      "note": "plan"
+    }
+  ]
+}

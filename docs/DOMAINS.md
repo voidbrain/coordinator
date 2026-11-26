@@ -58,8 +58,9 @@ Contracts written as prose or JSON schema between a producer and a consumer, mos
 
 | Contract | Producer | Consumer | Written in | Records |
 |---|---|---|---|---|
-| Alerts | 🪴 grover (`grover_alerts`) | 𖣂 nerv | Grover's `docs/DESIGN.md`, "NERV" (tool table); [SOLUTION](SOLUTION.md) | grover:F-008, nerv:F-122. Generalised when a second producer sends alerts (fpvbuddy battery warnings, openbando deadlines, hobo departures) |
-| FPV data tools | 🚁 fpvbuddy (MCP server) | 𖣂 nerv | Not written yet: the records describe it | nerv:F-101-T08 to nerv:F-101-T10 |
+| Alerts | 🪴 grover (`grover_alerts`) | 𖣂 nerv | Grover's `docs/DESIGN.md`, "NERV" (tool table); [SOLUTION](SOLUTION.md) | grover:F-008, nerv:F-122. Generalised when a second producer sends alerts (fpvbuddy battery warnings, openbando deadlines, hobo departures): [solution:F-018](BACKLOG.md#f-018) writes one producer-neutral shape (fpvbuddy:F-013 and nerv:F-101-T09 are the second producer) |
+| FPV data tools | 🚁 fpvbuddy (MCP server) | 𖣂 nerv | Not written yet: the records describe it | Producer: fpvbuddy:F-009, fpvbuddy:F-011 to fpvbuddy:F-015, fpvbuddy:F-017; consumer: nerv:F-101-T08 to nerv:F-101-T10 |
+| Places, trips and totals | 🗺️ hobo (MCP server on its local service: `list_places`, `get_trip`, `trip_totals`, read-only) | 𖣂 nerv | Not written yet: hobo:F-011-T01 puts the tool table in Hobo's `docs/DESIGN.md` | hobo:F-011; consumer nerv:F-131-T03 |
 
 ## Projects
 
@@ -125,11 +126,18 @@ Contracts written as prose or JSON schema between a producer and a consumer, mos
 | Share and storage | Sharing with or without the address, backup, state stores | [share.ts](https://github.com/voidbrain/openbando/blob/main/src/app/core/share.ts), [backup.ts](https://github.com/voidbrain/openbando/blob/main/src/app/core/backup.ts), [src/app/state](https://github.com/voidbrain/openbando/tree/main/src/app/state) |
 | Design system | Tokens and components | [design-system](https://github.com/voidbrain/openbando/tree/main/design-system) |
 
-### 🗺️ hobo (planned)
+### 🗺️ hobo
 
-Not a component yet; its modules are listed here once its repository exists.
+| Module | Domain | Code |
+|---|---|---|
+| Maps | Leaflet map view, map provider and maps API | [src/app/maps](https://github.com/voidbrain/hobo/tree/main/src/app/maps) |
+| Places, trips and times | Places, trips, route totals and time spent | [src/app/core](https://github.com/voidbrain/hobo/tree/main/src/app/core), [src/app/data](https://github.com/voidbrain/hobo/tree/main/src/app/data) |
+| Local service and routing | API, store, ORS and OSRM routing providers, leg cache, images | [server](https://github.com/voidbrain/hobo/tree/main/server), [ors-provider.ts](https://github.com/voidbrain/hobo/blob/main/server/ors-provider.ts), [osrm-provider.ts](https://github.com/voidbrain/hobo/blob/main/server/osrm-provider.ts) |
+| MCP server (planned) | Places, trips and totals for NERV | hobo:F-011 |
 
 ### 🧱 bricks
+
+Published on npm as `@voidbrain/bricks` (0.3.0, 2026-11-25, by trusted publishing from its `release.yml`).
 
 | Module | Domain | Code |
 |---|---|---|
@@ -142,11 +150,11 @@ Not a component yet; its modules are listed here once its repository exists.
 
 | Domain | Has | Needs or plans | Extraction |
 |---|---|---|---|
-| Maps and geo | 🏚️ openbando: Leaflet, calibration maths in [core/geo.ts](https://github.com/voidbrain/openbando/blob/main/src/app/core/geo.ts) | 🗺️ hobo (planned); an M5 FPV compass (idea; openbando's [camera-compass.ts](https://github.com/voidbrain/openbando/blob/main/src/app/core/drawing/camera-compass.ts) is the nearest code) | Not yet: one project has code |
-| Routing and places | — | 🗺️ hobo (planned) | Not yet |
-| Telemetry and Blackbox | 🏚️ openbando: log parser, analysis, replay ([core/flight](https://github.com/voidbrain/openbando/tree/main/src/app/core/flight)); 𖣂 nerv FPV pack: vibration analysis ([blackbox.ts](https://github.com/voidbrain/nerv/blob/main/src/blackbox.ts)) | 🚁 fpvbuddy | Candidate: two projects read Blackbox logs; compare the parsers before proposing a shared one |
+| Maps and geo | 🏚️ openbando: Leaflet, calibration maths in [core/geo.ts](https://github.com/voidbrain/openbando/blob/main/src/app/core/geo.ts); 🗺️ hobo: Leaflet map view ([src/app/maps](https://github.com/voidbrain/hobo/tree/main/src/app/maps)) | An M5 FPV compass (idea; openbando's [camera-compass.ts](https://github.com/voidbrain/openbando/blob/main/src/app/core/drawing/camera-compass.ts) is the nearest code) | Not yet: both have map code, but nothing is imported by two projects ([blocks criterion](#the-blocks-criterion)); solution:F-016-T08 compares them |
+| Routing and places | 🗺️ hobo: ORS and OSRM routing, places and trips ([server](https://github.com/voidbrain/hobo/tree/main/server), [src/app/core](https://github.com/voidbrain/hobo/tree/main/src/app/core)) | — | Not yet: one project has code |
+| Telemetry and Blackbox | 🏚️ openbando: log parser, analysis, replay ([core/flight](https://github.com/voidbrain/openbando/tree/main/src/app/core/flight)); 𖣂 nerv FPV pack: vibration analysis ([blackbox.ts](https://github.com/voidbrain/nerv/blob/main/src/blackbox.ts)), which moves to 🚁 fpvbuddy (fpvbuddy:F-014) | 🚁 fpvbuddy: the analyzer in its core (fpvbuddy:F-014-T01, which compares openbando's parser first) | Not yet: two projects read Blackbox logs, but neither imports the other's code ([blocks criterion](#the-blocks-criterion)) |
 | 3D (three.js) | 🏚️ openbando ([src/app/three](https://github.com/voidbrain/openbando/tree/main/src/app/three)) | — | Not yet |
-| UI components and genUI surfaces | 𖣂 nerv: [shared/surface.ts](https://github.com/voidbrain/nerv/blob/main/shared/surface.ts) catalogue (`nerv-status-card`, `nerv-notice-card`, `nerv-checklist-card`, `nerv-recipe-card`), rendered by [web/src/surface-renderer.ts](https://github.com/voidbrain/nerv/blob/main/web/src/surface-renderer.ts); 🧱 bricks: tokens, themes base/plain/eva and the same four surfaces as Angular components ([projects/bricks](https://github.com/voidbrain/bricks/tree/main/projects/bricks), first content 2026-11-25, unpublished); 🏚️ openbando [design-system](https://github.com/voidbrain/openbando/tree/main/design-system) | Consumers nerv (nerv:F-130), hobo, grover and fpvbuddy | 🧱 bricks, started early at the owner's request ([coordinator:F-012](BACKLOG.md#f-012)); components added only on real demand |
+| UI components and genUI surfaces | 𖣂 nerv: [shared/surface.ts](https://github.com/voidbrain/nerv/blob/main/shared/surface.ts) catalogue (`nerv-status-card`, `nerv-notice-card`, `nerv-checklist-card`, `nerv-recipe-card`), rendered by [web/src/surface-renderer.ts](https://github.com/voidbrain/nerv/blob/main/web/src/surface-renderer.ts); 🧱 bricks: tokens, themes base/plain/eva and the same four surfaces as Angular components ([projects/bricks](https://github.com/voidbrain/bricks/tree/main/projects/bricks), published on npm as 0.3.0); 🏚️ openbando [design-system](https://github.com/voidbrain/openbando/tree/main/design-system) | Consumers nerv (nerv:F-130), hobo, grover and fpvbuddy | 🧱 bricks, started early at the owner's request ([coordinator:F-012](BACKLOG.md#f-012)); components added only on real demand |
 | Fleet, batteries and crashes | 𖣂 nerv FPV pack ([fleet.ts](https://github.com/voidbrain/nerv/blob/main/src/fleet.ts), [batteries.ts](https://github.com/voidbrain/nerv/blob/main/src/batteries.ts)); 🚁 fpvbuddy battery views | Moves from nerv's FPV pack to 🚁 fpvbuddy | A move, not a shared package: the battery core is 🚁 fpvbuddy's own package, its views live in fpvbuddy, and NERV reaches the data over fpvbuddy's MCP server only (nerv:F-101-T08; [blocks criterion](#the-blocks-criterion)); nerv's FPV pack views retire once the data moves (rule for screens above) |
 
 ## Keeping it current
