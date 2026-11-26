@@ -4,7 +4,7 @@
   "parent": "B-007",
   "title": "Owner: choose the wording of the backlog-reader fixture rule",
   "goal": "The AGENTS.md rule names files that exist, or is gone by the owner's choice",
-  "status": "ready",
+  "status": "closed",
   "acceptance": [
     "🧑 The owner picks option (a), (b) or (c) of the full audit 2026-11-26, finding 3; the choice and its date are on B-007"
   ],
@@ -18,11 +18,11 @@
   ],
   "effort": {
     "size": "small",
-    "estimate": "0.25 h owner",
-    "basis": "Estimated 2026-11-26: one choice among three written options. Not a measurement.",
+    "estimate": "0 remaining",
+    "basis": "Estimated 2026-11-26: one choice among three written options. Not a measurement. Closed 2026-11-26.",
     "reviewed": "2026-11-26",
     "agentHours": 0,
-    "ownerHours": 0.25,
+    "ownerHours": 0,
     "baselineAgentHours": 0,
     "estimateAgentHours": 0,
     "ownerKind": "decision"
