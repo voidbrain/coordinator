@@ -53,7 +53,6 @@
     "docs/agents/parallel-work.md": "core/docs/agents/parallel-work.md",
     "docs/agents/parallel-work-plans.md": "core/docs/agents/parallel-work-plans.md",
     "docs/agents/architecture-review.md": "core/docs/agents/architecture-review.md",
-    "docs/agents/procedures.md": "core/docs/agents/procedures.md",
     "docs/agents/task-context.md": "core/docs/agents/task-context.md",
     "docs/agents/prompt-caching.md": "core/docs/agents/prompt-caching.md",
     "tools/work-usage.mjs": "core/tools/work-usage.mjs",
@@ -73,7 +72,13 @@
     "docs/agents/solution-dashboard.md": "core/docs/agents/solution-dashboard.md",
     "docs/agents/solution-gaps.md": "core/docs/agents/solution-gaps.md"
   },
-  "forked": {},
+  "forked": {
+    "docs/agents/procedures.md": {
+      "from": "core/docs/agents/procedures.md",
+      "base": "10.21.4",
+      "why": "F-017-T01: one project row for the cross-project audit procedure, as the owner's approved plan asks"
+    }
+  },
   "freshness": {
     "auditDays": 7,
     "backlogPRs": 10,

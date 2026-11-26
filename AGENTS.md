@@ -80,6 +80,7 @@ Each procedure is binding when its trigger applies: read it before the task; a s
 | add, configure or rely on an MCP connection, or edit MCP selections | [MCP guidance](docs/agents/mcp.md) (commands inside) |
 | work across repositories of a solution, refresh the views or change the order | [solution profile](docs/agents/solution-profile.md) (refresh inside) and [solution order](docs/solution-order.md) |
 | run a gap review or propose missing steps to a component | [gap review](docs/agents/gap-review.md) |
+| run a cross-project audit (with the gap review) or propose fixes where repositories disagree | [cross-project audit](docs/agents/cross-project-audit.md) |
 | add or use a shared skill | [skills](docs/agents/skills.md) |
 | adopt or reconcile the harness, or review maintenance evidence | [maintenance](docs/agents/maintenance.md) |
 | change AGENTS.md, CLAUDE.md, BACKLOG-RULES or `docs/backlog/`; measure friction; consolidate rules | [rule review](docs/agents/rule-review.md) (agent-behaviour checks when a runner is set) |

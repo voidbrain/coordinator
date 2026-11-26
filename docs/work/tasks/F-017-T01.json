@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "planned",
+  "status": "implemented",
   "id": "F-017-T01",
   "title": "Cross-project audit procedure",
   "goal": "docs/agents/cross-project-audit.md exists as a project procedure, linked from the AGENTS.md procedures table and docs/agents/procedures.md, and run together with the gap review",
@@ -31,10 +31,10 @@
   ],
   "effort": {
     "size": "medium",
-    "estimate": "2.5 h agent",
-    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work, from the size of the gap-review procedure and the F-016 steps of similar scope. Not a measurement.",
+    "estimate": "0 remaining",
+    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work, from the size of the gap-review procedure and the F-016 steps of similar scope. Not a measurement. Implemented 2026-11-26: docs/agents/cross-project-audit.md written and linked; verification is the PR's green check:fast in CI.",
     "reviewed": "2026-11-26",
-    "agentHours": 2.5,
+    "agentHours": 0,
     "ownerHours": 0,
     "baselineAgentHours": 2.5,
     "estimateAgentHours": 2.5
@@ -43,6 +43,10 @@
     {
       "pr": 66,
       "note": "plan"
+    },
+    {
+      "pr": 67,
+      "note": "procedure"
     }
   ]
 }

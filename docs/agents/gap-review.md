@@ -14,6 +14,8 @@ The "Gap review" section of [the dashboard](../SOLUTION-DASHBOARD.md#gap-review)
 
 The generated review does not read the [domain map](../DOMAINS.md) (the template has no domain check), so read it by hand on each review: a shared domain whose Has column names two projects is an extraction candidate (propose a coordination record here, the package in the repository that would own it); a project whose code now covers a domain the page does not list is a correction to the page. Never propose a shared package for a domain only one project has.
 
+Run the [cross-project audit](cross-project-audit.md) on the same refresh: it checks that the repositories agree (cross-references, decisions, contracts, duplication, audit cadence), and its proposals are reported with these.
+
 What it cannot see: a request the owner made in a conversation that nobody recorded anywhere. When the owner names one, add it to the review by hand as a cross-repository need with the owner's words as evidence.
 
 ## Turn findings into proposals
