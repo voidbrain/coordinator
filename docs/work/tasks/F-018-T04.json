@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "id": "F-018-T04",
+  "parent": "F-018",
+  "title": "Add a heartbeat and the producer fallback to the alert contract",
+  "goal": "The contract says how a producer learns that NERV has stopped acknowledging, and what it does then",
+  "status": "planned",
+  "acceptance": [
+    "[SOLUTION, \"Alert contract\"](docs/SOLUTION.md#alert-contract) gains a heartbeat: what the producer can observe about the consumer (the last time its snapshot was read, or an explicit acknowledgement), its interval, and what counts as \"NERV has not acknowledged for N minutes\" with N stated and justified",
+    "The fallback is written per producer table: what grover and fpvbuddy do when N minutes pass without an acknowledgement (their own owner notice path, quiet-hour rules, how often, and the clear when acknowledgement returns); a producer never silently drops an alert it could not hand over",
+    "The change is additive under \"Versioning\" (no new major) or a new major is written first with its coordination record; the JSON Schema and the producer mapping rows are updated",
+    "Evidence from report C3 and X1: nothing outside NERV tells the owner NERV is down; the standby bases see missed Kaji heartbeats but send no owner notice (nerv proposal 1 owns that side)",
+    "Failing test committed first: if the schema changes, a fixture of the new field that the current schema rejects; the change never edits that test to pass"
+  ],
+  "dependsOn": [],
+  "resources": [
+    "docs/SOLUTION.md",
+    "docs/DOMAINS.md",
+    "docs/work/records/F-018.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Fixtures are invented.",
+  "validation": [
+    "npm run check:fast; final applicable CI"
+  ],
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "medium",
+    "estimate": "2 h agent",
+    "basis": "The report's 2 h for the coordinator side: one contract section, two producer rows and the schema. Estimated 2026-11-26 at agent speed from the report's effort column. Not a measurement.",
+    "reviewed": "2026-11-26",
+    "agentHours": 2,
+    "baselineAgentHours": 2,
+    "estimateAgentHours": 2
+  },
+  "prs": [
+    {
+      "pr": 92,
+      "note": "plan"
+    }
+  ]
+}

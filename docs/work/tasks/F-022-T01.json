@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "id": "F-022-T01",
+  "parent": "F-022",
+  "title": "Write the baseline and the cross-project audit check",
+  "goal": "A baseline in SOLUTION, a per-repository check in the audit and a page of copy-paste commands for the owner",
+  "status": "planned",
+  "acceptance": [
+    "SOLUTION has the baseline table; the cross-project audit page or tool reads each repository's settings with `gh api` and lists the gaps, an unreadable setting as unknown",
+    "A page `docs/reviews/2026-11-security-baseline.md` has, per repository, the exact `gh api` commands to turn each missing setting on and the expected read-back",
+    "If the audit check is a tool change, a fixture of a repository with a missing setting fails first and the change never edits it to pass",
+    "Does not add a rule section or procedure file (see the F-020 note of 2026-11-26)",
+    "Failing test committed first: if a tool reads the settings, a fixture with secret scanning off expects a reported gap; the change never edits that test to pass"
+  ],
+  "dependsOn": [],
+  "resources": [
+    "docs/SOLUTION.md",
+    "docs/agents/cross-project-audit.md",
+    "docs/reviews/2026-11-security-baseline.md",
+    "docs/work/records/F-022.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Fixtures are invented.",
+  "validation": [
+    "npm run check:fast; final applicable CI"
+  ],
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "1 h agent",
+    "basis": "The report's 1 h for the agent side. Estimated 2026-11-26 at agent speed from the report's effort column. Not a measurement.",
+    "reviewed": "2026-11-26",
+    "agentHours": 1,
+    "baselineAgentHours": 1,
+    "estimateAgentHours": 1
+  },
+  "prs": [
+    {
+      "pr": 92,
+      "note": "plan"
+    }
+  ]
+}

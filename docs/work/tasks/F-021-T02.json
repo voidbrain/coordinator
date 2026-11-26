@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "id": "F-021-T02",
+  "parent": "F-021",
+  "title": "Table of credentials",
+  "goal": "One table of credentials, with holder, place, rotation and revocation, never values",
+  "status": "planned",
+  "acceptance": [
+    "Rows for Telegram, APNs, Gmail OAuth (nerv:F-086), the GitHub token (nerv:F-132), `OPENBANDO_AI_KEY`, hobo routing keys and bricks npm trusted publishing, each with holder component, where it is kept (a name, never a path to a secret), last rotation date or unknown, how to revoke",
+    "A scan of the page for token-like strings finds none (checked once by the author; neutral names only)",
+    "DOMAINS links the table"
+  ],
+  "dependsOn": [],
+  "resources": [
+    "docs/SOLUTION.md",
+    "docs/DOMAINS.md",
+    "docs/work/records/F-021.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Fixtures are invented.",
+  "validation": [
+    "npm run check:fast; final applicable CI"
+  ],
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "medium",
+    "estimate": "1.5 h agent",
+    "basis": "The report's 1.5 h; the same reading pass as T01 with a different lens. Estimated 2026-11-26 at agent speed from the report's effort column. Not a measurement.",
+    "reviewed": "2026-11-26",
+    "agentHours": 1.5,
+    "baselineAgentHours": 1.5,
+    "estimateAgentHours": 1.5
+  },
+  "prs": [
+    {
+      "pr": 92,
+      "note": "plan"
+    }
+  ]
+}

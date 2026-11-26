@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "id": "F-018-T05",
+  "parent": "F-018",
+  "title": "Write the heartbeat and fallback proposals for the producers and NERV",
+  "goal": "Each repository that moves gets a numbered proposal for the heartbeat, ready for the owner to decide",
+  "status": "planned",
+  "acceptance": [
+    "One numbered proposal each for grover, fpvbuddy and nerv (the acknowledgement or read marker NERV records and exposes, nerv proposal 1 of the report being the watcher-of-the-watcher record), each naming the record or step to create there (title, one-line Issue, Check), added to the F-018-T02 proposals page",
+    "Nothing is edited in a component from this repository"
+  ],
+  "dependsOn": [
+    "F-018-T04"
+  ],
+  "resources": [
+    "docs/SOLUTION.md",
+    "docs/work/records/F-018.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "bounded-edit"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Fixtures are invented.",
+  "validation": [
+    "npm run check:fast; final applicable CI"
+  ],
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "0.5 h agent",
+    "basis": "The report's \"per producer\" remainder; the same shape as F-018-T02. Estimated 2026-11-26 at agent speed from the report's effort column. Not a measurement.",
+    "reviewed": "2026-11-26",
+    "agentHours": 0.5,
+    "baselineAgentHours": 0.5,
+    "estimateAgentHours": 0.5
+  },
+  "prs": [
+    {
+      "pr": 92,
+      "note": "plan"
+    }
+  ]
+}

@@ -4,7 +4,7 @@ Current work ledger, reviewed 26 November 2026 against main `4cd62c3`. PR #86 (B
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 32.75 h agent + 1.75 h owner across 33 open steps of 9 features and 2 other records. Generated from the task files.
+**Remaining effort:** 39.75 h agent + 2.25 h owner across 40 open steps of 12 features and 2 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -379,7 +379,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔹 P3 | 🟢 Small | 0.5 h agent + 0.25 h owner | — | — | 🤖 | — | — |
+| 🔴 Open | 🔹 P3 | 🟡 Medium | 3 h agent + 0.25 h owner | — | — | 🤖 | — | — |
 
 💻 **→** Next: F-018-T02 — Write the side-change proposals for the eight differences from nerv:F-122 (Planned).
 
@@ -394,8 +394,10 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who | PRs |
 |---|---|---|---|---|---|---|---|:---:|---|
 | 🟢 Small | <a id="f-018-t02"></a>F-018-T02 — Write the side-change proposals for the eight differences from nerv:F-122 | 0.5 h | 0 h | 0.5 h | Planned | — | [F-018-T03](#f-018-t03) | 🤖 | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan; [PR #85](https://github.com/voidbrain/coordinator/pull/85) split |
-| 🟢 Small | <a id="f-018-t03"></a>F-018-T03 — Owner: decide which side moves for each alert-contract proposal | 0 h | 0 h | 0 h agent + 0.25 h owner | Planned | [F-018-T02](#f-018-t02) | — | ⏳ 🤔 | [PR #85](https://github.com/voidbrain/coordinator/pull/85) split |
-| 🟢 Small | **Total** | 2 h | 0 h (0 of 3 steps recorded) | 0.5 h agent + 0.25 h owner | 1 of 3 completed | | | | |
+| 🟡 Medium | <a id="f-018-t04"></a>F-018-T04 — Add a heartbeat and the producer fallback to the alert contract | 2 h | 0 h | 2 h | Planned | — | [F-018-T05](#f-018-t05) | 🤖 | [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan |
+| 🟢 Small | <a id="f-018-t05"></a>F-018-T05 — Write the heartbeat and fallback proposals for the producers and NERV | 0.5 h | 0 h | 0.5 h | Planned | [F-018-T04](#f-018-t04) | [F-018-T03](#f-018-t03) | ⏳ 🤖 | [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan |
+| 🟢 Small | <a id="f-018-t03"></a>F-018-T03 — Owner: decide which side moves for each alert-contract proposal | 0 h | 0 h | 0 h agent + 0.25 h owner | Planned | [F-018-T02](#f-018-t02), [F-018-T05](#f-018-t05) | — | ⏳ 🤔 | [PR #85](https://github.com/voidbrain/coordinator/pull/85) split |
+| 🟡 Medium | **Total** | 4.5 h | 0 h (0 of 5 steps recorded) | 3 h agent + 0.25 h owner | 1 of 5 completed | | | | |
 
 <details><summary>Done steps (1)</summary>
 
@@ -412,7 +414,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Steps: F-018-T01: [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan; [PR #79](https://github.com/voidbrain/coordinator/pull/79) contract; [PR #81](https://github.com/voidbrain/coordinator/pull/81) close · F-018-T02: [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan; [PR #85](https://github.com/voidbrain/coordinator/pull/85) split · F-018-T03: [PR #85](https://github.com/voidbrain/coordinator/pull/85) split. [#77](https://github.com/voidbrain/coordinator/pull/77) (plan); [#79](https://github.com/voidbrain/coordinator/pull/79) (F-018-T01 contract); [#81](https://github.com/voidbrain/coordinator/pull/81) (close F-018-T01); [#85](https://github.com/voidbrain/coordinator/pull/85) (split F-018-T02 and F-018-T03); cross-project audit [2026-11-26](audits/2026-11-26-cross-project.md), proposal 9; owner acceptance 2026-11-26 |
+| PR / evidence | Steps: F-018-T01: [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan; [PR #79](https://github.com/voidbrain/coordinator/pull/79) contract; [PR #81](https://github.com/voidbrain/coordinator/pull/81) close · F-018-T02: [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan; [PR #85](https://github.com/voidbrain/coordinator/pull/85) split · F-018-T03: [PR #85](https://github.com/voidbrain/coordinator/pull/85) split · F-018-T04: [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan · F-018-T05: [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan. [#92](https://github.com/voidbrain/coordinator/pull/92) (plan); [#77](https://github.com/voidbrain/coordinator/pull/77) (plan); [#79](https://github.com/voidbrain/coordinator/pull/79) (F-018-T01 contract); [#81](https://github.com/voidbrain/coordinator/pull/81) (close F-018-T01); [#85](https://github.com/voidbrain/coordinator/pull/85) (split F-018-T02 and F-018-T03); [NERV practices transfer report](reviews/2026-11-26-nerv-practices-transfer.md) (proposal 2); cross-project audit [2026-11-26](audits/2026-11-26-cross-project.md), proposal 9; owner acceptance 2026-11-26 |
 | Components | nerv:F-122, nerv:F-101, fpvbuddy:F-013, grover:F-008 |
 | Opened | 2026-11-26 |
 | Verification | Pending |
@@ -496,8 +498,124 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Steps: F-020-T01: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T02: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T03: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T04: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T05: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T06: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan. [#89](https://github.com/voidbrain/coordinator/pull/89) (plan); [#91](https://github.com/voidbrain/coordinator/pull/91) (order position, owner instruction 2026-11-26); owner approval 2026-11-26 (chat "ok") |
+| PR / evidence | Steps: F-020-T01: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T02: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T03: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T04: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T05: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T06: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan. [#92](https://github.com/voidbrain/coordinator/pull/92) (plan); [#89](https://github.com/voidbrain/coordinator/pull/89) (plan); [#91](https://github.com/voidbrain/coordinator/pull/91) (order position, owner instruction 2026-11-26); owner approval 2026-11-26 (chat "ok") |
 | Components | project-harness:F-096, project-harness:F-102, project-harness:F-104, project-harness:F-105, nerv:F-125, nerv:F-132 |
+| Opened | 2026-11-26 |
+| Verification | Pending |
+| Reviewed | 2026-11-26 |
+
+</details>
+
+---
+### <a id="f-021"></a>[✨ F-021](#top)
+
+**Solution-wide inventories of durable data and of credentials**
+
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🔴 Open | 🔹 P3 | 🟡 Medium | 3 h | — | — | 🤖 | — | — |
+
+💻 **→** Next: F-021-T01 — Table of durable data and backups (Planned).
+
+| | |
+|---|---|
+| **Issue** | Durable data lives in several components with different backup states (nerv F-062: snapshots, off-host copies, owner drill pending; grover F-010: backup command, no schedule, SD card; fpvbuddy data until it moves; the hobo server), and credentials are spread over components (Telegram, APNs, Gmail OAuth, GitHub token, `OPENBANDO_AI_KEY`, hobo routing keys, bricks npm trusted publishing). No page lists them, so the owner cannot see which data has no restore drill or which credential has no revocation path. Evidence: [NERV practices transfer report](https://github.com/voidbrain/coordinator/blob/main/docs/reviews/2026-11-26-nerv-practices-transfer.md), class C items C4 and C5; situation-gap rows X3 and X4; missing practice M8. Owner decision 2026-11-26 in chat: "NERV practices inventory accept all" (all 22 proposals of the [report](https://github.com/voidbrain/coordinator/blob/main/docs/reviews/2026-11-26-nerv-practices-transfer.md); this record is proposal 15). |
+| **Reproduce** | Read [SOLUTION](https://github.com/voidbrain/coordinator/blob/main/docs/SOLUTION.md): no table of durable data, backup schedule, off-host copy or restore drill, and no list of credentials. |
+| **Check** | SOLUTION has a table of durable data (holder, what, backup schedule, off-host copy, last restore drill with a link or "never") (F-021-T01) and a table of credentials (name, holder component, place, rotation date, how to revoke; never a value) (F-021-T02); each row cites the record that owns the fix; unknown cells say unknown; the tables are linked from DOMAINS and the cross-project audit page reads them. |
+
+**Feature steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status | PRs |
+|---|---|---|---|---|---|---|
+| 🟡 Medium | <a id="f-021-t01"></a>F-021-T01 — Table of durable data and backups | 1.5 h | 0 h | 1.5 h | Planned | [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan |
+| 🟡 Medium | <a id="f-021-t02"></a>F-021-T02 — Table of credentials | 1.5 h | 0 h | 1.5 h | Planned | [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan |
+| 🟡 Medium | **Total** | 3 h | 0 h (0 of 2 steps recorded) | 3 h | 0 of 2 completed | |
+
+<details>
+<summary>Next action, estimates and evidence</summary>
+
+[Full notes & evidence](work/records/F-021.md)
+
+| Field | Value |
+|---|---|
+| PR / evidence | Steps: F-021-T01: [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan · F-021-T02: [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan. [#92](https://github.com/voidbrain/coordinator/pull/92) (plan); [report](https://github.com/voidbrain/coordinator/blob/main/docs/reviews/2026-11-26-nerv-practices-transfer.md); owner decision 2026-11-26 |
+| Opened | 2026-11-26 |
+| Verification | Pending |
+| Reviewed | 2026-11-26 |
+
+</details>
+
+---
+### <a id="f-022"></a>[✨ F-022](#top)
+
+**GitHub security settings baseline for the nine repositories**
+
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🔴 Open | 🔶 P2 | 🟢 Small | 1 h agent + 0.5 h owner | — | — | 🤖 | — | — |
+
+💻 **→** Next: F-022-T01 — Write the baseline and the cross-project audit check (Planned).
+
+| | |
+|---|---|
+| **Issue** | Secret scanning and push protection are on in five of the nine repositories and missing in project-harness, coordinator, gauntlet-protocol and grover (all public, so free); Dependabot alerts are on in three and security updates in two; CodeQL runs in nerv and openbando only. A pushed token in a public repository, or a known CVE, goes unseen. Repository settings are the owner's to change. Evidence: [NERV practices transfer report](https://github.com/voidbrain/coordinator/blob/main/docs/reviews/2026-11-26-nerv-practices-transfer.md), class C item C6; missing practices M1, M2, M7; situation-gap row X2; N3. Owner decision 2026-11-26 in chat: "NERV practices inventory accept all" (all 22 proposals of the [report](https://github.com/voidbrain/coordinator/blob/main/docs/reviews/2026-11-26-nerv-practices-transfer.md); this record is proposal 7). |
+| **Reproduce** | `gh api repos/voidbrain/<repo> --jq .security_and_analysis` for each of the nine repositories shows the gaps listed in the report. |
+| **Check** | SOLUTION states one baseline (secret scanning, push protection, Dependabot alerts and security updates, CodeQL default setup where code exists) and the cross-project audit checks it per repository (F-022-T01); the owner applies it with copy-paste commands and the audit shows no gap (F-022-T02). |
+
+**Feature steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who | PRs |
+|---|---|---|---|---|---|---|---|:---:|---|
+| 🟢 Small | <a id="f-022-t01"></a>F-022-T01 — Write the baseline and the cross-project audit check | 1 h | 0 h | 1 h | Planned | — | [F-022-T02](#f-022-t02) | 🤖 | [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan |
+| 🟢 Small | <a id="f-022-t02"></a>F-022-T02 — Owner: apply the security baseline to the repositories | 0 h | 0 h | 0 h agent + 0.5 h owner | Planned | [F-022-T01](#f-022-t01) | — | ⏳ 🧑‍🔧 | [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan |
+| 🟢 Small | **Total** | 1 h | 0 h (0 of 2 steps recorded) | 1 h agent + 0.5 h owner | 0 of 2 completed | | | | |
+
+<details>
+<summary>Next action, estimates and evidence</summary>
+
+[Full notes & evidence](work/records/F-022.md)
+
+| Field | Value |
+|---|---|
+| PR / evidence | Steps: F-022-T01: [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan · F-022-T02: [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan. [#92](https://github.com/voidbrain/coordinator/pull/92) (plan); [report](https://github.com/voidbrain/coordinator/blob/main/docs/reviews/2026-11-26-nerv-practices-transfer.md); owner decision 2026-11-26 |
+| Opened | 2026-11-26 |
+| Verification | Pending |
+| Reviewed | 2026-11-26 |
+
+</details>
+
+---
+### <a id="f-023"></a>[✨ F-023](#top)
+
+**SBOM as a CI artifact in the coordinator**
+
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🔴 Open | 🔹 P3 | 🟢 Small | 0.5 h | — | — | 🤖 | — | — |
+
+💻 **→** Next: F-023-T01 — SBOM step in the coordinator CI (Planned).
+
+| | |
+|---|---|
+| **Issue** | Seven of the nine repositories attach a CycloneDX SBOM generated from the lock file to CI; the coordinator and gauntlet-protocol do not. Evidence: [NERV practices transfer report](https://github.com/voidbrain/coordinator/blob/main/docs/reviews/2026-11-26-nerv-practices-transfer.md), class A item A8; missing practice M6. Owner decision 2026-11-26 in chat: "NERV practices inventory accept all" (all 22 proposals of the [report](https://github.com/voidbrain/coordinator/blob/main/docs/reviews/2026-11-26-nerv-practices-transfer.md); this record is proposal 16). |
+| **Reproduce** | Read `.github/workflows/ci.yml`: no SBOM step. |
+| **Check** | CI generates a CycloneDX SBOM from `package-lock.json` and uploads it as an artifact, the same way as the Angular template step (F-023-T01). |
+
+**Feature steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status | PRs |
+|---|---|---|---|---|---|---|
+| 🟢 Small | <a id="f-023-t01"></a>F-023-T01 — SBOM step in the coordinator CI | 0.5 h | 0 h | 0.5 h | Planned | [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan |
+| 🟢 Small | **Total** | 0.5 h | 0 h (0 of 1 steps recorded) | 0.5 h | 0 of 1 completed | |
+
+<details>
+<summary>Next action, estimates and evidence</summary>
+
+[Full notes & evidence](work/records/F-023.md)
+
+| Field | Value |
+|---|---|
+| PR / evidence | Steps: F-023-T01: [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan. [#92](https://github.com/voidbrain/coordinator/pull/92) (plan); [report](https://github.com/voidbrain/coordinator/blob/main/docs/reviews/2026-11-26-nerv-practices-transfer.md); owner decision 2026-11-26 |
 | Opened | 2026-11-26 |
 | Verification | Pending |
 | Reviewed | 2026-11-26 |
