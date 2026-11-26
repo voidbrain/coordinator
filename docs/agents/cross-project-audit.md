@@ -40,7 +40,7 @@ Add a pair when a new producer or consumer is recorded. A side that diverges fro
 
 ### 4. Duplication
 
-Use the shared-asset checks in the [gap review](gap-review.md) (bricks for UI, blocks for shared domain logic, the Gauntlet for model-facing features and MCP tools), added by `solution:F-016-T02`, and the gap review's reading of the domain map. They are not repeated here: report their results under this heading, once, with a link to the gap-review finding. Until `solution:F-016-T02` lands, the domain-map reading is the whole check.
+Use the [shared-asset checks](gap-review.md#shared-asset-checks) in the gap review (bricks for UI, blocks for shared domain logic, the Gauntlet for model-facing features and MCP tools), added by `solution:F-016-T02`, and the gap review's reading of the domain map. They are not repeated here: report their results under this heading, once, with a link to the gap-review finding.
 
 ### 5. Audit cadence
 

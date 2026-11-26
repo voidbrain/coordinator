@@ -43,3 +43,7 @@ PRs #65 (solution:F-016 ordered at 7) and #66 (F-017 cross-project audit plan) m
 ## 2026-11-26 — main `bdc96c3`
 
 PRs #67, #68 and #69 (F-017-T01 cross-project audit procedure and its close, solution:F-017 in the order) merged on green CI.
+
+## 2026-11-26 — main `486b854`
+
+PR #70 (F-016-T01 Shared assets section in the domain map) merged on green CI.

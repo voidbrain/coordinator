@@ -1,10 +1,10 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 26 November 2026 against main `bdc96c3`. PRs #67, #68 and #69 (F-017-T01 cross-project audit procedure and its close, solution:F-017 in the order) merged on green CI.
+Current work ledger, reviewed 26 November 2026 against main `486b854`. PR #70 (F-016-T01 Shared assets section in the domain map) merged on green CI.
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 23.25 h agent + 1 h owner across 28 open steps of 8 features and 2 other records. Generated from the task files.
+**Remaining effort:** 21.25 h agent + 1 h owner across 27 open steps of 8 features and 2 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -336,9 +336,9 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔹 P3 | 🟣 Very large | 12 h | — | — | 🤖 | — | — |
+| 🔴 Open | 🔹 P3 | 🟣 Very large | 10 h | — | — | 🤖 | — | — |
 
-💻 **→** Next: F-016-T01 — Shared assets section in docs/DOMAINS.md: bricks, blocks and the Gauntlet (Implemented; verification pending).
+💻 **→** Next: F-016-T02 — Gap-review checks for the three shared assets (Implemented; verification pending).
 
 | | |
 |---|---|
@@ -350,8 +350,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | PRs |
 |---|---|---|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-016-t01"></a>F-016-T01 — Shared assets section in docs/DOMAINS.md: bricks, blocks and the Gauntlet | 1.5 h | 0 h | 0 h | Implemented; verification pending | — | [F-016-T02](#f-016-t02) | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan; [PR #62](https://github.com/voidbrain/coordinator/pull/62) blocks criterion; [PR #70](https://github.com/voidbrain/coordinator/pull/70) Shared assets section |
-| 🟡 Medium | <a id="f-016-t02"></a>F-016-T02 — Gap-review checks for the three shared assets | 2 h | 0 h | 2 h | Planned | [F-016-T01](#f-016-t01) | [F-016-T03](#f-016-t03), [F-016-T04](#f-016-t04), [F-016-T05](#f-016-t05), [F-016-T06](#f-016-t06), [F-016-T07](#f-016-t07), [F-016-T08](#f-016-t08) | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
+| 🟢 Small | <a id="f-016-t02"></a>F-016-T02 — Gap-review checks for the three shared assets | 2 h | 0 h | 0 h | Implemented; verification pending | — | [F-016-T03](#f-016-t03), [F-016-T04](#f-016-t04), [F-016-T05](#f-016-t05), [F-016-T06](#f-016-t06), [F-016-T07](#f-016-t07), [F-016-T08](#f-016-t08) | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
 | 🟡 Medium | <a id="f-016-t03"></a>F-016-T03 — Gauntlet inventory proposal for nerv | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | [F-016-T09](#f-016-t09) | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
 | 🟡 Medium | <a id="f-016-t04"></a>F-016-T04 — Gauntlet inventory proposal for grover | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | [F-016-T09](#f-016-t09) | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
 | 🟡 Medium | <a id="f-016-t05"></a>F-016-T05 — Gauntlet inventory proposal for fpvbuddy | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | [F-016-T09](#f-016-t09) | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
@@ -359,7 +358,15 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | 🟡 Medium | <a id="f-016-t07"></a>F-016-T07 — Gauntlet inventory proposal for openbando | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | [F-016-T09](#f-016-t09) | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
 | 🟡 Medium | <a id="f-016-t08"></a>F-016-T08 — Shared-logic inventory: whether to create blocks and its first package | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | — | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan; [PR #62](https://github.com/voidbrain/coordinator/pull/62) blocks criterion; [PR #63](https://github.com/voidbrain/coordinator/pull/63) battery core not a blocks candidate |
 | 🟢 Small | <a id="f-016-t09"></a>F-016-T09 — Consolidated packs and graders proposal for gauntlet-protocol | 1 h | 0 h | 1 h | Planned | [F-016-T03](#f-016-t03), [F-016-T04](#f-016-t04), [F-016-T05](#f-016-t05), [F-016-T06](#f-016-t06), [F-016-T07](#f-016-t07) | — | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
-| 🟣 Very large | **Total** | 13.5 h | 0 h (0 of 9 steps recorded) | 12 h | 0 of 9 completed | | | |
+| 🟣 Very large | **Total** | 13.5 h | 0 h (0 of 9 steps recorded) | 10 h | 1 of 9 completed | | | |
+
+<details><summary>Done steps (1)</summary>
+
+| Effort | Step | Estimate | Actual | Status | PRs |
+|---|---|---|---|---|---|
+| — | <a id="f-016-t01"></a>F-016-T01 — Shared assets section in docs/DOMAINS.md: bricks, blocks and the Gauntlet | 1.5 h | 0 h | Completed | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan; [PR #62](https://github.com/voidbrain/coordinator/pull/62) blocks criterion; [PR #70](https://github.com/voidbrain/coordinator/pull/70) Shared assets section |
+
+</details>
 
 <details>
 <summary>Next action, estimates and PR history</summary>
