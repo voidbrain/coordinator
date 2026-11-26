@@ -22,6 +22,11 @@ export function ignorePatterns(repository, label = 'coordinator', emoji = '🚦'
     '^\\| \\[solution:',
     `^\\| ${escape(emoji)}`,
     `^\\| [0-9]+ \\| ${escape(emoji)}`,
+    // harness 10.21.4 htmlTables: the same rows as HTML, aligned to the top
+    `^<tr valign="top"><td>(solution|${escape(label)})</td>`,
+    '^<tr valign="top"><td><a href="[^"]*">solution:',
+    `^<tr valign="top"><td>${escape(emoji)}`,
+    `^<tr valign="top"><td align="right">[0-9]+</td><td>${escape(emoji)}`,
     `github\\.com/${escape(repository)}/(commit|blob)/`,
   ];
 }

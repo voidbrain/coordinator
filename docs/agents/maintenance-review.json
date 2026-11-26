@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewed": "2026-11-25T21:04:41.489Z",
+  "reviewed": "2026-11-26T00:21:39.826Z",
   "policy": "c9570a34ab0c7e4f1274fe37802a6eff8e7edfb8266c98f0cec7119533729b2b",
   "inputs": {
     "AGENTS.md": "34713ab22e59b02a5ec88a569de4eaf3b90da69de85092e082c166a1b4723c81",
@@ -38,7 +38,7 @@
     "docs/backlog/steps.md": "98705e1e90b5a908a6a6cc666bf64fbdae82020a2a80cf8d11906ebb19108c8c",
     "tools/task-claims.mjs": "f22fa98ed34d2914b3c5572353f8352a2a84a77b81e30316575f4b7d7aa17272",
     "tools/usage-launch.mjs": "51dea30282a89f7efa8fa0291679447d8f25a1b4b2aeb805173db603d093d6f5",
-    "tools/work-items.mjs": "981448222990533069fa7d09e587da9b5955354a3f5e5ad5371823f6685ef5ec",
+    "tools/work-items.mjs": "e5c668687039afd52e1e9ce533c2755304909855ef05de5d971e06a0c7339bc0",
     "tools/work-usage.mjs": "780c9ca35d2057e6ac86ca1f6168a8e315622919215dc317ae6238e875bcf023"
   },
   "measurements": {
@@ -95,38 +95,10 @@
   },
   "outcomes": [
     {
-      "kind": "rule",
-      "disposition": "implemented",
-      "target": "docs/agents/areas.md",
-      "evidence": "F-004-T05: the Solution views notes now describe the template dashboard (10.21.1) as the owner's view, cross-repository prerequisites as dependsOn repo:STEP-ID, the offline order check in CI, and the retired overview; reviewed against tools/solution.mjs, .github/workflows/ci.yml and refresh-views.yml"
-    },
-    {
-      "kind": "rule",
-      "disposition": "implemented",
-      "target": "AGENTS.md",
-      "evidence": "F-004-T05: project lines name the dashboard instead of the retired overview and drop check:order; no safety rule changed (check:rules passes)"
-    },
-    {
       "kind": "tool",
       "disposition": "implemented",
-      "target": "tools/refresh-guard.mjs",
-      "evidence": "F-004-T05: the guard finds the order columns by the header so Done items in the 10.21 order table still allow auto-merge; test/refresh-guard.test.mjs failed first"
-    },
-    {
-      "kind": "none",
-      "disposition": "no-change",
-      "evidence": "Harness 10.20.1 -> 10.21.1: tools/solution.mjs, tools/impact-map.mjs, docs/agents/solution-profile.md and solution-dashboard.md copied byte for byte; no adapted file changed in the release"
-    },
-    {
-      "kind": "none",
-      "disposition": "no-change",
-      "evidence": "Harness 10.21.1 -> 10.21.2 (F-011): tools/solution.mjs, docs/agents/solution-dashboard.md and solution-gaps.md copied byte for byte; label coordinator set in .solution.json; no adapted file changed in the release"
-    },
-    {
-      "kind": "rule",
-      "disposition": "implemented",
-      "target": "AGENTS.md",
-      "evidence": "F-013-T01: the Architecture line lists openbando among the components and links docs/DOMAINS.md; docs/agents/gap-review.md (project procedure) reads the domain map by hand because the template gap review has no domain check; no safety rule changed (check:rules passes)"
+      "target": "tools/views-changed.mjs",
+      "evidence": "F-015 (harness v10.21.4 reconcile): the refresh's change filter also ignores the coordinator's own rows when the dashboard writes HTML tables (htmlTables); tests in test/views-changed.test.mjs, the last one failing first."
     }
   ]
 }

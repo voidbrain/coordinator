@@ -4,7 +4,7 @@ Current work ledger, reviewed 25 November 2026 against main `69da441`. PRs #38 (
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 10.25 h agent + 1 h owner across 20 open steps of 8 features and 3 other records. Generated from the task files.
+**Remaining effort:** 10.75 h agent + 1 h owner across 21 open steps of 8 features and 3 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -417,26 +417,27 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 ---
 ### <a id="f-015"></a>[✨ F-015](#top)
 
-**Reconcile project-harness v10.21.2 → v10.21.3**
+**Reconcile project-harness v10.21.2 → v10.21.4; dashboard display names and layout**
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔹 P3 | 🟢 Small | 0.5 h | — | — | 🤖 | — | — |
+| 🔴 Open | 🔹 P3 | 🟢 Small | 1 h | — | — | 🤖 | — | — |
 
-💻 **→** Next: F-015-T01 — Reconcile harness files v10.21.2 -&gt; v10.21.3 (Planned).
+💻 **→** Next: F-015-T01 — Reconcile harness files v10.21.2 -&gt; v10.21.4 (Implemented; verification pending).
 
 | | |
 |---|---|
-| **Issue** | `.harness.json` names v10.21.2 while the template released v10.21.3. Gap review 2026-11-26, proposal 11 ("Behind the harness"), accepted by the owner (F-014). |
+| **Issue** | `.harness.json` names v10.21.2 while the template released v10.21.3. Gap review 2026-11-26, proposal 11 ("Behind the harness"), accepted by the owner (F-014). 2026-11-26: the owner asked for display names per project, a Total row, unbroken dates, top-aligned cells and short lists in the dashboard; the template shipped them in v10.21.4 (project-harness:F-101), so this reconcile goes to v10.21.4. |
 | **Reproduce** | `npm run check:freshness` on `main`: it reports the harness template v10.21.3. |
-| **Check** | `.harness.json` names v10.21.3; `check:freshness` reports no harness update; `check:fast` and CI on the PR pass. |
+| **Check** | `.harness.json` names v10.21.4; `check:freshness` reports no harness update; `check:fast` and CI on the PR pass; after the next refresh the dashboard shows the display names (Coordinator, NERV, Gauntlet, Harness, FPVBuddy, Grover, OpenBando, Hobo, Bricks), a Total row with an empty Harness cell, dates that do not wrap, top-aligned cells and multi-value cells one item per line. |
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status |
-|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-015-t01"></a>F-015-T01 — Reconcile harness files v10.21.2 -&gt; v10.21.3 | 0.5 h | 0 h | 0.5 h | Planned |
-| 🟢 Small | **Total** | 0.5 h | 0 h (0 of 1 steps recorded) | 0.5 h | 0 of 1 completed |
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks |
+|---|---|---|---|---|---|---|---|
+| 🟢 Small | <a id="f-015-t01"></a>F-015-T01 — Reconcile harness files v10.21.2 -&gt; v10.21.4 | 0.5 h | 0 h | 0.5 h | Implemented; verification pending | — | [F-015-T02](#f-015-t02) |
+| 🟢 Small | <a id="f-015-t02"></a>F-015-T02 — Dashboard display names and top-aligned tables | 0.5 h | 0 h | 0.5 h | Implemented; verification pending | [F-015-T01](#f-015-t01) | — |
+| 🟢 Small | **Total** | 1 h | 0 h (0 of 2 steps recorded) | 1 h | 0 of 2 completed | | |
 
 <details>
 <summary>Next action, estimates and PR history</summary>
@@ -445,7 +446,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Opened in [PR #51](https://github.com/voidbrain/coordinator/pull/51); owner decision 2026-11-26 |
+| PR / evidence | Opened in [PR #51](https://github.com/voidbrain/coordinator/pull/51); owner decision 2026-11-26; [#54](https://github.com/voidbrain/coordinator/pull/54) |
 | Opened | 2026-11-26 |
 | Verification | Pending |
 | Reviewed | 2026-11-26 |
