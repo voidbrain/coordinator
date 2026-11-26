@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "reviewed": "2026-11-26T06:40:09.454Z",
+  "reviewed": "2026-11-26T08:12:10.498Z",
   "policy": "c9570a34ab0c7e4f1274fe37802a6eff8e7edfb8266c98f0cec7119533729b2b",
   "inputs": {
-    "AGENTS.md": "4e4497e66b740913dcd124846aa8635eba88a3ab50afbadc5165ff1d5027505e",
+    "AGENTS.md": "8f5d0d6dbd2dc8e83836d8efe1ab75fd41774312aee1d2b4898280690f0edd3b",
     "docs/BACKLOG-RULES.md": "a090ba3c7571d60c50a386f32e30aab528104003a2a9da6c31cedec6ef05b77a",
     "docs/agents/architecture-review.md": "5d967314854912b1a5f1446aeab309763b14f9856bceb3c82df5c6c25c166526",
     "docs/agents/areas.md": "b7e3bc2a676befba66bf9825b18801ca43944a9a2b62014508be459a011f3e86",
@@ -14,7 +14,7 @@
     "docs/agents/mcp.md": "06efbb58a50f9236506ca0afa9a79bb1d42c12ca380a29ed0254bf0a537f860d",
     "docs/agents/parallel-work-plans.md": "d171d89ec5431668ff770e5fcb0098ad518da6289a0d12a56aafdae60930d567",
     "docs/agents/parallel-work.md": "be8887601fefe6eb9f52f8a549abebc36a875f354570d5291900ddfc5f708d0d",
-    "docs/agents/procedures.md": "9b95bf5f3707453ce76392524feea05e754e005a6e96d21a0fe8b7dd95059b2d",
+    "docs/agents/procedures.md": "b4ad62cd9bcafc5894c4b70ff99c02ff7fac29595058ab66623e0a3c234201c8",
     "docs/agents/prompt-caching.md": "3b8962bd4f2f713d5730e999e65338ebdd90347ee09dffbd9c8da98e2405a21e",
     "docs/agents/rule-review.md": "b27cfb4e8e42489b5f234ec42ae4d0cc9dcd4ea8be01fff9754a85b5ff8c86d0",
     "docs/agents/skills-discovery.md": "ad322a2b93f2dc1b8f27d0b052248d57c050ca852077589ba889447577357057",
@@ -95,10 +95,10 @@
   },
   "outcomes": [
     {
-      "kind": "tool",
+      "kind": "rule",
       "disposition": "implemented",
-      "target": "tools/with-gh-token.mjs",
-      "evidence": "B-002: check:solution runs through tools/with-gh-token.mjs (GH_TOKEN, GITHUB_TOKEN, else gh auth token; a failure without one names the missing token); test/with-gh-token.test.mjs failed first."
+      "target": "docs/agents/cross-project-audit.md",
+      "evidence": "F-017-T01: AGENTS.md procedures table gains one project row pointing at the new cross-project audit procedure (also in docs/agents/procedures.md and docs/agents/gap-review.md); no existing rule removed or changed; check:rules and check:fast pass."
     }
   ]
 }

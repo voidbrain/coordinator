@@ -1,10 +1,10 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 26 November 2026 against main `3955e40`. PRs #40 to #63 merged on green CI: harness v10.21.2 and v10.21.4 (F-011, F-015), bricks (F-012), openbando and hobo (F-013), screens via MCP, B-002 GH_TOKEN, B-004 hourly refresh, F-016 shared-assets plan; F-014, F-015, B-003 closed; refresh PRs.
+Current work ledger, reviewed 26 November 2026 against main `6b42c66`. PRs #65 (solution:F-016 ordered at 7) and #66 (F-017 cross-project audit plan) merged on green CI.
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 27.25 h agent + 1 h owner across 29 open steps of 8 features and 2 other records. Generated from the task files.
+**Remaining effort:** 24.75 h agent + 1 h owner across 29 open steps of 8 features and 2 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -383,9 +383,9 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔹 P3 | 🔴 Large | 4.5 h | — | — | 🤖 | — | — |
+| 🔴 Open | 🔹 P3 | 🟡 Medium | 2 h | — | — | 🤖 | — | — |
 
-💻 **→** Next: F-017-T01 — Cross-project audit procedure (Planned).
+💻 **→** Next: F-017-T01 — Cross-project audit procedure (Implemented; verification pending).
 
 | | |
 |---|---|
@@ -397,10 +397,10 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | PRs |
 |---|---|---|---|---|---|---|---|---|
-| 🟡 Medium | <a id="f-017-t01"></a>F-017-T01 — Cross-project audit procedure | 2.5 h | 0 h | 2.5 h | Planned | — | [F-017-T02](#f-017-t02) | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan |
+| 🟢 Small | <a id="f-017-t01"></a>F-017-T01 — Cross-project audit procedure | 2.5 h | 0 h | 0 h | Implemented; verification pending | — | [F-017-T02](#f-017-t02) | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #67](https://github.com/voidbrain/coordinator/pull/67) procedure |
 | 🟡 Medium | <a id="f-017-t02"></a>F-017-T02 — First cross-project audit run | 1.5 h | 0 h | 1.5 h | Planned | [F-017-T01](#f-017-t01) | [F-017-T03](#f-017-t03) | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan |
 | 🟢 Small | <a id="f-017-t03"></a>F-017-T03 — Proposal to project-harness: automate checks 1 and 5 | 0.5 h | 0 h | 0.5 h | Planned | [F-017-T02](#f-017-t02) | — | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan |
-| 🔴 Large | **Total** | 4.5 h | 0 h (0 of 3 steps recorded) | 4.5 h | 0 of 3 completed | | | |
+| 🟡 Medium | **Total** | 4.5 h | 0 h (0 of 3 steps recorded) | 2 h | 0 of 3 completed | | | |
 
 <details>
 <summary>Next action, estimates and PR history</summary>
@@ -409,7 +409,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Steps: F-017-T01: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan · F-017-T02: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan · F-017-T03: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan. [#66](https://github.com/voidbrain/coordinator/pull/66) (plan); owner approval 2026-11-26; evidence: nerv#792, FPVBuddy#17, [#63](https://github.com/voidbrain/coordinator/pull/63) |
+| PR / evidence | Steps: F-017-T01: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #67](https://github.com/voidbrain/coordinator/pull/67) procedure · F-017-T02: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan · F-017-T03: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan. [#66](https://github.com/voidbrain/coordinator/pull/66) (plan); [#67](https://github.com/voidbrain/coordinator/pull/67) (F-017-T01 procedure); owner approval 2026-11-26; evidence: nerv#792, FPVBuddy#17, [#63](https://github.com/voidbrain/coordinator/pull/63) |
 | Components | nerv:F-101, nerv:F-122, fpvbuddy:F-005, grover:F-008 |
 | Opened | 2026-11-26 |
 | Verification | Pending |
