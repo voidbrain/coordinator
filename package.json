@@ -40,7 +40,14 @@
     "work:build": "node tools/work-items.mjs build",
     "check:work": "node tools/work-items.mjs check",
     "work:tasks": "node tools/work-items.mjs tasks",
-    "work:next": "node tools/work-items.mjs next"
+    "work:next": "node tools/work-items.mjs next",
+    "coverage:browser": "node tools/browser-coverage.mjs",
+    "verification:plan": "node tools/verification.mjs",
+    "work:claims": "node tools/task-claims.mjs",
+    "work:usage": "node tools/work-usage.mjs",
+    "work:launch": "node tools/usage-launch.mjs",
+    "work:pr": "node tools/work-items.mjs pr",
+    "work:close": "node tools/work-items.mjs close"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",

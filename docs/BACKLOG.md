@@ -1,6 +1,6 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 26 November 2026 against main `34f9688`. PRs #87–#93 merged on green CI (#87: close B-007; #88: F-019-T01/T02; #89, #91: F-020 plan and order; #90: F-017-T07; #92: F-018, F-020–F-023 transfer plan; #93: refresh views, no record). F-017-T06, F-017-T07 and F-017 closed; F-019-T01 and F-019-T02 closed.
+Current work ledger, reviewed 26 November 2026 against main `837fb31`. PR #99 reconciles the harness to v10.24.1 (from 10.21.4); the owner authorised it in chat on 2026-11-26 ("ok to all") although the template backlog is not empty. CI pending at this entry.
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
