@@ -1,6 +1,6 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 26 November 2026 against main `4cd62c3`. PR #86 (B-007, owner option b) merged on green CI; B-007 closed.
+Current work ledger, reviewed 26 November 2026 against main `4cd62c3`. PR #86 (B-007, backlog-reader test rule reworded per owner option b) merged on green CI; B-007 closed in #87.
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
