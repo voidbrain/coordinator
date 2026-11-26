@@ -4,10 +4,10 @@
   "parent": "F-025",
   "title": "Owner decides the reorder write path",
   "goal": "The decision is recorded on the page and in F-025",
-  "status": "planned",
+  "status": "closed",
   "acceptance": [
-    "F-025-T01 sets docs/decisions/solution-order-reorder.md as this step's ownerLink",
-    "The owner's answer is quoted with its date on the page and in F-025; T03 follows it"
+    "The owner's answer is quoted with its date on the page and in F-025",
+    "T03 follows it"
   ],
   "dependsOn": [
     "F-025-T01"
@@ -31,19 +31,24 @@
   ],
   "effort": {
     "size": "small",
-    "estimate": "0 h agent, 0.25 h owner",
-    "basis": "One reading of the decision page. Estimated 2026-11-26. Not a measurement.",
-    "reviewed": "2026-11-26",
+    "estimate": "0.25 h owner",
+    "basis": "Owner decision 2026-11-27 ~00:10 CET, in chat (\"ok\" to the recommendation): (b) NERV opens the reorder PR, using its existing PR tool behind an approval card (the owner approves the new order); the coordinator's live index stays read-only. Decided before T01's page. No actual: owner time not measured.",
+    "reviewed": "2026-11-27",
     "agentHours": 0,
     "baselineAgentHours": 0,
     "estimateAgentHours": 0,
-    "ownerHours": 0.25,
+    "ownerHours": 0,
     "ownerKind": "decision"
   },
   "prs": [
     {
       "pr": 119,
       "note": "plan"
+    },
+    {
+      "pr": 120,
+      "note": "decision"
     }
-  ]
+  ],
+  "ownerLink": "docs/decisions/solution-order-reorder.md"
 }

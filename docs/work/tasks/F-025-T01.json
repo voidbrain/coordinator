@@ -2,12 +2,12 @@
   "version": 1,
   "id": "F-025-T01",
   "parent": "F-025",
-  "title": "Decision page: how a drag-and-drop reorder becomes a reviewed PR",
-  "goal": "The owner has the options for the write path and a recommendation",
-  "status": "planned",
+  "title": "Decision note: NERV opens the reorder PR (write path and guard rails)",
+  "goal": "The chosen write path and its guard rails are recorded on a short decision note",
+  "status": "closed",
   "acceptance": [
-    "docs/decisions/solution-order-reorder.md sets out the options: (a) the live index service gains one narrow write tool that opens a PR changing only docs/solution-order.md (token scoped to this repository, contents and pull requests only); (b) NERV's card hands the new order to a NERV job that opens the PR; (c) the card only produces the reorder instruction text for the owner to paste into a session. Each with what it breaks in F-024's read-only rule, its token and its failure modes, and a recommendation",
-    "The page states the invariants every option keeps: no silent write to main, references validated, a stale base rejected, only the lines between the order markers change, the PR is reviewed and merged by the owner"
+    "docs/decisions/solution-order-reorder.md records the owner's choice (b): NERV opens the PR with its existing PR tool behind an approval card, the live index stays read-only",
+    "The guard rails are stated: reject unknown items or a stale list, change only order lines, open a PR, never merge"
   ],
   "dependsOn": [],
   "resources": [
@@ -30,17 +30,23 @@
   ],
   "effort": {
     "size": "small",
-    "estimate": "1 h agent",
-    "basis": "One decision page next to the live index one. Estimated 2026-11-26. Not a measurement.",
-    "reviewed": "2026-11-26",
-    "agentHours": 1,
-    "baselineAgentHours": 1,
-    "estimateAgentHours": 1
+    "estimate": "0 remaining",
+    "basis": "Re-estimated 2026-11-27 from 1 h to 0.25 h: the owner chose (b) before the options page was written, so this is a short decision note, not a comparison. Closed 2026-11-27, about 0.25 h agent (stated).",
+    "reviewed": "2026-11-27",
+    "agentHours": 0,
+    "baselineAgentHours": 0.25,
+    "estimateAgentHours": 0.25,
+    "actualAgentHours": 0.25,
+    "actualSource": "stated"
   },
   "prs": [
     {
       "pr": 119,
       "note": "plan"
+    },
+    {
+      "pr": 120,
+      "note": "decision"
     }
   ]
 }
