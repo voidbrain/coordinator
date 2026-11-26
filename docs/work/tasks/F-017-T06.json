@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "parent": "F-017",
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "status": "implemented",
+  "id": "F-017-T06",
+  "title": "Check 6: dormant checks, first run",
+  "goal": "Procedures, tests and CI that exist but do not run or cannot fail are found in all nine repositories, and future cross-project audits include the check",
+  "acceptance": [
+    "docs/audits/2026-11-26-dormant-checks.md lists, per category (procedures, tests that do not run, tests that cannot fail, CI), each finding with its owning repository, file:line or setting evidence and a proposed fix (setting, CI step, new B- record or false positive), with a scoped manifest that passes check:audits",
+    "docs/agents/cross-project-audit.md has check 6 (dormant checks) and the gap review names it",
+    "the proposals are numbered on F-017 for the owner to accept or reject; nothing is changed in a component"
+  ],
+  "dependsOn": [
+    "F-017-T02"
+  ],
+  "resources": [
+    "docs/work/records/F-017.md",
+    "docs/audits/**",
+    "docs/agents/cross-project-audit.md",
+    "docs/agents/gap-review.md",
+    "generated:backlog-views"
+  ],
+  "validation": [
+    "check:fast; npm run check:audits; final applicable CI"
+  ],
+  "effort": {
+    "size": "medium",
+    "estimate": "0 remaining",
+    "basis": "Estimated 2026-11-26 at agent speed from F-017-T02 (a read-only sweep of the same nine repositories). Not a measurement. Implemented 2026-11-26 at the owner's request; verification is the PR's green CI.",
+    "reviewed": "2026-11-26",
+    "agentHours": 0,
+    "ownerHours": 0,
+    "baselineAgentHours": 1.5,
+    "estimateAgentHours": 1.5
+  },
+  "prs": []
+}

@@ -4,7 +4,7 @@ Current work ledger, reviewed 26 November 2026 against main `86abbd7`. PR #76 (o
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 23.5 h agent + 1.25 h owner across 28 open steps of 9 features and 2 other records. Generated from the task files.
+**Remaining effort:** 23.5 h agent + 1.25 h owner across 29 open steps of 9 features and 2 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -405,8 +405,9 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | PRs |
 |---|---|---|---|---|---|---|---|---|
 | 🟡 Medium | <a id="f-017-t04"></a>F-017-T04 — Full audit of the coordinator (manifest kind full) | 2 h | 0 h | 2 h | Planned | — | [F-017-T05](#f-017-t05) | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan |
+| 🟢 Small | <a id="f-017-t06"></a>F-017-T06 — Check 6: dormant checks, first run | 1.5 h | 0 h | 0 h | Implemented; verification pending | — | — | — |
 | 🟢 Small | <a id="f-017-t05"></a>F-017-T05 — Turn audit.enforce on after the full audit | 0.25 h | 0 h | 0.25 h | Planned | [F-017-T04](#f-017-t04) | — | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan |
-| 🟡 Medium | **Total** | 6.75 h | 0 h (0 of 5 steps recorded) | 2.25 h | 3 of 5 completed | | | |
+| 🟡 Medium | **Total** | 8.25 h | 0 h (0 of 6 steps recorded) | 2.25 h | 3 of 6 completed | | | |
 
 <details><summary>Done steps (3)</summary>
 

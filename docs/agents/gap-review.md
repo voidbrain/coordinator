@@ -24,7 +24,7 @@ The [shared assets](../DOMAINS.md#shared-assets) section of the domain map sets 
 
 Each finding becomes a proposal under "Turn findings into proposals" below, to the repository that would own it: the project for its own copy, cases or skip, the shared repository (bricks, blocks, gauntlet-protocol) for what is missing there. The [cross-project audit](cross-project-audit.md) reports these results under its duplication check by link, not again. Automating them needs the solution tool, a harness file: the proposal is in [shared-asset checks](../proposals/shared-asset-checks.md), and no harness file is edited here.
 
-Run the [cross-project audit](cross-project-audit.md) on the same refresh: it checks that the repositories agree (cross-references, decisions, contracts, duplication, audit cadence), and its proposals are reported with these.
+Run the [cross-project audit](cross-project-audit.md) on the same refresh: it checks that the repositories agree (cross-references, decisions, contracts, duplication, audit cadence, dormant checks), and its proposals are reported with these.
 
 What it cannot see: a request the owner made in a conversation that nobody recorded anywhere. When the owner names one, add it to the review by hand as a cross-repository need with the owner's words as evidence.
 
