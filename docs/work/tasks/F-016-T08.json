@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "parent": "F-016",
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "status": "planned",
+  "id": "F-016-T08",
+  "title": "Shared-logic inventory: whether to create blocks and its first package",
+  "goal": "A proposal says whether blocks is due and which package comes first, with evidence",
+  "acceptance": [
+    "candidates read from each project's code and backlog on main: fpvbuddy battery core (fpvbuddy:F-005), the grover and nerv alert contract (grover:F-008, nerv:F-122), the hobo and openbando maps domain",
+    "each candidate is marked shared (two projects have it, or one has it and the other a recorded step) or not yet, under the DOMAINS.md extraction rule",
+    "the proposal names whether to create voidbrain/blocks and its first package, or why not yet, and docs/DOMAINS.md shared-domains rows are corrected where the code says otherwise",
+    "reported to the owner through the gap review and recorded on this record"
+  ],
+  "dependsOn": [
+    "F-016-T02"
+  ],
+  "resources": [
+    "docs/DOMAINS.md",
+    "docs/work/records/F-016.md",
+    "docs/proposals/**",
+    "generated:backlog-views"
+  ],
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "1.5 h agent",
+    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work; re-estimated the same day for the owner's widened scope. Not a measurement.",
+    "reviewed": "2026-11-26",
+    "agentHours": 1.5,
+    "ownerHours": 0,
+    "baselineAgentHours": 1.5,
+    "estimateAgentHours": 1.5
+  },
+  "prs": []
+}

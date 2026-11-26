@@ -4,7 +4,7 @@ Current work ledger, reviewed 25 November 2026 against main `69da441`. PRs #38 (
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 9.25 h agent + 1 h owner across 17 open steps of 6 features and 2 other records. Generated from the task files.
+**Remaining effort:** 22.75 h agent + 1 h owner across 26 open steps of 7 features and 2 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -326,6 +326,53 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | Opened | 2026-11-25 |
 | Verification | Pending |
 | Reviewed | 2026-11-25 |
+
+</details>
+
+---
+### <a id="f-016"></a>[✨ F-016](#top)
+
+**Shared assets pattern: bricks, blocks and the Gauntlet (model qualification per domain)**
+
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🔴 Open | 🔹 P3 | 🟣 Very large | 13.5 h | — | — | 🤖 | — | — |
+
+💻 **→** Next: F-016-T01 — Shared assets section in docs/DOMAINS.md: bricks, blocks and the Gauntlet (Planned).
+
+| | |
+|---|---|
+| **Issue** | Owner request 2026-11-26. The solution has three shared assets: 🧱 bricks (UI: tokens, themes, components, genUI surfaces), 🧊 blocks (shared domain logic; the repository is created when its first package is really shared) and the Gauntlet (gauntlet-protocol: model qualification). Nothing states, the same way for all three, who owns what, that new work checks the shared asset first and proposes what is missing there rather than writing a private copy, and how a project records a deliberate skip. For the Gauntlet the gap is concrete: only NERV's own features have domain cases ([nerv:F-120](https://github.com/voidbrain/nerv/blob/main/docs/BACKLOG.md#f-120), `evals/gauntlet/system-v1.json`, 8 flows) besides the general packs (coding, embedded, cad-3d, logic-math, italian-quality, long-context, tool-use, structured-output, multi-step-agent and others); the model-facing domains of grover (readings, alerts and feed through MCP: nerv:F-122, nerv:F-123), fpvbuddy (FPV batteries; printed parts, nerv:F-121), hobo (trips, routes and times; scheduling-time is a missing area in gauntlet-protocol:F-022) and openbando (tenders, long Italian documents) have none. Bricks and blocks are not model-facing (a recorded skip). |
+| **Reproduce** | docs/DOMAINS.md has rules for shared code and screens but no common rule for the three assets; docs/agents/gap-review.md checks none of them per project; only nerv has an `evals/gauntlet/` directory. |
+| **Check** | docs/DOMAINS.md has one "Shared assets" section giving, for each of bricks, blocks and the Gauntlet, who owns what, the check-first rule and the recorded skip (F-016-T01); the gap review flags UI duplicating or missing from bricks, domain logic in two or more projects that is not in blocks, and a model-facing feature or MCP tool with no Gauntlet case and no recorded skip (F-016-T02); the bricks inventories are bricks:F-006 to bricks:F-009, referenced, not repeated; one Gauntlet inventory proposal per project (F-016-T03 to F-016-T07) and a consolidated packs and graders proposal for gauntlet-protocol (F-016-T09); a shared-logic inventory proposing whether to create blocks and its first package (F-016-T08). All reported to the owner through the gap review. |
+
+**Feature steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks |
+|---|---|---|---|---|---|---|---|
+| 🟡 Medium | <a id="f-016-t01"></a>F-016-T01 — Shared assets section in docs/DOMAINS.md: bricks, blocks and the Gauntlet | 1.5 h | 0 h | 1.5 h | Planned | — | [F-016-T02](#f-016-t02) |
+| 🟡 Medium | <a id="f-016-t02"></a>F-016-T02 — Gap-review checks for the three shared assets | 2 h | 0 h | 2 h | Planned | [F-016-T01](#f-016-t01) | [F-016-T03](#f-016-t03), [F-016-T04](#f-016-t04), [F-016-T05](#f-016-t05), [F-016-T06](#f-016-t06), [F-016-T07](#f-016-t07), [F-016-T08](#f-016-t08) |
+| 🟡 Medium | <a id="f-016-t03"></a>F-016-T03 — Gauntlet inventory proposal for nerv | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | [F-016-T09](#f-016-t09) |
+| 🟡 Medium | <a id="f-016-t04"></a>F-016-T04 — Gauntlet inventory proposal for grover | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | [F-016-T09](#f-016-t09) |
+| 🟡 Medium | <a id="f-016-t05"></a>F-016-T05 — Gauntlet inventory proposal for fpvbuddy | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | [F-016-T09](#f-016-t09) |
+| 🟡 Medium | <a id="f-016-t06"></a>F-016-T06 — Gauntlet inventory proposal for hobo | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | [F-016-T09](#f-016-t09) |
+| 🟡 Medium | <a id="f-016-t07"></a>F-016-T07 — Gauntlet inventory proposal for openbando | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | [F-016-T09](#f-016-t09) |
+| 🟡 Medium | <a id="f-016-t08"></a>F-016-T08 — Shared-logic inventory: whether to create blocks and its first package | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | — |
+| 🟢 Small | <a id="f-016-t09"></a>F-016-T09 — Consolidated packs and graders proposal for gauntlet-protocol | 1 h | 0 h | 1 h | Planned | [F-016-T03](#f-016-t03), [F-016-T04](#f-016-t04), [F-016-T05](#f-016-t05), [F-016-T06](#f-016-t06), [F-016-T07](#f-016-t07) | — |
+| 🟣 Very large | **Total** | 13.5 h | 0 h (0 of 9 steps recorded) | 13.5 h | 0 of 9 completed | | |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+[Full notes & evidence](work/records/F-016.md)
+
+| Field | Value |
+|---|---|
+| PR / evidence | Owner request and approval 2026-11-26; scope widened by the owner 2026-11-26 |
+| Components | nerv:F-120, nerv:F-121, nerv:F-122, nerv:F-123, gauntlet-protocol:F-021, gauntlet-protocol:F-022, bricks:F-006, bricks:F-007, bricks:F-008, bricks:F-009, fpvbuddy:F-005, grover:F-008 |
+| Opened | 2026-11-26 |
+| Verification | Pending |
+| Reviewed | 2026-11-26 |
 
 </details>
 

@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "parent": "F-016",
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "status": "planned",
+  "id": "F-016-T09",
+  "title": "Consolidated packs and graders proposal for gauntlet-protocol",
+  "goal": "gauntlet-protocol gets one proposal listing the new packs and grader updates the inventories need",
+  "acceptance": [
+    "every new pack or grader update named in F-016-T03 to F-016-T07 is listed once, with the projects that need it",
+    "it links gauntlet-protocol:F-022 and gauntlet-protocol:F-021 where they already cover a need",
+    "reported to the owner through the gap review and recorded on this record"
+  ],
+  "dependsOn": [
+    "F-016-T03",
+    "F-016-T04",
+    "F-016-T05",
+    "F-016-T06",
+    "F-016-T07"
+  ],
+  "resources": [
+    "docs/work/records/F-016.md",
+    "docs/proposals/**",
+    "generated:backlog-views"
+  ],
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "1 h agent",
+    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work; re-estimated the same day for the owner's widened scope. Not a measurement.",
+    "reviewed": "2026-11-26",
+    "agentHours": 1,
+    "ownerHours": 0,
+    "baselineAgentHours": 1,
+    "estimateAgentHours": 1
+  },
+  "prs": []
+}

@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "parent": "F-016",
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "status": "planned",
+  "id": "F-016-T02",
+  "title": "Gap-review checks for the three shared assets",
+  "goal": "The gap review flags, per project, work that bypasses a shared asset or lacks a recorded skip",
+  "acceptance": [
+    "docs/agents/gap-review.md tells the reviewer to check by hand, per project: a UI component or token that duplicates or is missing from bricks",
+    "domain logic used by two or more projects that is not in blocks (propose creating blocks or the package)",
+    "a model-facing feature or MCP tool with no Gauntlet case and no recorded skip",
+    "each finding becomes a proposal to the owning or shared repository under the existing procedure",
+    "if the dashboard or solution tool would need a change, it is written as a proposal to project-harness and no harness file is edited"
+  ],
+  "dependsOn": [
+    "F-016-T01"
+  ],
+  "resources": [
+    "docs/agents/gap-review.md",
+    "docs/work/records/F-016.md",
+    "generated:backlog-views"
+  ],
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "2 h agent",
+    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work; re-estimated the same day for the owner's widened scope. Not a measurement.",
+    "reviewed": "2026-11-26",
+    "agentHours": 2,
+    "ownerHours": 0,
+    "baselineAgentHours": 2,
+    "estimateAgentHours": 2
+  },
+  "prs": []
+}
