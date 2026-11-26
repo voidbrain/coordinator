@@ -4,7 +4,7 @@
   "parent": "B-007",
   "title": "Owner: choose the wording of the backlog-reader fixture rule",
   "goal": "The AGENTS.md rule names files that exist, or is gone by the owner's choice",
-  "status": "ready",
+  "status": "implemented",
   "acceptance": [
     "🧑 The owner picks option (a), (b) or (c) of the full audit 2026-11-26, finding 3; the choice and its date are on B-007"
   ],

@@ -4,7 +4,7 @@
   "parent": "B-007",
   "title": "Apply the chosen fixture rule in AGENTS.md",
   "goal": "AGENTS.md matches the owner's choice",
-  "status": "planned",
+  "status": "implemented",
   "acceptance": [
     "AGENTS.md changes as chosen in B-007-T01, under the rule review procedure; check:rules passes"
   ],
