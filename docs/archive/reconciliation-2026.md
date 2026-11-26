@@ -55,3 +55,7 @@ PR #71 (F-016-T02 shared-asset checks in the gap review, F-016-T01 closed) merge
 ## 2026-11-26 — main `7974408`
 
 PR #72 (F-016-T02 closed) and PR #73 (refresh of the solution views) merged on green CI.
+
+## 2026-11-26 — main `a747f9e`
+
+PR #74 (F-017-T02 first cross-project audit run) merged on green CI; F-017-T02 closed.

@@ -1,10 +1,10 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 26 November 2026 against main `7974408`. PR #72 (F-016-T02 closed) and PR #73 (refresh of the solution views) merged on green CI.
+Current work ledger, reviewed 26 November 2026 against main `a747f9e`. PR #74 (F-017-T02 first cross-project audit run) merged on green CI; F-017-T02 closed.
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 19.75 h agent + 1 h owner across 26 open steps of 8 features and 2 other records. Generated from the task files.
+**Remaining effort:** 19.75 h agent + 1 h owner across 25 open steps of 8 features and 2 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -392,7 +392,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|---|---|---|---|:---:|:---:|:---:|
 | 🔴 Open | 🔹 P3 | 🟢 Small | 0.5 h | — | — | 🤖 | — | — |
 
-💻 **→** Next: F-017-T02 — First cross-project audit run (Implemented; verification pending).
+💻 **→** Next: F-017-T03 — Proposal to project-harness: automate checks 1 and 5 (Planned).
 
 | | |
 |---|---|
@@ -402,17 +402,17 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | PRs |
-|---|---|---|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-017-t02"></a>F-017-T02 — First cross-project audit run | 1.5 h | 0 h | 0 h | Implemented; verification pending | — | [F-017-T03](#f-017-t03) | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #74](https://github.com/voidbrain/coordinator/pull/74) first run |
-| 🟢 Small | <a id="f-017-t03"></a>F-017-T03 — Proposal to project-harness: automate checks 1 and 5 | 0.5 h | 0 h | 0.5 h | Planned | [F-017-T02](#f-017-t02) | — | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan |
-| 🟢 Small | **Total** | 4.5 h | 0 h (0 of 3 steps recorded) | 0.5 h | 1 of 3 completed | | | |
+| Effort | Step | Estimate | Actual | Remaining | Status | PRs |
+|---|---|---|---|---|---|---|
+| 🟢 Small | <a id="f-017-t03"></a>F-017-T03 — Proposal to project-harness: automate checks 1 and 5 | 0.5 h | 0 h | 0.5 h | Planned | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan |
+| 🟢 Small | **Total** | 4.5 h | 0 h (0 of 3 steps recorded) | 0.5 h | 2 of 3 completed | |
 
-<details><summary>Done steps (1)</summary>
+<details><summary>Done steps (2)</summary>
 
 | Effort | Step | Estimate | Actual | Status | PRs |
 |---|---|---|---|---|---|
 | — | <a id="f-017-t01"></a>F-017-T01 — Cross-project audit procedure | 2.5 h | 0 h | Completed | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #67](https://github.com/voidbrain/coordinator/pull/67) procedure; [PR #68](https://github.com/voidbrain/coordinator/pull/68) undo procedures.md fork; close |
+| — | <a id="f-017-t02"></a>F-017-T02 — First cross-project audit run | 1.5 h | 0 h | Completed | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #74](https://github.com/voidbrain/coordinator/pull/74) first run |
 
 </details>
 
