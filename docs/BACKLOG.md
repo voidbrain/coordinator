@@ -4,7 +4,7 @@ Current work ledger, reviewed 25 November 2026 against main `69da441`. PRs #38 (
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 9.5 h agent + 1 h owner across 18 open steps of 7 features and 2 other records. Generated from the task files.
+**Remaining effort:** 9.25 h agent + 1 h owner across 17 open steps of 6 features and 2 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -326,53 +326,6 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | Opened | 2026-11-25 |
 | Verification | Pending |
 | Reviewed | 2026-11-25 |
-
-</details>
-
----
-### <a id="f-014"></a>[✨ F-014](#top)
-
-**Owner accepts or rejects the 2026-11-26 gap-review proposals**
-
-| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
-|---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔹 P3 | 🟢 Small | 0.25 h | — | — | 🤖 | — | — |
-
-💻 **→** Next: F-014-T02 — Confirm after the refresh that each accepted gap is gone (proposal 15 once openbando's reconcile lands) (Planned).
-
-| | |
-|---|---|
-| **Issue** | The gap review of 2026-11-26 listed 15 proposals: one cross-repository need (nerv:F-120), nine openbando records waiting on the owner without a page, and five projects behind harness v10.21.3. The coordinator never edits a component, so each accepted proposal is created in its owning repository. |
-| **Reproduce** | `npm run solution:refresh`, then the "Gap review" section of `docs/SOLUTION-DASHBOARD.md`. |
-| **Check** | Every proposal is accepted or rejected by the owner; accepted ones exist in their owning backlogs (the next refresh no longer lists them); rejected ones are recorded here with the reason. |
-
-**Feature steps**
-
-| Effort | Step | Estimate | Actual | Remaining | Status | Who |
-|---|---|---|---|---|---|:---:|
-| 🟢 Small | <a id="f-014-t02"></a>F-014-T02 — Confirm after the refresh that each accepted gap is gone (proposal 15 once openbando's reconcile lands) | 0.25 h | 0 h | 0.25 h | Planned | 🤖 |
-| 🟢 Small | **Total** | 0.25 h (1 of 2 steps) | 0 h (0 of 2 steps recorded) | 0.25 h | 1 of 2 completed | |
-
-<details><summary>Done steps (1)</summary>
-
-| Effort | Step | Estimate | Actual | Status |
-|---|---|---|---|---|
-| — | <a id="f-014-t01"></a>F-014-T01 — Owner accepts or rejects each gap-review proposal of 2026-11-26 | — | 0 h | Completed |
-
-</details>
-
-<details>
-<summary>Next action, estimates and PR history</summary>
-
-[Full notes & evidence](work/records/F-014.md)
-
-| Field | Value |
-|---|---|
-| PR / evidence | Opened in [PR #51](https://github.com/voidbrain/coordinator/pull/51); owner decision 2026-11-26 |
-| Components | nerv:F-120, openbando:B-009, openbando:F-026, gauntlet-protocol:F-075, fpvbuddy:F-102, grover:F-099 |
-| Opened | 2026-11-26 |
-| Verification | Pending |
-| Reviewed | 2026-11-26 |
 
 </details>
 

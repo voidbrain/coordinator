@@ -349,3 +349,40 @@ Closed records of the [backlog](../BACKLOG.md), in closing-date order. History, 
 </details>
 
 ---
+
+### F-014
+
+**Owner accepts or rejects the 2026-11-26 gap-review proposals**
+
+| Signal | Priority | Status | Effort |
+|:---:|---|---|---|
+| 🔵 | ◻️ P3 | Closed | 🟢 Small |
+
+💻 **→ Human action required: No**<br />Closed 2026-11-26: 2026-11-26 refresh (06:28 UTC): proposals 1-10 and 15 gone from the gap review; 12-14 remain as 'Behind the harness' rows until their reconcile records (gauntlet-protocol:F-075, fpvbuddy:F-102, grover:F-099) are done there; new v10.21.4 rows are a separate gap.
+
+| | |
+|---|---|
+| **Issue** | The gap review of 2026-11-26 listed 15 proposals: one cross-repository need (nerv:F-120), nine openbando records waiting on the owner without a page, and five projects behind harness v10.21.3. The coordinator never edits a component, so each accepted proposal is created in its owning repository. |
+| **Reproduce** | `npm run solution:refresh`, then the "Gap review" section of `docs/SOLUTION-DASHBOARD.md`. |
+| **Check** | Every proposal is accepted or rejected by the owner; accepted ones exist in their owning backlogs (the next refresh no longer lists them); rejected ones are recorded here with the reason. |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+**Next action / closure evidence:** Closed 2026-11-26: 2026-11-26 refresh (06:28 UTC): proposals 1-10 and 15 gone from the gap review; 12-14 remain as 'Behind the harness' rows until their reconcile records (gauntlet-protocol:F-075, fpvbuddy:F-102, grover:F-099) are done there; new v10.21.4 rows are a separate gap. 2026-11-26: the owner accepted all 15 proposals (F-014-T01; outcomes per proposal in its task file). Created in the owning repositories: nerv PR #780 (1), openbando PR #291 (2-10), F-015 here (11), gauntlet-protocol PR #110 (12), FPVBuddy PR #16 (13), Grover PR #43 (14). Proposal 15, openbando's harness reconcile, is accepted and in progress in another openbando session. F-014-T02 confirms on the refresh that the gaps are gone.
+
+2026-11-26 (F-014-T02, refresh of 06:28 UTC, `npm run solution:refresh`): the gap review (`docs/SOLUTION-DASHBOARD.md`, "Gap review", lines 224-237) lists only seven "Behind the harness" rows (lines 230-236) and no cross-repository or owner-check-page row. Proposal 1 (nerv:F-120 without a counterpart) and 2-10 (openbando records without an owner page) are gone; 11 is F-015 (closed). Proposal 15 is gone too: openbando#292 merged 2026-11-25 23:53 UTC (reconcile v10.8.1 to v10.21.3), so openbando is no longer behind v10.21.3. What is left is not a proposal that was lost: 12-14 (gauntlet-protocol, fpvbuddy, grover on v10.20.0, lines 231-233) stay listed until their reconcile records (gauntlet-protocol:F-075, fpvbuddy:F-102, grover:F-099) are done in those repositories; and since template v10.21.4 nerv, openbando, hobo and bricks (v10.21.3, lines 230, 234-236) show as one release behind, a new gap for the gap review to propose, not part of the 15 accepted here.
+
+**Estimates:** No remaining effort.
+
+| Field | Value |
+|---|---|
+| PR / evidence | Opened in [PR #51](https://github.com/voidbrain/coordinator/pull/51); owner decision 2026-11-26 |
+| Components | nerv:F-120, openbando:B-009, openbando:F-026, gauntlet-protocol:F-075, fpvbuddy:F-102, grover:F-099 |
+| Opened | 2026-11-26 |
+| Verification | Pending |
+| Reviewed | 2026-11-26 |
+
+</details>
+
+---
