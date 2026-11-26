@@ -56,6 +56,10 @@
     {
       "pr": 63,
       "note": "battery core not a blocks candidate"
+    },
+    {
+      "pr": 97,
+      "note": "inventory"
     }
   ]
 }

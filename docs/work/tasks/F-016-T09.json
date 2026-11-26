@@ -48,6 +48,10 @@
     {
       "pr": 61,
       "note": "plan"
+    },
+    {
+      "pr": 97,
+      "note": "inventory"
     }
   ]
 }
