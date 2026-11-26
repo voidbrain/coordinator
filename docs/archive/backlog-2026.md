@@ -337,8 +337,6 @@ Closed records of the [backlog](../BACKLOG.md), in closing-date order. History, 
 
 **Next action / closure evidence:** Closed 2026-11-26: Both workflows have schedule runs: Maintenance freshness 45680400603 (2026-11-25 18:57 UTC, about 10 h after its 09:00 cron), Refresh solution views 45649633770 (2026-11-25 15:54 UTC) and 45738334912 (2026-11-26 01:49 UTC); GitHub schedule delay, not a defect. Opened 2026-11-25 in Investigate from the delivery audit ([report](../audits/2026-11-25-delivery.md)). A hypothesis, not a confirmed bug.
 
-**Next action / closure evidence:** 2026-11-26: closed as delay, not a defect. `gh run list -R voidbrain/coordinator --event schedule` lists a `schedule` run of each workflow: Maintenance freshness run 45680400603 (cron `0 9 * * *`, started 2026-11-25 18:57 UTC, about 10 h late, success); Refresh solution views runs 45649633770 (2026-11-25 15:54 UTC, cron then `30 5 * * *`, about 10 h late, success) and 45738334912 (2026-11-26 01:49 UTC, cron `17 * * * *` since B-004, success). Only two refresh runs in 12 h on an hourly cron: GitHub drops and delays scheduled runs, so schedules are not relied on for timing; no workflow change made.
-
 **Estimates:** No remaining effort.
 
 | Field | Value |

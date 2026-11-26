@@ -36,5 +36,10 @@
     "baselineAgentHours": 0.25,
     "estimateAgentHours": 0.25
   },
-  "prs": []
+  "prs": [
+    {
+      "pr": 58,
+      "note": "closed as schedule delay"
+    }
+  ]
 }
