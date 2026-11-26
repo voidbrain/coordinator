@@ -17,9 +17,9 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔹 P3 | 🟢 Small | 0.5 h | — | — | 🤖 | — | — |
+| 🟡 Implemented | 🔹 P3 | 🟢 Small | 0.5 h | — | — | 🤖 | — | — |
 
-💻 **→** Next: B-002-T01 — Make check:fast supply or ask for GH&#95;TOKEN (Planned).
+💻 **→** Next: B-002-T01 — Make check:fast supply or ask for GH&#95;TOKEN (Implemented; verification pending).
 
 | | |
 |---|---|
@@ -31,7 +31,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status |
 |---|---|---|---|---|---|
-| 🟢 Small | <a id="b-002-t01"></a>B-002-T01 — Make check:fast supply or ask for GH&#95;TOKEN | 0.5 h | 0 h | 0.5 h | Planned |
+| 🟢 Small | <a id="b-002-t01"></a>B-002-T01 — Make check:fast supply or ask for GH&#95;TOKEN | 0.5 h | 0 h | 0.5 h | Implemented; verification pending |
 | 🟢 Small | **Total** | 0.5 h | 0 h (0 of 1 steps recorded) | 0.5 h | 0 of 1 completed |
 
 <details>
@@ -41,7 +41,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Audit [2026-11-25 delivery](audits/2026-11-25-delivery.md), opened in [#27](https://github.com/voidbrain/coordinator/pull/27) |
+| PR / evidence | Audit [2026-11-25 delivery](audits/2026-11-25-delivery.md), opened in [#27](https://github.com/voidbrain/coordinator/pull/27); [#59](https://github.com/voidbrain/coordinator/pull/59) |
 | Opened | 2026-11-25 |
 | Verification | Pending |
 | Reviewed | 2026-11-25 |

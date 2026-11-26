@@ -4,7 +4,7 @@
   "parent": "B-002",
   "title": "Make check:fast supply or ask for GH_TOKEN",
   "goal": "An agent following AGENTS.md runs check:fast with a GitHub token and gets a clear message without one",
-  "status": "planned",
+  "status": "implemented",
   "acceptance": [
     "check:fast passes when run as AGENTS.md says, with gh logged in",
     "Without a token the documented command names what is missing, not a bare 403",
@@ -38,5 +38,6 @@
     "ownerHours": 0,
     "baselineAgentHours": 0.5,
     "estimateAgentHours": 0.5
-  }
+  },
+  "prs": []
 }

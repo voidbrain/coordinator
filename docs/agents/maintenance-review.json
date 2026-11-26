@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "reviewed": "2026-11-26T00:21:39.826Z",
+  "reviewed": "2026-11-26T06:40:09.454Z",
   "policy": "c9570a34ab0c7e4f1274fe37802a6eff8e7edfb8266c98f0cec7119533729b2b",
   "inputs": {
-    "AGENTS.md": "34713ab22e59b02a5ec88a569de4eaf3b90da69de85092e082c166a1b4723c81",
+    "AGENTS.md": "4e4497e66b740913dcd124846aa8635eba88a3ab50afbadc5165ff1d5027505e",
     "docs/BACKLOG-RULES.md": "a090ba3c7571d60c50a386f32e30aab528104003a2a9da6c31cedec6ef05b77a",
     "docs/agents/architecture-review.md": "5d967314854912b1a5f1446aeab309763b14f9856bceb3c82df5c6c25c166526",
     "docs/agents/areas.md": "b7e3bc2a676befba66bf9825b18801ca43944a9a2b62014508be459a011f3e86",
@@ -97,8 +97,8 @@
     {
       "kind": "tool",
       "disposition": "implemented",
-      "target": "tools/views-changed.mjs",
-      "evidence": "F-015 (harness v10.21.4 reconcile): the refresh's change filter also ignores the coordinator's own rows when the dashboard writes HTML tables (htmlTables); tests in test/views-changed.test.mjs, the last one failing first."
+      "target": "tools/with-gh-token.mjs",
+      "evidence": "B-002: check:solution runs through tools/with-gh-token.mjs (GH_TOKEN, GITHUB_TOKEN, else gh auth token; a failure without one names the missing token); test/with-gh-token.test.mjs failed first."
     }
   ]
 }

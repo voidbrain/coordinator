@@ -48,6 +48,7 @@ npm run lint              # ESLint on the same files (copied harness tools exclu
 npm run check:tooling     # a formatter check and a linter exist and run in CI (required for every stack)
 ```
 
+- `check:solution` (and so `check:fast`) runs through `tools/with-gh-token.mjs`: it uses `GH_TOKEN`, else `GITHUB_TOKEN`, else `gh auth token`; with none it still runs and a failure says to run `gh auth login` or export `GH_TOKEN` (unauthenticated GitHub allows 60 requests an hour). <!-- project -->
 - Format and lint in CI too (`check:tooling`); the project's own tools and tests are formatted and linted, copied harness tools are not. <!-- project -->
 - A change to a backlog reader adds a fixture to `test/fixtures/` and its expected result to `expected.json`; an unknown layout must show as a problem, never as no work. <!-- project -->
 - A failing test is evidence until shown otherwise: change its expectation only when the requirement deliberately changed, and say which; otherwise fix the code.

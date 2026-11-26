@@ -9,3 +9,4 @@ tools/*
 *.yml
 *.yaml
 !tools/refresh-branch.mjs
+!tools/with-gh-token.mjs

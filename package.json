@@ -29,7 +29,7 @@
     "check:queue": "node tools/backlog-queue.mjs --check",
     "rule-load": "node tools/rule-load.mjs",
     "check:rule-load": "node tools/rule-load.mjs --check",
-    "check:solution": "node tools/solution.mjs check --remote",
+    "check:solution": "node tools/with-gh-token.mjs node tools/solution.mjs check --remote",
     "solution:dashboard": "node tools/solution.mjs dashboard --remote --write --prune-order",
     "solution:refresh": "npm run solution:dashboard",
     "check:fast": "npm run format:check && npm run lint && npm test && npm run check:work && npm run check:backlog && npm run check:rules && npm run check:tooling && npm run check:maintenance && npm run check:integrations && npm run check:solution",
