@@ -67,3 +67,7 @@ PR #75 (close F-017-T02) merged on green CI; nothing left to close from it.
 ## 2026-11-26 — main `86abbd7`
 
 PR #76 (order note, audit proposal 5) and PR #77 (audit proposals 4, 6, 9, 16; F-017-T03) merged on green CI; F-017-T03 closed.
+
+## 2026-11-26 — main `4ea4115`
+
+PRs #78 (close F-017-T03), #79 (F-018-T01 alert contract) and #80 (F-017-T06 dormant checks) merged on green CI; F-018-T01 closed. The full audit (F-017-T04) closed B-002, F-009 and F-011 and the steps F-012-T04 and F-013-T01, and opened B-005, B-006 and B-007.

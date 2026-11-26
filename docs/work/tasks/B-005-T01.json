@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "id": "B-005-T01",
+  "parent": "B-005",
+  "title": "Teach the refresh guard the HTML order table, failing test first",
+  "goal": "A refresh that only drops Done order items merges itself again",
+  "status": "ready",
+  "acceptance": [
+    "A committed test in test/refresh-guard.test.mjs with an HTML order table fails before the fix",
+    "closedRefs reads Closed items from both the Markdown and the HTML layout; an item not Closed is still refused",
+    "npm test and check:fast pass"
+  ],
+  "dependsOn": [],
+  "resources": [
+    "tools/refresh-guard.mjs",
+    "test/refresh-guard.test.mjs",
+    "docs/work/records/B-005.md",
+    "generated:backlog-views"
+  ],
+  "validation": [
+    "npm test; check:fast; final applicable CI; the next refresh that drops a Done item merges itself"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "1 h agent",
+    "basis": "Estimated 2026-11-26: one parser and one test, the same shape as the views-changed HTML change. Not a measurement.",
+    "reviewed": "2026-11-26",
+    "agentHours": 1,
+    "ownerHours": 0,
+    "baselineAgentHours": 1,
+    "estimateAgentHours": 1
+  },
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ]
+}

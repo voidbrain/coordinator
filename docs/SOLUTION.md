@@ -25,9 +25,9 @@ Contracts are owned by the component that publishes them; this table links, it d
 
 | Consumer | Depends on | Pinned by |
 |---|---|---|
-| Every component | project-harness release | `version` in its `.harness.json` (nerv 10.7.0, gauntlet-protocol 10.9.0, fpvbuddy 10.3.0, grover 10.9.0 on 2026-11-24, openbando 10.8.1 on 2026-11-25, hobo 10.21.3 on 2026-11-25) |
+| Every component | project-harness release | `version` in its `.harness.json` (all nine on 10.21.4 on 2026-11-26: nerv, gauntlet-protocol, project-harness, fpvbuddy, grover, openbando, hobo, bricks and this repository; read from the dashboard) |
 | nerv | Grover hub MCP tools | Grover's MCP tool names and `PROTOCOL_VERSION` (MQTT, inside Grover) |
-| nerv | gauntlet-protocol | the vendored package `@voidbrain/gauntlet-protocol` in nerv's `package.json` (0.9.1 on 2026-11-24), used by `tools/gauntlet.mjs` |
+| nerv | gauntlet-protocol | the vendored package `@voidbrain/gauntlet-protocol` in nerv's `package.json` (0.11.1 on 2026-11-26, `vendor/voidbrain-gauntlet-protocol-0.11.1.tgz`), used by `tools/gauntlet.mjs` |
 
 The pinned values above are a dated reading, not live status; the owning repositories are authoritative.
 
