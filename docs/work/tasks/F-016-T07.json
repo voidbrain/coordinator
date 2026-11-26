@@ -9,14 +9,14 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "planned",
+  "status": "implemented",
   "id": "F-016-T07",
   "title": "Gauntlet inventory proposal for openbando",
   "goal": "A gap-review proposal to openbando maps each model-facing capability to an existing pack, a new pack, a grader update or a skip with its reason",
   "acceptance": [
     "openbando's model-facing features and MCP tools are listed from its backlog and code on main, with evidence links",
     "each capability is mapped to an existing Gauntlet pack, a new pack, a grader update or a skip with its reason",
-    "covers tenders and long Italian documents (italian-quality, long-context)",
+    "covers what openbando is in code: the site-edit assistant and the block-from-description model (corrected 2026-11-26: openbando is about FPV bandos, not tenders and long Italian documents, so italian-quality and long-context do not apply)",
     "the proposal is reported to the owner through the gap review and recorded on this record; nothing is created in the other repository from here"
   ],
   "dependsOn": [
@@ -25,17 +25,18 @@
   "resources": [
     "docs/work/records/F-016.md",
     "docs/proposals/**",
-    "generated:backlog-views"
+    "generated:backlog-views",
+    "docs/reviews/2026-11-shared-assets/**"
   ],
   "validation": [
     "check:fast; final applicable CI"
   ],
   "effort": {
     "size": "small",
-    "estimate": "1.5 h agent",
-    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work; re-estimated the same day for the owner's widened scope. Not a measurement.",
+    "estimate": "0 remaining",
+    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work; re-estimated the same day for the owner's widened scope. Not a measurement. Implemented 2026-11-26 in docs/reviews/2026-11-shared-assets/gauntlet-openbando.md: 1 proposal: a new openbando record for openbando-v1 over the site-edit assistant; block-from-description recorded as a skip. Correction: openbando is about FPV bandos, not tenders; italian-quality and long-context do not apply, and the acceptance line and F-016's Issue are corrected; verification is the PR's green check:fast in CI and the owner's accept or reject of each proposal in the gap review.",
     "reviewed": "2026-11-26",
-    "agentHours": 1.5,
+    "agentHours": 0,
     "ownerHours": 0,
     "baselineAgentHours": 1.5,
     "estimateAgentHours": 1.5

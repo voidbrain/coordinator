@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "planned",
+  "status": "implemented",
   "id": "F-016-T09",
   "title": "Consolidated packs and graders proposal for gauntlet-protocol",
   "goal": "gauntlet-protocol gets one proposal listing the new packs and grader updates the inventories need",
@@ -28,17 +28,18 @@
   "resources": [
     "docs/work/records/F-016.md",
     "docs/proposals/**",
-    "generated:backlog-views"
+    "generated:backlog-views",
+    "docs/reviews/2026-11-shared-assets/**"
   ],
   "validation": [
     "check:fast; final applicable CI"
   ],
   "effort": {
     "size": "small",
-    "estimate": "1 h agent",
-    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work; re-estimated the same day for the owner's widened scope. Not a measurement.",
+    "estimate": "0 remaining",
+    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work; re-estimated the same day for the owner's widened scope. Not a measurement. Implemented 2026-11-26 in docs/reviews/2026-11-shared-assets/gauntlet-protocol.md: 3 proposals to gauntlet-protocol: a json-match grader (openbando, fpvbuddy, nerv, research ids), a tool-table check for project packs (grover, fpvbuddy, hobo, nerv), a guide for a project's own pack; consumers named for F-023, F-024 and F-025; F-021 has no consumer need; verification is the PR's green check:fast in CI and the owner's accept or reject of each proposal in the gap review.",
     "reviewed": "2026-11-26",
-    "agentHours": 1,
+    "agentHours": 0,
     "ownerHours": 0,
     "baselineAgentHours": 1,
     "estimateAgentHours": 1
