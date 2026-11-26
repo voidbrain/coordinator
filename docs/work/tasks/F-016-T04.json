@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "implemented",
+  "status": "closed",
   "id": "F-016-T04",
   "title": "Gauntlet inventory proposal for grover",
   "goal": "A gap-review proposal to grover maps each model-facing capability to an existing pack, a new pack, a grader update or a skip with its reason",
@@ -34,7 +34,7 @@
   "effort": {
     "size": "small",
     "estimate": "0 remaining",
-    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work; re-estimated the same day for the owner's widened scope. Not a measurement. Implemented 2026-11-26 in docs/reviews/2026-11-shared-assets/gauntlet-grover.md: 1 proposal: a new grover record for grover-v1 over the hub's 19 MCP tools (three steps, 3.25 h); alerts, feed planning and calibration recorded as skips (deterministic); verification is the PR's green check:fast in CI and the owner's accept or reject of each proposal in the gap review.",
+    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work; re-estimated the same day for the owner's widened scope. Not a measurement. Implemented 2026-11-26 in docs/reviews/2026-11-shared-assets/gauntlet-grover.md: 1 proposal: a new grover record for grover-v1 over the hub's 19 MCP tools (three steps, 3.25 h); alerts, feed planning and calibration recorded as skips (deterministic); verification is the PR's green check:fast in CI and the owner's accept or reject of each proposal in the gap review. Closed 2026-11-26 on PR #97's green CI.",
     "reviewed": "2026-11-26",
     "agentHours": 0,
     "ownerHours": 0,
@@ -49,6 +49,10 @@
     {
       "pr": 97,
       "note": "inventory"
+    },
+    {
+      "pr": 98,
+      "note": "close"
     }
   ]
 }

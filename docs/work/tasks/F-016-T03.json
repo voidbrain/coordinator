@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "implemented",
+  "status": "closed",
   "id": "F-016-T03",
   "title": "Gauntlet inventory proposal for nerv",
   "goal": "A gap-review proposal to nerv maps each model-facing capability to an existing pack, a new pack, a grader update or a skip with its reason",
@@ -34,7 +34,7 @@
   "effort": {
     "size": "small",
     "estimate": "0 remaining",
-    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work; re-estimated the same day for the owner's widened scope. Not a measurement. Implemented 2026-11-26 in docs/reviews/2026-11-shared-assets/gauntlet-nerv.md: 4 proposals, all steps of nerv:F-120 (T09 nerv-planner-v1 model-layer pack on Misato's tool index; T10 a Gauntlet line or skip on every open model-facing record; T11 run the project packs nerv calls over MCP; T12 adopt scheduling-time, estimation and research on release); verification is the PR's green check:fast in CI and the owner's accept or reject of each proposal in the gap review.",
+    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work; re-estimated the same day for the owner's widened scope. Not a measurement. Implemented 2026-11-26 in docs/reviews/2026-11-shared-assets/gauntlet-nerv.md: 4 proposals, all steps of nerv:F-120 (T09 nerv-planner-v1 model-layer pack on Misato's tool index; T10 a Gauntlet line or skip on every open model-facing record; T11 run the project packs nerv calls over MCP; T12 adopt scheduling-time, estimation and research on release); verification is the PR's green check:fast in CI and the owner's accept or reject of each proposal in the gap review. Closed 2026-11-26 on PR #97's green CI.",
     "reviewed": "2026-11-26",
     "agentHours": 0,
     "ownerHours": 0,
@@ -49,6 +49,10 @@
     {
       "pr": 97,
       "note": "inventory"
+    },
+    {
+      "pr": 98,
+      "note": "close"
     }
   ]
 }
