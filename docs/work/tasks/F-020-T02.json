@@ -47,6 +47,10 @@
     {
       "pr": 105,
       "note": "cross-repository pass"
+    },
+    {
+      "pr": 106,
+      "note": "close"
     }
   ]
 }
