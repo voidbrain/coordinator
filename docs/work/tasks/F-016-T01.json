@@ -16,6 +16,7 @@
   "acceptance": [
     "one Shared assets section covers bricks (UI: tokens, themes, components, genUI surfaces), blocks (shared domain logic, repository created with its first shared package) and the Gauntlet (model qualification)",
     "for each: who owns what (the owning project, the shared repository, the consumer); for the Gauntlet, the owning project writes its domain cases (for example evals/gauntlet/<project>-v1.json), gauntlet-protocol provides runners, graders and general packs, NERV picks models per capability",
+    "for blocks the criterion is explicit: code imported by two or more projects; anything reached through MCP stays in its owning project; typed contract code (TypeScript types or validators for an MCP message format) imported by producer and consumer goes to a blocks contracts package, surface types stay in bricks, and a prose or JSON-schema contract stays under a Distributed contracts heading (NERV's MCP integration contract, such as the alert contract)",
     "for each: new work checks the shared asset first and, when it is missing, proposes it there through the gap review, never a private copy",
     "for each: a project that deliberately does not use it records a skip with its reason; bricks and blocks are recorded as not model-facing",
     "the existing shared-code and screens rules are kept and linked, not restated"
@@ -43,6 +44,10 @@
     {
       "pr": 61,
       "note": "plan"
+    },
+    {
+      "pr": 62,
+      "note": "blocks criterion"
     }
   ]
 }
