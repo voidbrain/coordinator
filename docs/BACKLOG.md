@@ -4,7 +4,7 @@ Current work ledger, reviewed 26 November 2026 against main `6b42c66`. PRs #65 (
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 24.75 h agent + 1 h owner across 29 open steps of 8 features and 2 other records. Generated from the task files.
+**Remaining effort:** 24.75 h agent + 1 h owner across 28 open steps of 8 features and 2 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -385,7 +385,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|---|---|---|---|:---:|:---:|:---:|
 | 🔴 Open | 🔹 P3 | 🟡 Medium | 2 h | — | — | 🤖 | — | — |
 
-💻 **→** Next: F-017-T01 — Cross-project audit procedure (Implemented; verification pending).
+💻 **→** Next: F-017-T02 — First cross-project audit run (Planned).
 
 | | |
 |---|---|
@@ -397,10 +397,17 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | PRs |
 |---|---|---|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-017-t01"></a>F-017-T01 — Cross-project audit procedure | 2.5 h | 0 h | 0 h | Implemented; verification pending | — | [F-017-T02](#f-017-t02) | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #67](https://github.com/voidbrain/coordinator/pull/67) procedure |
-| 🟡 Medium | <a id="f-017-t02"></a>F-017-T02 — First cross-project audit run | 1.5 h | 0 h | 1.5 h | Planned | [F-017-T01](#f-017-t01) | [F-017-T03](#f-017-t03) | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan |
+| 🟡 Medium | <a id="f-017-t02"></a>F-017-T02 — First cross-project audit run | 1.5 h | 0 h | 1.5 h | Planned | — | [F-017-T03](#f-017-t03) | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan |
 | 🟢 Small | <a id="f-017-t03"></a>F-017-T03 — Proposal to project-harness: automate checks 1 and 5 | 0.5 h | 0 h | 0.5 h | Planned | [F-017-T02](#f-017-t02) | — | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan |
-| 🟡 Medium | **Total** | 4.5 h | 0 h (0 of 3 steps recorded) | 2 h | 0 of 3 completed | | | |
+| 🟡 Medium | **Total** | 4.5 h | 0 h (0 of 3 steps recorded) | 2 h | 1 of 3 completed | | | |
+
+<details><summary>Done steps (1)</summary>
+
+| Effort | Step | Estimate | Actual | Status | PRs |
+|---|---|---|---|---|---|
+| — | <a id="f-017-t01"></a>F-017-T01 — Cross-project audit procedure | 2.5 h | 0 h | Completed | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #67](https://github.com/voidbrain/coordinator/pull/67) procedure |
+
+</details>
 
 <details>
 <summary>Next action, estimates and PR history</summary>

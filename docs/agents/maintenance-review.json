@@ -98,7 +98,7 @@
       "kind": "rule",
       "disposition": "implemented",
       "target": "docs/agents/cross-project-audit.md",
-      "evidence": "F-017-T01: AGENTS.md procedures table gains one project row pointing at the new cross-project audit procedure (also in docs/agents/procedures.md and docs/agents/gap-review.md); no existing rule removed or changed; check:rules and check:fast pass."
+      "evidence": "F-017-T01: AGENTS.md procedures table gains one project row pointing at the new cross-project audit procedure (listed like gap-review; docs/agents/procedures.md stays the copied harness file); no existing rule removed or changed; check:rules and check:fast pass."
     }
   ]
 }
