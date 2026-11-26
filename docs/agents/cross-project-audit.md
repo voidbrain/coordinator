@@ -8,10 +8,10 @@ Each component audits itself ([audit](audit.md)), and the gap review finds steps
 
 1. Refresh the views and run the gap review first: `GH_TOKEN=$(gh auth token) npm run solution:refresh`, then [gap review](gap-review.md), "Run it".
 2. Read every component listed in [.solution.json](../../.solution.json) on GitHub at its `ref` (`main`), not the local checkouts, which can be behind. Note each component's commit SHA: every finding cites the revision it was read at.
-3. Run the five checks below against every component backlog, this repository's own backlog, [the domain map](../DOMAINS.md), [SOLUTION](../SOLUTION.md) and [the solution order](../solution-order.md).
+3. Run the six checks below against every component backlog, this repository's own backlog, [the domain map](../DOMAINS.md), [SOLUTION](../SOLUTION.md) and [the solution order](../solution-order.md); check 6 also reads each component's settings, test scripts and CI.
 4. Record the run on the current cross-project audit record (`solution:F-017` for the first run): the date, the SHAs read, each check's result with an evidence link per finding, and "no findings" for a check that found none. A check you could not run is reported as not run, with the reason, never as clean.
 
-## The five checks
+## The six checks
 
 ### 1. Cross-references
 
@@ -55,6 +55,17 @@ For each component, read `docs/audits/*.audit.json` on `main` and its `.harness.
 
 Include this repository (`npm run check:audits`). The proposal is a full audit in that repository, or turning `audit.enforce` on once a full baseline exists; the owning repository schedules it.
 
+### 6. Dormant checks
+
+Checks that exist but do not run, or cannot fail. First run: [dormant checks 2026-11-26](../audits/2026-11-26-dormant-checks.md). Per component, at the revision read:
+
+- **Procedures off or never run**: each periodic procedure the harness defines (`reviews.<name>.days`: token, architecture with its outside-landscape comparison, skills; `audit`; `maintenance`; `behaviour.runner` for the agent-behaviour checks; `workUsage`; `coverage.enforce`) that is unset, has no dated evidence, or is past its own interval.
+- **Tests that do not run**: test files no test script or CI step matches; browser, e2e or integration suites with no CI step; `skip`, `only` and `todo`, and platform skips no CI runner satisfies; test files outside every type-checked `tsconfig` (Node and Playwright strip types without checking them); suites gated by paths or events, and whether that is intended; an `npm run` command a procedure or AGENTS.md names that `package.json` lacks.
+- **Tests that cannot fail**: sample the "every X" suites (accessibility and contrast, schemas, catalogues): a loop whose body ignores its variable, an assertion on a constant, an expectation computed by the code under test, an empty-list assertion that passes when errors are swallowed or a parser returns `NaN`, a scan narrower than the rule it guards. List concrete suspects with file and line only.
+- **CI that does not run**: workflows disabled (`gh workflow list --all`), and scheduled workflows whose last scheduled run is missing, cancelled or older than their cron.
+
+The proposal is a setting to enable, a CI step to add, a new `B-` record in the owning repository, or a false positive with its reason.
+
 ## Turn findings into proposals
 
 Follow [gap review](gap-review.md), "Turn findings into proposals": for each finding, name the owning repository and the exact record or step you would create or change there (title, one-line Issue, Check), or say why it is a false positive. Number them, report them to the owner with the gap review's, and record them on the audit record. The owner accepts or rejects each; an accepted one is made by a session in its owning repository, under its own rules. A finding that needs both sides to move also gets a coordination record in this backlog.
@@ -64,4 +75,4 @@ Never edit, push to or open a PR on a component repository from this repository 
 ## Limits
 
 - Checks 1 to 3 read text and can be wrong both ways: a reference can be written without a `repo:ID`, and a decision can be recorded only in a conversation. "No findings" does not prove the repositories agree.
-- Checks 1 and 5 are done by hand until the solution tool reports them; the proposal to automate them goes to 🦺 project-harness (`solution:F-017-T03`, [proposal](../proposals/cross-project-audit-checks.md)). No harness file is edited here.
+- Checks 1, 5 and 6 are done by hand until the solution tool reports them; the proposal to automate checks 1 and 5 went to 🦺 project-harness (`solution:F-017-T03`, [proposal](../proposals/cross-project-audit-checks.md)). No harness file is edited here.
