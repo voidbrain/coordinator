@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "implemented",
+  "status": "closed",
   "id": "F-016-T08",
   "title": "Shared-logic inventory: whether to create blocks and its first package",
   "goal": "A proposal says whether blocks is due and which package comes first, with evidence",
@@ -37,7 +37,7 @@
   "effort": {
     "size": "small",
     "estimate": "0 remaining",
-    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work; re-estimated the same day for the owner's widened scope. Not a measurement. Candidates narrowed by the owner 2026-11-26; estimate unchanged. 2026-11-26: battery-core note corrected after the owner's FPVBuddy decision (nerv:F-101-T05 cancelled); estimate unchanged. Implemented 2026-11-26 in docs/reviews/2026-11-shared-assets/blocks.md: Verdict not yet: no geo or routing function in hobo and openbando that both would import; geocoding is the candidate once hobo:F-013 adds a Nominatim geocoder. 2 proposals to hobo (close hobo:F-012-T01 with the reason; one lng-lat parser for both providers). docs/DOMAINS.md Maps and geo row and the openbando module table corrected; verification is the PR's green check:fast in CI and the owner's accept or reject of each proposal in the gap review.",
+    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work; re-estimated the same day for the owner's widened scope. Not a measurement. Candidates narrowed by the owner 2026-11-26; estimate unchanged. 2026-11-26: battery-core note corrected after the owner's FPVBuddy decision (nerv:F-101-T05 cancelled); estimate unchanged. Implemented 2026-11-26 in docs/reviews/2026-11-shared-assets/blocks.md: Verdict not yet: no geo or routing function in hobo and openbando that both would import; geocoding is the candidate once hobo:F-013 adds a Nominatim geocoder. 2 proposals to hobo (close hobo:F-012-T01 with the reason; one lng-lat parser for both providers). docs/DOMAINS.md Maps and geo row and the openbando module table corrected; verification is the PR's green check:fast in CI and the owner's accept or reject of each proposal in the gap review. Closed 2026-11-26 on PR #97's green CI.",
     "reviewed": "2026-11-26",
     "agentHours": 0,
     "ownerHours": 0,
@@ -60,6 +60,10 @@
     {
       "pr": 97,
       "note": "inventory"
+    },
+    {
+      "pr": 98,
+      "note": "close"
     }
   ]
 }
