@@ -220,6 +220,8 @@ Use ordinary B-/F- IDs in this repository's backlog. A solution record's Issue, 
 
 The owner steers across repositories with the [solution order](solution-order.md). A component step that needs another repository's step names it as `repo:ID` in its Depends on (owner decision 2026-11-24: every project uses step-level dependencies); in this repository a step's `dependsOn` takes `repo:STEP-ID`; prose such as "waits on repo:ID" is not read. The views are refreshed hourly as a PR (F-008; hourly since the owner decision of 2026-11-25, B-004), and a run that changes only the snapshot time or this repository's own revision opens none. Run `npm run solution:refresh` to regenerate the dashboard from GitHub (it reads each component's `main` at one resolved commit) and drop Done order items. `npm run check:solution` reads local checkouts instead. Commit the views only after reviewing their revisions and problems. A failed source stays Unknown and the command exits non-zero, even when a partial view is written.
 
+The coordinator-only procedures (copied only here since harness 10.24.2): [solution refresh](agents/solution-refresh.md) (refresh, verification, adoption in CI), [solution dashboard](agents/solution-dashboard.md) (how the dashboard reads each backlog) and [solution gaps](agents/solution-gaps.md) (the gap review).
+
 ## MCP and execution environments
 
 Use [MCP guidance](agents/mcp.md). No MCP selection is recorded for the coordinator: it needs only `git`, `gh` and Node. A shared recommendation does not grant every agent access to every component or device.

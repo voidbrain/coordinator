@@ -95,3 +95,7 @@ PRs #87–#93 merged on green CI (#87: close B-007; #88: F-019-T01/T02; #89, #91
 ## 2026-11-26 — main `837fb31`
 
 PR #99 reconciles the harness to v10.24.1 (from 10.21.4); the owner authorised it in chat on 2026-11-26 ("ok to all") although the template backlog is not empty. CI pending at this entry.
+
+## 2026-11-26 — harness v10.24.2
+
+PR #104 reconciles to v10.24.2 (from 10.24.1; project-harness B-129). The owner approved on 2026-11-26 ("yep") that coordinator-only harness files are copied only into the coordinator: this repository keeps `docs/agents/solution-dashboard.md`, `docs/agents/solution-refresh.md`, `docs/agents/solution-gaps.md` and `tools/solution.mjs`; the copied tools and pages are byte-identical to the tag; AGENTS.md and `docs/SOLUTION.md` link the three pages. CI pending at this entry.

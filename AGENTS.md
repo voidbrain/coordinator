@@ -81,7 +81,7 @@ Each procedure is binding when its trigger applies: read it before the task; a s
 | reassess architecture or decisions | [architecture review](docs/agents/architecture-review.md) |
 | set up the project or change its stack or workflow (capability assessment) | [MCP guidance](docs/agents/mcp.md), "In short" |
 | add, configure or rely on an MCP connection, or edit MCP selections | [MCP guidance](docs/agents/mcp.md) (commands inside) |
-| work across repositories of a solution, refresh the views or change the order | [solution profile](docs/agents/solution-profile.md) (refresh inside) and [solution order](docs/solution-order.md) |
+| work across repositories of a solution, refresh the views or change the order | [solution profile](docs/agents/solution-profile.md), [solution refresh](docs/agents/solution-refresh.md) and [solution order](docs/solution-order.md) |
 | run a gap review or propose missing steps to a component | [gap review](docs/agents/gap-review.md) |
 | run a cross-project audit (with the gap review) or propose fixes where repositories disagree | [cross-project audit](docs/agents/cross-project-audit.md) |
 | add or use a shared skill | [skills](docs/agents/skills.md) |
