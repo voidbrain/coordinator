@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "id": "F-019-T01",
+  "parent": "F-019",
+  "title": "Reviews, work usage and behaviour runner settings",
+  "goal": "The settings are on in .harness.json",
+  "status": "implemented",
+  "acceptance": [
+    "`reviews` token, architecture, skills at 30 days",
+    "`workUsage.enabled` true",
+    "`behaviour.runner` is the Claude Code `claude -p` command from rule-review, no campaign run",
+    "Coverage decision recorded with its reason and trigger"
+  ],
+  "dependsOn": [],
+  "resources": [
+    ".harness.json",
+    "docs/work/records/F-019.md"
+  ],
+  "capabilities": [
+    "bounded-edit"
+  ],
+  "privacy": "Neutral invented fixtures only; no personal data, credentials or private reports in Git.",
+  "validation": [
+    "npm run check:freshness",
+    "CI"
+  ],
+  "escalation": [
+    "A material scope or effort increase goes to the owner"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "0 remaining",
+    "basis": "Done 2026-11-26 in one PR from the dormant-checks sweep, owner decisions in chat that day. Not timed.",
+    "reviewed": "2026-11-26",
+    "agentHours": 0,
+    "ownerHours": 0,
+    "baselineAgentHours": 0.25,
+    "estimateAgentHours": 0.25,
+    "days": 0,
+    "baselineDays": 0
+  },
+  "prs": [
+    {
+      "pr": 87,
+      "note": "settings on"
+    }
+  ]
+}

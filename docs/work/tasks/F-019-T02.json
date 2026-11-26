@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "id": "F-019-T02",
+  "parent": "F-019",
+  "title": "First architecture review with outside-landscape comparison and the owner's leads",
+  "goal": "docs/reviews/architecture/2026-11-26.md",
+  "status": "implemented",
+  "acceptance": [
+    "Dated report with baseline, scope, generic queries and an adopt/adapt/reject/watch table with level, why, why not and evidence",
+    "The owner's seven articles of 2026-11-26 recorded as leads with their dispositions"
+  ],
+  "dependsOn": [],
+  "resources": [
+    "docs/reviews/architecture/**"
+  ],
+  "capabilities": [
+    "research"
+  ],
+  "privacy": "Neutral invented fixtures only; no personal data, credentials or private reports in Git.",
+  "validation": [
+    "npm run check:freshness"
+  ],
+  "escalation": [
+    "A material scope or effort increase goes to the owner"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "0 remaining",
+    "basis": "Done 2026-11-26 with two generic web searches. Not timed.",
+    "reviewed": "2026-11-26",
+    "agentHours": 0,
+    "ownerHours": 0,
+    "baselineAgentHours": 0.5,
+    "estimateAgentHours": 0.5,
+    "days": 0,
+    "baselineDays": 0
+  },
+  "prs": [
+    {
+      "pr": 87,
+      "note": "first architecture review"
+    }
+  ]
+}
