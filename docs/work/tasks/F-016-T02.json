@@ -51,6 +51,10 @@
     {
       "pr": 71,
       "note": "gap-review checks; harness proposal"
+    },
+    {
+      "pr": 72,
+      "note": "close"
     }
   ]
 }
