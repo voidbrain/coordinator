@@ -7,7 +7,7 @@
   "status": "closed",
   "acceptance": [
     "tools/solution.mjs, docs/agents/solution-dashboard.md and docs/agents/solution-gaps.md match v10.21.2 byte for byte; .harness.json names 10.21.2",
-    ".solution.json sets \"label\": \"coordinator\"; references keep the solution:ID form",
+    ".solution.json sets \"label\": \"coordinator\"; references keep the coordinator:ID form",
     "The regenerated dashboard has no source or link problem"
   ],
   "dependsOn": [],
@@ -32,7 +32,7 @@
   "effort": {
     "size": "small",
     "estimate": "0 remaining",
-    "basis": "Estimated 2026-11-25: copy three files, one manifest key, refresh. Not a measurement. Done 2026-11-25 against nerv fb055bb, grover 14dfdff: ▶ is nerv:F-120 (nerv:F-016 reads Owner: Procedure; its own Next line still names agent step F-016-T21, as B-060 intends); scoped audits show; Open work by repository and numbered gaps present; coordinator rows read 🧭 coordinator. Still off, reported to the owner: references stay solution:ID (by design) and the total rows read Solution; the open-work table has state but no next-action column; a scoped audit is shown but does not move Next audit (coordinator and grover 2026-12-01). No review: check-harness --strict matched v10.21.2; the one adapted change is the label key in .solution.json, a display setting. Closed 2026-11-26.",
+    "basis": "Estimated 2026-11-25: copy three files, one manifest key, refresh. Not a measurement. Done 2026-11-25 against nerv fb055bb, grover 14dfdff: ▶ is nerv:F-120 (nerv:F-016 reads Owner: Procedure; its own Next line still names agent step F-016-T21, as B-060 intends); scoped audits show; Open work by repository and numbered gaps present; coordinator rows read 🧭 coordinator. Still off, reported to the owner: references stay coordinator:ID (by design) and the total rows read Solution; the open-work table has state but no next-action column; a scoped audit is shown but does not move Next audit (coordinator and grover 2026-12-01). No review: check-harness --strict matched v10.21.2; the one adapted change is the label key in .solution.json, a display setting. Closed 2026-11-26.",
     "reviewed": "2026-11-25",
     "agentHours": 0,
     "ownerHours": 0,

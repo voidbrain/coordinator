@@ -99,3 +99,7 @@ PR #99 reconciles the harness to v10.24.1 (from 10.21.4); the owner authorised i
 ## 2026-11-26 — harness v10.24.2
 
 PR #104 reconciles to v10.24.2 (from 10.24.1; project-harness B-129). The owner approved on 2026-11-26 ("yep") that coordinator-only harness files are copied only into the coordinator: this repository keeps `docs/agents/solution-dashboard.md`, `docs/agents/solution-refresh.md`, `docs/agents/solution-gaps.md` and `tools/solution.mjs`; the copied tools and pages are byte-identical to the tag; AGENTS.md and `docs/SOLUTION.md` link the three pages. CI pending at this entry.
+
+## 2026-11-26 — harness v10.24.3
+
+Reconciles to v10.24.3 (from 10.24.2; project-harness B-130): `tools/solution.mjs`, `docs/agents/solution-profile.md` and `docs/agents/solution-dashboard.md` are byte-identical to the tag. The owner decided on 2026-11-26 ("NO! it's Coordinator") that this repository's records are `coordinator:ID`; `.solution.json` sets `id: "coordinator"`, `emoji: "🚦"` and `label: "Coordinator"`, and the live references are renamed. CI pending at this entry.
