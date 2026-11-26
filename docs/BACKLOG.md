@@ -67,10 +67,10 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 **Steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status |
-|---|---|---|---|---|---|
-| 🟢 Small | <a id="b-005-t01"></a>B-005-T01 — Teach the refresh guard the HTML order table, failing test first | 1 h | 0 h | 0 h | Implemented; verification pending |
-| 🟢 Small | **Total** | 1 h | 0 h (0 of 1 steps recorded) | 0 h | 0 of 1 completed |
+| Effort | Step | Estimate | Actual | Remaining | Status | PRs |
+|---|---|---|---|---|---|---|
+| 🟢 Small | <a id="b-005-t01"></a>B-005-T01 — Teach the refresh guard the HTML order table, failing test first | 1 h | 0 h | 0 h | Implemented; verification pending | [PR #84](https://github.com/voidbrain/coordinator/pull/84) fix |
+| 🟢 Small | **Total** | 1 h | 0 h (0 of 1 steps recorded) | 0 h | 0 of 1 completed | |
 
 <details>
 <summary>Next action, estimates and PR history</summary>
@@ -79,7 +79,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | [#81](https://github.com/voidbrain/coordinator/pull/81) (opened); [full audit 2026-11-26](audits/2026-11-26-coordinator-full.md) |
+| PR / evidence | Steps: B-005-T01: [PR #84](https://github.com/voidbrain/coordinator/pull/84) fix. [#81](https://github.com/voidbrain/coordinator/pull/81) (opened); [#84](https://github.com/voidbrain/coordinator/pull/84) (fix); [full audit 2026-11-26](audits/2026-11-26-coordinator-full.md) |
 | Opened | 2026-11-26 |
 | Verification | Pending: the PR's green CI; the next refresh that drops a Done item merges itself |
 | Reviewed | 2026-11-26 |
