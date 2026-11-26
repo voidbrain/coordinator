@@ -49,6 +49,10 @@
     {
       "pr": 74,
       "note": "first run"
+    },
+    {
+      "pr": 75,
+      "note": "close"
     }
   ]
 }
