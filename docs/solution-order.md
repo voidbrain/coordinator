@@ -24,14 +24,13 @@ Set by the owner on 2026-11-24 (F-002): the proposed order kept as 1–17, `grov
 4. grover:F-008 — alerts NERV can deliver (cross-repository)
 5. nerv:F-120 — Gauntlet coverage of NERV capabilities (cross-repository)
 6. solution:F-016 — shared assets pattern (bricks, blocks, Gauntlet); its Gauntlet inventory feeds nerv:F-120
-7. solution:F-017 — cross-project audit: the repositories agree; its first run reuses F-016's checks
-8. solution:F-020 — coherence review: docs and procedures consistent and clear; freeze on new procedures until done
-9. nerv:F-122 — Grover alert delivery, unblocks grover:F-008
-10. nerv:F-123 — MCP connection to Grover's hub
-11. fpvbuddy:F-005 — M1 FPV battery core; T02 to T04 implemented, verification
-12. nerv:F-121 — printed parts per drone, print by chat
-13. grover:F-011 — implemented P1 feed cycle; owner try-out pending
-14. grover:F-004 — implemented P1 probe calibration
-15. nerv:F-006 — orchestration across nodes (after B-119)
-16. grover:F-003 — hardware bring-up on the Pi (P1, needs the device)
+7. solution:F-020 — coherence review: docs and procedures consistent and clear; freeze on new procedures until done
+8. nerv:F-122 — Grover alert delivery, unblocks grover:F-008
+9. nerv:F-123 — MCP connection to Grover's hub
+10. fpvbuddy:F-005 — M1 FPV battery core; T02 to T04 implemented, verification
+11. nerv:F-121 — printed parts per drone, print by chat
+12. grover:F-011 — implemented P1 feed cycle; owner try-out pending
+13. grover:F-004 — implemented P1 probe calibration
+14. nerv:F-006 — orchestration across nodes (after B-119)
+15. grover:F-003 — hardware bring-up on the Pi (P1, needs the device)
 <!-- order:end -->
