@@ -4,7 +4,7 @@ Current work ledger, reviewed 26 November 2026 against main `7f361af`. PRs #115 
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 36.25 h agent + 2.75 h owner across 36 open steps of 12 features and 2 other records. Generated from the task files.
+**Remaining effort:** 35.25 h agent + 2.5 h owner across 34 open steps of 12 features and 2 other records. 0.25 h of actual effort recorded on 1 step. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -591,9 +591,9 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔹 P3 | 🟡 Medium | 3.5 h agent + 0.5 h owner | [F-024-T04](#f-024-t04) | — | 🤖 | — | — |
+| 🔴 Open | 🔹 P3 | 🟡 Medium | 2.5 h agent + 0.25 h owner | [F-024-T04](#f-024-t04) | — | ⏳ | — | — |
 
-💻 **→** Next: F-025-T01 — Decision page: how a drag-and-drop reorder becomes a reviewed PR (Planned).
+💻 **→** Next: F-025-T03 — The chosen write path: a reorder proposal opens a PR to the solution order (Planned).
 
 | | |
 |---|---|
@@ -605,11 +605,18 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who | PRs |
 |---|---|---|---|---|---|---|---|:---:|---|
-| 🟢 Small | <a id="f-025-t01"></a>F-025-T01 — Decision page: how a drag-and-drop reorder becomes a reviewed PR | 1 h | 0 h | 1 h | Planned | — | [F-025-T02](#f-025-t02) | 🤖 | [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan |
-| 🟢 Small | <a id="f-025-t02"></a>F-025-T02 — Owner decides the reorder write path | 0 h | 0 h | 0 h agent + 0.25 h owner | Planned | [F-025-T01](#f-025-t01) | [F-025-T03](#f-025-t03) | ⏳ 🤔 | [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan |
-| 🟡 Medium | <a id="f-025-t03"></a>F-025-T03 — The chosen write path: a reorder proposal opens a PR to the solution order | 2.5 h | 0 h | 2.5 h | Planned | [F-025-T02](#f-025-t02), [F-024-T04](#f-024-t04) | [F-025-T04](#f-025-t04) | ⏳ 🤖 | [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan |
+| 🟡 Medium | <a id="f-025-t03"></a>F-025-T03 — The chosen write path: a reorder proposal opens a PR to the solution order | 2.5 h | 0 h | 2.5 h | Planned | [F-024-T04](#f-024-t04) | [F-025-T04](#f-025-t04) | ⏳ 🤖 | [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan |
 | 🟢 Small | <a id="f-025-t04"></a>F-025-T04 — Owner reorders in NERV's card and merges the PR | 0 h | 0 h | 0 h agent + 0.25 h owner | Planned | [F-025-T03](#f-025-t03) | — | ⏳ 🧑‍🔧 | [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan |
-| 🟡 Medium | **Total** | 3.5 h | 0 h (0 of 4 steps recorded) | 3.5 h agent + 0.5 h owner | 0 of 4 completed | | | | |
+| 🟡 Medium | **Total** | 2.75 h | 0.25 h (1 of 4 steps recorded) | 2.5 h agent + 0.25 h owner | 2 of 4 completed | | | | |
+
+<details><summary>Done steps (2)</summary>
+
+| Effort | Step | Estimate | Actual | Status | PRs |
+|---|---|---|---|---|---|
+| — | <a id="f-025-t01"></a>F-025-T01 — Decision note: NERV opens the reorder PR (write path and guard rails) | 0.25 h | 0.25 h (stated) | Completed | [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan |
+| — | <a id="f-025-t02"></a>F-025-T02 — Owner decides the reorder write path | 0 h | 0 h | Completed | [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan |
+
+</details>
 
 <details>
 <summary>Next action, estimates and PR history</summary>
