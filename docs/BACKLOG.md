@@ -495,7 +495,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Steps: F-020-T01: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T02: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T03: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T04: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T05: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T06: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan. [#89](https://github.com/voidbrain/coordinator/pull/89) (plan); owner approval 2026-11-26 (chat "ok") |
+| PR / evidence | Steps: F-020-T01: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T02: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T03: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T04: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T05: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T06: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan. [#89](https://github.com/voidbrain/coordinator/pull/89) (plan); [#91](https://github.com/voidbrain/coordinator/pull/91) (order position, owner instruction 2026-11-26); owner approval 2026-11-26 (chat "ok") |
 | Components | project-harness:F-096, project-harness:F-102, project-harness:F-104, project-harness:F-105, nerv:F-125, nerv:F-132 |
 | Opened | 2026-11-26 |
 | Verification | Pending |
