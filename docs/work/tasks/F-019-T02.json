@@ -4,7 +4,7 @@
   "parent": "F-019",
   "title": "First architecture review with outside-landscape comparison and the owner's leads",
   "goal": "docs/reviews/architecture/2026-11-26.md",
-  "status": "implemented",
+  "status": "closed",
   "acceptance": [
     "Dated report with baseline, scope, generic queries and an adopt/adapt/reject/watch table with level, why, why not and evidence",
     "The owner's seven articles of 2026-11-26 recorded as leads with their dispositions"
@@ -26,7 +26,7 @@
   "effort": {
     "size": "small",
     "estimate": "0 remaining",
-    "basis": "Done 2026-11-26 with two generic web searches. Not timed.",
+    "basis": "Done 2026-11-26 with two generic web searches; closed on PR #88's green CI (8c11444). No actual: session start not recorded.",
     "reviewed": "2026-11-26",
     "agentHours": 0,
     "ownerHours": 0,

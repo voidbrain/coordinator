@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewed": "2026-11-26T10:11:06.354Z",
+  "reviewed": "2026-11-26T13:32:46.077Z",
   "policy": "c9570a34ab0c7e4f1274fe37802a6eff8e7edfb8266c98f0cec7119533729b2b",
   "inputs": {
     "AGENTS.md": "43bc132a11b7cd90f8ebc5da143f1d3434f78fba2c61a73d94389fbefb0e4c04",
@@ -102,9 +102,9 @@
     },
     {
       "kind": "rule",
-      "disposition": "backlog",
-      "target": "F-017",
-      "evidence": "2026-11-26: automating cross-project audit checks 1 and 5 is a proposal to project-harness (F-017-T03, docs/proposals/cross-project-audit-checks.md); full audit and audit.enforce planned as F-017-T04 and T05."
+      "disposition": "implemented",
+      "target": "docs/proposals/cross-project-audit-checks.md",
+      "evidence": "2026-11-26: F-017 closed on green CI (#67, #68, #74, #77, #80, #81, #83, #90): cross-project audit procedure, proposal docs/proposals/cross-project-audit-checks.md, full audit docs/audits/2026-11-26-coordinator-full.md and audit.enforce in .harness.json implemented."
     },
     {
       "kind": "rule",

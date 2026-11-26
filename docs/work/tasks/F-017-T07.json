@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "implemented",
+  "status": "closed",
   "id": "F-017-T07",
   "title": "NERV practices transfer and situation gaps",
   "goal": "Every NERV procedure, audit and check is mapped to the template, other repositories, the solution or NERV only; what NERV and the solution lack for their situation is ranked with evidence",
@@ -32,7 +32,7 @@
   "effort": {
     "size": "medium",
     "estimate": "0 remaining",
-    "basis": "Estimated 2026-11-26 at agent speed from F-017-T06 (a read-only sweep of the same nine repositories) plus the owner's widened situation review. Not a measurement. Implemented 2026-11-26 at the owner's request; verification is the PR's green CI.",
+    "basis": "Estimated 2026-11-26 at agent speed from F-017-T06 (a read-only sweep of the same nine repositories) plus the owner's widened situation review. Not a measurement. Implemented 2026-11-26 at the owner's request; closed 2026-11-26 on PR #90's green CI. No actual: session start not recorded. Closed 2026-11-26.",
     "reviewed": "2026-11-26",
     "agentHours": 0,
     "ownerHours": 0,

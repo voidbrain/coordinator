@@ -4,7 +4,7 @@
   "parent": "F-019",
   "title": "Reviews, work usage and behaviour runner settings",
   "goal": "The settings are on in .harness.json",
-  "status": "implemented",
+  "status": "closed",
   "acceptance": [
     "`reviews` token, architecture, skills at 30 days",
     "`workUsage.enabled` true",
@@ -30,7 +30,7 @@
   "effort": {
     "size": "small",
     "estimate": "0 remaining",
-    "basis": "Done 2026-11-26 in one PR from the dormant-checks sweep, owner decisions in chat that day. Not timed.",
+    "basis": "Done 2026-11-26 in one PR from the dormant-checks sweep, owner decisions in chat that day; closed on PR #88's green CI (8c11444). No actual: session start not recorded.",
     "reviewed": "2026-11-26",
     "agentHours": 0,
     "ownerHours": 0,

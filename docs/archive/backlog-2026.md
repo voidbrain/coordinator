@@ -557,3 +557,81 @@ Closed records of the [backlog](../BACKLOG.md), in closing-date order. History, 
 </details>
 
 ---
+
+### F-017
+
+**Cross-project audit: the repositories agree with each other**
+
+| Signal | Priority | Status | Effort |
+|:---:|---|---|---|
+| 🔵 | ◻️ P3 | Closed | 🟡 Medium |
+
+💻 **→ Human action required: No**<br />Closed 2026-11-26: PRs #67, #68 (T01), #74 (T02), #77 (T03), #81 (T04), #83 (T05), #80 (T06) and #90 (T07) merged on green CI (check job passed); owner accepted all T02, T06 and T07 proposals 2026-11-26.
+
+| | |
+|---|---|
+| **Issue** | Per-project audits exist in all 9 components (7-day cadence; only project-harness and openbando enforce it), and the gap review finds missing steps and harness lag, but nothing checks that the repositories agree with each other. Evidence 2026-11-26: nerv:F-101-T05 had NERV import the FPV core, contradicting the 2026-11-25 screens/domain decision in docs/DOMAINS.md; fpvbuddy:F-005 waited on nerv:F-101-T04 although its own PR (FPVBuddy#17) delivered that step; the owner caught both and no check did (fixed in nerv#792, FPVBuddy#17, coordinator#63). Audit freshness 2026-11-26: nerv last full audit 2026-11-20; fpvbuddy, hobo and bricks only baseline audits; gauntlet-protocol only a reconcile audit. |
+| **Reproduce** | Read docs/agents/gap-review.md and docs/agents/solution-gaps.md: no kind compares a plan with a later decision, a producer with its consumer, or reports a component's audit age; a step that depends on a closed or cancelled step of another repository shows only when the step is missing from its backlog. |
+| **Check** | docs/agents/cross-project-audit.md exists and is linked from AGENTS.md and docs/agents/procedures.md, covering cross-references, decisions, contracts, duplication and audit cadence (F-017-T01); the first run is recorded with evidence and its proposals are listed for the owner (F-017-T02); project-harness has a proposal to automate cross-references and audit cadence in the solution tool (F-017-T03); the coordinator's part of accepted proposal 16: a full audit by manifest kind (F-017-T04), then `audit.enforce` on (F-017-T05, only after T04). |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+**Next action / closure evidence:** Closed 2026-11-26: PRs #67, #68 (T01), #74 (T02), #77 (T03), #81 (T04), #83 (T05), #80 (T06) and #90 (T07) merged on green CI (check job passed); owner accepted all T02, T06 and T07 proposals 2026-11-26. 2026-11-26: F-017-T07 implemented at the owner's request ("are all [nerv's] procedures / audits / checks mapped ... is nerv still missing something", widened the same day to situation-based gaps): [NERV practices transfer and situation gaps](../reviews/2026-11-26-nerv-practices-transfer.md) classifies 23 NERV practices (A 12, B 6, C 6, D 6), lists 15 practices missing across the nine and 12 NERV plus 5 solution situation gaps, and numbers 22 proposals for the owner (PR #90); read-only, nothing changed in a component. Verification is the PR's green CI. 2026-11-26: F-017-T05 closed on PR #83's green CI (check `check` passed; merged `64424fb`). 2026-11-26: F-017-T05 implemented: `.harness.json` sets `audit.enforce` to `true`, a project setting (the plan's acceptance; no template change), after the full audit's PR #81 merged and F-017-T04 closed (PR #82); `npm run check:audits` and `check:fast` pass with it, so a due area now fails the check instead of warning. Next: F-017-T05 closes on PR #83's green CI. Review: fresh-context mechanical reviewer (Sonnet) on PR #83, no findings: one-line diff, F-017-T04 closed, check:audits exits 0 with all eight areas fresh; the first area falls due after 2026-12-03T09:40Z, after which check:audits fails until a new audit lands. 2026-11-26: F-017-T04 closed on PR #81's green CI (merged `d139d48`). Next: F-017-T05 (`audit.enforce` on) in its own PR. 2026-11-26: F-017-T04 implemented: [full audit 2026-11-26](../audits/2026-11-26-coordinator-full.md), manifest kind full, all eight areas checked at main `22744b2`; `npm run check:audits` passes. 12 findings: 1 confirmed defect opened as [B-005](../work/records/B-005.md) (refresh guard cannot read the HTML dashboard), 1 hypothesis as [B-006](../work/records/B-006.md) (hourly schedule fires about once a day), 1 rule defect for the owner as [B-007](../work/records/B-007.md) (AGENTS.md fixture rule), 2 fixed in the PR (SOLUTION version table; closable work: B-002, F-009, F-011 closed, F-012-T04, F-013-T01, F-018-T01 closed), 1 improvement proposal and 6 annotations report only. Next: F-017-T04 closes on PR #81's green CI; then F-017-T05 in a follow-up PR. No review: documentation and backlog only. 2026-11-26: F-017-T06 implemented at the owner's request ("check for other untracked forgotten procedures, audits, tests"): [dormant checks 2026-11-26](../audits/2026-11-26-dormant-checks.md) read all nine repositories at origin/main and found 5 procedure, 9 test-wiring, 5 cannot-fail and 2 CI findings (false positives listed); check 6 added to the [cross-project audit](../agents/cross-project-audit.md) and named in the gap review. Proposals for the owner to accept or reject, each made in its owning repository:
+
+| # | Repo | Proposal |
+|---|---|---|
+| 1 | nerv | B- record: run the darwin-only Node tests (EVA sandbox, egress proxy, job user, desktop driver) on the macOS runner |
+| 2 | nerv | B- record: the B-102 user-text scan covers `web/src`; the dashboard shell stops showing step IDs |
+| 3 | gauntlet-protocol | B- record: type-check `test/**/*.ts` |
+| 4 | project-harness | 🧑 Choose a behaviour runner; B- record for the overdue rerun (F-096, F-102) and a `behaviour.runner` setting per repository |
+| 5 | openbando | B- record: `tsconfig.e2e.json` in the CI type check |
+| 6 | nerv | B- record: axe `incomplete` colour-contrast results fail or are listed |
+| 7 | fpvbuddy, grover, hobo, bricks, coordinator, openbando | Enable `reviews` (token, architecture, skills; 30 days) and write the first of each |
+| 8 | nerv, grover, openbando, fpvbuddy, hobo, bricks | 🧑 Decide `coverage.enforce` per repository |
+| 9 | fpvbuddy, grover, openbando | Add the spec `tsconfig` (and fpvbuddy's core specs) to `typecheck` |
+| 10 | nerv | B- record: type-check `test/*.mjs` |
+| 11 | project-harness | B- record: reconcile adds the npm scripts a copied procedure names (`work:pr`, `behaviour`, `coverage`), or the procedure says when they apply |
+| 12 | hobo, bricks | Run the maintenance workflow once by hand; confirm the schedule |
+| 13 | nerv | B- record: scheduled CI runs in their own concurrency group |
+| 14 | bricks | B- record: the contrast helper accounts for alpha |
+| 15 | grover | Alert hysteresis test iterates the contract's probe kinds |
+| 16 | fpvbuddy, grover, hobo, bricks, coordinator, openbando | 🧑 Record whether work-usage measurement stays off |
+
+2026-11-26: F-017-T03 closed on PR #77's green CI (PR #78); #76 and #77 merged on green CI. Next: F-017-T04 (full audit), then T05. 2026-11-26: the owner accepted all 17 proposals in chat on 2026-11-26 ("accept all 17 proposals"). Each is made by a session in its owning repository: nerv #1, #11, #12, #13, #17; bricks #2, #16; hobo #3, #7, #16; fpvbuddy #8, #15, #17; grover #10, #16; openbando #14; gauntlet-protocol #17; coordinator #4, #5, #6, #9, #16. Coordinator part, done in PR #77: #4 nerv:F-120-T01 and T03 in F-007-T01's `externalMet`; #6 DOMAINS (hobo modules, Maps and Routing rows, bricks published 0.3.0, Telemetry and FPV data tools rows, Hobo MCP contract row), AGENTS.md component list, hobo pair in check 3; #9 new record [F-018](../work/records/F-018.md) (producer-neutral alert contract); #16 planned as F-017-T04 (full audit) and F-017-T05 (`audit.enforce` on, only after T04). #5, the order note on fpvbuddy:F-005, is its own order PR, #76. F-017-T03 implemented in the same PR: [proposal to project-harness](../proposals/cross-project-audit-checks.md) (gap kinds for a met but unrecorded prerequisite, a prerequisite that was cancelled, and audit cadence with `audit.enforce`; delivered-but-open stays a hand check), for the owner to take to a project-harness session; no harness file edited, nothing pushed there. Next: F-017-T03 closes on PR #77's green CI; then T04 and T05. No review: the only harness-file change is AGENTS.md's component list (one line, a fact, no behaviour; documentation-only and small). 2026-11-26: F-017-T02 implemented: the first run is recorded in [cross-project audit 2026-11-26](../audits/2026-11-26-cross-project.md) (revisions read, the five checks, an evidence link per finding, false positives, audit cadence per repository). Both 2026-11-26 findings are confirmed fixed on their side (nerv:F-101-T05 cancelled; fpvbuddy:F-005-T02 waits on nothing in NERV); NERV's own F-101-T04 is still open (proposal 1). Correction to the Issue: by manifest kind fpvbuddy and gauntlet-protocol have full audits (2026-11-22); grover, hobo, bricks and this repository have none. Proposals for the owner, to accept or reject one by one; an accepted one is made by a session in its owning repository. F-017-T02 closed on PR #74's green CI. Next: the owner's disposition of the 17 proposals, then F-017-T03.
+
+| # | Repo | Proposal |
+|---|---|---|
+| 1 | nerv | Close F-101-T04 as met by fpvbuddy:F-005-T02 (FPVBuddy#17); F-101-T07/T08 depend on that; owner decides on F-098-T04 and F-008-T12 |
+| 2 | bricks | F-004-T05 done (0.3.0 published by trusted publishing); F-004-T06 rewritten as the 0.3.0 install check; close implemented F-003 steps |
+| 3 | hobo | F-010-T02 depends on bricks:F-007-T03, not the prose wait on solution:F-012 |
+| 4 | coordinator | F-007-T01: nerv:F-120-T01 and T03 in `externalMet` |
+| 5 | coordinator | Order note for fpvbuddy:F-005 (owner-instructed order PR) |
+| 6 | coordinator | DOMAINS and AGENTS.md: hobo modules and rows, bricks published, Telemetry and FPV contract rows, Hobo MCP pair |
+| 7 | hobo | F-012-T01: a shared geo package goes to blocks under the blocks criterion |
+| 8 | fpvbuddy | F-009-T03 validates against bricks' surface schemas |
+| 9 | coordinator | New record: producer-neutral alert contract (nerv:F-122, nerv:F-101-T09, fpvbuddy:F-013, grover:F-008) |
+| 10 | grover | New step F-008-T04: alert shape, key grammar and levels written in DESIGN.md and pinned by a test |
+| 11 | nerv | F-101-T08/T09/T10 depend on the FPVBuddy steps they wait on; writes pass a request id |
+| 12 | nerv | F-122-T03 (and F-123-T02) depend on grover:F-005-T01; paired checks named |
+| 13 | nerv | Render surfaces with bricks `bx-surface` or record a skip |
+| 14 | openbando | Record `Skip: bricks` or an adoption record |
+| 15 | fpvbuddy | F-014-T01 compares openbando's Blackbox parser first |
+| 16 | grover, hobo, bricks, coordinator | Next audit as `kind: full`, then `audit.enforce` on |
+| 17 | nerv, fpvbuddy, gauntlet-protocol | `audit.enforce` on; nerv full audit due 2026-11-27 |
+
+2026-11-26: F-017-T01 implemented: [cross-project audit](../agents/cross-project-audit.md) written, linked from the AGENTS.md procedures table and the gap review; verification is the PR's green CI. No review: documentation-only and small (one table row, no behaviour). 2026-11-26: the first version also forked the copied `docs/agents/procedures.md` for a row; that was unnecessary (the owner's brief asked for it by mistake) and is undone: the procedure is listed in the AGENTS.md procedures table only, like gap-review, and procedures.md is a copied file again. F-017-T01 closed on PR #67's green CI. Next: F-017-T02, the first run. 2026-11-26: planned at the owner's request (approved 2026-11-26). Planning and coordination only: the procedure runs together with the gap review, its findings become proposals to the owning repositories under the gap-review procedure (the owner decides which are created), and the coordinator edits no component. Check 4 (duplication) reuses the F-016-T02 checks by reference and does not repeat them. The solution-tool automation is a proposal to project-harness (F-017-T03); no harness file is edited here.
+
+**Estimates:** No remaining effort.
+
+| Field | Value |
+|---|---|
+| PR / evidence | [#66](https://github.com/voidbrain/coordinator/pull/66) (plan); [#67](https://github.com/voidbrain/coordinator/pull/67) (F-017-T01 procedure); [#68](https://github.com/voidbrain/coordinator/pull/68) (undo the procedures.md fork, close F-017-T01); owner approval 2026-11-26; evidence: nerv#792, FPVBuddy#17, [#63](https://github.com/voidbrain/coordinator/pull/63) · [#69](https://github.com/voidbrain/coordinator/pull/69) (order: solution:F-017 at 8) · [#74](https://github.com/voidbrain/coordinator/pull/74) (F-017-T02 first run); [#75](https://github.com/voidbrain/coordinator/pull/75) (close F-017-T02) · owner accepted all 17 proposals 2026-11-26; [#76](https://github.com/voidbrain/coordinator/pull/76) (order note, proposal 5); [#77](https://github.com/voidbrain/coordinator/pull/77) (proposals 4, 6, 9, 16 and the dispositions); [#78](https://github.com/voidbrain/coordinator/pull/78) (close F-017-T03); [#81](https://github.com/voidbrain/coordinator/pull/81) (F-017-T04 full audit); [#82](https://github.com/voidbrain/coordinator/pull/82) (close F-017-T04); [#83](https://github.com/voidbrain/coordinator/pull/83) (F-017-T05 audit.enforce) · [#80](https://github.com/voidbrain/coordinator/pull/80) (F-017-T06 dormant checks) · [#90](https://github.com/voidbrain/coordinator/pull/90) (F-017-T07 NERV practices transfer); owner accepted all T06 and T07 proposals 2026-11-26 |
+| Components | nerv:F-101, nerv:F-122, fpvbuddy:F-005, grover:F-008, hobo:F-011 |
+| Opened | 2026-11-26 |
+| Verification | Documentation and Unit/integration: 2026-11-26 passed on merged PRs #67, #68, #74, #77, #80, #81, #83 and #90 green CI (check job) |
+| Reviewed | 2026-11-26 |
+
+</details>
+
+---

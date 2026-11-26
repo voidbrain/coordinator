@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "planned",
+  "status": "ready",
   "id": "F-020-T01",
   "title": "Per-repo coherence read by a fresh-context agent, one checklist item per repository (9)",
   "goal": "One finding list per repository: what is inconsistent, unclear or too long, with file and line",
