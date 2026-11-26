@@ -59,3 +59,7 @@ PR #72 (F-016-T02 closed) and PR #73 (refresh of the solution views) merged on g
 ## 2026-11-26 — main `a747f9e`
 
 PR #74 (F-017-T02 first cross-project audit run) merged on green CI; F-017-T02 closed.
+
+## 2026-11-26 — main `4a7680c`
+
+PR #75 (close F-017-T02) merged on green CI; nothing left to close from it.

@@ -1,10 +1,10 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 26 November 2026 against main `a747f9e`. PR #74 (F-017-T02 first cross-project audit run) merged on green CI; F-017-T02 closed.
+Current work ledger, reviewed 26 November 2026 against main `4a7680c`. PR #75 (close F-017-T02) merged on green CI; nothing left to close from it.
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 19.75 h agent + 1 h owner across 25 open steps of 8 features and 2 other records. Generated from the task files.
+**Remaining effort:** 23.5 h agent + 1.25 h owner across 29 open steps of 9 features and 2 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -134,7 +134,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔶 P2 | 🟢 Small | 1 h | `nerv:F-120-T01`, `nerv:F-120-T02`, `nerv:F-120-T03` | — | ⏳ | — | — |
+| 🔴 Open | 🔶 P2 | 🟢 Small | 1 h | `nerv:F-120-T02` | — | ⏳ | — | — |
 
 💻 **→** Next: F-007-T01 — Name the Gauntlet release NERV needs for its new cases in docs/SOLUTION.md (waits on nerv:F-120) (Planned).
 
@@ -148,7 +148,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | PRs |
 |---|---|---|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-007-t01"></a>F-007-T01 — Name the Gauntlet release NERV needs for its new cases in docs/SOLUTION.md (waits on nerv:F-120) | 0.5 h | 0 h | 0.5 h | Planned | `nerv:F-120-T01`, `nerv:F-120-T02`, `nerv:F-120-T03` | [F-007-T02](#f-007-t02) | [PR #39](https://github.com/voidbrain/coordinator/pull/39) dependsOn nerv:F-120 open steps |
+| 🟢 Small | <a id="f-007-t01"></a>F-007-T01 — Name the Gauntlet release NERV needs for its new cases in docs/SOLUTION.md (waits on nerv:F-120) | 0.5 h | 0 h | 0.5 h | Planned | `nerv:F-120-T02` | [F-007-T02](#f-007-t02) | [PR #39](https://github.com/voidbrain/coordinator/pull/39) dependsOn nerv:F-120 open steps; [PR #77](https://github.com/voidbrain/coordinator/pull/77) externalMet nerv:F-120-T01, T03 |
 | 🟢 Small | <a id="f-007-t02"></a>F-007-T02 — Link a Gauntlet run of the new NERV cases as acceptance | 0.5 h | 0 h | 0.5 h | Planned | [F-007-T01](#f-007-t01) | — | — |
 | 🟢 Small | **Total** | 1 h | 0 h (0 of 2 steps recorded) | 1 h | 0 of 2 completed | | | |
 
@@ -159,7 +159,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Steps: F-007-T01: [PR #39](https://github.com/voidbrain/coordinator/pull/39) dependsOn nerv:F-120 open steps. — |
+| PR / evidence | Steps: F-007-T01: [PR #39](https://github.com/voidbrain/coordinator/pull/39) dependsOn nerv:F-120 open steps; [PR #77](https://github.com/voidbrain/coordinator/pull/77) externalMet nerv:F-120-T01, T03. — |
 | Components | nerv:F-120 |
 | Opened | 2026-11-24 |
 | Verification | Pending |
@@ -390,22 +390,24 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔹 P3 | 🟢 Small | 0.5 h | — | — | 🤖 | — | — |
+| 🔴 Open | 🔹 P3 | 🟡 Medium | 2.25 h | — | — | 🤖 | — | — |
 
-💻 **→** Next: F-017-T03 — Proposal to project-harness: automate checks 1 and 5 (Planned).
+💻 **→** Next: F-017-T03 — Proposal to project-harness: automate checks 1 and 5 (Implemented; verification pending).
 
 | | |
 |---|---|
 | **Issue** | Per-project audits exist in all 9 components (7-day cadence; only project-harness and openbando enforce it), and the gap review finds missing steps and harness lag, but nothing checks that the repositories agree with each other. Evidence 2026-11-26: nerv:F-101-T05 had NERV import the FPV core, contradicting the 2026-11-25 screens/domain decision in docs/DOMAINS.md; fpvbuddy:F-005 waited on nerv:F-101-T04 although its own PR (FPVBuddy#17) delivered that step; the owner caught both and no check did (fixed in nerv#792, FPVBuddy#17, coordinator#63). Audit freshness 2026-11-26: nerv last full audit 2026-11-20; fpvbuddy, hobo and bricks only baseline audits; gauntlet-protocol only a reconcile audit. |
 | **Reproduce** | Read docs/agents/gap-review.md and docs/agents/solution-gaps.md: no kind compares a plan with a later decision, a producer with its consumer, or reports a component's audit age; a step that depends on a closed or cancelled step of another repository shows only when the step is missing from its backlog. |
-| **Check** | docs/agents/cross-project-audit.md exists and is linked from AGENTS.md and docs/agents/procedures.md, covering cross-references, decisions, contracts, duplication and audit cadence (F-017-T01); the first run is recorded with evidence and its proposals are listed for the owner (F-017-T02); project-harness has a proposal to automate cross-references and audit cadence in the solution tool (F-017-T03). |
+| **Check** | docs/agents/cross-project-audit.md exists and is linked from AGENTS.md and docs/agents/procedures.md, covering cross-references, decisions, contracts, duplication and audit cadence (F-017-T01); the first run is recorded with evidence and its proposals are listed for the owner (F-017-T02); project-harness has a proposal to automate cross-references and audit cadence in the solution tool (F-017-T03); the coordinator's part of accepted proposal 16: a full audit by manifest kind (F-017-T04), then `audit.enforce` on (F-017-T05, only after T04). |
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status | PRs |
-|---|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-017-t03"></a>F-017-T03 — Proposal to project-harness: automate checks 1 and 5 | 0.5 h | 0 h | 0.5 h | Planned | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan |
-| 🟢 Small | **Total** | 4.5 h | 0 h (0 of 3 steps recorded) | 0.5 h | 2 of 3 completed | |
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | PRs |
+|---|---|---|---|---|---|---|---|---|
+| 🟢 Small | <a id="f-017-t03"></a>F-017-T03 — Proposal to project-harness: automate checks 1 and 5 | 0.5 h | 0 h | 0 h | Implemented; verification pending | — | — | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #77](https://github.com/voidbrain/coordinator/pull/77) proposal |
+| 🟡 Medium | <a id="f-017-t04"></a>F-017-T04 — Full audit of the coordinator (manifest kind full) | 2 h | 0 h | 2 h | Planned | — | [F-017-T05](#f-017-t05) | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan |
+| 🟢 Small | <a id="f-017-t05"></a>F-017-T05 — Turn audit.enforce on after the full audit | 0.25 h | 0 h | 0.25 h | Planned | [F-017-T04](#f-017-t04) | — | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan |
+| 🟡 Medium | **Total** | 6.75 h | 0 h (0 of 5 steps recorded) | 2.25 h | 2 of 5 completed | | | |
 
 <details><summary>Done steps (2)</summary>
 
@@ -423,8 +425,48 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Steps: F-017-T01: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #67](https://github.com/voidbrain/coordinator/pull/67) procedure; [PR #68](https://github.com/voidbrain/coordinator/pull/68) undo procedures.md fork; close · F-017-T02: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #74](https://github.com/voidbrain/coordinator/pull/74) first run; [PR #75](https://github.com/voidbrain/coordinator/pull/75) close · F-017-T03: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan. [#66](https://github.com/voidbrain/coordinator/pull/66) (plan); [#67](https://github.com/voidbrain/coordinator/pull/67) (F-017-T01 procedure); [#68](https://github.com/voidbrain/coordinator/pull/68) (undo the procedures.md fork, close F-017-T01); owner approval 2026-11-26; evidence: nerv#792, FPVBuddy#17, [#63](https://github.com/voidbrain/coordinator/pull/63) · [#69](https://github.com/voidbrain/coordinator/pull/69) (order: solution:F-017 at 8) · [#74](https://github.com/voidbrain/coordinator/pull/74) (F-017-T02 first run); [#75](https://github.com/voidbrain/coordinator/pull/75) (close F-017-T02) |
-| Components | nerv:F-101, nerv:F-122, fpvbuddy:F-005, grover:F-008 |
+| PR / evidence | Steps: F-017-T01: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #67](https://github.com/voidbrain/coordinator/pull/67) procedure; [PR #68](https://github.com/voidbrain/coordinator/pull/68) undo procedures.md fork; close · F-017-T02: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #74](https://github.com/voidbrain/coordinator/pull/74) first run; [PR #75](https://github.com/voidbrain/coordinator/pull/75) close · F-017-T03: [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #77](https://github.com/voidbrain/coordinator/pull/77) proposal · F-017-T04: [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan · F-017-T05: [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan. [#66](https://github.com/voidbrain/coordinator/pull/66) (plan); [#67](https://github.com/voidbrain/coordinator/pull/67) (F-017-T01 procedure); [#68](https://github.com/voidbrain/coordinator/pull/68) (undo the procedures.md fork, close F-017-T01); owner approval 2026-11-26; evidence: nerv#792, FPVBuddy#17, [#63](https://github.com/voidbrain/coordinator/pull/63) · [#69](https://github.com/voidbrain/coordinator/pull/69) (order: solution:F-017 at 8) · [#74](https://github.com/voidbrain/coordinator/pull/74) (F-017-T02 first run); [#75](https://github.com/voidbrain/coordinator/pull/75) (close F-017-T02) · owner accepted all 17 proposals 2026-11-26; [#76](https://github.com/voidbrain/coordinator/pull/76) (order note, proposal 5); [#77](https://github.com/voidbrain/coordinator/pull/77) (proposals 4, 6, 9, 16 and the dispositions) |
+| Components | nerv:F-101, nerv:F-122, fpvbuddy:F-005, grover:F-008, hobo:F-011 |
+| Opened | 2026-11-26 |
+| Verification | Pending |
+| Reviewed | 2026-11-26 |
+
+</details>
+
+---
+### <a id="f-018"></a>[✨ F-018](#top)
+
+**Producer-neutral alert contract: one shape for any producer NERV delivers**
+
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🔴 Open | 🔹 P3 | 🟡 Medium | 2 h agent + 0.25 h owner | — | — | 🤖 | — | — |
+
+💻 **→** Next: F-018-T01 — Write the producer-neutral alert contract in SOLUTION (Planned).
+
+| | |
+|---|---|
+| **Issue** | Cross-project audit 2026-11-26, proposal 9, accepted by the owner 2026-11-26. fpvbuddy:F-013 (battery storage alerts) and nerv:F-101-T09 reuse "nerv:F-122's contract", but [F-122's design](https://github.com/voidbrain/nerv/blob/353fe20/docs/decisions/grover-alert-delivery.md) is Grover-only: entries without `roomId` are skipped, config and ledger are `grover`, and night classes come from Grover key shapes. [fpvbuddy:F-013-T01](https://github.com/voidbrain/FPVBuddy/blob/13a259d/docs/work/tasks/F-013-T01.json) already asks what replaces `roomId`. [DOMAINS](DOMAINS.md#distributed-contracts) says the alert contract generalises when a second producer sends alerts. |
+| **Reproduce** | Read nerv's `docs/decisions/grover-alert-delivery.md` and fpvbuddy:F-013-T01: no written shape covers a producer other than Grover; [SOLUTION](SOLUTION.md) names `grover_alerts` only. |
+| **Check** | [SOLUTION](SOLUTION.md) has one alert contract for any producer: key, level, message, since, an optional scope that replaces `roomId`, and a serious/minor table per producer (grover, fpvbuddy), with the DOMAINS "Distributed contracts" Alerts row pointing at it (F-018-T01); the nerv step that generalises the poller, and any producer change, is proposed to its owning repository through the gap review, and the owner decides which side moves (F-018-T02). |
+
+**Feature steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | PRs |
+|---|---|---|---|---|---|---|---|---|
+| 🟡 Medium | <a id="f-018-t01"></a>F-018-T01 — Write the producer-neutral alert contract in SOLUTION | 1.5 h | 0 h | 1.5 h | Planned | — | [F-018-T02](#f-018-t02) | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan |
+| 🟢 Small | <a id="f-018-t02"></a>F-018-T02 — Propose the side changes and record the owner's choice | 0.5 h | 0 h | 0.5 h agent + 0.25 h owner | Planned | [F-018-T01](#f-018-t01) | — | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan |
+| 🟡 Medium | **Total** | 2 h | 0 h (0 of 2 steps recorded) | 2 h agent + 0.25 h owner | 0 of 2 completed | | | |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+[Full notes & evidence](work/records/F-018.md)
+
+| Field | Value |
+|---|---|
+| PR / evidence | Steps: F-018-T01: [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan · F-018-T02: [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan. [#77](https://github.com/voidbrain/coordinator/pull/77) (plan); cross-project audit [2026-11-26](audits/2026-11-26-cross-project.md), proposal 9; owner acceptance 2026-11-26 |
+| Components | nerv:F-122, nerv:F-101, fpvbuddy:F-013, grover:F-008 |
 | Opened | 2026-11-26 |
 | Verification | Pending |
 | Reviewed | 2026-11-26 |

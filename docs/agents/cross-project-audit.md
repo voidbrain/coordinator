@@ -35,6 +35,8 @@ Each MCP producer against what its consumer expects: tool names, message fields,
 
 - 🪴 grover's alerts (`grover:F-008`; the hub's `mcp.ts` and `alerts.ts`) against what 𖣂 nerv delivers (`nerv:F-122`).
 - 🚁 fpvbuddy's MCP tools against what 𖣂 nerv consumes (`nerv:F-101-T08` to `nerv:F-101-T10`).
+- 🗺️ hobo's MCP server (`hobo:F-011`: places, trips and totals) against what 𖣂 nerv consumes (`nerv:F-131-T03`).
+- Any alert producer (grover, fpvbuddy, later openbando and hobo) against the producer-neutral alert contract (`solution:F-018`) once it is written.
 
 Add a pair when a new producer or consumer is recorded. A side that diverges from the written contract gets the proposal; when the contract is silent or both sides changed, propose a coordination record here with `Components` links, and the owner decides which side moves.
 
@@ -62,4 +64,4 @@ Never edit, push to or open a PR on a component repository from this repository 
 ## Limits
 
 - Checks 1 to 3 read text and can be wrong both ways: a reference can be written without a `repo:ID`, and a decision can be recorded only in a conversation. "No findings" does not prove the repositories agree.
-- Checks 1 and 5 are done by hand until the solution tool reports them; the proposal to automate them goes to 🦺 project-harness (`solution:F-017-T03`). No harness file is edited here.
+- Checks 1 and 5 are done by hand until the solution tool reports them; the proposal to automate them goes to 🦺 project-harness (`solution:F-017-T03`, [proposal](../proposals/cross-project-audit-checks.md)). No harness file is edited here.
