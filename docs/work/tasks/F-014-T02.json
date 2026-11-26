@@ -34,5 +34,10 @@
     "agentHours": 0,
     "estimateAgentHours": 0.25
   },
-  "prs": []
+  "prs": [
+    {
+      "pr": 60,
+      "note": "gap confirmation and closure"
+    }
+  ]
 }
