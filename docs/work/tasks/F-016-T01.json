@@ -48,6 +48,10 @@
     {
       "pr": 62,
       "note": "blocks criterion"
+    },
+    {
+      "pr": 70,
+      "note": "Shared assets section"
     }
   ]
 }
