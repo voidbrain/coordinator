@@ -442,7 +442,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|---|---|---|---|:---:|:---:|:---:|
 | 🔴 Open | 🔹 P3 | 🟡 Medium | 2 h agent + 0.25 h owner | — | — | 🤖 | — | — |
 
-💻 **→** Next: F-018-T01 — Write the producer-neutral alert contract in SOLUTION (Planned).
+💻 **→** Next: F-018-T01 — Write the producer-neutral alert contract in SOLUTION (Implemented; verification pending).
 
 | | |
 |---|---|
@@ -454,7 +454,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | PRs |
 |---|---|---|---|---|---|---|---|---|
-| 🟡 Medium | <a id="f-018-t01"></a>F-018-T01 — Write the producer-neutral alert contract in SOLUTION | 1.5 h | 0 h | 1.5 h | Planned | — | [F-018-T02](#f-018-t02) | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan |
+| 🟡 Medium | <a id="f-018-t01"></a>F-018-T01 — Write the producer-neutral alert contract in SOLUTION | 1.5 h | 0 h | 1.5 h | Implemented; verification pending | — | [F-018-T02](#f-018-t02) | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan |
 | 🟢 Small | <a id="f-018-t02"></a>F-018-T02 — Propose the side changes and record the owner's choice | 0.5 h | 0 h | 0.5 h agent + 0.25 h owner | Planned | [F-018-T01](#f-018-t01) | — | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan |
 | 🟡 Medium | **Total** | 2 h | 0 h (0 of 2 steps recorded) | 2 h agent + 0.25 h owner | 0 of 2 completed | | | |
 

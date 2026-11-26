@@ -58,7 +58,7 @@ Contracts written as prose or JSON schema between a producer and a consumer, mos
 
 | Contract | Producer | Consumer | Written in | Records |
 |---|---|---|---|---|
-| Alerts | 🪴 grover (`grover_alerts`) | 𖣂 nerv | Grover's `docs/DESIGN.md`, "NERV" (tool table); [SOLUTION](SOLUTION.md) | grover:F-008, nerv:F-122. Generalised when a second producer sends alerts (fpvbuddy battery warnings, openbando deadlines, hobo departures): [solution:F-018](BACKLOG.md#f-018) writes one producer-neutral shape (fpvbuddy:F-013 and nerv:F-101-T09 are the second producer) |
+| Alerts | 🪴 grover (`grover_alerts`), 🚁 fpvbuddy (planned, fpvbuddy:F-013) | 𖣂 nerv | [SOLUTION, "Alert contract"](SOLUTION.md#alert-contract) (`alerts/1`, any producer); Grover's tool table in its `docs/DESIGN.md`, "NERV" | grover:F-008, nerv:F-122. Producer-neutral since [solution:F-018](BACKLOG.md#f-018): fpvbuddy:F-013 and nerv:F-101-T09 are the second producer; openbando deadlines and hobo departures are future producers |
 | FPV data tools | 🚁 fpvbuddy (MCP server) | 𖣂 nerv | Not written yet: the records describe it | Producer: fpvbuddy:F-009, fpvbuddy:F-011 to fpvbuddy:F-015, fpvbuddy:F-017; consumer: nerv:F-101-T08 to nerv:F-101-T10 |
 | Places, trips and totals | 🗺️ hobo (MCP server on its local service: `list_places`, `get_trip`, `trip_totals`, read-only) | 𖣂 nerv | Not written yet: hobo:F-011-T01 puts the tool table in Hobo's `docs/DESIGN.md` | hobo:F-011; consumer nerv:F-131-T03 |
 
