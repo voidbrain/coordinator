@@ -4,7 +4,7 @@ Current work ledger, reviewed 26 November 2026 against main `34f9688`. PRs #87�
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 35.75 h agent + 2.25 h owner across 36 open steps of 11 features and 2 other records. Generated from the task files.
+**Remaining effort:** 35.75 h agent + 2.25 h owner across 35 open steps of 11 features and 2 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -426,7 +426,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|---|---|---|---|:---:|:---:|:---:|
 | 🔴 Open | 🔹 P3 | 🟣 Very large | 8.25 h agent + 0.5 h owner | — | — | 🤖 | — | — |
 
-💻 **→** Next: F-020-T01 — Per-repo coherence read by a fresh-context agent, one checklist item per repository (9) (Implemented; verification pending).
+💻 **→** Next: F-020-T02 — Cross-repo pass: rules that differ without a project marker, one owner per topic (Planned).
 
 | | |
 |---|---|
@@ -438,13 +438,20 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who | PRs |
 |---|---|---|---|---|---|---|---|:---:|---|
-| 🟢 Small | <a id="f-020-t01"></a>F-020-T01 — Per-repo coherence read by a fresh-context agent, one checklist item per repository (9) | 4 h | 0 h | 0 h | Implemented; verification pending | — | [F-020-T02](#f-020-t02), [F-020-T03](#f-020-t03) | 🤖 | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan; [PR #95](https://github.com/voidbrain/coordinator/pull/95) coherence read, nine pages |
-| 🟡 Medium | <a id="f-020-t02"></a>F-020-T02 — Cross-repo pass: rules that differ without a project marker, one owner per topic | 2 h | 0 h | 2 h | Planned | [F-020-T01](#f-020-t01) | [F-020-T04](#f-020-t04) | ⏳ 🤖 | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan |
-| 🟡 Medium | <a id="f-020-t03"></a>F-020-T03 — Measure friction: behaviour checks in 2 or 3 representative repositories plus the friction logs | 3 h | 0 h | 3 h | Planned | [F-020-T01](#f-020-t01) | [F-020-T04](#f-020-t04) | ⏳ 🤖 | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan |
+| 🟡 Medium | <a id="f-020-t02"></a>F-020-T02 — Cross-repo pass: rules that differ without a project marker, one owner per topic | 2 h | 0 h | 2 h | Planned | — | [F-020-T04](#f-020-t04) | 🤖 | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan |
+| 🟡 Medium | <a id="f-020-t03"></a>F-020-T03 — Measure friction: behaviour checks in 2 or 3 representative repositories plus the friction logs | 3 h | 0 h | 3 h | Planned | — | [F-020-T04](#f-020-t04) | 🤖 | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan |
 | 🟡 Medium | <a id="f-020-t04"></a>F-020-T04 — Consolidation proposals per repository, as proposals to each owning repository | 3 h | 0 h | 3 h | Planned | [F-020-T02](#f-020-t02), [F-020-T03](#f-020-t03) | [F-020-T05](#f-020-t05) | ⏳ 🤖 | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan |
 | 🟢 Small | <a id="f-020-t05"></a>F-020-T05 — Owner: accept or reject each proposal; decide the freeze lines for the other repositories | 0 h | 0 h | 0 h agent + 0.5 h owner | Planned | [F-020-T04](#f-020-t04) | [F-020-T06](#f-020-t06) | ⏳ 🤔 | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan |
 | 🟢 Small | <a id="f-020-t06"></a>F-020-T06 — Lift the freeze on new procedures here and record the outcome | 0.25 h | 0 h | 0.25 h | Planned | [F-020-T05](#f-020-t05) | — | ⏳ 🤖 | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan |
-| 🟣 Very large | **Total** | 12.25 h | 0 h (0 of 6 steps recorded) | 8.25 h agent + 0.5 h owner | 0 of 6 completed | | | | |
+| 🟣 Very large | **Total** | 12.25 h | 0 h (0 of 6 steps recorded) | 8.25 h agent + 0.5 h owner | 1 of 6 completed | | | | |
+
+<details><summary>Done steps (1)</summary>
+
+| Effort | Step | Estimate | Actual | Status | PRs |
+|---|---|---|---|---|---|
+| — | <a id="f-020-t01"></a>F-020-T01 — Per-repo coherence read by a fresh-context agent, one checklist item per repository (9) | 4 h | 0 h | Completed | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan; [PR #95](https://github.com/voidbrain/coordinator/pull/95) coherence read, nine pages; [PR #96](https://github.com/voidbrain/coordinator/pull/96) close |
+
+</details>
 
 <details>
 <summary>Next action, estimates and PR history</summary>
@@ -453,7 +460,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Steps: F-020-T01: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan; [PR #95](https://github.com/voidbrain/coordinator/pull/95) coherence read, nine pages · F-020-T02: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T03: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T04: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T05: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T06: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan. [#92](https://github.com/voidbrain/coordinator/pull/92) (plan); [#89](https://github.com/voidbrain/coordinator/pull/89) (plan); [#91](https://github.com/voidbrain/coordinator/pull/91) (order position, owner instruction 2026-11-26); owner approval 2026-11-26 (chat "ok"); [#94](https://github.com/voidbrain/coordinator/pull/94); [#95](https://github.com/voidbrain/coordinator/pull/95) (F-020-T01 coherence read) |
+| PR / evidence | Steps: F-020-T01: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan; [PR #95](https://github.com/voidbrain/coordinator/pull/95) coherence read, nine pages; [PR #96](https://github.com/voidbrain/coordinator/pull/96) close · F-020-T02: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T03: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T04: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T05: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T06: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan. [#92](https://github.com/voidbrain/coordinator/pull/92) (plan); [#89](https://github.com/voidbrain/coordinator/pull/89) (plan); [#91](https://github.com/voidbrain/coordinator/pull/91) (order position, owner instruction 2026-11-26); owner approval 2026-11-26 (chat "ok"); [#94](https://github.com/voidbrain/coordinator/pull/94); [#95](https://github.com/voidbrain/coordinator/pull/95) (F-020-T01 coherence read) |
 | Components | project-harness:F-096, project-harness:F-104, project-harness:F-105, nerv:F-125, nerv:F-132 |
 | Opened | 2026-11-26 |
 | Verification | Pending |
