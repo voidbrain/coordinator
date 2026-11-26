@@ -1,6 +1,6 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 26 November 2026 against main `7a69164`. PRs #83 (F-017-T05, audit.enforce) and #84 (B-005, refresh guard reads the HTML order table) merged on green CI. F-017-T05 and B-005 closed in this PR; B-005 replayed on refresh PR #73 (prints ok).
+Current work ledger, reviewed 26 November 2026 against main `7a69164`. PRs #83 (F-017-T05, audit.enforce) and #84 (B-005, refresh guard reads the HTML order table) merged on green CI. F-017-T05 and B-005 closed in #85; B-005 replayed on refresh PR #73 (prints ok).
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->

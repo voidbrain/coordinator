@@ -82,4 +82,4 @@ PR #82 (close F-017-T04) merged on green CI.
 
 ## 2026-11-26 — main `7a69164`
 
-PRs #83 (F-017-T05, audit.enforce) and #84 (B-005, refresh guard reads the HTML order table) merged on green CI. F-017-T05 and B-005 closed in this PR; B-005 replayed on refresh PR #73 (prints ok).
+PRs #83 (F-017-T05, audit.enforce) and #84 (B-005, refresh guard reads the HTML order table) merged on green CI. F-017-T05 and B-005 closed in #85; B-005 replayed on refresh PR #73 (prints ok).
