@@ -4,7 +4,7 @@ Current work ledger, reviewed 25 November 2026 against main `69da441`. PRs #38 (
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 9.75 h agent + 1 h owner across 19 open steps of 7 features and 3 other records. Generated from the task files.
+**Remaining effort:** 9.5 h agent + 1 h owner across 18 open steps of 7 features and 2 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -38,44 +38,6 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 <summary>Next action, estimates and PR history</summary>
 
 [Full notes & evidence](work/records/B-002.md)
-
-| Field | Value |
-|---|---|
-| PR / evidence | Audit [2026-11-25 delivery](audits/2026-11-25-delivery.md), opened in [#27](https://github.com/voidbrain/coordinator/pull/27) |
-| Opened | 2026-11-25 |
-| Verification | Pending |
-| Reviewed | 2026-11-25 |
-
-</details>
-
----
-### <a id="b-003"></a>[🐞 B-003](#top)
-
-**Neither scheduled workflow has run on its schedule yet**
-
-| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
-|---|---|---|---|---|---|:---:|:---:|:---:|
-| 🟠 Investigate | 🔹 P3 | 🟢 Small | 0.25 h | — | — | 🤖 | — | — |
-
-💻 **→** Next: B-003-T01 — Check that both scheduled workflows have run on their schedule (Planned).
-
-| | |
-|---|---|
-| **Issue** | Maintenance freshness (`0 9 * * *`) and Refresh solution views (`30 5 * * *`) are on `main` since 2026-11-24 21:53 UTC; at 11:36 UTC on 2026-11-25 neither had a `schedule` run (Maintenance 0 runs; Refresh 10, all `workflow_dispatch`). The same cron in voidbrain/nerv, gauntlet-protocol and project-harness starts 8–12 hours late, so this is probably delay, not a fault. Found by the delivery audit of 2026-11-25 (finding 2). |
-| **Reproduce** | `gh run list -R voidbrain/coordinator --event schedule` lists no run. |
-| **Check** | After 2026-11-26 12:00 UTC the same command lists at least one `schedule` run of each workflow: close as delay, not a defect. If either is still missing, record the cause (Actions schedule state of the repository) and move this record to Open. |
-
-**Steps**
-
-| Effort | Step | Estimate | Actual | Remaining | Status |
-|---|---|---|---|---|---|
-| 🟢 Small | <a id="b-003-t01"></a>B-003-T01 — Check that both scheduled workflows have run on their schedule | 0.25 h | 0 h | 0.25 h | Planned |
-| 🟢 Small | **Total** | 0.25 h | 0 h (0 of 1 steps recorded) | 0.25 h | 0 of 1 completed |
-
-<details>
-<summary>Next action, estimates and PR history</summary>
-
-[Full notes & evidence](work/records/B-003.md)
 
 | Field | Value |
 |---|---|

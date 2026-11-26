@@ -315,3 +315,37 @@ Closed records of the [backlog](../BACKLOG.md), in closing-date order. History, 
 </details>
 
 ---
+
+### B-003
+
+**Neither scheduled workflow has run on its schedule yet**
+
+| Signal | Priority | Status | Effort |
+|:---:|---|---|---|
+| 🔵 | ◻️ P3 | Closed | 🟢 Small |
+
+💻 **→ Human action required: No**<br />Closed 2026-11-26: Both workflows have schedule runs: Maintenance freshness 45680400603 (2026-11-25 18:57 UTC, about 10 h after its 09:00 cron), Refresh solution views 45649633770 (2026-11-25 15:54 UTC) and 45738334912 (2026-11-26 01:49 UTC); GitHub schedule delay, not a defect.
+
+| | |
+|---|---|
+| **Issue** | Maintenance freshness (`0 9 * * *`) and Refresh solution views (`30 5 * * *`) are on `main` since 2026-11-24 21:53 UTC; at 11:36 UTC on 2026-11-25 neither had a `schedule` run (Maintenance 0 runs; Refresh 10, all `workflow_dispatch`). The same cron in voidbrain/nerv, gauntlet-protocol and project-harness starts 8–12 hours late, so this is probably delay, not a fault. Found by the delivery audit of 2026-11-25 (finding 2). |
+| **Reproduce** | `gh run list -R voidbrain/coordinator --event schedule` lists no run. |
+| **Check** | After 2026-11-26 12:00 UTC the same command lists at least one `schedule` run of each workflow: close as delay, not a defect. If either is still missing, record the cause (Actions schedule state of the repository) and move this record to Open. |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+**Next action / closure evidence:** Closed 2026-11-26: Both workflows have schedule runs: Maintenance freshness 45680400603 (2026-11-25 18:57 UTC, about 10 h after its 09:00 cron), Refresh solution views 45649633770 (2026-11-25 15:54 UTC) and 45738334912 (2026-11-26 01:49 UTC); GitHub schedule delay, not a defect. Opened 2026-11-25 in Investigate from the delivery audit ([report](../audits/2026-11-25-delivery.md)). A hypothesis, not a confirmed bug.
+
+**Estimates:** No remaining effort.
+
+| Field | Value |
+|---|---|
+| PR / evidence | Audit [2026-11-25 delivery](../audits/2026-11-25-delivery.md), opened in [#27](https://github.com/voidbrain/coordinator/pull/27) |
+| Opened | 2026-11-25 |
+| Verification | Pending |
+| Reviewed | 2026-11-25 |
+
+</details>
+
+---
