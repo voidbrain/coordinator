@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "planned",
+  "status": "implemented",
   "id": "F-024-T06",
   "title": "S6: propose the MCP surface card to nerv",
   "goal": "NERV shows the index through MCP surface cards like any project, built by a nerv session",
@@ -17,9 +17,7 @@
     "a proposal for nerv (in this record's evidence or docs/proposals/live-index-nerv-card.md): NERV adds the index as an MCP connection and shows it in a surface card; the MCP contract row of F-024-T04 is the interface; about 1 h agent estimated in nerv",
     "the owner takes it to a nerv session; nothing in nerv is edited from this repository"
   ],
-  "dependsOn": [
-    "F-024-T04"
-  ],
+  "dependsOn": [],
   "resources": [
     "docs/proposals/**",
     "docs/work/records/F-024.md",
@@ -28,7 +26,7 @@
   "effort": {
     "size": "small",
     "estimate": "0.25 h agent",
-    "basis": "One short proposal; the card (S6, 1 h) is estimated in nerv. Estimated 2026-11-26 from the decision page's step table (docs/decisions/live-index.md, \"Steps, if approved\"), at agent speed, failing test first for code. Not a measurement.",
+    "basis": "One short proposal; the card (S6, 1 h) is estimated in nerv. Estimated 2026-11-26 from the decision page's step table (docs/decisions/live-index.md, \"Steps, if approved\"), at agent speed, failing test first for code. Not a measurement. 2026-11-26: written before F-024-T04 on the owner's instruction in chat (\"1 2 ok\", point 2: turn the live-index proposals into records now); the nerv record itself waits on F-024-T04, so this proposal no longer does.",
     "agentHours": 0.25,
     "reviewed": "2026-11-26",
     "baselineAgentHours": 0.25,

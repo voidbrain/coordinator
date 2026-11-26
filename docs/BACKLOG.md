@@ -1,6 +1,6 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 26 November 2026 against main `837fb31`. PR #99 reconciles the harness to v10.24.1 (from 10.21.4); the owner authorised it in chat on 2026-11-26 ("ok to all") although the template backlog is not empty. CI pending at this entry.
+Current work ledger, reviewed 26 November 2026 against main `393663f`. PRs #99 to #114 merged with green CI (`npm run ci:status`): harness reconciles to v10.24.1 to v10.24.3, F-016 closed, F-020 decision work, F-024 opened and ordered at 7. No record waits on their CI; B-004 still waits on a day of scheduled runs (B-006).
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
@@ -540,7 +540,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|---|---|---|---|:---:|:---:|:---:|
 | 🔴 Open | 🔹 P3 | 🟣 Very large | 12.75 h agent + 0.5 h owner | — | — | 🤖 | — | — |
 
-💻 **→** Next: F-024-T01 — S1: propose the index builder to project-harness (Planned).
+💻 **→** Next: F-024-T01 — S1: propose the index builder to project-harness (Implemented; verification pending).
 
 | | |
 |---|---|
@@ -552,12 +552,12 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who |
 |---|---|---|---|---|---|---|---|:---:|
-| 🟢 Small | <a id="f-024-t01"></a>F-024-T01 — S1: propose the index builder to project-harness | 0.5 h | 0 h | 0.5 h | Planned | — | [F-024-T02](#f-024-t02) | 🤖 |
+| 🟢 Small | <a id="f-024-t01"></a>F-024-T01 — S1: propose the index builder to project-harness | 0.5 h | 0 h | 0.5 h | Implemented; verification pending | — | [F-024-T02](#f-024-t02) | 🤖 |
+| 🟢 Small | <a id="f-024-t06"></a>F-024-T06 — S6: propose the MCP surface card to nerv | 0.25 h | 0 h | 0.25 h | Implemented; verification pending | — | — | 🤖 |
 | 🟡 Medium | <a id="f-024-t02"></a>F-024-T02 — S2: service skeleton in the coordinator (node:sqlite cache, rebuild from git, service files) | 3 h | 0 h | 3 h | Planned | [F-024-T01](#f-024-t01) | [F-024-T03](#f-024-t03) | ⏳ 🤖 |
 | 🟡 Medium | <a id="f-024-t03"></a>F-024-T03 — S3: poller for the nine repositories (main, PRs, CI, harness versions, audit dates) | 3 h | 0 h | 3 h | Planned | [F-024-T02](#f-024-t02) | [F-024-T04](#f-024-t04) | ⏳ 🤖 |
-| 🟡 Medium | <a id="f-024-t04"></a>F-024-T04 — S4: MCP read tools (record lookup, waiting on me, blocked by X) | 2 h | 0 h | 2 h | Planned | [F-024-T03](#f-024-t03) | [F-024-T05](#f-024-t05), [F-024-T06](#f-024-t06) | ⏳ 🤖 |
+| 🟡 Medium | <a id="f-024-t04"></a>F-024-T04 — S4: MCP read tools (record lookup, waiting on me, blocked by X) | 2 h | 0 h | 2 h | Planned | [F-024-T03](#f-024-t03) | [F-024-T05](#f-024-t05) | ⏳ 🤖 |
 | 🟡 Medium | <a id="f-024-t05"></a>F-024-T05 — S5: live dashboard screen with bricks, and the owner's install page | 3 h | 0 h | 3 h | Planned | [F-024-T04](#f-024-t04) | [F-024-T07](#f-024-t07) | ⏳ 🤖 |
-| 🟢 Small | <a id="f-024-t06"></a>F-024-T06 — S6: propose the MCP surface card to nerv | 0.25 h | 0 h | 0.25 h | Planned | [F-024-T04](#f-024-t04) | — | ⏳ 🤖 |
 | 🟢 Small | <a id="f-024-t07"></a>F-024-T07 — S7: owner installs the index on the base holding NERV's coordinator role and places the token | 0 h | 0 h | 0 h agent + 0.5 h owner | Planned | [F-024-T05](#f-024-t05) | [F-024-T08](#f-024-t08) | ⏳ 🧑‍🔧 |
 | 🟢 Small | <a id="f-024-t08"></a>F-024-T08 — S8: two weeks of measurements, report to F-020 | 1 h | 0 h | 1 h | Planned | [F-024-T07](#f-024-t07) | — | ⏳ 🤖 |
 | 🟣 Very large | **Total** | 12.75 h | 0 h (0 of 8 steps recorded) | 12.75 h agent + 0.5 h owner | 0 of 8 completed | | | |

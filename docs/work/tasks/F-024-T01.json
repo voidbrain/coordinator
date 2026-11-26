@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "planned",
+  "status": "implemented",
   "id": "F-024-T01",
   "title": "S1: propose the index builder to project-harness",
   "goal": "A proposal page a project-harness session can open as its own record, as the decision page says (the builder is generic, template first)",
