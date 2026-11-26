@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "id": "F-025-T04",
+  "parent": "F-025",
+  "title": "Owner reorders in NERV's card and merges the PR",
+  "goal": "The owner confirms a drag in the card ends as the new order on the dashboard",
+  "status": "planned",
+  "acceptance": [
+    "With nerv:F-150 released, the owner drags one item in NERV's live index card, sees a PR open in voidbrain/coordinator that changes only docs/solution-order.md, merges it, and after npm run solution:refresh sees the new order on SOLUTION-DASHBOARD.md",
+    "A page with the exact steps is written by T03 and set as ownerLink"
+  ],
+  "dependsOn": [
+    "F-025-T03"
+  ],
+  "resources": [
+    "docs/acceptance/**",
+    "docs/work/records/F-025.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "documentation"
+  ],
+  "privacy": "Neutral invented data only; no personal data, tokens or private reports in Git.",
+  "validation": [
+    "npm run check:fast",
+    "npm test",
+    "CI"
+  ],
+  "escalation": [
+    "A material scope or effort increase goes to the owner"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "0 h agent, 0.25 h owner",
+    "basis": "One drag, one PR review. Estimated 2026-11-26. Not a measurement.",
+    "reviewed": "2026-11-26",
+    "agentHours": 0,
+    "baselineAgentHours": 0,
+    "estimateAgentHours": 0,
+    "ownerHours": 0.25,
+    "ownerKind": "procedure"
+  },
+  "prs": [
+    {
+      "pr": 119,
+      "note": "plan"
+    }
+  ]
+}

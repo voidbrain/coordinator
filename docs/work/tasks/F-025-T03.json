@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "id": "F-025-T03",
+  "parent": "F-025",
+  "title": "The chosen write path: a reorder proposal opens a PR to the solution order",
+  "goal": "A reorder from the card arrives as an open PR that changes only the list",
+  "status": "planned",
+  "acceptance": [
+    "Takes the ordered references and the base the card loaded; rejects an unknown or duplicated reference and a stale base with a message the card can show",
+    "Rewrites only the numbered lines between the order markers, keeps each note, and the result passes node tools/solution.mjs check",
+    "Opens a PR titled with the moved items, on a new branch, and never merges it; tests on a fake GitHub client for each rejection and for the PR body, committed failing first",
+    "The new tool or job is listed in docs/DOMAINS.md and the live index decision page"
+  ],
+  "dependsOn": [
+    "F-025-T02",
+    "F-024-T04"
+  ],
+  "resources": [
+    "tools/**",
+    "docs/decisions/solution-order-reorder.md",
+    "docs/DOMAINS.md",
+    "docs/work/records/F-025.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "typescript",
+    "regression-design"
+  ],
+  "privacy": "Neutral invented data only; no personal data, tokens or private reports in Git.",
+  "validation": [
+    "npm run check:fast",
+    "npm test",
+    "CI"
+  ],
+  "escalation": [
+    "A material scope or effort increase goes to the owner"
+  ],
+  "effort": {
+    "size": "medium",
+    "estimate": "2.5 h agent",
+    "basis": "One validated rewrite of a list plus a PR call, on the F-024 service and tools. Estimated 2026-11-26. Not a measurement.",
+    "reviewed": "2026-11-26",
+    "agentHours": 2.5,
+    "baselineAgentHours": 2.5,
+    "estimateAgentHours": 2.5
+  },
+  "prs": [
+    {
+      "pr": 119,
+      "note": "plan"
+    }
+  ]
+}

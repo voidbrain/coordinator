@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "id": "F-025-T01",
+  "parent": "F-025",
+  "title": "Decision page: how a drag-and-drop reorder becomes a reviewed PR",
+  "goal": "The owner has the options for the write path and a recommendation",
+  "status": "planned",
+  "acceptance": [
+    "docs/decisions/solution-order-reorder.md sets out the options: (a) the live index service gains one narrow write tool that opens a PR changing only docs/solution-order.md (token scoped to this repository, contents and pull requests only); (b) NERV's card hands the new order to a NERV job that opens the PR; (c) the card only produces the reorder instruction text for the owner to paste into a session. Each with what it breaks in F-024's read-only rule, its token and its failure modes, and a recommendation",
+    "The page states the invariants every option keeps: no silent write to main, references validated, a stale base rejected, only the lines between the order markers change, the PR is reviewed and merged by the owner"
+  ],
+  "dependsOn": [],
+  "resources": [
+    "docs/decisions/solution-order-reorder.md",
+    "docs/decisions/live-index.md",
+    "docs/work/records/F-025.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "documentation"
+  ],
+  "privacy": "Neutral invented data only; no personal data, tokens or private reports in Git.",
+  "validation": [
+    "npm run check:fast",
+    "npm test",
+    "CI"
+  ],
+  "escalation": [
+    "A material scope or effort increase goes to the owner"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "1 h agent",
+    "basis": "One decision page next to the live index one. Estimated 2026-11-26. Not a measurement.",
+    "reviewed": "2026-11-26",
+    "agentHours": 1,
+    "baselineAgentHours": 1,
+    "estimateAgentHours": 1
+  },
+  "prs": [
+    {
+      "pr": 119,
+      "note": "plan"
+    }
+  ]
+}
