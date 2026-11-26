@@ -23,12 +23,28 @@ Other evidence:
 - **Decisions in chat** are invisible until an agent writes them into a record.
 - **Cross-repository questions** ("what waits on me", "what does X block") need all nine clones fresh.
 
+## Scope: status first, knowledge second
+
+Owner question 2026-11-26: "only a record refresher or a knowledge source", over all projects' backlogs, roadmaps and documentation? Both, as two layers with their own cost and risk, layer 1 first. Owner direction on scope 2026-11-26: "ok in phases" (layer 1 status first, layer 2 knowledge after). Whether to build it at all, and who owns it, stay the owner's decision below.
+
+**"Records stay in git"** means: the Markdown and JSON files in each repository (records, steps, decisions, docs) are the only truth; they change only through reviewed PRs, as today. The index only reads them; it never writes a record, and anything it shows can be rebuilt from git.
+
+| | Layer 1: status | Layer 2: knowledge |
+|---|---|---|
+| Reads, in all nine repositories | Records, steps, owner steps, priorities, dependencies; PRs and CI results; harness versions; audit dates | Roadmaps, decision records, `DOMAINS.md` contracts, reviews (for example the architecture landscape review), procedures, design docs, READMEs |
+| Gives | Live dashboard, "waiting on me", "blocked by X", later atomic IDs and automatic step closing (phase 2) | Full-text search (SQLite FTS5) and a link graph: record, PR, decision, contract, owning repository. Every answer links to the source file on GitHub at its commit: the index points, it never becomes the copy that counts |
+| Asked how | Dashboard screen; MCP tools for agents and NERV | MCP search tools; NERV asks in Italian ("quali decisioni aspettano me?") and its model turns the question into tool calls; Italian wording on English docs depends on the model, as nerv:F-120 measures |
+| Agent hours | About 16 for phase 1, about 10 for phase 2 (steps below) | About 8 (phase 3, steps below) |
+| Risks | A lagging view (minutes); a wrong derived status if the parser misreads a record (the harness checks already parse the same files) | An answer quoted from an outdated page; private repository text served beyond git, so it is served on the owner's bases only, never published |
+
+**The limit, for both layers:** only what is written down is indexed. A decision said only in chat stays invisible to the index, to NERV and to every other session; that is why each decision must become a record (the decisions-pending tool only reminds an agent to write it).
+
 ## Options
 
 | | A. Status quo plus small fixes | B. Hybrid: Markdown stays the source, a live index on an always-on base | C. Records move into a database |
 |---|---|---|---|
 | How it works | NERV dispatches the refresh hourly (nerv:F-132-T04, planned); each component's CI dispatches the coordinator refresh on merge; a daily bot PR per repository closes Implemented steps whose PR merged green | Records stay Markdown/JSON in git, reviewed by PR. An index service polls the nine repositories' `main` and PRs (conditional requests, every 5 min) and rebuilds a SQLite index on each new commit. It serves a live dashboard, cross-repository queries (CLI, REST, MCP), ID reservation, derived bookkeeping state and a "decisions pending" inbox | Records live in SQLite or a graph store behind an API/MCP; git holds exports only. Review and history need an audit log, a proposal/approval flow for changes and a migration of nine backlogs and every harness check |
-| Agent hours | 6 to 8 (T04 already planned; dispatch on merge 2 to 3; bot close 3 to 4) | Phase 1 about 14 (index builder 4, service setup in its owning repository 2, poller, store and live view 6, MCP queries 2); phase 2 about 7 (ID reservation 3, derived bookkeeping and batched PR 4); phase 3 about 3 (decisions inbox). About 24 in all | 60 to 100, plus rewriting rules in every repository |
+| Agent hours | 6 to 8 (T04 already planned; dispatch on merge 2 to 3; bot close 3 to 4) | Phase 1 about 16, phase 2 about 10, layer 2 about 8 (steps below): about 34 in all | 60 to 100, plus rewriting rules in every repository |
 | Keeps | Everything; git is the only truth | PR review, diffs, blame, offline work, harness checks; git stays the truth and the index is disposable | One place to query; atomic IDs |
 | Loses or risks | Still 10 to 15 minutes late at best; a token in eight repositories for dispatch; bookkeeping PRs shrink but stay; no fix for IDs or queries | A second view that can lag git (minutes); a multi-repository read token on a base; work in two or three repositories | Review by PR, offline work and git history of records; its host becomes a single point of failure for all planning; the largest rule change of the solution |
 
@@ -76,31 +92,47 @@ NERV was first proposed for its hosting assets (always-on, SQLite, the GitHub pi
 - (b) **Models per base.** NERV-01 runs gemma4:26b and gemma4:12b (Ollama). NERV-02 runs gemma4:12b (Ollama, set up 2026-11-05). NERV-03 hosts no useful LLM ("A Pi can expose device operations and voice without hosting a useful LLM", nerv `docs/architecture/runtime.md`); its chat can only borrow a model from another base over Tailscale. The cloud route (Umbilical) is off (`models.cloud` off).
 - (c) **What degrades.** While the main base is down and no one has relocated the role, the other bases give only an explicitly labelled local chat fallback: no reminders, grants, outbox, Telegram or coordinator state. After a relocation to NERV-02, everything runs on the 12b model (smaller replies; nerv:F-120 measures planning quality). After one to NERV-03, the coordinator duties run but chat needs a model from a live base, so with only the Pi up there is none. The index itself needs no model: it keeps working on any base that holds the role.
 
-## Migration, in steps that each stand alone
+## Steps, if approved
 
-1. Harness: index builder (records, steps, PRs, owners, dependencies) to SQLite, with tests on two fixture backlogs.
-2. Coordinator: the index service (poll, rebuild on change, MCP queries, a bricks screen), run on the base holding NERV's coordinator role; NERV shows it through MCP surface cards. Measure for two weeks.
-3. Only if the numbers below justify it: ID reservation, derived closing with a batched daily PR, rule changes via F-020.
-4. Decisions-pending inbox.
+Each step stands alone and fits in one or two days; they become steps of a coordinator record (and of the harness and nerv records named) once the owner approves. Agent hours unless marked owner; estimated 2026-11-26, not measured.
 
-## What to measure to decide phase 3
+| Phase | Step | Repository | Estimate |
+|---|---|---|---|
+| 1 Status | S1 Index builder: records, steps, owner steps, priorities, dependencies, PRs into a SQLite schema; tests on two fixture backlogs | project-harness | 4 h |
+| 1 | S2 Service skeleton: Node 24, `node:sqlite` cache, rebuild-from-git command, tests and CI, launchd / Task Scheduler / systemd files | coordinator | 3 h |
+| 1 | S3 Poller: nine repositories' `main`, PRs, CI, harness versions, audit dates; ETags; read-only token file; rebuild on each new commit | coordinator | 3 h |
+| 1 | S4 MCP read tools: record lookup, "waiting on me", "blocked by X" | coordinator | 2 h |
+| 1 | S5 Live dashboard screen with bricks; the MCP contract row in `docs/SOLUTION.md` | coordinator | 3 h |
+| 1 | S6 NERV shows the index through MCP surface cards (its config and card) | nerv | 1 h |
+| 1 | S7 Install on NERV-01 and place the token | owner | 0.5 h owner |
+| 1 | S8 Two weeks of measurements (below), report to F-020 | coordinator | 1 h |
+| 2 Status, rules | S9 ID reservation tool, with expiry; `check:backlog` still refuses duplicates | coordinator, project-harness | 3 h |
+| 2 | S10 Derived step closing on green merge; one batched bot PR per repository per day (write token: owner step) | coordinator | 4 h + 0.5 h owner |
+| 2 | S11 Decisions-pending tool, cleared when a PR records the decision | coordinator | 3 h |
+| 3 Knowledge | S12 Documentation sections and link extraction (record, PR, decision, contract, repository) | project-harness | 4 h |
+| 3 | S13 Full-text search tools with source links at the commit | coordinator | 2 h |
+| 3 | S14 Search result card in bricks, shown in NERV | coordinator | 2 h |
+
+Phase 2 changes rules (naming PRs by hand, closing after CI, choosing IDs), so it starts only after F-020-T04 and T05 accept them. Phase 3 starts after phase 1 has run two weeks.
+
+## What to measure to decide phase 2
 
 Baseline 2026-11-26 and target after two weeks of phase 1: mechanical bookkeeping PRs 40 of 228 (18%), target under 5%; "name PR" commits 130 in three repositories; dashboard age after a merge up to 6 h 19 min, target under 10 min; ID collisions per week (three reported on 2026-11-26, one renumber commit), target 0.
 
 ## Recommendation
 
-B, phase 1 only for now: a read-only index, its builder a harness tool, its service owned by the coordinator and hosted on the base holding NERV's coordinator role, with git kept as the truth. It removes the staleness and the nine-clone queries without changing a rule, and gives the numbers to decide phases 2 to 3 inside F-020. Owner of the service: (ii), the coordinator, because the live cross-project view is the dashboard it already generates, and (i) would make NERV hold copies of other projects' state against the domain rules; (iii) adds a repository for no new domain. Not C: it trades away review by PR and offline work for gains B already gives.
+B, phase 1 only for now (layer 1, status): a read-only index, its builder a harness tool, its service owned by the coordinator and hosted on the base holding NERV's coordinator role, with git kept as the truth. It removes the staleness and the nine-clone queries without changing a rule, and gives the numbers to decide phase 2 inside F-020; layer 2 follows as phase 3, as the owner directed. Owner of the service: (ii), the coordinator, because the live cross-project view is the dashboard it already generates, and (i) would make NERV hold copies of other projects' state against the domain rules; (iii) adds a repository for no new domain. Not C: it trades away review by PR and offline work for gains B already gives.
 
 ## Owner question
 
 How should backlogs and the dashboard become live?
 
 - **1.** Small fixes only (option A): hourly refresh from NERV (F-132-T04), refresh on merge, a daily bot PR to close steps.
-- **2.** Start the live index, read-only (option B, phase 1, about 14 agent hours: builder in project-harness, service in the coordinator, shown in NERV over MCP), then decide ID reservation and automatic closing with the measurements in F-020. *Recommended.*
+- **2.** Start the live index, read-only (option B, phase 1, steps S1 to S8, about 16 agent hours and 0.5 owner hour: builder in project-harness, service in the coordinator, shown in NERV over MCP), then decide ID reservation and automatic closing with the measurements in F-020. *Recommended.*
 - **3.** Move the records into a database (option C).
 - **4.** Not now: revisit when F-020 ends.
 
-If 2: who owns the service? **(ii) the coordinator** (recommended, and the owner's lean 2026-11-26; it then becomes a project that builds and runs a small service), **(i) NERV** or **(iii) a new project**.
+If 2, who owns the service? **(ii) the coordinator** (recommended, and the owner's lean 2026-11-26; it then becomes a project that builds and runs a small service), **(i) NERV** or **(iii) a new project**.
 
 ## Answer
 
