@@ -52,6 +52,10 @@
     {
       "pr": 70,
       "note": "Shared assets section"
+    },
+    {
+      "pr": 71,
+      "note": "close"
     }
   ]
 }

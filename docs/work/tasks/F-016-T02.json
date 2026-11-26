@@ -47,6 +47,10 @@
     {
       "pr": 61,
       "note": "plan"
+    },
+    {
+      "pr": 71,
+      "note": "gap-review checks; harness proposal"
     }
   ]
 }
