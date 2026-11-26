@@ -576,7 +576,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Steps: F-024-T01: [PR #115](https://github.com/voidbrain/coordinator/pull/115) · F-024-T06: [PR #115](https://github.com/voidbrain/coordinator/pull/115). [decision page](decisions/live-index.md); owner decision 2026-11-26 in chat ("2", "coordinator"); [#113](https://github.com/voidbrain/coordinator/pull/113); [#115](https://github.com/voidbrain/coordinator/pull/115) |
+| PR / evidence | Steps: F-024-T01: [PR #115](https://github.com/voidbrain/coordinator/pull/115) · F-024-T06: [PR #115](https://github.com/voidbrain/coordinator/pull/115). [decision page](decisions/live-index.md); owner decision 2026-11-26 in chat ("2", "coordinator"); [#113](https://github.com/voidbrain/coordinator/pull/113); [#115](https://github.com/voidbrain/coordinator/pull/115); [#116](https://github.com/voidbrain/coordinator/pull/116) |
 | Components | nerv:F-016, nerv:F-132 |
 | Opened | 2026-11-26 |
 | Verification | Pending |
