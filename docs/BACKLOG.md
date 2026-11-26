@@ -4,7 +4,7 @@ Current work ledger, reviewed 26 November 2026 against main `837fb31`. PR #99 re
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 23.75 h agent + 2.25 h owner across 27 open steps of 10 features and 2 other records. Generated from the task files.
+**Remaining effort:** 36.5 h agent + 2.75 h owner across 35 open steps of 11 features and 2 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -379,7 +379,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | **Issue** | On 2026-11-26 about 15 records and 3 procedures were added across project-harness, the coordinator and the projects in one day. Evidence that the rule set grew faster than it was kept coherent: size warnings (project-harness `rule-review.md` about 2,300 of 2,000 tokens; records over budget: project-harness F-096, nerv F-125, coordinator F-016); the same topic in several places (audit cadence: project-harness F-104-T03 and F-105, [cross-project audit](agents/cross-project-audit.md) check 5, per-project audit settings); agent slips the same day (a silently forked copied harness file, a reversed battery-core wording, a skipped failing-first test, an edit in NERV's primary checkout); the owner needed plain-language re-explanations of decision questions (project-harness F-102-T01, coordinator B-007, nerv F-132-T04 options). |
 | **Reproduce** | `npm run check:backlog` and `npm run check:rules` in project-harness, nerv and the coordinator at 2026-11-26 report the size warnings above; grep the audit cadence in the three places named; the slips and the re-explanations are in the 2026-11-26 sessions' PR threads and chat. |
 | **Check** | One page per repository and one cross-repository page under `docs/reviews/2026-11-coherence/` list contradictions, duplicate rules, dead links, terms used two ways, procedures unreachable from AGENTS.md, pages and records over budget and decision questions the owner cannot answer as written (F-020-T01, T02); the friction evidence names the behaviour runs used (F-020-T03); numbered consolidation proposals keep every requirement (F-020-T04); the owner decided each (F-020-T05); the freeze in the Next action is lifted (F-020-T06). |
-| **Note** | 2026-11-26, owner approval in chat ("ok"): a decision proposal, [live index for backlogs and dashboard](decisions/live-index.md), options A (small fixes), B (live index in NERV, git stays the source; recommended, read-only phase 1 first) and C (records in a database); the owner's choice is recorded there and here. 2026-11-26, owner instruction (the freeze does not block a review row): the Tiiny AI Pocket Lab is a watch lead in the [architecture review](work/records/reviews/architecture/2026-11-26.md), [PR #107](https://github.com/voidbrain/coordinator/pull/107). Revisit triggers are listed there. |
+| **Note** | 2026-11-26, owner approval in chat ("ok"): a decision proposal, [live index for backlogs and dashboard](decisions/live-index.md), options A (small fixes), B (live index in NERV, git stays the source; recommended, read-only phase 1 first) and C (records in a database); the owner's choice is recorded there and here: "2" and "coordinator" (2026-11-26), planned as [F-024](work/records/F-024.md). 2026-11-26, owner instruction (the freeze does not block a review row): the Tiiny AI Pocket Lab is a watch lead in the [architecture review](work/records/reviews/architecture/2026-11-26.md), [PR #107](https://github.com/voidbrain/coordinator/pull/107). Revisit triggers are listed there. |
 
 **Feature steps**
 
@@ -525,6 +525,52 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | Field | Value |
 |---|---|
 | PR / evidence | Steps: F-023-T01: [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan. [#92](https://github.com/voidbrain/coordinator/pull/92) (plan); [report](https://github.com/voidbrain/coordinator/blob/main/docs/reviews/2026-11-26-nerv-practices-transfer.md); owner decision 2026-11-26 |
+| Opened | 2026-11-26 |
+| Verification | Pending |
+| Reviewed | 2026-11-26 |
+
+</details>
+
+---
+### <a id="f-024"></a>[✨ F-024](#top)
+
+**Live index, phase 1 (status)**
+
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🔴 Open | 🔹 P3 | 🟣 Very large | 12.75 h agent + 0.5 h owner | — | — | 🤖 | — | — |
+
+💻 **→** Next: F-024-T01 — S1: propose the index builder to project-harness (Planned).
+
+| | |
+|---|---|
+| **Issue** | Backlogs and the dashboard trail git by hours, bookkeeping PRs are 18% of the merges of 2026-11-26, parallel agents collide on IDs and cross-repository questions need nine fresh clones ([decision page](decisions/live-index.md), "Problem"). Owner decision 2026-11-26 in chat: "2" (start the read-only live index, phase 1, steps S1 to S8) and "coordinator" (the coordinator owns the service). |
+| **Reproduce** | Read the [decision page](decisions/live-index.md): its Problem section measures the lag and the bookkeeping; its "Steps, if approved" table lists S1 to S8. |
+| **Check** | A read-only index, its builder a project-harness tool, its service in this repository, rebuilt from git into a `node:sqlite` cache, polls the nine repositories and serves MCP read tools and a bricks screen (F-024-T01 to T05); NERV shows it through MCP surface cards, built by nerv (F-024-T06); the owner installs it under its own launchd job on the base holding NERV's coordinator role, today NERV-01 (F-024-T07); two weeks of measurements are reported to F-020 (F-024-T08). Git stays the only truth: the index never writes a record. |
+
+**Feature steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who |
+|---|---|---|---|---|---|---|---|:---:|
+| 🟢 Small | <a id="f-024-t01"></a>F-024-T01 — S1: propose the index builder to project-harness | 0.5 h | 0 h | 0.5 h | Planned | — | [F-024-T02](#f-024-t02) | 🤖 |
+| 🟡 Medium | <a id="f-024-t02"></a>F-024-T02 — S2: service skeleton in the coordinator (node:sqlite cache, rebuild from git, service files) | 3 h | 0 h | 3 h | Planned | [F-024-T01](#f-024-t01) | [F-024-T03](#f-024-t03) | ⏳ 🤖 |
+| 🟡 Medium | <a id="f-024-t03"></a>F-024-T03 — S3: poller for the nine repositories (main, PRs, CI, harness versions, audit dates) | 3 h | 0 h | 3 h | Planned | [F-024-T02](#f-024-t02) | [F-024-T04](#f-024-t04) | ⏳ 🤖 |
+| 🟡 Medium | <a id="f-024-t04"></a>F-024-T04 — S4: MCP read tools (record lookup, waiting on me, blocked by X) | 2 h | 0 h | 2 h | Planned | [F-024-T03](#f-024-t03) | [F-024-T05](#f-024-t05), [F-024-T06](#f-024-t06) | ⏳ 🤖 |
+| 🟡 Medium | <a id="f-024-t05"></a>F-024-T05 — S5: live dashboard screen with bricks, and the owner's install page | 3 h | 0 h | 3 h | Planned | [F-024-T04](#f-024-t04) | [F-024-T07](#f-024-t07) | ⏳ 🤖 |
+| 🟢 Small | <a id="f-024-t06"></a>F-024-T06 — S6: propose the MCP surface card to nerv | 0.25 h | 0 h | 0.25 h | Planned | [F-024-T04](#f-024-t04) | — | ⏳ 🤖 |
+| 🟢 Small | <a id="f-024-t07"></a>F-024-T07 — S7: owner installs the index on the base holding NERV's coordinator role and places the token | 0 h | 0 h | 0 h agent + 0.5 h owner | Planned | [F-024-T05](#f-024-t05) | [F-024-T08](#f-024-t08) | ⏳ 🧑‍🔧 |
+| 🟢 Small | <a id="f-024-t08"></a>F-024-T08 — S8: two weeks of measurements, report to F-020 | 1 h | 0 h | 1 h | Planned | [F-024-T07](#f-024-t07) | — | ⏳ 🤖 |
+| 🟣 Very large | **Total** | 12.75 h | 0 h (0 of 8 steps recorded) | 12.75 h agent + 0.5 h owner | 0 of 8 completed | | | |
+
+<details>
+<summary>Next action, estimates and evidence</summary>
+
+[Full notes & evidence](work/records/F-024.md)
+
+| Field | Value |
+|---|---|
+| PR / evidence | [decision page](decisions/live-index.md); owner decision 2026-11-26 in chat ("2", "coordinator") |
+| Components | nerv:F-016, nerv:F-132 |
 | Opened | 2026-11-26 |
 | Verification | Pending |
 | Reviewed | 2026-11-26 |

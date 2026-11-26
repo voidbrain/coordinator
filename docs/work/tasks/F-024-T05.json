@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "parent": "F-024",
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git; fixtures are invented. The read-only GitHub token lives only in a file on the hosting base. Component repositories are read, never written; agents never touch ~/.nerv, ~/.nerv-app or the live NERV service.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "status": "planned",
+  "id": "F-024-T05",
+  "title": "S5: live dashboard screen with bricks, and the owner's install page",
+  "goal": "A live view minutes after a merge; the committed dashboard stays the git copy",
+  "acceptance": [
+    "a screen built with bricks components and tokens shows what docs/SOLUTION-DASHBOARD.md shows, from the cache, with its snapshot time; a test renders it from the fixture cache",
+    "served on the hosting base only, never published",
+    "the owner's install page for F-024-T07 (docs/live-index-install.md): copy-paste blocks naming the machine (the base holding NERV's coordinator role, today NERV-01), each with its expected result: create the token, place the token file, load the launchd job, open the screen"
+  ],
+  "dependsOn": [
+    "F-024-T04"
+  ],
+  "resources": [
+    "src/**",
+    "test/**",
+    "docs/live-index-install.md",
+    "docs/work/records/F-024.md",
+    "generated:backlog-views"
+  ],
+  "effort": {
+    "size": "medium",
+    "estimate": "3 h agent",
+    "basis": "Decision page S5 row (the contract row moved to T04, the install page added). Estimated 2026-11-26 from the decision page's step table (docs/decisions/live-index.md, \"Steps, if approved\"), at agent speed, failing test first for code. Not a measurement.",
+    "agentHours": 3,
+    "reviewed": "2026-11-26",
+    "baselineAgentHours": 3,
+    "estimateAgentHours": 3
+  },
+  "validation": [
+    "npm run check:fast; final applicable CI"
+  ],
+  "prs": []
+}

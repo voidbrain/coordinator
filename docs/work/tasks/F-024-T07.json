@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "parent": "F-024",
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git; fixtures are invented. The read-only GitHub token lives only in a file on the hosting base. Component repositories are read, never written; agents never touch ~/.nerv, ~/.nerv-app or the live NERV service.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "status": "planned",
+  "id": "F-024-T07",
+  "title": "S7: owner installs the index on the base holding NERV's coordinator role and places the token",
+  "goal": "The index runs under its own launchd job on NERV-01 (today), with the read-only token in a file there",
+  "acceptance": [
+    "the owner follows docs/live-index-install.md on that base: fine-grained read-only token created and placed, launchd job loaded, the screen opens and shows a merge of the day within 10 minutes",
+    "agents never install it, never touch ~/.nerv, ~/.nerv-app or the live NERV service; a relocation of the coordinator role (nerv:F-016) reinstalls it on the new base from the same page"
+  ],
+  "dependsOn": [
+    "F-024-T05"
+  ],
+  "resources": [
+    "docs/live-index-install.md",
+    "docs/work/records/F-024.md",
+    "generated:backlog-views"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "0.5 h owner",
+    "basis": "Decision page S7 row: token creation and four copy-paste blocks. Estimated 2026-11-26 from the decision page's step table (docs/decisions/live-index.md, \"Steps, if approved\"), at agent speed, failing test first for code. Not a measurement.",
+    "agentHours": 0,
+    "ownerHours": 0.5,
+    "ownerKind": "procedure",
+    "reviewed": "2026-11-26",
+    "baselineAgentHours": 0,
+    "estimateAgentHours": 0
+  },
+  "validation": [
+    "npm run check:fast; final applicable CI"
+  ],
+  "prs": []
+}
