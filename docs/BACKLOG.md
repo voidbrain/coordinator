@@ -1,10 +1,10 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 26 November 2026 against main `7a69164`. PRs #83 (F-017-T05, audit.enforce) and #84 (B-005, refresh guard reads the HTML order table) merged on green CI. F-017-T05 and B-005 closed in #85; B-005 replayed on refresh PR #73 (prints ok).
+Current work ledger, reviewed 26 November 2026 against main `4cd62c3`. PR #86 (B-007, owner option b) merged on green CI; B-007 closed.
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 19.75 h agent + 1.5 h owner across 25 open steps of 7 features and 3 other records. Generated from the task files.
+**Remaining effort:** 19.5 h agent + 1.25 h owner across 23 open steps of 7 features and 2 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -80,45 +80,6 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | Field | Value |
 |---|---|
 | PR / evidence | [#81](https://github.com/voidbrain/coordinator/pull/81) (opened); [full audit 2026-11-26](audits/2026-11-26-coordinator-full.md) |
-| Opened | 2026-11-26 |
-| Verification | Pending |
-| Reviewed | 2026-11-26 |
-
-</details>
-
----
-### <a id="b-007"></a>[🐞 B-007](#top)
-
-**AGENTS.md asks for backlog-reader fixtures that no longer exist**
-
-| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
-|---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔹 P3 | 🟢 Small | 0.25 h agent + 0.25 h owner | — | — | 🤖 | — | — |
-
-💻 **→** Decision (owner, 2026-11-26): option (b). The owner first answered "(a) Drop the line. The simplest.", then replaced it a minute later with: reword it to "a project tool that reads a backlog adds a test with invented data; an unknown layout shows as a problem, never as no work." (the dead `test/fixtures/` and `expected.json` names removed). The line is a project line (`<!-- project -->`), so no harness override applies.
-
-| | |
-|---|---|
-| **Issue** | Full audit 2026-11-26 ([report](audits/2026-11-26-coordinator-full.md), finding 3). The AGENTS.md project line "A change to a backlog reader adds a fixture to `test/fixtures/` and its expected result to `expected.json`" names files that went with the project's own overview in F-004-T05; the backlog readers are now the copied template `tools/solution.mjs`, which this repository may not edit and the template tests. Changing a governing rule needs the owner (rule review). |
-| **Reproduce** | `ls test/fixtures` fails; `git log --diff-filter=D --name-only -- test/fixtures` shows the removal; docs/agents/areas.md "Retired (F-004-T05)". |
-| **Check** | The owner picks (a) drop the line, (b) reword it for a project-owned reader only ("a project tool that reads a backlog adds a test with invented data; an unknown layout shows as a problem, never as no work"; recommended), or (c) restore fixtures for the template reader; the decision and its date are recorded here and AGENTS.md changes in one PR under the rule review. |
-
-**Steps**
-
-| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who |
-|---|---|---|---|---|---|---|---|:---:|
-| 🟢 Small | <a id="b-007-t01"></a>B-007-T01 — Owner: choose the wording of the backlog-reader fixture rule | 0 h | 0 h | 0 h agent + 0.25 h owner | Implemented; verification pending | — | [B-007-T02](#b-007-t02) | [🤔](audits/2026-11-26-coordinator-full.md#findings) |
-| 🟢 Small | <a id="b-007-t02"></a>B-007-T02 — Apply the chosen fixture rule in AGENTS.md | 0.25 h | 0 h | 0.25 h | Implemented; verification pending | [B-007-T01](#b-007-t01) | — | 🤖 |
-| 🟢 Small | **Total** | 0.25 h | 0 h (0 of 2 steps recorded) | 0.25 h agent + 0.25 h owner | 0 of 2 completed | | | |
-
-<details>
-<summary>Next action, estimates and PR history</summary>
-
-[Full notes & evidence](work/records/B-007.md)
-
-| Field | Value |
-|---|---|
-| PR / evidence | [#86](https://github.com/voidbrain/coordinator/pull/86) (opened); Review: fresh-context mechanical-reviewer, one blocker (dropped maintenance outcomes) fixed; [full audit 2026-11-26](audits/2026-11-26-coordinator-full.md) |
 | Opened | 2026-11-26 |
 | Verification | Pending |
 | Reviewed | 2026-11-26 |
