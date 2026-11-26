@@ -28,19 +28,20 @@ function parseOrder(text) {
 
 // References the dashboard lists as Closed in its solution order table. The columns are found by the table's header
 // (`| # | … | Item | … | Status… |`), so both the 10.20 layout (Status "Closed") and the 10.21 one (F-099: an emoji
-// column, the item linked, "<status>: ✅ Done: closed …") are read. Cells split on unescaped pipes only.
+// column, the item linked, "<status>: ✅ Done: closed …") are read, as Markdown rows or, with 10.21.4's htmlTables
+// (B-005), as HTML rows (`<tr>…</tr>` on one line). Markdown cells split on unescaped pipes only.
 function closedRefs(dashboard) {
   const refs = new Set();
   let item = -1;
   let status = -1;
   for (const line of dashboard.split('\n')) {
+    const cells = rowCells(line.trim());
     // The order table ends at the first line that is not a table row; numbered rows of a later table are not read.
-    if (!line.startsWith('|')) {
+    if (!cells) {
       item = -1;
       status = -1;
       continue;
     }
-    const cells = line.split(/(?<!\\)\|/).map((c) => c.trim());
     if (cells[1] === '#') {
       item = cells.indexOf('Item');
       status = cells.findIndex((c) => c.startsWith('Status'));
@@ -51,6 +52,22 @@ function closedRefs(dashboard) {
     if (cell === 'Closed' || cell.includes('✅ Done: closed')) refs.add((cells[item] ?? '').replace(/^\[(.*)\]\(.*\)$/, '$1'));
   }
   return refs;
+}
+
+const ENTITIES = { amp: '&', lt: '<', gt: '>', quot: '"', '#39': "'" };
+
+// A table row's cells, indexed as a Markdown row splits (cell 1 is the first column), or undefined when the line is
+// not a row. HTML cells lose their tags, so a linked item reads as its text.
+function rowCells(line) {
+  if (line.startsWith('|')) return line.split(/(?<!\\)\|/).map((c) => c.trim());
+  if (!/^<tr[\s>]/.test(line)) return undefined;
+  const cells = [...line.matchAll(/<t[hd]\b[^>]*>([\s\S]*?)<\/t[hd]>/g)].map((m) =>
+    m[1]
+      .replace(/<[^>]*>/g, '')
+      .replace(/&(amp|lt|gt|quot|#39);/g, (_, e) => ENTITIES[e])
+      .trim(),
+  );
+  return ['', ...cells];
 }
 
 // Reasons the order change is more than dropping Closed items; empty when it is only that.

@@ -52,6 +52,33 @@ test('10.21 order layout: dropping Done items is allowed, dropping a Ready one i
   ]);
 });
 
+// The order table of harness 10.21.4 with htmlTables (B-005): HTML rows, one per line, the item a link and the
+// status cell holding a link of its own.
+const dashboardHtml = (closed) =>
+  [
+    '<table>',
+    '<tr><th align="right">#</th><th></th><th>Item</th><th>Title</th><th>Status / state</th><th align="right">Agent h</th><th align="right">Owner h</th><th>Open prerequisites</th><th>Note</th></tr>',
+    '<tr valign="top"><td align="right">1</td><td>🅰</td><td><a href="https://example.invalid/a#f-001">a:F-001</a></td><td>One</td><td>Closed: ✅ Done: closed 2026-11-24 in <a href="https://example.invalid/a#f-001">docs/archive/backlog-2026.md</a></td><td align="right">0</td><td align="right">0</td><td>—</td><td>n</td></tr>',
+    `<tr valign="top"><td align="right">2</td><td>🅰</td><td><a href="https://example.invalid/a#f-002">a:F-002</a></td><td>Two &amp; more</td><td>${closed ? 'Closed: ✅ Done: closed in <a href="https://example.invalid/a/F-002.md">F-002.md</a>' : 'Open: ▶ Ready'}</td><td align="right">1</td><td align="right">0</td><td>—</td><td>n</td></tr>`,
+    '<tr valign="top"><td align="right">3</td><td>🅰</td><td><a href="https://example.invalid/a#f-003">a:F-003</a></td><td>Three</td><td>Open: Ready</td><td align="right">1</td><td align="right">0</td><td>—</td><td>n</td></tr>',
+    '</table>',
+  ].join('\n');
+
+test('HTML order table: dropping Done items is allowed, dropping a Ready one is refused', () => {
+  assert.deepEqual(orderReasons(before, order('a:F-002 — two', 'a:F-003 — three'), dashboardHtml(false)), []);
+  assert.deepEqual(orderReasons(before, order('a:F-003 — three'), dashboardHtml(true)), []);
+  assert.deepEqual(orderReasons(before, order('a:F-001 — one', 'a:F-003 — three'), dashboardHtml(false)), [
+    'docs/solution-order.md: a:F-002 was removed but the dashboard does not show it Closed',
+  ]);
+});
+
+test('numbered rows of a later HTML table are not read with the order table columns', () => {
+  const later = `${dashboardHtml(false)}\n\n## Other\n\n<table>\n<tr><th>Kind</th><th>x</th><th>Item</th><th>y</th><th>Status</th></tr>\n<tr valign="top"><td>2</td><td>🅰</td><td>a:F-002</td><td>t</td><td>Closed: ✅ Done: closed</td></tr>\n</table>`;
+  assert.deepEqual(orderReasons(before, order('a:F-001 — one', 'a:F-003 — three'), later), [
+    'docs/solution-order.md: a:F-002 was removed but the dashboard does not show it Closed',
+  ]);
+});
+
 test('numbered rows of a later table are not read with the order table columns', () => {
   const later = `${dashboard1021(false)}\n\n## Other\n\n| Kind | x | Item | y | Status |\n|---|---|---|---|---|\n| 2 | 🅰 | a:F-002 | t | Closed: ✅ Done: closed in [x](y) |`;
   assert.deepEqual(orderReasons(before, order('a:F-001 — one', 'a:F-003 — three'), later), [
