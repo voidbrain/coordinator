@@ -24,7 +24,8 @@
     "agentHours": 0,
     "ownerHours": 0.25,
     "baselineAgentHours": 0,
-    "estimateAgentHours": 0
+    "estimateAgentHours": 0,
+    "ownerKind": "decision"
   },
   "capabilities": [
     "bounded-edit",
@@ -33,5 +34,6 @@
   "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
-  ]
+  ],
+  "ownerLink": "docs/audits/2026-11-26-coordinator-full.md#findings"
 }

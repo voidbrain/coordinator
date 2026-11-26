@@ -4,7 +4,7 @@ Current work ledger, reviewed 26 November 2026 against main `4ea4115`. PRs #78 (
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 21 h agent + 1.75 h owner across 27 open steps of 7 features and 4 other records. Generated from the task files.
+**Remaining effort:** 21 h agent + 1.5 h owner across 27 open steps of 7 features and 4 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -93,7 +93,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🟠 Investigate | 🔹 P3 | 🟢 Small | 0.5 h agent + 0.25 h owner | — | — | 🤖 | — | — |
+| 🟠 Investigate | 🔹 P3 | 🟢 Small | 0.5 h | — | — | 🤖 | — | — |
 
 💻 **→** Next: B-006-T01 — Count scheduled runs over 48 hours and report (Ready).
 
@@ -107,8 +107,8 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status |
 |---|---|---|---|---|---|
-| 🟢 Small | <a id="b-006-t01"></a>B-006-T01 — Count scheduled runs over 48 hours and report | 0.5 h | 0 h | 0.5 h agent + 0.25 h owner | Ready |
-| 🟢 Small | **Total** | 0.5 h | 0 h (0 of 1 steps recorded) | 0.5 h agent + 0.25 h owner | 0 of 1 completed |
+| 🟢 Small | <a id="b-006-t01"></a>B-006-T01 — Count scheduled runs over 48 hours and report | 0.5 h | 0 h | 0.5 h | Ready |
+| 🟢 Small | **Total** | 0.5 h | 0 h (0 of 1 steps recorded) | 0.5 h | 0 of 1 completed |
 
 <details>
 <summary>Next action, estimates and PR history</summary>
@@ -131,7 +131,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔹 P3 | 🟢 Small | 0.25 h agent + 0.25 h owner | — | — | 🤖 | — | 🤔 |
+| 🔴 Open | 🔹 P3 | 🟢 Small | 0.25 h agent + 0.25 h owner | — | — | ⏳ | — | 🤔 |
 
 🧑 **→** The owner chooses how to word the fixture rule: [options in the audit report](audits/2026-11-26-coordinator-full.md#findings) (finding 3).
 
@@ -143,11 +143,11 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 **Steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks |
-|---|---|---|---|---|---|---|---|
-| 🟢 Small | <a id="b-007-t01"></a>B-007-T01 — Owner: choose the wording of the backlog-reader fixture rule | 0 h | 0 h | 0 h agent + 0.25 h owner | Ready | — | [B-007-T02](#b-007-t02) |
-| 🟢 Small | <a id="b-007-t02"></a>B-007-T02 — Apply the chosen fixture rule in AGENTS.md | 0.25 h | 0 h | 0.25 h | Planned | [B-007-T01](#b-007-t01) | — |
-| 🟢 Small | **Total** | 0.25 h | 0 h (0 of 2 steps recorded) | 0.25 h agent + 0.25 h owner | 0 of 2 completed | | |
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who |
+|---|---|---|---|---|---|---|---|:---:|
+| 🟢 Small | <a id="b-007-t01"></a>B-007-T01 — Owner: choose the wording of the backlog-reader fixture rule | 0 h | 0 h | 0 h agent + 0.25 h owner | Ready | — | [B-007-T02](#b-007-t02) | [🤔](audits/2026-11-26-coordinator-full.md#findings) |
+| 🟢 Small | <a id="b-007-t02"></a>B-007-T02 — Apply the chosen fixture rule in AGENTS.md | 0.25 h | 0 h | 0.25 h | Planned | [B-007-T01](#b-007-t01) | — | ⏳ 🤖 |
+| 🟢 Small | **Total** | 0.25 h | 0 h (0 of 2 steps recorded) | 0.25 h agent + 0.25 h owner | 0 of 2 completed | | | |
 
 <details>
 <summary>Next action, estimates and PR history</summary>
