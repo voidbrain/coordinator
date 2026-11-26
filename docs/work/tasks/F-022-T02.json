@@ -37,5 +37,11 @@
     "baselineAgentHours": 0,
     "estimateAgentHours": 0,
     "ownerKind": "procedure"
-  }
+  },
+  "prs": [
+    {
+      "pr": 92,
+      "note": "plan"
+    }
+  ]
 }

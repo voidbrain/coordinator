@@ -394,8 +394,8 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who | PRs |
 |---|---|---|---|---|---|---|---|:---:|---|
 | 🟢 Small | <a id="f-018-t02"></a>F-018-T02 — Write the side-change proposals for the eight differences from nerv:F-122 | 0.5 h | 0 h | 0.5 h | Planned | — | [F-018-T03](#f-018-t03) | 🤖 | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan; [PR #85](https://github.com/voidbrain/coordinator/pull/85) split |
-| 🟡 Medium | <a id="f-018-t04"></a>F-018-T04 — Add a heartbeat and the producer fallback to the alert contract | 2 h | 0 h | 2 h | Planned | — | [F-018-T05](#f-018-t05) | 🤖 | — |
-| 🟢 Small | <a id="f-018-t05"></a>F-018-T05 — Write the heartbeat and fallback proposals for the producers and NERV | 0.5 h | 0 h | 0.5 h | Planned | [F-018-T04](#f-018-t04) | [F-018-T03](#f-018-t03) | ⏳ 🤖 | — |
+| 🟡 Medium | <a id="f-018-t04"></a>F-018-T04 — Add a heartbeat and the producer fallback to the alert contract | 2 h | 0 h | 2 h | Planned | — | [F-018-T05](#f-018-t05) | 🤖 | [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan |
+| 🟢 Small | <a id="f-018-t05"></a>F-018-T05 — Write the heartbeat and fallback proposals for the producers and NERV | 0.5 h | 0 h | 0.5 h | Planned | [F-018-T04](#f-018-t04) | [F-018-T03](#f-018-t03) | ⏳ 🤖 | [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan |
 | 🟢 Small | <a id="f-018-t03"></a>F-018-T03 — Owner: decide which side moves for each alert-contract proposal | 0 h | 0 h | 0 h agent + 0.25 h owner | Planned | [F-018-T02](#f-018-t02), [F-018-T05](#f-018-t05) | — | ⏳ 🤔 | [PR #85](https://github.com/voidbrain/coordinator/pull/85) split |
 | 🟡 Medium | **Total** | 4.5 h | 0 h (0 of 5 steps recorded) | 3 h agent + 0.25 h owner | 1 of 5 completed | | | | |
 
@@ -414,7 +414,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Steps: F-018-T01: [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan; [PR #79](https://github.com/voidbrain/coordinator/pull/79) contract; [PR #81](https://github.com/voidbrain/coordinator/pull/81) close · F-018-T02: [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan; [PR #85](https://github.com/voidbrain/coordinator/pull/85) split · F-018-T03: [PR #85](https://github.com/voidbrain/coordinator/pull/85) split. [#77](https://github.com/voidbrain/coordinator/pull/77) (plan); [#79](https://github.com/voidbrain/coordinator/pull/79) (F-018-T01 contract); [#81](https://github.com/voidbrain/coordinator/pull/81) (close F-018-T01); [#85](https://github.com/voidbrain/coordinator/pull/85) (split F-018-T02 and F-018-T03); [NERV practices transfer report](reviews/2026-11-26-nerv-practices-transfer.md) (proposal 2); cross-project audit [2026-11-26](audits/2026-11-26-cross-project.md), proposal 9; owner acceptance 2026-11-26 |
+| PR / evidence | Steps: F-018-T01: [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan; [PR #79](https://github.com/voidbrain/coordinator/pull/79) contract; [PR #81](https://github.com/voidbrain/coordinator/pull/81) close · F-018-T02: [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan; [PR #85](https://github.com/voidbrain/coordinator/pull/85) split · F-018-T03: [PR #85](https://github.com/voidbrain/coordinator/pull/85) split · F-018-T04: [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan · F-018-T05: [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan. [#92](https://github.com/voidbrain/coordinator/pull/92) (plan); [#77](https://github.com/voidbrain/coordinator/pull/77) (plan); [#79](https://github.com/voidbrain/coordinator/pull/79) (F-018-T01 contract); [#81](https://github.com/voidbrain/coordinator/pull/81) (close F-018-T01); [#85](https://github.com/voidbrain/coordinator/pull/85) (split F-018-T02 and F-018-T03); [NERV practices transfer report](reviews/2026-11-26-nerv-practices-transfer.md) (proposal 2); cross-project audit [2026-11-26](audits/2026-11-26-cross-project.md), proposal 9; owner acceptance 2026-11-26 |
 | Components | nerv:F-122, nerv:F-101, fpvbuddy:F-013, grover:F-008 |
 | Opened | 2026-11-26 |
 | Verification | Pending |
@@ -498,7 +498,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Steps: F-020-T01: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T02: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T03: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T04: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T05: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T06: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan. [#89](https://github.com/voidbrain/coordinator/pull/89) (plan); [#91](https://github.com/voidbrain/coordinator/pull/91) (order position, owner instruction 2026-11-26); owner approval 2026-11-26 (chat "ok") |
+| PR / evidence | Steps: F-020-T01: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T02: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T03: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T04: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T05: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T06: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan. [#92](https://github.com/voidbrain/coordinator/pull/92) (plan); [#89](https://github.com/voidbrain/coordinator/pull/89) (plan); [#91](https://github.com/voidbrain/coordinator/pull/91) (order position, owner instruction 2026-11-26); owner approval 2026-11-26 (chat "ok") |
 | Components | project-harness:F-096, project-harness:F-102, project-harness:F-104, project-harness:F-105, nerv:F-125, nerv:F-132 |
 | Opened | 2026-11-26 |
 | Verification | Pending |
@@ -525,11 +525,11 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status |
-|---|---|---|---|---|---|
-| 🟡 Medium | <a id="f-021-t01"></a>F-021-T01 — Table of durable data and backups | 1.5 h | 0 h | 1.5 h | Planned |
-| 🟡 Medium | <a id="f-021-t02"></a>F-021-T02 — Table of credentials | 1.5 h | 0 h | 1.5 h | Planned |
-| 🟡 Medium | **Total** | 3 h | 0 h (0 of 2 steps recorded) | 3 h | 0 of 2 completed |
+| Effort | Step | Estimate | Actual | Remaining | Status | PRs |
+|---|---|---|---|---|---|---|
+| 🟡 Medium | <a id="f-021-t01"></a>F-021-T01 — Table of durable data and backups | 1.5 h | 0 h | 1.5 h | Planned | [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan |
+| 🟡 Medium | <a id="f-021-t02"></a>F-021-T02 — Table of credentials | 1.5 h | 0 h | 1.5 h | Planned | [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan |
+| 🟡 Medium | **Total** | 3 h | 0 h (0 of 2 steps recorded) | 3 h | 0 of 2 completed | |
 
 <details>
 <summary>Next action, estimates and evidence</summary>
@@ -538,7 +538,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | [report](https://github.com/voidbrain/coordinator/blob/main/docs/reviews/2026-11-26-nerv-practices-transfer.md); owner decision 2026-11-26 |
+| PR / evidence | Steps: F-021-T01: [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan · F-021-T02: [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan. [#92](https://github.com/voidbrain/coordinator/pull/92) (plan); [report](https://github.com/voidbrain/coordinator/blob/main/docs/reviews/2026-11-26-nerv-practices-transfer.md); owner decision 2026-11-26 |
 | Opened | 2026-11-26 |
 | Verification | Pending |
 | Reviewed | 2026-11-26 |
@@ -564,11 +564,11 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who |
-|---|---|---|---|---|---|---|---|:---:|
-| 🟢 Small | <a id="f-022-t01"></a>F-022-T01 — Write the baseline and the cross-project audit check | 1 h | 0 h | 1 h | Planned | — | [F-022-T02](#f-022-t02) | 🤖 |
-| 🟢 Small | <a id="f-022-t02"></a>F-022-T02 — Owner: apply the security baseline to the repositories | 0 h | 0 h | 0 h agent + 0.5 h owner | Planned | [F-022-T01](#f-022-t01) | — | ⏳ 🧑‍🔧 |
-| 🟢 Small | **Total** | 1 h | 0 h (0 of 2 steps recorded) | 1 h agent + 0.5 h owner | 0 of 2 completed | | | |
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who | PRs |
+|---|---|---|---|---|---|---|---|:---:|---|
+| 🟢 Small | <a id="f-022-t01"></a>F-022-T01 — Write the baseline and the cross-project audit check | 1 h | 0 h | 1 h | Planned | — | [F-022-T02](#f-022-t02) | 🤖 | [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan |
+| 🟢 Small | <a id="f-022-t02"></a>F-022-T02 — Owner: apply the security baseline to the repositories | 0 h | 0 h | 0 h agent + 0.5 h owner | Planned | [F-022-T01](#f-022-t01) | — | ⏳ 🧑‍🔧 | [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan |
+| 🟢 Small | **Total** | 1 h | 0 h (0 of 2 steps recorded) | 1 h agent + 0.5 h owner | 0 of 2 completed | | | | |
 
 <details>
 <summary>Next action, estimates and evidence</summary>
@@ -577,7 +577,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | [report](https://github.com/voidbrain/coordinator/blob/main/docs/reviews/2026-11-26-nerv-practices-transfer.md); owner decision 2026-11-26 |
+| PR / evidence | Steps: F-022-T01: [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan · F-022-T02: [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan. [#92](https://github.com/voidbrain/coordinator/pull/92) (plan); [report](https://github.com/voidbrain/coordinator/blob/main/docs/reviews/2026-11-26-nerv-practices-transfer.md); owner decision 2026-11-26 |
 | Opened | 2026-11-26 |
 | Verification | Pending |
 | Reviewed | 2026-11-26 |
@@ -603,10 +603,10 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status |
-|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-023-t01"></a>F-023-T01 — SBOM step in the coordinator CI | 0.5 h | 0 h | 0.5 h | Planned |
-| 🟢 Small | **Total** | 0.5 h | 0 h (0 of 1 steps recorded) | 0.5 h | 0 of 1 completed |
+| Effort | Step | Estimate | Actual | Remaining | Status | PRs |
+|---|---|---|---|---|---|---|
+| 🟢 Small | <a id="f-023-t01"></a>F-023-T01 — SBOM step in the coordinator CI | 0.5 h | 0 h | 0.5 h | Planned | [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan |
+| 🟢 Small | **Total** | 0.5 h | 0 h (0 of 1 steps recorded) | 0.5 h | 0 of 1 completed | |
 
 <details>
 <summary>Next action, estimates and evidence</summary>
@@ -615,7 +615,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | [report](https://github.com/voidbrain/coordinator/blob/main/docs/reviews/2026-11-26-nerv-practices-transfer.md); owner decision 2026-11-26 |
+| PR / evidence | Steps: F-023-T01: [PR #92](https://github.com/voidbrain/coordinator/pull/92) plan. [#92](https://github.com/voidbrain/coordinator/pull/92) (plan); [report](https://github.com/voidbrain/coordinator/blob/main/docs/reviews/2026-11-26-nerv-practices-transfer.md); owner decision 2026-11-26 |
 | Opened | 2026-11-26 |
 | Verification | Pending |
 | Reviewed | 2026-11-26 |
