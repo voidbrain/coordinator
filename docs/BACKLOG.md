@@ -4,7 +4,7 @@ Current work ledger, reviewed 26 November 2026 against main `4cd62c3`. PR #86 (B
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 31.75 h agent + 1.75 h owner across 29 open steps of 8 features and 2 other records. Generated from the task files.
+**Remaining effort:** 32.75 h agent + 1.75 h owner across 32 open steps of 9 features and 2 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -413,6 +413,46 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|
 | PR / evidence | Steps: F-018-T01: [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan; [PR #79](https://github.com/voidbrain/coordinator/pull/79) contract; [PR #81](https://github.com/voidbrain/coordinator/pull/81) close · F-018-T02: [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan; [PR #85](https://github.com/voidbrain/coordinator/pull/85) split · F-018-T03: [PR #85](https://github.com/voidbrain/coordinator/pull/85) split. [#77](https://github.com/voidbrain/coordinator/pull/77) (plan); [#79](https://github.com/voidbrain/coordinator/pull/79) (F-018-T01 contract); [#81](https://github.com/voidbrain/coordinator/pull/81) (close F-018-T01); [#85](https://github.com/voidbrain/coordinator/pull/85) (split F-018-T02 and F-018-T03); cross-project audit [2026-11-26](audits/2026-11-26-cross-project.md), proposal 9; owner acceptance 2026-11-26 |
 | Components | nerv:F-122, nerv:F-101, fpvbuddy:F-013, grover:F-008 |
+| Opened | 2026-11-26 |
+| Verification | Pending |
+| Reviewed | 2026-11-26 |
+
+</details>
+
+---
+### <a id="f-019"></a>[✨ F-019](#top)
+
+**Turn on the dormant procedure settings: reviews, work usage, behaviour runner**
+
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🔴 Open | 🔹 P3 | 🟢 Small | 1 h | — | — | 🤖 | — | — |
+
+💻 **→** Next: F-019-T01 — Reviews, work usage and behaviour runner settings (Implemented; verification pending).
+
+| | |
+|---|---|
+| **Issue** | The 2026-11-26 dormant-checks sweep (`docs/audits/2026-11-26-dormant-checks.md`, rows S1, S2, S3, S5) found no periodic reviews (`reviews` unset), work-usage measurement off and no `behaviour.runner` here; this repository measures no coverage. |
+| **Reproduce** | `.harness.json` on `main` `2f93786`: no `reviews`, `workUsage.enabled: false`, `behaviour` `{times: 3}`, no `coverage`. |
+| **Check** | `.harness.json` sets `reviews` (token, architecture, skills at 30 days), `workUsage.enabled: true` and `behaviour.runner`; the first architecture review with its outside-landscape comparison and the owner's seven leads of 2026-11-26 is `docs/reviews/architecture/2026-11-26.md`. Coverage stays unmeasured (decision below). First token and skills reviews: F-019-T03. |
+
+**Feature steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status | PRs |
+|---|---|---|---|---|---|---|
+| 🟢 Small | <a id="f-019-t01"></a>F-019-T01 — Reviews, work usage and behaviour runner settings | 0.25 h | 0 h | 0 h | Implemented; verification pending | [PR #88](https://github.com/voidbrain/coordinator/pull/88) settings on |
+| 🟢 Small | <a id="f-019-t02"></a>F-019-T02 — First architecture review with outside-landscape comparison and the owner's leads | 0.5 h | 0 h | 0 h | Implemented; verification pending | [PR #88](https://github.com/voidbrain/coordinator/pull/88) first architecture review |
+| 🟢 Small | <a id="f-019-t03"></a>F-019-T03 — First token and skills reviews | 1 h | 0 h | 1 h | Planned | — |
+| 🟢 Small | **Total** | 1.75 h | 0 h (0 of 3 steps recorded) | 1 h | 0 of 3 completed | |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+[Full notes & evidence](work/records/F-019.md)
+
+| Field | Value |
+|---|---|
+| PR / evidence | Steps: F-019-T01: [PR #88](https://github.com/voidbrain/coordinator/pull/88) settings on · F-019-T02: [PR #88](https://github.com/voidbrain/coordinator/pull/88) first architecture review. [#88](https://github.com/voidbrain/coordinator/pull/88) |
 | Opened | 2026-11-26 |
 | Verification | Pending |
 | Reviewed | 2026-11-26 |

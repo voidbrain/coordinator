@@ -227,7 +227,8 @@
     }
   },
   "behaviour": {
-    "times": 3
+    "times": 3,
+    "runner": "claude -p --permission-mode acceptEdits --allowedTools \"Bash(git:*)\" \"Bash(npm:*)\" \"Bash(node:*)\" -- \"$(cat \"$HARNESS_TASK_FILE\")\""
   },
   "verification": {
     "enabled": false
@@ -245,12 +246,23 @@
     }
   },
   "workUsage": {
-    "enabled": false,
+    "enabled": true,
     "pauseGapMinutes": 15
   },
   "solution": {
     "role": "coordinator",
     "manifest": ".solution.json"
   },
-  "defaultBranch": "main"
+  "defaultBranch": "main",
+  "reviews": {
+    "token": {
+      "days": 30
+    },
+    "architecture": {
+      "days": 30
+    },
+    "skills": {
+      "days": 30
+    }
+  }
 }
