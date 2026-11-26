@@ -4,7 +4,7 @@
   "parent": "B-007",
   "title": "Apply the chosen fixture rule in AGENTS.md",
   "goal": "AGENTS.md matches the owner's choice",
-  "status": "implemented",
+  "status": "closed",
   "acceptance": [
     "AGENTS.md changes as chosen in B-007-T01, under the rule review procedure; check:rules passes"
   ],
@@ -21,10 +21,10 @@
   ],
   "effort": {
     "size": "small",
-    "estimate": "0.25 h agent",
-    "basis": "Estimated 2026-11-26: one AGENTS.md line and its review note. Not a measurement.",
+    "estimate": "0 remaining",
+    "basis": "Estimated 2026-11-26: one AGENTS.md line and its review note. Not a measurement. Closed 2026-11-26.",
     "reviewed": "2026-11-26",
-    "agentHours": 0.25,
+    "agentHours": 0,
     "ownerHours": 0,
     "baselineAgentHours": 0.25,
     "estimateAgentHours": 0.25

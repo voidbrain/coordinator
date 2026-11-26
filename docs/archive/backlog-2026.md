@@ -523,3 +523,37 @@ Closed records of the [backlog](../BACKLOG.md), in closing-date order. History, 
 </details>
 
 ---
+
+### B-007
+
+**AGENTS.md asks for backlog-reader fixtures that no longer exist**
+
+| Signal | Priority | Status | Effort |
+|:---:|---|---|---|
+| 🔵 | ◻️ P3 | Closed | 🟢 Small |
+
+💻 **→ Human action required: No**<br />Closed 2026-11-26: Merged PR #86 (2026-11-26), all CI green; owner decision option (b) applied to AGENTS.md; maintenance receipt refreshed.
+
+| | |
+|---|---|
+| **Issue** | Full audit 2026-11-26 ([report](../audits/2026-11-26-coordinator-full.md), finding 3). The AGENTS.md project line "A change to a backlog reader adds a fixture to `test/fixtures/` and its expected result to `expected.json`" names files that went with the project's own overview in F-004-T05; the backlog readers are now the copied template `tools/solution.mjs`, which this repository may not edit and the template tests. Changing a governing rule needs the owner (rule review). |
+| **Reproduce** | `ls test/fixtures` fails; `git log --diff-filter=D --name-only -- test/fixtures` shows the removal; docs/agents/areas.md "Retired (F-004-T05)". |
+| **Check** | The owner picks (a) drop the line, (b) reword it for a project-owned reader only ("a project tool that reads a backlog adds a test with invented data; an unknown layout shows as a problem, never as no work"; recommended), or (c) restore fixtures for the template reader; the decision and its date are recorded here and AGENTS.md changes in one PR under the rule review. |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+**Next action / closure evidence:** Closed 2026-11-26: Merged PR #86 (2026-11-26), all CI green; owner decision option (b) applied to AGENTS.md; maintenance receipt refreshed. 2026-11-26: opened from the coordinator's full audit (solution:F-017-T04). Next: from tasks.
+
+**Estimates:** No remaining effort.
+
+| Field | Value |
+|---|---|
+| PR / evidence | [#86](https://github.com/voidbrain/coordinator/pull/86) (opened); Review: fresh-context mechanical-reviewer, one blocker (dropped maintenance outcomes) fixed; [full audit 2026-11-26](../audits/2026-11-26-coordinator-full.md) |
+| Opened | 2026-11-26 |
+| Verification | Pending |
+| Reviewed | 2026-11-26 |
+
+</details>
+
+---
