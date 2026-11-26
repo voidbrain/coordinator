@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "parent": "F-024",
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git; fixtures are invented. The read-only GitHub token lives only in a file on the hosting base. Component repositories are read, never written; agents never touch ~/.nerv, ~/.nerv-app or the live NERV service.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "status": "planned",
+  "id": "F-024-T03",
+  "title": "S3: poller for the nine repositories (main, PRs, CI, harness versions, audit dates)",
+  "goal": "The cache follows GitHub within minutes of a merge, read-only",
+  "acceptance": [
+    "failing tests first, on a fake GitHub client: conditional requests with ETags (a 304 costs no rebuild), a new commit on a `main` rebuilds that repository, PRs and CI results stored, harness versions and audit dates read",
+    "polls every 5 minutes; reads a read-only fine-grained token (contents, pull requests, actions: read) from a file on the base, never from git; a missing token is a clear error, not empty data",
+    "an unreadable repository shows as unknown, never as no work"
+  ],
+  "dependsOn": [
+    "F-024-T02"
+  ],
+  "resources": [
+    "src/**",
+    "test/**",
+    "docs/work/records/F-024.md",
+    "generated:backlog-views"
+  ],
+  "effort": {
+    "size": "medium",
+    "estimate": "3 h agent",
+    "basis": "Decision page S3 row. Estimated 2026-11-26 from the decision page's step table (docs/decisions/live-index.md, \"Steps, if approved\"), at agent speed, failing test first for code. Not a measurement.",
+    "agentHours": 3,
+    "reviewed": "2026-11-26",
+    "baselineAgentHours": 3,
+    "estimateAgentHours": 3
+  },
+  "validation": [
+    "npm run check:fast; final applicable CI"
+  ],
+  "prs": []
+}

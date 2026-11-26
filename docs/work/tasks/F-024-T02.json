@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "parent": "F-024",
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git; fixtures are invented. The read-only GitHub token lives only in a file on the hosting base. Component repositories are read, never written; agents never touch ~/.nerv, ~/.nerv-app or the live NERV service.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "status": "planned",
+  "id": "F-024-T02",
+  "title": "S2: service skeleton in the coordinator (node:sqlite cache, rebuild from git, service files)",
+  "goal": "The coordinator holds a small Node 24 service whose SQLite file is a rebuildable cache built by the harness builder",
+  "acceptance": [
+    "failing tests first: `rebuild` builds the SQLite cache from invented fixture checkouts through the harness builder, and deleting the file and rebuilding gives the same rows",
+    "Node 24 with the built-in `node:sqlite` (`DatabaseSync`), no new runtime dependency; tests and lint in CI",
+    "launchd user agent (own label, beside `io.nerv.agent`, not a child of NERV), Task Scheduler and `systemd --user` files, all templates with no secret; the data folder holds the cache and logs",
+    "the AGENTS.md project line \"Nothing is built or deployed\" is changed to name the service, citing the owner decision of 2026-11-26, with the maintenance review that an AGENTS.md change needs"
+  ],
+  "dependsOn": [
+    "F-024-T01"
+  ],
+  "resources": [
+    "src/**",
+    "test/**",
+    "service/**",
+    "package.json",
+    "AGENTS.md",
+    "docs/work/records/F-024.md",
+    "generated:backlog-views"
+  ],
+  "effort": {
+    "size": "medium",
+    "estimate": "3 h agent",
+    "basis": "Decision page S2 row, plus about 2 h of setup counted there for the coordinator gaining source. Waits on the harness builder release (prose until project-harness opens its record). Estimated 2026-11-26 from the decision page's step table (docs/decisions/live-index.md, \"Steps, if approved\"), at agent speed, failing test first for code. Not a measurement.",
+    "agentHours": 3,
+    "reviewed": "2026-11-26",
+    "baselineAgentHours": 3,
+    "estimateAgentHours": 3
+  },
+  "validation": [
+    "npm run check:fast; final applicable CI"
+  ],
+  "prs": []
+}

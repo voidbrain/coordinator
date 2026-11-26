@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "parent": "F-024",
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git; fixtures are invented. The read-only GitHub token lives only in a file on the hosting base. Component repositories are read, never written; agents never touch ~/.nerv, ~/.nerv-app or the live NERV service.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "status": "planned",
+  "id": "F-024-T08",
+  "title": "S8: two weeks of measurements, report to F-020",
+  "goal": "The numbers that decide phase 2",
+  "acceptance": [
+    "two weeks after F-024-T07, against the 2026-11-26 baseline of the decision page (\"What to measure to decide phase 2\"): mechanical bookkeeping PRs (40 of 228, 18%; target under 5%), \"name PR\" commits (130 in three repositories), dashboard age after a merge (up to 6 h 19 min; target under 10 min), ID collisions per week (three; target 0)",
+    "written to docs/reviews/live-index/<date>.md and linked from F-020 as input to its phase 2 decision"
+  ],
+  "dependsOn": [
+    "F-024-T07"
+  ],
+  "resources": [
+    "docs/reviews/live-index/**",
+    "docs/work/records/F-020.md",
+    "docs/work/records/F-024.md",
+    "generated:backlog-views"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "1 h agent",
+    "basis": "Decision page S8 row; the same `gh` queries as the baseline. Estimated 2026-11-26 from the decision page's step table (docs/decisions/live-index.md, \"Steps, if approved\"), at agent speed, failing test first for code. Not a measurement.",
+    "agentHours": 1,
+    "reviewed": "2026-11-26",
+    "baselineAgentHours": 1,
+    "estimateAgentHours": 1
+  },
+  "validation": [
+    "npm run check:fast; final applicable CI"
+  ],
+  "prs": []
+}

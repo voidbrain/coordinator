@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "parent": "F-024",
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git; fixtures are invented. The read-only GitHub token lives only in a file on the hosting base. Component repositories are read, never written; agents never touch ~/.nerv, ~/.nerv-app or the live NERV service.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "status": "planned",
+  "id": "F-024-T06",
+  "title": "S6: propose the MCP surface card to nerv",
+  "goal": "NERV shows the index through MCP surface cards like any project, built by a nerv session",
+  "acceptance": [
+    "a proposal for nerv (in this record's evidence or docs/proposals/live-index-nerv-card.md): NERV adds the index as an MCP connection and shows it in a surface card; the MCP contract row of F-024-T04 is the interface; about 1 h agent estimated in nerv",
+    "the owner takes it to a nerv session; nothing in nerv is edited from this repository"
+  ],
+  "dependsOn": [
+    "F-024-T04"
+  ],
+  "resources": [
+    "docs/proposals/**",
+    "docs/work/records/F-024.md",
+    "generated:backlog-views"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "0.25 h agent",
+    "basis": "One short proposal; the card (S6, 1 h) is estimated in nerv. Estimated 2026-11-26 from the decision page's step table (docs/decisions/live-index.md, \"Steps, if approved\"), at agent speed, failing test first for code. Not a measurement.",
+    "agentHours": 0.25,
+    "reviewed": "2026-11-26",
+    "baselineAgentHours": 0.25,
+    "estimateAgentHours": 0.25
+  },
+  "validation": [
+    "npm run check:fast; final applicable CI"
+  ],
+  "prs": []
+}

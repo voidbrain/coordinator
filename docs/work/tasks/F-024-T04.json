@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "parent": "F-024",
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git; fixtures are invented. The read-only GitHub token lives only in a file on the hosting base. Component repositories are read, never written; agents never touch ~/.nerv, ~/.nerv-app or the live NERV service.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "status": "planned",
+  "id": "F-024-T04",
+  "title": "S4: MCP read tools (record lookup, waiting on me, blocked by X)",
+  "goal": "Agents and NERV query the index over MCP, read-only",
+  "acceptance": [
+    "failing tests first on the fixture cache: record lookup by `repo:ID`, \"waiting on me\" (owner steps whose turn it is), \"blocked by X\" (steps whose dependsOn names X, across repositories)",
+    "every answer names the source file and commit it came from; no tool writes",
+    "the MCP contract row in docs/SOLUTION.md (tool names, inputs, outputs, `version`)"
+  ],
+  "dependsOn": [
+    "F-024-T03"
+  ],
+  "resources": [
+    "src/**",
+    "test/**",
+    "docs/SOLUTION.md",
+    "docs/work/records/F-024.md",
+    "generated:backlog-views"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "2 h agent",
+    "basis": "Decision page S4 row; the contract row moved here from S5 so S6 can start after this step. Estimated 2026-11-26 from the decision page's step table (docs/decisions/live-index.md, \"Steps, if approved\"), at agent speed, failing test first for code. Not a measurement.",
+    "agentHours": 2,
+    "reviewed": "2026-11-26",
+    "baselineAgentHours": 2,
+    "estimateAgentHours": 2
+  },
+  "validation": [
+    "npm run check:fast; final applicable CI"
+  ],
+  "prs": []
+}

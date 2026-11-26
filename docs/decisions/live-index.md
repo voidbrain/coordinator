@@ -1,6 +1,6 @@
 # Decision proposal: live index for backlogs and dashboard
 
-Owner decision needed, through coordinator:[F-020](../BACKLOG.md#f-020) (the freeze sends decisions there). Written 2026-11-26 on the owner's approval in chat ("ok", 2026-11-26). A proposal, not an implementation: nothing here changes a rule, a tool or a component.
+Owner decision taken 2026-11-26 (see [Answer](#answer)), through coordinator:[F-020](../BACKLOG.md#f-020) (the freeze sends decisions there). Written 2026-11-26 on the owner's approval in chat ("ok", 2026-11-26). A proposal, not an implementation: nothing here changes a rule, a tool or a component.
 
 ## Problem, measured on 2026-11-26
 
@@ -136,4 +136,4 @@ If 2, who owns the service? **(ii) the coordinator** (recommended, and the owner
 
 ## Answer
 
-Pending.
+2026-11-26, owner in chat: **"2"** (start the live index, read-only: option B, phase 1, steps S1 to S8) and **"coordinator"** (owner of the service: (ii), the coordinator). Planned as coordinator:[F-024](../BACKLOG.md#f-024), "Live index, phase 1 (status)": the builder (S1) is proposed to project-harness and the surface card (S6) to nerv, each built by a session in its own repository; hosting on the base holding NERV's coordinator role (today NERV-01) under its own launchd job, installed by the owner. Phase 2 and phase 3 stay as written above, not records yet.
