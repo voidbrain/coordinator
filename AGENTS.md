@@ -114,4 +114,5 @@ Before changing an area, read its section in [docs/agents/areas.md](docs/agents/
 
 - This backlog owns only this repository's work: reject foreign next actions and closure conditions; a master never waits on what derives from it (BACKLOG-RULES, "One repository, one backlog"). A component's work is referenced, never recorded here. <!-- project -->
 - Keep a confirmed bug, a candidate fix, an unimplemented feature and a completed check distinct: a merge is not verification, a unit test is not a visual, pointer or device check, a green CI run proves only the checks it ran. Archives and audits are dated evidence, not current status.
+- Freeze 2026-11-26 until solution:F-020-T06: add no procedure file, rule section or `docs/agents/*.md` page here, and propose none elsewhere; fix existing rules, write records and collect proposals on F-020 instead (a procedure that cannot wait goes to the owner as a question first). <!-- project -->
 - A plan or promise given to the user (steps, a table to build, a later fix) becomes backlog records in the same change, and the reply names them. Nothing promised lives only in the conversation.

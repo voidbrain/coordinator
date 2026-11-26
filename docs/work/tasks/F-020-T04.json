@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "parent": "F-020",
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "status": "planned",
+  "id": "F-020-T04",
+  "title": "Consolidation proposals per repository, as proposals to each owning repository",
+  "goal": "Numbered proposals that merge wording and keep every requirement",
+  "acceptance": [
+    "per the rule review procedure \"Periodic rule consolidation\": each proposal records the old locations, the requirement they enforce, the new owner and location, the preserved exceptions, why the text is redundant or obsolete, and the check that no requirement was lost; safeguards (ownership, evidence, privacy, safety) are never removed for age or rarity",
+    "a generic change goes to project-harness first (template, then projects); a project-only change goes to that project; size warnings are addressed by moving text to the page that owns it, not by deleting it (harness rule-review.md about 2,300 of 2,000 tokens; harness F-096, nerv F-125, coordinator F-016 records over budget)",
+    "where a change would alter behaviour it is marked as a policy change with its own acceptance; a before and after behaviour run with a held-out set is proposed for each rule rewrite (rule review, \"Before and after a rule change\"); proposals are numbered in docs/reviews/2026-11-coherence/proposals.md"
+  ],
+  "dependsOn": [
+    "F-020-T02",
+    "F-020-T03"
+  ],
+  "resources": [
+    "docs/work/records/F-020.md",
+    "docs/reviews/2026-11-coherence/**",
+    "generated:backlog-views"
+  ],
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "effort": {
+    "size": "medium",
+    "estimate": "3 h agent",
+    "basis": "about 12 proposals at 0.25 h each, from the T01 to T03 pages. Estimated 2026-11-26 at agent speed for coordinator-only work. Not a measurement.",
+    "reviewed": "2026-11-26",
+    "agentHours": 3,
+    "ownerHours": 0,
+    "baselineAgentHours": 3,
+    "estimateAgentHours": 3
+  },
+  "prs": [
+    {
+      "pr": 0,
+      "note": "plan"
+    }
+  ]
+}

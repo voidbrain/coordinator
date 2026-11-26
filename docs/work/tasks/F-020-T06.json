@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "parent": "F-020",
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "status": "planned",
+  "id": "F-020-T06",
+  "title": "Lift the freeze on new procedures here and record the outcome",
+  "goal": "The freeze line is removed from AGENTS.md; F-020 records what was accepted and made",
+  "acceptance": [
+    "the freeze project line is removed from AGENTS.md here once the owner confirms (T05) and the accepted proposals are filed in their repositories; the other repositories lift theirs in their own sessions",
+    "F-020 lists each proposal with its outcome (made, rejected, deferred) and the repository records it created"
+  ],
+  "dependsOn": [
+    "F-020-T05"
+  ],
+  "resources": [
+    "docs/work/records/F-020.md",
+    "docs/reviews/2026-11-coherence/**",
+    "generated:backlog-views"
+  ],
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "0.25 h agent",
+    "basis": "one small PR. Estimated 2026-11-26 at agent speed for coordinator-only work. Not a measurement.",
+    "reviewed": "2026-11-26",
+    "agentHours": 0.25,
+    "ownerHours": 0,
+    "baselineAgentHours": 0.25,
+    "estimateAgentHours": 0.25
+  },
+  "prs": [
+    {
+      "pr": 0,
+      "note": "plan"
+    }
+  ]
+}

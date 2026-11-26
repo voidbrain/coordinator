@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "parent": "F-020",
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "status": "planned",
+  "id": "F-020-T01",
+  "title": "Per-repo coherence read by a fresh-context agent, one checklist item per repository (9)",
+  "goal": "One finding list per repository: what is inconsistent, unclear or too long, with file and line",
+  "acceptance": [
+    "for each of the 9 components (nerv, gauntlet-protocol, project-harness, fpvbuddy, grover, openbando, hobo, bricks, coordinator) a fresh-context agent reads AGENTS.md, BACKLOG-RULES, the procedures it links and the open records at the repository's main, and lists: contradictions between rules; the same rule in two places; dead links; a term used in two senses; a procedure not reachable from the AGENTS.md procedures table; pages and records over their token budget (check:backlog and check:rules warnings quoted); a decision question or Check an owner cannot answer as written (plain-language test: could the owner answer without a re-explanation, as harness F-102-T01, coordinator B-007 and nerv F-132-T04 needed)",
+    "the findings are written to docs/reviews/2026-11-coherence/<repo>.md here (one page per repository), each finding with the revision read; no component is edited",
+    "the same agent proposes, as its first output, the freeze line for each other repository (this record owns this repository's line); the owner decides in T05"
+  ],
+  "dependsOn": [],
+  "resources": [
+    "docs/work/records/F-020.md",
+    "docs/reviews/2026-11-coherence/**",
+    "generated:backlog-views"
+  ],
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "effort": {
+    "size": "medium",
+    "estimate": "4 h agent",
+    "basis": "9 repositories at about 0.4 h each (3 in parallel, one fresh agent per repo with a short brief). Estimated 2026-11-26 at agent speed for coordinator-only work. Not a measurement.",
+    "reviewed": "2026-11-26",
+    "agentHours": 4,
+    "ownerHours": 0,
+    "baselineAgentHours": 4,
+    "estimateAgentHours": 4
+  },
+  "prs": [
+    {
+      "pr": 0,
+      "note": "plan"
+    }
+  ]
+}
