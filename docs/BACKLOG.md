@@ -348,18 +348,18 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks |
-|---|---|---|---|---|---|---|---|
-| 🟡 Medium | <a id="f-016-t01"></a>F-016-T01 — Shared assets section in docs/DOMAINS.md: bricks, blocks and the Gauntlet | 1.5 h | 0 h | 1.5 h | Planned | — | [F-016-T02](#f-016-t02) |
-| 🟡 Medium | <a id="f-016-t02"></a>F-016-T02 — Gap-review checks for the three shared assets | 2 h | 0 h | 2 h | Planned | [F-016-T01](#f-016-t01) | [F-016-T03](#f-016-t03), [F-016-T04](#f-016-t04), [F-016-T05](#f-016-t05), [F-016-T06](#f-016-t06), [F-016-T07](#f-016-t07), [F-016-T08](#f-016-t08) |
-| 🟡 Medium | <a id="f-016-t03"></a>F-016-T03 — Gauntlet inventory proposal for nerv | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | [F-016-T09](#f-016-t09) |
-| 🟡 Medium | <a id="f-016-t04"></a>F-016-T04 — Gauntlet inventory proposal for grover | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | [F-016-T09](#f-016-t09) |
-| 🟡 Medium | <a id="f-016-t05"></a>F-016-T05 — Gauntlet inventory proposal for fpvbuddy | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | [F-016-T09](#f-016-t09) |
-| 🟡 Medium | <a id="f-016-t06"></a>F-016-T06 — Gauntlet inventory proposal for hobo | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | [F-016-T09](#f-016-t09) |
-| 🟡 Medium | <a id="f-016-t07"></a>F-016-T07 — Gauntlet inventory proposal for openbando | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | [F-016-T09](#f-016-t09) |
-| 🟡 Medium | <a id="f-016-t08"></a>F-016-T08 — Shared-logic inventory: whether to create blocks and its first package | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | — |
-| 🟢 Small | <a id="f-016-t09"></a>F-016-T09 — Consolidated packs and graders proposal for gauntlet-protocol | 1 h | 0 h | 1 h | Planned | [F-016-T03](#f-016-t03), [F-016-T04](#f-016-t04), [F-016-T05](#f-016-t05), [F-016-T06](#f-016-t06), [F-016-T07](#f-016-t07) | — |
-| 🟣 Very large | **Total** | 13.5 h | 0 h (0 of 9 steps recorded) | 13.5 h | 0 of 9 completed | | |
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | PRs |
+|---|---|---|---|---|---|---|---|---|
+| 🟡 Medium | <a id="f-016-t01"></a>F-016-T01 — Shared assets section in docs/DOMAINS.md: bricks, blocks and the Gauntlet | 1.5 h | 0 h | 1.5 h | Planned | — | [F-016-T02](#f-016-t02) | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
+| 🟡 Medium | <a id="f-016-t02"></a>F-016-T02 — Gap-review checks for the three shared assets | 2 h | 0 h | 2 h | Planned | [F-016-T01](#f-016-t01) | [F-016-T03](#f-016-t03), [F-016-T04](#f-016-t04), [F-016-T05](#f-016-t05), [F-016-T06](#f-016-t06), [F-016-T07](#f-016-t07), [F-016-T08](#f-016-t08) | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
+| 🟡 Medium | <a id="f-016-t03"></a>F-016-T03 — Gauntlet inventory proposal for nerv | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | [F-016-T09](#f-016-t09) | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
+| 🟡 Medium | <a id="f-016-t04"></a>F-016-T04 — Gauntlet inventory proposal for grover | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | [F-016-T09](#f-016-t09) | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
+| 🟡 Medium | <a id="f-016-t05"></a>F-016-T05 — Gauntlet inventory proposal for fpvbuddy | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | [F-016-T09](#f-016-t09) | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
+| 🟡 Medium | <a id="f-016-t06"></a>F-016-T06 — Gauntlet inventory proposal for hobo | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | [F-016-T09](#f-016-t09) | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
+| 🟡 Medium | <a id="f-016-t07"></a>F-016-T07 — Gauntlet inventory proposal for openbando | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | [F-016-T09](#f-016-t09) | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
+| 🟡 Medium | <a id="f-016-t08"></a>F-016-T08 — Shared-logic inventory: whether to create blocks and its first package | 1.5 h | 0 h | 1.5 h | Planned | [F-016-T02](#f-016-t02) | — | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
+| 🟢 Small | <a id="f-016-t09"></a>F-016-T09 — Consolidated packs and graders proposal for gauntlet-protocol | 1 h | 0 h | 1 h | Planned | [F-016-T03](#f-016-t03), [F-016-T04](#f-016-t04), [F-016-T05](#f-016-t05), [F-016-T06](#f-016-t06), [F-016-T07](#f-016-t07) | — | [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan |
+| 🟣 Very large | **Total** | 13.5 h | 0 h (0 of 9 steps recorded) | 13.5 h | 0 of 9 completed | | | |
 
 <details>
 <summary>Next action, estimates and PR history</summary>
@@ -368,7 +368,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Owner request and approval 2026-11-26; scope widened by the owner 2026-11-26 |
+| PR / evidence | Steps: F-016-T01: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan · F-016-T02: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan · F-016-T03: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan · F-016-T04: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan · F-016-T05: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan · F-016-T06: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan · F-016-T07: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan · F-016-T08: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan · F-016-T09: [PR #61](https://github.com/voidbrain/coordinator/pull/61) plan. [#61](https://github.com/voidbrain/coordinator/pull/61) (plan); owner request and approval 2026-11-26; scope widened by the owner 2026-11-26 |
 | Components | nerv:F-120, nerv:F-121, nerv:F-122, nerv:F-123, gauntlet-protocol:F-021, gauntlet-protocol:F-022, bricks:F-006, bricks:F-007, bricks:F-008, bricks:F-009, fpvbuddy:F-005, grover:F-008 |
 | Opened | 2026-11-26 |
 | Verification | Pending |
