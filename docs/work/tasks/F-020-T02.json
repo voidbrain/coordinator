@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "parent": "F-020",
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "status": "planned",
+  "id": "F-020-T02",
+  "title": "Cross-repo pass: rules that differ without a project marker, one owner per topic",
+  "goal": "Each topic stated in several places has one named owner and the others link to it",
+  "acceptance": [
+    "rules that differ between repositories without a `<!-- project -->` marker or a recorded override are listed with both texts (a copied harness file that was edited here counts)",
+    "each topic stated in several places (audit cadence: harness F-104-T03 and F-105, coordinator cross-project audit check 5, per-project audit settings; landing queue; freeze and ask-first lists) gets one named owner and a link from the others; terms used two ways across repositories are listed with the term the owner should keep",
+    "written to docs/reviews/2026-11-coherence/cross-repo.md"
+  ],
+  "dependsOn": [
+    "F-020-T01"
+  ],
+  "resources": [
+    "docs/work/records/F-020.md",
+    "docs/reviews/2026-11-coherence/**",
+    "generated:backlog-views"
+  ],
+  "validation": [
+    "check:fast; final applicable CI"
+  ],
+  "effort": {
+    "size": "medium",
+    "estimate": "2 h agent",
+    "basis": "one read over the nine T01 pages plus the harness template, about 20 topics. Estimated 2026-11-26 at agent speed for coordinator-only work. Not a measurement.",
+    "reviewed": "2026-11-26",
+    "agentHours": 2,
+    "ownerHours": 0,
+    "baselineAgentHours": 2,
+    "estimateAgentHours": 2
+  },
+  "prs": [
+    {
+      "pr": 89,
+      "note": "plan"
+    }
+  ]
+}
