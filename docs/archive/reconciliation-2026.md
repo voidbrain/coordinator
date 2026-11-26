@@ -103,3 +103,7 @@ PR #104 reconciles to v10.24.2 (from 10.24.1; project-harness B-129). The owner 
 ## 2026-11-26 — harness v10.24.3
 
 Reconciles to v10.24.3 (from 10.24.2; project-harness B-130): `tools/solution.mjs`, `docs/agents/solution-profile.md` and `docs/agents/solution-dashboard.md` are byte-identical to the tag. The owner decided on 2026-11-26 ("NO! it's Coordinator") that this repository's records are `coordinator:ID`; `.solution.json` sets `id: "coordinator"`, `emoji: "🚦"` and `label: "Coordinator"`, and the live references are renamed. CI pending at this entry.
+
+## 2026-11-26 — main `393663f`
+
+PRs #99 to #114 merged with green CI (`npm run ci:status`): harness reconciles to v10.24.1 to v10.24.3, F-016 closed, F-020 decision work, F-024 opened and ordered at 7. No record waits on their CI; B-004 still waits on a day of scheduled runs (B-006).
