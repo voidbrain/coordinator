@@ -37,5 +37,11 @@
   "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "prs": [
+    {
+      "pr": 84,
+      "note": "fix"
+    }
   ]
 }
