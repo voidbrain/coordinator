@@ -1,11 +1,11 @@
 <!-- generated: project-harness solution dashboard; edit owning backlogs, not this file -->
 # voidbrain solution dashboard
 
-Snapshot: 2026‑11‑26T23:09:06.240Z. Read-only aggregation; no combined completion percentage. Solution integration status is independent of component status.
+Snapshot: 2026‑11‑26T23:09:46.972Z. Read-only aggregation; no combined completion percentage. Solution integration status is independent of component status.
 
 <table>
 <tr><th>Source</th><th>Revision</th><th>Snapshot state</th></tr>
-<tr valign="top"><td>Coordinator</td><td><a href="https://github.com/voidbrain/coordinator/commit/046bdce43b1a120f91c67bdba60f5fc4777f1c28">046bdce43b1a</a></td><td>Local changes — not a committed snapshot<br>requested working checkout<br>local checkout, not fetched</td></tr>
+<tr valign="top"><td>Coordinator</td><td><a href="https://github.com/voidbrain/coordinator/commit/11e4bdf801b93d3a4a08718d8f339e26a87bd0d8">11e4bdf801b9</a></td><td>Local changes — not a committed snapshot<br>requested working checkout<br>local checkout, not fetched</td></tr>
 <tr valign="top"><td>NERV</td><td><a href="https://github.com/voidbrain/nerv/commit/087b855607d5314b8a8e644d17ca342af6a84d8b">087b855607d5</a></td><td>Committed snapshot<br>requested main<br>GitHub<br>view published on backlog-views at cd99cb2e8827</td></tr>
 <tr valign="top"><td>Gauntlet</td><td><a href="https://github.com/voidbrain/gauntlet-protocol/commit/c131b5312b8bb2e812f4ea538c03585b550a57f9">c131b5312b8b</a></td><td>Committed snapshot<br>requested main<br>GitHub</td></tr>
 <tr valign="top"><td>Harness</td><td><a href="https://github.com/voidbrain/project-harness/commit/29ad9898480cb054f2b3ecc5197c3ede067e7d54">29ad9898480c</a></td><td>Committed snapshot<br>requested main<br>GitHub</td></tr>

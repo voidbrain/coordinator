@@ -44,6 +44,10 @@
     {
       "pr": 119,
       "note": "plan"
+    },
+    {
+      "pr": 120,
+      "note": "decision"
     }
   ],
   "ownerLink": "docs/decisions/solution-order-reorder.md"

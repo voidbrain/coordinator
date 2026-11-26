@@ -43,6 +43,10 @@
     {
       "pr": 119,
       "note": "plan"
+    },
+    {
+      "pr": 120,
+      "note": "decision"
     }
   ]
 }

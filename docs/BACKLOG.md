@@ -613,8 +613,8 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Status | PRs |
 |---|---|---|---|---|---|
-| — | <a id="f-025-t01"></a>F-025-T01 — Decision note: NERV opens the reorder PR (write path and guard rails) | 0.25 h | 0.25 h (stated) | Completed | [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan |
-| — | <a id="f-025-t02"></a>F-025-T02 — Owner decides the reorder write path | 0 h | 0 h | Completed | [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan |
+| — | <a id="f-025-t01"></a>F-025-T01 — Decision note: NERV opens the reorder PR (write path and guard rails) | 0.25 h | 0.25 h (stated) | Completed | [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan; [PR #120](https://github.com/voidbrain/coordinator/pull/120) decision |
+| — | <a id="f-025-t02"></a>F-025-T02 — Owner decides the reorder write path | 0 h | 0 h | Completed | [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan; [PR #120](https://github.com/voidbrain/coordinator/pull/120) decision |
 
 </details>
 
@@ -625,7 +625,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Steps: F-025-T01: [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan · F-025-T02: [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan · F-025-T03: [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan · F-025-T04: [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan. Plan: [#119](https://github.com/voidbrain/coordinator/pull/119) |
+| PR / evidence | Steps: F-025-T01: [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan; [PR #120](https://github.com/voidbrain/coordinator/pull/120) decision · F-025-T02: [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan; [PR #120](https://github.com/voidbrain/coordinator/pull/120) decision · F-025-T03: [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan · F-025-T04: [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan. Plan: [#119](https://github.com/voidbrain/coordinator/pull/119). Decision T01, T02: [#120](https://github.com/voidbrain/coordinator/pull/120) |
 | Opened | 2026-11-26 |
 | Verification | Pending |
 | Reviewed | 2026-11-26 |
