@@ -51,3 +51,7 @@ PR #70 (F-016-T01 Shared assets section in the domain map) merged on green CI.
 ## 2026-11-26 — main `5cd7567`
 
 PR #71 (F-016-T02 shared-asset checks in the gap review, F-016-T01 closed) merged on green CI.
+
+## 2026-11-26 — main `7974408`
+
+PR #72 (F-016-T02 closed) and PR #73 (refresh of the solution views) merged on green CI.
