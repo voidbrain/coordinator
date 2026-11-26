@@ -4,7 +4,7 @@ Current work ledger, reviewed 26 November 2026 against main `7f361af`. PRs #115 
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 32.75 h agent + 2.25 h owner across 32 open steps of 11 features and 2 other records. Generated from the task files.
+**Remaining effort:** 36.25 h agent + 2.75 h owner across 36 open steps of 12 features and 2 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -538,7 +538,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔹 P3 | 🟣 Very large | 12 h agent + 0.5 h owner | `project-harness:F-110-T04`, `nerv:F-147-T01` | — | ⏳ | — | — |
+| 🔴 Open | 🔹 P3 | 🟣 Very large | 12 h agent + 0.5 h owner | `project-harness:F-110-T04`, `nerv:F-147-T01` | [F-025-T03](#f-025-t03) | ⏳ | — | — |
 
 💻 **→** Next: F-024-T02 — S2: service skeleton in the coordinator (node:sqlite cache, rebuild from git, service files) (Planned).
 
@@ -554,7 +554,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|---|---|---|---|---|---|:---:|---|
 | 🟡 Medium | <a id="f-024-t02"></a>F-024-T02 — S2: service skeleton in the coordinator (node:sqlite cache, rebuild from git, service files) | 3 h | 0 h | 3 h | Planned | `project-harness:F-110-T04` | [F-024-T03](#f-024-t03) | ⏳ 🤖 | — |
 | 🟡 Medium | <a id="f-024-t03"></a>F-024-T03 — S3: poller for the nine repositories (main, PRs, CI, harness versions, audit dates) | 3 h | 0 h | 3 h | Planned | [F-024-T02](#f-024-t02) | [F-024-T04](#f-024-t04) | ⏳ 🤖 | — |
-| 🟡 Medium | <a id="f-024-t04"></a>F-024-T04 — S4: MCP read tools (record lookup, waiting on me, blocked by X) | 2 h | 0 h | 2 h | Planned | [F-024-T03](#f-024-t03) | [F-024-T05](#f-024-t05) | ⏳ 🤖 | — |
+| 🟡 Medium | <a id="f-024-t04"></a>F-024-T04 — S4: MCP read tools (record lookup, waiting on me, blocked by X) | 2 h | 0 h | 2 h | Planned | [F-024-T03](#f-024-t03) | [F-024-T05](#f-024-t05), [F-025-T03](#f-025-t03) | ⏳ 🤖 | — |
 | 🟡 Medium | <a id="f-024-t05"></a>F-024-T05 — S5: live dashboard screen with bricks, and the owner's install page | 3 h | 0 h | 3 h | Planned | [F-024-T04](#f-024-t04) | [F-024-T07](#f-024-t07) | ⏳ 🤖 | — |
 | 🟢 Small | <a id="f-024-t07"></a>F-024-T07 — S7: owner installs the index on the base holding NERV's coordinator role and places the token | 0 h | 0 h | 0 h agent + 0.5 h owner | Planned | [F-024-T05](#f-024-t05), `nerv:F-147-T01` | [F-024-T08](#f-024-t08) | ⏳ 🧑‍🔧 | — |
 | 🟢 Small | <a id="f-024-t08"></a>F-024-T08 — S8: two weeks of measurements, report to F-020 | 1 h | 0 h | 1 h | Planned | [F-024-T07](#f-024-t07) | — | ⏳ 🤖 | — |
@@ -578,6 +578,47 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|
 | PR / evidence | Steps: F-024-T01: [PR #115](https://github.com/voidbrain/coordinator/pull/115) · F-024-T06: [PR #115](https://github.com/voidbrain/coordinator/pull/115). [decision page](decisions/live-index.md); owner decision 2026-11-26 in chat ("2", "coordinator"); [#113](https://github.com/voidbrain/coordinator/pull/113); [#115](https://github.com/voidbrain/coordinator/pull/115); [#116](https://github.com/voidbrain/coordinator/pull/116) |
 | Components | nerv:F-016, nerv:F-132 |
+| Opened | 2026-11-26 |
+| Verification | Pending |
+| Reviewed | 2026-11-26 |
+
+</details>
+
+---
+### <a id="f-025"></a>[✨ F-025](#top)
+
+**Reorder the solution order by drag and drop, landed as a reviewed PR**
+
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🔴 Open | 🔹 P3 | 🟡 Medium | 3.5 h agent + 0.5 h owner | [F-024-T04](#f-024-t04) | — | 🤖 | — | — |
+
+💻 **→** Next: F-025-T01 — Decision page: how a drag-and-drop reorder becomes a reviewed PR (Planned).
+
+| | |
+|---|---|
+| **Issue** | Owner request 2026-11-26 (late evening): reorder the working list, `docs/solution-order.md` (shown on `SOLUTION-DASHBOARD.md`), by drag and drop. The coordinator has no UI; a UI belongs to the live index phase (F-024; harness F-110 released in v10.25.0; NERV's card 𖣂 nerv:F-147). Three parts: a 🧱 bricks sortable list (bricks:F-015), the NERV live index card using it (nerv:F-150), and here the write path. The rule stays: a reorder is an owner instruction landed as a small PR that changes only the list (solution-order.md, "Rules"), and git is the only truth; a drag never writes `main` silently. F-024's phase 1 is read-only ("the index never writes a record"), so the write path is a new decision. Depends on F-024 phase work: the service and MCP tools (F-024-T02 to T04) and the card (nerv:F-147). |
+| **Reproduce** | Today a reorder is a hand-edited PR to `docs/solution-order.md`; the live index (F-024) reads but cannot propose a change. |
+| **Check** | A decision on how a reorder becomes a PR (F-025-T01, T02); the chosen path takes an ordered list of references, rejects unknown references and a stale base (the list changed since the card loaded it), changes only the lines between the order markers, passes `node tools/solution.mjs check`, opens a PR the owner reviews and never merges it itself, with tests (T03); the owner reorders in NERV's card, merges the PR and sees the new order on the dashboard after a refresh (T04). |
+
+**Feature steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who |
+|---|---|---|---|---|---|---|---|:---:|
+| 🟢 Small | <a id="f-025-t01"></a>F-025-T01 — Decision page: how a drag-and-drop reorder becomes a reviewed PR | 1 h | 0 h | 1 h | Planned | — | [F-025-T02](#f-025-t02) | 🤖 |
+| 🟢 Small | <a id="f-025-t02"></a>F-025-T02 — Owner decides the reorder write path | 0 h | 0 h | 0 h agent + 0.25 h owner | Planned | [F-025-T01](#f-025-t01) | [F-025-T03](#f-025-t03) | ⏳ 🤔 |
+| 🟡 Medium | <a id="f-025-t03"></a>F-025-T03 — The chosen write path: a reorder proposal opens a PR to the solution order | 2.5 h | 0 h | 2.5 h | Planned | [F-025-T02](#f-025-t02), [F-024-T04](#f-024-t04) | [F-025-T04](#f-025-t04) | ⏳ 🤖 |
+| 🟢 Small | <a id="f-025-t04"></a>F-025-T04 — Owner reorders in NERV's card and merges the PR | 0 h | 0 h | 0 h agent + 0.25 h owner | Planned | [F-025-T03](#f-025-t03) | — | ⏳ 🧑‍🔧 |
+| 🟡 Medium | **Total** | 3.5 h | 0 h (0 of 4 steps recorded) | 3.5 h agent + 0.5 h owner | 0 of 4 completed | | | |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+[Full notes & evidence](work/records/F-025.md)
+
+| Field | Value |
+|---|---|
+| PR / evidence | pending |
 | Opened | 2026-11-26 |
 | Verification | Pending |
 | Reviewed | 2026-11-26 |
