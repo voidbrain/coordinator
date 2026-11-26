@@ -4,7 +4,7 @@
   "parent": "F-014",
   "title": "Confirm after the refresh that each accepted gap is gone (proposal 15 once openbando's reconcile lands)",
   "goal": "Confirm after the refresh that each accepted gap is gone",
-  "status": "planned",
+  "status": "closed",
   "acceptance": [
     "The gap review no longer lists proposals 1 to 14, and 15 once openbando reconciles, or what is left is recorded here"
   ],
@@ -28,10 +28,10 @@
   ],
   "effort": {
     "size": "small",
-    "estimate": "0.25 h",
-    "basis": "Estimated 2026-11-26: read the refreshed gap review once the component PRs land. Not a measurement.",
+    "estimate": "0 remaining",
+    "basis": "Estimated 2026-11-26: read the refreshed gap review once the component PRs land. Not a measurement. Closed 2026-11-26.",
     "reviewed": "2026-11-26",
-    "agentHours": 0.25,
+    "agentHours": 0,
     "estimateAgentHours": 0.25
   },
   "prs": []
