@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "planned",
+  "status": "closed",
   "id": "F-020-T05",
   "title": "Owner: accept or reject each proposal; decide the freeze lines for the other repositories",
   "goal": "Each proposal accepted or rejected and recorded on F-020 with its date",
@@ -30,11 +30,11 @@
   ],
   "effort": {
     "size": "small",
-    "estimate": "0.5 h owner",
-    "basis": "about 12 yes or no decisions at 2 to 3 minutes each, options pre-written in T04. Estimated 2026-11-26 at agent speed for coordinator-only work. Not a measurement.",
+    "estimate": "0 remaining",
+    "basis": "Owner answered in chat 2026-11-26 (\"F-020-T05 suggestions ok\"): accepted all eight proposals of the friction measurement (docs/reviews/2026-11-coherence/friction.md). Records opened: nerv B-174, project-harness B-127 (existing), F-111, F-112. The T04 consolidation proposals are not yet written, so their decisions are still to be asked in T04; this step records the friction proposals only. Estimated 0.5 h owner; not a measurement.",
     "reviewed": "2026-11-26",
     "agentHours": 0,
-    "ownerHours": 0.5,
+    "ownerHours": 0,
     "baselineAgentHours": 0,
     "estimateAgentHours": 0,
     "ownerKind": "decision"
