@@ -15,9 +15,9 @@
   "goal": "A proposal says whether blocks is due and which package comes first, with evidence",
   "acceptance": [
     "the maps domain (geo and routing logic) of hobo and openbando is the candidate the owner named; its overlap is verified in both projects' code on main before any package is proposed, and the proposal says if the evidence does not support it",
-    "the fpvbuddy battery core (fpvbuddy:F-005) is recorded as not a candidate only once NERV stops importing its own copy and uses fpvbuddy over MCP (nerv:F-101-T04, fpvbuddy:F-005-T02); while NERV still imports it, it qualifies for blocks and the proposal says so",
+    "the fpvbuddy battery core (fpvbuddy:F-005) is recorded as fpvbuddy's own package, not a blocks candidate: per the owner decision 2026-11-26 NERV never imports the FPV core (nerv:F-101-T05 cancelled); NERV's FPV data moves to fpvbuddy behind its MCP server (nerv:F-101-T08) and NERV reaches it over MCP only",
     "the grover and nerv alert contract is recorded as a distributed contract, a blocks contracts package only once producer and consumer import shared TypeScript types or validators",
-    "openbando's own blocks (blocks.ts, Bando building blocks) are noted as unrelated to \ud83e\uddca blocks",
+    "openbando's own blocks (blocks.ts, Bando building blocks) are noted as unrelated to 🧊 blocks",
     "the proposal names whether to create voidbrain/blocks and its first package, or why not yet, and docs/DOMAINS.md shared-domains rows are corrected where the code says otherwise",
     "reported to the owner through the gap review and recorded on this record"
   ],
@@ -36,7 +36,7 @@
   "effort": {
     "size": "small",
     "estimate": "1.5 h agent",
-    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work; re-estimated the same day for the owner's widened scope. Not a measurement. Candidates narrowed by the owner 2026-11-26; estimate unchanged.",
+    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work; re-estimated the same day for the owner's widened scope. Not a measurement. Candidates narrowed by the owner 2026-11-26; estimate unchanged. 2026-11-26: battery-core note corrected after the owner's FPVBuddy decision (nerv:F-101-T05 cancelled); estimate unchanged.",
     "reviewed": "2026-11-26",
     "agentHours": 1.5,
     "ownerHours": 0,
