@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "planned",
+  "status": "implemented",
   "id": "F-018-T01",
   "title": "Write the producer-neutral alert contract in SOLUTION",
   "goal": "One written alert shape any producer can send and NERV can deliver",
@@ -42,6 +42,10 @@
     {
       "pr": 77,
       "note": "plan"
+    },
+    {
+      "pr": 79,
+      "note": "contract"
     }
   ]
 }
