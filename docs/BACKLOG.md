@@ -4,7 +4,7 @@ Current work ledger, reviewed 26 November 2026 against main `393663f`. PRs #99 t
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 36.5 h agent + 2.75 h owner across 35 open steps of 11 features and 2 other records. Generated from the task files.
+**Remaining effort:** 35.75 h agent + 2.75 h owner across 33 open steps of 11 features and 2 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -538,9 +538,9 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔹 P3 | 🟣 Very large | 12.75 h agent + 0.5 h owner | — | — | 🤖 | — | — |
+| 🔴 Open | 🔹 P3 | 🟣 Very large | 12 h agent + 0.5 h owner | `project-harness:F-110-T04`, `nerv:F-147-T01` | — | ⏳ | — | — |
 
-💻 **→** Next: F-024-T01 — S1: propose the index builder to project-harness (Implemented; verification pending).
+💻 **→** Next: F-024-T02 — S2: service skeleton in the coordinator (node:sqlite cache, rebuild from git, service files) (Planned).
 
 | | |
 |---|---|
@@ -550,17 +550,24 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who |
-|---|---|---|---|---|---|---|---|:---:|
-| 🟢 Small | <a id="f-024-t01"></a>F-024-T01 — S1: propose the index builder to project-harness | 0.5 h | 0 h | 0.5 h | Implemented; verification pending | — | [F-024-T02](#f-024-t02) | 🤖 |
-| 🟢 Small | <a id="f-024-t06"></a>F-024-T06 — S6: propose the MCP surface card to nerv | 0.25 h | 0 h | 0.25 h | Implemented; verification pending | — | — | 🤖 |
-| 🟡 Medium | <a id="f-024-t02"></a>F-024-T02 — S2: service skeleton in the coordinator (node:sqlite cache, rebuild from git, service files) | 3 h | 0 h | 3 h | Planned | [F-024-T01](#f-024-t01) | [F-024-T03](#f-024-t03) | ⏳ 🤖 |
-| 🟡 Medium | <a id="f-024-t03"></a>F-024-T03 — S3: poller for the nine repositories (main, PRs, CI, harness versions, audit dates) | 3 h | 0 h | 3 h | Planned | [F-024-T02](#f-024-t02) | [F-024-T04](#f-024-t04) | ⏳ 🤖 |
-| 🟡 Medium | <a id="f-024-t04"></a>F-024-T04 — S4: MCP read tools (record lookup, waiting on me, blocked by X) | 2 h | 0 h | 2 h | Planned | [F-024-T03](#f-024-t03) | [F-024-T05](#f-024-t05) | ⏳ 🤖 |
-| 🟡 Medium | <a id="f-024-t05"></a>F-024-T05 — S5: live dashboard screen with bricks, and the owner's install page | 3 h | 0 h | 3 h | Planned | [F-024-T04](#f-024-t04) | [F-024-T07](#f-024-t07) | ⏳ 🤖 |
-| 🟢 Small | <a id="f-024-t07"></a>F-024-T07 — S7: owner installs the index on the base holding NERV's coordinator role and places the token | 0 h | 0 h | 0 h agent + 0.5 h owner | Planned | [F-024-T05](#f-024-t05) | [F-024-T08](#f-024-t08) | ⏳ 🧑‍🔧 |
-| 🟢 Small | <a id="f-024-t08"></a>F-024-T08 — S8: two weeks of measurements, report to F-020 | 1 h | 0 h | 1 h | Planned | [F-024-T07](#f-024-t07) | — | ⏳ 🤖 |
-| 🟣 Very large | **Total** | 12.75 h | 0 h (0 of 8 steps recorded) | 12.75 h agent + 0.5 h owner | 0 of 8 completed | | | |
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who | PRs |
+|---|---|---|---|---|---|---|---|:---:|---|
+| 🟡 Medium | <a id="f-024-t02"></a>F-024-T02 — S2: service skeleton in the coordinator (node:sqlite cache, rebuild from git, service files) | 3 h | 0 h | 3 h | Planned | `project-harness:F-110-T04` | [F-024-T03](#f-024-t03) | ⏳ 🤖 | — |
+| 🟡 Medium | <a id="f-024-t03"></a>F-024-T03 — S3: poller for the nine repositories (main, PRs, CI, harness versions, audit dates) | 3 h | 0 h | 3 h | Planned | [F-024-T02](#f-024-t02) | [F-024-T04](#f-024-t04) | ⏳ 🤖 | — |
+| 🟡 Medium | <a id="f-024-t04"></a>F-024-T04 — S4: MCP read tools (record lookup, waiting on me, blocked by X) | 2 h | 0 h | 2 h | Planned | [F-024-T03](#f-024-t03) | [F-024-T05](#f-024-t05) | ⏳ 🤖 | — |
+| 🟡 Medium | <a id="f-024-t05"></a>F-024-T05 — S5: live dashboard screen with bricks, and the owner's install page | 3 h | 0 h | 3 h | Planned | [F-024-T04](#f-024-t04) | [F-024-T07](#f-024-t07) | ⏳ 🤖 | — |
+| 🟢 Small | <a id="f-024-t07"></a>F-024-T07 — S7: owner installs the index on the base holding NERV's coordinator role and places the token | 0 h | 0 h | 0 h agent + 0.5 h owner | Planned | [F-024-T05](#f-024-t05), `nerv:F-147-T01` | [F-024-T08](#f-024-t08) | ⏳ 🧑‍🔧 | — |
+| 🟢 Small | <a id="f-024-t08"></a>F-024-T08 — S8: two weeks of measurements, report to F-020 | 1 h | 0 h | 1 h | Planned | [F-024-T07](#f-024-t07) | — | ⏳ 🤖 | — |
+| 🟣 Very large | **Total** | 12.75 h | 0 h (0 of 8 steps recorded) | 12 h agent + 0.5 h owner | 2 of 8 completed | | | | |
+
+<details><summary>Done steps (2)</summary>
+
+| Effort | Step | Estimate | Actual | Status | PRs |
+|---|---|---|---|---|---|
+| — | <a id="f-024-t01"></a>F-024-T01 — S1: propose the index builder to project-harness | 0.5 h | 0 h | Completed | [PR #115](https://github.com/voidbrain/coordinator/pull/115) |
+| — | <a id="f-024-t06"></a>F-024-T06 — S6: propose the MCP surface card to nerv | 0.25 h | 0 h | Completed | [PR #115](https://github.com/voidbrain/coordinator/pull/115) |
+
+</details>
 
 <details>
 <summary>Next action, estimates and evidence</summary>
@@ -569,7 +576,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | [decision page](decisions/live-index.md); owner decision 2026-11-26 in chat ("2", "coordinator"); [#113](https://github.com/voidbrain/coordinator/pull/113); [#115](https://github.com/voidbrain/coordinator/pull/115) |
+| PR / evidence | Steps: F-024-T01: [PR #115](https://github.com/voidbrain/coordinator/pull/115) · F-024-T06: [PR #115](https://github.com/voidbrain/coordinator/pull/115). [decision page](decisions/live-index.md); owner decision 2026-11-26 in chat ("2", "coordinator"); [#113](https://github.com/voidbrain/coordinator/pull/113); [#115](https://github.com/voidbrain/coordinator/pull/115) |
 | Components | nerv:F-016, nerv:F-132 |
 | Opened | 2026-11-26 |
 | Verification | Pending |

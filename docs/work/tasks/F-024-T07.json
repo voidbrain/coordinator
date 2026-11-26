@@ -18,7 +18,8 @@
     "agents never install it, never touch ~/.nerv, ~/.nerv-app or the live NERV service; a relocation of the coordinator role (nerv:F-016) reinstalls it on the new base from the same page"
   ],
   "dependsOn": [
-    "F-024-T05"
+    "F-024-T05",
+    "nerv:F-147-T01"
   ],
   "resources": [
     "docs/live-index-install.md",
