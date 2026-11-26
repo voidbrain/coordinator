@@ -11,11 +11,11 @@
   ],
   "status": "planned",
   "id": "F-018-T02",
-  "title": "Propose the side changes and record the owner's choice",
-  "goal": "Each repository that has to move gets a numbered proposal; the owner decides which side moves",
+  "title": "Write the side-change proposals for the eight differences from nerv:F-122",
+  "goal": "Each repository that would move gets a numbered proposal, ready for the owner to decide",
   "acceptance": [
-    "proposals through the gap review: the nerv step that generalises the alert poller (producer-scoped config and ledger, scope in place of roomId, night classes per producer table) for nerv:F-122 and nerv:F-101-T09; fpvbuddy:F-013-T01 and grover:F-008 only where their shape differs from the contract",
-    "🧑 the owner accepts or rejects each and decides which side moves; the decision is recorded on F-018 with its date",
+    "per the gap review, one numbered proposal for each of the eight differences in SOLUTION \"Differences from nerv:F-122's design\": the owning repository and the exact record or step to create there (title, one-line Issue, Check); the nerv step that generalises the alert poller (producer-scoped config and ledger, scope in place of roomId, night classes per producer table) for nerv:F-122 and nerv:F-101-T09; fpvbuddy:F-013-T01 and grover:F-008 only where their shape differs from the contract",
+    "the proposals are written in this repository (a page the owner decision F-018-T03 links as its ownerLink) and listed on F-018 with the date",
     "nothing is edited in a component from this repository"
   ],
   "dependsOn": [
@@ -30,11 +30,11 @@
   ],
   "effort": {
     "size": "small",
-    "estimate": "0.5 h agent, 0.25 h owner",
-    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work, from the size of F-017-T02 and the F-122 design page. Not a measurement.",
+    "estimate": "0.5 h agent",
+    "basis": "Estimated 2026-11-26 at agent speed for coordinator-only work, from the size of F-017-T02 and the F-122 design page. Not a measurement. Split 2026-11-26: the owner decision moved to F-018-T03 (one actor per step).",
     "reviewed": "2026-11-26",
     "agentHours": 0.5,
-    "ownerHours": 0.25,
+    "ownerHours": 0,
     "baselineAgentHours": 0.5,
     "estimateAgentHours": 0.5
   },
@@ -42,6 +42,10 @@
     {
       "pr": 77,
       "note": "plan"
+    },
+    {
+      "pr": 85,
+      "note": "split"
     }
   ]
 }

@@ -51,6 +51,7 @@ A project that deliberately does not use a shared asset for a piece of work reco
 |---|---|---|---|
 | 🧱 bricks | Gauntlet | Not model-facing: UI only | 2026-11-26, [F-016](BACKLOG.md#f-016) |
 | 🧊 blocks | Gauntlet | Not model-facing: domain logic and typed contracts only | 2026-11-26, [F-016](BACKLOG.md#f-016) |
+| 🏚️ openbando | 🧱 bricks | Own design system (`design-system/`: tokens, component guides, the mascot and the racing look); bricks adds components only on demand, and openbando has none. If openbando later wants bricks, it opens an adoption record | 2026-11-26, [openbando:F-054](https://github.com/voidbrain/openbando/blob/61bd078/docs/archive/backlog-2026.md#f-054) ([openbando#297](https://github.com/voidbrain/openbando/pull/297)) |
 
 ## Distributed contracts
 

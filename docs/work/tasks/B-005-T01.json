@@ -4,7 +4,7 @@
   "parent": "B-005",
   "title": "Teach the refresh guard the HTML order table, failing test first",
   "goal": "A refresh that only drops Done order items merges itself again",
-  "status": "implemented",
+  "status": "closed",
   "acceptance": [
     "A committed test in test/refresh-guard.test.mjs with an HTML order table fails before the fix",
     "closedRefs reads Closed items from both the Markdown and the HTML layout; an item not Closed is still refused",
@@ -23,7 +23,7 @@
   "effort": {
     "size": "small",
     "estimate": "0 remaining",
-    "basis": "Estimated 2026-11-26: one parser and one test, the same shape as the views-changed HTML change. Not a measurement. Implemented 2026-11-26: closedRefs reads HTML rows too; failing-first test committed before the fix.",
+    "basis": "Estimated 2026-11-26: one parser and one test, the same shape as the views-changed HTML change. Not a measurement. Implemented 2026-11-26: closedRefs reads HTML rows too; failing-first test committed before the fix. Closed 2026-11-26.",
     "reviewed": "2026-11-26",
     "agentHours": 0,
     "ownerHours": 0,

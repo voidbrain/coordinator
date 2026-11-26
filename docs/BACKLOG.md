@@ -1,10 +1,10 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 26 November 2026 against main `4b843ac`. PR #82 (close F-017-T04) merged on green CI.
+Current work ledger, reviewed 26 November 2026 against main `7a69164`. PRs #83 (F-017-T05, audit.enforce) and #84 (B-005, refresh guard reads the HTML order table) merged on green CI. F-017-T05 and B-005 closed in #85; B-005 replayed on refresh PR #73 (prints ok).
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 19.75 h agent + 1.5 h owner across 26 open steps of 7 features and 4 other records. Generated from the task files.
+**Remaining effort:** 19.75 h agent + 1.5 h owner across 25 open steps of 7 features and 3 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -45,44 +45,6 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | Opened | 2026-11-25 |
 | Verification | Pending |
 | Reviewed | 2026-11-25 |
-
-</details>
-
----
-### <a id="b-005"></a>[🐞 B-005](#top)
-
-**The refresh guard cannot read the HTML dashboard, so a refresh that drops a Done order item never merges itself**
-
-| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
-|---|---|---|---|---|---|:---:|:---:|:---:|
-| 🟡 Implemented | 🔹 P3 | 🟢 Small | 0 h | — | — | 🤖 | — | — |
-
-💻 **→** Next: B-005-T01 — Teach the refresh guard the HTML order table, failing test first (Implemented; verification pending).
-
-| | |
-|---|---|
-| **Issue** | Full audit 2026-11-26 ([report](audits/2026-11-26-coordinator-full.md), finding 1). Since the 10.21.4 reconcile (`5209733`, `.solution.json` `htmlTables: true`) the dashboard's order table is HTML, but `closedRefs` in `tools/refresh-guard.mjs` reads only Markdown rows starting with a pipe. It finds no Closed item, so any refresh that drops a Done order item has auto-merge refused (refresh PR #73: "nerv:B-118 was removed but the dashboard does not show it Closed"). It fails safe: a person must land the PR. |
-| **Reproduce** | In a checkout at `22744b2`: `node -e` importing `orderReasons` from `tools/refresh-guard.mjs`, with the committed dashboard where item 1's status cell reads `Closed: ✅ Done: closed` and the order without item 1: it returns the reason above; the same row as a Markdown table returns none. |
-| **Check** | `test/refresh-guard.test.mjs` has a case with an HTML order table (`<tr><td>` cells, the item as a link) that fails before the fix; the guard accepts dropping a Done item from either layout and still refuses an item that is not Closed; the next refresh that drops a Done item merges itself. |
-
-**Steps**
-
-| Effort | Step | Estimate | Actual | Remaining | Status | PRs |
-|---|---|---|---|---|---|---|
-| 🟢 Small | <a id="b-005-t01"></a>B-005-T01 — Teach the refresh guard the HTML order table, failing test first | 1 h | 0 h | 0 h | Implemented; verification pending | [PR #84](https://github.com/voidbrain/coordinator/pull/84) fix |
-| 🟢 Small | **Total** | 1 h | 0 h (0 of 1 steps recorded) | 0 h | 0 of 1 completed | |
-
-<details>
-<summary>Next action, estimates and PR history</summary>
-
-[Full notes & evidence](work/records/B-005.md)
-
-| Field | Value |
-|---|---|
-| PR / evidence | Steps: B-005-T01: [PR #84](https://github.com/voidbrain/coordinator/pull/84) fix. [#81](https://github.com/voidbrain/coordinator/pull/81) (opened); [#84](https://github.com/voidbrain/coordinator/pull/84) (fix); [full audit 2026-11-26](audits/2026-11-26-coordinator-full.md) |
-| Opened | 2026-11-26 |
-| Verification | Pending: the PR's green CI; the next refresh that drops a Done item merges itself |
-| Reviewed | 2026-11-26 |
 
 </details>
 
@@ -406,7 +368,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|---|---|---|---|:---:|:---:|:---:|
 | 🔴 Open | 🔹 P3 | 🟢 Small | 0 h | — | — | 🤖 | — | — |
 
-💻 **→** Next: F-017-T05 — Turn audit.enforce on after the full audit (Implemented; verification pending).
+💻 **→** Next: F-017-T06 — Check 6: dormant checks, first run (Implemented; verification pending).
 
 | | |
 |---|---|
@@ -418,11 +380,10 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | PRs |
 |---|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-017-t05"></a>F-017-T05 — Turn audit.enforce on after the full audit | 0.25 h | 0 h | 0 h | Implemented; verification pending | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan; [PR #83](https://github.com/voidbrain/coordinator/pull/83) setting |
 | 🟢 Small | <a id="f-017-t06"></a>F-017-T06 — Check 6: dormant checks, first run | 1.5 h | 0 h | 0 h | Implemented; verification pending | [PR #80](https://github.com/voidbrain/coordinator/pull/80) dormant checks run |
-| 🟢 Small | **Total** | 8.25 h | 0 h (0 of 6 steps recorded) | 0 h | 4 of 6 completed | |
+| 🟢 Small | **Total** | 8.25 h | 0 h (0 of 6 steps recorded) | 0 h | 5 of 6 completed | |
 
-<details><summary>Done steps (4)</summary>
+<details><summary>Done steps (5)</summary>
 
 | Effort | Step | Estimate | Actual | Status | PRs |
 |---|---|---|---|---|---|
@@ -430,6 +391,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | — | <a id="f-017-t02"></a>F-017-T02 — First cross-project audit run | 1.5 h | 0 h | Completed | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #74](https://github.com/voidbrain/coordinator/pull/74) first run; [PR #75](https://github.com/voidbrain/coordinator/pull/75) close |
 | — | <a id="f-017-t03"></a>F-017-T03 — Proposal to project-harness: automate checks 1 and 5 | 0.5 h | 0 h | Completed | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #77](https://github.com/voidbrain/coordinator/pull/77) proposal; [PR #78](https://github.com/voidbrain/coordinator/pull/78) close |
 | — | <a id="f-017-t04"></a>F-017-T04 — Full audit of the coordinator (manifest kind full) | 2 h | 0 h | Completed | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan; [PR #81](https://github.com/voidbrain/coordinator/pull/81) full audit; [PR #82](https://github.com/voidbrain/coordinator/pull/82) close |
+| — | <a id="f-017-t05"></a>F-017-T05 — Turn audit.enforce on after the full audit | 0.25 h | 0 h | Completed | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan; [PR #83](https://github.com/voidbrain/coordinator/pull/83) setting |
 
 </details>
 
@@ -457,20 +419,21 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|---|---|---|---|:---:|:---:|:---:|
 | 🔴 Open | 🔹 P3 | 🟢 Small | 0.5 h agent + 0.25 h owner | — | — | 🤖 | — | — |
 
-💻 **→** Next: F-018-T02 — Propose the side changes and record the owner's choice (Planned).
+💻 **→** Next: F-018-T02 — Write the side-change proposals for the eight differences from nerv:F-122 (Planned).
 
 | | |
 |---|---|
 | **Issue** | Cross-project audit 2026-11-26, proposal 9, accepted by the owner 2026-11-26. fpvbuddy:F-013 (battery storage alerts) and nerv:F-101-T09 reuse "nerv:F-122's contract", but [F-122's design](https://github.com/voidbrain/nerv/blob/353fe20/docs/decisions/grover-alert-delivery.md) is Grover-only: entries without `roomId` are skipped, config and ledger are `grover`, and night classes come from Grover key shapes. [fpvbuddy:F-013-T01](https://github.com/voidbrain/FPVBuddy/blob/13a259d/docs/work/tasks/F-013-T01.json) already asks what replaces `roomId`. [DOMAINS](DOMAINS.md#distributed-contracts) says the alert contract generalises when a second producer sends alerts. |
 | **Reproduce** | Read nerv's `docs/decisions/grover-alert-delivery.md` and fpvbuddy:F-013-T01: no written shape covers a producer other than Grover; [SOLUTION](SOLUTION.md) names `grover_alerts` only. |
-| **Check** | [SOLUTION](SOLUTION.md) has one alert contract for any producer: key, level, message, since, an optional scope that replaces `roomId`, and a serious/minor table per producer (grover, fpvbuddy), with the DOMAINS "Distributed contracts" Alerts row pointing at it (F-018-T01); the nerv step that generalises the poller, and any producer change, is proposed to its owning repository through the gap review, and the owner decides which side moves (F-018-T02). |
+| **Check** | [SOLUTION](SOLUTION.md) has one alert contract for any producer: key, level, message, since, an optional scope that replaces `roomId`, and a serious/minor table per producer (grover, fpvbuddy), with the DOMAINS "Distributed contracts" Alerts row pointing at it (F-018-T01); the nerv step that generalises the poller, and any producer change, is proposed to its owning repository through the gap review (F-018-T02), and the owner decides which side moves (F-018-T03). |
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status | PRs |
-|---|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-018-t02"></a>F-018-T02 — Propose the side changes and record the owner's choice | 0.5 h | 0 h | 0.5 h agent + 0.25 h owner | Planned | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan |
-| 🟢 Small | **Total** | 2 h | 0 h (0 of 2 steps recorded) | 0.5 h agent + 0.25 h owner | 1 of 2 completed | |
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who | PRs |
+|---|---|---|---|---|---|---|---|:---:|---|
+| 🟢 Small | <a id="f-018-t02"></a>F-018-T02 — Write the side-change proposals for the eight differences from nerv:F-122 | 0.5 h | 0 h | 0.5 h | Planned | — | [F-018-T03](#f-018-t03) | 🤖 | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan; [PR #85](https://github.com/voidbrain/coordinator/pull/85) split |
+| 🟢 Small | <a id="f-018-t03"></a>F-018-T03 — Owner: decide which side moves for each alert-contract proposal | 0 h | 0 h | 0 h agent + 0.25 h owner | Planned | [F-018-T02](#f-018-t02) | — | ⏳ 🤔 | [PR #85](https://github.com/voidbrain/coordinator/pull/85) split |
+| 🟢 Small | **Total** | 2 h | 0 h (0 of 3 steps recorded) | 0.5 h agent + 0.25 h owner | 1 of 3 completed | | | | |
 
 <details><summary>Done steps (1)</summary>
 
@@ -487,7 +450,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Steps: F-018-T01: [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan; [PR #79](https://github.com/voidbrain/coordinator/pull/79) contract; [PR #81](https://github.com/voidbrain/coordinator/pull/81) close · F-018-T02: [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan. [#77](https://github.com/voidbrain/coordinator/pull/77) (plan); [#79](https://github.com/voidbrain/coordinator/pull/79) (F-018-T01 contract); [#81](https://github.com/voidbrain/coordinator/pull/81) (close F-018-T01); cross-project audit [2026-11-26](audits/2026-11-26-cross-project.md), proposal 9; owner acceptance 2026-11-26 |
+| PR / evidence | Steps: F-018-T01: [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan; [PR #79](https://github.com/voidbrain/coordinator/pull/79) contract; [PR #81](https://github.com/voidbrain/coordinator/pull/81) close · F-018-T02: [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan; [PR #85](https://github.com/voidbrain/coordinator/pull/85) split · F-018-T03: [PR #85](https://github.com/voidbrain/coordinator/pull/85) split. [#77](https://github.com/voidbrain/coordinator/pull/77) (plan); [#79](https://github.com/voidbrain/coordinator/pull/79) (F-018-T01 contract); [#81](https://github.com/voidbrain/coordinator/pull/81) (close F-018-T01); [#85](https://github.com/voidbrain/coordinator/pull/85) (split F-018-T02 and F-018-T03); cross-project audit [2026-11-26](audits/2026-11-26-cross-project.md), proposal 9; owner acceptance 2026-11-26 |
 | Components | nerv:F-122, nerv:F-101, fpvbuddy:F-013, grover:F-008 |
 | Opened | 2026-11-26 |
 | Verification | Pending |
