@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "implemented",
+  "status": "closed",
   "id": "F-024-T06",
   "title": "S6: propose the MCP surface card to nerv",
   "goal": "NERV shows the index through MCP surface cards like any project, built by a nerv session",
@@ -25,9 +25,9 @@
   ],
   "effort": {
     "size": "small",
-    "estimate": "0.25 h agent",
-    "basis": "One short proposal; the card (S6, 1 h) is estimated in nerv. Estimated 2026-11-26 from the decision page's step table (docs/decisions/live-index.md, \"Steps, if approved\"), at agent speed, failing test first for code. Not a measurement. 2026-11-26: written before F-024-T04 on the owner's instruction in chat (\"1 2 ok\", point 2: turn the live-index proposals into records now); the nerv record itself waits on F-024-T04, so this proposal no longer does.",
-    "agentHours": 0.25,
+    "estimate": "0 remaining",
+    "basis": "One short proposal; the card (S6, 1 h) is estimated in nerv. Estimated 2026-11-26 from the decision page's step table (docs/decisions/live-index.md, \"Steps, if approved\"), at agent speed, failing test first for code. Not a measurement. 2026-11-26: written before F-024-T04 on the owner's instruction in chat (\"1 2 ok\", point 2: turn the live-index proposals into records now); the nerv record itself waits on F-024-T04, so this proposal no longer does. Closed 2026-11-26: PR #115 merged on green CI (main 76055d8 green); the proposal is the whole acceptance; its record exists in the component (nerv:F-147).",
+    "agentHours": 0,
     "reviewed": "2026-11-26",
     "baselineAgentHours": 0.25,
     "estimateAgentHours": 0.25
@@ -35,5 +35,9 @@
   "validation": [
     "npm run check:fast; final applicable CI"
   ],
-  "prs": []
+  "prs": [
+    {
+      "pr": 115
+    }
+  ]
 }

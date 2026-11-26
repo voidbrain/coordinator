@@ -20,7 +20,8 @@
     "the AGENTS.md project line \"Nothing is built or deployed\" is changed to name the service, citing the owner decision of 2026-11-26, with the maintenance review that an AGENTS.md change needs"
   ],
   "dependsOn": [
-    "F-024-T01"
+    "F-024-T01",
+    "project-harness:F-110-T04"
   ],
   "resources": [
     "src/**",

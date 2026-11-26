@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "implemented",
+  "status": "closed",
   "id": "F-024-T01",
   "title": "S1: propose the index builder to project-harness",
   "goal": "A proposal page a project-harness session can open as its own record, as the decision page says (the builder is generic, template first)",
@@ -26,9 +26,9 @@
   ],
   "effort": {
     "size": "small",
-    "estimate": "0.5 h agent",
-    "basis": "One proposal page from the decision page's S1 row; the builder itself (S1, 4 h) is estimated in project-harness. Estimated 2026-11-26 from the decision page's step table (docs/decisions/live-index.md, \"Steps, if approved\"), at agent speed, failing test first for code. Not a measurement.",
-    "agentHours": 0.5,
+    "estimate": "0 remaining",
+    "basis": "One proposal page from the decision page's S1 row; the builder itself (S1, 4 h) is estimated in project-harness. Estimated 2026-11-26 from the decision page's step table (docs/decisions/live-index.md, \"Steps, if approved\"), at agent speed, failing test first for code. Not a measurement. Closed 2026-11-26: PR #115 merged on green CI (main 76055d8 green); the proposal is the whole acceptance; its record exists in the component (project-harness:F-110).",
+    "agentHours": 0,
     "reviewed": "2026-11-26",
     "baselineAgentHours": 0.5,
     "estimateAgentHours": 0.5
@@ -36,5 +36,9 @@
   "validation": [
     "npm run check:fast; final applicable CI"
   ],
-  "prs": []
+  "prs": [
+    {
+      "pr": 115
+    }
+  ]
 }
