@@ -406,7 +406,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|---|---|---|---|:---:|:---:|:---:|
 | 🔴 Open | 🔹 P3 | 🟢 Small | 0 h | — | — | 🤖 | — | — |
 
-💻 **→** Next: F-017-T05 — Turn audit.enforce on after the full audit (Implemented; verification pending).
+💻 **→** Next: F-017-T06 — Check 6: dormant checks, first run (Implemented; verification pending).
 
 | | |
 |---|---|
@@ -418,11 +418,10 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | PRs |
 |---|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-017-t05"></a>F-017-T05 — Turn audit.enforce on after the full audit | 0.25 h | 0 h | 0 h | Implemented; verification pending | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan; [PR #83](https://github.com/voidbrain/coordinator/pull/83) setting |
 | 🟢 Small | <a id="f-017-t06"></a>F-017-T06 — Check 6: dormant checks, first run | 1.5 h | 0 h | 0 h | Implemented; verification pending | [PR #80](https://github.com/voidbrain/coordinator/pull/80) dormant checks run |
-| 🟢 Small | **Total** | 8.25 h | 0 h (0 of 6 steps recorded) | 0 h | 4 of 6 completed | |
+| 🟢 Small | **Total** | 8.25 h | 0 h (0 of 6 steps recorded) | 0 h | 5 of 6 completed | |
 
-<details><summary>Done steps (4)</summary>
+<details><summary>Done steps (5)</summary>
 
 | Effort | Step | Estimate | Actual | Status | PRs |
 |---|---|---|---|---|---|
@@ -430,6 +429,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | — | <a id="f-017-t02"></a>F-017-T02 — First cross-project audit run | 1.5 h | 0 h | Completed | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #74](https://github.com/voidbrain/coordinator/pull/74) first run; [PR #75](https://github.com/voidbrain/coordinator/pull/75) close |
 | — | <a id="f-017-t03"></a>F-017-T03 — Proposal to project-harness: automate checks 1 and 5 | 0.5 h | 0 h | Completed | [PR #66](https://github.com/voidbrain/coordinator/pull/66) plan; [PR #77](https://github.com/voidbrain/coordinator/pull/77) proposal; [PR #78](https://github.com/voidbrain/coordinator/pull/78) close |
 | — | <a id="f-017-t04"></a>F-017-T04 — Full audit of the coordinator (manifest kind full) | 2 h | 0 h | Completed | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan; [PR #81](https://github.com/voidbrain/coordinator/pull/81) full audit; [PR #82](https://github.com/voidbrain/coordinator/pull/82) close |
+| — | <a id="f-017-t05"></a>F-017-T05 — Turn audit.enforce on after the full audit | 0.25 h | 0 h | Completed | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan; [PR #83](https://github.com/voidbrain/coordinator/pull/83) setting |
 
 </details>
 
@@ -457,20 +457,21 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|---|---|---|---|:---:|:---:|:---:|
 | 🔴 Open | 🔹 P3 | 🟢 Small | 0.5 h agent + 0.25 h owner | — | — | 🤖 | — | — |
 
-💻 **→** Next: F-018-T02 — Propose the side changes and record the owner's choice (Planned).
+💻 **→** Next: F-018-T02 — Write the side-change proposals for the eight differences from nerv:F-122 (Planned).
 
 | | |
 |---|---|
 | **Issue** | Cross-project audit 2026-11-26, proposal 9, accepted by the owner 2026-11-26. fpvbuddy:F-013 (battery storage alerts) and nerv:F-101-T09 reuse "nerv:F-122's contract", but [F-122's design](https://github.com/voidbrain/nerv/blob/353fe20/docs/decisions/grover-alert-delivery.md) is Grover-only: entries without `roomId` are skipped, config and ledger are `grover`, and night classes come from Grover key shapes. [fpvbuddy:F-013-T01](https://github.com/voidbrain/FPVBuddy/blob/13a259d/docs/work/tasks/F-013-T01.json) already asks what replaces `roomId`. [DOMAINS](DOMAINS.md#distributed-contracts) says the alert contract generalises when a second producer sends alerts. |
 | **Reproduce** | Read nerv's `docs/decisions/grover-alert-delivery.md` and fpvbuddy:F-013-T01: no written shape covers a producer other than Grover; [SOLUTION](SOLUTION.md) names `grover_alerts` only. |
-| **Check** | [SOLUTION](SOLUTION.md) has one alert contract for any producer: key, level, message, since, an optional scope that replaces `roomId`, and a serious/minor table per producer (grover, fpvbuddy), with the DOMAINS "Distributed contracts" Alerts row pointing at it (F-018-T01); the nerv step that generalises the poller, and any producer change, is proposed to its owning repository through the gap review, and the owner decides which side moves (F-018-T02). |
+| **Check** | [SOLUTION](SOLUTION.md) has one alert contract for any producer: key, level, message, since, an optional scope that replaces `roomId`, and a serious/minor table per producer (grover, fpvbuddy), with the DOMAINS "Distributed contracts" Alerts row pointing at it (F-018-T01); the nerv step that generalises the poller, and any producer change, is proposed to its owning repository through the gap review (F-018-T02), and the owner decides which side moves (F-018-T03). |
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status | PRs |
-|---|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-018-t02"></a>F-018-T02 — Propose the side changes and record the owner's choice | 0.5 h | 0 h | 0.5 h agent + 0.25 h owner | Planned | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan |
-| 🟢 Small | **Total** | 2 h | 0 h (0 of 2 steps recorded) | 0.5 h agent + 0.25 h owner | 1 of 2 completed | |
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who | PRs |
+|---|---|---|---|---|---|---|---|:---:|---|
+| 🟢 Small | <a id="f-018-t02"></a>F-018-T02 — Write the side-change proposals for the eight differences from nerv:F-122 | 0.5 h | 0 h | 0.5 h | Planned | — | [F-018-T03](#f-018-t03) | 🤖 | [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan |
+| 🟢 Small | <a id="f-018-t03"></a>F-018-T03 — Owner: decide which side moves for each alert-contract proposal | 0 h | 0 h | 0 h agent + 0.25 h owner | Planned | [F-018-T02](#f-018-t02) | — | ⏳ 🤔 | — |
+| 🟢 Small | **Total** | 2 h | 0 h (0 of 3 steps recorded) | 0.5 h agent + 0.25 h owner | 1 of 3 completed | | | | |
 
 <details><summary>Done steps (1)</summary>
 

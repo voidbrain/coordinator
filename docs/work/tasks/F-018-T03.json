@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "parent": "F-018",
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git. Component repositories are read, never written.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "status": "planned",
+  "id": "F-018-T03",
+  "title": "Owner: decide which side moves for each alert-contract proposal",
+  "goal": "The owner accepts or rejects each F-018-T02 proposal and decides which side moves",
+  "acceptance": [
+    "🧑 the owner accepts or rejects each proposal of F-018-T02 and decides which side moves; the decision and its date are recorded on F-018",
+    "accepted proposals are created by sessions in their own repositories; nothing is edited in a component from this repository"
+  ],
+  "dependsOn": [
+    "F-018-T02"
+  ],
+  "resources": [
+    "docs/work/records/F-018.md",
+    "generated:backlog-views"
+  ],
+  "validation": [
+    "The decision is recorded on F-018"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "0.25 h owner",
+    "basis": "Estimated 2026-11-26: one decision per proposal over eight written proposals. Not a measurement. Split from F-018-T02 on 2026-11-26.",
+    "reviewed": "2026-11-26",
+    "agentHours": 0,
+    "ownerHours": 0.25,
+    "baselineAgentHours": 0,
+    "estimateAgentHours": 0,
+    "ownerKind": "decision"
+  }
+}
