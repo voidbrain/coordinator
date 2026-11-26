@@ -14,11 +14,12 @@
   "title": "Owner: decide which side moves for each alert-contract proposal",
   "goal": "The owner accepts or rejects each F-018-T02 proposal and decides which side moves",
   "acceptance": [
-    "🧑 the owner accepts or rejects each proposal of F-018-T02 and decides which side moves; the decision and its date are recorded on F-018",
+    "🧑 the owner accepts or rejects each proposal of F-018-T02 and F-018-T05 (the heartbeat and producer fallback) and decides which side moves; the decision and its date are recorded on F-018",
     "accepted proposals are created by sessions in their own repositories; nothing is edited in a component from this repository"
   ],
   "dependsOn": [
-    "F-018-T02"
+    "F-018-T02",
+    "F-018-T05"
   ],
   "resources": [
     "docs/work/records/F-018.md",
