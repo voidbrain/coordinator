@@ -4,7 +4,7 @@ Current work ledger, reviewed 26 November 2026 against main `4cd62c3`. PR #86 (B
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 19.5 h agent + 1.25 h owner across 23 open steps of 7 features and 2 other records. Generated from the task files.
+**Remaining effort:** 31.75 h agent + 1.75 h owner across 29 open steps of 8 features and 2 other records. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -413,6 +413,50 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|
 | PR / evidence | Steps: F-018-T01: [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan; [PR #79](https://github.com/voidbrain/coordinator/pull/79) contract; [PR #81](https://github.com/voidbrain/coordinator/pull/81) close · F-018-T02: [PR #77](https://github.com/voidbrain/coordinator/pull/77) plan; [PR #85](https://github.com/voidbrain/coordinator/pull/85) split · F-018-T03: [PR #85](https://github.com/voidbrain/coordinator/pull/85) split. [#77](https://github.com/voidbrain/coordinator/pull/77) (plan); [#79](https://github.com/voidbrain/coordinator/pull/79) (F-018-T01 contract); [#81](https://github.com/voidbrain/coordinator/pull/81) (close F-018-T01); [#85](https://github.com/voidbrain/coordinator/pull/85) (split F-018-T02 and F-018-T03); cross-project audit [2026-11-26](audits/2026-11-26-cross-project.md), proposal 9; owner acceptance 2026-11-26 |
 | Components | nerv:F-122, nerv:F-101, fpvbuddy:F-013, grover:F-008 |
+| Opened | 2026-11-26 |
+| Verification | Pending |
+| Reviewed | 2026-11-26 |
+
+</details>
+
+---
+### <a id="f-020"></a>[✨ F-020](#top)
+
+**Coherence review: docs and procedures consistent, clear and fluent, per repo and across repos**
+
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🔴 Open | 🔹 P3 | 🟣 Very large | 12.25 h agent + 0.5 h owner | — | — | 🤖 | — | — |
+
+💻 **→** Next: F-020-T01 — Per-repo coherence read by a fresh-context agent, one checklist item per repository (9) (Planned).
+
+| | |
+|---|---|
+| **Issue** | On 2026-11-26 about 15 records and 3 procedures were added across project-harness, the coordinator and the projects in one day. Evidence that the rule set grew faster than it was kept coherent: size warnings (project-harness `rule-review.md` about 2,300 of 2,000 tokens; records over budget: project-harness F-096, nerv F-125, coordinator F-016); the same topic in several places (audit cadence: project-harness F-104-T03 and F-105, [cross-project audit](agents/cross-project-audit.md) check 5, per-project audit settings); agent slips the same day (a silently forked copied harness file, a reversed battery-core wording, a skipped failing-first test, an edit in NERV's primary checkout); the owner needed plain-language re-explanations of decision questions (project-harness F-102-T01, coordinator B-007, nerv F-132-T04 options). |
+| **Reproduce** | `npm run check:backlog` and `npm run check:rules` in project-harness, nerv and the coordinator at 2026-11-26 report the size warnings above; grep the audit cadence in the three places named; the slips and the re-explanations are in the 2026-11-26 sessions' PR threads and chat. |
+| **Check** | One page per repository and one cross-repository page under `docs/reviews/2026-11-coherence/` list contradictions, duplicate rules, dead links, terms used two ways, procedures unreachable from AGENTS.md, pages and records over budget and decision questions the owner cannot answer as written (F-020-T01, T02); the friction evidence names the behaviour runs used (F-020-T03); numbered consolidation proposals keep every requirement (F-020-T04); the owner decided each (F-020-T05); the freeze below is lifted (F-020-T06). |
+
+**Feature steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who | PRs |
+|---|---|---|---|---|---|---|---|:---:|---|
+| 🟡 Medium | <a id="f-020-t01"></a>F-020-T01 — Per-repo coherence read by a fresh-context agent, one checklist item per repository (9) | 4 h | 0 h | 4 h | Planned | — | [F-020-T02](#f-020-t02), [F-020-T03](#f-020-t03) | 🤖 | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan |
+| 🟡 Medium | <a id="f-020-t02"></a>F-020-T02 — Cross-repo pass: rules that differ without a project marker, one owner per topic | 2 h | 0 h | 2 h | Planned | [F-020-T01](#f-020-t01) | [F-020-T04](#f-020-t04) | ⏳ 🤖 | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan |
+| 🟡 Medium | <a id="f-020-t03"></a>F-020-T03 — Measure friction: behaviour checks in 2 or 3 representative repositories plus the friction logs | 3 h | 0 h | 3 h | Planned | [F-020-T01](#f-020-t01) | [F-020-T04](#f-020-t04) | ⏳ 🤖 | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan |
+| 🟡 Medium | <a id="f-020-t04"></a>F-020-T04 — Consolidation proposals per repository, as proposals to each owning repository | 3 h | 0 h | 3 h | Planned | [F-020-T02](#f-020-t02), [F-020-T03](#f-020-t03) | [F-020-T05](#f-020-t05) | ⏳ 🤖 | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan |
+| 🟢 Small | <a id="f-020-t05"></a>F-020-T05 — Owner: accept or reject each proposal; decide the freeze lines for the other repositories | 0 h | 0 h | 0 h agent + 0.5 h owner | Planned | [F-020-T04](#f-020-t04) | [F-020-T06](#f-020-t06) | ⏳ 🤔 | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan |
+| 🟢 Small | <a id="f-020-t06"></a>F-020-T06 — Lift the freeze on new procedures here and record the outcome | 0.25 h | 0 h | 0.25 h | Planned | [F-020-T05](#f-020-t05) | — | ⏳ 🤖 | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan |
+| 🟣 Very large | **Total** | 12.25 h | 0 h (0 of 6 steps recorded) | 12.25 h agent + 0.5 h owner | 0 of 6 completed | | | | |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+[Full notes & evidence](work/records/F-020.md)
+
+| Field | Value |
+|---|---|
+| PR / evidence | Steps: F-020-T01: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T02: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T03: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T04: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T05: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan · F-020-T06: [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan. [#89](https://github.com/voidbrain/coordinator/pull/89) (plan); owner approval 2026-11-26 (chat "ok") |
+| Components | project-harness:F-096, project-harness:F-102, project-harness:F-104, project-harness:F-105, nerv:F-125, nerv:F-132 |
 | Opened | 2026-11-26 |
 | Verification | Pending |
 | Reviewed | 2026-11-26 |
