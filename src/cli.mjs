@@ -7,8 +7,7 @@ import { appendFileSync, mkdirSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { buildRemote } from '../tools/backlog-index.mjs';
-import { rebuild, rebuildOne, sources } from './live-index.mjs';
+import { buildOne, rebuild, rebuildOne, sources } from './live-index.mjs';
 import { mcpServer } from './mcp.mjs';
 import { bricksCss, screen } from './screen.mjs';
 import { poller, readToken } from './poller.mjs';
@@ -89,7 +88,7 @@ if (o.command === 'rebuild') {
   const poll = poller({
     list: sources(o.checkout),
     token,
-    rebuildOne: (s) => rebuildOne(db, (file) => buildRemote(file, s.repo, s.ownerName, s.ref)),
+    rebuildOne: (s) => rebuildOne(db, (file) => buildOne(file, s, true)),
     log,
   });
   // The first poll rebuilds every repository; a failed one keeps the last good cache and is logged. The next poll
