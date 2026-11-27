@@ -3,6 +3,8 @@
 // foundations, read from the bricks checkout; bricks' components are Angular and are not used here.
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { DatabaseSync } from 'node:sqlite';
+import { loadHealth } from './health.mjs';
 import { answer, load } from './read-tools.mjs';
 
 const DONE_STEPS = new Set(['closed', 'verified', 'completed']);
@@ -56,14 +58,28 @@ const page = (css, body) =>
   `<title>Live index</title><style>${css}</style><style>${OWN_CSS}</style></head>` +
   `<body data-bx-theme="base"><main class="bx-stack"><h1>🚦 voidbrain live index</h1>${body}</main></body></html>\n`;
 
+// The cache's health rows, read-only, for one render; none in a cache built before the table existed.
+function healthRows(db) {
+  const d = new DatabaseSync(db, { readOnly: true });
+  try {
+    return loadHealth(d);
+  } finally {
+    d.close();
+  }
+}
+
 export function screen(db, css) {
-  let c, waiting;
+  let c, waiting, health;
   try {
     c = load(db);
+    health = healthRows(db);
     waiting = answer(db, 'waiting_on_me', {});
   } catch (e) {
     return page(css ?? '', `<p class="bad">${esc(e.message)}.</p>`);
   }
+  // F-024-T09: a health row counts only for the commit the repository's backlog rows were read at.
+  const at = new Map(c.sources.map((s) => [s.repo, s.commit_sha]));
+  health = new Map(health.filter((h) => h.commit_sha && h.commit_sha === at.get(h.repo)).map((h) => [h.repo, h]));
   const unknown = new Map(waiting.unknown.map((u) => [u.repo, u.message]));
   const repos = c.sources.map((s) => s.repo);
   const openRecords = c.records.filter((r) => !r.archived && r.status !== 'Closed');
@@ -87,9 +103,17 @@ export function screen(db, css) {
     ]),
   );
   const summary = table(
-    ['Repository', 'Open records', 'Agent h in open steps', 'Owner h in open steps', 'Problems'],
+    [
+      'Repository',
+      'Open records',
+      'Agent h in open steps',
+      'Owner h in open steps',
+      'Problems',
+      'Harness',
+      'Last audit',
+    ],
     repos.map((repo) => {
-      if (unknown.has(repo)) return [esc(repo), 'unknown', 'unknown', 'unknown', '1'];
+      if (unknown.has(repo)) return [esc(repo), 'unknown', 'unknown', 'unknown', '1', 'unknown', 'unknown'];
       const steps = openSteps.filter((s) => s.repo === repo);
       return [
         esc(repo),
@@ -97,6 +121,8 @@ export function screen(db, css) {
         hours(steps.map((s) => s.agent_hours)),
         hours(steps.map((s) => s.owner_hours)),
         String(c.problems.filter((p) => p.repo === repo).length),
+        esc(health.get(repo)?.harness_version ?? 'unknown'),
+        esc(health.get(repo)?.last_audit ?? 'unknown'),
       ];
     }),
   );
@@ -134,7 +160,7 @@ export function screen(db, css) {
   return page(
     css ?? '',
     `<p>Snapshot ${time(waiting.snapshot)} (the oldest repository read). Read from GitHub every 5 minutes; this page reloads every 5 minutes. ` +
-      `The git copy is the committed <a href="${DASHBOARD}">solution dashboard</a>, which also holds the solution order, the agent runway, harness versions and audit dates.</p>` +
+      `The git copy is the committed <a href="${DASHBOARD}">solution dashboard</a>, which also holds the solution order, the agent runway and the audit status against each interval.</p>` +
       (css ? '' : '<p class="bad">bricks styles not found in the bricks checkout: unstyled.</p>') +
       `<section><h2>Sources</h2>${sources}</section><section><h2>Summary</h2>${summary}</section>` +
       `<section><h2>Waiting for the owner</h2>${owner}</section><section><h2>Open work by repository</h2>${open}</section>` +

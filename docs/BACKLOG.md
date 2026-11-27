@@ -540,7 +540,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|---|---|---|---|:---:|:---:|:---:|
 | 🔴 Open | 🔹 P3 | 🟡 Medium | 2 h agent + 0.5 h owner | `nerv:F-147-T01` | — | 🤖 | — | — |
 
-💻 **→** Next: F-024-T09 — Harness versions and audit dates in the live index cache (Planned).
+💻 **→** Next: F-024-T09 — Harness versions and audit dates in the live index cache (Implemented; verification pending).
 
 | | |
 |---|---|
@@ -552,7 +552,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who | PRs |
 |---|---|---|---|---|---|---|---|:---:|---|
-| 🟢 Small | <a id="f-024-t09"></a>F-024-T09 — Harness versions and audit dates in the live index cache | 1 h | 0 h | 1 h | Planned | — | — | 🤖 | — |
+| 🟢 Small | <a id="f-024-t09"></a>F-024-T09 — Harness versions and audit dates in the live index cache | 1 h | 0 h | 1 h | Implemented; verification pending | — | — | 🤖 | [PR #130](https://github.com/voidbrain/coordinator/pull/130) |
 | 🟢 Small | <a id="f-024-t07"></a>F-024-T07 — S7: owner installs the index on the base holding NERV's coordinator role and places the token | 0 h | 0 h | 0 h agent + 0.5 h owner | Planned | `nerv:F-147-T01` | [F-024-T08](#f-024-t08) | ⏳ 🧑‍🔧 | — |
 | 🟢 Small | <a id="f-024-t08"></a>F-024-T08 — S8: two weeks of measurements, report to F-020 | 1 h | 0 h | 1 h | Planned | [F-024-T07](#f-024-t07) | — | ⏳ 🤖 | — |
 | 🟡 Medium | **Total** | 13.75 h | 0 h (0 of 9 steps recorded) | 2 h agent + 0.5 h owner | 6 of 9 completed | | | | |
@@ -577,7 +577,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Steps: F-024-T01: [PR #115](https://github.com/voidbrain/coordinator/pull/115) · F-024-T02: [PR #123](https://github.com/voidbrain/coordinator/pull/123) · F-024-T03: [PR #125](https://github.com/voidbrain/coordinator/pull/125) · F-024-T04: [PR #127](https://github.com/voidbrain/coordinator/pull/127) · F-024-T05: [PR #128](https://github.com/voidbrain/coordinator/pull/128) · F-024-T06: [PR #115](https://github.com/voidbrain/coordinator/pull/115). [decision page](decisions/live-index.md); [evidence archive](archive/evidence-2026.md#f-024); owner decision 2026-11-26 in chat ("2", "coordinator"); [#113](https://github.com/voidbrain/coordinator/pull/113); [#115](https://github.com/voidbrain/coordinator/pull/115); [#116](https://github.com/voidbrain/coordinator/pull/116); [#123](https://github.com/voidbrain/coordinator/pull/123); [#125](https://github.com/voidbrain/coordinator/pull/125); [#126](https://github.com/voidbrain/coordinator/pull/126); [#127](https://github.com/voidbrain/coordinator/pull/127); [#128](https://github.com/voidbrain/coordinator/pull/128); [#129](https://github.com/voidbrain/coordinator/pull/129) |
+| PR / evidence | Steps: F-024-T01: [PR #115](https://github.com/voidbrain/coordinator/pull/115) · F-024-T02: [PR #123](https://github.com/voidbrain/coordinator/pull/123) · F-024-T03: [PR #125](https://github.com/voidbrain/coordinator/pull/125) · F-024-T04: [PR #127](https://github.com/voidbrain/coordinator/pull/127) · F-024-T05: [PR #128](https://github.com/voidbrain/coordinator/pull/128) · F-024-T06: [PR #115](https://github.com/voidbrain/coordinator/pull/115) · F-024-T09: [PR #130](https://github.com/voidbrain/coordinator/pull/130). [decision page](decisions/live-index.md); [evidence archive](archive/evidence-2026.md#f-024); owner decision 2026-11-26 in chat ("2", "coordinator"); [#113](https://github.com/voidbrain/coordinator/pull/113); [#115](https://github.com/voidbrain/coordinator/pull/115); [#116](https://github.com/voidbrain/coordinator/pull/116); [#123](https://github.com/voidbrain/coordinator/pull/123); [#125](https://github.com/voidbrain/coordinator/pull/125); [#126](https://github.com/voidbrain/coordinator/pull/126); [#127](https://github.com/voidbrain/coordinator/pull/127); [#128](https://github.com/voidbrain/coordinator/pull/128); [#129](https://github.com/voidbrain/coordinator/pull/129) |
 | Components | nerv:F-016, nerv:F-132 |
 | Opened | 2026-11-26 |
 | Verification | Pending |
