@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "implemented",
+  "status": "closed",
   "id": "F-024-T02",
   "title": "S2: service skeleton in the coordinator (node:sqlite cache, rebuild from git, service files)",
   "goal": "The coordinator holds a small Node 24 service whose SQLite file is a rebuildable cache built by the harness builder",
@@ -35,7 +35,7 @@
   "effort": {
     "size": "medium",
     "estimate": "0 remaining",
-    "basis": "Decision page S2 row, plus about 2 h of setup counted there for the coordinator gaining source. Waits on the harness builder release (prose until project-harness opens its record). Estimated 2026-11-26 from the decision page's step table (docs/decisions/live-index.md, \"Steps, if approved\"), at agent speed, failing test first for code. Not a measurement. Implemented 2026-11-27: src/live-index.mjs (rebuild every manifest repository through tools/backlog-index.mjs into <db>.next, then rename over the cache), src/cli.mjs (rebuild; serve rebuilds at start and 5 minutes after each run), service/ launchd, systemd --user and Task Scheduler templates with no secret, CI on Node 24, AGENTS.md project line; test/live-index.test.mjs committed failing first. A local rebuild of the nine checkouts took about 7 s (684 records, 1509 steps, 1 problem row: openbando's 2026 archive, openbando:F-020 summary rows). Closes after the PR merges on green CI.",
+    "basis": "Decision page S2 row, plus about 2 h of setup counted there for the coordinator gaining source. Waits on the harness builder release (prose until project-harness opens its record). Estimated 2026-11-26 from the decision page's step table (docs/decisions/live-index.md, \"Steps, if approved\"), at agent speed, failing test first for code. Not a measurement. Implemented 2026-11-27: src/live-index.mjs (rebuild every manifest repository through tools/backlog-index.mjs into <db>.next, then rename over the cache), src/cli.mjs (rebuild; serve rebuilds at start and 5 minutes after each run), service/ launchd, systemd --user and Task Scheduler templates with no secret, CI on Node 24, AGENTS.md project line; test/live-index.test.mjs committed failing first. A local rebuild of the nine checkouts took about 7 s (684 records, 1509 steps, 1 problem row: openbando's 2026 archive, openbando:F-020 summary rows). Closes after the PR merges on green CI. Closed 2026-11-27: #123 merged on green CI (main 3d5426d, CI green).",
     "agentHours": 0,
     "reviewed": "2026-11-27",
     "baselineAgentHours": 3,

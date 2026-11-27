@@ -1,5 +1,6 @@
 // F-024-T03: the GitHub poller. Conditional requests with ETags per repository (main, PRs, CI): a 304 everywhere
 // costs no rebuild, a change rebuilds only that repository; the read-only token comes from a file on the base.
+/* global Response */
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdirSync, mkdtempSync, readdirSync, rmSync, writeFileSync } from 'node:fs';

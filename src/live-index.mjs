@@ -1,7 +1,7 @@
 // F-024-T02: the live index's cache, rebuilt whole from git through the harness builder (tools/backlog-index.mjs).
 // Git is the only truth: the SQLite file is disposable and the index never writes a record.
 import { randomUUID } from 'node:crypto';
-import { mkdirSync, readFileSync, renameSync, rmSync } from 'node:fs';
+import { copyFileSync, existsSync, mkdirSync, readFileSync, renameSync, rmSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { buildLocal, buildRemote } from '../tools/backlog-index.mjs';
 
@@ -30,6 +30,20 @@ export async function rebuild(db, list, { remote = false } = {}) {
     for (const s of list)
       if (remote) await buildRemote(next, s.repo, s.ownerName, s.ref);
       else await buildLocal(next, s.repo, s.checkout);
+    renameSync(next, db);
+  } finally {
+    rmSync(next, { force: true });
+  }
+}
+
+// F-024-T03: one repository rebuilt into a copy of the cache, then moved over it: `build(file)` writes that
+// repository's rows (the builder replaces only its own), and the other repositories' rows stay as they were.
+export async function rebuildOne(db, build) {
+  const next = `${db}.${randomUUID()}.next`;
+  mkdirSync(dirname(db), { recursive: true });
+  try {
+    if (existsSync(db)) copyFileSync(db, next);
+    await build(next);
     renameSync(next, db);
   } finally {
     rmSync(next, { force: true });
