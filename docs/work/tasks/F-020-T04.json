@@ -16,7 +16,8 @@
   "acceptance": [
     "per the rule review procedure \"Periodic rule consolidation\": each proposal records the old locations, the requirement they enforce, the new owner and location, the preserved exceptions, why the text is redundant or obsolete, and the check that no requirement was lost; safeguards (ownership, evidence, privacy, safety) are never removed for age or rarity",
     "a generic change goes to project-harness first (template, then projects); a project-only change goes to that project; size warnings are addressed by moving text to the page that owns it, not by deleting it (harness rule-review.md about 2,300 of 2,000 tokens; harness F-096, nerv F-125, coordinator F-016 records over budget)",
-    "where a change would alter behaviour it is marked as a policy change with its own acceptance; a before and after behaviour run with a held-out set is proposed for each rule rewrite (rule review, \"Before and after a rule change\"); proposals are numbered in docs/reviews/2026-11-coherence/proposals.md"
+    "where a change would alter behaviour it is marked as a policy change with its own acceptance; a before and after behaviour run with a held-out set is proposed for each rule rewrite (rule review, \"Before and after a rule change\"); proposals are numbered in docs/reviews/2026-11-coherence/proposals.md",
+    "includes the owner-requested new rule (owner, 2026-11-27, chat: \"a\" — land it with the consolidation, not as a separate release): before proposing or opening a new record or step, search the backlogs of the repositories concerned (record and task sources, or the coordinator live index once its search tools exist, live-index phase 3 S13) and cite the existing ID instead of proposing a duplicate; generic, so it goes to project-harness first; it is a real rule change, so it is covered by the consolidation's before and after behaviour run"
   ],
   "dependsOn": [
     "F-020-T02",
