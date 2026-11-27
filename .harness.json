@@ -3,7 +3,7 @@
     "path": "~/Projects/project-harness",
     "repo": "https://github.com/voidbrain/project-harness"
   },
-  "version": "10.24.3",
+  "version": "10.25.0",
   "stacks": [
     "core",
     "solution"
@@ -71,6 +71,7 @@
     "docs/agents/work-usage-effectiveness.md": "core/docs/agents/work-usage-effectiveness.md",
     "docs/agents/work-usage-launch.md": "core/docs/agents/work-usage-launch.md",
     "tools/solution.mjs": "core/tools/solution.mjs",
+    "tools/backlog-index.mjs": "core/tools/backlog-index.mjs",
     "docs/agents/solution-dashboard.md": "core/docs/agents/solution-dashboard.md",
     "docs/agents/solution-gaps.md": "core/docs/agents/solution-gaps.md"
   },

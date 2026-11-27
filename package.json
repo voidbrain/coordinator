@@ -4,7 +4,7 @@
   "description": "Solution coordinator: one view and order of all voidbrain project work",
   "type": "module",
   "engines": {
-    "node": ">=22"
+    "node": ">=22.13"
   },
   "scripts": {
     "check:backlog": "node tools/check-backlog.mjs",
@@ -31,6 +31,7 @@
     "check:rule-load": "node tools/rule-load.mjs --check",
     "check:solution": "node tools/with-gh-token.mjs node tools/solution.mjs check --remote",
     "solution:dashboard": "node tools/solution.mjs dashboard --remote --write --prune-order",
+    "index:build": "node tools/backlog-index.mjs build",
     "solution:refresh": "npm run solution:dashboard",
     "check:fast": "npm run format:check && npm run lint && npm test && npm run check:work && npm run check:backlog && npm run check:rules && npm run check:tooling && npm run check:maintenance && npm run check:integrations && npm run check:solution",
     "test": "node --test --test-reporter=./tools/quiet-reporter.mjs --test-reporter-destination=stdout --test-reporter=spec --test-reporter-destination=.test-report.txt 'test/*.test.mjs'",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewed": "2026-11-26T17:54:29.793Z",
+  "reviewed": "2026-11-27T07:35:25.223Z",
   "policy": "c9570a34ab0c7e4f1274fe37802a6eff8e7edfb8266c98f0cec7119533729b2b",
   "inputs": {
     "AGENTS.md": "a9231b0e2cee49a8565b36ac8e246f5360e9adfa98e6ee3619cb14d783e841de",
@@ -19,7 +19,7 @@
     "docs/agents/rule-review.md": "20edef109354858933477c5284ff91a16179a3aad85346fd1bb44b4e80bdb195",
     "docs/agents/skills-discovery.md": "ad322a2b93f2dc1b8f27d0b052248d57c050ca852077589ba889447577357057",
     "docs/agents/skills.md": "7da9fc43bd0886b06580cc15b9a45e47d097c6fa7fca627bf7ed0f0202a409a1",
-    "docs/agents/solution-profile.md": "8f9e16e860303bb2d9517e717c74d3fde556c7efdc99d1d072ce39c4d9a01737",
+    "docs/agents/solution-profile.md": "7ac865182577d6e145d0757dbc2f73ad096bb3f21578148ec48bda840791fdb8",
     "docs/agents/task-context.md": "c689f02b9571ff747a4866d71690bb01afd7e6654dea640a1ce1c66e7c0fa204",
     "docs/agents/work-usage-launch.md": "3225858b8b840322d2bb073f30659c376826eea3d1f772df8582fb37eef74465",
     "docs/agents/work-usage.md": "9a4c574e6cd2b0af3ddd1cb5a70560dc84c962c991d42567b7829b9a25cae3be",
@@ -95,10 +95,10 @@
   },
   "outcomes": [
     {
-      "kind": "rule",
+      "kind": "tool",
       "disposition": "implemented",
-      "target": "docs/agents/solution-profile.md",
-      "evidence": "2026-11-26: reconcile to v10.24.3 (B-130): the coordinator id is set in .solution.json (id coordinator), its records renamed coordinator:ID by owner decision; copied pages byte-identical to the tag."
+      "target": "tools/backlog-index.mjs",
+      "evidence": "2026-11-27: reconcile to v10.25.0 (template F-110, phase 1 of coordinator:F-024): tools/solution.mjs, tools/backlog-index.mjs, tools/work-items.mjs, docs/agents/solution-refresh.md and solution-profile.md byte-identical to the tag; index:build script added; engines node >=22.13 for node:sqlite; check:fast green."
     }
   ]
 }
