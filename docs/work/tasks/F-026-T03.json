@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "id": "F-026-T03",
+  "parent": "F-026",
+  "title": "Expose the graph through a read MCP tool and the contract (additive)",
+  "goal": "NERV and any MCP client can read the graph from the live index",
+  "status": "planned",
+  "acceptance": [
+    "A `work_graph` read tool (`readOnlyHint`, loopback only like the others) returns the payload of T02 as `structuredContent`, with each node linked to its file at its commit and the snapshot time; an optional repository filter",
+    "Additive: the three existing tools and the contract `version` stay as they are; docs/SOLUTION.md's live index contract has a new row, and a test fails if the existing three answers change",
+    "The answer's size on the nine checkouts is recorded; if it passes the 8000-character text limit the contract says clients read `structuredContent` (as for `waiting_on_me`)",
+    "A test across the service and a real MCP client call: a graph with a critical path, a problem entry for an unreadable repository"
+  ],
+  "dependsOn": [
+    "F-026-T02"
+  ],
+  "resources": [
+    "service/**",
+    "tools/**",
+    "test/**",
+    "docs/SOLUTION.md",
+    "docs/DOMAINS.md",
+    "docs/work/records/F-026.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "typescript",
+    "distributed-contracts",
+    "regression-design"
+  ],
+  "privacy": "Neutral invented data only; no personal data, tokens or private reports in Git.",
+  "validation": [
+    "npm run check:fast",
+    "npm test",
+    "CI"
+  ],
+  "escalation": [
+    "A material scope or effort increase goes to the owner"
+  ],
+  "effort": {
+    "size": "medium",
+    "estimate": "2.5 h agent",
+    "basis": "One more read tool next to the three that exist, and one more contract row; no change to the existing tools. Estimated 2026-11-27. Not a measurement.",
+    "reviewed": "2026-11-27",
+    "agentHours": 2.5,
+    "baselineAgentHours": 2.5,
+    "estimateAgentHours": 2.5
+  },
+  "prs": [
+    {
+      "pr": 1,
+      "note": "plan"
+    }
+  ]
+}

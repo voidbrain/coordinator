@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "id": "F-026-T04",
+  "parent": "F-026",
+  "title": "Show the critical path and slack on the index screen",
+  "goal": "The coordinator's own screen lists the critical path and each step's slack, as text",
+  "status": "planned",
+  "acceptance": [
+    "The screen at http://127.0.0.1:7380/ has a \"Critical path\" section: the chain in order with hours, then a table of every open step with its lane, remaining hours and slack, each linked to its file at the commit; problems listed under it",
+    "Text only, no chart; renders from the cache at each request like the other sections; a test over the rendered page for a chain with slack and for an empty graph"
+  ],
+  "dependsOn": [
+    "F-026-T02"
+  ],
+  "resources": [
+    "service/**",
+    "test/**",
+    "docs/live-index-install.md",
+    "docs/work/records/F-026.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "typescript",
+    "accessibility"
+  ],
+  "privacy": "Neutral invented data only; no personal data, tokens or private reports in Git.",
+  "validation": [
+    "npm run check:fast",
+    "npm test",
+    "CI"
+  ],
+  "escalation": [
+    "A material scope or effort increase goes to the owner"
+  ],
+  "effort": {
+    "size": "medium",
+    "estimate": "1.5 h agent",
+    "basis": "One more section on the existing live screen, rendered from the same function; the drawn graph is NERV's, not this screen's. Estimated 2026-11-27. Not a measurement.",
+    "reviewed": "2026-11-27",
+    "agentHours": 1.5,
+    "baselineAgentHours": 1.5,
+    "estimateAgentHours": 1.5
+  },
+  "prs": [
+    {
+      "pr": 1,
+      "note": "plan"
+    }
+  ]
+}

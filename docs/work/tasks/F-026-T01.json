@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "id": "F-026-T01",
+  "parent": "F-026",
+  "title": "Decision note: what the graph, the critical path and the slack mean here",
+  "goal": "One short page fixes the definitions so the three repositories build the same thing",
+  "status": "planned",
+  "acceptance": [
+    "docs/decisions/work-graph.md states: a node is an open step (a record without steps is one node); an edge is a dependsOn entry, including `<repo>:<STEP-ID>` across repositories; a node's duration is its remaining estimate (owner hours for an owner step, agent hours otherwise); a closed step keeps its recorded actual time and is shown done, not scheduled",
+    "It defines the critical path as the longest chain of open steps by remaining duration, and slack as how much a step may grow before the chain grows; no calendar dates anywhere (a step starts when an agent slot frees or the owner has time), and no three-point (PERT) estimates; a step without an estimate is flagged, never counted as zero",
+    "It states the lane rule: lane by who acts (owner steps by ownerHours, agent steps otherwise), grouped per repository; night runs and Codex are separate lanes only if a source names them, and the page says what that source is or records the question for the owner in plain words (today no step field names who runs it)",
+    "It states where the reorder rule lives once: the payload gives each node the nodes it may not pass (its transitive prerequisites and dependents), so the component, the card and the write path all read the same data and none re-derives it; a move that would cross one is refused with the reason \"X depends on Y\"",
+    "A cycle, an unknown reference and a cross-repository step this index cannot read are reported as problems in the payload, never a crash or a silent drop"
+  ],
+  "dependsOn": [],
+  "resources": [
+    "docs/decisions/work-graph.md",
+    "docs/decisions/live-index.md",
+    "docs/work/records/F-026.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "documentation"
+  ],
+  "privacy": "Neutral invented data only; no personal data, tokens or private reports in Git.",
+  "validation": [
+    "npm run check:fast",
+    "CI"
+  ],
+  "escalation": [
+    "A material scope or effort increase goes to the owner"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "0.5 h agent",
+    "basis": "One decision page, stated rather than compared; the owner already chose the shape. Estimated 2026-11-27. Not a measurement.",
+    "reviewed": "2026-11-27",
+    "agentHours": 0.5,
+    "baselineAgentHours": 0.5,
+    "estimateAgentHours": 0.5
+  },
+  "prs": [
+    {
+      "pr": 1,
+      "note": "plan"
+    }
+  ]
+}
