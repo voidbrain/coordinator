@@ -665,7 +665,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Status | PRs |
 |---|---|---|---|---|---|
-| — | <a id="f-026-t06"></a>F-026-T06 — A Coordinator panel in the owner's herdr app | 2 h | 0 h | Completed | [PR #137](https://github.com/voidbrain/coordinator/pull/137) |
+| — | <a id="f-026-t06"></a>F-026-T06 — A Coordinator panel in the owner's herdr app | 2 h | 0 h | Completed | [PR #137](https://github.com/voidbrain/coordinator/pull/137); [PR #139](https://github.com/voidbrain/coordinator/pull/139) |
 
 </details>
 
@@ -676,7 +676,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Steps: F-026-T01: [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan; [PR #135](https://github.com/voidbrain/coordinator/pull/135) lane source · F-026-T02: [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan · F-026-T03: [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan · F-026-T04: [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan · F-026-T05: [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan · F-026-T06: [PR #137](https://github.com/voidbrain/coordinator/pull/137). Plan: [#134](https://github.com/voidbrain/coordinator/pull/134) |
+| PR / evidence | Steps: F-026-T01: [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan; [PR #135](https://github.com/voidbrain/coordinator/pull/135) lane source · F-026-T02: [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan · F-026-T03: [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan · F-026-T04: [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan · F-026-T05: [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan · F-026-T06: [PR #137](https://github.com/voidbrain/coordinator/pull/137); [PR #139](https://github.com/voidbrain/coordinator/pull/139). Plan: [#134](https://github.com/voidbrain/coordinator/pull/134) |
 | Opened | 2026-11-27 |
 | Verification | Pending |
 | Reviewed | 2026-11-27 |
