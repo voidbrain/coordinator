@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "id": "F-026-T06",
+  "parent": "F-026",
+  "title": "A Coordinator panel in the owner's herdr app",
+  "goal": "A herdr mod on NERV-01 shows the owner's turn, each herdr agent's status and last report, and later the critical path, read-only",
+  "status": "planned",
+  "acceptance": [
+    "Owner request 2026-11-27 (chat, \"ok\"): a herdr mod (in ~/.config/herdr-app/mods, the owner's app config, not this repository; this step records and documents it) reads the live index's local read tools at http://127.0.0.1:7380/mcp: waiting_on_me first (it exists today), then work_graph once F-026-T03 lands",
+    "Shows the owner's turn, each herdr agent's status (from herdr) with its last report line (the relay view of nerv:F-060), and the critical path with lanes from the step runner field; each item opens its record at the commit; read-only, reordering stays on the F-025 PR path",
+    "NERV look (the owner's nerv theme), herdr-app check passes, a herdr-app shot screenshot in the PR; works when the index service is off (says so, never shows an empty list as no work)"
+  ],
+  "dependsOn": [
+    "F-024-T04"
+  ],
+  "resources": [
+    "docs/live-index-install.md",
+    "docs/work/records/F-026.md",
+    "generated:backlog-views"
+  ],
+  "capabilities": [
+    "typescript",
+    "accessibility"
+  ],
+  "privacy": "Neutral invented data only; no personal data, tokens or private reports in Git.",
+  "validation": [
+    "npm run check:fast",
+    "npm test",
+    "CI"
+  ],
+  "escalation": [
+    "A material scope or effort increase goes to the owner"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "2 h agent",
+    "basis": "A small herdr mod over the existing read tools; the graph part waits for F-026-T03. Estimated 2026-11-27. Not a measurement.",
+    "reviewed": "2026-11-27",
+    "agentHours": 2,
+    "baselineAgentHours": 2,
+    "estimateAgentHours": 2
+  },
+  "prs": [
+    {
+      "pr": 137
+    }
+  ],
+  "runner": "agent"
+}
