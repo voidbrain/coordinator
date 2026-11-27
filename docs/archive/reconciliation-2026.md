@@ -117,3 +117,7 @@ PRs #115 and #116 merged with green CI (`npm run ci:status`): F-024-T01 and F-02
 PRs #117 to #120 merged with green CI (`npm run ci:status`): F-020-T03 closed (friction measurement), F-025-T01 and T02 decided. No record waits on their CI; B-004 still waits on a day of scheduled runs (B-006).
 
 Same day, [#121](https://github.com/voidbrain/coordinator/pull/121): harness reconciled to v10.25.0 (live index builder); a corrected Components row and dated note added to coordinator:F-016 in the 2026 archive (it listed the step nerv:F-120-T09); nerv:F-125 left coordinator:F-020 Components.
+
+## 2026-11-27 — main `9c9a916`
+
+PRs #121 and #122 merged with green CI (`npm run ci:status`): #121 harness v10.25.0 (F-020, F-024), #122 dashboard refresh (no record: generated view only). No record waits on their CI; F-024-T02 starts in the next PR.
