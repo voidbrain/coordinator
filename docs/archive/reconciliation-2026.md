@@ -126,4 +126,4 @@ PRs #121 and #122 merged with green CI (`npm run ci:status`): #121 harness v10.2
 
 PRs #123 to #125 merged with green CI: #123 F-024-T02 (closed in #125), #124 dashboard refresh (generated view only), #125 F-024-T03 poller (implemented).
 
-Same day, harness reconciled to v10.25.1 (project-harness:B-131: archived prerequisites resolve, archives with legacy tables are read, Components errors name the entry): `tools/solution.mjs` and `docs/agents/solution-refresh.md` copied byte-identical from the tag; no review: check-harness --strict matched v10.25.1. Dashboard refreshed in the same PR.
+Same day, harness reconciled to v10.25.3: v10.25.1 (project-harness:B-131: archived prerequisites resolve, archives with legacy tables are read, Components errors name the entry), v10.25.2 (B-127, `tools/behaviour.mjs`) and v10.25.3 (B-132: the 10.25.1 pre-scan stopped on a prerequisite in an unavailable repository, found by this PR's first CI run). `tools/solution.mjs`, `tools/behaviour.mjs` and `docs/agents/solution-refresh.md` copied byte-identical; no review: check-harness --strict matched v10.25.3. Dashboard refreshed in the same PR.
