@@ -130,4 +130,4 @@ Same day, harness reconciled to v10.25.3: v10.25.1 (project-harness:B-131: archi
 
 ## 2026-11-27 — main `e447d47`
 
-PR #126 merged with green CI: harness v10.25.3 and dashboard refresh (reconciled in #126 itself). F-024-T03 closed on #125's green CI; F-024-T04 starts in this PR.
+PR #126 merged with green CI: harness v10.25.3 and dashboard refresh (reconciled in #126 itself). F-024-T03 closed on #125's green CI; F-024-T04 starts in #127.

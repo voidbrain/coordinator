@@ -1,6 +1,6 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 27 November 2026 against main `e447d47`. PR #126 merged with green CI: harness v10.25.3 and dashboard refresh (reconciled in #126 itself). F-024-T03 closed on #125's green CI; F-024-T04 starts in this PR.
+Current work ledger, reviewed 27 November 2026 against main `e447d47`. PR #126 merged with green CI: harness v10.25.3 and dashboard refresh (reconciled in #126 itself). F-024-T03 closed on #125's green CI; F-024-T04 starts in #127.
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
