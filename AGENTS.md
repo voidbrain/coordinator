@@ -1,6 +1,6 @@
 ## Project conventions (Coordinator)
 
-The project is **Coordinator**, the solution coordinator for the voidbrain projects. The repository is `https://github.com/voidbrain/coordinator` (private); the default branch is `main`. Nothing is built or deployed: it holds references, documentation and generated views.
+The project is **Coordinator**, the solution coordinator for the voidbrain projects. The repository is `https://github.com/voidbrain/coordinator` (private); the default branch is `main`. It holds references, documentation and generated views, and one small read-only service, the live index (coordinator:F-024; owner decision 2026-11-26, "coordinator" owns it): `src/` and `service/`, Node 24 with `node:sqlite`, a cache rebuilt from git through `tools/backlog-index.mjs` that never writes a record. Nothing is deployed by an agent: installing it on a base is an owner step (F-024-T07); once installed it reads the sibling checkouts from the primary checkout, which stays on `main`.
 
 ### Architecture
 

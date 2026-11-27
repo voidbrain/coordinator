@@ -1,0 +1,15 @@
+# F-024-T02: the coordinator's live index as a systemd user unit, not a child of NERV. A template with no secret:
+# replace @NODE@ (Node 24 or newer, absolute path), @CHECKOUT@ (the coordinator checkout) and @DATA@ (cache and logs
+# folder), copy it to ~/.config/systemd/user/, then `systemctl --user enable --now coordinator-index`. Installing it is
+# an owner step (F-024-T07). Logs: @DATA@/logs/index.log and `journalctl --user -u coordinator-index`.
+[Unit]
+Description=Coordinator live index (read-only cache of the solution's backlogs)
+
+[Service]
+ExecStart=@NODE@ @CHECKOUT@/src/cli.mjs serve --data @DATA@
+WorkingDirectory=@CHECKOUT@
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=default.target

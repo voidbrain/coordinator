@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  F-024-T02: the coordinator's live index as a launchd user agent of its own, beside io.nerv.agent and not a child of
+  NERV. A template with no secret: replace @NODE@ (Node 24 or newer, absolute path), @CHECKOUT@ (the coordinator
+  checkout) and @DATA@ (cache and logs folder, which must exist with a logs folder inside), then copy it to
+  ~/Library/LaunchAgents/. Installing it is an owner step (F-024-T07).
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>io.voidbrain.coordinator-index</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>@NODE@</string>
+    <string>@CHECKOUT@/src/cli.mjs</string>
+    <string>serve</string>
+    <string>--data</string>
+    <string>@DATA@</string>
+  </array>
+  <key>WorkingDirectory</key>
+  <string>@CHECKOUT@</string>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>ThrottleInterval</key>
+  <integer>30</integer>
+  <key>StandardOutPath</key>
+  <string>@DATA@/logs/stdout.log</string>
+  <key>StandardErrorPath</key>
+  <string>@DATA@/logs/stderr.log</string>
+</dict>
+</plist>

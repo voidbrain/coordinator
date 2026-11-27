@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "reviewed": "2026-11-27T07:35:25.223Z",
+  "reviewed": "2026-11-27T07:57:21.253Z",
   "policy": "c9570a34ab0c7e4f1274fe37802a6eff8e7edfb8266c98f0cec7119533729b2b",
   "inputs": {
-    "AGENTS.md": "a9231b0e2cee49a8565b36ac8e246f5360e9adfa98e6ee3619cb14d783e841de",
+    "AGENTS.md": "75f76be549dd9f2f5da9d6d55d583ecdf3fffacf40cf502c4f14d6d4ad4eb531",
     "docs/BACKLOG-RULES.md": "a090ba3c7571d60c50a386f32e30aab528104003a2a9da6c31cedec6ef05b77a",
     "docs/agents/architecture-review.md": "5d967314854912b1a5f1446aeab309763b14f9856bceb3c82df5c6c25c166526",
     "docs/agents/areas.md": "bc3f78c910a1bed75d2702041b681b9eddeb12c92e5956170607189d106eab5f",
@@ -95,10 +95,10 @@
   },
   "outcomes": [
     {
-      "kind": "tool",
+      "kind": "rule",
       "disposition": "implemented",
-      "target": "tools/backlog-index.mjs",
-      "evidence": "2026-11-27: reconcile to v10.25.0 (template F-110, phase 1 of coordinator:F-024): tools/solution.mjs, tools/backlog-index.mjs, tools/work-items.mjs, docs/agents/solution-refresh.md and solution-profile.md byte-identical to the tag; index:build script added; engines node >=22.13 for node:sqlite; check:fast green."
+      "target": "AGENTS.md",
+      "evidence": "2026-11-27, coordinator:F-024-T02 (owner decision 2026-11-26, \"coordinator\" owns the live index; owner \"ok\" 2026-11-27 to start T02): the project line \"Nothing is built or deployed\" now names the read-only live index service (src/, service/, Node 24 node:sqlite cache rebuilt from git, never writes a record), that installing it is an owner step (F-024-T07) and that it reads siblings from the primary checkout, which stays on main. No safeguard removed; no new rule, procedure or check (process freeze). test/live-index.test.mjs and check:fast green."
     }
   ]
 }

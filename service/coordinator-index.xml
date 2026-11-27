@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  F-024-T02: the coordinator's live index as a Windows Task Scheduler task, not a child of NERV. A template with no
+  secret: replace @NODE@ (Node 24 or newer, full path to node.exe), @CHECKOUT@ (the coordinator checkout) and @DATA@
+  (cache and logs folder), then `schtasks /Create /TN CoordinatorIndex /XML coordinator-index.xml`. Installing it is
+  an owner step (F-024-T07). Logs: @DATA@\logs\index.log.
+-->
+<Task version="1.4" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
+  <RegistrationInfo>
+    <Description>Coordinator live index (read-only cache of the solution's backlogs)</Description>
+  </RegistrationInfo>
+  <Triggers>
+    <LogonTrigger>
+      <Enabled>true</Enabled>
+    </LogonTrigger>
+  </Triggers>
+  <Principals>
+    <Principal id="Author">
+      <LogonType>InteractiveToken</LogonType>
+      <RunLevel>LeastPrivilege</RunLevel>
+    </Principal>
+  </Principals>
+  <Settings>
+    <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>
+    <DisallowStartIfOnBatteries>false</DisallowStartIfOnBatteries>
+    <StopIfGoingOnBatteries>false</StopIfGoingOnBatteries>
+    <ExecutionTimeLimit>PT0S</ExecutionTimeLimit>
+    <RestartOnFailure>
+      <Interval>PT1M</Interval>
+      <Count>999</Count>
+    </RestartOnFailure>
+    <Enabled>true</Enabled>
+  </Settings>
+  <Actions Context="Author">
+    <Exec>
+      <Command>@NODE@</Command>
+      <Arguments>"@CHECKOUT@\src\cli.mjs" serve --data "@DATA@"</Arguments>
+      <WorkingDirectory>@CHECKOUT@</WorkingDirectory>
+    </Exec>
+  </Actions>
+</Task>

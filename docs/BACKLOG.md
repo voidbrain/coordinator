@@ -1,10 +1,10 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 27 November 2026 against main `2da3986`. PRs #117 to #120 merged with green CI (`npm run ci:status`): F-020-T03 closed (friction measurement), F-025-T01 and T02 decided. No record waits on their CI; B-004 still waits on a day of scheduled runs (B-006).
+Current work ledger, reviewed 27 November 2026 against main `9c9a916`. PRs #121 and #122 merged with green CI (`npm run ci:status`): #121 harness v10.25.0 (F-020, F-024), #122 dashboard refresh (no record: generated view only). No record waits on their CI; F-024-T02 starts in the next PR.
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 35.25 h agent + 2.5 h owner across 33 open steps of 12 features and 2 other records. 0.25 h of actual effort recorded on 1 step. Generated from the task files.
+**Remaining effort:** 32.25 h agent + 2.5 h owner across 33 open steps of 12 features and 2 other records. 0.25 h of actual effort recorded on 1 step. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -538,9 +538,9 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔹 P3 | 🟣 Very large | 12 h agent + 0.5 h owner | `project-harness:F-110-T04`, `nerv:F-147-T01` | [F-025-T03](#f-025-t03) | ⏳ | — | — |
+| 🔴 Open | 🔹 P3 | 🟣 Very large | 9 h agent + 0.5 h owner | `project-harness:F-110-T04`, `nerv:F-147-T01` | [F-025-T03](#f-025-t03) | 🤖 | — | — |
 
-💻 **→** Next: F-024-T02 — S2: service skeleton in the coordinator (node:sqlite cache, rebuild from git, service files) (Planned).
+💻 **→** Next: F-024-T02 — S2: service skeleton in the coordinator (node:sqlite cache, rebuild from git, service files) (Implemented; verification pending).
 
 | | |
 |---|---|
@@ -552,13 +552,13 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who | PRs |
 |---|---|---|---|---|---|---|---|:---:|---|
-| 🟡 Medium | <a id="f-024-t02"></a>F-024-T02 — S2: service skeleton in the coordinator (node:sqlite cache, rebuild from git, service files) | 3 h | 0 h | 3 h | Planned | `project-harness:F-110-T04` | [F-024-T03](#f-024-t03) | ⏳ 🤖 | — |
+| 🟢 Small | <a id="f-024-t02"></a>F-024-T02 — S2: service skeleton in the coordinator (node:sqlite cache, rebuild from git, service files) | 3 h | 0 h | 0 h | Implemented; verification pending | `project-harness:F-110-T04` | [F-024-T03](#f-024-t03) | 🤖 | — |
 | 🟡 Medium | <a id="f-024-t03"></a>F-024-T03 — S3: poller for the nine repositories (main, PRs, CI, harness versions, audit dates) | 3 h | 0 h | 3 h | Planned | [F-024-T02](#f-024-t02) | [F-024-T04](#f-024-t04) | ⏳ 🤖 | — |
 | 🟡 Medium | <a id="f-024-t04"></a>F-024-T04 — S4: MCP read tools (record lookup, waiting on me, blocked by X) | 2 h | 0 h | 2 h | Planned | [F-024-T03](#f-024-t03) | [F-024-T05](#f-024-t05), [F-025-T03](#f-025-t03) | ⏳ 🤖 | — |
 | 🟡 Medium | <a id="f-024-t05"></a>F-024-T05 — S5: live dashboard screen with bricks, and the owner's install page | 3 h | 0 h | 3 h | Planned | [F-024-T04](#f-024-t04) | [F-024-T07](#f-024-t07) | ⏳ 🤖 | — |
 | 🟢 Small | <a id="f-024-t07"></a>F-024-T07 — S7: owner installs the index on the base holding NERV's coordinator role and places the token | 0 h | 0 h | 0 h agent + 0.5 h owner | Planned | [F-024-T05](#f-024-t05), `nerv:F-147-T01` | [F-024-T08](#f-024-t08) | ⏳ 🧑‍🔧 | — |
 | 🟢 Small | <a id="f-024-t08"></a>F-024-T08 — S8: two weeks of measurements, report to F-020 | 1 h | 0 h | 1 h | Planned | [F-024-T07](#f-024-t07) | — | ⏳ 🤖 | — |
-| 🟣 Very large | **Total** | 12.75 h | 0 h (0 of 8 steps recorded) | 12 h agent + 0.5 h owner | 2 of 8 completed | | | | |
+| 🟣 Very large | **Total** | 12.75 h | 0 h (0 of 8 steps recorded) | 9 h agent + 0.5 h owner | 2 of 8 completed | | | | |
 
 <details><summary>Done steps (2)</summary>
 
@@ -580,7 +580,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | Components | nerv:F-016, nerv:F-132 |
 | Opened | 2026-11-26 |
 | Verification | Pending |
-| Reviewed | 2026-11-26 |
+| Reviewed | 2026-11-27 |
 
 </details>
 
