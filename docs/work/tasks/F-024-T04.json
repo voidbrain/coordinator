@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "implemented",
+  "status": "closed",
   "id": "F-024-T04",
   "title": "S4: MCP read tools (record lookup, waiting on me, blocked by X)",
   "goal": "Agents and NERV query the index over MCP, read-only",
@@ -31,7 +31,7 @@
   "effort": {
     "size": "small",
     "estimate": "0 remaining",
-    "basis": "Decision page S4 row; the contract row moved here from S5 so S6 can start after this step. Estimated 2026-11-26 from the decision page's step table (docs/decisions/live-index.md, \"Steps, if approved\"), at agent speed, failing test first for code. Not a measurement. Implemented 2026-11-27: src/read-tools.mjs (record_lookup, waiting_on_me, blocked_by; each row names its file, commit and GitHub link at that commit; unreadable repositories listed as unknown; the cache opened read-only per answer and closed), src/mcp.mjs (streamable HTTP, JSON answers, loopback only, foreign Origin refused, every tool readOnlyHint), serve listens on 127.0.0.1:7380 (--port); the contract in docs/SOLUTION.md, \"Live index contract\"; test/read-tools.test.mjs committed failing first. Closes after the PR merges on green CI.",
+    "basis": "Decision page S4 row; the contract row moved here from S5 so S6 can start after this step. Estimated 2026-11-26 from the decision page's step table (docs/decisions/live-index.md, \"Steps, if approved\"), at agent speed, failing test first for code. Not a measurement. Implemented 2026-11-27: src/read-tools.mjs (record_lookup, waiting_on_me, blocked_by; each row names its file, commit and GitHub link at that commit; unreadable repositories listed as unknown; the cache opened read-only per answer and closed), src/mcp.mjs (streamable HTTP, JSON answers, loopback only, foreign Origin refused, every tool readOnlyHint), serve listens on 127.0.0.1:7380 (--port); the contract in docs/SOLUTION.md, \"Live index contract\"; test/read-tools.test.mjs committed failing first. Closes after the PR merges on green CI. Closed 2026-11-27: #127 merged on green CI (main 59b2d0d, CI green).",
     "agentHours": 0,
     "reviewed": "2026-11-27",
     "baselineAgentHours": 2,
