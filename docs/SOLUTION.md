@@ -27,9 +27,22 @@ Contracts are owned by the component that publishes them; this table links, it d
 |---|---|---|
 | Every component | project-harness release | `version` in its `.harness.json` (all nine on 10.21.4 on 2026-11-26: nerv, gauntlet-protocol, project-harness, fpvbuddy, grover, openbando, hobo, bricks and this repository; read from the dashboard) |
 | nerv | Grover hub MCP tools | Grover's MCP tool names and `PROTOCOL_VERSION` (MQTT, inside Grover) |
+| nerv (nerv:F-147), agents on the base | coordinator live index MCP tools | the tool names and `version` 1 in the [live index contract](#live-index-contract) (coordinator:F-024-T04) |
 | nerv | gauntlet-protocol | the vendored package `@voidbrain/gauntlet-protocol` in nerv's `package.json` (0.11.1 on 2026-11-26, `vendor/voidbrain-gauntlet-protocol-0.11.1.tgz`), used by `tools/gauntlet.mjs` |
 
 The pinned values above are a dated reading, not live status; the owning repositories are authoritative.
+
+## Live index contract
+
+The coordinator's live index (coordinator:F-024) answers three read tools over MCP, streamable HTTP, at `http://127.0.0.1:7380/mcp` on the base that runs it (today NERV-01; `serve --port` changes the port). Loopback only, no session, no authentication: a client on the same base only, and a browser page from another origin is refused. Published by `src/read-tools.mjs` and `src/mcp.mjs` here (coordinator:F-024-T04); NERV's card (nerv:F-147-T01) is its first consumer.
+
+| Tool | Input | Output (`structuredContent`; the same JSON as the text content) |
+|---|---|---|
+| `record_lookup` | `ref`: `repo:ID`, a record or a step (`nerv:F-147`, `coordinator:F-024-T04`) | `item`: the record or step, or `null` when the repository has no such ID; a record also lists its `steps` |
+| `waiting_on_me` | none | `steps`: open owner steps (`ownerKind` `procedure`, `decision` or `both`) whose prerequisites are all done (closed or verified), across every repository |
+| `blocked_by` | `ref`: `repo:ID` | `items`: open records and steps whose prerequisites name it (bare in its own repository, `repo:ID` elsewhere) |
+
+Every answer carries `version` (1; a consumer refuses a major version it does not know), `snapshot` (the oldest `read_at` of the repositories in the cache, ISO time) and `unknown` (repositories the index could not read, with the reason: their work is unknown, never none). Every item carries `kind` (`record` or `step`), `repo`, `id`, `title`, `status`, `dependsOn`, `prs` (`number`, `state`, `ci`) and `source` (`repo`, `file`, `commit`, and `url`, the file on GitHub at that commit). A step adds `parent`, `ownerKind`, `agentHours` and `ownerHours`; a record adds `priority`, `humanAction`, `next` and `archived`. A bad `ref`, a repository not in the index, an unreadable one and a cache not built yet answer `isError: true` with the reason. Every tool is annotated `readOnlyHint: true`, `destructiveHint: false`; none writes. A `waiting_on_me` answer on the nine repositories was about 17 KB on 2026-11-27, so a consumer reads `structuredContent` rather than a text capped shorter.
 
 ## Alert contract
 

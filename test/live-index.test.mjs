@@ -146,7 +146,12 @@ test('cli rebuild writes index.sqlite in the data folder', (t) => {
 });
 
 test('cli refuses an unknown command or option with its usage', () => {
-  for (const args of [[], ['start'], ['rebuild', '--data'], ['rebuild', '--colour', 'red'], ['serve', 'x']]) {
+  for (const args of [[], ['start'], ['rebuild', '--data'], ['rebuild', '--colour', 'red'], ['serve', 'x']].concat([
+    ['serve', '--port', 'abc'],
+    ['serve', '--port', '0'],
+    ['serve', '--port', '65536'],
+    ['serve', '--port'],
+  ])) {
     const r = spawnSync(process.execPath, [cli, ...args], { env, encoding: 'utf8' });
     assert.equal(r.status, 2, args.join(' '));
     assert.match(r.stderr, /^Usage: /);

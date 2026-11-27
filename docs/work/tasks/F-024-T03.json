@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "implemented",
+  "status": "closed",
   "id": "F-024-T03",
   "title": "S3: poller for the nine repositories (main, PRs, CI, harness versions, audit dates)",
   "goal": "The cache follows GitHub within minutes of a merge, read-only",
@@ -31,7 +31,7 @@
   "effort": {
     "size": "medium",
     "estimate": "0 remaining",
-    "basis": "Decision page S3 row. Estimated 2026-11-26 from the decision page's step table (docs/decisions/live-index.md, \"Steps, if approved\"), at agent speed, failing test first for code. Not a measurement. Implemented 2026-11-27: src/poller.mjs (three conditional GETs per repository: main's commit, the 30 most recently updated PRs, the 30 latest Actions runs; new ETags kept only after that repository's rebuild succeeds), rebuildOne in src/live-index.mjs (copy the cache, rebuild one repository through buildRemote, move it over), serve polls with the token file (default <data>/github-token, --token <file>); test/poller.test.mjs committed failing first; owner token steps in docs/live-index-install.md. Closes after the PR merges on green CI.",
+    "basis": "Decision page S3 row. Estimated 2026-11-26 from the decision page's step table (docs/decisions/live-index.md, \"Steps, if approved\"), at agent speed, failing test first for code. Not a measurement. Implemented 2026-11-27: src/poller.mjs (three conditional GETs per repository: main's commit, the 30 most recently updated PRs, the 30 latest Actions runs; new ETags kept only after that repository's rebuild succeeds), rebuildOne in src/live-index.mjs (copy the cache, rebuild one repository through buildRemote, move it over), serve polls with the token file (default <data>/github-token, --token <file>); test/poller.test.mjs committed failing first; owner token steps in docs/live-index-install.md. Closes after the PR merges on green CI. Closed 2026-11-27: #125 merged on green CI (main e447d47, CI green).",
     "agentHours": 0,
     "reviewed": "2026-11-27",
     "baselineAgentHours": 3,
