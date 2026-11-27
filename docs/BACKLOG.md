@@ -552,7 +552,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who | PRs |
 |---|---|---|---|---|---|---|---|:---:|---|
-| 🟢 Small | <a id="f-024-t03"></a>F-024-T03 — S3: poller for the nine repositories (main, PRs, CI, harness versions, audit dates) | 3 h | 0 h | 0 h | Implemented; verification pending | — | [F-024-T04](#f-024-t04), [F-024-T09](#f-024-t09) | 🤖 | — |
+| 🟢 Small | <a id="f-024-t03"></a>F-024-T03 — S3: poller for the nine repositories (main, PRs, CI, harness versions, audit dates) | 3 h | 0 h | 0 h | Implemented; verification pending | — | [F-024-T04](#f-024-t04), [F-024-T09](#f-024-t09) | 🤖 | [PR #125](https://github.com/voidbrain/coordinator/pull/125) |
 | 🟡 Medium | <a id="f-024-t04"></a>F-024-T04 — S4: MCP read tools (record lookup, waiting on me, blocked by X) | 2 h | 0 h | 2 h | Planned | [F-024-T03](#f-024-t03) | [F-024-T05](#f-024-t05), [F-025-T03](#f-025-t03) | ⏳ 🤖 | — |
 | 🟡 Medium | <a id="f-024-t05"></a>F-024-T05 — S5: live dashboard screen with bricks, and the owner's install page | 3 h | 0 h | 3 h | Planned | [F-024-T04](#f-024-t04) | [F-024-T07](#f-024-t07) | ⏳ 🤖 | — |
 | 🟢 Small | <a id="f-024-t07"></a>F-024-T07 — S7: owner installs the index on the base holding NERV's coordinator role and places the token | 0 h | 0 h | 0 h agent + 0.5 h owner | Planned | [F-024-T05](#f-024-t05), `nerv:F-147-T01` | [F-024-T08](#f-024-t08) | ⏳ 🧑‍🔧 | — |
@@ -577,7 +577,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Steps: F-024-T01: [PR #115](https://github.com/voidbrain/coordinator/pull/115) · F-024-T02: [PR #123](https://github.com/voidbrain/coordinator/pull/123) · F-024-T06: [PR #115](https://github.com/voidbrain/coordinator/pull/115). [decision page](decisions/live-index.md); owner decision 2026-11-26 in chat ("2", "coordinator"); [#113](https://github.com/voidbrain/coordinator/pull/113); [#115](https://github.com/voidbrain/coordinator/pull/115); [#116](https://github.com/voidbrain/coordinator/pull/116); [#123](https://github.com/voidbrain/coordinator/pull/123) |
+| PR / evidence | Steps: F-024-T01: [PR #115](https://github.com/voidbrain/coordinator/pull/115) · F-024-T02: [PR #123](https://github.com/voidbrain/coordinator/pull/123) · F-024-T03: [PR #125](https://github.com/voidbrain/coordinator/pull/125) · F-024-T06: [PR #115](https://github.com/voidbrain/coordinator/pull/115). [decision page](decisions/live-index.md); owner decision 2026-11-26 in chat ("2", "coordinator"); [#113](https://github.com/voidbrain/coordinator/pull/113); [#115](https://github.com/voidbrain/coordinator/pull/115); [#116](https://github.com/voidbrain/coordinator/pull/116); [#123](https://github.com/voidbrain/coordinator/pull/123); [#125](https://github.com/voidbrain/coordinator/pull/125) |
 | Components | nerv:F-016, nerv:F-132 |
 | Opened | 2026-11-26 |
 | Verification | Pending |

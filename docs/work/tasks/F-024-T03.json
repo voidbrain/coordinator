@@ -40,5 +40,9 @@
   "validation": [
     "npm run check:fast; final applicable CI"
   ],
-  "prs": []
+  "prs": [
+    {
+      "pr": 125
+    }
+  ]
 }
