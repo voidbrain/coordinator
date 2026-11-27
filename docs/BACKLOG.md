@@ -654,7 +654,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | PRs |
 |---|---|---|---|---|---|---|---|---|
-| 🟢 Small | <a id="f-026-t01"></a>F-026-T01 — Decision note: what the graph, the critical path and the slack mean here | 0.5 h | 0 h | 0.5 h | Planned | — | [F-026-T02](#f-026-t02) | [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan |
+| 🟢 Small | <a id="f-026-t01"></a>F-026-T01 — Decision note: what the graph, the critical path and the slack mean here | 0.5 h | 0 h | 0.5 h | Planned | — | [F-026-T02](#f-026-t02) | [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan; [PR #135](https://github.com/voidbrain/coordinator/pull/135) lane source |
 | 🟡 Medium | <a id="f-026-t02"></a>F-026-T02 — Compute the graph, critical path and slack from the index, failing test first | 3 h | 0 h | 3 h | Planned | [F-026-T01](#f-026-t01) | [F-026-T03](#f-026-t03), [F-026-T04](#f-026-t04), [F-026-T05](#f-026-t05) | [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan |
 | 🟡 Medium | <a id="f-026-t03"></a>F-026-T03 — Expose the graph through a read MCP tool and the contract (additive) | 2.5 h | 0 h | 2.5 h | Planned | [F-026-T02](#f-026-t02) | — | [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan |
 | 🟡 Medium | <a id="f-026-t04"></a>F-026-T04 — Show the critical path and slack on the index screen | 1.5 h | 0 h | 1.5 h | Planned | [F-026-T02](#f-026-t02) | — | [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan |
@@ -668,7 +668,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Field | Value |
 |---|---|
-| PR / evidence | Steps: F-026-T01: [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan · F-026-T02: [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan · F-026-T03: [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan · F-026-T04: [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan · F-026-T05: [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan. Plan: [#134](https://github.com/voidbrain/coordinator/pull/134) |
+| PR / evidence | Steps: F-026-T01: [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan; [PR #135](https://github.com/voidbrain/coordinator/pull/135) lane source · F-026-T02: [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan · F-026-T03: [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan · F-026-T04: [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan · F-026-T05: [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan. Plan: [#134](https://github.com/voidbrain/coordinator/pull/134) |
 | Opened | 2026-11-27 |
 | Verification | Pending |
 | Reviewed | 2026-11-27 |

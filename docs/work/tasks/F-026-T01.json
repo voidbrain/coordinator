@@ -8,7 +8,7 @@
   "acceptance": [
     "docs/decisions/work-graph.md states: a node is an open step (a record without steps is one node); an edge is a dependsOn entry, including `<repo>:<STEP-ID>` across repositories; a node's duration is its remaining estimate (owner hours for an owner step, agent hours otherwise); a closed step keeps its recorded actual time and is shown done, not scheduled",
     "It defines the critical path as the longest chain of open steps by remaining duration, and slack as how much a step may grow before the chain grows; no calendar dates anywhere (a step starts when an agent slot frees or the owner has time), and no three-point (PERT) estimates; a step without an estimate is flagged, never counted as zero",
-    "It states the lane rule: lane by who acts (owner steps by ownerHours, agent steps otherwise), grouped per repository; night runs and Codex are separate lanes only if a source names them, and the page says what that source is or records the question for the owner in plain words (today no step field names who runs it)",
+    "It states the lane rule: lane by who acts, grouped per repository. The lane source is the step's optional `runner` field from project-harness 10.26.0 (project-harness:F-113; `owner`, `agent`, `night`, `codex`, `gemini` or another lowercase kebab label; carried by the live index as `steps.runner`); a step without `runner` falls back to owner steps by ownerHours, agent steps otherwise. The field is data, not a rule: nothing requires a step to fill it",
     "It states where the reorder rule lives once: the payload gives each node the nodes it may not pass (its transitive prerequisites and dependents), so the component, the card and the write path all read the same data and none re-derives it; a move that would cross one is refused with the reason \"X depends on Y\"",
     "A cycle, an unknown reference and a cross-repository step this index cannot read are reported as problems in the payload, never a crash or a silent drop"
   ],
@@ -33,7 +33,7 @@
   "effort": {
     "size": "small",
     "estimate": "0.5 h agent",
-    "basis": "One decision page, stated rather than compared; the owner already chose the shape. Estimated 2026-11-27. Not a measurement.",
+    "basis": "One decision page, stated rather than compared; the owner already chose the shape. Estimated 2026-11-27. Not a measurement. 2026-11-27: lane source named (harness `runner` field, 10.26.0); planning text only, no effort change.",
     "reviewed": "2026-11-27",
     "agentHours": 0.5,
     "baselineAgentHours": 0.5,
@@ -43,6 +43,10 @@
     {
       "pr": 134,
       "note": "plan"
+    },
+    {
+      "pr": 135,
+      "note": "lane source"
     }
   ]
 }
