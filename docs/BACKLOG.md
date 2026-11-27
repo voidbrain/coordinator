@@ -4,7 +4,7 @@ Current work ledger, reviewed 27 November 2026 against main `9e9752a`. PR #128 m
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 24.25 h agent + 2.5 h owner across 29 open steps of 12 features and 2 other records. 0.25 h of actual effort recorded on 1 step. Generated from the task files.
+**Remaining effort:** 33.25 h agent + 2.5 h owner across 34 open steps of 13 features and 2 other records. 0.25 h of actual effort recorded on 1 step. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -592,7 +592,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔹 P3 | 🟡 Medium | 2.5 h agent + 0.25 h owner | — | — | 🤖 | — | — |
+| 🔴 Open | 🔹 P3 | 🟡 Medium | 2.5 h agent + 0.25 h owner | — | [F-026-T05](#f-026-t05) | 🤖 | — | — |
 
 💻 **→** Next: F-025-T03 — The chosen write path: a reorder proposal opens a PR to the solution order (Planned).
 
@@ -606,7 +606,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who | PRs |
 |---|---|---|---|---|---|---|---|:---:|---|
-| 🟡 Medium | <a id="f-025-t03"></a>F-025-T03 — The chosen write path: a reorder proposal opens a PR to the solution order | 2.5 h | 0 h | 2.5 h | Planned | — | [F-025-T04](#f-025-t04) | 🤖 | [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan |
+| 🟡 Medium | <a id="f-025-t03"></a>F-025-T03 — The chosen write path: a reorder proposal opens a PR to the solution order | 2.5 h | 0 h | 2.5 h | Planned | — | [F-025-T04](#f-025-t04), [F-026-T05](#f-026-t05) | 🤖 | [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan |
 | 🟢 Small | <a id="f-025-t04"></a>F-025-T04 — Owner reorders in NERV's card and merges the PR | 0 h | 0 h | 0 h agent + 0.25 h owner | Planned | [F-025-T03](#f-025-t03) | — | ⏳ 🧑‍🔧 | [PR #119](https://github.com/voidbrain/coordinator/pull/119) plan |
 | 🟡 Medium | **Total** | 2.75 h | 0.25 h (1 of 4 steps recorded) | 2.5 h agent + 0.25 h owner | 2 of 4 completed | | | | |
 
@@ -630,6 +630,48 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | Opened | 2026-11-26 |
 | Verification | Pending |
 | Reviewed | 2026-11-26 |
+
+</details>
+
+---
+### <a id="f-026"></a>[✨ F-026](#top)
+
+**Work graph: critical path and slack from the live index**
+
+| Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
+|---|---|---|---|---|---|:---:|:---:|:---:|
+| 🔴 Open | 🔹 P3 | 🟣 Very large | 9 h | [F-025-T03](#f-025-t03) | — | 🤖 | — | — |
+
+💻 **→** Next: F-026-T01 — Decision note: what the graph, the critical path and the slack mean here (Planned).
+
+| | |
+|---|---|
+| **Issue** | Owner request 2026-11-27 (chat, "ok" to record it across three repositories): one view of the solution's work as a dependency graph, the critical path highlighted and each step's slack shown, laid out in swimlanes by who acts, with two looks (plain, and an Eva "skill tree" skin where finishing a step "unlocks" what depends on it). Explicitly not a Gantt (no calendar dates: work starts when an agent slot frees or the owner has time) and not PERT (no three-point estimates: one estimate per step, plus the recorded actual time). No equivalent record existed in the three repositories (searched `critical path`, `dependency graph`, `swimlane`, `skill tree` in docs on origin/main). Three records: 🚦 coordinator:F-026 (the computation and its read contract), 🧱 bricks:F-017 (the graph component), 𖣂 nerv:F-160 (the view on the "Work across projects" card, nerv:F-147, and the skin). This record is the computation: the critical path and the slack from the live index (depends_on, step estimates, recorded actuals), exposed through the read MCP tools additively and on the index screen. Depends on F-024 (done through T09) and, for the drag rule, F-025. Related: [F-024](work/records/F-026.md#f-024), [F-025](work/records/F-026.md#f-025), bricks:F-017, nerv:F-160. |
+| **Reproduce** | The live index holds every step's dependsOn, estimate and actual hours, and its screen lists open work by repository, but nothing computes a critical path or slack, and no tool returns the dependencies as a graph. |
+| **Check** | A pure function computes nodes, edges, the critical path and slack from the index's rows, with tests for each edge case (F-026-T02); a `work_graph` read tool returns it additively (T03); the screen lists it as text (T04); the reorder path refuses a move across a dependency (T05); the definitions are fixed first (T01). No dates, no PERT. |
+
+**Feature steps**
+
+| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | PRs |
+|---|---|---|---|---|---|---|---|---|
+| 🟢 Small | <a id="f-026-t01"></a>F-026-T01 — Decision note: what the graph, the critical path and the slack mean here | 0.5 h | 0 h | 0.5 h | Planned | — | [F-026-T02](#f-026-t02) | [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan |
+| 🟡 Medium | <a id="f-026-t02"></a>F-026-T02 — Compute the graph, critical path and slack from the index, failing test first | 3 h | 0 h | 3 h | Planned | [F-026-T01](#f-026-t01) | [F-026-T03](#f-026-t03), [F-026-T04](#f-026-t04), [F-026-T05](#f-026-t05) | [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan |
+| 🟡 Medium | <a id="f-026-t03"></a>F-026-T03 — Expose the graph through a read MCP tool and the contract (additive) | 2.5 h | 0 h | 2.5 h | Planned | [F-026-T02](#f-026-t02) | — | [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan |
+| 🟡 Medium | <a id="f-026-t04"></a>F-026-T04 — Show the critical path and slack on the index screen | 1.5 h | 0 h | 1.5 h | Planned | [F-026-T02](#f-026-t02) | — | [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan |
+| 🟡 Medium | <a id="f-026-t05"></a>F-026-T05 — The reorder write path refuses a move that contradicts a dependency | 1.5 h | 0 h | 1.5 h | Planned | [F-025-T03](#f-025-t03), [F-026-T02](#f-026-t02) | — | [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan |
+| 🟣 Very large | **Total** | 9 h | 0 h (0 of 5 steps recorded) | 9 h | 0 of 5 completed | | | |
+
+<details>
+<summary>Next action, estimates and PR history</summary>
+
+[Full notes & evidence](work/records/F-026.md)
+
+| Field | Value |
+|---|---|
+| PR / evidence | Steps: F-026-T01: [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan · F-026-T02: [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan · F-026-T03: [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan · F-026-T04: [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan · F-026-T05: [PR #134](https://github.com/voidbrain/coordinator/pull/134) plan. Plan: [#134](https://github.com/voidbrain/coordinator/pull/134) |
+| Opened | 2026-11-27 |
+| Verification | Pending |
+| Reviewed | 2026-11-27 |
 
 </details>
 
