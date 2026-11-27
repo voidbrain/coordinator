@@ -139,3 +139,7 @@ PR #127 merged with green CI: F-024-T04 MCP read tools (closed in #128). F-024-T
 ## 2026-11-27 — main `9e9752a`
 
 PR #128 merged with green CI: F-024-T05 live screen and install steps (closed in #129, with a dashboard refresh). F-024-T07 is the owner's next, after nerv:F-147-T01.
+
+## 2026-11-27 — harness v10.26.0
+
+Reconciled from 10.25.3: `tools/work-items.mjs`, `tools/backlog-index.mjs`, `docs/agents/parallel-work.md` byte-identical from the tag, `docs/backlog/steps.md` takes the Runner line, maintenance review re-recorded. The coordinator now reads task files with the optional `runner`; the live index `steps` table gains a `runner` column (null everywhere today). Components may set `runner` from now on.

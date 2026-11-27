@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewed": "2026-11-27T07:57:21.253Z",
+  "reviewed": "2026-11-27T15:18:31.366Z",
   "policy": "c9570a34ab0c7e4f1274fe37802a6eff8e7edfb8266c98f0cec7119533729b2b",
   "inputs": {
     "AGENTS.md": "75f76be549dd9f2f5da9d6d55d583ecdf3fffacf40cf502c4f14d6d4ad4eb531",
@@ -13,7 +13,7 @@
     "docs/agents/maintenance.md": "32c077eeab35a9bbe769ea4afa93454ca15631b398794b0bc423591e62f0cbe9",
     "docs/agents/mcp.md": "06efbb58a50f9236506ca0afa9a79bb1d42c12ca380a29ed0254bf0a537f860d",
     "docs/agents/parallel-work-plans.md": "d171d89ec5431668ff770e5fcb0098ad518da6289a0d12a56aafdae60930d567",
-    "docs/agents/parallel-work.md": "96360fce39201c947b0c829f33b9178aba7aafd36e2551604b83e0e8d227ed3f",
+    "docs/agents/parallel-work.md": "b5de7ecdca952e62d3f0895dd140f9e7296c938466c67a1d074a872495307fc7",
     "docs/agents/procedures.md": "87005b2c20ae21d25ae91d49b1f066ddadab70c4b6ea0f03de88d7c2d6648cc7",
     "docs/agents/prompt-caching.md": "3b8962bd4f2f713d5730e999e65338ebdd90347ee09dffbd9c8da98e2405a21e",
     "docs/agents/rule-review.md": "20edef109354858933477c5284ff91a16179a3aad85346fd1bb44b4e80bdb195",
@@ -35,10 +35,10 @@
     "docs/backlog/ownership.md": "d2d39a4e2a56fb7a18c5cce2fe5490282a9c89c947574746bacd71f1040c457f",
     "docs/backlog/records.md": "d7b02554622b29436241c941b42fcefb7b0ec1a104fb5eceb2ad9dadfc14b814",
     "docs/backlog/review.md": "ef87c07f91c8bf43b56d200dc3ab5d32326fcc35d13733e99a0da2cf5c094d2a",
-    "docs/backlog/steps.md": "98705e1e90b5a908a6a6cc666bf64fbdae82020a2a80cf8d11906ebb19108c8c",
+    "docs/backlog/steps.md": "dc48183dc193b489c4e097effdef61c20f223c49aa11539a2a1d6e33379e747f",
     "tools/task-claims.mjs": "f22fa98ed34d2914b3c5572353f8352a2a84a77b81e30316575f4b7d7aa17272",
     "tools/usage-launch.mjs": "51dea30282a89f7efa8fa0291679447d8f25a1b4b2aeb805173db603d093d6f5",
-    "tools/work-items.mjs": "e5c668687039afd52e1e9ce533c2755304909855ef05de5d971e06a0c7339bc0",
+    "tools/work-items.mjs": "c522770983008bff7679ff210e8e007bfae3f365c1289dad226ed12e32508223",
     "tools/work-usage.mjs": "780c9ca35d2057e6ac86ca1f6168a8e315622919215dc317ae6238e875bcf023"
   },
   "measurements": {
@@ -95,10 +95,10 @@
   },
   "outcomes": [
     {
-      "kind": "rule",
-      "disposition": "implemented",
-      "target": "AGENTS.md",
-      "evidence": "2026-11-27, coordinator:F-024-T02 (owner decision 2026-11-26, \"coordinator\" owns the live index; owner \"ok\" 2026-11-27 to start T02): the project line \"Nothing is built or deployed\" now names the read-only live index service (src/, service/, Node 24 node:sqlite cache rebuilt from git, never writes a record), that installing it is an owner step (F-024-T07) and that it reads siblings from the primary checkout, which stays on main. No safeguard removed; no new rule, procedure or check (process freeze). test/live-index.test.mjs and check:fast green."
+      "kind": "none",
+      "disposition": "no-change",
+      "target": "docs/agents/parallel-work.md",
+      "evidence": "2026-11-27, reconcile to harness v10.26.0 (optional step field runner): tools/work-items.mjs, tools/backlog-index.mjs and docs/agents/parallel-work.md copied byte-identical from the tag, docs/backlog/steps.md equalled v10.25.3 and took the one new line. No project rule, safeguard, procedure or check added or removed; nothing project-specific to merge."
     }
   ]
 }
