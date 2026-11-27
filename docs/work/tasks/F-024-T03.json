@@ -9,14 +9,15 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "planned",
+  "status": "implemented",
   "id": "F-024-T03",
   "title": "S3: poller for the nine repositories (main, PRs, CI, harness versions, audit dates)",
   "goal": "The cache follows GitHub within minutes of a merge, read-only",
   "acceptance": [
-    "failing tests first, on a fake GitHub client: conditional requests with ETags (a 304 costs no rebuild), a new commit on a `main` rebuilds that repository, PRs and CI results stored, harness versions and audit dates read",
-    "polls every 5 minutes; reads a read-only fine-grained token (contents, pull requests, actions: read) from a file on the base, never from git; a missing token is a clear error, not empty data",
-    "an unreadable repository shows as unknown, never as no work"
+    "failing tests first, on a fake GitHub client: conditional requests with ETags (a 304 costs no rebuild), a new commit on a `main` or a new CI result rebuilds only that repository; PRs and CI results stored (the builder's `prs` rows, read at each rebuild)",
+    "polls every 5 minutes; reads a read-only fine-grained token (contents, pull requests, actions: read) from a file on the base, never from git; a missing token is a clear error, not empty data; local `rebuild` needs none",
+    "an unreadable repository shows as unknown, never as no work",
+    "harness versions and audit dates moved to F-024-T09 (2026-11-27): the builder's schema has no column for them"
   ],
   "dependsOn": [
     "F-024-T02"
@@ -29,15 +30,19 @@
   ],
   "effort": {
     "size": "medium",
-    "estimate": "3 h agent",
-    "basis": "Decision page S3 row. Estimated 2026-11-26 from the decision page's step table (docs/decisions/live-index.md, \"Steps, if approved\"), at agent speed, failing test first for code. Not a measurement.",
-    "agentHours": 3,
-    "reviewed": "2026-11-26",
+    "estimate": "0 remaining",
+    "basis": "Decision page S3 row. Estimated 2026-11-26 from the decision page's step table (docs/decisions/live-index.md, \"Steps, if approved\"), at agent speed, failing test first for code. Not a measurement. Implemented 2026-11-27: src/poller.mjs (three conditional GETs per repository: main's commit, the 30 most recently updated PRs, the 30 latest Actions runs; new ETags kept only after that repository's rebuild succeeds), rebuildOne in src/live-index.mjs (copy the cache, rebuild one repository through buildRemote, move it over), serve polls with the token file (default <data>/github-token, --token <file>); test/poller.test.mjs committed failing first; owner token steps in docs/live-index-install.md. Closes after the PR merges on green CI.",
+    "agentHours": 0,
+    "reviewed": "2026-11-27",
     "baselineAgentHours": 3,
     "estimateAgentHours": 3
   },
   "validation": [
     "npm run check:fast; final applicable CI"
   ],
-  "prs": []
+  "prs": [
+    {
+      "pr": 125
+    }
+  ]
 }

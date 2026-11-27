@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "parent": "F-024",
+  "capabilities": [
+    "bounded-edit",
+    "structured-tools"
+  ],
+  "privacy": "Neutral content only; no secrets, tokens or personal data in Git; fixtures are invented. The read-only GitHub token lives only in a file on the hosting base. Component repositories are read, never written; agents never touch ~/.nerv, ~/.nerv-app or the live NERV service.",
+  "escalation": [
+    "Material scope growth or effort increase goes to the owner before adoption"
+  ],
+  "status": "planned",
+  "id": "F-024-T09",
+  "title": "Harness versions and audit dates in the live index cache",
+  "goal": "The cache also says each repository's harness release and newest audit date, as the dashboard does",
+  "acceptance": [
+    "failing tests first: each repository's `.harness.json` version and newest audit date are in the cache after a rebuild, read at the same commit; missing evidence reads as unknown",
+    "the builder's schema change, if one is needed, is proposed to project-harness rather than forked here"
+  ],
+  "dependsOn": [
+    "F-024-T03"
+  ],
+  "resources": [
+    "src/**",
+    "test/**",
+    "docs/work/records/F-024.md",
+    "generated:backlog-views"
+  ],
+  "effort": {
+    "size": "small",
+    "estimate": "1 h agent",
+    "basis": "Split from F-024-T03 on 2026-11-27: the harness builder's schema (v10.25.0) has no column for them. Estimated at agent speed, failing test first. Not a measurement.",
+    "agentHours": 1,
+    "reviewed": "2026-11-27",
+    "baselineAgentHours": 1,
+    "estimateAgentHours": 1
+  },
+  "validation": [
+    "npm run check:fast; final applicable CI"
+  ],
+  "prs": []
+}
