@@ -6,7 +6,7 @@
 Description=Coordinator live index (read-only cache of the solution's backlogs)
 
 [Service]
-ExecStart=@NODE@ @CHECKOUT@/src/cli.mjs serve --data @DATA@
+ExecStart="@NODE@" "@CHECKOUT@/src/cli.mjs" serve --data "@DATA@"
 WorkingDirectory=@CHECKOUT@
 Restart=always
 RestartSec=30
