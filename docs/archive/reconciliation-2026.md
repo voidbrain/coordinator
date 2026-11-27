@@ -135,3 +135,7 @@ PR #126 merged with green CI: harness v10.25.3 and dashboard refresh (reconciled
 ## 2026-11-27 — main `59b2d0d`
 
 PR #127 merged with green CI: F-024-T04 MCP read tools (closed in #128). F-024-T05 follows in #128.
+
+## 2026-11-27 — main `9e9752a`
+
+PR #128 merged with green CI: F-024-T05 live screen and install steps (closed in #129, with a dashboard refresh). F-024-T07 is the owner's next, after nerv:F-147-T01.

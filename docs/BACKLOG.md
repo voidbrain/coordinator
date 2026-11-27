@@ -1,10 +1,10 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 27 November 2026 against main `59b2d0d`. PR #127 merged with green CI: F-024-T04 MCP read tools (closed in #128). F-024-T05 follows in #128.
+Current work ledger, reviewed 27 November 2026 against main `9e9752a`. PR #128 merged with green CI: F-024-T05 live screen and install steps (closed in #129, with a dashboard refresh). F-024-T07 is the owner's next, after nerv:F-147-T01.
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 25.25 h agent + 2.5 h owner across 31 open steps of 12 features and 2 other records. 0.25 h of actual effort recorded on 1 step. Generated from the task files.
+**Remaining effort:** 25.25 h agent + 2.5 h owner across 30 open steps of 12 features and 2 other records. 0.25 h of actual effort recorded on 1 step. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -540,7 +540,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|---|---|---|---|:---:|:---:|:---:|
 | 🔴 Open | 🔹 P3 | 🟡 Medium | 2 h agent + 0.5 h owner | `nerv:F-147-T01` | — | 🤖 | — | — |
 
-💻 **→** Next: F-024-T05 — S5: live dashboard screen with bricks, and the owner's install page (Implemented; verification pending).
+💻 **→** Next: F-024-T09 — Harness versions and audit dates in the live index cache (Planned).
 
 | | |
 |---|---|
@@ -552,13 +552,12 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who | PRs |
 |---|---|---|---|---|---|---|---|:---:|---|
-| 🟢 Small | <a id="f-024-t05"></a>F-024-T05 — S5: live dashboard screen with bricks, and the owner's install page | 3 h | 0 h | 0 h | Implemented; verification pending | — | [F-024-T07](#f-024-t07) | 🤖 | [PR #128](https://github.com/voidbrain/coordinator/pull/128) |
 | 🟢 Small | <a id="f-024-t09"></a>F-024-T09 — Harness versions and audit dates in the live index cache | 1 h | 0 h | 1 h | Planned | — | — | 🤖 | — |
-| 🟢 Small | <a id="f-024-t07"></a>F-024-T07 — S7: owner installs the index on the base holding NERV's coordinator role and places the token | 0 h | 0 h | 0 h agent + 0.5 h owner | Planned | [F-024-T05](#f-024-t05), `nerv:F-147-T01` | [F-024-T08](#f-024-t08) | ⏳ 🧑‍🔧 | — |
+| 🟢 Small | <a id="f-024-t07"></a>F-024-T07 — S7: owner installs the index on the base holding NERV's coordinator role and places the token | 0 h | 0 h | 0 h agent + 0.5 h owner | Planned | `nerv:F-147-T01` | [F-024-T08](#f-024-t08) | ⏳ 🧑‍🔧 | — |
 | 🟢 Small | <a id="f-024-t08"></a>F-024-T08 — S8: two weeks of measurements, report to F-020 | 1 h | 0 h | 1 h | Planned | [F-024-T07](#f-024-t07) | — | ⏳ 🤖 | — |
-| 🟡 Medium | **Total** | 13.75 h | 0 h (0 of 9 steps recorded) | 2 h agent + 0.5 h owner | 5 of 9 completed | | | | |
+| 🟡 Medium | **Total** | 13.75 h | 0 h (0 of 9 steps recorded) | 2 h agent + 0.5 h owner | 6 of 9 completed | | | | |
 
-<details><summary>Done steps (5)</summary>
+<details><summary>Done steps (6)</summary>
 
 | Effort | Step | Estimate | Actual | Status | PRs |
 |---|---|---|---|---|---|
@@ -566,6 +565,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | — | <a id="f-024-t02"></a>F-024-T02 — S2: service skeleton in the coordinator (node:sqlite cache, rebuild from git, service files) | 3 h | 0 h | Completed | [PR #123](https://github.com/voidbrain/coordinator/pull/123) |
 | — | <a id="f-024-t03"></a>F-024-T03 — S3: poller for the nine repositories (main, PRs, CI, harness versions, audit dates) | 3 h | 0 h | Completed | [PR #125](https://github.com/voidbrain/coordinator/pull/125) |
 | — | <a id="f-024-t04"></a>F-024-T04 — S4: MCP read tools (record lookup, waiting on me, blocked by X) | 2 h | 0 h | Completed | [PR #127](https://github.com/voidbrain/coordinator/pull/127) |
+| — | <a id="f-024-t05"></a>F-024-T05 — S5: live dashboard screen with bricks, and the owner's install page | 3 h | 0 h | Completed | [PR #128](https://github.com/voidbrain/coordinator/pull/128) |
 | — | <a id="f-024-t06"></a>F-024-T06 — S6: propose the MCP surface card to nerv | 0.25 h | 0 h | Completed | [PR #115](https://github.com/voidbrain/coordinator/pull/115) |
 
 </details>
