@@ -1,10 +1,10 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 27 November 2026 against main `6c108c5`. PRs #123 to #125 merged with green CI: #123 F-024-T02 (closed in #125), #124 dashboard refresh (generated view only), #125 F-024-T03 poller (implemented).
+Current work ledger, reviewed 27 November 2026 against main `e447d47`. PR #126 merged with green CI: harness v10.25.3 and dashboard refresh (reconciled in #126 itself). F-024-T03 closed on #125's green CI; F-024-T04 starts in this PR.
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 30.25 h agent + 2.5 h owner across 33 open steps of 12 features and 2 other records. 0.25 h of actual effort recorded on 1 step. Generated from the task files.
+**Remaining effort:** 30.25 h agent + 2.5 h owner across 32 open steps of 12 features and 2 other records. 0.25 h of actual effort recorded on 1 step. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -540,7 +540,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|---|---|---|---|:---:|:---:|:---:|
 | 🔴 Open | 🔹 P3 | 🔴 Large | 7 h agent + 0.5 h owner | `nerv:F-147-T01` | [F-025-T03](#f-025-t03) | 🤖 | — | — |
 
-💻 **→** Next: F-024-T03 — S3: poller for the nine repositories (main, PRs, CI, harness versions, audit dates) (Implemented; verification pending).
+💻 **→** Next: F-024-T04 — S4: MCP read tools (record lookup, waiting on me, blocked by X) (Planned).
 
 | | |
 |---|---|
@@ -552,20 +552,20 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who | PRs |
 |---|---|---|---|---|---|---|---|:---:|---|
-| 🟢 Small | <a id="f-024-t03"></a>F-024-T03 — S3: poller for the nine repositories (main, PRs, CI, harness versions, audit dates) | 3 h | 0 h | 0 h | Implemented; verification pending | — | [F-024-T04](#f-024-t04), [F-024-T09](#f-024-t09) | 🤖 | [PR #125](https://github.com/voidbrain/coordinator/pull/125) |
-| 🟡 Medium | <a id="f-024-t04"></a>F-024-T04 — S4: MCP read tools (record lookup, waiting on me, blocked by X) | 2 h | 0 h | 2 h | Planned | [F-024-T03](#f-024-t03) | [F-024-T05](#f-024-t05), [F-025-T03](#f-025-t03) | ⏳ 🤖 | — |
+| 🟡 Medium | <a id="f-024-t04"></a>F-024-T04 — S4: MCP read tools (record lookup, waiting on me, blocked by X) | 2 h | 0 h | 2 h | Planned | — | [F-024-T05](#f-024-t05), [F-025-T03](#f-025-t03) | 🤖 | — |
+| 🟢 Small | <a id="f-024-t09"></a>F-024-T09 — Harness versions and audit dates in the live index cache | 1 h | 0 h | 1 h | Planned | — | — | 🤖 | — |
 | 🟡 Medium | <a id="f-024-t05"></a>F-024-T05 — S5: live dashboard screen with bricks, and the owner's install page | 3 h | 0 h | 3 h | Planned | [F-024-T04](#f-024-t04) | [F-024-T07](#f-024-t07) | ⏳ 🤖 | — |
 | 🟢 Small | <a id="f-024-t07"></a>F-024-T07 — S7: owner installs the index on the base holding NERV's coordinator role and places the token | 0 h | 0 h | 0 h agent + 0.5 h owner | Planned | [F-024-T05](#f-024-t05), `nerv:F-147-T01` | [F-024-T08](#f-024-t08) | ⏳ 🧑‍🔧 | — |
 | 🟢 Small | <a id="f-024-t08"></a>F-024-T08 — S8: two weeks of measurements, report to F-020 | 1 h | 0 h | 1 h | Planned | [F-024-T07](#f-024-t07) | — | ⏳ 🤖 | — |
-| 🟢 Small | <a id="f-024-t09"></a>F-024-T09 — Harness versions and audit dates in the live index cache | 1 h | 0 h | 1 h | Planned | [F-024-T03](#f-024-t03) | — | ⏳ 🤖 | — |
-| 🔴 Large | **Total** | 13.75 h | 0 h (0 of 9 steps recorded) | 7 h agent + 0.5 h owner | 3 of 9 completed | | | | |
+| 🔴 Large | **Total** | 13.75 h | 0 h (0 of 9 steps recorded) | 7 h agent + 0.5 h owner | 4 of 9 completed | | | | |
 
-<details><summary>Done steps (3)</summary>
+<details><summary>Done steps (4)</summary>
 
 | Effort | Step | Estimate | Actual | Status | PRs |
 |---|---|---|---|---|---|
 | — | <a id="f-024-t01"></a>F-024-T01 — S1: propose the index builder to project-harness | 0.5 h | 0 h | Completed | [PR #115](https://github.com/voidbrain/coordinator/pull/115) |
 | — | <a id="f-024-t02"></a>F-024-T02 — S2: service skeleton in the coordinator (node:sqlite cache, rebuild from git, service files) | 3 h | 0 h | Completed | [PR #123](https://github.com/voidbrain/coordinator/pull/123) |
+| — | <a id="f-024-t03"></a>F-024-T03 — S3: poller for the nine repositories (main, PRs, CI, harness versions, audit dates) | 3 h | 0 h | Completed | [PR #125](https://github.com/voidbrain/coordinator/pull/125) |
 | — | <a id="f-024-t06"></a>F-024-T06 — S6: propose the MCP surface card to nerv | 0.25 h | 0 h | Completed | [PR #115](https://github.com/voidbrain/coordinator/pull/115) |
 
 </details>
