@@ -111,3 +111,7 @@ PRs #99 to #114 merged with green CI (`npm run ci:status`): harness reconciles t
 ## 2026-11-26 — main `7f361af`
 
 PRs #115 and #116 merged with green CI (`npm run ci:status`): F-024-T01 and F-024-T06 proposals written and closed. No record waits on their CI; B-004 still waits on a day of scheduled runs (B-006).
+
+## 2026-11-27 — main `2da3986`
+
+PRs #117 to #120 merged with green CI (`npm run ci:status`): F-020-T03 closed (friction measurement), F-025-T01 and T02 decided. No record waits on their CI; B-004 still waits on a day of scheduled runs (B-006).

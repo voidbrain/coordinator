@@ -1,10 +1,10 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 26 November 2026 against main `7f361af`. PRs #115 and #116 merged with green CI (`npm run ci:status`): F-024-T01 and F-024-T06 proposals written and closed. No record waits on their CI; B-004 still waits on a day of scheduled runs (B-006).
+Current work ledger, reviewed 27 November 2026 against main `2da3986`. PRs #117 to #120 merged with green CI (`npm run ci:status`): F-020-T03 closed (friction measurement), F-025-T01 and T02 decided. No record waits on their CI; B-004 still waits on a day of scheduled runs (B-006).
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 35.25 h agent + 2.5 h owner across 34 open steps of 12 features and 2 other records. 0.25 h of actual effort recorded on 1 step. Generated from the task files.
+**Remaining effort:** 35.25 h agent + 2.5 h owner across 33 open steps of 12 features and 2 other records. 0.25 h of actual effort recorded on 1 step. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -372,7 +372,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 |---|---|---|---|---|---|:---:|:---:|:---:|
 | 🔴 Open | 🔹 P3 | 🟡 Medium | 3.25 h | — | — | 🤖 | — | — |
 
-💻 **→** Next: F-020-T03 — Measure friction: behaviour checks in 2 or 3 representative repositories plus the friction logs (Implemented; verification pending).
+💻 **→** Next: F-020-T04 — Consolidation proposals per repository, as proposals to each owning repository (Planned).
 
 | | |
 |---|---|
@@ -383,19 +383,19 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 **Feature steps**
 
-| Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who | PRs |
-|---|---|---|---|---|---|---|---|:---:|---|
-| 🟢 Small | <a id="f-020-t03"></a>F-020-T03 — Measure friction: behaviour checks in 2 or 3 representative repositories plus the friction logs | 3 h | 0 h | 0 h | Implemented; verification pending | — | [F-020-T04](#f-020-t04) | 🤖 | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan; [PR #117](https://github.com/voidbrain/coordinator/pull/117) friction measurement |
-| 🟢 Small | <a id="f-020-t06"></a>F-020-T06 — Lift the freeze on new procedures here and record the outcome | 0.25 h | 0 h | 0.25 h | Planned | — | — | 🤖 | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan |
-| 🟡 Medium | <a id="f-020-t04"></a>F-020-T04 — Consolidation proposals per repository, as proposals to each owning repository | 3 h | 0 h | 3 h | Planned | [F-020-T03](#f-020-t03) | — | ⏳ 🤖 | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan |
-| 🟡 Medium | **Total** | 12.25 h | 0 h (0 of 6 steps recorded) | 3.25 h | 3 of 6 completed | | | | |
+| Effort | Step | Estimate | Actual | Remaining | Status | Who | PRs |
+|---|---|---|---|---|---|:---:|---|
+| 🟡 Medium | <a id="f-020-t04"></a>F-020-T04 — Consolidation proposals per repository, as proposals to each owning repository | 3 h | 0 h | 3 h | Planned | 🤖 | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan |
+| 🟢 Small | <a id="f-020-t06"></a>F-020-T06 — Lift the freeze on new procedures here and record the outcome | 0.25 h | 0 h | 0.25 h | Planned | 🤖 | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan |
+| 🟡 Medium | **Total** | 12.25 h | 0 h (0 of 6 steps recorded) | 3.25 h | 4 of 6 completed | | |
 
-<details><summary>Done steps (3)</summary>
+<details><summary>Done steps (4)</summary>
 
 | Effort | Step | Estimate | Actual | Status | PRs |
 |---|---|---|---|---|---|
 | — | <a id="f-020-t01"></a>F-020-T01 — Per-repo coherence read by a fresh-context agent, one checklist item per repository (9) | 4 h | 0 h | Completed | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan; [PR #95](https://github.com/voidbrain/coordinator/pull/95) coherence read, nine pages; [PR #96](https://github.com/voidbrain/coordinator/pull/96) close |
 | — | <a id="f-020-t02"></a>F-020-T02 — Cross-repo pass: rules that differ without a project marker, one owner per topic | 2 h | 0 h | Completed | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan; [PR #105](https://github.com/voidbrain/coordinator/pull/105) cross-repository pass; [PR #106](https://github.com/voidbrain/coordinator/pull/106) close |
+| — | <a id="f-020-t03"></a>F-020-T03 — Measure friction: behaviour checks in 2 or 3 representative repositories plus the friction logs | 3 h | 0 h | Completed | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan; [PR #117](https://github.com/voidbrain/coordinator/pull/117) friction measurement |
 | — | <a id="f-020-t05"></a>F-020-T05 — Owner: accept or reject each proposal; decide the freeze lines for the other repositories | 0 h | 0 h | Completed | [PR #89](https://github.com/voidbrain/coordinator/pull/89) plan |
 
 </details>

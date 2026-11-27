@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "implemented",
+  "status": "closed",
   "id": "F-020-T03",
   "title": "Measure friction: behaviour checks in 2 or 3 representative repositories plus the friction logs",
   "goal": "A before-evidence of how often agents slip, with the number of runs used",
@@ -32,7 +32,7 @@
   "effort": {
     "size": "medium",
     "estimate": "0 remaining",
-    "basis": "Done 2026-11-26 in one session: behaviour drafting set run in project-harness (8 scenarios, 24 runs, 23 min) and nerv (12 scenarios, 36 runs, 27 min) in parallel; friction reports read in all nine repositories; the four 2026-11-26 slips matched to scenarios. Closes on PR #117 green CI. Estimated at 3 h agent; no actual recorded.",
+    "basis": "Done 2026-11-26 in one session: behaviour drafting set run in project-harness (8 scenarios, 24 runs, 23 min) and nerv (12 scenarios, 36 runs, 27 min) in parallel; friction reports read in all nine repositories; the four 2026-11-26 slips matched to scenarios. Closed 2026-11-27 on PR #117 green CI. Estimated at 3 h agent; no actual recorded.",
     "reviewed": "2026-11-26",
     "agentHours": 0,
     "ownerHours": 0,
