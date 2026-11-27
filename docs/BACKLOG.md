@@ -4,7 +4,7 @@ Current work ledger, reviewed 27 November 2026 against main `9e9752a`. PR #128 m
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
-**Remaining effort:** 25.25 h agent + 2.5 h owner across 30 open steps of 12 features and 2 other records. 0.25 h of actual effort recorded on 1 step. Generated from the task files.
+**Remaining effort:** 24.25 h agent + 2.5 h owner across 29 open steps of 12 features and 2 other records. 0.25 h of actual effort recorded on 1 step. Generated from the task files.
 <!-- totals:end -->
 
 ## Work items
@@ -538,9 +538,9 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Status | Priority | Effort | Remaining | Depends on | Unlocks | Agent | Procedures | Decisions |
 |---|---|---|---|---|---|:---:|:---:|:---:|
-| 🔴 Open | 🔹 P3 | 🟡 Medium | 2 h agent + 0.5 h owner | `nerv:F-147-T01` | — | 🤖 | — | — |
+| 🔴 Open | 🔹 P3 | 🟢 Small | 1 h agent + 0.5 h owner | `nerv:F-147-T01` | — | ⏳ | — | — |
 
-💻 **→** Next: F-024-T09 — Harness versions and audit dates in the live index cache (Implemented; verification pending).
+💻 **→** Next: F-024-T07 — S7: owner installs the index on the base holding NERV's coordinator role and places the token (Planned).
 
 | | |
 |---|---|
@@ -552,12 +552,11 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 
 | Effort | Step | Estimate | Actual | Remaining | Status | Depends on | Unlocks | Who | PRs |
 |---|---|---|---|---|---|---|---|:---:|---|
-| 🟢 Small | <a id="f-024-t09"></a>F-024-T09 — Harness versions and audit dates in the live index cache | 1 h | 0 h | 1 h | Implemented; verification pending | — | — | 🤖 | [PR #130](https://github.com/voidbrain/coordinator/pull/130) |
 | 🟢 Small | <a id="f-024-t07"></a>F-024-T07 — S7: owner installs the index on the base holding NERV's coordinator role and places the token | 0 h | 0 h | 0 h agent + 0.5 h owner | Planned | `nerv:F-147-T01` | [F-024-T08](#f-024-t08) | ⏳ 🧑‍🔧 | — |
 | 🟢 Small | <a id="f-024-t08"></a>F-024-T08 — S8: two weeks of measurements, report to F-020 | 1 h | 0 h | 1 h | Planned | [F-024-T07](#f-024-t07) | — | ⏳ 🤖 | — |
-| 🟡 Medium | **Total** | 13.75 h | 0 h (0 of 9 steps recorded) | 2 h agent + 0.5 h owner | 6 of 9 completed | | | | |
+| 🟢 Small | **Total** | 13.75 h | 0 h (0 of 9 steps recorded) | 1 h agent + 0.5 h owner | 7 of 9 completed | | | | |
 
-<details><summary>Done steps (6)</summary>
+<details><summary>Done steps (7)</summary>
 
 | Effort | Step | Estimate | Actual | Status | PRs |
 |---|---|---|---|---|---|
@@ -567,6 +566,7 @@ Bugs (B-) and features (F-) in one list, most urgent first.
 | — | <a id="f-024-t04"></a>F-024-T04 — S4: MCP read tools (record lookup, waiting on me, blocked by X) | 2 h | 0 h | Completed | [PR #127](https://github.com/voidbrain/coordinator/pull/127) |
 | — | <a id="f-024-t05"></a>F-024-T05 — S5: live dashboard screen with bricks, and the owner's install page | 3 h | 0 h | Completed | [PR #128](https://github.com/voidbrain/coordinator/pull/128) |
 | — | <a id="f-024-t06"></a>F-024-T06 — S6: propose the MCP surface card to nerv | 0.25 h | 0 h | Completed | [PR #115](https://github.com/voidbrain/coordinator/pull/115) |
+| — | <a id="f-024-t09"></a>F-024-T09 — Harness versions and audit dates in the live index cache | 1 h | 0 h | Completed | [PR #130](https://github.com/voidbrain/coordinator/pull/130) |
 
 </details>
 

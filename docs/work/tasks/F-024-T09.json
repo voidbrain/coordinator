@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "implemented",
+  "status": "closed",
   "id": "F-024-T09",
   "title": "Harness versions and audit dates in the live index cache",
   "goal": "The cache also says each repository's harness release and newest audit date, as the dashboard does",
@@ -29,8 +29,8 @@
   "effort": {
     "size": "small",
     "estimate": "1 h agent",
-    "basis": "Split from F-024-T03 on 2026-11-27: the harness builder's schema (v10.25.0) has no column for them. Estimated at agent speed, failing test first. Not a measurement. Implemented 2026-11-27: src/health.mjs writes a `health` table beside the builder's tables (repo, commit_sha, harness_version, last_audit), read at the commit recorded in `sources` (git for local checkouts, the contents API for GitHub); the screen's Summary shows Harness and Last audit, unknown when missing or from another commit; test/health.test.mjs committed failing first. The builder (a harness-copied file) is not edited, and the MCP contract stays `version` 1 and unchanged: the record asks for the cache only. Closes after the PR merges on green CI.",
-    "agentHours": 1,
+    "basis": "Split from F-024-T03 on 2026-11-27: the harness builder's schema (v10.25.0) has no column for them. Estimated at agent speed, failing test first. Not a measurement. Implemented 2026-11-27: src/health.mjs writes a `health` table beside the builder's tables (repo, commit_sha, harness_version, last_audit), read at the commit recorded in `sources` (git for local checkouts, the contents API for GitHub); the screen's Summary shows Harness and Last audit, unknown when missing or from another commit; test/health.test.mjs committed failing first. The builder (a harness-copied file) is not edited, and the MCP contract stays `version` 1 and unchanged: the record asks for the cache only. Closes after the PR merges on green CI. Closed 2026-11-27: #130 merged on green CI (main 6310cf9).",
+    "agentHours": 0,
     "reviewed": "2026-11-27",
     "baselineAgentHours": 1,
     "estimateAgentHours": 1
