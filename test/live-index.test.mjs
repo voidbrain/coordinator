@@ -2,7 +2,7 @@
 // builder (tools/backlog-index.mjs); the cache is disposable, so deleting it and rebuilding gives the same rows.
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { existsSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdirSync, mkdtempSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { tmpdir } from 'node:os';
 import { execFileSync, spawnSync } from 'node:child_process';
@@ -114,7 +114,23 @@ test('a rebuild replaces the cache whole: a component dropped from the manifest 
     JSON.parse(dump(db)).tables.sources.map((s) => s.repo),
     ['hub'],
   );
-  assert.equal(existsSync(`${db}.next`), false);
+  assert.deepEqual(
+    readdirSync(root).filter((f) => f.endsWith('.next')),
+    [],
+  );
+});
+
+test('two rebuilds at once each publish a whole cache', async (t) => {
+  const { root, hub } = solution(t);
+  const db = join(root, 'index.sqlite');
+  await rebuild(db, sources(hub));
+  const whole = dump(db);
+  await Promise.all([rebuild(db, sources(hub)), rebuild(db, sources(hub))]);
+  assert.equal(dump(db), whole);
+  assert.deepEqual(
+    readdirSync(root).filter((f) => f.endsWith('.next')),
+    [],
+  );
 });
 
 test('cli rebuild writes index.sqlite in the data folder', (t) => {
