@@ -218,6 +218,9 @@ test('MCP: unknown methods and tools are JSON-RPC errors; other HTTP uses and fo
   assert.equal((await fetch(url)).status, 405);
   assert.equal((await fetch(url.replace('/mcp', '/other'), { method: 'POST' })).status, 404);
   assert.equal((await post({ jsonrpc: '2.0', id: 1, method: 'ping' }, { origin: 'https://evil.example' })).status, 403);
-  assert.equal((await post({ jsonrpc: '2.0', id: 1, method: 'ping' }, { origin: 'http://localhost:4200' })).status, 200);
+  assert.equal(
+    (await post({ jsonrpc: '2.0', id: 1, method: 'ping' }, { origin: 'http://localhost:4200' })).status,
+    200,
+  );
   assert.equal((await post('x'.repeat(1024 * 1024 + 1))).status, 413);
 });
