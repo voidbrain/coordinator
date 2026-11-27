@@ -9,7 +9,7 @@
   "escalation": [
     "Material scope growth or effort increase goes to the owner before adoption"
   ],
-  "status": "planned",
+  "status": "implemented",
   "id": "F-024-T05",
   "title": "S5: live dashboard screen with bricks, and the owner's install page",
   "goal": "A live view minutes after a merge; the committed dashboard stays the git copy",
@@ -30,15 +30,19 @@
   ],
   "effort": {
     "size": "medium",
-    "estimate": "3 h agent",
-    "basis": "Decision page S5 row (the contract row moved to T04, the install page added). Estimated 2026-11-26 from the decision page's step table (docs/decisions/live-index.md, \"Steps, if approved\"), at agent speed, failing test first for code. Not a measurement.",
-    "agentHours": 3,
-    "reviewed": "2026-11-26",
+    "estimate": "0 remaining",
+    "basis": "Decision page S5 row (the contract row moved to T04, the install page added). Estimated 2026-11-26 from the decision page's step table (docs/decisions/live-index.md, \"Steps, if approved\"), at agent speed, failing test first for code. Not a measurement. Implemented 2026-11-27: src/screen.mjs renders one HTML page from the cache at each request (snapshot time, sources with commit links, per-repository open records and hours in open steps, the owner's turn, open work by repository, source problems), served at GET / beside /mcp on 127.0.0.1:7380 only; styled with bricks tokens, base theme and foundations read from the bricks checkout (bricks components are Angular, not used: assumption recorded on F-024); docs/live-index-install.md sections 4 to 6 (launchd job, MCP check, screen) and update/stop/remove; test/screen.test.mjs committed failing first. Closes after the PR merges on green CI.",
+    "agentHours": 0,
+    "reviewed": "2026-11-27",
     "baselineAgentHours": 3,
     "estimateAgentHours": 3
   },
   "validation": [
     "npm run check:fast; final applicable CI"
   ],
-  "prs": []
+  "prs": [
+    {
+      "pr": 128
+    }
+  ]
 }

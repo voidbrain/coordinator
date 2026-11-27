@@ -54,7 +54,7 @@ function parse(name, args) {
 }
 
 // Every row the tools read, in one pass over the small cache.
-function load(db) {
+export function load(db) {
   if (!existsSync(db)) throw Error('the live index has no cache yet: it is still building, or serve has not started');
   const d = new DatabaseSync(db, { readOnly: true });
   try {

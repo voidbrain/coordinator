@@ -1,7 +1,8 @@
 // F-024-T02: the live index service's command line. `rebuild` builds the cache once (local checkouts, no token);
 // `serve` is the supervised process (launchd, Task Scheduler, systemd --user files in service/). F-024-T03: serve polls
 // GitHub every 5 minutes with conditional requests and rebuilds only a repository that changed, with the read-only
-// token from a file on the base. F-024-T04: serve also answers the MCP read tools on 127.0.0.1 (src/mcp.mjs).
+// token from a file on the base. F-024-T04: serve also answers the MCP read tools on 127.0.0.1 (src/mcp.mjs);
+// F-024-T05: and the live screen (src/screen.mjs).
 import { appendFileSync, mkdirSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { join, resolve } from 'node:path';
@@ -9,6 +10,7 @@ import { fileURLToPath } from 'node:url';
 import { buildRemote } from '../tools/backlog-index.mjs';
 import { rebuild, rebuildOne, sources } from './live-index.mjs';
 import { mcpServer } from './mcp.mjs';
+import { bricksCss, screen } from './screen.mjs';
 import { poller, readToken } from './poller.mjs';
 
 const USAGE =
@@ -17,7 +19,7 @@ const USAGE =
   '  --checkout  the coordinator checkout whose .solution.json lists the repositories (default this one)\n' +
   '  --remote    rebuild: read GitHub instead of local checkouts; set GH_TOKEN (node tools/with-gh-token.mjs …)\n' +
   '  --token     serve: the read-only GitHub token file (default <data>/github-token)\n' +
-  '  --port      serve: the MCP read tools at http://127.0.0.1:<n>/mcp (default 7380)';
+  '  --port      serve: the MCP read tools at http://127.0.0.1:<n>/mcp and the screen at / (default 7380)';
 const EVERY_MS = 5 * 60 * 1000;
 
 function options(argv) {
@@ -75,12 +77,15 @@ if (o.command === 'rebuild') {
   }
   process.env.GH_TOKEN = token; // the builder's GitHub reads (buildRemote) use it
   const db = join(o.data, 'index.sqlite');
-  const mcp = mcpServer(db);
+  const bricks = sources(o.checkout).find((s) => s.repo === 'bricks')?.checkout;
+  const mcp = mcpServer(db, () => screen(db, bricks && bricksCss(bricks)));
   mcp.on('error', (e) => {
     log(`MCP server: ${e.message}`);
     process.exit(1);
   });
-  mcp.listen(o.port, '127.0.0.1', () => log(`MCP read tools at http://127.0.0.1:${o.port}/mcp`));
+  mcp.listen(o.port, '127.0.0.1', () =>
+    log(`MCP read tools at http://127.0.0.1:${o.port}/mcp, the screen at http://127.0.0.1:${o.port}/`),
+  );
   const poll = poller({
     list: sources(o.checkout),
     token,

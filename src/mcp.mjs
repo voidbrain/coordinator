@@ -1,5 +1,5 @@
 // F-024-T04: the read tools as an MCP server over streamable HTTP (JSON-RPC by POST to /mcp, answered as JSON), for
-// NERV (nerv:F-147) and agents on the same base. Stateless and read-only: no session, no tool writes. It listens on
+// NERV (nerv:F-147) and agents on the same base; F-024-T05 adds the live screen at /. Stateless and read-only: no session, no tool writes. It listens on
 // the loopback address only, and a browser page from another origin is refused (DNS rebinding).
 import { createServer } from 'node:http';
 import { answer, TOOLS, VERSION } from './read-tools.mjs';
@@ -33,13 +33,19 @@ function handle(db, m) {
   return { error: { code: -32601, message: `method not found: ${method}` } };
 }
 
-export function mcpServer(db) {
+// F-024-T05: `screen()` returns the live screen's HTML, answered at GET /.
+export function mcpServer(db, screen) {
   return createServer((req, res) => {
     const reply = (status, body) => {
       res.writeHead(status, body === undefined ? {} : { 'content-type': 'application/json' });
       res.end(body === undefined ? undefined : JSON.stringify(body));
     };
-    if (new URL(req.url, 'http://localhost').pathname !== '/mcp') return reply(404);
+    const path = new URL(req.url, 'http://localhost').pathname;
+    if (path === '/' && req.method === 'GET' && screen) {
+      res.writeHead(200, { 'content-type': 'text/html; charset=utf-8' });
+      return res.end(screen());
+    }
+    if (path !== '/mcp') return reply(404);
     if (req.headers.origin && !LOCAL.test(req.headers.origin)) return reply(403);
     if (req.method !== 'POST') {
       res.setHeader('allow', 'POST');
