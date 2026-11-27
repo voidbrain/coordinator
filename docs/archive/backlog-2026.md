@@ -662,10 +662,13 @@ Closed records of the [backlog](../BACKLOG.md), in closing-date order. History, 
 | Field | Value |
 |---|---|
 | PR / evidence | [#61](https://github.com/voidbrain/coordinator/pull/61) (plan), [#62](https://github.com/voidbrain/coordinator/pull/62) (blocks criterion), [#65](https://github.com/voidbrain/coordinator/pull/65) (order: solution:F-016 at 7); [#70](https://github.com/voidbrain/coordinator/pull/70) (F-016-T01 Shared assets section); [#71](https://github.com/voidbrain/coordinator/pull/71) (F-016-T02 gap-review checks, close F-016-T01); [#72](https://github.com/voidbrain/coordinator/pull/72) (close F-016-T02); [#97](https://github.com/voidbrain/coordinator/pull/97) (F-016-T03 to F-016-T09 inventories); [#98](https://github.com/voidbrain/coordinator/pull/98) (close F-016-T03 to F-016-T09); [#100](https://github.com/voidbrain/coordinator/pull/100) (acceptance and close); owner request and approval 2026-11-26; scope widened and blocks candidates corrected by the owner 2026-11-26 |
+| Components | nerv:F-120, nerv:F-121, nerv:F-122, nerv:F-123, gauntlet-protocol:F-021, gauntlet-protocol:F-022, gauntlet-protocol:F-023, gauntlet-protocol:F-024, gauntlet-protocol:F-025, gauntlet-protocol:F-032, gauntlet-protocol:F-033, gauntlet-protocol:F-034, grover:F-027, fpvbuddy:F-022, fpvbuddy:F-023, openbando:F-057, hobo:F-011, hobo:F-012, fpvbuddy:F-015, bricks:F-006, bricks:F-007, bricks:F-008, bricks:F-009, grover:F-008, nerv:F-101 |
 | Components | nerv:F-120, nerv:F-121, nerv:F-122, nerv:F-123, gauntlet-protocol:F-021, gauntlet-protocol:F-022, gauntlet-protocol:F-023, gauntlet-protocol:F-024, gauntlet-protocol:F-025, gauntlet-protocol:F-032, gauntlet-protocol:F-033, gauntlet-protocol:F-034, grover:F-027, fpvbuddy:F-022, fpvbuddy:F-023, openbando:F-057, nerv:F-120-T09, hobo:F-011, hobo:F-012, fpvbuddy:F-015, bricks:F-006, bricks:F-007, bricks:F-008, bricks:F-009, grover:F-008, nerv:F-101 |
 | Opened | 2026-11-26 |
 | Verification | Pending |
 | Reviewed | 2026-11-26 |
+
+Correction 2026-11-27: the second Components row above listed the step nerv:F-120-T09, which is not a record ID, so the live index (harness 10.25.0 `tools/backlog-index.mjs`) refused the whole archive ("Components must contain unique repository-qualified IDs"). Archive lines never change, so the first Components row, which readers take, is the corrected list: the same records without the step (nerv:F-120 already covers it).
 
 </details>
 
