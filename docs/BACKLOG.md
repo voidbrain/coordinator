@@ -1,6 +1,6 @@
 # <a id="top"></a>Coordinator backlog
 
-Current work ledger, reviewed 27 November 2026 against main `9c9a916`. PRs #121 and #122 merged with green CI (`npm run ci:status`): #121 harness v10.25.0 (F-020, F-024), #122 dashboard refresh (no record: generated view only). No record waits on their CI; F-024-T02 starts in the next PR.
+Current work ledger, reviewed 27 November 2026 against main `6c108c5`. PRs #123 to #125 merged with green CI: #123 F-024-T02 (closed in #125), #124 dashboard refresh (generated view only), #125 F-024-T03 poller (implemented).
 Cross-repository work only; each component's work lives in its own backlog ([dashboard](SOLUTION-DASHBOARD.md)). [Rules](BACKLOG-RULES.md) · [Archive 2026](archive/backlog-2026.md) · [Reading the records](#how-to-use-this-file).
 
 <!-- totals:start -->
