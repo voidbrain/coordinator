@@ -12,7 +12,7 @@
     {
       "id": "nerv",
       "repository": "voidbrain/nerv",
-      "path": "../NERV/NERV",
+      "path": "../NERV",
       "ref": "main",
       "backlog": "docs/BACKLOG.md",
       "archives": [],
@@ -42,7 +42,7 @@
     {
       "id": "fpvbuddy",
       "repository": "voidbrain/FPVBuddy",
-      "path": "../FPVBuddy/FPVBuddy",
+      "path": "../FPVBuddy",
       "ref": "main",
       "backlog": "docs/BACKLOG.md",
       "archives": [],
